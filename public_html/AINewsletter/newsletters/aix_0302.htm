@@ -1,0 +1,327 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->February 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>February 2003</h3>
+            <ul>
+              <li><a href="#robocup">Robotic Soccer</a> - RoboCup competitions</li>
+              <li><a href="#companies">AI Companies</a> - More stories of small, 
+                dedicated companies</li>
+              <ul>
+                <li><a href="#evolution_robotics">Evolution Robotics</a> - Robots 
+                  for fun</li>
+                <li><a href="#irobot">iRobot</a> - Robots for home and country</li>
+                <li><a href="#friartuck">FriarTuck</a> - Applying constraint technology</li>
+              </ul>
+              <li><a href="#basketball">Basketball Scheduling Continued</a> - 
+                Others obsessed with the same problem</li>
+              <li><a href="#links">Links</a></li>
+              <ul>
+                <li><a href="#links_aix">The Best of AI Expert</a> - Financial 
+                  Data Mining, Space Shuttle Planning, Dynamic Hill Climbing</li>
+                <li><a href="#links_scheduling">Sports Scheduling</a> - Much more 
+                  on the Atlantic Coast Conference basketball schedule</li>
+                <li><a href="#links_other_scheduling">Other Scheduling</a> - More 
+                  resources for scheduling problems</li>
+                <li><a href="#links_robocup">RoboCup</a></li>
+              </ul>
+            </ul>
+            <h2><a name="robocup"></a>Robotic Soccer</h2>
+            <p>The Robocup goal:<i> By the year 2050, develop a team of fully 
+              autonomous humanoid robots <br>
+              that can win against the human world soccer champion team.</i></p>
+            <p>While computers are winning at chess, the Robocup organizers are 
+              looking to win at soccer. So far the robots are just playing each 
+              other, but the events are getting huge. Last year's event in Fukuoka-Busan 
+              drew 188 teams from 29 countries.</p>
+            <p>There are a variety of competitions, including small, mid-sized, 
+              four-legged and human. The small competitions have five robots on 
+              a team and can use wireless communication with an off-the-field 
+              computer for control. The mid-sized and four-legged competitions 
+              require each robot to carry all of its hardware with it.</p>
+            <p>They also have a simulation league, which is RoboCup without the 
+              actual robots, running in a simulator instead.</p>
+            <p>From Sony's 'old' Web site: &quot;In order for a robot team to 
+              actually perform a soccer game, various technologies must be incorporated 
+              including: design principles of autonomous agents, multi-agent collaboration, 
+              strategy acquisition, real-time reasoning, robotics, and sensor-fusion. 
+              RoboCup is a task for a team of multiple fast-moving robots under 
+              a dynamic environment.&quot;</p>
+            <p>So, not just a robot doing a task, but a team of robots working 
+              together. One of the teams was proudly proclaiming that they were 
+              the first to successfully pass the ball in competition. A lot of 
+              the research is going to figuring out the opponent. Vision and learning 
+              together are a key technology, with the idea being to figure out 
+              and learn an opponent's behavior so as to best out play it.</p>
+            <p>A Google search on RoboCup reveals the scope of the international 
+              research going into the event. Universities from all over the World 
+              have Web sites describing their robot teams, technology and research.</p>
+            <p>With all this activity, it seems likely they might reach their 
+              goal. See the <a href="#links_robocup">links</a> for more details.</p>
+            <h2><a name="companies"></a>AI Companies</h2>
+            <p>Here are some more stories of small companies, using AI in specific 
+              product niches.</p>
+            <h3><a name="evolution_robotics"></a>Evolution Robotics</h3>
+            <p>Evolution Robotics provides consumer robotics kits for the home 
+              hacker. Their ER1 has gotten a lot of favorable press coverage lately 
+              as a hobby robot. They provide the mechanical framework, the sensors 
+              and the software, and you provide the laptop. They have recently 
+              announced the ER2.</p>
+            <p>They also provide their technologies to other companies interested 
+              in developing commercial robots. These technologies include the 
+              Evolution Robotics Software Platform (ERSP) and modules that support 
+              robot vision recognition, mapping and navigation, and human-robot 
+              communication.</p>
+            <p>Their origins are more entrepreneurial than other companies we 
+              have covered. Their founder is Bill Gross who is also CEO of Idealab. 
+              Idealab is a management umbrella that operates a number of high 
+              tech companies, providing business and marketing expertise to those 
+              companies.</p>
+            <p>For more information see<a href="http://www.evolution.com"> http://www.evolution.com</a> 
+              and <a href="http://www.idealab.com">http://www.idealab.com</a></p>
+            <h3><a name="irobot"></a>iRobot</h3>
+            <p>iRobot is a start up made of people from, and in charge of, the 
+              MIT Artificial Intelligence Lab. It's been in business for 10 years, 
+              with the goal of producing robots that are commercially viable. 
+              Their products range from toys, to household appliances, to robots 
+              for the military.</p>
+            <p>Roomba is a robot vacuum cleaner that you can purchase through 
+              Brookstone for $199. There is a <a href="http://groups.yahoo.com/group/roomba-users/join">Yahoo 
+              discussion group</a> of Roomba users, and other than complaints 
+              of the length of battery charge, they all seem pretty happy.</p>
+            <p>For the military, they have PackBot. PackBots saw action in Afghanistan, 
+              doing the dangerous work of exploring caves in the region. The military 
+              would rather risk robots than soldiers for this sort of work. I 
+              wonder if that will be the case in the world of <a href="http://www.ddj.com/documents/s=7730/ddj0301ai/0301ai001.html#spiritual_machines">Kurzweil's 
+              visions</a>?</p>
+            <p>See <a href="http://www.irobot.com">www.irobot.com</a> for further 
+              information.</p>
+            <h3><a name="friartuck"></a>FriarTuck</h3>
+            <p>FriarTuck is a startup in Singapore focusing on scheduling applications. 
+              Martin Henz, one of the principals in the company, was involved 
+              in the design and development of the Mozart constraint-based programming 
+              language, mentioned in previous newsletters. Not surprisingly, FriarTuck 
+              uses Mozart to implement their scheduling systems for health care, 
+              education and sports organizations.</p>
+            <p>Singapore provides excellent support for start up companies, and 
+              FriarTuck received its initial funding in the form of awards from 
+              business plan competitions. Their first customers are in the Singapore 
+              area, but they're outlook is global. Given the impressive results 
+              they have produced with the ACC basketball <a href="#links_scheduling">schedule</a> 
+              demo, it seems they have a lot of potential.</p>
+            <p>See <a href="http://www.friartuck.net">www.friartuck.net</a> for 
+              further information. (<a href="http://www.friartuck.com">www.friartuck.com</a> 
+              looks like a very nice resort in New York's Catskill mountains.)</p>
+            <h2><a name="basketball"></a>Basketball Scheduling Continued</h2>
+            <p>Readers of last month's newsletter article about <a href="http://www.ddj.com/documents/s=7730/ddj0301ai/0301ai001.html#genetic_scheduling">basketball 
+              scheduling</a>, pointed me to additional work on the Atlantic Coast 
+              Conference (ACC) basketball scheduling problem. It seems it has 
+              become somewhat of a benchmark after publication of George Nemhauser's 
+              and Michael Trick's article on using integer programming and enumeration 
+              to find a better, quicker solution than we did. Theirs still took 
+              24 hours, but it was able to search the entire solution space, something 
+              we were not able to achieve.</p>
+            <p>ILOG, a company offering constraint technology tools, and FriarTuck 
+              both have implemented versions of the ACC scheduling program as 
+              marketing demonstrations.</p>
+            <p>FriarTuck is implemented using Mozart, which has popped up before 
+              in the newsletter. The most fascinating aspect of their solution 
+              is they claim to be able to search the entire solution space in 
+              less than a minute. Wow.</p>
+            <p>One of the main reasons for the speed of the constraint based approaches 
+              is simply a better algorithm for tackling the problem. Instead of 
+              looking directly for a schedule that works, they break the problem 
+              into three phases. This has the tremendous benefit of allowing follow 
+              on phases to not waste time evaluating constraints that were incorporated 
+              in generating earlier phase results.</p>
+            <p>The first phase searches for acceptable patterns of home and away 
+              games, without regard to any other constraints, or individual teams. 
+              Once those patterns are found, they are enumerated and a universe 
+              of possible schedule patterns emerges. Those patterns are then filled 
+              in with generic team place holders, searching for possible generic 
+              time tables. The time tables are then filled in with actual team 
+              constraints in the search for final workable schedules.</p>
+            <p>See the <a href="#links_scheduling">links</a> for the various articles, 
+              as well as Michael Trick's summary page of all sorts of sports scheduling 
+              services and products. The articles contain additional references 
+              to a host of other sports scheduling research.</p>
+            <h2><a name="links"></a>Links</h2>
+            <h3><a name="links_aix"></a>The Best of AI Expert</h3>
+            <p><b>Mining for Financial Knowledge with CBR</b> [Feb 1994]- Paul 
+              Buta of Dun and Bradstreet describes the use of case-based reasoning 
+              (CBR) to mine knowledge from financial data. The article has excellent 
+              coverage of both the problem domain and the primary issue with CBR 
+              systems, which is determining the relevant 'cases' are and how best 
+              to represent and store them.</p>
+            <p><b>Scheduling Space Shuttle Missions: Using Object-Oriented Techniques</b> 
+              [Mar 1994] - Andrea Henke of Stottler Henke (mentioned in last month's 
+              newsletter) describes a planning and scheduling system designed 
+              for the multi-year process a putting a shuttle in orbit. The system 
+              uses rules, objects and scheduling algorithms to capture the expertise 
+              of the shuttle planning experts. It's an excellent case study of 
+              applying a variety of AI and programming technologies towards the 
+              solution of a complex problem.</p>
+            <p><b>Dynamic Hill Climbing</b> [Mar 1994] - Michael de la Maza and 
+              Deniz Yuret, both of MIT's Artificial Intelligence Laboratory, describe 
+              this search algorithm that incorporates genetic algorithms with 
+              more conventional mathematical optimizations. By incorporating both 
+              strategic and tactical aspects in the search for a summit, they 
+              address the problems mentioned in a previous newsletter about the 
+              difficulties in finding maxima in irregular terrains.</p>
+            <h3><a name="links_scheduling"></a>Sports Scheduling</h3>
+            <p>The Atlantic Coast Conference (ACC) basketball scheduling problem, 
+              mentioned in the last newsletter, turns out to be somewhat of a 
+              scheduling benchmark.</p>
+            <p><a href="http://www.amzi.com/articles/acc_basketball.htm">http://www.amzi.com/articles/acc_basketball.htm</a> 
+              - The original article describing the Prolog program and constraints 
+              used to solve the problem. This version took 1-2 days to converge 
+              on a solution, but the solution perfectly matched the constraints 
+              given.</p>
+            <p><a href="http://mat.gsia.cmu.edu/acc.pdf">http://mat.gsia.cmu.edu/acc.pdf</a> 
+              - George Nemhauser and Michael Trick's article on using integer 
+              programming and enumeration to find a solution, faster and more 
+              reliably. This version took 24 hours to find all solutions.</p>
+            <p><a href="http://www2.ilog.com/oplmodels/display.cfm?ID=5">http://www2.ilog.com/oplmodels/display.cfm?ID=5</a> 
+              - <a href="http://www.ilog.com">ILOG</a>'s demo application that 
+              solves the ACC schedule problem using their constraint programming 
+              tools.</p>
+            <p><a href="http://www.comp.nus.edu.sg/%7Ehenz/publications/#acc.abstract">http://www.comp.nus.edu.sg/~henz/publications/#acc.abstract</a> 
+              - Friar Tuck's description of their finite-domain constraint program, 
+              written using Mozart, to solve the problem. This version takes a 
+              minute or so to find all solutions.</p>
+            <p><a href="http://mat.gsia.cmu.edu/sports/">http://mat.gsia.cmu.edu/sports/</a> 
+              - Michael Trick's summary page of various sports scheduling packages 
+              and services.</p>
+            <h2></h2>
+            <h3><a name="links_other_scheduling"></a>Other Scheduling</h3>
+            <p><a href="http://www.npac.syr.edu/users/paulc/papers/patat97/paper.html">http://www.npac.syr.edu/users/paulc/papers/patat97/paper.html</a> 
+              - Saleh Elmohamed, Paul Coddington, and Geoffrey Fox of Syracuse 
+              University describe annealing techniques for university timetabling 
+              problems.</p>
+            <h3><a name="links_robocup"></a>RoboCup</h3>
+            <p><a href="http://www.robocup.org">http://www.robocup.org</a> - The 
+              home page for RoboCup, with lots of information about events. </p>
+            <p><a href="http://www.csl.sony.co.jp/person/kitano/RoboCup/RoboCup-old.html">http://www.csl.sony.co.jp/person/kitano/RoboCup/RoboCup-old.html</a> 
+              - This is labeled the 'old' site, but the new one isn't available 
+              yet. Lot's of good information on this one, but some of the links 
+              are broken.</p>
+            <p></p>
+            <p><a href="http://www.csl.sony.co.jp/person/kitano/RoboCup/papers.html">http://www.csl.sony.co.jp/person/kitano/RoboCup/papers.html</a> 
+              - A list of papers about RoboCup and the technologies used. Vision 
+              and learning are key topics for building a robot soccer player. 
+              The key problem is dynamically learning the opponents moves and 
+              how to counteract them.</p>
+            <p><a href="http://sserver.sourceforge.net">http://sserver.sourceforge.net</a> 
+              - There are a number of mentions of software simulators for RoboCup. 
+              This is one of them.</p>
+            <p><a href="http://www.techfak.uni-bielefeld.de/ags/wbski/3Drobocup/3Drobocup.html">http://www.techfak.uni-bielefeld.de/ags/wbski/3Drobocup/3Drobocup.html</a> 
+              - A three-dimensional simulation of robots and RoboCup.</p>
+            <p><a href="http://news.nationalgeographic.com/news/2002/06/0617_020617_TVrobots.html">http://news.nationalgeographic.com/news/2002/06/0617_020617_TVrobots.html</a> 
+              - Some good photographs of robot soccer from National Geographic.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

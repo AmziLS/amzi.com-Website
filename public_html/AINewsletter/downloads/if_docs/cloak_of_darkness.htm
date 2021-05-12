@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>Cloak of Darkness</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1>Cloak of Darkness</h1>
+<p><i>Cloak of Darkness</i> is a simple game designed to illustrate different 
+  tools for creating IF.</p>
+<ul>
+  <li>The Foyer of the Opera House is where the game begins. This empty room has 
+    doors to the south and west, also an unusable exit to the north. There is 
+    nobody else around. </li>
+  <li>The Bar lies south of the Foyer, and is initially unlit. Trying to do anything 
+    other than return northwards results in a warning message about disturbing 
+    things in the dark. </li>
+  <li>On the wall of the Cloakroom, to the west of the Foyer, is fixed a small 
+    brass hook. </li>
+  <li>Taking an inventory of possessions reveals that the player is wearing a 
+    black velvet cloak which, upon examination, is found to be light-absorbent. 
+    The player can drop the cloak on the floor of the Cloakroom or, better, put 
+    it on the hook. </li>
+  <li>Returning to the Bar without the cloak reveals that the room is now lit. 
+    A message is scratched in the sawdust on the floor. </li>
+  <li>The message reads either &quot;You have won&quot; or &quot;You have lost&quot;, 
+    depending on how much it was disturbed by the player while the room was dark. 
+  </li>
+  <li>The act of reading the message ends the game. <br>
+  </li>
+</ul>
+<p>It would be very easy to implement the <i>Cloak of Darkness</i> game as specified 
+  using the Amzi! Interactive Fiction Toolkit (AIFT). The data model and rules 
+  for the available moves and puzzles would be all that would be needed, along 
+  with the text describing various situations.</p>
+<p>But that would miss some of the points <i>Cloak of Darkness</i> tries to bring 
+  out. Most authoring tools provide a rich, already available, set of modeling 
+  capabilities and commands, such as to <b>look</b> and <b>examine</b>, <b>take</b> 
+  and <b>put</b>, <b>read</b> and <b>go</b> in different directions. Comparing 
+  <i>Cloak</i> versions lets one see how each framework is different, and what 
+  modifications are necessary to create this game.</p>
+<p>AIFT's big weakness is it doesn't have a built-in set of commands like <b>look</b>, 
+  <b>examine</b>, <b>put on</b>, etc.</p>
+<p>AIFT's great strength is it doesn't confine the author to a pre-defined model 
+  of what a game environment should look like.</p>
+<p>So the AIFT implementation of <i>Cloak</i> tries to illustrate both points.</p>
+<h2>Weak Side</h2>
+<p>To address the weak side, the AIFT implementation of <i>Cloak</i> has a number 
+  of rules used to implement many of the features common in classic IF. The claim 
+  is that it is not that difficult to create these features as needed, and that, 
+  once created, they can be easily reused in other games.</p>
+<p>For example, it would have been easy to simply have rules for moving the cloak 
+  about, but instead a general framework for moving items between states of being 
+  worn, carried, dropped or hung on something was developed.</p>
+<p>The player was also given a hat, in addition to the cloak. The hat has no significance 
+  in the game, but the player can do all the default sorts of things with the 
+  hat, such as hang it on the hook. The cloak, on the other hand, has magical 
+  properties associated with it, so its behavior is different from that of the 
+  hat.</p>
+<p>Similarly, <b>read</b> would be easy to implement as specified, but instead 
+  a general read mechanism was implemented, and the sawdust message implemented 
+  as a special case. There is a message in the cloak room as well, which, like 
+  the hat, is of no significance, but can be read.</p>
+
+<h2>Strong Side</h2>
+<h3>Customized Mechanics</h3>
+<p>Let's say an author doesn't like the compass point navigation and would prefer 
+  direct navigation, where the player is told which places connect and can go 
+  to them by name. With AIFT its easy to implement this or any other type of navigation. 
+  The AIFT version of Cloak supports both compass and direct navigation. The player 
+  can <i>go east</i><b> </b>or <i>go to the cloak room</i>.</p>
+<p>It might be argued that direct naviation loses some of the mystery of the directions. 
+  OK, so direct navigation was disabled to rooms that have not yet been visited, 
+  or, rather seen. Visiting the bar room in the dark doesn't count as having seen 
+  that room.</p>
+<p>The <b>look</b> command recognizes these cases, and either tells just the directions 
+  the player can go, or the direction and the room that lies in that direction 
+  if its already been seen.</p>
+<p>Hopefully the AIFT Cloak illustrates how easy it is to create customized versions 
+  of game mechanics such as these.</p>
+<h3>Customized Grammar and Vocabulary</h3>
+
+<p>Grammar rules are built into most packages. AIFT, instead, provides a very 
+  easy syntax for specifying grammar rules and vocabulary. Because the grammar 
+  rules and vocabulary are separate from the main game, and because they are not 
+  built-in, they can be modified to provide exactly the richness or terseness 
+  the author desires, and they can be provided in multiple national languages. 
+  (Only English was implemented for Cloak, but the AIFT Duck World sample, of 
+  similar complexity, has a Spanish and English version for illustrative purposes.)</p>
+<p>For example, to better support direct navigation a grammar rule was added that 
+  let the player simply type in the name of a place (if its been seen) and then 
+  directly go there. In other words, a place name indicates the command is <b>go</b>.</p>
+<h3>National Language Output</h3>
+<p>The output text is also separated from the game logic. This is both a negative 
+  and a positive. It's a negative in that its a bit more difficult to have to 
+  create both a game token for a message and then in a separate spot the text 
+  associated with the token. It's a positive in that it lets the editing of the 
+  text be done independent of the game, so a game engineer and a creative author 
+  could easily collaborate on a game. And, of course, it allows for easy translation 
+  to other languages.</p>
+<h3>Hints, Options</h3>
+<p>One of the big failings with IF is the guess-the-verb problem. A new player 
+  does not know what's possible and what's not, and spends a lot of time thrashing 
+  about trying to guess what can be done. For example, in <i>Cloak</i> a player 
+  in the dark bar room might try all sorts of commands to turn on the light. They 
+  would all fail, but the player would not know if that was because it wasn't 
+  possible, or he/she just wasn't using the right words to express the command. 
+  It is frustrating.</p>
+<p>The ability to find out, to greater or lesser degree, what the options are 
+  greatly increases a new player's enjoyment of IF, and yet, at the same time 
+  does not diminish the puzzles of the game. That's because they only show the 
+  possible moves, not the effects or combinations required to solve a puzzle. 
+  The hints can also lead (and mislead) the player to the fun and interesting 
+  parts of the game, including the wonderful writing that is often found when 
+  going down the wrong path.</p>
+<p>The AIFT <i>Cloak</i> version supports both <b>hints</b>, which lists the verbs 
+  that are in play at the time, and <b>options</b>, which lists the full commands 
+  that are in play. These would clearly indicate to the player in the dark bar 
+  room that there isn't a way to turn on the lights, but would not provide any 
+  hint as to the magical nature of the cloak. That, as with any implementation, 
+  comes from the creative writing in the game.</p>
+<p>A player would not need to use the hints or options, but their presence serves 
+  two good purposes:</p>
+<ul>
+  <li>A player new to the game can quickly learn the mechanics of the game in 
+    the early rooms, and</li>
+  <li>A stuck player does not have to give up in frustration.</li>
+</ul>
+<p>It is this author's opinion that these two benefits can greatly expand the 
+  audience for IF.</p>
+<p>They also free the author to implement new mechanics and verbs, because the 
+  author would not have to rely on a player being experienced with &quot;standard&quot; 
+  IF commands and mechanics. Instead, the player could easily learn his/her way 
+  into a new game.</p>
+
+</body>
+</html>

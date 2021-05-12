@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<body>
+  <h3>Design Notes<br />
+  Amzi! Prolog as part of the Eclipse Modelling Framework (EMF)</h3>
+<p>EMF is about transformations. A model can be expressed either as Java interfaces, UML, or XML. EMF translates between them.</p>
+<p>Prolog, with it's powerful pattern-matching engine, is an ideal tool for transformations.</p>
+<p>In particular, making a transform from the XML output of EMF to working Prolog code would not be difficult.</p>
+<h4>Proposal for one prototype:</h4>
+<p>Write a Prolog translator that takes the XML output from EMF for the EMF tutorial examples, and translates it into working Prolog code that can then be executed in the Prolog perspective of Eclipse running alongside the EMF perspectives.</p>
+<p>Because the fundamental designs from EMF are object-oriented (OO), this would require using OO techniques in the generated Prolog code. The existing Amzi! frame implementations will be used as a first step in this modelling.</p>
+<h4>Proposal for another:</h4>
+<p>Write a Prolog translator that takes the tutorial SBVR example and translates the SBVR specification into working Prolog code.</p>
+<h4>Thoughts on ATL use case, natural language syntax to SBVR transformation:</h4>
+<p><a href="http://www.eclipse.org/m2m/atl/usecases/Syntax2SBVR2UML/">http://www.eclipse.org/m2m/atl/usecases/Syntax2SBVR2UML/</a> </p>
+<p>In this case, the Atlas Transformation Language (ATL)   <a href="http://wiki.eclipse.org/ATL/User_Guide">http://wiki.eclipse.org/ATL/User_Guide</a> is used to translate between a UML syntactic model of a sentence and a UML model of Semantic Business and Vocabulary Rules (SBVR).</p>
+<p>It is interesting that there are a number of tools being developed for the sole purpose of doing model transformations. The main advantages touted for ATL are that it is a mixture of &quot;declarative and imperative programming.&quot; This, of course, is exactly what Prolog provides as well. I cannot comment on the relative strengths and weaknesses of the various tools, but can assert that Prolog is very good at this sort of thing.</p>
+<p>The parsing of a sentence into it's syntactic units, noun phrases, verb phases, etc., is exactly what Prolog was initially designed for.</p>
+<h4>Thoughts on ATL use case, transforming multiple rule langugase:</h4>
+<p> <a href="http://www.eclipse.org/m2m/atl/usecases/SharingRulesBetweenOCLUML_SWRLOWL/">http://www.eclipse.org/m2m/atl/usecases/SharingRulesBetweenOCLUML_SWRLOWL/</a> </p>
+<p>OMG (not Object Management Group) what a lot of rule languages and models there are! And transformation languages!</p>
+<h4>Thoughts on R2ML:</h4>
+<p> &quot;For enriching ontologies with rules, use R2ML rather than SWRL because it's more powerful.&quot;</p>
+<p>It's clear there are many people working in the field of tools for expressing knowledge, and mapping between the various tools.</p>
+<p>It appears Prolog is often used as the development tool underneath these various tools and representations. Using Prolog directly as the tool for our own implementations makes sense because Prolog is extensible. That is, if one needs OO capabilities, then they can be added in Prolog, or if one needs production rule reasoning, then that can be easily added in Prolog as well.</p>
+<p>The use of Prolog directly is the difference between using an application and using a programming language. With an application, you are constrained to what the application provides. But with a programming language, you can make it do anything you want, with more or less difficulty depending on the language.</p>
+<p>Without fully understanding the various tools, such as R2ML, SWRL, etc., I would guess that Prolog provides a lower level language that therefor gives us more flexibility for the modelling tasks we envision.</p>
+<h4>-----</h4>
+
+</body>
+</html>

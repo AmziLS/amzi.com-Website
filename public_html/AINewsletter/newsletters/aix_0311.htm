@@ -1,0 +1,516 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->November 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>November 2003</h3>
+            <ul>
+              <li><a href="#rules">Rules</a></li>
+              <li><a href="#code_corner">Code Corner</a></li>
+            </ul>
+            <h2><a name="rules"></a>Rules</h2>
+            <p>Business rules is the current term for a type of knowledge that 
+              is knotty to automate. The type of knowledge it refers to is logical 
+              knowledge, as distinct from factual knowledge or procedural knowledge.</p>
+            <p><b>Factual knowledge</b> is exactly that, and it can very naturally 
+              be stored in a computer because a computer's basic architecture 
+              includes memory, both internal and external, that is ideally suited 
+              to storing factual information. Database tools and the constructs 
+              in programming languages that describe facts have evolved naturally 
+              from computer memory.</p>
+            <p><b>Procedural knowledge</b> is the knowledge of how to do something, 
+              the steps to take to perform a task. A computer has a central processing 
+              unit (CPU) that does things, one step at a time, which is ideally 
+              suited for executing procedures. Programming languages have evolved 
+              from this basic architecture that make it easy to encode and execute 
+              procedural knowledge.</p>
+            <p>It is a computer's natural aptitude for facts and procedures that 
+              lead to the birth of &quot;data&quot; &quot;processing.&quot;</p>
+            <p><b>Logical knowledge</b> is about relationships between entities. 
+              Despite the stereotypes and use of the word 'logic' in talking about 
+              computers, computers do NOT have a natural aptitude for storing 
+              and using logic. Tools and techniques have been developed for automating 
+              logical knowledge, but they do not have the clean connection to 
+              the underlying machine that tools for factual and procedural knowledge 
+              have. </p>
+            <p>Logic lets you assert:</p>
+            <p><i>If an individual is human then that individual is mortal.</i></p>
+            <p>This isn't a fact that is easily stored as data. Nor is it a procedure. 
+              It is an assertion of a relationship that can be applied to deducing 
+              new facts from old. It doesn't fit well as a passive fact in memory, 
+              because it is meant to be applied to data; but it doesn't fit well 
+              as a procedure because it is not a step in a sequence of steps to 
+              be executed.</p>
+            <p>If logic was limited to philosophical assertions, who cares. But 
+              logic is also how you express relationships like:</p>
+            <p><i>If a call was made on a weekend the price is 5 cents a minute.<br>
+              If a call was made during the week after 8pm the price is 7 cents 
+              a minute.<br>
+              If a call was made during the week before 8pm the price is 10 cents 
+              a minute.</i></p>
+            <p>The pragmatic value of automating this type of logic is more apparent.</p>
+            <h3>Conventional Tools</h3>
+            <p>The most common method of automating logical relationships, such 
+              as the pricing rules above, is to shoehorn them into either data 
+              or procedures. There are difficulties, as we'll see, but this approach 
+              has the tremendous advantage of using the same tools and programming 
+              talent used for all other aspects of application development.</p>
+            <h4>Database Approach</h4>
+            <p>The pricing rules above could be put into a decision table with 
+              rows and columns like this.</p>
+            <table width="39%" border="1" cellpadding="3">
+              <tr> 
+                <td width="34%">Weekend</td>
+                <td width="34%">Night</td>
+                <td width="32%">Price</td>
+              </tr>
+              <tr> 
+                <td width="34%"> 
+                  <pre>true</pre>
+                </td>
+                <td width="34%"> 
+                  <pre>true</pre>
+                </td>
+                <td width="32%"> 
+                  <pre> 5</pre>
+                </td>
+              </tr>
+              <tr> 
+                <td width="34%"> 
+                  <pre>true</pre>
+                </td>
+                <td width="34%"> 
+                  <pre>false</pre>
+                </td>
+                <td width="32%"> 
+                  <pre> 5</pre>
+                </td>
+              </tr>
+              <tr> 
+                <td width="34%"> 
+                  <pre>false</pre>
+                </td>
+                <td width="34%"> 
+                  <pre>true</pre>
+                </td>
+                <td width="32%"> 
+                  <pre> 7</pre>
+                </td>
+              </tr>
+              <tr> 
+                <td width="34%"> 
+                  <pre>false</pre>
+                </td>
+                <td width="34%"> 
+                  <pre>false</pre>
+                </td>
+                <td width="32%"> 
+                  <pre>10</pre>
+                </td>
+              </tr>
+            </table>
+            <p>The program that priced a call would take call data, compute the 
+              boolean values of weekend and night, and then do a table lookup 
+              to get the price per minute.</p>
+            <p>This approach gets thorny, though, as the number of parameters 
+              increase and only a subset of those parameters applies for a given 
+              call. That can already be seen in this simple example where we need 
+              to store information about the boolean <i>night</i> for a weekend 
+              call, when it isn't necessary (the night and day rate being the 
+              same on the weekend).</p>
+            <p>And the clarity of the original rule specifications is lost, making 
+              maintenance difficult. </p>
+            <h4>Procedural Approach</h4>
+            <p>The rules could be coded procedurally using if-then branching statements 
+              to express the relationships.</p>
+            <pre>if day = weekend
+   then price = 5
+else
+   if time = night
+      then price = 7
+      else price = 10</pre>
+            <p>Or should it be:</p>
+            <pre>if time = night
+   if day = weekend
+      then price = 5
+      else price = 7
+else
+   if day = weekend
+      then price = 7
+	  else price = 10</pre>
+            <p>The problem with this approach is artificial decisions need to 
+              be made about the ordering of the if-then statements because they 
+              are really branching statements. They don't have the pattern-matching 
+              sense of the original logical relationships, which have no implied 
+              order.</p>
+            <p>Like with the decision table, the clarity of the original rules 
+              is lost. This approach is also highly error-prone. Did you see the 
+              bug in the above code? How about now?</p>
+            <h3>Specialized Tools</h3>
+            <p>The problems of automating logical knowledge were first studied 
+              at Stanford University by researchers trying to encode medical diagnostic 
+              knowledge, which was naturally expressed as pattern-matching if-then 
+              rules. The number and complexity of the rules was such that repeated 
+              attempts to use the above approaches simply failed.</p>
+            <p>Given that the problem is really that the underlying machine doesn't 
+              support logical relationships, they created a virtual machine that 
+              did. They developed a rule engine that was programmed by entering 
+              rules directly.</p>
+            <p>They called their technology heuristic programming, which is a 
+              fancy way of saying rule-based programming. They were looking for 
+              funding, and no one cared about heuristic programming, and pattern-matching 
+              rules are sort of how a human brain works, so they called it artificial 
+              intelligence instead.</p>
+            <p>The new name worked great, providing funding and generating tremendous 
+              media hype and lots of follow-on companies and products. But expectations 
+              weren't met, there was disappointment, and the name became a detriment 
+              to marketing the technology. So now the savvy marketing types call 
+              it rule-based programming.</p>
+            <p>No matter what you call it, the underlying technology is the same--a 
+              pattern-matching engine that looks for a rule to apply, applies 
+              it, and then does it again until some end condition is reached.</p>
+            <p>The advantages are tremendous. The pricing rules above can be entered 
+              almost directly as they are stated. This makes the encoding almost 
+              error-free. Further, it lets the domain experts, such as the marketeers 
+              creating the call pricing strategy, examine and in many cases maintain 
+              the rules themselves.</p>
+            <p>Because of the natural expressive power of the rules, more complexity 
+              can be incorporated, and changes can be rapidly introduced. The 
+              phone company using a rule-based approach to pricing will be more 
+              responsive to changing market and regulatory conditions than one 
+              that doesn't.</p>
+            <p>The disadvantage with specialized rule tools is they are almost 
+              always proprietary, require special training, and don't always adapt 
+              well to the particular logical knowledge of a particular domain. 
+              For example, a tool designed for business process automation isn't 
+              well suited for our pricing example, and a tool that handles pricing 
+              won't work as well for configuration problems.</p>
+            <p>Despite these problems, the advantages of successful deployment 
+              provide competitive advantages that make them easily worth while. 
+              All the vendors in the field have success stories of customers switching 
+              from conventional tools to a rule or logic-based tool and quote 
+              numbers like 10-1 reductions in code size, vastly increased reliability, 
+              much quicker turn around, and increased capabilities.</p>
+            <h2><a name="code_corner"></a>Code Corner</h2>
+            <p>When an off-the-shelf tool fits a problem well, then it is a good 
+              choice. But often times the off-the-shelf tool doesn't quite work 
+              as required, or is simply too expensive. In that case it's time 
+              to consider writing your own.</p>
+            <p>The advantage to writing your own rule language and engine is it 
+              can be adapted precisely to the application at hand. In this month's 
+              code corner we'll build one for the pricing rules example. The examples 
+              will use Prolog, but the ideas can be incorporated in any language.</p>
+            <p>There are two key aspects in building a rule engine:</p>
+            <ul>
+              <li>designing the knowledge representation, and</li>
+              <li>implementing the reasoning engine.</li>
+            </ul>
+            <h3>Knowledge Representation</h3>
+            <p>Frame like structures are a very convenient way to store information 
+              and have the advantage that they can be easily mapped to various 
+              front-end user interfaces. The frames will have two slots, one for 
+              the goal of the rule and the other for the conditions. The <font face="Courier New, Courier, mono">::</font> 
+              operator is used to separate the name of the slot from its value. 
+              Here's the first pricing rule.</p>
+            <pre>rule(r1, [
+   goal :: price = duration * 5,
+   conditions :: day_type = weekend
+   ]).</pre>
+            <p>We can now put a front end on this type of structure that maps 
+              to fields in a GUI, or use Prolog's definite clause grammar (DCG) 
+              to create a more natural language syntax, such as</p>
+            <pre>if day_type = weekend then price = duration * 5.</pre>
+            <p>In either case, internally we'll use the frame representation of 
+              the rule, and the user interface project we'll save for another 
+              day.</p>
+            <p>The other key decision is how to store the factual knowledge that 
+              is used and derived by the rules. For this application simple attribute 
+              - value pairs can be stored in Prolog clauses called <b>known/2</b>. 
+              For example,</p>
+            <pre>known(day, saturday).</pre>
+            <p>These facts will be dynamically asserted as discovered.</p>
+            <p>Here's the rest of the rules for the pricing example, including 
+              two rules that determine whether a day is a weekend or not.</p>
+            <pre>rule(r2, [
+   goal :: price = duration * 7,
+   conditions :: (day_type = weekday) and (start &gt;= 2000)
+   ]).
+rule(r3, [
+   goal :: price = duration * 10,
+   conditions :: (day_type = weekday) and (start &lt; 2000)
+   ]).
+rule(r4, [
+   goal :: day_type = weekend,
+   conditions :: (day = saturday) or (day = sunday)
+   ]).
+rule(r5, [
+   goal :: day_type = weekday,
+   conditions :: (day \= saturday) and (day \= sunday)
+   ]).</pre>
+            <p>In order for Prolog to read these rules, we need to define the 
+              operators that are not already part of the language. These definitions 
+              should appear in the beginning of the file.</p>
+            <pre>:- op(850, xfx, ::).
+:- op(820, xfy, or).
+:- op(810, xfy, and).</pre>
+            <p>We need a utility predicate that can extract a slot value from 
+              a frame. It is a variation on the classic <b>member/2</b> predicate 
+              that knows about our particular format for slots and also doesn't 
+              backtrack once its found a solution.</p>
+            <pre>get_slot(Slot, Val, [Slot :: Val | _]) :-
+   !.
+get_slot(Slot, Val, [_ | Slots] :-
+   !,
+   get_slot(Slot, Val, Slots).</pre>
+            <h3>Reasoning Engine</h3>
+            <p>Before getting into the details of the reasoning engine, we need 
+              some test data. This is the sort of application that will be driven 
+              by data and will not require an interactive dialog with the user. 
+              So here's a few test phone calls, with an ID, Day, Start Time (in 
+              24 hour HHMM format) and Duration in minutes.</p>
+            <pre>phone_call(1, tuesday, 1800, 10).
+phone_call(2, wednesday, 2200, 10).
+phone_call(3, saturday, 2200, 10).
+phone_call(4, monday, 1600, 10).
+phone_call(5, sunday, 800, 10).</pre>
+            <p>For testing we create a <b>main/0</b> predicate that uses a repeat/fail 
+              loop to walk through the test calls, initializing the reasoning 
+              engine each time and then asserting the known data for the call 
+              being processed. The call to <b>solve/2</b> then finds the price.</p>
+            <p>For a real application, this code would most likely be in a procedural 
+              language that is choreographing the interaction between a database 
+              of call data, the pricing logic base and the billing output.</p>
+            <pre>main :-
+   price_calls.
+
+price_calls :-
+   phone_call(ID, Day, Start, Duration),
+   init,
+   assert( known(duration, Duration) ),
+   assert( known(start, Start) ),
+   assert( known(day, Day) ),
+   solve(price, P),
+   write(id = ID), tab(2),
+   write(price = P), nl,
+   fail.
+price_calls.</pre>
+            <p>Initialization is simply clearing out any <b>known/2</b> clauses 
+              from a previous run.</p>
+            <pre>init :-
+   retractall(known(_,_)).</pre>
+            <p>The main entry point, <b>solve/2</b>, immediately calls <b>find/2</b> 
+              which tries to find the value for an attribute. There are two ways, 
+              the first being that the value of the attribute is already known. 
+              If it is, <b>find/2</b> looks no further and then tests to see if 
+              the value is the one being sought and fails or succeeds accordingly. 
+            </p>
+            <p>The second way is to use the rules. The second clause does a backtracking 
+              search of the <b>rule/2</b> frames, first checking if the goal slot 
+              sets a value for the sought after attribute, then getting the conditions 
+              of the rule and calling <b>prove/1</b> to see if the conditions 
+              hold or not.</p>
+            <p>If not, another rule is tried, but if so, the attribute's value 
+              is evaluated, in case it is a formula, stored in a <b>known/2</b> 
+              clause so it doesn't have to be computed again, and then compared 
+              with the sought after value.</p>
+            <pre>  
+solve(Attr, Val) :-
+   find(Attr, Val).
+
+find(Attr, Val) :-
+   known(Attr, X),
+   !,
+   Val = X.
+find(Attr, Val) :-
+   rule(R, RuleAttrs),
+   get_slot(goal, Attr = X, RuleAttrs),
+   get_slot(conditions, Conds, RuleAttrs),
+   prove(Conds),
+   eval(X, V),
+   assert(known(Attr, V)),
+   !,
+   Val = V.</pre>
+            <p><b>prove/1</b> recursively breaks down complex condition statements 
+              with ands and ors in them, looking for primitive conditions to prove.</p>
+            <pre>prove( C1 and C2 ) :-
+   prove(C1),
+   prove(C2).
+prove(C1 or C2) :-
+   ( prove(C1)
+     ;
+     prove(C2) ).</pre>
+            <p>For the primitive conditions, <b>prove/1</b> uses <b>find/2</b> 
+              to get the value of an attribute and then performs whatever test 
+              is necessary.</p>
+            <pre>prove(A = V) :-
+   find(A, V).
+prove(Attr \= Val) :-
+   find(Attr, V),
+   V \= Val.
+prove(Attr < Val) :-
+   find(Attr, V),
+   V < Val.
+prove(Attr >= Val) :-
+   find(Attr, V),
+   V >= Val.</pre>
+            <p>It's easy to expand the system to include other such tests.</p>
+            <p>Because <b>find/2</b> calls <b>prove/1</b> and <b>prove/1</b> calls 
+              <b>find/2</b>, the system will easily track through complex chains 
+              of interconnected rules. Tracing the behavior of this program in 
+              a Prolog debugger will illustrate that.</p>
+            <p>Because the rules don't just return a price per minute, but actually 
+              calculate the price of the call, we need the ability to evaluate 
+              a formula where some of the elements in the formula refer to values 
+              of facts. This could recursively call <b>find/2</b>, allowing forumlas 
+              to trigger further reasoning, but for now we assume that the formula 
+              refers to facts already known.</p>
+            <p>The clauses of <b>eval/2</b> break down the forumla, applying the 
+              mathematical operations at each step using the Prolog built-in math 
+              operator, <b>is/2</b>. We only implemented multiplication because 
+              that's all we needed. Other <b>eval/2</b> clauses can be added for 
+              other mathematical operators or other types of functions we might 
+              want implemented.</p>
+            <pre>eval(A, V) :-
+   known(A, V),
+   !.
+eval(E1 * E2, V) :-
+   eval(E1, V1),
+   eval(E2, V2),
+   V is V1 * V2,
+   !.
+eval(V, V).</pre>
+            <p>We now have our own rule language for rules like pricing rules. 
+              It can be integrated into larger application contexts, and expanded 
+              as the application requires. It can also be used for other types 
+              of problems that are similar to pricing.</p>
+            <p>Testing it in a Prolog listener:</p>
+            <pre>?- main.
+id = 1  price = 100
+id = 2  price = 70
+id = 3  price = 50
+id = 4  price = 100
+id = 5  price = 50
+
+yes</pre>
+            <h3>Enhancements</h3>
+            <p>The rules should be kept in a different file from the reasoning 
+              engine, so that different logic bases could be used for different 
+              applications. The solve predicate would then consult the appropriate 
+              rule file.</p>
+            <p>Either a GUI or DCG front end on the rules would be nice. This 
+              would allow for easier editing of the rules.</p>
+            <p>The reasoning engine could use with some tracing statements that 
+              optionally display what rule is being tried, what condition being 
+              tested, etc. This could be used for debugging.</p>
+            <p>The issue with weekdays and weekends was solved with a rule, but 
+              an ontology would be a better solution. It would allow the adding 
+              and use of definitions independent of the actual rules.</p>
+            <p>For large complex rule bases, a more efficient rule syntax could 
+              be used that had the attribute as a primary argument that was indexed, 
+              allowing for quick access of rules for a particular attribute.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

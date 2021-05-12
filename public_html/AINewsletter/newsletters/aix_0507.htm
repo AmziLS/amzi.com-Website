@@ -1,0 +1,881 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->July 
+                      2005 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <H1>AI Expert Newsletter</H1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>July 2005</h3>
+            <ul>
+              <li><a href="#introduction">Introduction</a></li>
+              <li> <a href="#introduction"></a><a href="#adi">Logic Programming 
+                in C++ with LC++</a> </li>
+              <li><a href="#alphabet">Another AI Alphabet</a></li>
+              <ul>
+                <li><a href="#a">Agents Defined</a></li>
+                <li><a href="#b">Brittle</a></li>
+                <li><a href="#c">Cartoons</a></li>
+                <li><a href="#d">Deictic Representations</a></li>
+                <li><a href="#e">Emotions</a></li>
+                <li><a href="#f">Frame Problem and the Fable of R2D2</a></li>
+                <li><a href="#g">Genetic Algorithms in Finance</a></li>
+                <li><a href="#h">Homework</a></li>
+                <li><a href="#i">Inverse Kinematics and Emotion Shaders</a></li>
+                <li><a href="#j">JavaScript Prolog</a></li>
+                <li><a href="#k">Koans</a></li>
+                <li><a href="#l">Life and Artificial Chemistry</a></li>
+                <li><a href="#m">MIT's OpenCourseWare</a></li>
+                <li><a href="#n">NetLogo</a></li>
+                <li><a href="#o"><i>Only LISP Can Make a Tree</i></a></li>
+                <li><a href="#p">Probabilistic Graphical Models</a></li>
+                <li><a href="#q">Qualia</a></li>
+                <li><a href="#r">Roland Piquepaille's Technology Trends, rat-brain 
+                  artists, and RUBI the child curiosity bot</a></li>
+                <li><a href="#s">Swarm Intelligence</a></li>
+                <li><a href="#t">Turing Test for Computational Biology</a></li>
+                <li><a href="#u"><i>Ubiquity</i></a></li>
+                <li><a href="#v">Viruses in Teaching AI</a></li>
+                <li><a href="#w">Where am I?</a></li>
+                <li><a href="#x">XSLT for N Queens</a></li>
+                <li><a href="#y">Yachts, Sailing Simulators, and Progressive Parties</a></li>
+                <li><a href="#z">Zooland</a></li>
+              </ul>
+              <li><a href="#tourist">Welcome to 2030</a> </li>
+            </ul>
+            <h2><a name="introduction">Introduction</a></h2>
+            <p> This month, I've written another AI Alphabet. I hope - one of 
+              the entries will explain this - that after reading it, you will 
+              be thinking globally and breadth-first, not locally and depth-first. 
+            <div align=right> <a href="http://www.j-paine.org/">Jocelyn Paine</a></div>
+            <p></p>
+            <p>&nbsp;</p>
+            <h2><a name="adi">Logic Programming in C++ with LC++</a></h2>
+            <p> Adi Shavit wrote to tell me about the <a href="http://www.cc.gatech.edu/~yannis/lc++/">LC++ 
+              library</a>, developed by Brian McNamara and Yannis Smaragdakis, 
+              at www.cc.gatech.edu/~yannis/lc++/. The library uses macros to enable 
+              users to write in a Prolog-like syntax inside C++ programs. For 
+              example, here are some fragments of code from the <a href="http://www.cc.gatech.edu/~yannis/lc++/tutorial.html">tutorial</a>: 
+            <pre>
+
+  FUN2(parent,string,string)
+
+  FUN3(ancestor,string,string,int)
+
+
+
+  DECLARE(Kid, string,2);
+
+  DECLARE(Par, string,3);
+
+  DECLARE(Anc, string,8);
+
+  DECLARE(Tmp, string,9);
+
+  DECLARE(X   ,int,  10);
+
+  DECLARE(Y   ,int,  11);
+
+
+
+  string bart="bart", lisa="lisa", maggie="maggie", marge="marge";,
+
+
+
+  lassert( parent(marge,bart) );
+
+  lassert( parent(marge,lisa) );
+
+  lassert( parent(marge,maggie) );
+
+
+
+  lassert( ancestor(Par,Kid,1) -= parent(Par,Kid) );
+
+  lassert( ancestor(Anc,Kid,X) -= parent(Anc,Tmp) &&
+
+              ancestor(Tmp,Kid,Y) && X.is(plus,Y,1) );
+
+     
+
+  iquery( ancestor(Anc,bart,X) );
+
+</pre>
+            These declare the functors <code>parent</code> and <code>ancestor</code> 
+            and some logical variables and constants, assert a few rules, and 
+            then do a query. 
+            <p></p>
+            <p> The site includes a detailed <a href="http://www.cc.gatech.edu/~yannis/lc++/paper.pdf">paper 
+              about how LC++ is implemented</a>. </p>
+            <p>&nbsp;</p>
+            <h2><a name="alphabet">Another AI Alphabet</a></h2>
+            <h3><a name="a">Agents Defined</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.msci.memphis.edu/~franklin/AgentProg.html">Is 
+                it an Agent, or just a Program?: A Taxonomy for Autonomous Agents</a>, 
+                by Stan Franklin and Art Graesser, www.msci.memphis.edu/~franklin/AgentProg.html. 
+            </ul>
+            <p></p>
+            <p> "Proactive". "Synergetic". "Restructuring". "Leveraged"... And 
+              "Agent"? Does it mean anything, or is it just another buzzword? 
+              Franklin and Graesser apply linguistic philosophy to the word and 
+              propose a definition. </p>
+            <h3><a name="b">Brittle</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.consciousentities.com/brittle.htm">Brittle</a>, 
+                www.consciousentities.com/brittle.htm. 
+            </ul>
+            <p></p>
+            <p> This short entry on the Conscious Entities site introduces a paper 
+              by Michael Anderson and Donald Perlis on brittleness, the inability 
+              of robots and programs to cope with unexpected developments. They 
+              mention a contestant in the DARPA Grand Challenge, where robots 
+              had to negotiate their way through a real-world journey. This one 
+              drove into a fence it could not see, and then continued trying to 
+              move forward for the rest of the contest. The robot was brittle. 
+              Sadly, the fence was not. </p>
+            <h3><a name="c">Cartoons</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.aaai.org/AITopics/html/toons.html">IAMAI's 
+                AI-toons</a>, at www.aaai.org/AITopics/html/toons.html. 
+            </ul>
+            Making AI fun, exciting and interesting. 
+            <p></p>
+            <h3><a name="d">Deictic Representations</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.bbsonline.org/documents/a/00/00/04/24/">Deictic 
+                Codes for the Embodiment of Cognition</a>, by Dana Ballard, Mary 
+                Hayhoe, Polly Pook, and Rajesh Rao, www.bbsonline.org/documents/a/00/00/04/24/. 
+            </ul>
+            <p></p>
+            <p> Suppose I am an AI agent in a video game: I have to shoot and 
+              disable a swarm of killer bees. Had I been designed around the principles 
+              of Good Old-Fashioned AI, the core of my cognition would be a propositional 
+              world-model continuously updated by interpreting sensory data, and 
+              I would represent each bee as a unique object within a world-centered 
+              coordinate system: 
+            <blockquote> I see a bee. Sense data indicates I haven't seen it before. 
+              So I'll give it a new ID: <br>
+              <code>see( me, bee-12374 ). is_yellow( bee-12374 ). is_flying( bee-12374 
+              ).</code><br>
+              I turn my head. Then I turn back. I see a bee.<br>
+              Is this new image I see also <code>bee-12374</code>, or is it a 
+              different object to which I must allocate an ID?<br>
+              And if the latter, how long must I retain my knowledge about <code>bee-12374</code>? 
+            </blockquote>
+            <p></p>
+            <p> In contrast, deictic representations try to avoid problems of 
+              instance identification and world-model update by being relative 
+              to the agent and its intentions: this bee in front of me, which 
+              I am aiming at and intend to kill. The paper explains deictic representations, 
+              with references to important prior research, and proposes how the 
+              brain might use body movements such as changes in gaze position 
+              as deictic pointers. </p>
+            <h3><a name="e">Emotions</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.acm.org/ubiquity/interviews/d_norman_2.html">Emotion 
+                and Affect</a>, by Donald Norman, www.acm.org/ubiquity/interviews/d_norman_2.html. 
+              <li><a href="http://www.jnd.org/">Norman's web site</a>, www.jnd.org/. 
+              <li><a href="http://www.ok-cancel.com/comic/5.html">The Don Norman 
+                episode from OK/Cancel</a>, www.ok-cancel.com/comic/5.html. 
+            </ul>
+            <p></p>
+            <p> Many people will know of Norman from his book <i>The Design of 
+              Everyday Things</i>. (The cover of one edition depicts a coffee 
+              pot with its spout on the same side as its handle.) In this <a href="#u"><i>Ubiquity</i></a> 
+              interview on his <i>The Future of Everyday Things</i>, Norman explains 
+              why we should pay more attention to fun: 
+            <blockquote> 
+              <p> Norman: If you make something more pleasant, it's easier to 
+                use. (My first article on this subject is going to be published 
+                in the July/August 2002 issue of ACM's Interactions magazine.) 
+                The usability community has not paid enough attention to beauty, 
+                to fun, or to pleasure. I'd like to change that. The theme of 
+                affect and emotion is growing so much within me that I'm considering 
+                changing the title and focus of the book to "Emotion and Design." 
+              </p>
+              <p> Ubiquity: Incidentally, your own Web site, http://www.jnd.org/, 
+                is very nice, especially the trailing balls that follow cursor 
+                movement on the "Gratuitous Graphics" page. Do many Web sites 
+                achieve the right balance of fun and seriousness? </p>
+              <p> Norman: Not enough. For a lot of Web sites, it's all or none. 
+                It's rare to find a Web site that's really fun. </p>
+            </blockquote>
+            <p></p>
+            <p> Emotion may be vital to AI programs as well as to their users. 
+              Without it, they may be unable to adapt correctly to threats and 
+              opportunities. As Norman explains, 
+            <blockquote> the brain changes when we are happy, making pleasant 
+              objects easier to use. We are global, breadth-first thinkers when 
+              happy, local, depth-first thinkers when stressed. Affect is truly 
+              an important factor in how we live in the world. There are a lot 
+              of exciting new findings. I want to bring them to the attention 
+              of designers - and engineers who build large, complex, autonomous 
+              systems. </blockquote>
+            <p></p>
+            <h3><a name="f">Frame Problem and the Fable of R2D2</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.augustana.ca/~mohrj/courses/2004.fall/csc110/lecture_notes/AI.html">Introduction 
+                to Artificial Intelligence</a>, by Jonathan Mohr, www.augustana.ca/~mohrj/courses/2004.fall/csc110/lecture_notes/AI.html. 
+            </ul>
+            <p></p>
+            <p> Giving a short explanation of the frame problem, this is one of 
+              many pages to quote the fable of R2D2 from Daniel Dennett's classic 
+              <i>Cognitive wheels: The frame problem of AI</i>: 
+            <blockquote> 
+              <p> Once upon a time there was a robot, named R1 by its creators. 
+                Its only task was to fend for itself. One day its designers arranged 
+                for it to learn that its spare battery, its precious energy supply, 
+                was locked in a room with a time bomb set to go off soon. R1 located 
+                the room, and the key to the door, and formulated a plan to rescue 
+                its battery. There was a wagon in the room, and the battery was 
+                on the wagon, and R1 hypothesized that a certain action which 
+                it called PULLOUT(WAGON, ROOM) would result in the battery being 
+                removed from the room. Straightaway it acted, and did succeed 
+                in getting the battery out of the room before the bomb went off. 
+                Unfortunately, however, the bomb was also on the wagon. R1 knew 
+                that the bomb was on the wagon in the room, but didn't realize 
+                that pulling the wagon would bring the bomb out along with the 
+                battery. Poor R1 had missed that obvious implication of its planned 
+                act. </p>
+              <p> Back to the drawing board. "The solution is obvious," said the 
+                designers. "Our next robot must be made to recognize not just 
+                the intended implications of its acts, but also the implications 
+                about their side-effects, by deducing these implications from 
+                the descriptions it uses in formulating its plans." They called 
+                their next model, the robot-deducer, R1D1. They placed R1D1 in 
+                much the same predicament that R1 had succumbed to, and as it 
+                too hit upon the idea of PULLOUT(WAGON, ROOM) it began, as designed, 
+                to consider the implications of such a course of action. It had 
+                just finished deducing that pulling the wagon out of the room 
+                would not change the colour of the room's walls, and was embarking 
+                on a proof of the further implication that pulling the wagon out 
+                would cause its wheels to turn more revolutions than there were 
+                wheels on the wagon . . . when the bomb exploded. </p>
+              <p> Back to the drawing board. "We must teach it the difference 
+                between relevant implications and irrelevant implications," said 
+                the designers, "and teach it to ignore the irrelevant ones." So 
+                they developed a method of tagging implications as either relevant 
+                or irrelevant to the project at hand, and installed the method 
+                in their next model, the robot-relevant-deducer, R2D1 for short. 
+                When they subjected R2D1to the test that had so unequivocally 
+                selected its ancestors for extinction, they were surprised to 
+                see it sitting, Hamlet-like, outside the room containing the ticking 
+                bomb, the native hue of its resolution sicklied o'er with the 
+                pale cast of thought, as Shakespeare (and more recently Fodor) 
+                has aptly put it. "Do something!" they yelled at it. "I am," it 
+                retorted. "I'm busily ignoring some thousands of implications 
+                I have determined to be irrelevant. Just as soon as I find an 
+                irrelevant implication, I put it on the list of those I must ignore, 
+                and . . ." the bomb went off. </p>
+            </blockquote>
+            <p></p>
+            <h3><a name="g">Genetic Algorithms in Finance</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.geocities.com/francorbusetti/algor.htm">Genetic 
+                algorithms</a>, www.geocities.com/francorbusetti/algor.htm. 
+            </ul>
+            <p></p>
+            <p> "Natural selection is a mechanism for generating an exceedingly 
+              high degree of improbability". So runs Ronald Fisher's quote, heading 
+              this resource page for programs that work improbably well in finance 
+              - for example, <a href="http://www.geocities.com/francorbusetti/fxmarket.pdf"><i>Evolution 
+              of trading rules for the FX [foreign exchange] market, or, how to 
+              make money out of genetic programming</i></a>. For those wanting 
+              to go back to the start of it all, the page links to <a href="http://www.geocities.com/francorbusetti/Origin.zip"><i>Origin 
+              of Species</i></a> and <a href="http://www.geocities.com/francorbusetti/Descent.zip"><i>The 
+              Descent of Man</i></a>. </p>
+            <h3><a name="h">Homework</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.aaai.org/AITopics/html/report.html">Doing 
+                a School Report About AI: Tips & Suggestions</a>, www.aaai.org/AITopics/html/report.html. 
+            </ul>
+            <p></p>
+            <p> Here's another AAAI page, a subtopic of their <a href="http://www.aaai.org/AITopics/html/resourcST.html">Resources 
+              for Students</a>. Tips and suggestions deal with deciding on a topic 
+              and searching for articles, as well as typical questions: "could 
+              you please give me as much information on AI as possible"; "please 
+              send me any information that you have on Artificial Intelligence 
+              about the way it will affect the future"; "what are some threats 
+              and opportunities concerning artificial intelligence?" </p>
+            <h3><a name="i">Inverse Kinematics and Emotion Shaders</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://freespace.virgin.net/hugo.elias/models/m_ik2.htm">Inverse 
+                Kinematics - Improved Methods</a> by Hugo Elias, freespace.virgin.net/hugo.elias/models/m_ik2.htm. 
+              <li><a href="http://mrl.nyu.edu/~perlin/experiments/virtual-storytelling/">Building 
+                Virtual Actors Who Can Really Act</a> by Ken Perlin, mrl.nyu.edu/~perlin/experiments/virtual-storytelling/. 
+              <li><a href="http://mrl.nyu.edu/~perlin/">Ken Perlin's home page</a>, 
+                mrl.nyu.edu/~perlin/. 
+            </ul>
+            <p></p>
+            <p> In a robot arm, inverse kinematics is the problem of calculating 
+              what angles the joints need to be in order to get the end of the 
+              arm - the "hand" - to a desired position. This is a rather useful 
+              thing to know if the robot wants to reach towards and grab something. 
+              Forward kinematics - finding the hand position from the joint angles 
+              - is easy. Inverse kinematics is not, which is why a lot has been 
+              written about it, such as the nice article by <a href="http://freespace.virgin.net/hugo.elias/models/m_ik2.htm">Hugo 
+              Elias</a>. </p>
+            <p> In <a href="http://mrl.nyu.edu/~perlin/experiments/virtual-storytelling/">Building 
+              Virtual Actors Who Can Really Act</a>, Ken Perlin uses inverse kinematics 
+              to make game characters more plausible. Too many game characters 
+              move in exactly the same way whatever their psychological state. 
+              But as any animator knows, movement depends on mood; Wile E. Coyote 
+              may bound along expectantly as he's about to unwrap his new ACME 
+              <a href="http://home.nc.rr.com/tuco/looney/acme/doit.html">Seed 
+              Your Own Tornados Kit</a>, but he'll move rather differently when 
+              the tornados turn and come after him. Perlin's work involves fine-tuning 
+              or "shading" body movements to convey such subtleties. He does a 
+              lot of other things too, as the applets on his <a href="http://mrl.nyu.edu/~perlin/">home 
+              page</a> show. There's some amazing stuff there. </p>
+            <h3><a name="j">JavaScript Prolog</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://ioctl.org/logic/jsprolog-history">Prolog in 
+                JavaScript</a>, by Jan Grant of Bristol University Institute for 
+                Learning and Research Technology, ioctl.org/logic/jsprolog-history. 
+            </ul>
+            <p></p>
+            <p> Amongst the links on Jan's <a href="http://ioctl.org/jan/">home 
+              page</a> is a small repository of examples showing why JavaScript 
+              is all you need to run a successful Computer Science degree course. 
+              The man gives an exceptional demonstration with a Prolog you can 
+              run in your browser. It includes a quicksort: type 
+            <pre>
+
+  qsort( [one,two,three,four,five,six,seven,eight,nine], Sorted ).
+
+</pre>
+            and back come the atoms sorted by name: 
+            <pre>
+
+  Sorted = [eight, five, four, nine, one, seven, six, three, two]
+
+</pre>
+            <p></p>
+            <h3><a name="k">Koans</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://rpcp.mit.edu/~gingold/random/koans.html">AI 
+                Koans</a>, collected by Brewster Kahle, rpcp.mit.edu/~gingold/random/koans.html. 
+            </ul>
+            <blockquote> In the days when Sussman was a novice, Minsky once came 
+              to him as he sat hacking at the PDP-6. "What are you doing?" asked 
+              Minsky. <br>
+              "I am training a randomly wired neural net to play Tic-Tac-Toe." 
+              <br>
+              "Why is the net wired randomly?" asked Minsky. <br>
+              "I do not want it to have any preconceptions of how to play." <br>
+              Minsky shut his eyes. <br>
+              "Why do you close your eyes?" Sussman asked his teacher. <br>
+              "So the room will be empty." <br>
+              At that moment, Sussman was enlightened. </blockquote>
+            <p></p>
+            <h3><a name="l">Life and Artificial Chemistry</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.absoluteastronomy.com/encyclopedia/A/Ar/Artificial_chemistry.htm">Artificial 
+                chemistry</a>, www.absoluteastronomy.com/encyclopedia/A/Ar/Artificial_chemistry.htm. 
+              <li> <a href="http://www.santafe.edu/~walter/AlChemy/alchemy.html">A 
+                quick introduction to the Algorithmic Chemistry project</a> by 
+                Walter Fontana and Leo Buss, www.santafe.edu/~walter/AlChemy/alchemy.html. 
+            </ul>
+            <p></p>
+            <p> John von Neumann said that "life is a process which may be abstracted 
+              from other media". If this is so, then just as we can study software 
+              independently of the hardware that runs it, we can study life independently 
+              of the matter that embodies it. One big question is how self-replicating 
+              molecules arose. Did it happen all at once, or over several stages? 
+              Is it logically necessary that if self-replicators arose elsewhere, 
+              they would do so in the "same" way, and if so, how can we characterise 
+              the kind of organisation involved? Artificial chemistry tries to 
+              answer such questions by setting up mathematical models of chemical 
+              reactions, keeping those properties needed to explain biological 
+              organisation while throwing away the rest. </p>
+            <p> One of the first artificial chemistry models, that of Fontana 
+              and Buss, was based on &lambda;-calculus. Chemical reactions combine 
+              molecules to form new molecules, and we normally think of molecules 
+              as objects. But molecules are also functions: if given alcohol as 
+              an argument, water just mixes with it, but to sodium it does something 
+              more ferocious. (Certain chemists of my acquaintance used to dispose 
+              of sodium waste from their organic syntheses by tossing it into 
+              the Cherwell, presumably to frighten passing punts.) So we want 
+              a system whose elements are objects and at the same time functions 
+              that can act on these objects; which is what &lambda;-calculus provides. 
+            </p>
+            <h3><a name="m">MIT's OpenCourseWare</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://ocw.mit.edu/index.html">MIT's OpenCourseWare</a>, 
+                ocw.mit.edu/index.html. 
+            </ul>
+            <p></p>
+            <p> In 1999, MIT Provost Robert Brown asked a committee of faculty, 
+              students, and administrators to consider how the Internet would 
+              affect education, and how MIT should respond. The committee recommended 
+              that MIT should simply give its course materials away. With funding 
+              from the Andrew W. Mellon Foundation and the William and Flora Hewlett 
+              Foundation, the result was MIT's OpenCourseWare programme. To quote 
+              from one of many testimonials, from Maruf Muqtadir studying in Bangladesh: 
+            <blockquote> Your OpenCourseWare is an amazing and remarkable step! 
+              I am currently a student of computer science at BRAC University 
+              of Dhaka, Bangladesh, and I find it very much useful to learn about 
+              my courses. I have always had a dream to study at MIT, since I came 
+              to know about the institution, its unique teaching methods, but 
+              for many reasons I am not able to do so. This initiative gives me 
+              the opportunity to self-teach myself. </blockquote>
+            <p></p>
+            <p> Amongst the AI-related courses are Maths, Linguistics and Philosophy, 
+              Brain and Cognitive Sciences, and Electrical Engineering and Computer 
+              Science - including a <a href="http://ocw.mit.edu/OcwWeb/Electrical-Engineering-and-Computer-Science/6-901Fall2003/Readings/index.htm">downloadable 
+              textbook</a> on inventions and patents, with a section on the future 
+              of American patents. There's much else too - Japanese language, 
+              sailing yacht design, US military budget and force planning - and 
+              more is to be added. </p>
+            <h3><a name="n">NetLogo</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://ccl.northwestern.edu/netlogo/">NetLogo</a>, 
+                ccl.northwestern.edu/netlogo/. 
+            </ul>
+            <p></p>
+            <p> NetLogo, which my social-simulationist friend <a href="http://www.sociology.ox.ac.uk/people/chattoe.html">Edmund 
+              Chattoe</a> recommended to me, is a free Logo designed for modelling 
+              systems containing very large numbers of similar agents. It has 
+              a lot of users and a lot of models built in it, and an active discussion 
+              list where new users can get advice. </p>
+            <h3><a name="o"><i>Only LISP Can Make a Tree</i></a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://users.exis.net/~jnc/humor/lisp.tree">Only LISP 
+                Can Make a Tree</a>, by Guy L. Steele Jr., users.exis.net/~jnc/humor/lisp.tree. 
+            </ul>
+            <blockquote> I think that I shall never see<br>
+              A matrix lovely as a tree.<br>
+              Trees are fifty times as fun<br>
+              As structures a la PL/I<br>
+              <i>etc.</i> </blockquote>
+            <h3><a name="p">Probabilistic Graphical Models</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.cs.ubc.ca/~murphyk/Bayes/bnintro.html">A 
+                Brief Introduction to Graphical Models and Bayesian Networks</a> 
+                by Kevin Murphy, www.cs.ubc.ca/~murphyk/Bayes/bnintro.html. 
+              <li><a href="http://www.cs.ubc.ca/~murphyk/Software/BNT/bnt.html">Bayes 
+                Net Toolbox for Matlab</a>, also by Kevin Murphy, www.cs.ubc.ca/~murphyk/Software/BNT/bnt.html. 
+              <li><a href="http://www.ukar.org/corr/corr02.html">Companion to 
+                Correlation</a> by Lubomyr Prytulak, www.ukar.org/corr/corr02.html. 
+              <li><a href="http://www.techweb.com/wire/story/TWB20030617S0007">Business 
+                Software Detects Jargon, Scrubs Away Hype</a>, TechWeb story by 
+                Antone Gonsalves, www.techweb.com/wire/story/TWB20030617S0007. 
+            </ul>
+            <p></p>
+            <p> Imagine you are an engineering student at an Oxford college (I 
+              mention no names) which admits students good either at engineering 
+              - the <a href="http://www.dailyinfo.co.uk/guide/cartoonist/adayinthelifeofanundergraduate.html">Gnomes</a> 
+              - or at rugby - the <a href="http://www.dailyinfo.co.uk/guide/cartoonist/adayinthelifeofanundergraduate.html">Hearties</a>. 
+              Suppose there's no correlation at all between being good at rugby 
+              and being good at engineering. However, as a Gnome, you are naturally 
+              biased against your beer-swilling rugby-playing fellows, and you 
+              decide to seek proof that their brains are abnormally small. You 
+              wander the grounds with your laptop and stats software, note the 
+              engineering and rugby ability of each co-student you pass, and then 
+              press "Compute Correlation". And Bingo!, you will see a negative 
+              correlation coefficient. (You can see why if you draw a <a href="http://www.ukar.org/corr/corr02.html">scatterplot</a> 
+              for <i>all</i> the students who applied to the college, chop out 
+              the area for those not admitted, and then consider the regression 
+              line for those left on the plot.) </p>
+            <p> This is Berkson's paradox, also known as "explaining away", and 
+              it's one of many topics discussed in Murphy's excellent paper on 
+              inference and learning with Bayesian networks, which also relates 
+              them to Kalman filters, Hidden Markov Models, and a number of other 
+              models. Bayesian networks have become popular in AI - as one researcher 
+              has said, they offer an efficient way to deal with the lack or ambiguity 
+              of information that has hampered previous systems, and provide an 
+              overarching graphical framework that brings together diverse elements 
+              of AI, increasing its range of application to the real world. Murphy, 
+              writing in 1998, says that the most widely used Bayes Nets are those 
+              embedded in Microsoft's products, including the Answer Wizard of 
+              Office 95, the Paperclip, and over 30 Technical Support Troubleshooters. 
+              Nowadays, they are being used in spam filtering. </p>
+            <p> I wonder whether <a href="http://www.deloitte.com/dtt/section_node/0,2332,sid%253D27374,00.html">Bullfighter</a>, 
+              Deloitte's freeware program for detecting buzzwords, uses Bayesian 
+              filtering? Deloitte <a href="http://www.techweb.com/wire/story/TWB20030617S0007">discovered 
+              a direct linkage between clear business talk and good business performance</a>. 
+              In examining Enron's communications during its last three years, 
+              they found that as Enron began to sink, its press releases, financial 
+              reports, letters to shareholders, and speeches by top executives, 
+              became increasingly laden with ambiguous words and sentences. </p>
+            <h3><a name="q">Qualia</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.consciousentities.com/mogi.htm">Sony Qualia 
+                Man</a>, www.consciousentities.com/mogi.htm. 
+              <li><a href="http://consc.net/papers/qualia.html">Absent Qualia, 
+                Fading Qualia, Dancing Qualia</a>, consc.net/papers/qualia.html. 
+            </ul>
+            <p></p>
+            <p> "Qualia" is the philosophical term for subjective experiences: 
+              seeing red, feeling the sting of a wasp, tasting horseradish sauce. 
+              The <a href="http://www.consciousentities.com/mogi.htm">Sony Qualia 
+              Man</a> page claims that Sony take a close interest in qualia - 
+              as perhaps should any entertainment company - and that Ken Mogi, 
+              leader of their qualia project, has published a <a href="http://www.qualia-manifesto.com/">Qualia 
+              Manifesto</a> calling for more of the things. </p>
+            <p> Many philosophers say qualia are the most important problem for 
+              the philosophy of mind. Why should I believe that you have subjective 
+              experiences? If you do, are they anything like mine, or could it 
+              be that whenever I see red, you see green? Will Artificial Intelligences 
+              have subjective experiences? If so, can we predict them from the 
+              nature of their programs? David Chalmers, who also wrote the Matrix 
+              as Metaphysics feature referenced in my <a href="#w">Where am I?</a> 
+              entry, discusses these problems in <a href="http://consc.net/papers/qualia.html">Absent 
+              Qualia, Fading Qualia, Dancing Qualia</a>. </p>
+            <p> I predict that if we can ever know an AI's qualia, it won't be 
+              long before someone publishes a book on <i>How to Make Your Computer 
+              See Red</i>. </p>
+            <h3><a name="r">Roland Piquepaille's Technology Trends, rat-brain 
+              artists, and RUBI the child curiosity bot</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.primidi.com/2005/06/23.html">Roland Piquepaille's 
+                Technology Trends</a>, www.primidi.com/2005/06/23.html. 
+            </ul>
+            <p></p>
+            <p> A recent entry in this excellent collection is <a href="http://www.primidi.com/2005/06/23.html#a1228">Toddlers 
+              Sing With RUBI</a> - two robots at UCSD are attending nursery school 
+              to teach songs, colors and shapes to one- and two-year old children. 
+              QRIO (for "Quest for Curiosity") from Sony, and RUBI (for "Robot 
+              Using Bayesian Inference"), developed at the Machine Perception 
+              Laboratory of UCSD, are there to study the uses of interactive computers 
+              for early childhood education. </p>
+            <p> Another entry recalls the <a href="http://www.ainewsletter.com/newsletters/aix_0412.htm#dishbrain">rat-brained 
+              fighter pilot</a> I featured last December. According to <a href="http://www.primidi.com/2003/07/09.html#a514">Lab 
+              Cultures Used to Create a Robotic 'Semi-Living Artist'</a>, researchers 
+              at the University of Western Australia and the Georgia Institute 
+              of Technology have created a new class of creative beings - a picture-drawing 
+              robot in Perth, Australia whose movements are controlled by the 
+              brain signals of cultured rat cells in Atlanta. They call it the 
+              semi-living artist. </p>
+            <h3><a name="s">Swarm Intelligence</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://dsp.jpl.nasa.gov/members/payman/swarm/">Swarm 
+                Intelligence</a>, dsp.jpl.nasa.gov/members/payman/swarm/. 
+            </ul>
+            <p></p>
+            <p> Swarm Intelligence uses many simple agents to generate useful 
+              global behaviour via local interactions, no central controller needed. 
+              This site links to researchers, papers, software, and conferences. 
+              An interview with Eric Bonabeau, who has applied swarm intelligence 
+              to routing in telecoms systems, <a href="http://www.openp2p.com/pub/a/p2p/2003/02/21/bonabeau.html">remembers 
+              how</a>: 
+            <blockquote> As a kid I'd always been terrified of insects. I remember 
+              with retrospective anguish my holidays in the south of France, when 
+              picnics turned into nightmarish fights against carnivorous wasps 
+              and ferocious ants raiding my sandwich. Sometimes I wonder how on 
+              earth I could dedicate eight years of my life to social insects. 
+              This large scale psychoanalytic phase transition took place in the 
+              early 1990's in Santa Fe, at the foot of the Rocky Mountains, the 
+              southernmost city before the New Mexican desert takes over. As a 
+              France Telecom R&amp;D engineer, I was an unlikely candidate for 
+              such a radical transformation. </blockquote>
+            <p></p>
+            <p> He continues by explaining that although one social insect may 
+              not be capable of much, a colony can achieve great things. A colony 
+              of ants can collectively find out where the nearest and richest 
+              food source is located, although no individual ant knows. If a food 
+              source is put near an ant nest, separated from it by a bridge with 
+              two branches, the colony is most likely to find the shorter branch. 
+              By laying and following pheremone trails, the ants perform an emergent 
+              computation, a route optimisation. </p>
+            <h3><a name="t">Turing Test for Computational Biology</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://nostoc.stanford.edu/jeff/jeff/mbcs/turing.html">The 
+                Arnon-Calvin Challenge: A "Turing Test" for Computational Systems 
+                Biology</a>, by Jeff Shrager, nostoc.stanford.edu/jeff/jeff/mbcs/turing.html. 
+            </ul>
+            <p></p>
+            <p> Participants in the original Turing test had to converse about 
+              topics such as arithmetic, weather and poetry; Shrager's computer 
+              must match a human in discussing photosynthesis. Amongst the links 
+              on this page are two excellent sites about the original Turing test. 
+            </p>
+            <h3><a name="u"><i>Ubiquity</i></a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.acm.org/ubiquity/interviews/v4i43_russell.html">Stuart 
+                Russell on the Future of Artificial Intelligence</a>, www.acm.org/ubiquity/interviews/v4i43_russell.html. 
+            </ul>
+            <p></p>
+            <p> <i>Ubiquity</i> is ACM's Web-based magazine, dedicated to fostering 
+              critical analysis and in-depth commentary, including book reviews, 
+              on issues relating to the nature, constitution, structure, science, 
+              engineering, cognition, technology, practices and paradigms of the 
+              IT profession. It published the interview with Donald Norman which 
+              I mentioned under <a href="#e">E</a>; and here is an interview with 
+              <a href="http://www.cs.berkeley.edu/~russell/">Stuart Russell</a>, 
+              co-author with Peter Norvig of <i>Artificial Intelligence: A Modern 
+              Approach</i>. He has a crisp definition of AI: 
+            <blockquote> An intelligent system is one whose expected utility is 
+              the highest that can be achieved by any system with the same computational 
+              limitations. </blockquote>
+            <p></p>
+            <h3><a name="v">Viruses in Teaching AI</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.generation5.org/content/2004/bugsViruses.asp">Using 
+                Bugs and Viruses to Teach Artificial Intelligence</a>, by Peter 
+                Cowling, Richard Fennell, Robert Hogg, Gavin King, Paul Rhodes 
+                and Nick Sephton, www.generation5.org/content/2004/bugsViruses.asp. 
+            </ul>
+            <p></p>
+            <p> This is a nice paper on a course where final-year undergraduates 
+              at Bradford University were taught to build AIs for the real-time 
+              Artificial Life environment Terrarium Academic and the board game 
+              Virus. The authors aren't the first to teach via games - a famous 
+              example during the expert systems boom was <a href="http://www2.parc.com/istl/members/stefik/loops.html">Truckin'</a>, 
+              a game developed by Mark Stefik and others at Xerox Parc for teaching 
+              LOOPS. Indeed, I've done this too, with <a href="http://www.j-paine.org/traveller/design.html">Traveller</a> 
+              and <a href="http://www.j-paine.org/teaching_with_agents.html">Eden</a>. 
+              So I'm not surprised to read that the Bradford students very much 
+              liked this style of Artificial Intelligence teaching, and that the 
+              authors hope to make freely available the clients and servers they 
+              built to enable different AIs to compete. </p>
+            <h3><a name="w">Where am I?</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://consc.net/papers/matrix.html">The Matrix as 
+                Metaphysics</a> by David Chalmers, consc.net/papers/matrix.html. 
+            </ul>
+            <p></p>
+            <p> Chalmers wrote this paper for the philosophy section of the official 
+              Matrix website. As such, although most is intended for readers with 
+              no background in philosophy, it's a serious work, relevant to central 
+              issues in epistemology, metaphysics, and the philosophy of mind 
+              and language. </p>
+            <h3><a name="x">XSLT for N Queens</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://www.biglist.com/lists/xsl-list/archives/199906/msg00270.html">Can 
+                solve the N-queens - but can't count!</a> by Oren Ben-Kiki, www.biglist.com/lists/xsl-list/archives/199906/msg00270.html. 
+            </ul>
+            <p></p>
+            <p> <a href="http://www.w3.org/TR/xslt">XSLT</a> is the language developed 
+              for transforming XML documents into other XML documents. It's an 
+              interesting language, being entirely functional; and although we 
+              often think of XML as representing text, it can in fact represent 
+              general trees, so XSLT is a tree-transformation language. Ben-Kiki's 
+              posting links to an XSLT program for solving the N-queens problem 
+              (place N chess queens on an N &times; N square board so no queen 
+              threatens another); follow-ups suggest how XSLT could be improved. 
+            </p>
+            <h3><a name="y">Yachts, Sailing Simulators, and Progressive Parties</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://old.cruisingworld.com/oxgames.htm">Simulated 
+                Sailing</a> by Geoff Oxnam, old.cruisingworld.com/oxgames.htm. 
+              <li><a href="http://www.dcs.st-and.ac.uk/~ipg/AI/Lectures/Constraints3/sld011.htm">Progressive 
+                Piss up at a yacht club</a> by Ian Gent, www.dcs.st-and.ac.uk/~ipg/AI/Lectures/Constraints3/sld011.htm. 
+            </ul>
+            <p></p>
+            <p> There aren't too many AI-related words beginning with Y, so this 
+              letter called for a bit of searching. <a href="http://old.cruisingworld.com/oxgames.htm">Simulated 
+              Sailing</a> reviews sailing simulators. As <a href="http://www.poseysail.com/">Posey 
+              Yacht Design</a>'s pages explain - the review rated their Tactics 
+              and Strategy Simulator highly - even a stupid simulated opponent 
+              might have basic collision avoidance. But more intelligence is needed 
+              to handle matters such as getting clear air at the start, maintaining 
+              it against interference from other boats, and balancing against 
+              expected shifts in the wind. </p>
+            <p> <a href="http://www.dcs.st-and.ac.uk/~ipg/AI/Lectures/Constraints3/sld011.htm">Progressive 
+              Piss up at a yacht club</a> comes from a slide presentation on constraint 
+              programming, using as an example a multi-boat party subject to complicated 
+              constraints on how crews circulate between boats. The objective 
+              is to minimise the number of boats. The slides stress how important 
+              it is to find the right formulation for constraint problems: increasing 
+              the search space may actually speed up search, if it reduces the 
+              number of variables and propagates constraints sooner. </p>
+            <h3><a name="z">Zooland</a></h3>
+            <p> 
+            <ul>
+              <li><a href="http://zooland.alife.org/">Zooland</a>, J&ouml;rg Heitk&ouml;tter's 
+                Artificial Life site, zooland.alife.org/. 
+              <li><a href="http://www.simulation-argument.com/simulation.html">Are 
+                You Living in a Computer Simulation?</a> by Nick Bostrom, www.simulation-argument.com/simulation.html. 
+            </ul>
+            <p></p>
+            <p> With a contents which includes links to <a href="http://www.econ.iastate.edu/tesfatsi/ace.htm">Agent-Based 
+              Computational Economics</a>, the <a href="http://www.alife.org/">International 
+              Society of Artificial Life</a>, and <a href="http://www.channon.net/alastair/">Alastair 
+              Channon's Evolutionary Emergence of Intelligent Behaviours</a>, 
+              not to mention <a href="#l">Algorithmic Chemistry</a>, this is an 
+              excellent starting point for Artificial Life explorations. Though 
+              if you believe the statistical argument in <a href="http://www.simulation-argument.com/simulation.html">Are 
+              You Living in a Computer Simulation?</a>, we're probably already 
+              Artificial Life. </p>
+            <p>&nbsp;</p>
+            <h2><a name="tourist">Welcome to 2030</a></h2>
+            <p> 
+            <blockquote> 
+              <p> Getting back to the history lesson, the prospects for the decade 
+                look mostly medical. Progress is expected to speed up shortly, 
+                as the fundamental patents in genomic engineering begin to expire: 
+                the Free Chromosome Foundation has already published a manifesto 
+                calling for the creation of an intellectual-property free genome 
+                with improved replacements for all commonly defective exons. </p>
+              <p> Experiments in digitizing and running neural wetware under emulation 
+                are well-established; some radical libertarians claim that as 
+                the technology matures, death - with its draconian curtailment 
+                of property and voting rights - will become the biggest civil 
+                rights issue of all. </p>
+              <p> Some commodities are expensive: the price of crude oil has broken 
+                sixty euros a barrel and is edging inexorably up. Other commodities 
+                are cheap: computers, for example - hobbyists print off weird 
+                new processor architectures on their home inkjets; middle aged 
+                folks wipe their backsides with diagnostic paper that can tell 
+                how their VHDL levels are tending. </p>
+              <p> The latest casualties of the march of technological progress 
+                are: the high street clothes shop, the flushing water closet, 
+                the Main Battle Tank, and the first-generation of quantum computers. 
+                New with the decade are cheap enhanced immune systems, brain implants 
+                that hook right into the Chomsky organ and <i>talk</i> to you 
+                using your own inner voice, and widespread public paranoia about 
+                limbic spam. Nanotechnology has shattered into a dozen disjoint 
+                disciplines, and skeptics are predicting that it will all peter 
+                out before long. Philosophers have ceded qualia to engineers, 
+                and the current difficult problem in AI is getting software to 
+                experience embarrassment. </p>
+              <p> Fusion power is still, of course, fifty years away. </p>
+            </blockquote>
+            <p></p>
+            <p> Quoted from <i>Tourist</i> by Charles Stross: originally published 
+              in <i>Isaac Asimov's Science Fiction Magazine</i> for February 2002, 
+              republished 2005 in his novel <i>Accelerando</i>, and downloadable 
+              under the <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en_GB">Creative 
+              Commons License</a> from <a href="http://www.accelerando.org/">www.accelerando.org/</a>. 
+            </p>
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome. Feel free to contact either myself (below) or Jocelyn &lt;popx@j-paine.org&gt; 
+              with comments, thoughts and suggestions.</P>
+            <P>Until next month, </P>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p>Copyright &copy;2005 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved </p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

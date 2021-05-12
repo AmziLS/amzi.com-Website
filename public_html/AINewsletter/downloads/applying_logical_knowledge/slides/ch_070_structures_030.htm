@@ -1,0 +1,60 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Arithmetic Operators</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Arithmetic Operators<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>By themselves mean nothing, just symbols.</p>
+<h2>Only &quot;evaluated&quot; in the context of arithmetic built-in predicates:</h2>
+<ul>
+  <li> is</li>
+  <li>&lt; &nbsp;&gt; &nbsp;&gt;= &nbsp;=&lt; &nbsp;=:=</li>
+</ul>
+<pre>?- X = 3+4.
+X = 3+4.
+   
+?- X is 3+4.
+X = 7.
+   
+?- 3 + 4 =:= 4 + 3.
+yes
+
+?- 3 + X =:= 3 + 4.
+system_error
+506
+Invalid numeric value in evaluable term: evaluating expression in term: 3 + H118
+While executing: =:=/2
+
+?- 3 + X = 3 + 4.
+X = 4 
+yes
+
+?- apple + X = apple + orange.
+X = orange 
+yes</pre>
+<p>You can use them for readability, so rather than:</p>
+<pre>city(lax, 5, 13).</pre>
+<p>You can write</p>
+<pre>city(lax, 5:13).</pre>
+<p>Also good for writing multiple terms in a single write/1 goal:</p>
+<code>write(TO:FROM - CARRIER:FLIGHT_NUMBER).</code> <!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_070_structures_020.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_070_structures_040.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

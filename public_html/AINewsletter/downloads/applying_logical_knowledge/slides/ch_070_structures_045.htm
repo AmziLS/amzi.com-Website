@@ -1,0 +1,47 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Directives</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Directives<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Directives contain Prolog text that is called when the file is consulted, so 
+  they apply to the program. They are often used to define operators for a file.</p>
+<p>To define an arrow <span class="weak">(different from arithmetic >=)</span> 
+  for routes:</p>
+<pre>:- op(500, yfx, =>).
+</pre>
+<p>Now => can be used in the program:</p>
+<pre>find_connect(FROM, TO, FROM => TO) :-
+   flight(FROM, TO, _, _, _).
+find_connect(FROM, TO, FROM => VIA => TO) :-
+   flight(FROM, VIA, _, _, _),
+   flight(VIA, TO, _, _, _).
+</pre>
+<p>And when running:</p>
+<pre>?- find_connect(lax, cvg, R).
+R = lax => cvg ;
+R = lax => bos => cvg ;
+R = lax => den => cvg ;
+no
+</pre>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_070_structures_040.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_070_structures_050.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

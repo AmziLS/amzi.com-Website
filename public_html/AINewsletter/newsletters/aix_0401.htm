@@ -1,0 +1,1066 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->January 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>January 2004</h3>
+            <ul>
+              <li><a href="#errata">Errata</a> - As usual...</li>
+              <li><a href="#eclipse">Eclipse</a> - An IDE for AI tools</li>
+              <li><a href="#fuzzy_logic">Fuzzy Logic</a> - A look at fuzzy logic</li>
+              <ul>
+                <li><a href=#uncertainty">A tool for uncertainty?</a> 
+                <li><a href=#control_systems">A tool for control systems!</a> 
+                <li><a href=#how_it_works">How it works</a> 
+                <li><a href=#single_knob">A single knob shower example</a> 
+                <li><a href=#dual_knobs">A two knob shower example</a> 
+              </ul>
+              <li><a href="#links">Links</a></li>
+            </ul>
+            <h2><a name="errata"></a>Errata</h2>
+            <div> 
+              <p>It appears for the past few months, my dennis@ddj.com e-mail 
+                address has stopped working, so I apologize for ignoring any correspondence 
+                during that time. Seeing as it needs fixing, and our Internet 
+                guru advises using contact sheets rather than publish e-mail addresses 
+                for spammers to pick up, if you don't have my dennis (at) amzi 
+                (dot) com e-mail, use the contact page:</p>
+			  <p><a href="http://www.ainewsletter.com/contact.htm">Dennis contact page</a></p>
+            </div>
+            <p>For those who asked for the prototype code for the disease interaction 
+              system described in the December 2004 newsletter, please ask again. 
+              As before, that's a work in progress and I welcome all feedback 
+              and comments.</p>
+            <p>If you're confused on the newsletters, that was due to vacations 
+              and some question on the December mailing. December went out as 
+              a duplicate in January, and January and February are going out together 
+              now.</p>
+            <p></p>
+            <h2><a name="eclipse"></a>Eclipse</h2>
+            <p>Eclipse ( <a href="http://www.eclipse.org/">http://www.eclipse.org/</a> 
+              ) doesn't really have anything to do with AI. It's an open source 
+              integrated development environment (IDE), sponsored by IBM, that 
+              is designed to support plug-ins for different languages and tools. 
+              Eclipse includes support for projects, smart editors, outliners, 
+              cross referencing tools, builds, source code control, local and 
+              remote debugging, etc. etc.</p>
+            <p>Eclipse is written in Java, and, of course has a plug-in for Java 
+              development which is very popular with the Java community. Other 
+              popular languages are supported plus dozens and dozens of other 
+              tools.</p>
+            <p>That's where it fits into the AI world. All the small vendors and 
+              providers of AI tools can now provide a state-of-the-art, platform-independent, 
+              development environment for their tools. Last month's issue announced 
+              an Eclipse plug-in for Amzi! Prolog. Recently Dr. Ernest J. Friedman-Hill, 
+              the author of JESS, a powerful Java rule engine, has been giving 
+              interviews in which he discusses the advantages Eclipse will bring 
+              to the next JESS release. See the <a href="#links">links</a> for 
+              an interview with the author of JESS as well a full tutorial on 
+              JESS.</p>
+            <h2><a name="fuzzy_logic"></a>Fuzzy Logic</h2>
+            <p>Fuzzy Logic started out as a simple idea that got fuzzier.</p>
+            <p>The simple idea is that, rather than representing boolean variables 
+              with crisp integer values, 1 for true and 0 for false, a real number 
+              ranging from 0.0 to 1.0 could be used. It would represent a degree 
+              of truth rather than absolute truth or falsehood. Lotfi Zadeh, the 
+              creator of modern fuzzy logic, went on to define what all the various 
+              logical operations, like ands and ors, mean for fuzzy variables.</p>
+            <p>The idea gets fuzzy in two dimensions. One, the implementation 
+              details get nastier than one might expect; and two, the applicability 
+              is not what you might expect.</p>
+            <h3><a name="uncertainty"></a>A Tool for Uncertainty?</h3>
+            <p>At first glance, fuzzy logic seems like an interesting alternative 
+              to certainty factors and Bayesian probability for representing uncertainty 
+              in rule-based systems, and that is certainly the possibility that 
+              generated a lot of early excitement about fuzzy logic. But when 
+              you look at a classic kind of uncertain rule:</p>
+            <p><i>if symptom is runny_nose then disease is cold</i></p>
+            <p>it is not so clear how fuzzy logic would apply. The symptom might 
+              have a fuzzy value, and then the rule could have a fuzzy value and 
+              the reasoning engine could come up with a fuzzy value for <i>disease 
+              is cold</i>. But this has the same type of ad-hoc feel to it that 
+              certainty factors have. And probabilities seem like a better way 
+              to represent the result anyway.</p>
+            <h3><a name="control_systems"></a>A Tool for Control Systems!</h3>
+            <p>Whereas it seems difficult and arbitrary to define fuzzy values 
+              for something like runny-nosedness, fuzzy variables can be used 
+              to make it easier to write rules about attributes that have well-defined 
+              ranges of values. For example:</p>
+            <p><i>if the water_temperature is hot, turn the control right.</i></p>
+            <p>In this case, unlike with the runny nose, there is a well defined 
+              number for water temperature, and a well defined number for how 
+              far the control might be turned. Rather than write some complex 
+              formula that describes the relationship between the two, the use 
+              of fuzzy variables, in this case <b>hot</b> and <b>right</b>, lets 
+              us express the relationship in a very readable manner.</p>
+            <p>Where does the fuzziness come in? <b>hot</b> and <b>right</b> represent 
+              a degree of hotness and rightness. So the rule captures an infinite 
+              range of possibilities. If the water has a high degree of hotness, 
+              then the knob will be turned a high degree of rightness; and if 
+              there is a small degree of hotness, then only a small degree of 
+              rightness.</p>
+            <p>In other words, if we can come up with a way to define <b>hot</b> 
+              and <b>right</b>, and relate them to real numbers like temperature 
+              and degrees of rotation of a control knob, and a way to interpret 
+              a rule like the one above, then we can come up with a very natural 
+              way to write the rules for a control system.</p>
+            <p>The example rule might come from a shower control system. In a 
+              shower with a single knob that is hot to the left and cold to the 
+              right a human operator might express expertise in running the shower 
+              like this:</p>
+            <p><i>if the water_temperature is hot then turn the control right.<br>
+              if the water_temperature is just_right then turn the control none.<br>
+              if the water_temperature is cold then turn the control left.</i></p>
+            <p>Using fuzzy logic, we could build a rule-based control system for 
+              the shower that used rules just like these, without having to resort 
+              to a more mathematical approach. The system would iterate to a solution, 
+              measuring the temperature, rotating the knob, checking the new temperature, 
+              adjusting further, until the desired temperature is reached.</p>
+            <p>Does that work? Yes, and surprisingly well.</p>
+            <p>But isn't this really nothing more than interpolation, finding 
+              a control motion based on a temperature gradient? Well, yes but 
+              the interpolation happens at the beginning and end, when the actual 
+              temperature is changed to a fuzzy value for <b>hot</b>, and when 
+              the fuzzy value of <b>right</b> is changed back to a degree of rotation. 
+              In the middle the rules for propagating and combining fuzzy values 
+              take over.</p>
+            <p>This indirection has a powerful effect. While the shower is a simple 
+              example, the rules can become very complex, taking into account 
+              many factors. A control engineer doesn't have to worry about the 
+              mathematical interactions of many different variables and the equations 
+              that govern them, but simply the translation of each individually 
+              to and from fuzzy variables. The complex interaction between the 
+              variables is dealt with in the uniform domain of the rules for fuzzy 
+              logic.</p>
+            <p>Fuzzy logic is used in numerous real-world control systems, taking 
+              complex inputs and using them to adjust the behavior of a system 
+              so that it very quickly reaches an optimal state. Examples include 
+              braking mechanisms for high speed trains, and docking logic for 
+              bringing a ferry smoothly next to a pier. The fuzzyTECH web site 
+              in the links has a number of excellent application stories.</p>
+            <p>It seems like a fuzzy control system would be useful for building 
+              a soccer playing robot, so its probably no coincidence that one 
+              of the online tutorials on fuzzy logic comes from the Seattle Robotics 
+              Society.</p>
+            <h3><a name="how_it_works"></a>How it Works</h3>
+            <p>Let's look at the example of a control system for a shower in more 
+              detail. It will take water temperature as an input, and output the 
+              degree of rotation of the control knob.</p>
+            <p>To implement a fuzzy controller, we need to define fuzzy sets for 
+              each of the variables. This is where the terminology gets a little 
+              confusing. We have a domain variable, say temperature, and then 
+              a number of fuzzy sets, like cold, just_right and hot. There could 
+              be more, such as perfect, very_hot and the like. But three seems 
+              like a good number, so for the shower we can use:</p>
+            <p><b>input variable</b>: water_temperature<br>
+              <b>fuzzy sets:</b> cold, just_right, hot</p>
+            <p><b>output variable:</b> rotate<br>
+              <b>fuzzy sets:</b> left, none, right</p>
+            <p>Having chosen the sets, the next step is to define them. A fuzzy 
+              set definition is a function, often just a straight line, that relates 
+              a crisp value to a fuzzy value.</p>
+            <h4><img src="2004_02_fuzzy2.gif" width="360" height="234" align="right">Temperature 
+              In</h4>
+            <p>For the shower (yes, we wrote some code and did some experiments 
+              with the shower for the Code Corner which will be in the February 
+              2004 newsletter), we decided that 100 degrees is the ideal temperature. 
+              Given this, the variables <b>hot</b> and <b>cold</b> would have 
+              fuzzy values of 0.0 when the temperature is 100, and values of 1.0 
+              when the temperature is 20 or more degrees different.</p>
+            <p>The variable <b>just_right</b> will have a peak of 1.0 at 100, 
+              and slope off to 0.0 for temperatures 10 degrees on either side. 
+              These fuzzy set definitions are illustrated in the diagram to the 
+              right.</p>
+            <h4><img src="2004_02_fuzzy3.gif" width="360" height="234" align="left">Knob 
+              Rotation Out</h4>
+            <p>The output is the degrees of rotation of the knob, which can be 
+              positioned from from -90 degrees on the left, for hottest, to +90 
+              degrees on the right for coldest. The output rotation is how far 
+              to rotate the knob on each iteration.</p>
+            <p>We chose fuzzy set definitions similar to the temperature ones 
+              that allow for a maximum rotation of 30 degrees in either direction. 
+            </p>
+            <h4>Importance of Set Definitions</h4>
+            <p>Do these definitions seem arbitrary? Why not move the boundaries 
+              around, or even change the curves from straight lines to more logarithmic 
+              curves? Well yes they are somewhat arbitrary, but the choices are 
+              not as important as you might think. As long as we've got the target 
+              temperature in the middle, and somewhat reasonable fuzzy sets, the 
+              system will converge relatively efficiently on a just right shower 
+              temperature.</p>
+            <p>Fuzzy systems are very robust, which is why you can add a number 
+              of fuzzy variables and still get good performance. But the systems 
+              aren't completely indifferent to the input set definitions. My first 
+              choice of knob rotation sets led to a system that over controlled 
+              the shower, making it too hot, too cold, too hot, etc. But my second 
+              set of choices worked just fine.</p>
+            <p>Illustrating the arbitrariness of it, I just now, while drawing 
+              the diagrams, changed the system to use +/- 15 for the <b>none</b> 
+              fuzzy set so I wouldn't have to redraw the lines in the pictures. 
+              It works just as well as the +/- 10 I originally had.</p>
+            <p>For some systems getting absolute optimal performance is more important 
+              than making it easy to draw the diagrams for an article, and in 
+              those cases it is desireable to tune the fuzzy set definitions. 
+              What is the best way to tune the sets in an application with many 
+              inputs and outputs? It turns our neural nets are excellent tools 
+              for tuning fuzzy controllers. We'll leave that for a future newsletter, 
+              but some of the articles in the links discuss this, and the fuzzyTECH 
+              software supports it.</p>
+            <h4>Fuzzy Control Loop</h4>
+            <p>We now have:</p>
+            <ul>
+              <li> an input variable and its fuzzy sets,</li>
+              <li>an output variable and its fuzzy sets, and</li>
+              <li>a set of rules relating the fuzzy values of the input and output 
+                fuzzy sets.</li>
+            </ul>
+            <p>A fuzzy control system goes through a loop:</p>
+            <ul>
+              <li>convert input variables to fuzzy membership values for each 
+                set, called fuzzification,</li>
+              <li>use the rules to derive fuzzy membership values for the output 
+                variable's fuzzy sets, and</li>
+              <li>convert the output fuzzy set membership values to a crisp output 
+                variable, called de-fuzzification.</li>
+            </ul>
+            <h4>Fuzzification</h4>
+            <p>Fuzzification is easy, as it is just picking values from the fuzzy 
+              set definitions. You can eyeball the values from the graphs and 
+              see, for example, that an input temperature of 96 degrees would 
+              be a member of the fuzzy sets defined on temperature to the following 
+              degrees:</p>
+            <ul>
+              <li><b>cold</b> 0.2</li>
+              <li><b>just_right</b> 0.6</li>
+              <li><b>hot</b> 0.0</li>
+            </ul>
+            <p>In other words, 96 is mostly <b>just_right</b> but is a little 
+              <b>cold</b> as well. It's not <b>hot</b> at all.</p>
+            <h4>Apply Rules</h4>
+            <p>The rules relate the input fuzzy set values to the output fuzzy 
+              sets. The rules for the single knob shower are simple, and directly 
+              relate the three fuzzy sets for control to the corresponding sets 
+              for temperature.</p>
+            <p><i>if the water_temperature is hot then turn the control right.<br>
+              if the water_temperature is just_right then turn the control none.<br>
+              if the water_temperature is cold then turn the control left.</i></p>
+            <p>The rules for a fuzzy control system can be much more complex, 
+              using boolean operations as defined for fuzzy sets, and dealing 
+              with interrelations between a number of variables. But for this 
+              simple system and the example input temperature of 96, we get output 
+              fuzzy sets like the input ones.</p>
+            <ul>
+              <li><b>left</b> 0.2</li>
+              <li><b>none</b> 0.6</li>
+              <li><b>right</b> 0.0</li>
+            </ul>
+            <h4>De-Fuzzification (a miracle occurs)</h4>
+            <p>Have you ever seen that cartoon where the scientist has a blackboard 
+              full of equations and a little circle in the lower right where he 
+              explains &quot;and now a miracle occurs&quot;? That's what happens 
+              now for fuzzy logic.</p>
+            <p>For example one 250+ page book on fuzzy logic with all sorts of 
+              details, pictures and equations, when it gets to this step, deals 
+              with it in two sentences which basically say: calculate the centroids 
+              of each modified membership curve and take the weighted average.</p>
+            <p>An Internet search for centroids and fuzzy logic yields lots of 
+              discussion groups where people are trying to figure out exactly 
+              what that means, and very little description.</p>
+            <p>If you think about the problem of de-fuzzification you'll realize 
+              there isn't an obvious best way to do it. We have fuzzy set values 
+              of 0.2, 0.6, and 0.0. So clearly we want to move the contol mostly 
+              <b>none</b>, but a little bit <b>left</b>. This intuitively corresponds 
+              to our sense that we're getting close to the ideal temperature of 
+              100 and so we need just a small adjustment towards hotter, which 
+              is to the left. But what computation can we program in a computer 
+              that can achieve this intuitive feel?</p>
+            <p>It turns out there are lots of ways to do it, and, as with other 
+              aspects of fuzzy logic, any given method is a bit arbitrary. But 
+              the most common method, as the book said, is the weighted average 
+              of the centroids. A centroid is the center of gravity of a shape. 
+              The shapes are derived by clipping off the tops of fuzzy sets at 
+              the membership value.</p>
+            <p>The solid black areas in the two diagrams below show the shapes 
+              that result from clipping the left and none fuzzy sets at their 
+              respective values of 0.2 and 0.6.</p>
+            <p><img src="2004_02_fuzzy4.gif" width="360" height="234"><img src="2004_02_fuzzy5.gif" width="360" height="234"></p>
+            <p>Each of these shapes has a center of gravity and an area. The center 
+              of gravity of the <b>left</b> area is a bit left of the -15 degree 
+              point. The center of gravity of the <b>none</b> area is 0. These 
+              two center of gravity are weighted by the area of each, and then 
+              averaged. The result is an answer that will be closer to the <b>none</b> 
+              center of gravity than the <b>left</b>'s.</p>
+            <p>The math yields a weighted average of -4.93, a small change toward 
+              hotter, just as we would expect.</p>
+            <p>So here's some math that can be used for de-fuzzification that 
+              provides the desired kind of feel. Finding the actual formulas requires 
+              more research, and was partially responsible for delays in this 
+              newsletter. The details are described in the Code Corner of the 
+              February 2004 newsletter which describes the code used for these 
+              fuzzy logic experiments. </p>
+            <h3><a name="single_knob"></a>The Single Knob Shower</h3>
+            <p>To test the idea we simulated a single knob shower, with an initial 
+              setting of the dial at 50 degrees. All the way left was pure hot 
+              water at 140 degrees, and all the way right was pure cold at 50. 
+              So the perfect shower temperature would be with the knob turned 
+              to the left somewhat.</p>
+            <p>The test system was also programmed to only adjust the shower when 
+              the <b>water_temperature</b> was less than 0.8 <b>just_right</b>. 
+              In other words, it stopped adjusting when it got close enough.</p>
+            <p>One last wrinkle, the simulation was set so someone would flush 
+              the toilet while the shower was on, causing a sudden drop in cold 
+              water. When the toilet had refilled, the cold water was available 
+              again causing a second disruption in temperature. These changes 
+              are seen in iterations 11, where the temperature goes up suddenly, 
+              and 20, where the temperature drops.</p>
+            <table width="75%" border="1" cellpadding="3">
+              <tr> 
+                <td height="28"> 
+                  <p align="right">Iteration</p>
+                </td>
+                <td height="28"> 
+                  <div align="right">External Events</div>
+                </td>
+                <td height="28"> 
+                  <div align="right">Control Angle</div>
+                </td>
+                <td height="28"> 
+                  <div align="right">Temperature</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">0</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">50.00</div>
+                </td>
+                <td> 
+                  <div align="right">70.00</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">1</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">30.00</div>
+                </td>
+                <td> 
+                  <div align="right">80.00</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">2</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">10.00</div>
+                </td>
+                <td> 
+                  <div align="right">90.00</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">3</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">-8.33</div>
+                </td>
+                <td> 
+                  <div align="right">99.17</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">4-10</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">-8.33</div>
+                </td>
+                <td> 
+                  <div align="right">99.17</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">11</div>
+                </td>
+                <td> 
+                  <div align="right">flush</div>
+                </td>
+                <td> 
+                  <div align="right">-8.33</div>
+                </td>
+                <td> 
+                  <div align="right">109.17</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">12</div>
+                </td>
+                <td> 
+                  <div align="right">flush</div>
+                </td>
+                <td> 
+                  <div align="right">6.43</div>
+                </td>
+                <td> 
+                  <div align="right">101.78</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">13-19</div>
+                </td>
+                <td> 
+                  <div align="right">flush</div>
+                </td>
+                <td> 
+                  <div align="right">6.43</div>
+                </td>
+                <td> 
+                  <div align="right">101.78</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">20</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">6.43</div>
+                </td>
+                <td> 
+                  <div align="right">91.78</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">21</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">-5.46</div>
+                </td>
+                <td> 
+                  <div align="right">97.73</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">22</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">-8.37</div>
+                </td>
+                <td> 
+                  <div align="right">99.18</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">23-</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">-8.37</div>
+                </td>
+                <td> 
+                  <div align="right">99.18</div>
+                </td>
+              </tr>
+            </table>
+            <p>Notice that in the beginning it took four iterations to reach a 
+              <b>just_right</b> temperature. The first three roations were 20 
+              degrees, which is less than the maximum 30 degrees. This is because 
+              of the mysterious de-fuzzification algorithm using centroids. A 
+              full left turn is defuzzified at the center of gravity of the left 
+              fuzzy set, which is -20 degrees.</p>
+            <p>By adding extra fuzzy sets, such as very cold and very hot and 
+              alot left and alot right, we can get the system to use more dramatic 
+              changes when a larger adjustment is needed. We can also define and 
+              use the modifiers &quot;very&quot; and &quot;alot&quot; and make 
+              them part of the fuzzy set definitions. Typically &quot;very&quot; 
+              is defined as the square of a fuzzy value, so, for example, 0.8 
+              cold would be 0.64 very cold. That is, a temperature is not as &quot;very 
+              cold&quot; as it is &quot;cold&quot;.</p>
+            <p>Notice that the ten degree changes in temperature caused by first 
+              flushing a toilet, and then having the toilet finish filling, were 
+              both accomodated for in one or two iterations.</p>
+            <h3><a name="dual_knobs"></a>Two Knob Shower</h3>
+            <p>We did a second shower system for a shower with two knobs, one 
+              for hot and one for cold, and added the constraint that we would 
+              like to get a total flow of 2.5 gallons/minute.</p>
+            <p>This meant having two input variables, water_temperature and water_flow, 
+              and two outputs for the hot and cold controls. The outputs were 
+              expressed in terms of open/close instead of left/right. Because 
+              there were two controls, we needed two sets of rules, one for each 
+              control.</p>
+            <p><i>if temperature is hot then hot_control close<br>
+              if temperature is just_right than hot_control none<br>
+              if temperature is cold then hot_control open<br>
+              if flow is high then hot_control close<br>
+              if flow is just_right then hot_control none<br>
+              if flow is low then hot_control open</i></p>
+			  
+            <p>We used separate rules for the different conditions above. Fewer 
+              rules using fuzzy boolean operations are also possible. Below we 
+              use an equivalent set of rules that make use of fuzzy boolean operators.</p>
+            <p><i>if temperature is hot or flow is low then cold_control open<br>
+              if temperature is just_right or flow is just_right then cold_control 
+              none<br>
+              if temperature is cold or flow is high then cold_control close<br>
+              </i></p>
+            <p>This slightly more complex system shows the power of fuzzy control 
+              systems. Adding definitions for flow and the two controls as we 
+              did for the single control shower, and the rules exactly as written 
+              above, we had a system that very quickly dealt with the sometimes 
+              contradictory requirements of flow and temperature to produce just_right 
+              temperature and flow.</p>
+            <p>No tuning was necessary, and the results here are those from the 
+              first try. This illustrates the tremendous power of fuzzy control 
+              systems. With relatively little work a complex system with good 
+              performance can be implemented. Compare this approach to trying 
+              to derive a more mathematical one for adjusting both flow and temperature 
+              with the two knobs.</p>
+            <p>Here are the results, and, as with the single knob shower, we introduced 
+              a flush of the toilet that, in this case, removed cold water from 
+              the system and reduced the flow. See iterations 31 and 40 for the 
+              effects. </p>
+            <table width="75%" border="1" cellpadding="3">
+              <tr> 
+                <td> 
+                  <div align="right">Iteration</div>
+                </td>
+                <td> 
+                  <div align="right">External Event</div>
+                </td>
+                <td> 
+                  <div align="right">Hot Position</div>
+                </td>
+                <td> 
+                  <div align="right">Cold Position</div>
+                </td>
+                <td> 
+                  <div align="right">Temperature</div>
+                </td>
+                <td> 
+                  <div align="right">Flow</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">0</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">30.00</div>
+                </td>
+                <td> 
+                  <div align="right">30.00</div>
+                </td>
+                <td> 
+                  <div align="right">95.00</div>
+                </td>
+                <td> 
+                  <div align="right">1.20</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">1</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">39.69</div>
+                </td>
+                <td> 
+                  <div align="right">34.65</div>
+                </td>
+                <td> 
+                  <div align="right">98.05</div>
+                </td>
+                <td> 
+                  <div align="right">1.48</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">2</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">48.69</div>
+                </td>
+                <td> 
+                  <div align="right">41.49</div>
+                </td>
+                <td> 
+                  <div align="right">98.59</div>
+                </td>
+                <td> 
+                  <div align="right">1.80</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">3</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">57.05</div>
+                </td>
+                <td> 
+                  <div align="right">48.19</div>
+                </td>
+                <td> 
+                  <div align="right">98.78</div>
+                </td>
+                <td> 
+                  <div align="right">2.10</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">4</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">63.70</div>
+                </td>
+                <td> 
+                  <div align="right">53.23</div>
+                </td>
+                <td> 
+                  <div align="right">99.02</div>
+                </td>
+                <td> 
+                  <div align="right">2.34</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">5</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">67.73</div>
+                </td>
+                <td> 
+                  <div align="right">55.74</div>
+                </td>
+                <td> 
+                  <div align="right">99.37</div>
+                </td>
+                <td> 
+                  <div align="right">2.47</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">6-30</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">67.73</div>
+                </td>
+                <td> 
+                  <div align="right">55.74</div>
+                </td>
+                <td> 
+                  <div align="right">99.37</div>
+                </td>
+                <td> 
+                  <div align="right">2.47</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">31</div>
+                </td>
+                <td> 
+                  <div align="right">flush</div>
+                </td>
+                <td> 
+                  <div align="right">67.73</div>
+                </td>
+                <td> 
+                  <div align="right">55.74</div>
+                </td>
+                <td> 
+                  <div align="right">108.91</div>
+                </td>
+                <td> 
+                  <div align="right">2.07</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">32</div>
+                </td>
+                <td> 
+                  <div align="right">flush</div>
+                </td>
+                <td> 
+                  <div align="right">67.57</div>
+                </td>
+                <td> 
+                  <div align="right">65.86</div>
+                </td>
+                <td> 
+                  <div align="right">103.61</div>
+                </td>
+                <td> 
+                  <div align="right">2.27</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">33</div>
+                </td>
+                <td> 
+                  <div align="right">flush</div>
+                </td>
+                <td> 
+                  <div align="right">68.40</div>
+                </td>
+                <td> 
+                  <div align="right">71.24</div>
+                </td>
+                <td> 
+                  <div align="right">101.45</div>
+                </td>
+                <td> 
+                  <div align="right">2.39</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">34</div>
+                </td>
+                <td> 
+                  <div align="right">flush</div>
+                </td>
+                <td> 
+                  <div align="right">69.22</div>
+                </td>
+                <td> 
+                  <div align="right">74.32</div>
+                </td>
+                <td> 
+                  <div align="right">100.42</div>
+                </td>
+                <td> 
+                  <div align="right">2.47</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">35-39</div>
+                </td>
+                <td> 
+                  <div align="right">flush</div>
+                </td>
+                <td> 
+                  <div align="right">69.22</div>
+                </td>
+                <td> 
+                  <div align="right">74.32</div>
+                </td>
+                <td> 
+                  <div align="right">100.42</div>
+                </td>
+                <td> 
+                  <div align="right">2.47</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">40</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">69.22</div>
+                </td>
+                <td> 
+                  <div align="right">74.32</div>
+                </td>
+                <td> 
+                  <div align="right">93.34</div>
+                </td>
+                <td> 
+                  <div align="right">2.87</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">41</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">68.72</div>
+                </td>
+                <td> 
+                  <div align="right">66.34</div>
+                </td>
+                <td> 
+                  <div align="right">95.79</div>
+                </td>
+                <td> 
+                  <div align="right">2.70</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">42</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">68.87</div>
+                </td>
+                <td> 
+                  <div align="right">61.13</div>
+                </td>
+                <td> 
+                  <div align="right">97.67</div>
+                </td>
+                <td> 
+                  <div align="right">2.60</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">43</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">69.22</div>
+                </td>
+                <td> 
+                  <div align="right">57.82</div>
+                </td>
+                <td> 
+                  <div align="right">99.03</div>
+                </td>
+                <td> 
+                  <div align="right">2.54</div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="right">44-</div>
+                </td>
+                <td> 
+                  <div align="right"></div>
+                </td>
+                <td> 
+                  <div align="right">69.22</div>
+                </td>
+                <td> 
+                  <div align="right">57.82</div>
+                </td>
+                <td> 
+                  <div align="right">99.03</div>
+                </td>
+                <td> 
+                  <div align="right">2.54</div>
+                </td>
+              </tr>
+            </table>
+            <p>The more complex system takes three or four iterations to get to 
+              just_right to a degree of 0.8 for both flow and temperature.</p>
+            <h3>Serotonin Syndrome</h3>
+            <p>If you remember, the topic of fuzzy logic began with a search for 
+              a way to represent the uncertainty in the rules describing the serotonin 
+              syndrome. At first fuzzy logic good, but then it seemed more useful 
+              for control systems. But wait, isn't the description of the serotonin 
+              syndrome really one of a control system? There are cells emitting 
+              serotonin and the blood stream reacting to the serotonin, and these 
+              are controlled by inputs of various drugs. Maybe a fuzzy model of 
+              the control mechanism of serotonin is exactly what the doctor ordered.</p>
+            <h2><a name="links"></a>Links</h2>
+            <p><a href="http://www.austinlinks.com/Fuzzy/tutorial.html">http://ai-depot.com</a> 
+              - The AI Depot is a site loaded with tutorials, essays and other 
+              goodies related to AI.</p>
+            <p><a href="http://www.doc.ic.ac.uk/%7End/surprise_96/journal/vol4/sbaa/report.html">http://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol4/sbaa/report.html</a> 
+              - Shahariz Abdul Aziz and Jeyakody Parthiban tutorial on fuzzy sets, 
+              rules and conrol systems, with an interesting case study dealing 
+              with traffic lights. It contains, at the end, a list of other tutorials 
+              on fuzzy logic.</p>
+            <p><a href="http://www.austinlinks.com/Fuzzy/tutorial.html">http://www.austinlinks.com/Fuzzy/tutorial.html</a> 
+              - James F Brule's tutorial on fuzzy systems.</p>
+            <p><a href="http://www.seattlerobotics.org/encoder/mar98/fuz/flindex.html">http://www.seattlerobotics.org/encoder/mar98/fuz/flindex.html</a> 
+              - The Seattle Robotics Society's tutorial on fuzzy logic.</p>
+            <p><a href="http://www.depi.itch.edu.mx/apacheco/ai/fuzzy/">http://www.depi.itch.edu.mx/apacheco/ai/fuzzy/</a> 
+              - Prof. Al Pacheco's programs and examples implementing fuzzy logic.<br>
+            </p>
+            <p><a href="http://www.karlscalculus.org/index.shtml">http://www.karlscalculus.org/index.shtml</a> 
+              - Karl Hahn's excellent calculus tutor, without which I couldn't 
+              have cleared the calculus cobwebs from my head.</p>
+            <p><a href="http://www.quickmath.com/">http://www.quickmath.com/</a> 
+              - A fantastic site that Karl Hahn mentioned that does integrals 
+              and other math functions for you.<br>
+            </p>
+            <p><a href="http://www.fuzzytech.com/">http://www.fuzzytech.com/</a> 
+              - fuzzyTECH's home page, a commercial vendor of fuzzy and neuro-fuzzy 
+              tools. It includes a number of excellent application stories.</p>
+            <p><a href="http://www.cs.vu.nl/%7Eksprac/2002/doc/Jess60/index.html">http://www.cs.vu.nl/~ksprac/2002/doc/Jess60/index.html</a> 
+              - A tutorial on JESS, including some good material on the Rete algorithm.</p>
+            <p><a href="http://www.devx.com/Java/Article/17651">http://www.devx.com/Java/Article/17651</a> 
+              - An interview with Dr. Ernest J. Friedman-Hill, the author of JESS, 
+              which discusses, among other things, the upcoming Eclipse plug-in.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

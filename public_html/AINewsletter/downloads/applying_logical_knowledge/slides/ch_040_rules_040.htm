@@ -1,0 +1,66 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Rule Clauses</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Rule Clauses<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Rules can have any number of clauses, and call other rules.</p>
+
+<pre>cost1(FROM, TO, delta, COST) :-
+   distance(FROM, TO, DIST),
+   DIST < 20,
+   COST is 10 * DIST.
+cost1(FROM, TO, delta, COST) :-
+   distance(FROM, TO, DIST),
+   DIST >= 20,
+   COST is 10 * DIST + 100.
+cost1(FROM, TO, united, COST) :-
+   distance(FROM, TO, DIST),
+   COST is 8 * DIST.
+
+</pre>
+<p><em>NOTE</em> - rules can fail immediately because the head doesn't unify <span class="weak">(carrier 
+  is delta or united)</span>, or because a goal in the rule fails <span class="weak">(distance 
+  &gt; or &lt; 20)</span>.</p>
+<pre>?- cost1(lax,den,delta,X).
+
+X = 104.403 
+
+yes
+?- cost1(lax,den,C,X).
+
+C = delta
+X = 104.403 ;
+
+C = united
+X = 83.5225 ;
+no
+?- cost1(lax,bos,C,X).
+
+C = delta
+X = 517.732 ;
+
+C = united
+X = 334.186 ;
+no</pre>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_040_rules_030.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_040_rules_045.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>ARulesXL Newsletter, 15 November 2005</title>
+<style type="text/css">
+<!--
+-->
+</style>
+</head>
+
+<body>
+<h1><a href="http://www.arulesxl.com"><img src="http://www.arulesxl.com/images/logo_shiprock2.gif" width="150" height="115" border="0" align="middle" /></a> <b><font face="Arial, Helvetica, sans-serif">ARulesXL <font color="#000099">Newsletter</font></font></b></h1>
+<h3>15 November 2005 </h3>
+<h2>Contents</h2>
+<ul>
+  <li><a href="#pwc">A Major Accounting Firm Completes Equity Compensation Application</a></li>
+  <li><a href="#vaccine">Vaccination Logic to be Implemented in ARulesXL</a></li>
+  <li><a href="#reactions">Early Reactions</a></li>
+  <li><a href="#directions">ARulesXL Directions</a></li>
+  <li><a href="#licensing">Licensing &amp; Evaluation</a></li>
+</ul>
+<hr />
+<h2><a name="pwc" id="pwc"></a>A Major Accounting Firm  Completes Equity Compensation Application</h2>
+<p>A major accounting firm's  equity compensation practice successfully 
+  completed a financial modeling application and were very pleased 
+  with   the results. They made heavy use of modular rule sets to model 
+  the tax and   accounting rules that govern various types of stock and other 
+  equity-based   compensation plans.<br />
+  <br />
+  The biggest advantage ARulesXL&#8482; provided was for peer-reviews. They were 
+  able to sit in a conference room with the spreadsheet projected on the 
+  wall and easily read and talk about the rules with subject matter experts, 
+  without having to laboriously trace through complex interrelated Excel&reg; functions.<br />
+  <br />
+  This made the development process both faster and more reliable.<br />
+  <br />
+  The second big advantage for them is the reusability of the rules. They 
+  now have a body of reviewable and extendable knowledge encoded in ARulesXL 
+  that can be reapplied for other customers and applications.<br />
+  <br />
+  Third on their list of advantages was that the rules are self-documenting. 
+One can review and audit the rules simply by reading them.</p>
+<hr />
+<h2><a name="vaccine" id="vaccine"></a>Vaccination Logic to be Implemented in ARulesXL</h2>
+<p><a href="http://www.visualdatallc.com"><img src="http://www.amzi.com/customers/visualdata_logo.gif" border="0" align="right" /></a>Office Practicum&reg; is a software package from Visual Data used for running a pediatric office.  Included in the package is the logic that encodes the rules for which vaccinations a child is due for and when.  These rules encode the complexity of vaccination logic that covers cases such as interactions between different vaccines, spacing of doses, use of combination vaccines, and dealing with improperly sequenced previous doses.</p>
+<p>The current rule-based implementation of the vaccination logic will be converted to ARulesXL to provide for a much easier to read, update and audit version of the system.  The implementation will take advantage of Excel's user interface to display reports on a child's vaccination; and take advantage of Excel's database interfaces to run regression tests using a test database.</p>
+<p>Excel and ARulesXL will be used as the development and test environment for the vaccination logic, but the rules will be exported and deployed under the full Office Practicum application which is written in Delphi.  This will require features that are being included in a future release of ARulesXL.</p><hr/>
+<h2><a name="reactions" id="reactions"></a>Early Reactions</h2>
+<p>We're very pleased with the reactions from those currently evaluating the software.  In general they've found the system easy to get started with and, in some cases, have already built significant rule sets and are excited about the potential applications.</p>
+<p>Some users are already asking for more features, such as support for configuration applications and the ability to export the rules for use in a different application environment.  Both of these will be available in a future release.  (see Directions below)</p>
+<p>We have had a few users report difficulties with the installation program.  These appear to be environment related and we would appreciate any reports of such difficulties including details on the Windows and Excel versions you are using.  We have created a new version of the install procedure and are continuing to work on this problem.</p>
+<p>We encourage our users to use the support forum at <a href="http://forum.arulesxl.com">forum.arulesxl.com</a>.  We certainly don't mind providing e-mail support, but many of you have had questions that would be of interest to other evaluators and customers as well. </p><hr/>
+<h2><a name="directions" id="directions"></a>ARulesXL Directions</h2>
+<p>The initial release of ARulesXL can be used for a variety of applications, as illustrated by the examples in the tutorial.  But ARulesXL is a new product and we've got a number of directions for future development.</p>
+<h4>Multi-Dimensional Arrays and Spreadsheet Analysis</h4>
+<p><a href="http://www.arulesxl.com/news/tables.htm"><img src="http://www.arulesxl.com/news/tables_tiny.gif" width="350" height="251" border="0" align="right" /></a>The first is the addition of features that make it easier to work with arrays.  This includes the ability to import data from spreadsheet tables into multi-dimensional ARulesXL arrays.  So, for example, a spreadsheet that has quarterly income and expenses in tables for each of a number of regions and years can be imported into ARulesXL and dealt with as a single four dimensional array (click on screen shot).</p>
+<p>This combined with the existing capability of being able to write general rules using pattern matching variables lets one write rules that search for patterns in the data, making it easy to find, for example, regions that produced less income in a quarter this year than in the corresponding quarter last year.</p>
+<p>A new FINDALL function allows for the construction of arrays for output.  It can be used in spreadsheet analysis, using the income statements for example, to construct a table indicating regional performance for all regions and years.</p>
+<p>Anyone interested in helping us test a pre-release version of the software that includes a sample profit &amp; loss analysis application, please <a href="http://www.arulesxl.com/company/contact.htm">contact us</a>.</p>
+<h4>Logical Relation Rules</h4>
+<p>Logical relation rules are similar to database canned queries; and are also similar to the types of rules employed in logic programming.  Whereas the normal ARulesXL rules deal with properties and values, logic relation rules make use of pattern-matching variables to represent relationships between entities.</p>
+<p>Most applications will not require logic relation rules, but for those that do they provide a powerful tool for representing recursive concepts in a rule set.  For example, the vaccination logic application requires walking a hierarchy of vaccine names and types.  That is easily expressed in a recursive logic relation rule.</p>
+<h4>Configuration Applications</h4>
+<p><a href="http://www.arulesxl.com/news/config.htm"><img src="http://www.arulesxl.com/news/config_tiny.gif" width="350" height="241" border="0" align="right" /></a>Configuration applications are, in general, more complex than most rule-based applications.  Typically, rule-based applications have, as a goal, the finding of a single or small number of values.  Examples include pricing, diagnosis, product selection, risk analysis, report generation, etc.</p>
+<p>By contrast, configuration applications require the dynamic construction of a complex data structure representing the final configuration.  (Configuration, planning and similar applications are often categorized as synthesis applications, as opposed to analysis applications described in the previous paragraph.)</p>
+<p>The new features in ARulesXL support configuration (and similar) applications.  The current object/property model allows for the representation of configuration rules and can express concepts such as the properties of an assembly and the list of sub-assemblies required for that assembly.  Those in turn are represented by their own assembly rules etc. Click on screen shot to see an example. </p>
+<p>ARulesXL allows that configuration knowledge to be rule based, so, for example, the sub assemblies in a particular configuration can be determined dynamically based on the user inputs.</p>
+<p>The use of FINDALL and pattern-matching variables allows for the dynamic construction of arrays that can be used to populate Excel tables describing a configuration.  Logical relation rules are also required to express the recursive nature of configuration applications, walking the hierarchy of assemblies and sub-assemblies in a particular configuration.</p>
+<p>Anyone interested in helping us test a pre-release version of the software that includes a  configuration application, please <a href="http://www.arulesxl.com/company/contact.htm">contact us</a>.</p>
+<h4>Distributable Runtime</h4>
+<p>A key feature for ARulesXL will be the ability to distribute the rules in a way that they can be incorporated in other applications. This is not available in the current pre-release version of the software, but will be available in the not too distant future.</p><hr />
+<h2><a name="licensing" id="licensing"></a>Licensing &amp; Evaluation</h2>
+<p>ARulesXL licenses include maintenance for the first year.  That means that if you purchase ARulesXL today, you will automatically get all of the updates and releases for the next year.</p>
+<p>If you are interested in just evaluating the software, but don't feel the 30-day evaluation is sufficient, let us know and we will extend the evaluation period for you.</p>
+<hr />
+
+<p><font color="#000099" size="+2"><b><a href="http://www.arulesxl.com"><font face="Arial, Helvetica, sans-serif">www.arulesxl.com</font></a></b></font></p>
+<p><font size="-1">ARulesXL is a trademark of Amzi! inc. Excel is a registered trademark of Microsoft Corporation in the   United   States and/or other   countries. Office Practicum is a registered trademark of Visual Data LLC.<br />
+</font></p>
+</body>
+</html>

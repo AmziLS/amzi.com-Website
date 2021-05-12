@@ -1,0 +1,48 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Queries</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Queries<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>You can query the dynamic database from the listener.</p>
+<p>A query is specified with a <em>goal</em> pattern.</p>
+<p><em>Syntactically</em> - a goal is the same as a structure or atom <span class="weak">(a 
+  structure with 0 arguments)</span>.<br>
+  <em>Semantically</em> - a goal is a pattern to be matched against in-memory 
+  clauses <span class="weak">(dynamic or static)</span>.</p>
+<p><em>Unification</em> is the name of the pattern-matching algorithm.</p>
+<p>If the goal unifies with the head of a clause, then the query succeeds <span class="weak">(true/yes)</span>; 
+  if not it fails <span class="weak">(fail/no)</span></p>
+<p><em>Backtracking</em> is the name of the search algorithm used to find a clause 
+  head that unifies.</p>
+<p>logicbase:</p>
+<pre>seats(727,100).
+seats(747,300).</pre>
+<p>queries:</p>
+<pre>?- seats(727,100).
+yes
+
+?- seats(727,50).
+
+no</pre>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_020_elements_900.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_030_queries_020.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

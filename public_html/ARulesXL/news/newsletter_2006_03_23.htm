@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>ARulesXL Newsletter, 23 March 2006</title>
+<style type="text/css">
+<!--
+-->
+</style>
+</head>
+
+<body>
+<h1><a href="http://www.arulesxl.com"><img src="http://www.arulesxl.com/images/logo_shiprock2.gif" width="150" height="115" border="0" align="middle" /></a> <b><font face="Arial, Helvetica, sans-serif">ARulesXL <font color="#000099">Newsletter</font></font></b></h1>
+<h3>23 March 2006  </h3>
+<h2>Contents</h2>
+<ul>
+  <li><a href="#performance">Improving Rule Set Query Performance </a> </li>
+</ul>
+<hr />
+<h2><a name="performance"></a>Improving Rule Set Query Performance</h2>
+<p>A number of users are creating larger ARulesXL applications and have questions   about performance.&nbsp; There are a number of performance factors to   understand.  
+<p>We designed ARulesXL to be easy for beginners, allowing you   to simply create a rule set and do RQuery()s against it right away.&nbsp; To make it   that easy, and to maintain dependencies, we have to re-load the rules for every   query.&nbsp; In other words, for beginning use we traded efficiency for   ease-of-use.  
+<p>As your applications grow, if there are a large number of   rules, or a large number of queries, the reloading of the rules will become   tedious.&nbsp; For these larger applications we provide a number of techniques for   avoiding unnecessary reloading of rules. 
+<h3>A Master Rule   Set with =LoadRules() Functions </h3>
+<p>You can create a main rule set that contains =LoadRules() functions for the 
+  other rule sets.&nbsp; Then those other rule sets are loaded only when they 
+  have actually changed. This is because the other rule sets are now arguments 
+  to the LoadRules() function, so Excel only calculates the LoadRules() function 
+  when the rules actually change.
+<p>Assume you call that main rule set MainRules, and the bulk of your application 
+  logic is in PriceRules and DiscountRules. MainRules now looks like this:
+<p>
+<table width="32%" border="1" cellpadding="3">
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">MainRules</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=LoadRules(PriceRules)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=LoadRules(DiscountRules)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">*</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="32%" border="1" cellpadding="3">
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">PriceRules</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">.price = ...</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">...</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">*</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>There is one problem. You would like your queries to reference the main rule 
+  set like this:
+<p>
+<table width="34%" border="1" cellpadding="3">
+  <tr>
+    <td><font face="Arial, Helvetica, sans-serif">=RQuery(MainRules, &quot;FIND 
+      .price&quot;)</font></td>
+  </tr>
+</table>
+<p>But .price is defined in the PriceRules rule set.
+<p>There are two solutions to the problem.
+<h4>Inheritance</h4>
+<p>The quickest is to simply have MainRules inherit from PriceRules:
+<p>
+<table width="32%" border="1" cellpadding="3">
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">MainRules</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">Inherit from PriceRules</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=LoadRules(PriceRules)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=LoadRules(DiscountRules)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">*</font></td>
+  </tr>
+</table>
+<p>This illustrates the difference between Excel dependencies and logical rule 
+  set dependencies. MainRules now has both:
+<ul>
+  <li>an Excel dependency on PriceRules and DiscountRules via the LoadRules() 
+    function, and</li>
+  <li>a logical dependency on PriceRules via the Inherit from ARulesXL statement.</li>
+</ul>
+<p>Now, when a rule in PriceRules changes, the LoadRules(PriceRules) function 
+  will get recalculated (loading the new rules), and MainRules will then be marked 
+  as changed, so the =RQuery(MainRules, ...) will get recalculated. This is exactly 
+  the Excel behavior we want.</p>
+<p>Also, the query =RQuery(MainRules, &quot;FIND .price&quot;) will start to look 
+  for .price in MainRules, fail to find it, and then follow the inheritance chain 
+  finding the .price rule in PriceRules. This is exactly the logical behavior 
+  we want.</p>
+<p>But for this situation, I don't prefer the inheritance because it is not intuitive 
+  to have the main rule set inherit from the others. I'd rather see it the other 
+  way around.</p>
+<h4>Cover Rules</h4>
+<p>A more intuitive approach is to have MainRules pass queries down to appropriate 
+  rule sets. This has an additional advantage of defining the external interface 
+  to the rules of an application, while hiding all of the details of logic rules 
+  used to determine .price.</p>
+<p>Do do this you create rules in MainRules that redirect the queries:</p>
+<table width="50%" border="1" cellpadding="3">
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">MainRules</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=LoadRules(PriceRules)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=LoadRules(DiscountRules)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">.price = PriceRules:.price</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">*</font></td>
+  </tr>
+</table>
+<p>Now the query =RQuery(MainRules, &quot;FIND .price&quot;) works, but this time 
+  because the MainRules .price rule calls the PriceRules .price rules.</p>
+<h3>Diagnostic Queries</h3>
+   
+<p> When developing a complex rule set, it is often convenient to have a number 
+  of =RQuery() cells used for debugging. These queries look for intermediate results, 
+  to see if your rules are working as you would like. If you've got a lot of these, 
+  they will all be taking time to execute whenever the inputs change.</p>
+<p>For example, in a pricing application you might have a number of queries like 
+  this during development:</p>
+<table width="49%" border="1" cellpadding="3">
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=RQuery(MainRules, &quot;FIND 
+      .price[widget]&quot;</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=RQuery(MainRules, &quot;FIND 
+      .discount&quot;)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=RQuery(MainRules, &quot;FIND 
+      .age_discount&quot;)</font></td>
+  </tr>
+</table>
+<p>You can provide one general purpose RQuery cell like this:</p>
+<table width="75%" border="1" cellpadding="3">
+  <tr> 
+    <td width="16%"><font face="Arial, Helvetica, sans-serif"></font></td>
+    <td width="20%"><font face="Arial, Helvetica, sans-serif">A</font></td>
+    <td width="64%"><font face="Arial, Helvetica, sans-serif">B</font></td>
+  </tr>
+  <tr> 
+    <td width="16%"><font face="Arial, Helvetica, sans-serif">1</font></td>
+    <td width="20%"><font face="Arial, Helvetica, sans-serif">Query:</font></td>
+    <td width="64%"><font face="Arial, Helvetica, sans-serif">.age_discount</font></td>
+  </tr>
+  <tr> 
+    <td width="16%"><font face="Arial, Helvetica, sans-serif">2</font></td>
+    <td width="20%"><font face="Arial, Helvetica, sans-serif">Answer:</font></td>
+    <td width="64%"><font face="Arial, Helvetica, sans-serif">=RQuery(MainRules, 
+      &quot;FIND &quot; &amp; B1)</font></td>
+  </tr>
+</table>
+<p>Now you can put properties in B1 and see what their values are in B2.</p>
+<p> If you still want to have multiple diagnostic =RQuery() cells, you can then 
+  simply edit out the = to turn them on or off.</p>
+   <h3>Reusing Previous Query Intermediate Results</h3>
+   
+<p>Often you will have multiple queries that generate different results from the 
+  same inputs. For example, we might want to present the price and discount in 
+  a pricing application:</p>
+<table width="58%" border="1" cellpadding="3">
+  <tr> 
+    <td width="6%"><font face="Arial, Helvetica, sans-serif"></font></td>
+    <td width="19%"><font face="Arial, Helvetica, sans-serif">A</font></td>
+    <td width="75%"><font face="Arial, Helvetica, sans-serif">B</font></td>
+  </tr>
+  <tr> 
+    <td width="6%"><font face="Arial, Helvetica, sans-serif">1</font></td>
+    <td width="19%"><font face="Arial, Helvetica, sans-serif">Discount:</font></td>
+    <td width="75%"><font face="Arial, Helvetica, sans-serif">=RQuery(MainRules, 
+      &quot;FIND .discount&quot;)</font></td>
+  </tr>
+  <tr> 
+    <td width="6%"><font face="Arial, Helvetica, sans-serif">2</font></td>
+    <td width="19%"><font face="Arial, Helvetica, sans-serif">Price:</font></td>
+    <td width="75%"><font face="Arial, Helvetica, sans-serif">=RQuery(MainRules, 
+      &quot;FIND .price&quot;)</font></td>
+  </tr>
+</table>
+<p>In this case, both .discount and .price will be based on the same inputs, yet 
+  each query will start from the beginning, calculating intermediate results as 
+  it goes. For example, each of the two properties above might depend on another 
+  property, .age_discount. .age_discount will be recalculated for each query.</p>
+<p>You can link the two queries together, so that they share derived results by 
+  having one query depend on the other, rather than on the MainRules rule set. 
+  This way, .age_discount will only be calculated by the first query.</p>
+<p>To do this, instead of having the first argument of RQuery point to a rule 
+  set, you have it point to a query:</p>
+<table width="58%" border="1" cellpadding="3">
+  <tr> 
+    <td width="6%"><font face="Arial, Helvetica, sans-serif"></font></td>
+    <td width="19%"><font face="Arial, Helvetica, sans-serif">A</font></td>
+    <td width="75%"><font face="Arial, Helvetica, sans-serif">B</font></td>
+  </tr>
+  <tr> 
+    <td width="6%"><font face="Arial, Helvetica, sans-serif">1</font></td>
+    <td width="19%"><font face="Arial, Helvetica, sans-serif">Discount:</font></td>
+    <td width="75%"><font face="Arial, Helvetica, sans-serif">=RQuery(B2, &quot;FIND 
+      .discount&quot;)</font></td>
+  </tr>
+  <tr> 
+    <td width="6%"><font face="Arial, Helvetica, sans-serif">2</font></td>
+    <td width="19%"><font face="Arial, Helvetica, sans-serif">Price:</font></td>
+    <td width="75%"><font face="Arial, Helvetica, sans-serif">=RQuery(MainRules, 
+      &quot;FIND .price&quot;)</font></td>
+  </tr>
+</table>
+<p>Now, because of Excel dependencies, the query in B2 will get done first, and 
+  then the query in B1. The query in B1, because it uses a query rather than a 
+  rule set, will reuse any intermediate results from the first query. So, in our 
+  example, .age_discount will only be calculated once.</p>
+<h3>Excel Recalculation</h3>
+   <p>Of course,   you can turn off Excel recalculation using the tools/options menu while you are   developing rule sets, to avoid constant reloading and   recalculation.</p>
+   <h3>Isolating RTable()</h3>
+   
+<p>If a rule set has a cell with =RTable() in it, then whenever the data changes, 
+  the RTable() cell changes, and, due to Excel dependencies, the rule set it is 
+  in needs to be reloaded.</p>
+<table width="46%" border="1" cellpadding="3">
+  <tr> 
+    <td width="87%"><font face="Arial, Helvetica, sans-serif">PriceRules</font></td>
+  </tr>
+  <tr> 
+    <td width="87%"><font face="Arial, Helvetica, sans-serif">=RTable(&quot;.inputs&quot;, 
+      InputRange, True, False)</font></td>
+  </tr>
+  <tr> 
+    <td width="87%"><font face="Arial, Helvetica, sans-serif">.price = ...</font></td>
+  </tr>
+  <tr> 
+    <td width="87%"><font face="Arial, Helvetica, sans-serif">...</font></td>
+  </tr>
+  <tr> 
+    <td width="87%"><font face="Arial, Helvetica, sans-serif">*</font></td>
+  </tr>
+</table>
+<p>So in this example, whenever the data in the range InputRange changes, PriceRules 
+  is reloaded.</p>
+<p>If you are using the data for input and it is changing frequently, and the 
+  rule set is large, then it is probably a good idea to separate the RTable() 
+  function call.</p>
+   
+<p> Often this architecture fits in well with the MainRules design mentioned above.&nbsp; 
+  I find it's best to have the main rules gather the data as well as the other 
+  rule sets.&nbsp; You can then use cover functions to get to the working rule 
+  sets, and use inheritance from them to get back to the data in MainRules:</p>
+<table width="43%" border="1" cellpadding="3">
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">MainRules</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=LoadRules(PriceRules)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=LoadRules(DiscountRules)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">=RTable(&quot;.inputs&quot;, 
+      InputRange, True, False)</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">.price = PriceRules:.price</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">*</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="34%" border="1" cellpadding="3">
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">PriceRules</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">Inherit from MainRules</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">Inherit from DiscountRules</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">.price = ... WHEN ... .inputs[ 
+      ...</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">...</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif">*</font></td>
+  </tr>
+</table>
+<p>This way the RQuery()s can refer to MainRules, and the rules in PriceRules 
+  can get the input data that was loaded in MainRules. PriceRules is only reloaded 
+  when the actual rules change.</p>
+   <hr />
+
+<p><font color="#000099" size="+2"><b><a href="http://www.arulesxl.com"><font face="Arial, Helvetica, sans-serif">www.arulesxl.com</font></a></b></font></p>
+<p> Please do not reply to this newsletter as responses are not read. To contact us, visit <a href="http://www.arulesxl.com/company/contact.htm">http://www.arulesxl.com/company/contact.htm</a>. To unsubscribe, visit <a href="http://www.arulesxl.com/mail/mailinglist.htm">http://www.arulesxl.com/mail/mailinglist.htm</a>.</p>
+<p><font size="-1">ARulesXL is a trademark of Amzi! inc. Excel is a registered trademark of Microsoft Corporation in the   United   States and/or other   countries.<br />
+</font></p>
+</body>
+</html>

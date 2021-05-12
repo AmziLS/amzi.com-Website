@@ -1,0 +1,1838 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->May 
+                      2005 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <H1>AI Expert Newsletter</H1>
+            <P><I>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</I></P>
+<H3>May 2005 - Special Spreadsheet Issue</H3>
+
+<UL>
+
+<LI><A HREF="#introduction">Introduction</a></LI><LI>
+
+<A HREF="#introduction"></a><A HREF="#ess">Extending the Concept of Spreadsheet</A>
+    <UL>
+    <LI><A HREF="#ess_siag">Scheme In a Grid</A></LI>
+    <LI><A HREF="#ess_in_functional">Spreadsheets in functional languages</A></LI>
+    <LI><A HREF="#ess_as_functional">Spreadsheets as functional languages</A></LI>
+    <LI><A HREF="#ess_excel_user_defined_functions">User-defined functions in Excel</A></LI>
+    <LI><A HREF="#ess_zigzag">Cutting spreadsheets into strips and gluing them into loops: ZigZag, GZigZag, Gzz, and Fenfire</A></LI>
+    <LI><A HREF="#ess_multi">Two-dimensional programming languages</A></LI>
+    <LI><A HREF="#ess_logical_spreadsheets">Logical spreadsheets</A></LI>
+    <LI><A HREF="#ess_links">Links</A></LI>
+    </UL>
+</LI>
+
+<LI><A HREF="#arulesxl">ARulesXL - Integrating Rules with Spreadsheets</A></LI>
+
+<LI><A HREF="#numerical_ai">Numerical AI in Excel</A>
+     <UL>
+     <LI><A HREF="#numerical_ai_neural_nets">Neural nets</A></LI>
+     <LI><A HREF="#numerical_ai_front_ending">Spreadsheets as front-ends</A></LI>
+     <LI><A HREF="#numerical_ai_cellular_automata">Cellular automata</A></LI>
+     <LI><A HREF="#numerical_ai_links">Links</A></LI>
+     </UL>
+</LI>
+
+<LI><A HREF="#excelsior">Model Master - Safer Spreadsheets with Prolog</A>
+    <UL>
+    <LI><A HREF="#excelsior_risks">Danger - spreadsheeter at work!</A></LI>
+    <LI><A HREF="#excelsior_equations">Spreadsheets as equations</A></LI>
+    <LI><A HREF="#excelsior_cdre">Compiling, decompiling, and structure discovery</A></LI>
+    <LI><A HREF="#excelsior_spreadsheet_grammars">Structure discovery and spreadsheet grammars</A></LI>
+    <LI><A HREF="#excelsior_prolog_interface">Prolog as a spreadsheet-manipulation language</A></LI>
+    <LI><A HREF="#excelsior_scripting_language">The Excelsior scripting language</A></LI>
+    <LI><A HREF="#excelsior_rev_eng_ca">Reverse-engineering a cellular automaton</A></LI>
+    <LI><A HREF="#excelsior_financial">MM in finance: from category theory to billion-dollar loans</A></LI>
+    <LI><A HREF="#excelsior_links">Links</A></LI>
+    </UL
+></LI>
+
+<LI><A HREF="#jokes">Spreadsheet Humor</A>
+    <UL>
+    <LI><A HREF="#jokes_links">Links</A></LI>
+    </UL>
+</LI>
+
+</UL>
+
+
+
+<H2><A NAME="introduction">Introduction</A></H2>
+
+<P>
+In July 2002, I went to the European Spreadsheet Risks Interest Group
+conference in Cardiff. After 
+arriving early and discovering the shops hidden away
+in Cardiff's Victorian shopping arcades, I decided to buy a few items in order to
+make a point at the conference. Marker pens, fluorescent 
+card, safety pin and a pair of 1970s-retro flared trousers: result, 
+worn with the trousers, one badge proclaiming "Spreadsheets have not evolved
+since flares were last in fashion".
+</P>
+
+<P>
+This was prompted by the thought that,
+although the past 25 years have brought us
+1024 x 768 hi-res screens
+instead of VT52 terminals, visual interfaces to
+Visual Basic, and Microsoft's ubiquitously obsequious
+paperclip, they have done little to solve the problem
+of spreadsheet errors. As the identity of the Cardiff conference organisers
+indicates, spreadsheeting
+is as error-prone as ever. Excel pays more attention to
+graphics than to fundamental programming problems. But on the other hand,
+it also occupies an honourable place in computing, being, as
+our feature on <I>Extending the Concept of Spreadsheet</I> explains, the 
+world's most widely used
+functional language. You can spreadsheet in Scheme; hypertext guru Ted Nelson related
+his multidimensional ZigZag hypertext toolkit to spreadsheets;
+and 
+researchers are busy extending spreadsheets with constraint programming and logical rules.
+</P>
+
+<P> Because of their importance, we have devoted this month's issue to spreadsheets 
+  and AI. On the risks side, we have a feature on my Model Master, a program which 
+  uses Prolog to reduce spreadsheet errors. We look at neural nets and cellular 
+
+  automata in Excel. And we have items by Mike Kassof from the Stanford Logic 
+  Group about his work on logical spreadsheets, and by Dennis Merritt on Amzi!'s 
+  ARulesXL, which by embedding logical rules in Excel, makes possible applications 
+  that are not practical using Excel on its own. 
+<DIV ALIGN=right>
+<A HREF="http://www.j-paine.org/">Jocelyn Paine</A></DIV>
+<p></P>
+
+<P>&nbsp;</P>
+
+
+
+<H2><A NAME="ess">Extending the Concept of Spreadsheet</A></H2>
+
+
+<H3><A NAME="ess_siag">Scheme In a Grid</A></H3>
+
+<P>
+<A HREF="http://siag.nu/siag/">Scheme In A Grid</A>, or Siag, is
+a spreadsheet written by Ulric Eriksson
+in <A HREF="http://www.swiss.ai.mit.edu/projects/scheme/">Scheme</A>.
+It looks 
+not unlike Excel, and formulae can be entered in Excel notation.
+But they can also be entered in Scheme. For example,
+<CODE>A1+B1</CODE> could be entered 
+as <CODE>(+ a1 b1)</CODE>. In fact any Scheme function can
+be called in a formula, including Siag's 
+cell-access functions such as <CODE>(href N)</CODE> which
+returns the contents of the cell N rows up. This makes it
+convenient to do things which Excel would do only awkwardly
+with macros or Visual Basic. And Siag is not limited to
+numbers and strings, but can 
+compute with the full range of Scheme datatypes.
+</P>
+
+<P>
+Siag is part of 
+<A HREF="http://siag.nu/">Siag Office</A>, a free Linux 
+office package which includes a word processor, animation program, and editor,
+Although Eriksson's
+<A HREF="http://siag.nu/online-docs/siag/intro.html">on-line documentation</A> says that
+Siag stands for "Siag Is Not An Excel Emulator",
+some of its 
+<A HREF="http://siag.nu/online-docs/siag/siag-functions.html">built-in functions</A> are designed 
+to be Excel-compatible. Since Siag is open-source, 
+these might be useful to readers needing to emulate
+parts of Excel.
+</P>
+
+
+<H3><A NAME="ess_in_functional">Spreadsheets in functional languages</A></H3>
+
+<P>
+Older than Siag - dating from 1985 or so, it may be the first spreadsheet
+to go beyond numerical calculations - is Aaron Sloman's <A HREF="#vcalc">VCalc</A>.
+Sloman wrote this in Pop-11, one of the
+languages making up the <A HREF="http://www.poplog.org/">Poplog</A>
+system. Although written as an experiment, VCalc was used for
+some serious tasks, such as
+allocating limited computing connections between competing groups of
+users, subject to various constraints. One feature was a
+constraint checker which could run arbitrary Poplog code - for example, an
+expert system could be invoked! 
+</P>
+
+<P>
+VCalc is not grid-based, 
+but uses declarations
+in a file read by Poplog's Ved editor to indicate where
+cells are to be displayed. This is excusable in a mid-1980s program
+running on cursor-addressable terminals; with
+modern Poplog graphics, a much better version could
+be written.
+</P>
+
+<P>
+Scheme and Pop-11 are both "functional" languages,
+meaning that computation is expressed as function calls.
+They are also said to be
+"impure", because they 
+contain loops, side-effects, and other
+non-functional features.
+In this, they contrast with the
+<A HREF="http://www.cs.nott.ac.uk/~gmh/faq.html#purity">"pure"</A> functional languages
+such as Haskell and Miranda. Because these lack side-effects,
+researchers have had to devise ways for them to express input-output,
+coming up with the notion of
+"<A HREF="http://en.wikipedia.org/wiki/Monads_in_functional_programming">monads</A>".
+Functional-programming enthusiasts may be interested
+to hear that monads can be used to implement
+the immediate update-on-cell-change needed by
+spreadsheets, using techniques
+described in papers by 
+Magnus Carlsson and by
+Umut Acar, Guy Blelloch and Bob Harper.
+Check out the <A HREF="#adaptive">links</A> for details.
+</P>
+
+
+<H3><A NAME="ess_as_functional">Spreadsheets as functional languages</A></H3>
+
+<P>
+Many people do not realise that Excel spreadsheets 
+are functional programs. 
+Of course, the Excel engine isn't -
+it's probably implemented in some Microsoft dialect of C.
+But the formulae a user puts into its cells are.
+Write them 
+as equations, and this becomes obvious:
+<PRE>
+  A1 = 3
+  A2 = A1-32
+  A3 = A2 * 5/9
+</PRE>
+The only computation is by function calls. This is of
+more than theoretical interest. Functional languages
+are much easier to reason about and analyse 
+than imperative languages, a fact that should
+cheer those developing spreadsheet debugging and error-detection tools.
+<p></P>
+
+
+<H3><A NAME="ess_excel_user_defined_functions">User-defined functions in Excel</A></H3>
+
+<P>
+Although Excel is a functional language, it is a strange one: it doesn't allow
+users to define their own functions. 
+As Simon Peyton Jones, Margaret Burnett and Alan Blackwell say
+in their paper
+<A HREF="http://research.microsoft.com/~simonpj/projects/excel/"><I>Improving the world's most popular 
+functional language: user-defined functions in Excel</I></A>:
+<BLOCKQUOTE>
+From a programming language point of view, then,
+<I>spreadsheets
+lack the most fundamental mechanism that we use to control complexity:
+the ability to define re-usable abstractions.</I> In effect, they
+deny to end-user programmers the most powerful weapon in our
+armory. Can you imagine programming in C without procedures,
+however clever the editor’s copy-and-paste technology?
+</BLOCKQUOTE>
+<p></P>
+
+<P>
+They propose an extension to Excel which
+permits this, whereby users define functions on separate worksheets, using
+some 
+cells as formal parameters. This may interest those designing
+end-user spreadsheets and spreadsheet-like programs such as truth-maintenance systems.
+But
+what's
+important 
+is the authors' use of empirical studies of programmers and
+research
+into the psychology of programming:
+As they say:
+<BLOCKQUOTE>
+Despite the deficiencies of spreadsheets when they are considered
+as programming languages, it is clear from their commercial success
+that people find them useful and usable. This is not true to the
+same extent of any traditional programming language. Why not?
+One contributing factor may be that, although programming languages
+are a channel of communication between people and computers,
+most programming-language research is devoted to the computer
+end of the channel. Comparatively little research considers
+the people who do the programming. It is our belief that
+programming language design projects should adopt a more usercentered
+approach, in order to maintain a sharp focus on the people
+who are intended to benefit from the new language features or environments
+being created. This is the approach that we have adopted
+in our own work on extending spreadsheet capabilities.
+</BLOCKQUOTE>
+The authors use the notions
+of "Cognitive Dimensions" and "Attention Investment", two
+structured
+approaches to human issues in programming
+developed by human-computer interaction researchers to help
+computer scientists, who are not usually cognitive psychologists.
+<p></P>
+
+
+<H3><A NAME="ess_zigzag">Cutting spreadsheets into strips and gluing them into loops: ZigZag, GZigZag, Gzz, and Fenfire</A></H3>
+
+<P>
+A different way to broaden the spreadsheet concept,
+which I discovered when reading
+Chris Browne's excellent 
+<A HREF="http://linuxfinances.info/info/spreadsheets.html"><I>Linux Spreadsheets</I></A> page,
+is 
+<A HREF="http://www.xanadu.net/zigzag/">ZigZag</A>,
+invented by hypertext guru <A HREF="http://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</A>.
+He 
+<A HREF="http://xanadu.com/zigzag/tutorial/ZZwelcome.html">describes it</A> as:
+<BLOCKQUOTE>
+resembling nothing else in the 
+computer field that we know of, except perhaps a spreadsheet 
+cut into strips and glued into loops. 
+</BLOCKQUOTE>
+ZigZag cells can lie in
+a space of any dimensionality, not just two.
+Dimensions have user-definable names: a list of
+people might have one dimension for year of birth, one for
+first name, and one for last name. Each dimension
+would contain the same cells, but they could
+be ordered differently: for example, ordering first names and last names alphabetically,
+and years of birth numerically. As this shows, 
+we can regard dimensions as  
+labeled lists of cells. 
+<p></P>
+
+<P>
+Within each dimension, a cell can have only one immediate
+neighbour on each side: one "up" neighbour and
+one "down". If a cell is in more than one dimension,
+it may have different neighbours in each: my 
+"down" neighbour in the first-name dimension might be a John Smith
+(my name is Jocelyn Paine),
+while in the last-name dimension, it could be Olaf Palme.
+ZigZag researcher Tuomas Luuka explains this with
+diagrams
+in
+<A HREF="http://www.nongnu.org/gzz/gi/gi.html"><I>A Gentle
+Introduction to Ted Nelson's ZigZag Structure</I></A>. In a different
+example, he
+suggests representing trees (in the 
+computing sense) in ZigZag by having one dimension that
+connects a node to its parent, and another that connects siblings of the same node.
+</P>
+
+<P>
+ZigZag follows two axioms: all connections must be two-directional;
+and to preserve visualizability, no cell should have an enormous number of connections. 
+These restrictions make it easy
+for end-users to build
+hyperstructures
+by arranging data along various
+dimensions of classification. They 
+avoid dangling pointers, since all links are two-directional; and they
+make it easier to display data. Finally, they simplify
+programming, which - Nelson hopes - will
+encourage applications programmers to
+share data across application boundaries.
+<P>
+
+<P>
+The most recent implementation is <A HREF="http://www.fenfire.org/">Fenfire</A>. This began
+as <A HREF="http://gzigzag.sourceforge.net/">GZigZag</A>, an open-source 
+ZigZag implemented by Lukka and colleagues working
+with Nelson. GZigZag changed to
+<A HREF="http://www.nongnu.org/gzz/">Gzz</A> after Nelson asserted his
+trademark on the "ZigZag" name, and changed again to
+Fenfire after he asserted his patent on the
+ZigZag data structures: Fenfire has switched to RDF.
+</P>
+
+<P>
+It's worth reading 
+<A HREF="http://www.fenfire.org/manuscripts/2004/hyperstructure/"><I>Hyperstructure: Computers 
+built around things that you care about</I></A>,
+by Lukka and Benja Fallenstein. They explain
+how Fenfire displays RDF as a "focus+context graph". 
+Unlike with other RDF browsers, 
+users can turn off relationships
+they don't want to see. A nifty extension of these ideas is
+FenPDF, a tool for
+structuring collections of academic articles, using "buoys"
+to anchor one document to those connected to it. 
+</P>
+
+<P>
+I wonder whether the Fenfire browser will ever reach the
+level aspired to in
+a Lambda the Ultimate 
+<A HREF="http://lambda-the-ultimate.org/node/view/233">posting</A>. Under the
+heading <I>Nelson</I>, "CrackMonkey" reminisces:
+<BLOCKQUOTE>
+<P>
+Ted Nelson handed me one of the original diskettes, 
+wrapped in a triangular origami pouch of grey letter 
+paper (complete with egregious claims and a high-contrast 
+image of Ted's face). It was at a party in the Presidio 
+of San Francisco, and he demonstrated it to partygoers 
+by showing how you could set up a genealogical database 
+using its N-d spatial rotation from link axis to link axis.
+</P>
+<P>
+He said that he imagined a chair with two joysticks: one 
+navigated the 2-D space you saw on the screen, and the other 
+controlled which relationships the X and Y axes represented. 
+It is quite a novel interface, and could be useful for 
+LDAP browsers or other database query tools.
+</P>
+<P>
+I still have the paper triangle, but the 
+diskette seems to have slipped out long ago.
+</P>
+</BLOCKQUOTE>
+<p></P>
+
+
+<H3><A NAME="ess_multi">Two-dimensional programming languages</A></H3>
+
+<P>
+One message - shapr's <I>roughly Turing machine + Spreadsheet</I> 
+in that Lambda the Ultimate thread points
+out that GZigZag cells could hold code as well as data.
+Its scripting languages usually used the cells like a Turing machine tape,
+making it possible to emulate <A HREF="http://c2.com/cgi/wiki?TheBrain">TheBrain</A>, 
+<A HREF="http://en.wikipedia.org/wiki/Main_Page">wikis</A>, or any sort of personal Web.
+</P>
+
+<P>
+I don't know whether this has any practical use, but one can
+also embed and execute code in a two-dimensional grid, creating a 
+two-dimensional machine code. The languages Befunge and Orthogonal
+implement this idea;
+Francis
+Irving's <A HREF="http://www.flourish.org/orthogonal.html">Excel implementation of Orthogonal</A>
+actually sits inside a spreadsheet. As he says:
+<BLOCKQUOTE>
+The program counter can move not just right, but left, up and down as well
+This makes loops neat - they are natural, and don't require that the program counter should jump. 
+</BLOCKQUOTE>
+<p></P>
+
+<P>
+His page includes an Excel spreadsheet which implements Orthogonal, 
+sample programs, and a screenshot showing Orthogonal machine instructions
+inside a workbook. He speculates that Orthogonal might be important for
+artificial life, perhaps as an extension of Thomas Ray's
+<A HREF="http://www.his.atr.jp/~ray/tierra/">Tierra</A>. This
+famous Artificial Life program featured one-dimensional creatures made
+of mutatable machine code that lived and reproduced inside a virtual
+machine. They evolved as Tierra ran, setting off an evolutionary
+arms race which gave rise to parasites, immunity to parasites, 
+hyper-parasites, social hyper-parasites, and 
+hyper-hyper-parasites.
+</P>
+
+
+<H3><A NAME="ess_logical_spreadsheets">Logical spreadsheets</A></H3>
+
+<P>
+Let's return now to extending spreadsheets' formula languages.
+Researchers in the Logic Group at Stanford are developing technology 
+for "logical spreadsheets". In their version of a logical spreadsheet, the formula 
+language is expanded from function definitions to general logical constraints.</p>
+
+<p>Unlike traditional spreadsheets, logical spreadsheets can propagate values in any 
+direction. For example, one might specify a start time for a room reservation along 
+with an end time, and the duration of the reservation would automatically get filled in.  
+Alternatively, one could specify the start time and the duration, and the end time would 
+automatically get filled in.  In addition, the logical constraints can express many-to-many 
+relationships instead of just functional ones.  For example, the start time for 
+a reservation does not functionally determine the end time, though it does 
+constrain it, since an event cannot end before it starts!  
+</P>
+
+<P>
+Another example of 
+a many-to-many constraint is a constraint mapping between cities and ZIP codes.  
+One could select Oklahoma City, OK as the city and constrain the possible ZIP 
+code choices to the 78 ZIP codes found in the <a href="http://panamaliving.com/ok.html">Sooner 
+State capital</a>, or choose ZIP code 73513 and constrain the possible cities to Oklahoma City, 
+OK and Moore, OK.</p>
+
+<p>Michael Kassoff, a PhD student in the Stanford Logic Group, has 
+provided us with an <a href="0505_kassof_demo.html">interactive example 
+of a logical spreadsheet</a>:
+<center><p><a href="0505_kassof_demo.html" target="_blank" title="Click to open up the 
+interactive logical spreadsheet example"><img src="0505_kassof_demo.jpg"  border="0" alt="Interactive 
+logical spreadsheet example" /></a></p></center>
+
+<p>The example, for which a screen shot 
+is shown above, contains three cells - <tt>start</tt>, <tt>end</tt>, and 
+<tt>duration</tt>, as in the scenario above. It also contains two logical 
+constraints. The first constraint says that the start time is before the end time.  
+The second says that the start time plus the duration is the end time.</p>
+
+<pre>  E > S WHEN start(S) AND end(E)
+
+  E = S+D WHEN start(S) AND duration(D) AND end(E)</pre>
+
+
+<p>Play around with <a href="0505_kassof_demo.html">the example</a>.  
+Try entering 9:00 am as the start time.  Now, open up the end time 
+menu, and notice that 7:00 am, 8:00 am and 9:00 am are colored red to 
+indicate that they are incompatible choices.  Then choose 1:00 pm as 
+the end time, and the duration will be automatically filled in as 4 hours.  
+The duration is italicized to indicate that it is a computed value rather 
+than one entered directly.  Now remove your choice of 1:00 pm for the end 
+time by choosing the empty value (the top choice) from the menu, and choose 
+a value for the duration.  Note that the end time is automatically filled in.</p>
+
+<p>Logical spreadsheets can sometimes resolve conflicts automatically.  
+For example, if you choose 9:00 am for the start time and then choose 8:00 
+am for the end time, the start time will be automatically erased because it is 
+inconsistent with your choice of end time.  Alternatively, a spreadsheet can 
+keep the inconsistent values but alert the user to the problem.  As an 
+example, try entering a start time of 9:00 am, an end time of 
+1:00 pm, and a duration of 1 hour. These three choices are incompatible, 
+so the spreadsheet indicates this problem by coloring the 
+three choices red.</p>
+
+<p>The idea of a logical spreadsheet is not entirely new.  In the 
+1980's, several systems were developed that added Prolog rules to 
+traditional spreadsheets, namely Frank Kriwaczek's LogiCalc spreadsheet, 
+Maarten H. van Emden et al.'s unnamed system, and PERPLEX, created by 
+Michael Spenke and Christian Beilken.  In addition, over the last 
+15 years or so, the field of interactive constraint solvers has sprung up, 
+beginning with Sanjay Mittal and Brian Falkenhainer's paper on Dynamic 
+Constraint Satisfaction Problems in 1990. Logical Spreadsheets can be 
+regarded as interactive CSPs in which the constraints are given in a 
+logical language.</p>
+
+<p>Logical spreadsheet technology is rapidly being transferred from academia 
+to the commercial world. Last year, 
+Professor Michael Genesereth approached the Defense Advanced Research 
+Projects Agency (DARPA) in hopes of finding funding for Stanford's 
+work on logical spreadsheets. Those talks led to DARPA issuing a 
+Small Business Innovation Research grants call for proposals 
+on &quot;<a href="http://www.acq.osd.mil/sadbu/sbir/solicitations/sbir043/darpa043.htm">deductive 
+spreadsheets<a/>.&quot;  
+</a></a><a/><a href="http://www.darpa.mil/sbir/20043SBIRAwards.html">Four companies</a> 
+were granted initial Phase I funding, including Prolog guru David Warren's 
+company, XSB. Other companies have jumped on the bandwagon too, 
+for example the Prolog shop Amzi!. Stanford also has a patent 
+pending on Logical Spreadsheets, which is available for 
+licensing to some interested company.  Can it be too long 
+before logical spreadsheet technology is on your desktop?</a></p><a/>
+
+<p>Interested in learning more about Logical Spreadsheets?  
+Check out Stanford's site: 
+<a href="http://logic.stanford.edu/spreadsheet/">logic.stanford.edu/spreadsheet/</a>.
+</p>
+
+
+<H3><A NAME="ess_links">Links</A></H3>
+
+<!-- General -->
+
+<H4>General</H4>
+
+<P>
+<A HREF="http://dssresources.com/history/sshistory.html">dssresources.com/history/sshistory.html</A> - 
+<I>A Brief History of Spreadsheets</I>,
+by D. J. Power, DSSResources.COM.
+</P>
+
+<P>
+<A HREF="http://www.aci.com.pl/mwichary/computerhistory/articles/spreadsheets/tenyearsofrowsandcolumns">www.aci.com.pl/mwichary/computerhistory/articles/spreadsheets/tenyearsofrowsandcolumns</A> -
+<I>Ten Years of Rows and Columns</I>, 
+reprinted from <I>Byte</I> issue 13, 1989. The
+sidebar 
+<A HREF="http://www.aci.com.pl/mwichary/computerhistory/articles/spreadsheets/tenyearsofrowsandcolumns/beyondwhatif"><I>Beyond "What-if?"</I></A>
+ends by predicting that 
+as spreadsheet debugging improves,
+"Ultimately, you will use AI techniques to ask why something surprising happened in your spreadsheet".
+If only.
+</P>
+
+<P>
+<A HREF="http://linuxfinances.info/info/spreadsheets.html">linuxfinances.info/info/spreadsheets.html</A> -
+<I>Linux Spreadsheets</I> by Christopher Browne. The title undersells this well-informed page, which
+also discusses history, extensions such as Improv and ZigZag, and open-source spreadsheets.
+</P>
+
+<P>
+<A HREF="http://www.faqs.org/faqs/spreadsheets/faq/">www.faqs.org/faqs/spreadsheets/faq/</A> -
+Russell Schulz's comp.apps.spreadsheets FAQ.
+</P>
+
+<P>
+<A HREF="http://web.engr.oregonstate.edu/~erwig/FOS/">web.engr.oregonstate.edu/~erwig/FOS/</A> -
+Home page for the International Workshop on the Foundations of Spreadsheets, Rome, 2004.
+Links to slides and the proceedings. The papers are aimed at improving
+spreadsheet reliability, and include work on
+spreadsheet semantics, analyses of spreadsheet use, and type-checking to
+detect errors.
+</P>
+
+<!-- Siag -->
+
+<H4>Siag and VCalc</H4>
+
+<P>
+<A HREF="http://siag.nu/siag/">siag.nu/siag/</A> -
+Ulric Eriksson's <I>Scheme In A Grid</I> site. The documentation,
+including screenshots,
+is at 
+<A HREF="http://siag.nu/online-docs/siag/siag.html">siag.nu/online-docs/siag/siag.html</A>.
+</P>
+
+<P>
+<A HREF="http://linuxplanet.com/linuxplanet/reviews/4054/2/">linuxplanet.com/linuxplanet/reviews/4054/2/</A> -
+<I>The StartX Files: Between the Sheets with Siag</I>. 
+Brian Proffitt's review for LinuxPlanet.
+</P>
+
+<!-- VCalc -->
+
+<A NAME="vcalc"></A><P>
+<A HREF="http://www.cs.bham.ac.uk/research/poplog/doc/pophelp/vcalc">www.cs.bham.ac.uk/research/poplog/doc/pophelp/vcalc</A> -
+Documentation for VCalc, as a Poplog HELP file. The source 
+(which Aaron Sloman tells me should still run) is
+at
+<A HREF="http://www.cs.bham.ac.uk/research/poplog/v15.6/v15.6/pop/packages/teaching/auto/ved_vcalc.p">www.cs.bham.ac.uk/research/poplog/v15.6/v15.6/pop/packages/teaching/auto/ved_vcalc.p</A>.
+</P>
+
+
+<!-- Spreadsheets and functional or dataflow programming in general -->
+
+<H4>Spreadsheets in other functional languages</H4>
+
+<P>
+<A HREF="http://www.codecomments.com/message341581.html">www.codecomments.com/message341581.html</A> -
+CodeComment archive of a discussion on spreadsheets,
+Haskell, and dataflow languages. Searching Usenet for
+"spreadsheets" together with keywords such as "logic", "dataflow", "functional"
+will find many other discussions and implementations.
+</P>
+
+</A><P><a/>
+<A NAME="adaptive"></A>
+<A HREF="http://www-2.cs.cmu.edu/~umut/papers/popl02.pdf">www-2.cs.cmu.edu/~umut/papers/popl02.pdf</A> -
+<I>Adaptive 
+Functional Programming</I></a> by Umut Acar, Guy Blelloch and Bob Harper, Carnegie Mellon.
+They
+introduce "adaptive computation", a technique used in functional programming to
+maintain the relationship between
+functions' inputs and outputs as their input changes. The paper
+gives an efficient ML implementation. 
+</P>
+
+<P>
+<A HREF="http://www.cse.ogi.edu/~magnus/Adaptive/">www.cse.ogi.edu/~magnus/Adaptive/</A> -
+<I>Adaptive - Incremental Computations in Haskell</I>, by Magnus Carlsson. 
+The page links to 
+a Haskell download which uses an implementation
+based on Acar et al.'s, and which includes a spreadsheet
+demo. Carlsson explains this in his 
+<A HREF="http://www.cse.ogi.edu/~magnus/papers/icfp-2002.pdf"><I>Monads for 
+Incremental Computing</I></A>,
+also linked from this page. 
+</P>
+
+<P>
+<A HREF="http://www.mrtc.mdh.se/projects/Haxcel/">www.mrtc.mdh.se/projects/Haxcel/</A> -
+<I>Haxcel: A Spreadsheet Interface to Haskell</I>. Johan Malmstr&oumlm's
+MSc project page, including downloads. The "publications"
+link is broken, but there's a slideshow at 
+<A HREF="http://www.mrtc.mdh.se/projects/Haxcel/download/pres.pdf">www.mrtc.mdh.se/projects/Haxcel/download/pres.pdf</A>.
+</P>
+
+<P>
+<A HREF="http://203.162.7.79/ieee/pdf/disk_94/3466/10212/2_10_A%20FCCM%20for%20dataflow%20(spre.pdf">203.162.7.79/ieee/pdf/disk_94/3466/10212/2_10_A%20FCCM%20for%20dataflow%20(spre.pdf</A> -
+<I>A FCCM for dataflow (spreadsheet) programs</I>, by
+Art Lew and Richard Halverson, University of Hawaii.
+Explains how dataflow programs written as
+spreadsheets can be transformed into field-programmable
+gate arrays.
+</P>
+
+<P>
+<A HREF="http://www.csse.monash.edu.au/~davida/papers/ActiveSheets.pdf">www.csse.monash.edu.au/~davida/papers/ActiveSheets.pdf</A> -
+<I>ActiveSheets: Super-Computing with Spreadsheets</I>, by
+David Abramson, Paul Roe, Lew Kotler, and Dinelli Mather,
+Queensland University of Technology. Explains
+how supercomputers can use parallel evaluation to
+efficiently execute spreadsheets.
+</P>
+
+
+<!-- Peyton Jones and New dimensions for Excel -->
+
+<H4>Extending Excel with user-defined functions</H4>
+
+<P>
+<A HREF="http://research.microsoft.com/~simonpj/projects/excel/">research.microsoft.com/~simonpj/projects/excel/</A> - 
+<I>New dimensions for Excel</I>, which links to abstract and text for
+<I>Improving the world's most popular functional language: user-defined functions in Excel</I>. 
+</P>
+
+
+<!-- ZigZag, GZigZag, Fenfire -->
+
+<H4>ZigZag, GZigZag, Gzz, Fenfire</H4>
+
+<P>
+<A HREF="http://www.xanadu.net/zigzag/">www.xanadu.net/zigzag/</A> -
+Ted Nelson's ZigZag page. His tutorial is at
+<A HREF="http://xanadu.com/zigzag/tutorial/ZZwelcome.html">xanadu.com/zigzag/tutorial/ZZwelcome.html</A>;
+this page contains his "spreadsheet cut into strips" quote. 
+</P>
+
+<P>
+<A HREF="http://gzigzag.sourceforge.net/">gzigzag.sourceforge.net/</A> -
+GZigZag.
+See also 
+<A HREF="http://www.nongnu.org/gzz/ct/ct.html">www.nongnu.org/gzz/ct/ct.html</A>,
+<I>GZigZag - A Platform for Cybertext Experiments</I>, by
+Tuomas Lukka & Katariina Ervasti. This shows various ways of viewing
+family trees and other structures. Lukka's 
+<I>A Gentle Introduction to Ted Nelson's ZigZag Structure</I> is at
+<A HREF="http://www.nongnu.org/gzz/gi/gi.html">www.nongnu.org/gzz/gi/gi.html</A>.
+</P>
+
+<P>
+<A HREF="http://www.nongnu.org/gzz/">www.nongnu.org/gzz/</A> - Gzz.
+</P>
+
+<P>
+<A HREF="http://fenfire.org/">fenfire.org/</A> -
+Fenfire. 
+</P>
+
+<P>
+<A HREF="http://lambda-the-ultimate.org/node/view/233">lambda-the-ultimate.org/node/view/233</A> -
+The Lambda the Ultimate 
+thread on ZigZag's history: "It is a sad story. It is an infuriating story".
+Includes the "CrackMonkey" reminiscence, and assorted technical info.
+</P>
+
+<P>
+<A HREF="http://fenfire.org/manuscripts/2004/hyperstructure/">fenfire.org/manuscripts/2004/hyperstructure/</A> -
+<I>Hyperstructure: Computers built around things that you care about</I>,
+by
+Benja Fallenstein and Tuomas Lukka,
+Hyperstructure Group,
+Agora Center, University of Jyv&auml;skyl&auml;. 
+</P>
+
+<P>
+<A HREF="http://fenfire.org/manuscripts/2004/fentwine/">fenfire.org/manuscripts/2004/fentwine/</A> -
+<I>Fentwine: A navigational RDF browser and editor</I>, by
+Benja Fallenstein,
+Hyperstructure Group,
+Agora Center, University of Jyväskylä.
+</P>
+
+<P>
+<A HREF="http://c2.com/cgi/wiki?TheBrain">c2.com/cgi/wiki?TheBrain</A> -
+Wiki entry for TheBrain. 
+Fun to play with is Ray Kurzweil's webBrain, linked from this entry at
+<A HREF="http://www.kurzweilai.net/brain/frame.html?startThought=Artificial%20Intelligence">www.kurzweilai.net/brain/frame.html?startThought=Artificial%20Intelligence</A>.
+</P>
+
+<P>
+<A HREF="http://www.cooltoolawards.com/software/utilities/thebrain.htm">www.cooltoolawards.com/software/utilities/thebrain.htm</A> -
+Review of TheBrain by Cool Tool Awards.
+</P>
+
+
+<!-- Orthogonal, Befunge, and other 2-d programming languages -->
+
+<H4>Two-dimensional programming languages</H4>
+
+<P>
+<A HREF="http://www.muppetlabs.com/~breadbox/orth/home.html">www.muppetlabs.com/~breadbox/orth/home.html</A> -
+Brian Raiter's Orthogonal page. See 
+<A HREF="http://www.flourish.org/orthogonal.html">www.flourish.org/orthogonal.html</A> for
+Francis Irving's Excel implementation of Orthogonal.
+</P>
+
+<P>
+<A HREF="http://mbays.freeshell.org/zedfunge.html">mbays.freeshell.org/zedfunge.html</A> -
+Martin Bays's ZedFunge page. See 
+<A HREF="http://www.flourish.org/zbefunge/">www.flourish.org/zbefunge/</A> for
+ZBefunge, Francis Irving's implementation using the
+Inform interactive-fiction compiler.
+</P>
+
+
+<!-- Logical spreadsheets -->
+
+<H4>Logical spreadsheets</H4>
+
+<P>
+<a href="http://logic.stanford.edu/spreadsheet/">logic.stanford.edu/spreadsheet/</a> -
+The Stanford Logical Spreadsheet site.
+</P>
+
+<P>
+<A HREF="http://www.dtic.mil/matris/sbir/sbir043/sbir300.html">www.dtic.mil/matris/sbir/sbir043/sbir300.html</A> -
+The Small Business Innovation Research (SBIR) solicitation, with references.
+</P>
+
+<P>
+<A HREF="http://www.nada.kth.se/kurser/kth/2D1363/projectInfo.htm">www.nada.kth.se/kurser/kth/2D1363/projectInfo.htm</A> -
+A project based on the SBIR request, at the Royal Institute of
+Technology in Stockholm.
+</P>
+
+<P>
+<A HREF="http://portal.acm.org/citation.cfm?id=586081.586083">portal.acm.org/citation.cfm?id=586081.586083</A> -
+<I>A scalable method for deductive generalization in the spreadsheet paradigm</I>, by
+Margaret Burnett, 
+Sherry Yang, and  
+Jay Summet. From <I>ACM Transactions on Computer-Human Interaction</I>,
+volume 9, issue 4, December 2002.
+</P>
+
+<P>
+<A HREF="http://perso.enst.fr/~jld/papiers/pap.eao/96011601.html">perso.enst.fr/~jld/papiers/pap.eao/96011601.html</A> -
+<I>XMOISE : A Logical Spreadsheet to Elicit Didactic Knowledge</I>, by
+V. Bersagol, J-L. Dessalles, F. Kaplan, J-C. Marze, S. Picault.
+Brief paper on a logical spreadsheet, used to
+express mathematical statements such as "A group with
+a commutative operator is Abelian".
+</P>
+
+<P>&nbsp;</P>
+
+
+
+<h2><A NAME="arulesxl">ARulesXL - Integrating Rules with Spreadsheets</A></h2>
+
+<p>Spreadsheets with their intuitive interface and internal calculation engine
+  are excellent tools for numerical analysis. Rule-based systems with their declarative 
+  rule specifications and internal inference engine are excellent tools for decision 
+  support applications.</p>
+
+<p>ARulesXL is a new product that integrates the two technologies. It uses the 
+  spreadsheet's intuitive interface for the definition of rules and provides spreadsheet 
+  functions that allow the rules to be queried from other spreadsheet cells as 
+  shown in the diagram below.</p>
+
+<p><img src="0505_dm_integration_architecture.gif" width="240" height="175"></p>
+
+<p>Because the definitions and queries are in spreadsheet cells, they can include 
+  references to other spreadsheet cells so that they become part of the spreadsheet's 
+  dependency graphs used for automatic recalculation. When the rules change, or 
+  values the rules depend on change, then the results of queries based on those 
+  rules are automatically updated.</p>
+
+<p>The following screen shot shows an example of how telephone pricing rules can 
+  be implemented in a spreadsheet using ARulesXL (if the pictures don't show up, 
+  visit <a href="http://www.ainewsletter.com">www.ainewsletter.com</a>).</p>
+
+<p><img src="0505_arulesxl.gif" width="893" height="893"></p>
+
+<p>While it might be possible to implement this spreadsheet using conventional 
+  Excel IF statements, it would be difficult to write and considerably more difficult 
+  for the call pricing marketing expert to read and verify as correct.</p>
+
+<p>Because the rules are clearer, they allow for the encoding, verification, and 
+  maintenance of more complex sets of business rules, making possible applications 
+  that are not practical using conventional spreadsheet capabilities alone. Applications 
+  such as taxes, human resources, benefits, work flow, pricing, underwriting, 
+  loan approval, legal advice and configuration all become viable spread sheet 
+  applications.</p>
+
+<p>To learn more about ARulesXL, visit <a href="http://www.arulesxl.com/">www.arulesxl.com</a></p>
+
+<P>&nbsp;</P>
+
+
+
+<H2><A NAME="numerical_ai">Numerical AI in Excel</A></H2>
+
+<H3><A NAME="numerical_ai_neural_nets">Neural nets</A></H3>
+
+<P>
+I managed to find quite a few neural net spreadsheets, some of which I've
+linked at the end.
+One nice 
+<A HREF="http://www.bcp.psych.ualberta.ca/~mike/Book2/Excel/index.html">pedagogical collection</A>,
+including
+Adaline and a Hebbian learner, has been 
+put on the
+Web by Michael Dawson at Alberta, author of
+<I>Minds And Machines: Connectionism And Psychological
+Modeling</I>. 
+</P>
+
+<P>
+One of his spreadsheets is a
+Hopfield net. This raises a problem, because Hopfield
+nets model a dynamical process
+similar to the settling of compass
+needles in a magnetic field. The customary simulation 
+requires neurons' activations to be repeatedly updated
+until they converge. As far as I know, such
+iterative processes can't be written in pure Excel. However, one can
+code them in Visual Basic, C, and other languages, by
+writing "add-in" functions that
+are called from
+formulae as though built-in, and which can
+use loops and recursion to do iterative calculations.
+Details can be found in most Excel Developers' guides.
+<P>
+
+
+<H3><A NAME="numerical_ai_front_ending">Spreadsheets as front-ends</A></H3>
+
+<P>
+The add-ins idea can be taken further, so that we use Excel
+merely as a front-end for input and display of data
+(why write your own charting and graphing packages when
+Excel provides such a variety), delegating
+all calculations to functions in some other language.
+I mention this because there are several such programs available.
+One - certainly not the only one - is the nicely presented
+<A HREF="http://www.neurosolutions.com/products/nsexcel/introduction.html">NeuroSolutions
+for Excel</A>, an add-in that interfaces Excel to NeuroSolutions's
+neural network simulator:
+<BLOCKQUOTE>
+You simply highlight portions of your data as training, cross validation, or 
+testing within your Excel spreadsheet, step through a few configuration panels, 
+and you have a working neural network. Configure another panel and watch Excel 
+graph the results from a batch of experiments. 
+This powerful feature allows you to easily determine the optimum network parameters.
+</BLOCKQUOTE>
+<p></P>
+
+<P>
+It's worth noting that there is another way to
+use Excel as a front end: inputting data
+to Excel, but then saving the spreadsheet
+to a file which is read and processed by another program.
+Indeed, we can save formulae into such a file
+as well as constant data.
+Should some
+problem be best
+defined as a set of equations, they
+could be input to Excel, saved to file, and processed
+in your favourite compiler-writing language.
+I don't know any AI programs front-ended by Excel in this way,
+but I did find
+others that are, such as StrongWare's
+<A HREF="http://www.strongware.com/modeling.htm">software for
+modelling flow paths</A>.
+</P>
+
+
+<H3><A NAME="numerical_ai_cellular_automata">Cellular automata</A></H3>
+
+<P>
+Like Hopfield nets, simulating cellular automata requires iterative updating. However,
+if we decide in 
+advance how many generations we want to display, there is a trick by which
+we can implement them without add-ins. 
+As Chris Hand explains in his paper 
+<A HREF="http://www.economicsnetwork.ac.uk/cheer/ch17/hand.htm"><I>Simple Cellular Automata on a Spreadsheet</I></A>,
+you have to make one copy of
+the cellular automaton grid for each generation. Each
+grid except the first contains state-change formulae in its cells: these refer to the <I>previous</I> grid. 
+Excel's normal spreadsheet updating rules will then propagate state from one
+generation to the next.
+This kind of display is useful in teaching. A good example
+is a
+<A HREF="http://www.complexmarkets.com/cellularworld.html">"small worlds" CA</A>,
+on the Complex Markets site,
+which
+models a market divided into "small-world communities". 
+Individuals communicate with their immediate neighbours,
+the strength of communication depending on whether the communication stays within
+a community or crosses from one to another.
+</P>
+
+
+<H3><A NAME="numerical_ai_links">Links</A></H3>
+
+<!-- Neural nets and GA's in spreadsheet -->
+
+<H4>Neural nets and genetic algorithms</H4>
+
+<P>
+<A HREF="http://www.bcp.psych.ualberta.ca/~mike/Book2/Excel/index.html">www.bcp.psych.ualberta.ca/~mike/Book2/Excel/index.html</A> -
+Excel neural nets by Michael Dawson, University of Alberta.
+</P>
+
+<P>
+<A HREF="http://www.cs.nott.ac.uk/~gxk/courses/g5aiai/006neuralnetworks/neural-networks.htm">www.cs.nott.ac.uk/~gxk/courses/g5aiai/006neuralnetworks/neural-networks.htm</A> -
+<I>G5AIAI - Introduction to Artificial Intelligence</I>, by Graham Kendall,
+University of Nottingham. There is a link near the bottom of the page to
+his <A HREF="http://www.cs.nott.ac.uk/~gxk/courses/g5aiai/006neuralnetworks/perceptron.xls">perceptron spreadsheet</A>.
+</P>
+
+<P>
+<A HREF="http://www.us.kanto-gakuen.ac.jp/indo/front_e.html">www.us.kanto-gakuen.ac.jp/indo/front_e.html</A> -
+<I>Simulating Theoretical 
+Models of Decision Making by Prolog and Spreadsheet</I>, a collection
+of programs
+by Kenryo Indo. Includes an impressive-looking Excel Hopfield net (in Japanese).
+</P>
+
+<P>
+<A HREF="http://www.neurosolutions.com/products/ns/">www.neurosolutions.com/products/ns/</A> -
+NeuroSolutions. 
+</P>
+
+<P>
+<A HREF="http://www.imagination-engines.com/databots.htm">www.imagination-engines.com/databots.htm</A> -
+Imagination Engines. Intriguing pages on DataBots, described as
+advanced adaptive organisms that live in a spreadsheet and achieve vision, attention, visual processing, 
+novel feature detection, movement, learning, reproduction, 
+and creativity!
+</P>
+
+<P>
+<A HREF="http://www.nd.edu/~dhartvig/omsoft/ai.htm">www.nd.edu/~dhartvig/omsoft/ai.htm</A> -
+Operations management software links to neural nets and
+genetic algorithms for Excel.
+</P>
+
+<P>
+<A HREF="http://www.inductive.com/software.htm">www.inductive.com/software.htm</A> -
+More links to case-based, neural net, and genetic algorithm tools.
+</P>
+
+
+<!-- Excel as a front-end -->
+
+<H4>Excel as a front-end</H4>
+
+<P>
+<A HREF="http://www.rateintegration.com/html/user_interface.html">www.rateintegration.com/html/user_interface.html</A> -
+<I>Spreadsheet-Based Rules</I>. RateIntegration's PriceMaker uses
+a spreadsheet as a front-end for entering rules to be used in
+rating telecomms services.
+</P>
+
+<P>
+<A HREF="http://www.strongware.com/modeling.htm">www.strongware.com/modeling.htm</A> -
+<I>StrongWare &reg; for Modelling with PC Spreadsheets</I>. StrongWare's systems 
+modelling software uses Excel as a front-end for entering flow paths.
+</P>
+
+<P>
+<A HREF="http://the-ciba.com/">the-ciba.com/</A> -
+The Visual Baler spreadsheet compiler. Taking the front-end idea further,
+one can compile an entire spreadsheet to an equivalent program in some other
+language, e.g. for use on a Web server. Visual Baler was one of the first
+spreadsheet compilers: there are several others.
+</P>
+
+
+<!-- CA's -->
+
+<H4>Cellular automata</H4>
+
+<P>
+<A HREF="http://www.economicsnetwork.ac.uk/cheer/ch17/hand.htm">www.economicsnetwork.ac.uk/cheer/ch17/hand.htm</A> -
+<I>Simple Cellular Automata on a Spreadsheet</I>,
+by Chris Hand, Kingston University. Online copy of <I>Computers in Higher Education Economics Review</I>,
+Volume 17, 2005. Describes how to force calculation of successive generations
+in an Excel cellular automaton.
+</P>
+
+<P>
+<A NAME="small_worlds"></A>
+<A HREF="http://www.complexmarkets.com/cellularworld.html">www.complexmarkets.com/cellularworld.html</A> -
+<I>Cellular automata and small-world</I>: the Complex Markets "small worlds" CA.
+</P>
+
+<P>&nbsp;</P>
+
+
+
+<H2><A NAME="excelsior">Model Master - Safer Spreadsheets with Prolog</A></H2>
+
+<H3><A NAME="excelsior_risks">Danger - spreadsheeter at work!</A></H3>
+
+<P>
+A recent
+<A HREF="http://it.slashdot.org/article.pl?sid=05/04/24/1218239&from=rss">Slashdot posting</A> reports that,
+according to both PricewaterhouseCoopers and KPMG, more than 90% of corporate 
+spreadsheets contain material errors. With each error 
+costing between $10K and 100K per month, one expert 
+estimates corporate America loses in excess of $10B annually 
+through the misuse and abuse of spreadsheets. 
+</P>
+
+<P>
+There are many
+many stories counting the costs of spreadsheet errors, some of which have been
+collected on the
+<A HREF="http://www.eusprig.org/stories.htm">European Spreadsheet
+Risks Group</A> site. In the US,
+eliminating such
+risks has become urgent because of the 
+Sarbanes-Oxley Act. And it's not just large multinationals
+who are affected. SF author and critic
+David Langford
+<A HREF="http://www.ansible.co.uk/">recounts</A> how his
+publishers sent him only half the
+royalties he was due because a call to
+<CODE>SUM</CODE> in their royalties spreadsheet
+omitted to total some of its cells.
+</P>
+
+<P>
+Reasons for such errors include:
+use of alphanumeric cell names instead of
+meaningful identifiers; the lack of user-defined
+functions; no good way to reuse code from existing
+spreadsheets; and the difficulty of
+managing spreadsheets with code-control
+systems such as 
+CVS. Most
+importantly, because few spreadsheet end-users and managers are
+trained in programming, they don't realise how
+prone we all are to make mistakes, and how vital it
+is to guard against them. 
+</P>
+
+
+<H3><A NAME="excelsior_equations">Spreadsheets as equations</A></H3>
+
+<P>
+Model Master, or MM, is 
+a Prolog program which I wrote to make spreadsheeting safer. The
+idea behind it is that spreadsheets are, as
+our first feature explained, sets of equations. By listing and
+transforming these, we can make existing spreadsheets
+more understandable. And by going the other way,
+compiling sets of equations into spreadsheets,
+we gain the benefits of textual source code: 
+easy to print, easy to edit, easy to reuse, easy to enter into
+code-control systems.
+</P>
+
+<P>
+To apreciate this, look at these equations, which 
+could come from a simple accounting spreadsheet:
+<PRE>
+  A2 = 2000
+  A3 = 2001
+  B2 = 1492
+  B3 = 1560
+  C2 = 971
+  C3 = 1803
+  D2 = C2 - B2 
+  D3 = C3 - B3 
+</PRE>
+Notice how they become immediately clear
+when we rewrite them as:
+<PRE>
+  Year[2000] = 2000
+  Year[2001] = 2001
+  Sales[2000] = 971 <I>etc.</I>
+  Profit[2000] = Sales[2000] - Expenses[2000]  
+  Profit[2001] = Sales[2001] - Expenses[2001]  
+  Layout Year[2000:] as A2 downwards
+  Layout Expenses[2000:] as B2 downwards
+  Layout Sales[2000:] as C2 downwards
+  Layout Profit[2000:] as D2 downwards
+</PRE>
+<p></P>
+
+
+<H3><A NAME="excelsior_cdre">Compiling, decompiling, and structure discovery</A></H3>
+
+<P>
+MM contains a compiler for converting such specifications to
+spreadsheets. It
+reads the equations and layout directives, then
+uses the latter to allocate identifiers in the equations to cells,
+saving the result as a spreadsheet. This is extremely powerful,
+because by varying the layouts, we can map the same equations to a spreadsheet in many different
+ways. Thus we could
+compile the same three-dimensional table to vertically stacked 2-d cross-sections
+in one spreadsheet, to a horizontal sequence of cross-sections in another, and
+to one slice per worksheet in a third. It is equally easy to
+run data from right to left, to accomodate Hebrew and Arabic
+readers. An extension to the layout directives allows labels
+to be added, making it easy to internationalize the text 
+in a spreadsheet.
+</P>
+
+<P>
+There is also a decompiler which converts spreadsheets back to
+equations. When it is given layout directives,
+it applies the inverse mapping to the compiler. So, given my first
+listing and the layout directives from the second, it would
+generate the equations from the second listing.
+</P>
+
+<P>
+If a spreadsheet has been generated by the compiler, we will
+know how to group and rename its cells on decompilation. However, this won't
+be the case for the overwhelming majority of spreadsheets.
+To make them intelligible, we need to discover their authors'
+intentions, i.e. what arrays they had in mind when coding.
+I call this the
+problem of "structure discovery".
+</P>
+
+
+<H3><A NAME="excelsior_spreadsheet_grammars">Structure discovery and spreadsheet grammars</A></H3>
+
+<P>
+There are heuristics we can use to guess at a spreadsheet's implicit structure.
+To find out which cells belong in the same array,
+we can: look for regions surrounded by text or blank cells; 
+sequences of identical formulae; and regions passed as ranges to 
+<CODE>SUM</CODE> and other aggregating functions. To discover the array bounds, we
+can look for sequences of numbers such as the years in my listings, and
+for sequences of common words such as the names of months. These will often run along a row, 
+telling the reader the subscripts associated with the cells below; or down a column,
+subscripting the cells to their right.
+To guess
+names for these arrays, we can use labels in neighbouring cells, 
+especially those above or to their left.
+</P>
+
+<P>
+Such heuristics can be programmed directly in Prolog, but what's
+nice is that we can write them more concisely
+by using Definite Clause Grammars.
+For non-Prologers, I should explain that Prolog
+has a special notation for writing BNF-like grammars
+known as Definite Clause Grammars, plus a translator to convert them a to
+parser. Amzi!'s 
+<A HREF="http://www.amzi.com/manuals/amzi7/pro/ref_dcg.htm">tutorial on DCGs</A> gives more details, and
+demonstrates with a
+a grammar for (simple!) English
+sentences:
+<PRE>
+  sentence --&gt;
+    subject,
+    verb,
+    object.
+
+  subject --&gt;
+    modifier,
+    noun.
+
+  object --&gt;
+    modifier,
+    noun.
+
+  modifier --&gt; [the].
+
+  noun --&gt; [cat].
+  noun --&gt; [mouse].
+
+  verb --&gt; [chases].
+  verb --&gt; [eats].
+</PRE>
+<p></P>
+
+<P>
+We can devise similar rules to search for structure in
+spreadsheets. This rule 
+searches for a label (which I define as a spreadsheet cell containing
+text and having no dependents) with a cell
+containing a formula on its immediate right:
+<PRE>
+  labelled_cell( L ) --&gt; label(N), right(1), formula_cell, at(A), 
+                         L is_layout [ name=N, address=A, subscript=[] ].
+</PRE>
+When this rule is applied to a spreadsheet, if it
+finds a labelled cell, it creates a layout structure in
+variable <CODE>L</CODE>, giving it
+a name field equal to the label's text, and
+a base address or origin which is that of the formula cell. It also
+puts an empty subscript into the structure, signifying that
+the cell stands on its
+own rather than being part of an array. (Cells in arrays
+would get subscripts indicating their position relative to
+the array origin.) The layout structure is the internal
+representation of the <CODE>Layout</CODE> directives shown
+earlier.
+<p></P>
+
+
+<H3><A NAME="excelsior_prolog_interface">Prolog as a spreadsheet-manipulation language</A></H3>
+
+<P>
+Prolog programmers can use the Prolog top-level interpreter
+as an
+interactive interface to MM's spreadsheet predicates, with backtracking
+useful for returning alternative solutions. For example, the query below
+would find all formulae in Sheet1 whose top-level operator is a plus: 
+<PRE>
+  ?- load( 'spreadsheet.xml', SS ),
+     cell( SS, 'Sheet1', Col, Row, Formula ),
+     Sub = _+_,
+     subexpression( Formula, Sub ).
+</PRE>
+Here, <CODE>load</CODE> reads a spreadsheet
+file, <CODE>cell</CODE> looks up the contents of cells, and 
+<CODE>subexpression</CODE> matches subexpressions in formulae.
+<p></P>
+
+<P>
+MM's compiler and decompiler can be called from Prolog too.
+These take spreadsheets or sets of equations as arguments (MM represents a spreadsheet as
+a 
+set of equations augmented with cell styles, named ranges, and
+other Excel stuff), as well as lists of layout structures. For example,
+<PRE>
+  ?- load( 'ss.xml', SS ),
+     match_all( SS, labelled_cell, Layouts ),
+     decompile( SS, Layouts, Decompiled ),
+     show( Decompiled ).
+</PRE>
+This query reads the file <CODE>ss.xml</CODE> into <CODE>SS</CODE>,
+applies our labelled-cell rule as many times as it can, gathering
+all the layouts into <CODE>Layouts</CODE>, runs them backwards
+generating <CODE>Decompiled</CODE>, and displays the transformed - and, we hope,
+more
+intelligible - listing.
+<p></P>
+
+<P>
+We also have operators for combining spreadsheets and parts of spreadsheets, making
+it possible to reuse them.
+The most fundamental are <CODE>\/</CODE>, which
+overlays two spreadsheets (the symbol is the nearest a keyboard can come
+to set union); <CODE>&gt;&gt;</CODE>, which shifts a spreadsheet along a vector;
+and <CODE>-</CODE> and <CODE>restrict</CODE>, which remove cells, ranges, and sheets
+from a spreadsheet:
+<PRE>
+  ?- load( 's1.xml', S1 ),
+     load( 's2.xml', S2 ),
+     S3 is_ss ( S1 restrict 'Sheet1' sub [a,c:d] ) \/
+              ( S2 restrict 'Sheet1' sub b ),
+     save( 's3.xml', S3 ). 
+</PRE>
+Suppose that we have two accounting spreadsheets,
+both containing years in column A, expenses in B, sales in C, and profit calculations in D.
+We want to build a new spreadsheet which uses the sales from one and the expenses from
+the other. As the code above shows, it's easy - we isolate columns A, C and D from the first,
+and B from the second, by calling <CODE>restrict</CODE>. We then superimpose them with
+the spreadsheet union operator <CODE>\/</CODE>. The result is saved to 
+<CODE>s3.xml</CODE>.
+<p></P>
+
+<P>
+If, for some strange reason, the second spreadsheet had its expenses running horizontally
+from cell A2 rightwards, we could still use them:
+<PRE>
+  ?- load( 's1.xml', S1 ),
+     load( 's2.xml', S2 ),
+     S3 is_ss ( S1 restrict 'Sheet1' sub [a,c:d] ) \/
+              ( S2 restrict 'Sheet1' sub 1 ) rebase [ a2, b2, vector(1,0), vector(0,1) ],
+     save( 's3.xml', S3 ). 
+</PRE>
+What's new is <CODE>rebase</CODE>, which maps one set of cells
+into another. Here, it is given the origin of the source and
+target cells, and the increments between cells.
+<p></P>
+
+
+<H3><A NAME="excelsior_scripting_language">The Excelsior scripting language</A></H3>
+
+<P>
+Until some genius equips Prolog with a telepathy interface, we can never
+be sure we have uncovered a spreadsheet author's intentions. We may therefore
+need a lot of
+trial and error when doing our structure discovery. To support this, 
+it would be useful to have a user-interface similar to Mathematica and other
+computer-algebra systems: see <A HREF="http://www.univ-orleans.fr/EXT/ASTEX/astex/doc/en/rosetta/htmla/roseta.htm"><I>The 
+Rosetta Stone for Computer Algebra Systems</I></A>
+for a comparison of
+approaches. Such an interface should give the user some way to store for later use spreadsheets,
+parts of spreadsheets, cell addresses, formulae, and equations generated by
+structure discovery. It should obviously be interactive, and should -
+building on what existing computer-algebra systems find most usable -
+be functional rather than logic-based, meaning that commands typed at it
+are treated as expressions to be evaluated, rather than Prolog queries.
+</P>
+
+<P>
+In addition, although the operator notation in the previous section
+will be manageable to Prolog experts, it suffers from the syntactic compromises
+needed to make it go through Prolog's parser. For example, 
+<CODE>Sheet1</CODE> had to go in single quotes to stop Prolog treating it
+as a variable. To overcome these problems, MM has its own
+scripting language, Excelsior. This was implemented for a group
+of systems-admin users: the type of person who doesn't know
+Prolog, but is prepared to hack languages like Perl and Python. Such users
+can use Excelsior as a batch language for automating spreadsheet
+editing, in the same way they'd use Perl for string-bashing.
+They can also use it interactively as a "spreadsheet algebra" language for
+trial-and-error reverse enineering.
+</P>
+
+
+<H3><A NAME="excelsior_rev_eng_ca">Reverse-engineering a cellular automaton</A></H3>
+
+<P>
+In the <I>Numerical AI in Excel</I> feature, 
+I mentioned the
+small-worlds cellular automaton spreadsheet.
+Because it lays out 26 successive generations of its CA
+down one worksheet, it holds a vast
+amount of repetitive structure, both within
+each generation's grid, and from one grid to another. 
+I experimented with MM for making this structure explicit, and
+found that
+by searching the spreadsheet for identical formulae, 
+then grouping these into runs, and runs of runs, I could
+list the spreadsheet very compactly.
+</P>
+
+<P>
+One such set was listed as 
+<PRE>
+  Sheet1[ {0} &gt;&lt; { 4..829 by 33 } ] = "step=".
+</PRE>
+The expression inside the square brackets specify a whole
+set of worksheet addresses. In it,
+the symbol <CODE>&gt;&lt;</CODE> denotes
+Cartesian product, i.e. the product of two sets.
+These are sets of subscripts, the first being 
+a set of column indices (based at 0), and the second a set
+of row indices. As conventional, they are
+enclosed in curly brackets. So the equation means that
+the cells in 
+rows 4, 37, 70, ... 829 of column 0
+contain the label <CODE>step=</CODE>.
+<p></P>
+
+<P>
+Similarly, 
+the cells in rows 
+6, 39, 72, ... 831 of column 0
+contain the constant 1.
+So do the
+cells in rows 4, 37, 70, ... 829 of column 2.
+And the cells in
+rows 37, 70, ... 829 of column 1
+contain the relative formula <CODE>R[-33]C+1</CODE>.
+MM displays this as
+<PRE>
+  Sheet1[ {1} &gt;&lt; { 37..829 by 33 } ] = Sheet1[ HERE, HERE - 33 ]+1
+</PRE>
+This is a very compact listing: 
+whereas the original Excel file occupied
+1.8 Mb, the MM listing was only 14K and
+contained 17 equations.
+<p></P>
+
+<P>
+Using the MM compiler, we can reverse this,
+generating a spreadsheet <I>from</I> such listings, making it
+very easy to experiment with spreadsheet-based cellular automata.
+</P>
+
+<P>
+Along the same lines, MM has been used
+to convert an assortment of spreadsheet-based simulations
+into equations which can then be reimplemented in other programming languages, including:
+<A HREF="http://www.lumina.com/">Lumina</A>'s Analytica
+modelling package; Java; 
+and numerical languages such as Fortran. 
+</P>
+
+
+<H3><A NAME="excelsior_financial">MM in finance: from category theory to billion-dollar loans</A></H3>
+
+<P>
+One experiment with MM, which I tried at the suggestion of
+UK accountant and spreadsheet expert 
+<A HREF="http://www.duncanwil.co.uk/">Duncan Willamson</A>, used it
+to edit accounts spreadsheets. Apparently, these often fail to balance at the end
+of the accounting year, because some credits or debits are wrong.
+Accountants rectify this by patching with corrections such as
+"The sales department must be noted to have spent an extra &pound;200".
+(I'm not an accountant, so this explanation may not be
+quite right.)
+Making these edits in Excel would require
+inserting extra input rows containing the correction, then updating
+all cell references in the calculations sheet so that they use
+the corrected inputs rather than the originals. This is tedious and
+error-prone. However, it was easy to code the edits in
+Prolog.
+</P>
+
+<P>
+I've also worked with a US investment bank on a much bigger application,
+MM as the basis of a tool for 
+checking that the
+bank's spreadsheets conform to in-house style rules and that
+their units (money, years, months, interest rates, and so on) are consistent,
+and that malicious users have not tampered with
+local copies of certain spreadsheets. 
+</P>
+
+<P>
+I'll end by saying a bit about mathematics. I had the idea of MM by chance,
+as a result of work in
+a branch of mathematics called 
+<A HREF="http://en.wikipedia.org/wiki/Category_theory">category theory</A>. This is an 
+<A HREF="http://www-cse.ucsd.edu/users/goguen/pps/manif.ps">important</A> and
+foundational (also elegant, recursive, and highly self-similar)
+subject, which allows one to combine varied
+mathematical and computational
+views of the same situation, snapping them
+together like Lego bricks. 
+I can't imagine, though, many people running to buy a
+book on <I>Category Theory with Excel</I>. This would be a pity,
+because I found the subject 
+extremely helpful, both in inspiring MM,
+and in clarifying its design.
+Some of the investment bank spreadsheets
+are used in assessing loans: loans
+which may run to several billion dollars. 
+With mathematics comes power.
+</P>
+
+
+<H3><A NAME="excelsior_links">Links</A></H3>
+
+<P>
+<A HREF="http://www.eusprig.org/">www.eusprig.org/</A> -
+European Spreadsheet Risks Interest Group. The 
+spreadsheet mistake stories are at 
+<A HREF="http://www.eusprig.org/stories.htm">www.eusprig.org/stories.htm</A>.
+</P>
+
+<P>
+<A HREF="http://it.slashdot.org/article.pl?sid=05/04/24/1218239&from=rss">it.slashdot.org/article.pl?sid=05/04/24/1218239&from=rss</A> -
+The Slashdot thread
+<I>$10B Annual Tab for Spreadsheet Errors?</I> (Thanks to
+<A HREF="http://www.virtual-worlds.biz/">Graham Stark</A> for the link.)
+</P>
+
+<P>
+<A HREF="http://www.ansible.co.uk/">www.ansible.co.uk/</A> -
+David Langford's site. The royalties spreadsheet problem
+is in his entry for 6 April 2005. (His book reviews and other pieces are nothing
+to do with spreadsheets, but fun to read. His novel
+<I>The Leaky Establishment</I> features the slowest Space
+Invaders game in the world, played, in a certain Civil Service
+atomic research establishment, on a teletype.)
+</P>
+
+<P>
+<A HREF="http://www.inacom.com/display.aspx?page=/newsletter/sarbanesoxley.aspx">www.inacom.com/display.aspx?page=/newsletter/sarbanesoxley.aspx</A> -
+<I>May Newsletter: Sarbanes-Oxley, Simply Put</I>, by
+Dan Barker from inacom.
+</P>
+
+<P>
+<A HREF="http://www.businessforum.com/SEC01.html">www.businessforum.com/SEC01.html</A> -
+<I>The Emerging Company
+and the SEC: 
+The Significance of
+the Sarbanes-Oxley Act</I>, by Thomas Faulhaber, The Business Forum Online.
+</P>
+
+<P>
+<A HREF="http://www.dmreview.com/article_sub.cfm?articleId=1012265">www.dmreview.com/article_sub.cfm?articleId=1012265</A> -
+<I>Spreadsheet Jeopardy</I> by Richard Tanler, from DMReview.
+Also published in <I>DM Direct Special Report</I> for
+October 19, 2004. 
+</P>
+
+<P>
+<A HREF="http://www.amzi.com/manuals/amzi7/pro/ref_dcg.htm">www.amzi.com/manuals/amzi7/pro/ref_dcg.htm</A> -
+Amzi!'s tutorial on DCGs.
+</P>
+
+<P>
+<A HREF="http://www.univ-orleans.fr/EXT/ASTEX/astex/doc/en/rosetta/htmla/roseta.htm">www.univ-orleans.fr/EXT/ASTEX/astex/doc/en/rosetta/htmla/roseta.htm</A> -
+<I>The Rosetta Stone for Computer Algebra Systems</I>, by
+Tim Daly, Michael Wester, Alexander Hulpke, Hans Schoenemann, Serge Mechveliani, Ayal Pinkus and Michel Lavaud.
+</P>
+
+<P>
+<A HREF="http://www.duncanwil.co.uk/">www.duncanwil.co.uk/</A> -
+Duncan Williamson's site. Includes a presentation
+on good design of spreadsheets, at 
+<A HREF="http://www.duncanwil.co.uk/spreaddes_files/frame.htm">www.duncanwil.co.uk/spreaddes_files/frame.htm</A>.
+</P>
+
+<P>
+<A HREF="http://www-cse.ucsd.edu/users/goguen/pps/manif.ps">www-cse.ucsd.edu/users/goguen/pps/manif.ps</A> -
+<I>A Categorical Manifesto</I>, by Joseph Goguen.
+Also published in
+<I>Mathematical Structures in Computer Science</I>, volume 1, number 1, 
+March 1991. It may not make much sense to
+non-categorists, but I hope enough shines through to demonstrate how
+important the subject is.
+</P>
+
+<P>&nbsp;</P>
+
+
+
+<H2><A NAME="jokes">Spreadsheet Humor</A></H2>
+
+<P>
+I thought I'd end with some humor. The Web does
+not contain many jokes about spreadsheets - but I did find some, on
+spreadsheet consultant
+John Walkenbach's site. I hope that, in return for a free mention,
+he won't mind me quoting a few.
+</P>
+
+<P>
+<A HREF="http://www.j-walk.com/ss/jokes/car.htm">If a spreadsheet were a car</A>:
+<UL>
+<LI><P>It would crash two or three times per day for no apparent reason. The 
+driver is often hurt, but the car itself receives no permanent damage. 
+You'd just accept this fact, restart the car, and begin your trip again. 
+</P></LI>
+<LI><P>
+Occasionally, your car would fail to restart after a crash, and you'd have 
+to reinstall the engine. For some strange reason, you'd just accept this too.
+</P></LI>
+<LI><P> 
+The oil, engine, gas and alternator warning lights would be replaced by a 
+single warning light: "This car has performed an illegal operation." 
+</P></LI>
+</UL>
+<p></P>
+
+<P>
+<A HREF="http://www.j-walk.com/ss/jokes/riddles.htm">Some Riddles</A>:
+<UL>
+<LI><P>
+Q. How do you identify an extroverted spreadsheet user? <BR>
+A. He looks at your shoes when he talks to you. 
+</P></LI>
+<LI><P>
+Q. Why don't spreadsheets have multithreading?<BR>
+A. The designers decided one bug at a time was enough for most users. 
+</P></LI>
+<LI><P>
+Q. What is the most frequent question asked by a would-be spreadsheet consultant?<BR>
+A. "Would you like fries with that?" 
+<P></LI>
+</UL>
+<p></P>
+
+<P>
+Why do psychologists prefer lawyers to rats for their experiments?
+<UL>
+<LI>There are now more lawyers than rats;</LI>
+<LI>The psychologists found they were getting attached to the rats;</LI>
+<LI>And there are some things that rats won't do</LI>
+</UL>
+<p></P>
+
+<P>
+OK, so that last joke isn't about spreadsheets. It comes from a paper 
+by Paul Thagard and Cameron Shelley,
+<A HREF="http://cogsci.uwaterloo.ca/Articles/Pages/emotional-analogies.html"><I>Emotional 
+Analogies and Analogical Inference</I></A>. Such jokes are funny,
+they explain, because:
+<BLOCKQUOTE>
+One of the most enjoyable uses of analogy is to make people laugh, generating the 
+emotional state of mirth or amusement. The University of Michigan recently ran an 
+informational campaign to get people to guard their computer passwords more carefully. 
+Posters warn students to treat their computer passwords like underwear: make them long 
+and mysterious, don't leave them lying around, and change them often. The point of the 
+analogy is not to persuade anyone based on the similarity between passwords and underwear, 
+but rather to generate amusement that focuses attention on the problem of password security.
+</BLOCKQUOTE>
+The password analogy works because
+part of what makes an analogy funny is a
+surprising combination 
+of congruity and incongruity. Passwords and underwear are different,
+so it surprises us when we find a similarity. Such similarities are
+particularly amusing when directed at people we dislike.
+<p></P>
+
+<P>
+To which I might add "and things we dislike". Here's one final spreadsheet joke,
+<A HREF="http://www.j-walk.com/ss/jokes/writer.htm">The Aspiring Writer</A>: 
+<UL>
+<LI>
+<P>
+There was once a young man who, in his youth, professed a desire to become a great writer. 
+When asked to define "great" he said:
+</P>
+<P>
+"I want to write stuff that the whole world will read, 
+stuff that people will react to on a truly emotional level, 
+stuff that will make them scream, cry, wail, howl in pain, 
+desperation, and anger!" 
+</P>
+<P>
+He now works for Microsoft, writing Excel error messages. 
+</P>
+</UL>
+<p></P>
+
+
+<H3><A NAME="jokes_links">Links</A></H3>
+
+<P>
+<A HREF="http://cogsci.uwaterloo.ca/Articles/Pages/emotional-analogies.html">cogsci.uwaterloo.ca/Articles/Pages/emotional-analogies.html</A> -
+<I>Emotional Analogies and Analogical Inference</I>,
+by Paul Thagard and Cameron Shelley, 
+Philosophy Department, University of Waterloo. 
+</P>
+
+<P>
+<A HREF="http://www.j-walk.com/ss/jokes/">www.j-walk.com/ss/jokes/</A> -
+John Walkenbach's spreadsheet jokes.
+</P>
+
+<P>
+<A HREF="http://neopoleon.com/blog/posts/434.aspx">neopoleon.com/blog/posts/434.aspx</A> -
+<I>Excel as a database</I>. Rory Blyth's spoof on those 
+times when, at some unfortunate point in your life as a developer,
+a marketing fiend hands you an Excel file crammed with "data" and demands
+"do something with it". 
+</P>
+
+<P>
+<A HREF="http://www.netzmafia.de/service/admin.html">www.netzmafia.de/service/admin.html</A> -
+<I>Der Excel-Affe</I>. If the Web contains few English spreadsheet jokes,
+there were even fewer in the other languages I tried. But here, for
+German speakers, is one of many pages telling the story
+of "The Excel Ape". 
+<BR>
+Summary for non-speakers: tourist walks into an animal shop, and while
+looking around, sees a customer order an Excel ape. It's expensive. Why? 
+Because it can program fast, cheaply, and error-free.
+He sees another ape, a Web ape. This is very expensive: it can design Web sites, 
+server-side programs, all kinds of stuff. Then he sees a third ape, which is very very <I>very</I> expensive,
+more than the other two combined. <I>Why?</I> "Well, 
+I've never seen it do anything useful, but the others call it administrator".
+</P>
+
+
+
+
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome. Feel free to contact either myself (below) or Jocelyn &lt;popx@j-paine.org&gt; 
+              with comments, thoughts and suggestions.</P>
+            <P>Until next month, </P>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p>Copyright &copy;2005 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved </p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

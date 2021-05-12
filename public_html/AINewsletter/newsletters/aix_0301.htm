@@ -1,0 +1,406 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->January 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>January 2003</h3>
+            <ul>
+              <li><a href="#deploying_ai">Business Models for Deploying AI</a> 
+                - Specific Product Niches.</li>
+              <ul>
+                <li><a href="#class_scheduling">Classroom Scheduling</a></li>
+                <li><a href="#data_mining">Pharmaceutical, Biotech Data Mining</a></li>
+                <li><a href="#game_simulations">Game Simulations</a></li>
+              </ul>
+              <li><a href="#spiritual_machines">Spiritual Machines</a> - Thoughts 
+                on Ray Kurzweil's book</li>
+              <li><a href="#computer_go">Computer Go</a> - The game computers 
+                can't beat, yet</li>
+              <li><a href="#genetic_scheduling">Basketball Scheduling</a> - A 
+                personal obsession</li>
+              <li><a href="#erratum">Erratum</a> - Failing geography</li>
+              <li><a href="#links">Links</a></li>
+              <ul>
+                <li><a href="#ai_expert">The Best of AI Expert</a> - Neural nets, 
+                  finance, virtual horses</li>
+                <li><a href="#links_scheduling">Scheduling</a> - An intimidating 
+                  article on scheduling complexity</li>
+                <li><a href="#go">Go</a> - Links on computer and human go</li>
+              </ul>
+            </ul>
+            <h2><a name="deploying_ai"></a>Business Models for Deploying AI</h2>
+            <p>There is no doubt of the benefit of various AI tools and techniques, 
+              but, compared to conventional applications, there are additional 
+              costs associated with using AI. In other words, deploying AI requires 
+              a cost/benefit analysis just like everything else. </p>
+            <p>The major cost is acquiring the people with the necessary skills. 
+              AI techniques are not that difficult to learn and use, but they 
+              are different and take some time to learn and master. The benefits 
+              of a potential AI application must outweigh the costs of dedicating 
+              the people and training time necessary to get the job done right.</p>
+            <p>Last month's newsletter covered two models of favorable cost/benefit 
+              analysis for deploying AI. Both involved large organizations with 
+              1) the financial resources to invest in people with AI skills, and 
+              2) a significant body of potential applications that made the investment 
+              worthwhile. One was a large corporation, American Express, that 
+              developed staff for internal development; the other was the Egyptian 
+              Department of Agriculture, which used a cooperative effort between 
+              government, academia and commercial agriculture.</p>
+            <p>This month covers a third cost/benefit model that does not require 
+              large financial resources, but instead requires individuals willing 
+              to take a risk in the free market. It is the small company using 
+              AI to gain a competitive advantage in narrow application markets.</p>
+            <p>In these cases, the company's investment in AI will hopefully be 
+              compensated for by multiple customers of that company's products 
+              and services.</p>
+            <p>The key to success for this model is knowing how to market the 
+              products. Typically, however, this is not that big a problem, as 
+              the entrepreneurs involved understand the problems of the market 
+              because of personal experience.</p>
+            <p>That is the case for the three examples which follow: a company 
+              that knows the education market providing classroom scheduling; 
+              individuals with experience in pharmaceutical research providing 
+              data mining tools and services; and developers of sophisticated 
+              military simulations moving into computer game software.</p>
+            <p>These three examples came from following threads of interest from 
+              readers, so keep those e-mails coming.</p>
+            <h3><a name="class_scheduling"></a>Classroom Scheduling</h3>
+            <p><a href="http://www.antinoos.gr/en">Antinoos</a> is a Greek company 
+              with a handful of application products targeted at specific applications. 
+              <a href="http://www.antinoos.gr/en/orologio.htm">Orologio</a> is 
+              their school time table application. Scheduling applications, such 
+              as school time tables, are notoriously difficult (see <a href="#links_scheduling">scheduling 
+              link</a>). Antinoos has implemented their own probabilistic weighted 
+              search scheduling algorithm in the application, developed using 
+              Borland's Delphi 3.</p>
+            <p>Antinoos and Orologio provide a perfect example of how a small, 
+              technically-oriented company can make an investment in AI technology 
+              and apply it to applications for users that have no interest in 
+              how the application actually works. (&quot;People want holes, not 
+              drills.&quot; -- Black and Decker)</p>
+            <p>This model is more applicable today than ever, due to the Internet's 
+              phenomenal potential to reach Global markets.</p>
+            <p>In the words of Haris Saravanos of Antinoos: &quot;There are so 
+              many fields to use AI and create software for real business, but 
+              so little time. Of course, for some years markets (U.S. Market excluded) 
+              were unable to follow. Thanks, basically to Internet, things have 
+              changed. Nowadays we're in process of selling OROLOGIO in markets 
+              such as BOTSWANA's !! Greek software (or any kind of product) in 
+              Botswana was out of the question a couple of years ago.&quot;<br>
+            </p>
+            <h3><a name="data_mining"></a>Pharmaceutical, Biotech Data Mining</h3>
+            <p>Pharmaceutical and biotech companies produce tremendous amounts 
+              of experimental data. <a href="http://www.scinovaindia.com/">SciNova 
+              Informatics</a> is an Indian company that specializes in data mining 
+              products and services that provide researchers with clearer insights 
+              into that data.<br>
+            </p>
+            <p>They use a variety of techniques, including automatic rule induction, 
+              neural networks and genetic algorithms. They provide both consulting 
+              services and a commercial product, <a href="http://www.scinovaindia.com/products.html">Prometheus</a>.</p>
+            <p>Like Antinoos, they started their initial work with hospitals and 
+              companies in India. They are branching out to Europe and the U.S. 
+              Their product lines are developed in conjunction with their consulting 
+              work.<br>
+            </p>
+            <h3><a name="game_simulations"></a>Game Simulations</h3>
+            <p><a href="http://www.stottlerhenke.com">Stottle Henke Associates</a> 
+              is a growing company offering, among other products, tools for creating 
+              intelligent agents in virtual world computer games. In their case 
+              the products are a result of extensive contract work they did generating 
+              intelligent tutors and training simulators for the military.</p>
+            <p>Like SciNova, their company provides both consulting/contract services 
+              and products related to those services.</p>
+            <p>The gaming product is called SimBionic(TM). The product fits this 
+              newsletter's general model of AI. There is an engine that implements 
+              the agents, and a graphical development environment that lets game 
+              developers easily create the agents and their behaviors. The graphical 
+              development environment lets subject matter experts directly program 
+              the behaviors without an intermediate programmer. The engine is 
+              written in C++ with an API that let's it be easily integrated into 
+              a larger gaming context.</p>
+            <h2><a name="spiritual_machines"></a>Spiritual Machines</h2>
+            <p>If you haven't already read <i>The Age of Spiritual Machines</i>, 
+              by Ray Kurzweil, I highly recommend it. I won't guarantee that you'll 
+              like the book, although you might, but I will guarantee that it 
+              will make you think. His thought-provoking prophecies of digital 
+              circuitry eventually replacing human brains has triggered many different 
+              responses, many of which are posted on <a href="http://www.kurzweilai.net">Kurzweil's 
+              site</a>.</p>
+            <p>Kurzweil has a tremendous resume of success. He got his start following 
+              the entrepreneurial business model. He used his inventive genius 
+              to create optical character recognition and speech synthesis tools, 
+              and then his marketing genius to understand and reach the blind 
+              market with his reading machine for the blind. This led to meeting 
+              Stevie Wonder, which led to music synthesizers, which led to... 
+              Well that whole story is in the book as well.</p>
+            <p>Without even looking to the future, his accounts of what is happening 
+              in the present are fascinating, and well documented with extensive 
+              references. And he lays out a blueprint on how to build a brain 
+              today.</p>
+            <p>It's simple. Just combine recursive problem solving with evolutionary 
+              algorithms that optimize neural net topologies.</p>
+            <p>Interesting. That's kind of what the developers of programs to 
+              play the game of go are doing.</p>
+            <h2><a name="computer_go"></a>Go and Computers</h2>
+            <p>Go is considered by many who have played it to be the ultimate 
+              board game. It has fascinated players for centuries, yet today it 
+              has an added charm. The best computer go programs are only at beginner 
+              levels. One can feel smug playing a game that artificial intelligence 
+              cannot, at least for now, play.</p>
+            <p>Why is that? It's not for lack of trying. There is an ongoing assault 
+              of very talented go players and programmers trying to create better 
+              and better go programs.</p>
+            <p>One reason is simply the size of the board. It's played on a 19x19 
+              grid so there are more moves to consider, which means standard alpha-beta 
+              search algorithms have much more work to do.</p>
+            <p>But that's not the main reason. It's very difficult to assess how 
+              good a move is. In fact, it is extremely difficult to simply write 
+              a program that correctly determines the score at the end of a game, 
+              a feat easily carried out by human go players.</p>
+            <p>How is that evaluation done? It's a pure and simple human brain 
+              pattern-matching exercise. The complex interrelated patterns of 
+              white and black stones hold the key to understanding the game.</p>
+            <p>Which is all kind of ironic. Chess programs started out looking 
+              to emulate human pattern matching, and instead evolved into muscular 
+              search programs that overwhelm human intelligence. Go programs are 
+              going the other way. Search simply doesn't work, and developers 
+              are looking to emulate human pattern matching, as Kurzweil describes.</p>
+            <p>When a computer finally does start playing reasonable go, it will 
+              be doing so in a more human-like way than its chess playing cousins.</p>
+            <p>See the <a href="#go">links</a> for information about computer 
+              go.</p>
+            <h2><a name="genetic_scheduling"></a>Basketball Scheduling Experiences</h2>
+            <p>A number of years ago I was contacted by the Atlantic Coast Conference 
+              (ACC), one of the top collegiate athletic conferences in the U.S., 
+              with the problem of generating a &quot;fair&quot; basketball schedule. 
+              It appears that college basketball, in the top conferences, is a 
+              particularly difficult scheduling problem, due to a very compact 
+              season and the desire of each team to not yield any competitive 
+              scheduling advantage to other teams, like having less home games 
+              on weekends and therefor fewer games with the advantage of a boisterous 
+              partisan crowd.</p>
+            <p>I was told that a scheduling expert had told them the constraints 
+              were impossible to satisfy, which had the effect of making it somewhat 
+              of an obsession for me.</p>
+            <p>We did come up with a good schedule for the ACC that year, and 
+              have since done other work for other conferences. The Big East Conference 
+              men's basketball schedule is considered the most difficult, due 
+              to complex arena constraints that other conferences don't have. 
+              The individual responsible for the schedules is an avid chess player 
+              who spends months manipulating tokens representing teams and games. 
+              The ACC told the Big East about our program, but the Big East was 
+              skeptical. So just like in the old folk song about John Henry competing 
+              with the steel-driving machine, it became a head-to-head competition. 
+              Well, I think it was a tie, but they liked the hand developed schedule 
+              better.</p>
+            <p>We still schedule the Big East women's basketball each year, which 
+              doesn't have the arena constraints. But we've never truly gotten 
+              a program that we like, so we keep changing it.</p>
+            <p>The first version of the program, written in Prolog, used a pure 
+              depth-first search, and produced great schedules when the constraints 
+              were solvable, after considerable searching. The order of the initial 
+              list of games to be scheduled had a tremendous affect on the program's 
+              success or failure. Given the wrong start, the program never converged, 
+              but with a good start it might converge relatively quickly. This 
+              immediately led to the &quot;I'd rather be lucky than good&quot; 
+              rule that shuffled the input list and restarted the program after 
+              it had run too long.</p>
+            <p>It also suggested genetic algorithms as an approach. The next version 
+              of the program was a pure Java genetic scheduling algorithm. It 
+              had the advantage of generating poor, but playable, schedules early 
+              on and then gradually evolving better and better schedules. It worked, 
+              and was less nerve-racking than the first version, but it never 
+              found the really great schedules the first version did. And it also 
+              took a long time.</p>
+            <p>The problem with genetic algorithms is that, despite a really cool 
+              name, they are just hill-climbing algorithms. They incrementally 
+              move a little higher in the evaluation function's space each time. 
+              And like all hill-climbing algorithms, they might be going up a 
+              minor summit, rather than Everest. And it appears the search space 
+              of the basketball schedule is a very rugged irregular terrain. Again, 
+              luck in the start turned out to be key.</p>
+            <p>Which makes one wonder about Kurzweil's vision. He has one sentence 
+              in his book, where he notes that you need to have a good random 
+              sample of starting points for evolutionary algorithms to work. Is 
+              evolution really such a great means of finding solutions? Doesn't 
+              it really just find some local summit near the starting point and 
+              sit there?</p>
+            <p>And what does this mean about human intelligence? Are we evolving 
+              up some minor peak? Might not the reptiles have done better than 
+              us mammalian types if they hadn't gotten in the way of a big meteor?</p>
+            <p>Back to this human intelligence wrestling with basketball schedules. 
+              The latest and current version uses a combination of Prolog search 
+              with C++ classes representing individual team schedules. The C++ 
+              code can quickly generate evaluation functions scoring each team's 
+              schedule. That score becomes the single constraint driving the search. 
+              Recursion repeats the scheduling process by using the last best 
+              score as the single constraint for each succeeding schedule. And 
+              it still shuffles the input stream each time looking for a bit of 
+              luck.</p>
+            <p>It works better than the first two programs, but still takes a 
+              long time. I haven't yet tried using any of the constraint-based 
+              languages or tools. Maybe this year I'll have time to try out Mozart, 
+              which has built-in constraint handling, and a classroom scheduling 
+              sample.</p>
+            <p>Any and all reader feedback on this application is welcome.</p>
+            <h2><a name="erratum"></a>Erratum</h2>
+            <p>Thanks again for your feedback. One reader pointed out that the 
+              Saarland University is in Germany, not Denmark. My apologies, and 
+              to think, a recent news article reports that on a simple geography 
+              test, U.S. students are among the worst in the World. Sigh.</p>
+            <h2><a name="links"></a>Links</h2>
+            <h3><a name="ai_expert"></a>The Best of AI Expert</h3>
+            <p>AI and Locomotion: Horse Kinematics [Jan 94 pg 18] - Patti Koenig 
+              and George Bekey describe a University of Southern California research 
+              project that lets a rider sit on a mock horse and control a virtual 
+              horse for the complex gaits of dressage. Neural nets are used to 
+              transmit the riders inputs to the horses movements, but unfortunately 
+              aren't described in much detail. However the complexity of dressage, 
+              which I never understood, is explained as well as the overall architecture 
+              of the project.</p>
+            <p>Gravitating Towards Common Sense [Feb 94 pg 9] - Lance Elliot discusses 
+              the advantages of including strategic metarules in a rule based 
+              system. The metarules determine the best reasoning strategy the 
+              system should use, based on the particular case being processed. 
+              Given that different problem domains have both different specific 
+              rules and different ways of strategically approaching a problem, 
+              understanding a domain's metarules is often the key to successful 
+              deployment of a rule based system.</p>
+            <p>Using Neural Nets to Manage Investments [Feb 94 pg 16] - Dean Barr 
+              and Ganesh Mani describe the use of neural nets for forecasting 
+              financial markets. This is an excellent introduction to the basic 
+              problems and approaches used. The article also discusses ways to 
+              deal with the major shortcoming of neural nets, which is their inability 
+              to &quot;explain&quot; themselves. Sensitivity analysis is used 
+              to determine the effects of various input parameters; rules are 
+              then generated based on that analysis. Good stuff.</p>
+            <h3></h3>
+            <h3><a name="links_scheduling"></a>Scheduling</h3>
+            <p><a href="http://citeseer.nj.nec.com/jain98stateart.html">A State-Of-The-Art 
+              Review Of Job-Shop Scheduling Techniques</a> - Anant Singh Jain 
+              and Sheik Meeran provide a very technical review of scheduling techniques, 
+              from the earliest systems to the most recent, covering techniques 
+              such as Tabu Search, Genetic Algorithms and Simulated Annealing. 
+              The job shop domain is used as a classic example for scheduling 
+              bench marks. Read this article to get an appreciation for the difficulties 
+              of scheduling applications and further pointers on research using 
+              the various techniques.</p>
+            <h3><a name="go"></a>Go</h3>
+            <p><a href="http://www.cns.nyu.edu/%7Emechner/compgo/">Computer Go</a> 
+              - David Mechner's computer go page has two excellent articles on 
+              the subject. The second one listed on the page is shorter, but the 
+              first, <i>All Systems Go</i>, has more in depth analysis and interesting 
+              rambles on one player's path towards excellence in go.</p>
+            <p><a href="http://www.usgo.org/index.asp">The American Go Association</a> 
+              - Has links and introductory material for those interested in learning 
+              the game, including a number of sites that support online play. 
+              Warning -- the online sites are addictive and contributed to this 
+              newsletter missing its deadline.</p>
+            <p>&nbsp;</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,229 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->October 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+<h3>October 2004</h3>
+<h4>Dennis Merritt</h4>
+<h2></h2>
+<p><i>AI - The art and science of making computers do interesting things that 
+  are not in their nature.</i></p>
+<ul>
+  <li><a href="#procedural_ai">Procedural Languages and AI</a></li>
+  <li><a href="#swiss_hikers">Simulated Hikers in the Swiss Alps</a></li>
+  <li><a href="#links">Links</a></li>
+</ul>
+
+<h2><a name="procedural_ai"></a>Procedural Languages and AI</h2>
+<p>In this newsletter we've looked at symbolic languages like Mozart, SML, Lisp 
+  and Prolog for developing AI applications. These languages are good for AI because 
+  they make it easier to model and manipulate the knowledge structures of a particular 
+  application domain. They allow the AI developer to more readily create working 
+  prototypes and evolve those prototypes as experience with an application grows.</p>
+<p>If <i>AI is the art and science of making computers do interesting things not 
+  in their nature,</i> then these languages are good for AI because they all, 
+  to one degree or another, hide programming tasks related to a computer's nature 
+  such as data typing, memory managment and defining procedural code execution.</p>
+<p>But they have the disadvantage of, well, not being standard procedural programming 
+  languages. There is a lot to be said for being able to develop AI applications 
+  in more main stream languages. The disadvantage is, those languages, while being 
+  well-suited to many conventional application areas, are not particularly well-suited 
+  to implementing knowledge modelling, reasoning algorithms, and other sorts of 
+  AI tools.</p>
+<p>The answer is libraries written in the procedural language that encapsulate 
+  the tools used for AI, so they can be called from that language without the 
+  developer having to get into the details of the implementation of knowledge 
+  modeling or reasoning. Here are some tools used to develop AI applications in 
+  procedural languages:</p>
+<h3>Protoge</h3>
+<p>Protoge is a tool originally developed for knowledge modelling in medical expert 
+  systems. It is designed to make it easier to model an application domain with 
+  appropriate classes and slots. The slots are not exactly like Java methods, 
+  but rather look more like the slots of an AI frame system, with default values, 
+  constraints and the like. It includes a full Java API that allows an application 
+  to easily communicate with the domain model.</p>
+<p>Protoge supports ontologies and the Semantic Web, as one would expect from 
+  software developed at Stanford. See the <a href="#links">links</a> for details.</p>
+<h3>Army Medical Knowledge Engineering System (AMKES)</h3>
+<p>AMKES is a 100% pure Java system developed for the U.S. Army medical research 
+  community. It was the brainchild of the late Fred Hegge, who saw a need for 
+  an automated way to make use of medical knowledge derived from a wide variety 
+  of experimental programs.</p>
+<p>Research results, rather than just being reported in textual reports, would 
+  also be recorded in generic knowledge objects (GEKOs). GEKOs are frame-like 
+  objects with slots for tables, formulae and rules derived from the research. 
+  The variables of this knowledge were constrained to common vocabulary thereby 
+  allowing reasoning over related bits of research.</p>
+<p>The system uses a three-tiered architecture, with a back-end object store for 
+  the GEKOs, a central server, and clients that allow for the update and querying 
+  of the GEKO knowledge base.</p>
+<p>Version I of AMKES was completed but a lack of follow-on funding meant it was 
+  never deployed in the field. However, the full source and documentation for 
+  the system is in the public domain and can be accessed at <a href="www.ainewsletter.com">www.ainewsletter.com</a>.</p>
+<p>See the <a href="#links">links</a> for for an overview presentation of the 
+  system.</p>
+<h3>Search Techniques in Java</h3>
+<p>Mark Watson has written a mini tutorial on search algorithms and the role they 
+  play in AI. He provides the Java code for implementing both a depth first and 
+  breadth first search. See the <a href="#links">links</a> for details.</p>
+<h3>JOONE</h3>
+<p>JOONE is an open source project that implements neural nets in Java. It can 
+  be easily adapted to meet application needs. The tutorial in the links shows 
+  how to implement a simple neural net, train it, and then use it and includes 
+  full source code. See the <a href="#links">links</a> for details.</p>
+<h3>AI Horizon</h3>
+<p>AI Horizon is a Web site full of articles and C++ source code for various AI 
+  tools, designed mostly for implementing chess and go playing software. See <a href="#links">links</a>.</p>
+
+<h2><a name="swiss_hikers"></a>Simulated Hikers in the Swiss Alps</h2>
+<p>The mainstream media was recently reporting on an application that used simulated 
+  hikers to model use of Swiss Alpine areas. The idea was to have the equivalent 
+  of marketing focus groups to decide what sorts of vistas, trails and transportation 
+  options visitors to the Swiss Alps might prefer. The only difference being, 
+  the focus groups were made up of computer simulated agents representing hikers, 
+  who wandered about simulated Alpine terrain.</p>
+<p>The application allowed the users to change the scenario, for example by subsidizing 
+  cows that keep the forest back, or installing gondolas for easier access to 
+  high places, and thus decide what would be best for the Swiss tourist industry.</p>
+<p>So how did they build it? Two papers in the links describe the application 
+  in some detail, one concentrating on the graphical processing used and the other 
+  on the agent modelling. The agents were implemented using the classic simulation 
+  tool of partial differential equations.</p>
+
+<h2><a name="links"></a>Links</h2>
+<p><a href="http://www.generation5.org/">www.generation5.org</a> - The home page 
+  for Generation5, an excellent AI site with a variety of articles and features 
+  on AI. It appears to be especially strong in the use of AI for game creation.</p>
+<p><a href="http://www.javaworld.com/javaworld/jw-06-2003/jw-0620-protege.html?">www.javaworld.com/javaworld/jw-06-2003/jw-0620-protege.html?</a> 
+  - Introduction to <i>Protoge</i>, a knowledge modelling tool designed for real 
+  applications that is the derived from AI research in medical expert systems.</p>
+<p><a href="http://www.amzi.com/articles/amkes_pajava99.htm">http://www.amzi.com/articles/amkes_pajava99.htm</a> 
+  - An overview of the Army Medical Knowledge Engineering System (AMKES) presented 
+  at the 1999 Practical Applications of Java conference.</p>
+<p><a href="http://www.javacoffeebreak.com/tutorials/aisearch/index.html">www.javacoffeebreak.com/tutorials/aisearch/index.html</a> 
+  - Mark Watson's excellent tutorial on intelligent Java, starting with the the 
+  fundamental AI technology of search and insightful discussion of how search 
+  fits into AI software.</p>
+<p><a href="http://www.developer.com/java/other/article.php/1546201">www.developer.com/java/other/article.php/1546201</a> 
+  - JOONE, open source Java code implementing neural nets.</p>
+<p><a href="http://www.aihorizon.com/">http://www.aihorizon.com/</a> - A site 
+  dedicated to C++ tools for working on chess and go playing software.</p>
+<p><a href="http://www.cuj.com/link/subject3.htm?topic=link">http://www.cuj.com/link/subject3.htm?topic=link</a> 
+  - The C++ User's Journal index of C++ programs and tools for AI.</p>
+<p><a href="http://www.sim.inf.ethz.ch/projects/alpsim/dessau03.pdf">http://www.sim.inf.ethz.ch/projects/alpsim/dessau03.pdf</a> 
+  - An article describing the simulated Swiss tourists, concentrating on some 
+  of the graphical issues.</p>
+<p><a href="http://www.sim.inf.ethz.ch/papers/strc04-ped/strc04-ped.pdf">http://www.sim.inf.ethz.ch/papers/strc04-ped/strc04-ped.pdf</a> 
+  - Details on the modelling of the simulated tourists.</p>
+            <hr>
+            <p>As always, feedback ideas and interesting links and other contributions 
+              are welcome. Past issues are available at either <a href="www.ddj.com">www.ddj.com</a> 
+              or <a href="www.ainewsletter.com">www.ainewsletter.com</a>.</p>
+            <p>Until next month,</p>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p></p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

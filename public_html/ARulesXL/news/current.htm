@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>ARulesXL Newsletter, 10 October 2006</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1><a href="http://www.arulesxl.com"><img src="http://www.arulesxl.com/images/logo_shiprock2.gif" width="150" height="115" border="0" align="middle" /></a> <b><font face="Arial, Helvetica, sans-serif">ARulesXL <font color="#000099">Newsletter</font></font></b></h1>
+<h3>1 December  2006 </h3>
+<h2>Contents</h2>
+<ul>
+  <li><a href="#arulesxl">ARulesXL Quick Tour </a></li>
+</ul>
+<p>View this newsletter <a href="http://www.arulesxl.com/news/newsletter_2006_12_01.htm">on the web</a> </p>
+<hr />
+<h2><a name="arulesxl" id="arulesxl"></a>ARulesXL Quick Tour </h2>
+<p><font face="Arial, Helvetica, sans-serif">An ARulesXL rule set is a collection 
+  of facts, decision tables, rules, formulas and logical relations that are used 
+to determine the values of output properties based on input properties.</font></p>
+<p align="center"><img src="http://www.arulesxl.com/whitepapers/quick_tour/inputs_rules_output.gif" width="484" height="304"></p>
+<p><font face="Arial, Helvetica, sans-serif">For example, here is a rule set name 
+  RateTable with a simple decision table to determine the price of a phone call 
+  based on whether the call was made on a weekend and during the day. The property 
+  .price is the output and the properties .weekend and .daytime are the inputs.</font></p>
+<p align="center"><img src="http://www.arulesxl.com/whitepapers/quick_tour/price_rules_0.gif" width="642" height="250"></p>
+<p><font face="Arial, Helvetica, sans-serif">The rule set is queried very much 
+  like a database using the function RQuery(). In the function window above you 
+  can see the query that asks to find the value of .rate. It also sets the input 
+  properties, .weekend and .daytime to the values in cells C5 and C6. RQuery() 
+  returns the value of .rate derived from the decision table in the rule set named 
+  RateTable.</font></p>
+<p><font face="Arial, Helvetica, sans-serif">In addition to input and output properties, 
+  a rule set can have intermediate properties that are used in determine the value 
+  of output properties.</font></p>
+<p><font face="Arial, Helvetica, sans-serif">Suppose we wanted the inputs to be 
+  the day of the week, the time of day and the duration of the call. And we wanted 
+  the rule set to determine the price of the call. And finally, the rate is not 
+  fixed, but a multiple of a single base rate. The new specifications are:</font></p>
+<ul>
+  <li><font face="Arial, Helvetica, sans-serif">Price is duration * rate</font></li>
+  <li><font face="Arial, Helvetica, sans-serif">A weekend is Saturday, Sunday, 
+    and Friday after 8:00PM.</font></li>
+  <li><font face="Arial, Helvetica, sans-serif">Daytime is between the hours of 
+    8:00AM and 6:00PM.</font></li>
+  <li><font face="Arial, Helvetica, sans-serif">The rates of calls are based on 
+    a single base rate, which is 4 cents.</font></li>
+</ul>
+<p><font face="Arial, Helvetica, sans-serif">The output property will now be .price. 
+  The output property is also called a goal of the rule set.</font></p>
+<p align="center"><img src="http://www.arulesxl.com/whitepapers/quick_tour/price_rules_1.gif" width="675" height="570"></p>
+<h2><font face="Arial, Helvetica, sans-serif">How it works</font></h2>
+<p><font face="Arial, Helvetica, sans-serif">The decision tables, rules, facts 
+  and formulas are entered in any order in the rule set, much as data is entered 
+  in a database. A rule engine is used to determine the output property value 
+  from the inputs. It will dynamically choose the rules and table entries necessary 
+  for producing the answer.</font></p>
+<p><font face="Arial, Helvetica, sans-serif">The output property becomes a goal 
+  of the rule engine. If that property depends on other properties, those properties 
+  become sub-goals of the rule engine. Each of those might require further sub-goals 
+  until the input properties are reached. Here are the sub-goals used in the example 
+  query.</font></p>
+<p align="center"><img src="http://www.arulesxl.com/whitepapers/quick_tour/sub_goals.gif" width="866" height="290"></p>
+<p><font face="Arial, Helvetica, sans-serif">Because this is generated dynamically 
+  by the rule engine, the rule set developer does not have to worry about flow 
+  of control. Simply enter the decision tables and rules and pose the queries 
+  they can answer.</font></p>
+<p></p>
+<hr />
+<p><font color="#000099" size="+2"><b><a href="http://www.arulesxl.com"><font face="Arial, Helvetica, sans-serif">www.arulesxl.com</font></a></b></font></p>
+<p><font size="-1">To <a href="http://www.arulesxl.com/mail/mailinglist.htm">subscribe or unsubscribe</a> visit our website. <br>
+ARulesXL is a trademark of Amzi! inc. Excel is a registered trademark of Microsoft Corporation in the   United   States and/or other   countries.</font></p>
+</body>
+</html>

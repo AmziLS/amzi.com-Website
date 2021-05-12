@@ -1,0 +1,435 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->March 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>March 2004</h3>
+<ul>
+  <li><a href="#emergence">Emergent Behavior</a></li>
+  <li><a href="#fuzzy">Fuzzy Logic and Health Risk</a></li>
+  <li><a href="#announcements">Announcements</a></li>
+  <li><a href="#links">Links</a></li>
+</ul>
+
+<h2>Notes</h2>
+<p>The diagrams that were supposed to appear in the last two month's newsletters 
+  didn't display on most people's systems. The newsletters are archived at an 
+  alternate site, <a href="www.ainewsletter.com">www.ainewsletter.com</a>, that 
+  has copies of the issues with the pictures.</p>
+<p>This month's newsletter has some further applications of the fuzzy logic system 
+  developed in the February newsletter. Contact me to get the the latest version 
+  of the fuzzy logic system and the full source for this month's examples.</p>
+<p><a href="http://www.ainewsletter.com/contact.htm">Dennis</a></p>
+<h2><a name="emergence"></a>Emergent Behavior</h2>
+<p>Emergent behavior refers to evolution-inspired computing algorithms that can 
+  be used to search for desired results. Here's some interesting work in the field.</p>
+<h3>Evolutionary Design and Lego(tm) Blocks</h3>
+<p>Pablo Funes of Brandeis University has done a lot of work in the area of evolutionary 
+  design. As part of his research he has built experimental systems that evolve 
+  structures of Lego(tm) blocks that meet various design goals.</p>
+<p>The Lego(tm) blocks are an excellent experimental domain because they are modular 
+  units that are constrained almost entirely by the number of join points between 
+  two blocks. The model of the blocks then is a model of the joints, and how much 
+  stress a joint between two blocks can stand.</p>
+<p>The evolutionary algorithm starts with a single brick and a design goal. The 
+  design goal might specify a height and a weight. In other words the expected 
+  result would be a table of sufficient size and support to hold the weight. The 
+  goal might also specify a position, so the result might be a cantilevered bridge.</p>
+<p>The algorithm starts by adding a random brick to the starting brick and creating 
+  a number of test structures. The best are kept, the worst thrown out, and then 
+  each is further evolved. Standard genetic algorithms are used as the good structures 
+  are &quot;mated&quot; with parts of each going into offspring, with mutation 
+  appearing periodically to start new possibilities.</p>
+<p>What's fun about this work is they could then build the resulting structures 
+  with real Legos(tm) to see if they worked. The thesis contains a number of pictures 
+  of these evolved structures. See <a href="#links">links</a>.</p>
+<p>The Lego(tm) designer shows up in Brandeis' Dynamical &amp; Evolutionary Machine 
+  Organization (DEMO) project and can be seen following the fun&amp;games and 
+  EvoCAD links on that Web site (<a href="#links">links</a>). This is an interactive 
+  Java applet that lets you hand manipulate two-dimensional blocks and/or specify 
+  design goals and let the evolutionary algorithm finish the design.</p>
+<h3>Ant Colony Optimization (ACO)</h3>
+<p>Ant Colony Optimization (ACO) is a search algorithm inspired by the intelligence 
+  exhibited by ant colonies in finding food and building roads. Each ant can sense, 
+  via scent, what the other ants have done and add their own behavior to a general 
+  pattern. For example, when searching for food ants will leave a scent trail. 
+  Other ants will follow one trail or another, but ones that lead to food will 
+  tend to be repeated more often, leading to stronger scents. Further, other ants 
+  finding food via a shorter path will also leave scent trails, but because it 
+  is shorter will tend to get more traffic, thus drawing ants from other trails. 
+  In this way the shortest path to food is eventually found and a majority of 
+  ants will use it.</p>
+<p>ACO is a formalization of this idea, where individual agents search about for 
+  possible solutions to a problem, leaving traces of where they have been and 
+  how successful. The algorithms can be used for travel planning and scheduling 
+  type applications, and have their pros and cons. The papers on Marco Dorigo's 
+  Web site, see <a href="#links">links</a>, provide a wealth of detailed information 
+  on the algorithms and their applications.</p>
+<h2><a name="fuzzy"></a>Fuzzy Logic and Health Risk</h2>
+<p>Last month's issue described the use of fuzzy logic for controllers, but hinted 
+  at its use in risk assessment, in particular with an eye towards coming up with 
+  a way to model on the serotonin syndrome caused by certain drug interactions.</p>
+<p>Fuzzy logic has been used in financial systems to estimate risk. This makes 
+  sense when compared to other approaches such as certainty factors or Bayesian 
+  probability. The risk isn't really a probability or a degree of certainty, but 
+  rather, exactly a degree of risk, not unlike the degree of hotness or coldness 
+  in a shower based on how far the knob is turned.</p>
+<h3>Smoking, Exercise and Lung Cancer Risk</h3>
+<p>The same idea can be applied to health risk. I used my own medical knowledge, 
+  acquired by reading the newspapers to come up with a simple model to illustrate 
+  this idea. It's known that the risk of getting lung cancer increases with the 
+  amount of smoking a person does, and decreases with the amount of exercise a 
+  person gets.</p>
+<p>Using the fuzzy logic test environment we developed in the last news letter, 
+  we can express these ideas as three fuzzy sets, and fuzzy rules relating the 
+  sets. The fuzzy sets for the variables, <b>risk(lung_cancer)</b>, <b>smoking</b>, 
+  and <b>exercise</b> follow the same pattern we used for the shower, which was 
+  to have three sets for each, representing medium, high and low values.</p>
+<p>The fuzzy rules are:</p>
+<p><i>If smoking is low or exercise is high, then risk(lung_cancer) is low.<br>
+  If smoking is medium or exercise is medium, then risk(lung_cancer) is medium.<br>
+  If smoking is high or exercise is low, then risk(lung_cancer) is high.</i></p>
+<p>Here's how they are coded in the fuzzy logic test environment developed in 
+  the February newsletter:</p>
+<pre>% from 0 to 100
+fuzzy_set(risk(lung_cancer), [
+   variable(low)    :: descending_line( 0, 50 ),
+   variable(medium) :: triangle( 25, 50, 75 ),
+   variable(high)   :: ascending_line( 50, 100 )
+   ]).
+
+% packs per day
+fuzzy_set(smoking, [
+   variable(low) :: descending_line( 0.0, 1.0 ),
+   variable(medium)  :: triangle( 0.5, 1.0, 1.5 ),
+   variable(high)    :: ascending_line( 1.0, 2.0 )
+   ]).
+
+% hours per week
+fuzzy_set(exercise, [
+   variable(low)     :: descending_line( 0.0, 7.0 ),
+   variable(medium)  :: triangle( 3.0, 7.0, 11.0 ),
+   variable(high)    :: ascending_line( 7.0, 14.0 )
+   ]).
+   
+fuzzy_rules(risk(lung_cancer), [
+   do(low)    :: smoking fzis low fzor exercise fzis high,
+   do(medium) :: smoking fzis medium fzor exercise fzis medium,
+   do(high)   :: smoking fzis high fzor exercise fzis low
+   ]).
+
+</pre>
+<p>The risk is represented as a number from 0 to 100, although because of the 
+  way the defuzzification works, it will never reach either of the end points. 
+  Here are three test runs showing a high and low risk scenario, and showing how 
+  someone who has one risk factor (no exercise) but not the other (doesn't smoke) 
+  winds up with a total risk exactly in the middle.</p>
+<pre>
+how many packs a day? 3
+how many hours of exercise a week? 1
+risk(lung_cancer) = 83.3333
+
+how many packs a day? 0
+how many hours of exercise a week? 12
+risk(lung_cancer) = 16.6667
+
+how many packs a day? 0
+how many hours of exercise a week? 0
+risk(lung_cancer) = 50
+</pre>
+<h3>Serotonin Syndrome</h3>
+<p>The December newsletter discussed a system that could be used to predict drug 
+  interactions based on first principles, and used as an example the serotonin 
+  syndrome. That first version of the system modelled the various factors and 
+  interactions of the system, but used pure boolean variables for both factors 
+  and the risk of getting the serotonin syndrome. A better model for the data, 
+  one that captured the inherent uncertainty of the system, was left as a future 
+  project.</p>
+<p>Now, fuzzy logic has found its greatest use in control systems, where it is 
+  used to model smooth gradations of complex inputs and outputs of some physical 
+  system. Drug interaction is the modelling of a biological system, with complex 
+  inputs and outputs, and fuzzy logic might be an excellent way to implement such 
+  a system.</p>
+<p>The fuzzy logic system of last month's newsletter was used to try out the idea 
+  on the serotonin syndrome, a result of certain drug/condition interactions.</p>
+<p>The rules from the doctor were that:</p>
+<p><i>The serotonin syndrome is a risk if extra cellular serotonin is high and 
+  either serotonin removal is impaired or serotonin response is enhanced.<br>
+  Extra cellular serotonin is high when certain drugs are consumed, of which alcohol 
+  is one.<br>
+  Serotonin removal is impaired by certain drugs, of which citalopram is one.<br>
+  Serotonin response is enhanced by certain drugs, of which buspiron is one.</i></p>
+<p>The December newsletter included more of the factors and a better ontological 
+  model of drugs and effects, but to test the use of fuzzy logic, just the three 
+  drugs mentioned above were used.</p>
+<p>The modelling of this system using fuzzy logic involved a fuzzy set and rules 
+  for <b>risk(serotonin syndrome)</b>, and three subordinate fuzzy sets and rules 
+  for the pertinent factors of <b>extra cellular serotonin</b>, <b>serotonin removal</b> 
+  and <b>serotonin response</b>. As with the smoking/exercise/lung_cancer example, 
+  three fuzzy sets for low high and medium were used for each.</p>
+<p>There is an immediate objection one might have to this approach, and that is 
+  that its completely ad hoc. The degree of risk and the degree of various inputs 
+  have been associated in a very arbitrary manner. This is true, so I went to 
+  the doctor working on this system, who is one of the leading researchers in 
+  the area, and tried to get a more concrete understanding of the relationships.</p>
+<p>His response, in a nutshell, was a very educated and detailed &quot;we don't 
+  know&quot;. In other words, the interactions are so complex and the research 
+  is so sparse, that it really is impossible to quantify the system in any kind 
+  of detailed manner. The best that probably can be done is to have a system that 
+  expresses the knowledge that the risk of the serotonin syndrome increases when 
+  alcohol is consumed. And that's exactly what the fuzzy logic system does.</p>
+<p>Here are two runs of the system, where the amount of a given drug is given 
+  on a 0-10 scale, where 0 is none and 10 is a lot. As expected, the risk is higher 
+  when the factors are higher.</p>
+<pre>
+alcohol? 8
+citalopram? 6
+buspiron? 6
+risk(serotonin syndrome) = 76.9942
+
+alcohol? 2
+citalopram? 2
+buspiron? 2
+risk(serotonin syndrome) = 18.3433
+</pre>
+<p>Here are the sets and rules used with the February's fuzzy logic tool set.</p>
+<pre>fuzzy_set(risk('serotonin syndrome'), [
+   variable(low)    :: descending_line( 0, 50 ),
+   variable(medium) :: triangle( 25, 50, 75 ),
+   variable(high)   :: ascending_line( 50, 100 )
+   ]).
+
+fuzzy_rules(risk('serotonin syndrome'), [
+   do(high)   :: 'extra cellular serotonin' fzis high fzand
+                 ( 'serotonin removal' fzis low fzor 'serotonin response' fzis high),
+   do(medium) :: 'extra cellular serotonin' fzis medium fzand
+                 ( 'serotonin removal' fzis medium fzor 'serotonin response' fzis medium),
+   do(low)    :: 'extra cellular serotonin' fzis low fzand
+                 ( 'serotonin removal' fzis high fzor 'serotonin response' fzis low)
+   ]).
+
+fuzzy_set('extra cellular serotonin', [
+   variable(low)    :: descending_line( 0, 50 ),
+   variable(medium) :: triangle( 25, 50, 75 ),
+   variable(high)   :: ascending_line( 50, 100 )
+   ]).
+
+fuzzy_set('serotonin removal', [
+   variable(low)    :: descending_line( 0, 50 ),
+   variable(medium) :: triangle( 25, 50, 75 ),
+   variable(high)   :: ascending_line( 50, 100 )
+   ]).
+
+fuzzy_set('serotonin response', [
+   variable(low)    :: descending_line( 0, 50 ),
+   variable(medium) :: triangle( 25, 50, 75 ),
+   variable(high)   :: ascending_line( 50, 100 )
+   ]).
+
+fuzzy_rules('extra cellular serotonin', [
+   do(high)    :: alcohol fzis high,
+   do(medium)  :: alcohol fzis medium,
+   do(low)     :: alcohol fzis low
+   ]).
+
+fuzzy_rules('serotonin removal', [
+   do(high)    :: citalopram fzis low,
+   do(medium)  :: citalopram fzis medium,
+   do(low)     :: citalopram fzis high
+   ]).
+
+fuzzy_rules('serotonin response', [
+   do(high)    :: buspiron fzis high,
+   do(medium)  :: buspiron fzis medium,
+   do(low)     :: buspiron fzis low
+   ]).
+
+fuzzy_set('alcohol', [
+   variable(low)    :: descending_line( 0.0, 5.0 ),
+   variable(medium) :: triangle( 2.5, 5.0, 7.5 ),
+   variable(high)   :: ascending_line( 5.0, 10.0 )
+   ]).
+   
+fuzzy_set('citalopram', [
+   variable(low)    :: descending_line( 0.0, 5.0 ),
+   variable(medium) :: triangle( 2.5, 5.0, 7.5 ),
+   variable(high)   :: ascending_line( 5.0, 10.0 )
+   ]).
+   
+fuzzy_set('buspiron', [
+   variable(low)    :: descending_line( 0.0, 5.0 ),
+   variable(medium) :: triangle( 2.5, 5.0, 7.5 ),
+   variable(high)   :: ascending_line( 5.0, 10.0 )
+   ]).
+</pre>
+<p>There are some difficulties with the system. It handles cases where the values 
+  correspond to high and low risks, but if there are balancing high and low factors 
+  the system does not find an answer because no fuzzy rule applies. For example, 
+  if there is a lot of extra cellular serotonin, but the serotonin removal is 
+  also high, the result should be some balanced risk in the middle, but instead 
+  there isn't a rule that covers that case. Better choices of fuzzy sets or a 
+  more complex rule set should resolve that problem.</p>
+<p>Contact <a href="http://www.ainewsletter.com/contact.htm">me</a> for the current 
+  version of the full working system.</p>
+<h2><a name="announcements"></a>Announcements</h2>
+<h4>Data Mining Guidance and Results for<br>
+  the Data Rich - Yet Information Poor </h4>
+<p>DATA MINING: LEVELS I, II &amp; III<br>
+  [ Las Vegas, March | Wash-DC, June | San Diego, Sept ]<br>
+  <br>
+  Learn how experts leverage AI technology to build and deploy predictive models 
+  by attending The Modeling Agency\'s vendor-neutral and application-oriented 
+  data mining courses. Participants will learn about data mining capabilities, 
+  limitations, methods, tools, techniques, applications, advantages and costly 
+  pitfalls.<br>
+  Since The Modeling Agency is not a tools vendor, participants enjoy a balanced, 
+  broad, and non-promotional perspective of predictive analytics. Don\'t leave 
+  a powerful competitive advantage untapped: harness the patterns, drivers, interrelationships 
+  and profits hidden within your data.<br>
+  FULL COURSE DETAILS AND REGISTRATION<br>
+  Don\'t miss your chance to attend: reserve your space today:<br>
+  http://www.the-modeling-agency.com/training<br>
+  888-742-2454 (toll free)<br>
+  936-321-2177 (direct)</p>
+<h2><a name="links"></a>Links</h2>
+
+<p><a href="http://www.genetic-programming.org/">http://www.genetic-programming.org/</a> 
+  - A resource page for information about genetic programming.</p>
+<p><a href="http://www.genetic-programming.com/published/Salon081099.html">http://www.genetic-programming.com/published/Salon081099.html</a> 
+  - An article that mentions the use of genetic programming in the design of RoboCup 
+  competitors.</p>
+<p><a href="http://demo.cs.brandeis.edu/">http://demo.cs.brandeis.edu/</a> - Brandeis 
+  home page for the DEMO, Dynamical &amp; Evolutionary Machine Organization project. 
+  Follow the fun and games links to EvoCAD to see a Java applet demonstration 
+  of the evolutionary Lego(tm) designer. It helps to read the paper (next link) 
+  first to understand the nature of the simulation.</p>
+<p><a href="http://www.cs.brandeis.edu/%7Epablo/thesis/">http://www.cs.brandeis.edu/~pablo/thesis/</a> 
+  - Pablo Funes graduate work is all about complexity and evolutionary design. 
+  His excellent Web site contains the text of his thesis, including details on 
+  the two-dimensional Lego(tm) block simulator.</p>
+<p><a href="http://iridia.ulb.ac.be/~mdorigo/ACO/ACO.html">http://iridia.ulb.ac.be/~mdorigo/ACO/ACO.html</a> 
+  - Marco Dorigo has done much of the significant research on ant colony optimization 
+  (ACO). This is his Web site that contains numerous links to articles and other 
+  related information on ACO.</p>
+
+<p><a href="http://www.louderthanabomb.com/">http://www.louderthanabomb.com/</a> 
+  - Louder! is a site dedicated to AI for games, but the products are also useful 
+  for education and other applications. They have an excellent fuzzy logic system 
+  that can be integrated with C++ to provide fuzzy services to the C++ application.</p>
+<p><a href="http://www.fuzzytech.com/binaries/ieccd1.pdf">http://www.fuzzytech.com/binaries/ieccd1.pdf</a> 
+  - The International Electrotechnical Commission's draft standard for fuzzy logic 
+  for use with programmable controllers. The final version can be purchased from 
+  the IEC.</p>
+<p><a href="http://ffll.sourceforge.net/fcl.htm">http://ffll.sourceforge.net/fcl.htm</a> 
+  - Louder!'s description of the IEC fuzzy logic standard, plus links to sources 
+  for the final versions.</p>
+<p>&nbsp;</p>
+<p>Until next month,</p>
+<p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EVA Results Explanation</title>
+</head>
+
+<body>
+<h2>Electronic Vaccination Forecast &amp; Analysis (EVA) Input and Output Screens</h2>
+<h3>Overview</h3>
+<p>An <a href="index.html">EVA</a> Vaccination Knowledge Base (VKB) is developed using Excel and Windows, but the resulting VKB machine independent binary files can be deployed and/or integrated in practically any computational environment. The example on this Web site was developed using CGI scripts written in C running on netBSD with Apache. Other VKBs  are running under Borland's Delphi on Windows, and Java on multiple platforms.</p>
+<p>This demonstration of EVA encodes the high level <a href="http://www.iapindia.org/immunisation/immunisation-schedule">vaccination recommendations of the Indian Academy of Pediatrics (IAP)</a>. <b><font color=red>It is for demonstration purposes only.</font></b></p>
+<p>This demonstration illustrates one possible way to deploy the information. To see a video on how the knowledge was developed <a href="../videos/eva_india_02/eva_india_02.html">click here</a>.</p>
+<h3>Basic Algorithm</h3>
+<p>The rules for each vaccine determine:</p>
+<ul>
+  <li>if a vaccine is applicable (for example, HPV is not applicable for males), or</li>
+  <li>if a vaccine is complete (for example, three Hepatitis Bs is a complete dose), or</li>
+</ul>
+<p>what the schedule should be for the vaccine, including:</p>
+<ul>
+  <li>what the minimum date to give a dose is (which might be based on a minimum age, or minimum interval from a previous dose or live virus),</li>
+  <li>what the start of the optimal range is, and</li>
+  <li>what the end of the optimal range is.</li>
+</ul>
+<p>This knowledge is then applied in two ways.</p>
+<h3>Retrospective Analysis</h3>
+<p>For historical analysis, each vaccination for a given vaccine is compared with the recommended schedule for the vaccine. If any vaccines were given at times they were non-effective, they are marked as such and not included in the future planning.</p>
+<h3>Future Plan</h3>
+<p>For the next dose of a given vaccine, the date of the office visit is compared to the minimum date and optimal date and a status is reported. This might indicate the visit date for the vaccine is:</p>
+<ul>
+  <li>current - before the next dose can be given,</li>
+  <li>eligible - after the minimum age for the dose, but before the optimal range,</li>
+  <li>due - during the optimal range,</li>
+  <li>behind - after the optimal range,</li>
+  <li>complete - all doses have been given, or</li>
+  <li>not applicable - does not apply.</li>
+</ul>
+<p>The future plan also reports the dates for the next vaccination and provides explanatory comments.</p>
+<h3>Using the Demo</h3>
+<p>You can either enter all the information about a case, or select one of the prestored cases. Once a case is selected, you can edit the information to experiment with the system.</p>
+<p>For example, changing the <em>visit date</em> will make the child older at the visit. This will effect the <em>status</em> in the future plan. At one age a child might be <em>current</em>, but 6 weeks later might be <em>due</em>. Even older and he or she will be <em>behind</em>. Changing the <em>gender</em> will change how HPV is reported.</p>
+<p>Changing the dates of various vaccinations might change them from being OK, to being invalid.</p>
+<p>The <em>vaccines</em> field can be used to limit the reporting. For example, if you are just interested in seeing various results from the MMR family of rules you can do that by setting <em>Vaccines</em> to ['MMR'].</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+
+</html>

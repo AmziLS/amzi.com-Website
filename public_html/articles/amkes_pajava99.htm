@@ -1,0 +1,359 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.61 [en] (WinNT; I) [Netscape]">
+   <title>Army Medical Knowlege Engineering System (AMKES) -- A Three-Tier Knowledge Harvesting Environment</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h1>
+<b><font color="#0000FF">Army Medical Knowlege Engineering System (AMKES)
+-- A Three-Tier Knowledge Harvesting Environment</font></b></h1>
+<b>By Dennis Merritt, Frank Sodetz, Mary Kroening, Alan Littleford, and
+Frederick W. Hegge</b>
+<p><i>[This article was published in the Practical Applications of Java
+1999 Conference Proceedings.</i><i></i>
+<p><i>This work was supported by the U.S. Army Medical Research and Materiel
+Command under Contract No. DAMD17-98-D-0022 and DAMD17-93-C-3141. The views,
+opinions and/or findings contained in this report are those of the authors
+and should not be construed as an official Department of the Army position,
+policy or decision unless so designated by other documentation.]</i>
+<h2>
+<font color="#000099">Abstract</font></h2>
+The Army Medical Knowledge Engineering System (AMKES) is designed to allow
+medical researchers to encapsulate the results of their research in a format
+that combines a reusable machine-readable formal description of the work
+with human-readable descriptions and supporting information. The data structure
+used is called a Generic Encapsulated Knowledge Object (GEKO). AMKES is
+implemented in Java and provides a back-end object-oriented database for
+storing GEKOs, a server for allowing multiple Internet users to access
+the database, and client software that provides users with graphical interface
+tools for creating and maintaining GEKOs. AMKES lets users explore the
+links and inferences represented by the GEKOs in an archive, thus allowing
+understanding and reuse of a body of research that is not possible with
+less formal approaches.
+<h2>
+<b><font color="#000099">Application Background</font></b></h2>
+The United States Army sponsors and produces many medical research programs.
+The management of knowledge produced by these programs represent significant
+challenges related to administrative analysis, scientific discovery and
+application development.
+<p>Further, it would be very efficient to support computational approaches
+to these activities using a single, reusableknowledge representation scheme.
+A perfect example of this reuse of knowledge is the Army-sponsored Breast
+Cancer Decision Guide presented at the 1998 Practical Applications of Prolog
+conference. In that application, various research results were distilled
+into a set of rules that can be applied to customize information about
+breast cancer for patients and their families.
+<p>The Generic Encapsulated Knowledge Object (GEKO) is a formal structure
+used to capture the results of research. It contains the rules and relationships
+between scientific variables that are the essence of a particular piece
+of research. Coupled with those rules in the GEKO are the human-readable
+descriptions, citations and other supporting information essential for
+verifying and understanding knowledge used in medical applications.
+<p>Having designed the GEKO, a means was needed for allowing researches
+to create GEKOs that describe a piece of research. Further, it was necessary
+to store GEKOs in a central archive, and enable both the query and inferencing
+over the archive that meets the Army's two main objectives, understanding
+a body of research, and being able to reuse and apply the knowledge obtained
+by that research.
+<p>The Army Medical Knowledge Engineering System (AMKES) is the application
+that meets these needs. It is a classic three-tiered application, with
+a back-end database for storing GEKOs, client software for accessing the
+database, and server/network software for joining the two together.
+<h2>
+<b><font color="#000099">Architectural Overview</font></b></h2>
+AMKES is written entirely in Java and relies heavily on interface definitions
+in its design. The major components and their interfaces are the database,
+the client, and the network and server.
+<h3>
+Database</h3>
+The back-end database is an object-oriented database that stores GEKOs.
+There is an interface to it that defines the services that are provided
+by the GEKO database. By using an interface to define the database services,
+it becomes possible to switch between different database vendors or approaches
+if need be.
+<p>The database is actually implemented in two layers. The GEKO format
+is a frame-based structure. That is, it is composed of a number of slots
+represented by name:value pairs. These slots can have other frames as their
+values and so on. The deepest layer of AMKES is a generic frame-based database
+implemented using Object Store's PSE/Pro.
+<p>On top of the generic frame database is a layer of database code that
+supports the actual structure of GEKO frames and the subframes contained
+withing GEKOs. It is this layer that is exposed through an interface to
+its users.
+<h3>
+<b>Client</b></h3>
+The client provides a graphical interface for the user that lets the user
+create new GEKOs, register those GEKOs in the central archive, browse the
+archive, query the archive and run sample inferences over the rules and
+variables in the archive.
+<p>The interface is implemented using the Java Foundation Classes (JFC).
+The client talks to another interface that defines the services an AMKES
+client can access. The client interface is similar to the interface that
+defines the database services.
+<p>The client interface has two implementations. One connects to a central
+server over the Internet, and the other is designed for local use, in which
+the client interface is implemented directly with calls to the database
+interface.
+<h3>
+<b>Network/Server</b></h3>
+In between the client and the database is the network/server software.
+Originally this portion of the system was implemented using direct sockets
+calls, but these have been replaced with a Java Remote Method Invocation
+(RMI) implementation because of its support for firewalls.
+<p>The server handles multiple clients and manages the threads of execution
+for the database. Unfortunately, there has to be some knowledge of the
+particular database in the server implementation because RMI and Object
+Store's PSE/Pro each have their own ideas of which threads to run when.
+So a significant portion of the server is code devoted to making sure RMI's
+threads connect correctly with the database.
+<p>The server also manages the logging in and logging off of users, and
+various system functions such as backup and recovery of the database.
+<h3>
+<b>Other Technologies</b></h3>
+Amongst all of the normal Java code, AMKES makes use of three technologies
+of note. These are XML for import and export of GEKOs to and from text
+files, a built-in inference browser, and the use of JavaCC for parsing
+both the XML and the formal knowledge representation language of the GEKO.
+<h2>
+<b><font color="#000099">Frame DB in Java</font></b></h2>
+Frame systems come in varying degrees of complexity. For AMKES, all that
+is necessary is the basic idea of slots containing name:value pairs. The
+Java implementation of a frame is then a relatively simple class who's
+primary data element is a Java vector of slots. Slots are, in turn, defined
+as a simple class who's primary data elements are the name and value.
+<p>The primary advantage of the frame structure is the flexibility it gives
+for defining GEKO formats. It is not necessary to hard-wire into the code
+any of the slots particular to GEKOs, so the inevitable changes to GEKO
+format that are made as AMKES evolves are made without directly impacting
+any of the Java code implementing AMKES.
+<p>The frame class provides all of the methods you would expect for retrieving
+slots based on name, adding slots, and for slots that have multiple values
+(lists of other slots). Because the value in a slot is an object, slots
+can store any type of Java object, including the frame class defined for
+AMKES.
+<h3>
+<b>Sub-Frames</b></h3>
+The GEKO structure is a large frame structure that is composed of many
+subframes. For example, the GEKO itself has only three slots, one for human-readable
+source information, one for technical maintenance information and one for
+the formal computable information.
+<p>The source slot's value is a frame, with its own slots, such as 'Title'
+and 'Author'. The value of the 'Title' slot would be a text string, but
+the value of the 'Author' slot is another frame structure used to describe
+persons.
+<p>A person frame has slots for name, address, e-mail address, etc.
+<p>One key requirement of AMKES is the ability to share information between
+GEKOs. A perfect example is the 'Author' slot with its 'person' frame value.
+There might be many GEKOs in the archive with the same author, but within
+AMKES only one copy of each person frame is stored. The 'Author' slot really
+has just a key, indicating the actual person frame which has the information
+about that author.
+<p>This way, when a person changes e-mail address, that change is automatically
+'known' to all the GEKOs that use that person frame.
+<p>Other major sub-frames used in AMKES are one describing citations and
+one describing the variables that are studied in a particular piece of
+research. The variable sub-frames are the heart of the system, because
+it is only when different research projects work with the same variables
+does the body of research begin to have value larger than the sum of its
+parts.
+<h3>
+<b>Schema Driven</b></h3>
+The actual definition of the frames used in AMKES is stored in a text file
+schema. That schema is itself represented in a frame structure. When an
+archive is first created, the schema file is read and stored in the archive.
+All of the code that manipulates the frame objects in the archive is driven
+from the schema, so that changes to GEKO formats are made simply by changing
+the schema definitions in the external file.
+<p>The schema definitions are also downloaded by the client software, and
+are used to drive the user interface for creating, editing and browsing
+GEKOs.
+<h2>
+<b><font color="#000099">Client - JFC</font></b></h2>
+The client is a JFC frame with multiple JFC internal frames inside. The
+primary internal frame is a frame browser that can be used for GEKOs as
+well as the various subframes for persons, citations and variables.
+<p>The frame browser has two main panels. The one on the left uses a JFC
+tree control that is mapped to the slots of the frame being displayed.
+Expanding and contracting the nodes lets the user see various levels of
+nesting depth in a GEKO. The right panel is used to view the contents of
+a slot and to edit it.
+<p>When the user wants to create a new GEKO, a blank browser is presented,
+with the tree control filled out according to the schema definition of
+a GEKO stored in the archive.
+<p>Other user interface internal frames provided include a main browser
+for an archive, a query browser for posing QBE queries of the archive,
+and an inference browser that allows the user to try out different inferences
+using various variables as goals in both a forward- and backward chaining
+mode.
+<p>In many ways JFC provides a very satisfying approach to user interface
+construction, but the lack of maturity in package makes us wonder, at times,
+about the appropriateness of using it for this project. There are user
+interface glitches and annoyances that have consumed more time than one
+would hope, and the performance of the light-weight controls is not what
+one would hope.
+<p>From the programmer's perspective, the JFC is satisfying to work with,
+and it appears in the long run, as it matures, it will definitely be the
+way to go for user interfaces for Java applications.
+<p>All in all we're happy with JFC, but wish it wasn't so buggy and slow.
+<h2>
+<b><font color="#000099">Database - Object Store's PSE/Pro</font></b></h2>
+After having looked at a number of options for a Java object-oriented database,
+we determined that there are always going to be compromises made. We picked
+Object Store's PSE/Pro as having the best price/performance ratio for AMKES.
+<p>PSE/Pro works well, but has the disadvantage that it requires a post-processor.
+This means the objects that are stored in PSE/Pro, and the objects that
+use
+the objects in PSE/Pro must all go through the post-processing phase.
+<h3>
+<b>Shadow Objects</b></h3>
+If you want to design a system with the database code isolated from the
+code that uses it, then this presents a problem. The solution we came up
+with was the creation of shadow objects for the database. Each of these
+objects is constructed from their pure Java counterpart and includes a
+method to create the Java counterpart as well.
+<p>For example, the main class used by the frame database is called KnowledgeFrame.
+When the interface function is called to store a KnowledgeFrame in the
+archive, the interface first creates an instance of the class PSEKnowledgeFrame
+using a constructor that takes a KnowledgeFrame as an argument. When the
+user wants to retrieve a KnowledgeFrame, a PSEKnowledgeFrame is retrieved
+instead, and its make_KnowledgeFrame() method is called to get the corresponding
+KnowledgeFrame.
+<p>This approach allows us to keep the code and preprocessing associated
+with PSE/Pro isolated within the implementation of the AMKES GEKO database
+interface, and shielded from the rest of the application.
+<h3>
+<b>Keys</b></h3>
+PSE/Pro has its own implementations of HashTables and Vectors, and these
+are ideally suited to storing the various frame structures used in AMKES.
+And in theory, with an object-oriented database, all of the persistent
+and transient instances of objects are automatically taken care of for
+you.
+<p>But since we were using shadow objects, and sending them back and forth
+through RMI, the level of complexity and understanding required to know
+which objects were which became overwhelming. So we keep with each frame
+its hash key and use that for accessing the frame. This greatly simplifies
+the code and procedures for passing frames into and out of the archive
+and across the network to the client and back.
+<p>It also allowed for easy implementation of the shared objects of AMKES.
+When a GEKO refers to a person frame in its 'Author' slot, it just references
+the key of the particular frame. When the GEKO is retrieved, that key is
+used to retrieve the appropriate person frame as well.
+<h3>
+<b>Threads</b></h3>
+PSE/Pro allows multiple threads of execution running against a database
+at a single time, but has its own sets of rules as to how those threads
+are managed and the initialization procedure that must take effect when
+a new thread is started.
+<p>This is perfect for a server-based system with multiple clients, as
+AMKES is. But it does require that the server go through the appropriate
+initialization steps when a new user logs onto the server.
+<h3>
+<b>Licensing</b></h3>
+PSE/Pro, when we purchased it, had unlimited runtimes. However the latest
+version has relatively steep runtime costs for servers, which affects our
+thinking as to what is the best database to use for ongoing development.
+The version we are currently using is fine for now, but does not work with
+Java 1.2, so if we are to upgrade to Java 1.2 we need to resolve the database
+licensing issues.
+<h2>
+<b><font color="#000099">Network - RMI</font></b></h2>
+The original implementations of the network interfaces of AMKES were done
+using sockets. This worked well but ran into difficulty when it became
+known that a key requirement of AMKES was to be able to support clients
+behind firewalls.
+<p>Given that RMI was reported to have automatic support for HTTP tunneling
+through firewalls, we switched to RMI. RMI proves to be a powerful package
+and the networking worked just great using RMI, but our clients behind
+a firewall still could not access the server.
+<p>After many weeks of research and frustrating dealings with Sun technical
+support, we finally got to one of the RMI developers within Sun who proved
+to be extremely helpful.
+<p>RMI is built to automatically determine whether or not to use HTTP tunneling
+by attempting to contact the primary server address directly. But how those
+direct requests are handled varies from firewall to firewall and leads
+to heated debates on the appropriate TCP/IP codes to send back.
+<p>In any case, RMI only correctly identifies the existence of a firewall
+if the firewall behaves the way Sun's firewall product behaves. Otherwise,
+it simply thinks the server address is genuinely not there and doesn't
+bother to try HTTP tunneling.
+<p>This was all very frustrating since our clients already knew they were
+behind a firewall, knew they had to use a proxy host and all the addresses
+and ports they needed. But there was at the time no feature in RMI to allow
+one to force HTTP tunneling.
+<p>Eventually the Sun developer told us how to force HTTP tunneling, so
+that is what we did, and now our clients behind firewalls are happily tunneling
+to and from AMKES. But a lot of time was lost in the project during this
+phase.
+<p>RMI created other problems for the application with its seemingly random
+way of starting new threads. Given that the multi-user database is based
+on threads, and RMI was creating new threads willy-nilly, it meant some
+fairly nasty code had to be written to keep the users happily connected
+to the database.
+<h2>
+<b><font color="#000099">XML Import/Export</font></b></h2>
+The structure of the frames of the underlying AMKES frame database layer
+are ideally suited for representation in XML, so XML is used as the format
+for exporting frames to text files and for importing them back in.
+<p>The XML tags identify the frames and their slots, and within each slot
+the name and the value. This means the actual slot names of a GEKO are
+not part of the tags, but are part of the contents. The results is GEKOs
+and frames of various design can all be read in or written out using the
+same XML tag set.
+<p>The import/export facility makes it easy to backup and restore archives,
+and allows GEKOs to be exported for use in other applications.
+<h2>
+<b><font color="#000099">Inferencing in Java</font></b></h2>
+At the heart of the knowledge representation of GEKOs are variables and
+rules that describe relationships between variables. These rules can be
+used directly for inferencing, and AMKES includes an inference browser
+for exploring the relationships between variables.
+<p>The inference browser presents the user with a list of variables in
+an archive, and the user can provide values for variables and can select
+a variable as a goal. The inference browser first see what rules can be
+fired for the given values, and then proceeds to look for rules that can
+be used to find a value for the goal variable. This leads to requirements
+for other variables in classic expert system backward chaining, and queries
+to the user when no rules can be found for a variable.
+<p>The inference browser is written in Java which is a clean language for
+implementing this type of code.
+<h2>
+<b><font color="#000099">KRL and XML Parsing - JavaCC</font></b></h2>
+Parsing is required for both reading the XML formats of frames and for
+reading the formal syntax of the knowledge representation used in GEKOs.
+<p>JavaCC was used for both. JavaCC is a very slick tool in the vein of
+YACC and LEX that makes implementing the parsing parts of an application
+easy and enjoyable. All of the time we lost trying to figure out firewall
+bugs in RMI was made up for and more by the ease with which parsers were
+generated where needed for AMKES.
+<h2>
+<b><font color="#000099">Conclusion</font></b></h2>
+Java has proven to be an enjoyable and very practical tool for building
+this complex Internet application. Other than the drawing of user interface
+widgets, and normal network delays, the performance has been more than
+adequate for the application, but it has yet to be pushed by either a large
+number of users or large archive of GEKOs.
+<p>One of the biggest benefits of the Java is the built-in support for
+interfaces, which has lead to a very clean organization of the separate
+components of the application. The interface architecture has already enabled
+two major changes to the software with very little side-effect impact.
+These are the change from sockets to RMI for network communication, and
+the addition of support for a local version of AMKES that puts the database
+directly on the client's machine.
+<p>In both cases, the change simply required building another implementation
+of the involved interfaces.
+<p>All of the Java support products used, including PSE/Pro from Object
+Store, and RMI, JavaCC and JFC from Sun have all worked extremely well
+given the youth of Java, as has Java itself. Programming is more fun today
+than it has been in years.
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

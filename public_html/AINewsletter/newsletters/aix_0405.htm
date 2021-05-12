@@ -1,0 +1,386 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->May 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <h3>May 2004</h3>
+            <h4>Dennis Merritt</h4>
+            <h2></h2>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <ul>
+              <li><a href="#genetic_programming">Genetic Programming</a></li>
+              <li><a href="#flint">FLINT - A Fuzzy Bayesian Certainty Tool kit</a></li>
+              <li><a href="#inflow">InFlow - AI in the Real World</a></li>
+              <li><a href="#links">Links</a></li>
+            </ul>
+            <h2><a name="genetic_programming"></a>Genetic Programming (GP)</h2>
+            <p>The fun thing about AI is all the biological sorts of terms used 
+              to describe cold programming algorithms, starting, of course, with 
+              the coining of the phrase &quot;artificial intelligence&quot; to 
+              replace the rather boring label &quot;heuristic programming&quot;.</p>
+            <p>Genetic search algorithms follow this proud naming tradition. They 
+              are also referred to has hill-climbing search algorithms. (See Jan 
+              2003 newsletter for discussion of genetic search and basketball 
+              schedules.) They explore a search space by mutating a given point 
+              and seeing if any of the mutations have higher values, in however 
+              height is measured, in the search space.</p>
+            <p>Genetic programming is the application of this same technique to 
+              the generation of software.</p>
+            <p>Consider that there are all sorts of formal methodologies people 
+              use for developing software. They are all good and have one thing 
+              in common. They force a discipline on the programmer, requiring 
+              him/her to think clearly and logically in the laying out of software 
+              to meet a given problem specification.</p>
+            <p>There is another approach to developing software that is much more 
+              common than one based on a formal methodology. That is to immediately 
+              start writing code and see if it works and then sort of change it 
+              when it doesn't and, without ever quite understanding exactly how 
+              it works, to keep hacking away until for some reason it finally 
+              works.</p>
+            <p>That is the development method automated by genetic programming. 
+              And why not? A lot of great programs have been written by programmers 
+              using this methodology. In fact, one definition of AI programming 
+              included the constraint that if you knew where the program was going 
+              it wasn't AI programming. A great rationalization for the pleasures 
+              of hacking.</p>
+            <p>For GP, the randomizing work follows the ideas of evolution. A 
+              number of candidate programs are randomly generated, and then each 
+              is tested against the criteria for success. The best ones are kept, 
+              the worst ones discarded. Then the best ones are mutated and/or 
+              merged with each other to create a new generation, which is then 
+              measured. The process continues until a program is generated that 
+              meets all the specifications.</p>
+            <h3>Koza's Work</h3>
+            <p>Dr. John Koza of Stanford is probably the best known name in genetic 
+              programming. He is now on his fourth book, <i>Genetic Programming 
+              IV: Routine Human-Competitive Machine Intelligence</i> (<a href="#links">see 
+              links</a>), which he co-authored with a number of other individuals. 
+              His earlier books lay the ground work for genetic programming, and 
+              this latest book details the current successes of the technology. 
+              I highly recommend at least reading the <a href="http://www.genetic-programming.org/gp4chapter1.pdf">first 
+              chapter</a>, which is linked to from the Genetic Programming (<a href="#links">see 
+              links</a>) home page.</p>
+            <p>Given that random search is the key to GP, and that the search 
+              space is large for any significant problem, one could reasonably 
+              conclude that a GP algorithm would take a long time to find a good 
+              solution. This is, in fact, the most common criticism of GP.</p>
+            <p>But machines keep getting faster. Koza and others working in the 
+              field have much faster machines today than they did when they started 
+              playing with these ideas. Using fast, parallel processing machines, 
+              they have automatically generated a number of significant applications, 
+              and by significant, they really mean significant. These are applications 
+              that in some cases replicate other patentable software; in others 
+              surpass some previous human coded algorithms; and in a few cases 
+              generated new unique patentable algorithms that should pique the 
+              interest of lawyers and entrepreneurs.</p>
+            <p>The key to success in a GP domain are to:</p>
+            <ul>
+              <li>Have a good evaluation criteria that works with intermediate 
+                results, and</li>
+              <li>Have a good set of primitives to use to build working programs.</li>
+            </ul>
+            <p>Here's two examples, one from RoboCup and the other my own hacking. 
+              The GP Web site has dozens more.</p>
+            <h3>RoboCup</h3>
+            <p>Darwin United is a team that used GP techniques to evolve a RoboCup 
+              team for the computer simulation league, which very respectively 
+              finished in the middle of the field.</p>
+            <p>The Darwin United work illustrates some of the strengths and limitations 
+              of GP. First is the need to have a reasonable function that evaluates 
+              success. Without being able to define intermediate stages, a genetic 
+              programming algorithm will thrash around forever with meaningless 
+              results.</p>
+            <p>If the criteria for success was simply to score more goals than 
+              another team, then it would be difficult to evolve better and better 
+              teams. So they had to create more detailed criteria that evaluated 
+              &quot;good play&quot; aside from just winning. For example, one 
+              such criteria was the ability to simply score a goal on an empty 
+              playing field.</p>
+            <p>Another problem was that it takes a GP algorithm a long time to 
+              simply generate a solution for a player to move in a straight line 
+              towards the ball. For this reason, in addition to the primitive 
+              robot moving operations that were the building blocks for the robot's 
+              behavior, higher level behaviors were also preprogrammed. These 
+              were simple behaviors the developers knew would be useful.</p>
+            <p>The Post Script paper in the <a href="#links">links</a> gives an 
+              excellent description of this work, although you might want to simply 
+              Google for Darwin United to get Google's automatic translation to 
+              text.</p>
+            <h3>Hacking a GP Experiment</h3>
+            <p>I could have continued to do more research on GP, but instead decided 
+              to start hacking away at a genetic programming experiment. It didn't 
+              get as far as I would have liked, but the experiments did illustrate 
+              some of the issues with genetic programming.</p>
+            <p>The problem I was trying to solve was the automatic generation 
+              of Prolog list utilities. These are the all too tricky bits of Prolog 
+              code that do all the useful things in the language, such as finding 
+              a member of a list or appending two lists together.</p>
+            <p>The program would start with the signature of the arguments and 
+              some test cases to specify that the program is working. For example, 
+              here were the specifications for member/2, which finds members of 
+              a list.</p>
+            <pre>signature(member, [var, list]).
+
+spec(1, member(a, [a,b,c]), true).
+spec(2, member(b, [a,b,c]), true).
+spec(3, member(d, [a,b,c]), fail).
+spec(4, member(_, []), fail).
+
+</pre>
+            <p>As with other GP applications, the first step was to define the 
+              primitives that would be used to create programs. For the case of 
+              list utilities this was constrained by the signature of the target 
+              predicate. So for member/2, the only clause heads and goals created 
+              were prolog structures named &quot;member&quot; with two arguments. 
+              Further, the arguments were constrained to be either lists or variables.</p>
+            <p>A Prolog predicate is made up of one or more clauses, so the mutation 
+              routines would add or delete clauses, add or delete goals for those 
+              clauses, and scramble and/or unify the arguments of the goals and 
+              heads.</p>
+            <p>After much human random hacking of my GP program, it finally generated 
+              member/2, and relatively quickly at that.</p>
+            <p>Encouraged, the next project was to generate append/3, which is 
+              a little more complex. But after a few days of frustration I finally 
+              gave up. Maybe with more patience to let the program run it would 
+              have found an answer, but my limit is letting the machine run overnight.</p>
+            <p>The problem is the evaluation function in the search space. If 
+              there are a number of small incremental degrees of success an evolving 
+              program can reach, then the GP approach is very promising, just 
+              as it would be for the human hacker, who, upon reaching some level 
+              of success can then begin to make modifications to further improve 
+              the program.</p>
+            <p>But the test cases for the list utilities contain a giant step. 
+              Some of the cases can be solved with a single clause, but the meat 
+              of the problem requires the generation of a recursive clause. There 
+              isn't some intermediate step between the single clause and the recursive 
+              clause that will help the GP towards a good solution.</p>
+            <p>This, in fact, seems to be the key human design factor in using 
+              GP to solve a problem. Instead of working on the problem itself, 
+              the developer must create an evaluation procedure that will let 
+              the GP move in the right direction. This was the critical part of 
+              Darwin United's efforts towards genetically programming a RoboCup 
+              team.</p>
+            <p>The specification used for member/2 doesn't have this smooth criteria. 
+              The program very quickly generated code that gave the right answer 
+              for test cases 1, 2, and 4:</p>
+            <pre>member(A, [A|_]).</pre>
+            <p>But took much longer to satisfy test case 3, member(b, [a,b,c]), 
+              because it required the addition of a recursive clause:</p>
+            <pre>member(A, [_|Z]) :- member(A, Z).</pre>
+            <p>The discovery of that second recursive clause is a giant leap from 
+              the simple single clause that handles most of the cases. And just 
+              as students of Prolog can spend hours thrashing about with different 
+              ways of doing the recursion, so did the program generate lots of 
+              ridiculous combinations of arguments and recursive goals in attempting 
+              to find the second clause of member/2. Such as:</p>
+            <pre>member(A, [B|C]) :- member(C, [D|B]), member([B|E], C).</pre>
+            <p>Without a guiding intermediate step, the genetic program can't 
+              find that second clause until it randomly generates the correct 
+              combination of goals and arguments. In the case of member/2, the 
+              second clause is simple enough that it was eventually found, but 
+              for append/3 the added complexity of the third argument just seems 
+              to have enlarged the search space to where it became very time consuming 
+              to find the right recursive clause.</p>
+            <p>[Late breaking news! The program just generated append/3 on the 
+              261000th generation, with the 13 millionth candidate program.]</p>
+            <p>Now, with member/2, the first solutions it generated often had 
+              four or five clauses with multiple extraneous goals. In other words, 
+              the solutions were more complex than they had to be. Adding another 
+              search criteria which looked for the shortest working solution was 
+              very successful, as now the genetic algorithm had a metric it could 
+              get its teeth into, and it very quickly mutated the cumbersome first 
+              solution into the perfect elegance of the classic definition of 
+              member/2.</p>
+            <p>The code for this experiment is available for <a href="/downloads/gp_1-0.zip">Download</a>. 
+              I think its a good start, but needs a lot of work.</p>
+            <h2><a name="flint"></a>FLINT - A Fuzzy Bayesian Certainty Tool Kit</h2>
+            <p>LPA's (Logic Programming Associates Ltd) FLINT product includes 
+              a variety of techniques for dealing with uncertainty in a single 
+              package. It can be used to add fuzzy logic, bayesian probability, 
+              and/or certainty factors to either Prolog programs, or programs 
+              written using their Flex expert system tool.</p>
+            <p>See the <a href="#links">links</a> for a good description of FLINT 
+              with clear-cut examples of its use.</p>
+            <h2><a name="inflow"></a>Inflow - AI in the Real World</h2>
+            <p>Inflow is a fascinating product that maps the relationships between 
+              people in an organization. The Inflow Web site (see <a href="#links">links</a>) 
+              contains a number of fascinating papers describing the theory of 
+              human networks with analysis of the nature of power, economic growth, 
+              the difficulties with corporate mergers, and numerous other human 
+              network topics.</p>
+            <p>The Inflow software provides a means to measure and graph the &quot;connectedness&quot; 
+              of a group of people, organizations or both. All sorts of links 
+              between entities can be recorded in the package for analysis. The 
+              resulting cluster graphs provide a very intuitive feel for the dynamics 
+              of the group.</p>
+            <p>One particularly interesting paper shows the graphs for a company 
+              shortly after a merger. As you might expect, the connections between 
+              individuals of the two original companies are almost nonexistent, 
+              leading to a very clumsy and inefficient network graph.</p>
+            <p>Another paper illustrates how an analysis of a people network can 
+              lead to better management of that network. For example, to disperse 
+              information it is better to get it in the hands of the most connected 
+              individuals, rather than, say a manager of a group who might not 
+              be as connected as he/she should be.</p>
+            <p>A paper with Machiavellian overtones shows how to use a network 
+              graph to increase personal power.</p>
+            <p>Definitely a fun site to browse. And the relevance of this is the 
+              knowledge representation and reasoning engine for the Inflow software 
+              was developed using LPA's Prolog which was very well suited to this 
+              type of application.</p>
+            <h2><a name="links"></a>Links</h2>
+            <p><a href="http://www.genetic-programming.org/">http://www.genetic-programming.org/</a> 
+              - The home page for genetic programming information that contains 
+              numerous references and links to other work. From the home page 
+              there are links to Koza's fourth book on GP and its first chapter, 
+              which makes very interesting reading. There are a number of other 
+              interesting links and tidbits on the site, including the two references 
+              to papers on RoboCup competitors developed using GP. </p>
+            <p><i>Luke, Sean. 1998. Genetic programming produced competitive soccer 
+              softbot teams for RoboCup97. In Koza, John R., Banzhaf, Wolfgang, 
+              Chellapilla, Kumar, Deb, Kalyanmoy, Dorigo, Marco, Fogel, David 
+              B., Garzon, Max H., Goldberg, David E., Iba, Hitoshi, and Riolo, 
+              Rick. (editors). Genetic Programming 1998: Proceedings of the Third 
+              Annual Conference, July 22&#150;25, 1998, University of Wisconsin, 
+              Madison, Wisconsin. San Francisco, CA: Morgan Kaufmann. Pages 214&#150;222</i>. 
+              - An article describing a genetically programmed RoboCup entry that 
+              won a few games in 1997.</p>
+            <p><i>Andre, David and Teller, Astro. 1999. Evolving team Darwin United. 
+              In Asada, Minoru and Kitano, Hiroaki (editors). RoboCup-98: Robot 
+              Soccer World Cup II. Lecture Notes in Computer Science. Volume 1604. 
+              Berlin: Springer-Verlag. Pages 346&#150;352</i>. - An article describing 
+              a genetically programmed RoboCup entry that finished in the middle 
+              of the competition in 1998.</p>
+            <p><a href="www-2.cs.cmu.edu/afs/cs/usr/astro/%20public/papers/Teller_Astro.ps">www-2.cs.cmu.edu/afs/cs/usr/astro/ 
+              public/papers/Teller_Astro.ps</a> - A Post Script version of a paper 
+              describing Darwin United's RoboCup efforts. The paper provides clear 
+              insights into the strengths and weaknesses of GP, and a modified 
+              approach that yielded a competitive team.</p>
+            <p><a href="http://www.idsia.ch/%7Ejuergen/gp.html">http://www.idsia.ch/~juergen/gp.html</a> 
+              - A site that claims to have the first two papers ever written on 
+              genetic programming, the second of which &quot;re-invented&quot; 
+              genetic programming. These pre-date Koza's &quot;re-re-invention&quot; 
+              of GP.</p>
+            <p><a href="http://www.lpa.co.uk/fln.htm">http://www.lpa.co.uk/fln.htm</a> 
+              - An overview of LPA's FLINT, a product that supports three methods 
+              for representing uncertain information. Follow the link to more 
+              information to get some good examples of its use.</p>
+            <p><a href="http://www.orgnet.com/">http://www.orgnet.com/</a> - Valdis 
+              Kreb's Web site on human networks and the Inflow product used to 
+              analyze them. The white papers are particularly good reads.</p>
+            <p>&nbsp;</p>
+            <p></p>
+            <hr>
+            <p>As always, feedback ideas and especially interesting links are 
+              welcome. Past issues are available at either <a href="www.ddj.com">www.ddj.com</a> 
+              or <a href="www.ainewsletter.com">www.ainewsletter.com</a>.</p>
+            <p>Until next month,</p>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a></p>
+            <h1><br>
+            </h1>
+            <p></p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

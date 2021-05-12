@@ -1,0 +1,397 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->December 
+                      2002 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" -->
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>December 2002</h3>
+            <ul>
+              <li><a href="#is_ai_practical">Is AI Practical?</a> - Thoughts on 
+                commercial applicability of AI</li>
+              <li><a href="#evolving_machine_intelligence">Evolving Machine Intelligence</a> 
+                - Tom Ray's creatures</li>
+              <li><a href="#egyptian_cucumbers">Egyptian Cucumbers</a> - A practical, 
+                successful research and development laboratory</li>
+              <li><a href="#request_line">The Request Line</a> - Specific questions 
+                from readers</li>
+              <li><a href="#links">Links</a></li>
+              <ul>
+                <li><a href="#links_ai_expert">The Best of AI Expert</a></li>
+                <li><a href="#links_general">General AI</a></li>
+                <li><a href="#links_artificial_life">Artificial Life</a></li>
+                <li><a href="#links_knowledge_base">Knowledge Base Systems</a></li>
+                <li><a href="#links_logic_programming">Logic Programming</a></li>
+                <li><a href="#links_connectionism">Connectionism</a></li>
+                <li><a href="#links_philosophy">Philosophy</a></li>
+              </ul>
+            </ul>
+            <h2><a name="is_ai_practical"></a>Is AI Practical?</h2>
+            <p>Thanks for the e-mail.</p>
+            <p>A number of people asked if AI was practical and if there were 
+              commercial applications.</p>
+            <p>The very fact that the question needs to be asked, and that there 
+              are those who see the need to catalog affirmative answers, indicates 
+              that there is some question. I haven't seen anyone ask if there 
+              were commercial applications of databases, or Java.</p>
+            <p>So, are there commercial applications of AI? Yes. Are there as 
+              many as those in the field would like to see? No.</p>
+            <p>Why not? I believe it has to do with the fundamental premise of 
+              this newsletter, that AI is NOT in a computer's nature.</p>
+            <p>Java was a tremendous success with programmers because it was both 
+              new and familiar. It was familiar because it was based on the well-understood 
+              CPU and memory of computer. It was new because of easier semantics 
+              and syntax than previous languages. In short, it was a better tool 
+              for the familiar job of programming.</p>
+            <p>An AI tool is based on a virtual machine that does NOT work like 
+              a normal computer. In order to get competent with a given tool, 
+              a programmer has to learn the language of the tool AND the way the 
+              underlying virtual machine works. Further, the language of the tool 
+              is more difficult to learn because it is, in essence, programming 
+              an unfamiliar type of machine.</p>
+            <p>In other words, it's simply harder to get started with an AI tool. 
+              Which means there is more inertia to overcome in getting a commercial 
+              information technology (IT) shop to implement an AI-based solution 
+              to a particular problem. Given the vast application backlog of most 
+              shops, it's just human nature to tackle the familiar problems first.</p>
+            <p>However, if a problem is pressing enough, and AI is the best solution, 
+              then there is motivation to overcome that inertia. Consider for 
+              example, all the stock brokers in the World using <a href="http://www.emsl.pnl.gov:2080/proj/neuron/neural/products/">neural 
+              net applications</a> (I hope that link still works) to predict stock 
+              prices.</p>
+            <p>Two of my favorite motivations of early adapters came from Frito 
+              Lay and Lazy Boy. Frito Lay wanted fewer broken potato chips in 
+              their bags; Lazy Boy wanted more efficient distribution and shipping 
+              of recliners. They both achieved their goals with Rete-based production 
+              planning systems. Something to think about when you relax with a 
+              bag of chips watching the next Super Bowl.</p>
+            <p>And how did expert systems first get out of the laboratory and 
+              into commercial use? It was insurance companies screaming for a 
+              way to automate underwriting. They brought IBM and a bunch of entrepreneurs 
+              into the rule-based business in a hurry.</p>
+            <p>Each month I'll try to cover some practical/commercial AI application, 
+              so if you have any favorite ones, please let me know. This month, 
+              its Egyptian Cucumbers. </p>
+            <p>As always, any and all feedback is appreciated.</p>
+            <p>dennis@ddj.com</p>
+            <h2><a name="evolving_machine_intelligence"></a>Evolving Machine Intelligence</h2>
+            <p><i>&quot;Everything we know about life is based on one example 
+              of life: Life on Earth. Everything we know about intelligence is 
+              based on one example of intelligence: Human intelligence. This limited 
+              experience burdens us with preconceptions and limits our imaginations.&quot;</i> 
+              -- Tom Ray in his <a href="http://www.isd.atr.co.jp/~ray/pubs/kurzweil/index.html">critique 
+              of Kurzweil's book</a> &quot;The Age of Spiritual Machine.&quot;</p>
+            <p>One of the things I found fascinating about the Hyperion Trilogy 
+              was the concept of the &quot;AIs,&quot; intelligences that evolved 
+              in the information networks of the future. Not AIs built by humans 
+              to human design specifications, but rather AIs that evolved in the 
+              primordial digital soup of a vast information network.</p>
+            <p>Tom Ray's work on evolving machine intelligence was the basis for 
+              that bit of science fiction. What is refreshingly different about 
+              Ray's work is how he tries to escape from anthropomorphic thinking 
+              about artificial intelligence.</p>
+            <p>It is his claim that biological intelligent beings were produced 
+              by evolution, and the best way to create silicon intelligent beings 
+              is the same. To this end he developed the first Tierra program. 
+              It had a mechanism to let programs evolve, but there was no &quot;artificial&quot; 
+              human motivation, like searching for food, that drove the evolution. 
+              Rather, these were just programs trying to reproduce themselves, 
+              competing for CPU cycles and memory.</p>
+            <p>In other words, Ray's work goes exactly opposite the working definition 
+              of AI for this newsletter. Rather than building a virtual machine 
+              antithetical to a computer's nature, he was seeking to evolve intelligence 
+              totally within the realm of &quot;data&quot; and &quot;processing.&quot;</p>
+            <p>Of course, he had to write a virtual machine to do it.</p>
+            <p>His virtual machine had a machine language designed to support 
+              evolutionary change, and an original program that made replicas 
+              of itself in memory. But mutation would enter into the replicas 
+              from time to time. The result was replicating programs evolved that 
+              were much smaller and faster than the original. Also parasitic programs 
+              evolved that used code from other programs, and hostile and friendly 
+              programs.</p>
+            <p>Wow.</p>
+            <p>But his programs never got much beyond that, and he figured the 
+              problem was the limitation of a single machine. This led rise to 
+              Network Tierra, whereby the unused cycles of all the machines on 
+              the Internet could be used to house a &quot;game preserve&quot; 
+              where digital creatures were free to evolve.</p>
+            <p>Tom Ray's work is an excellent example of what can happen when 
+              disciplines cross. He is not a programmer. He is a zoologist. And 
+              his interest in evolving intelligence in a digital medium was motivated 
+              to a large degree in the possibility of creating a laboratory where 
+              the mechanism of evolution could be better studied.</p>
+            <p>Based on his latest writings, it appears as if the Network Tierra 
+              has slowed due to technical difficulties. His creatures were consuming 
+              too much band width. Ray has also moved his focus to some other 
+              evolutionary software projects that more closely model organic evolution. 
+              These have yielded some very visually pleasing pictures and movies, 
+              but that's for a later newsletter.</p>
+            <h2><a name="egyptian_cucumbers"></a>Egyptian Cucumbers, Citrus Fruit 
+              and Cherry Tomatoes</h2>
+            <p>The question of commercial applications of AI might be a peculiarly 
+              American one, with its dramatic separation of government, academic 
+              and private institutions. The three sectors work closer in other 
+              parts of the World.</p>
+            <p>The <a href="http://potato.claes.sci.eg/claes.htm">Central Laboratory 
+              for Agricultural Expert Systems</a> (CLAES) was established by the 
+              Egyptian Ministry of Agriculture to optimize the use of agricultural 
+              resources and maximize food production. The director of the laboratory 
+              is Dr. Ahmed Rafea, who is also chair of the computer science department 
+              of Cairo University.</p>
+            <p>They have fielded a number of systems that seek to optimize production 
+              of crops such as cucumbers, citrus fruits and cherry tomatoes, as 
+              well as other agricultural related expert systems. These systems 
+              are in different states of deployment, some working in the field, 
+              others still in research states.</p>
+            <p>Probably because of the tight relationship between government funding, 
+              academia and commercial application, CLAES has had the ability to 
+              develop their own set of specialized tools for agricultural expert 
+              systems.</p>
+            <p>These tools were developed to support the <a href="http://www.sics.se/ktm/projects/kads.html">KADS</a> 
+              development methodology for expert systems. KADS is the result of 
+              an a European Esprit-II research project that provides a framework 
+              for thinking about and implementing knowledge-based solutions.</p>
+            <p>The tools illustrate the wide range of options available for building 
+              tools. Their primary expert system shell is KROL, A Knowledge Representation 
+              Object Language, that was built on top of the logic programming 
+              language, <a href="http://www.coli.uni-sb.de/%7Ekris/prolog-course/">Prolog</a>. 
+              They have a case base reasoning (CBR) tool written using a relatively 
+              new high order language, <a href="http://www.mozart-oz.org/">Mozart</a>, 
+              and they have KSR, a Knowledge Sharing and Reuse tool, implemented 
+              in C++. (See expert system links below to access post script documentation 
+              on KROL and KSR.)</p>
+            <p>The choices of tools for building tools makes sense. Prolog and 
+              Mozart are both higher level languages with abstractions that make 
+              it easy to model different types of knowledge representations and 
+              the reasoning engines that deal with that knowledge. They are good 
+              tools for building expert system and case-based tools.</p>
+            <p>Their KSR system is more of a library and editing utility, something 
+              that fits well within the more conventional programming capabilities 
+              of C++.</p>
+            <p>Thus we see in CLAES the two aspects of AI: the development of 
+              virtual machines for a particular task; and the application of those 
+              virtual machines to a particular problem domain.</p>
+            <p>Organizationally, the Egyptian Ministry of Agriculture has leveraged 
+              CLAES's expertise and tools for a dozen or so applications. Given 
+              the tremendous potential for spreading agricultural knowledge using 
+              expert systems, the investment in team and tool building has paid 
+              off for them.</p>
+            <h2><a name="request_line"></a>Request Line</h2>
+            <p>A few readers asked about connectionism and neural nets. I've included 
+              some links on these topics below and will hopefully cover the topics 
+              more in later newsletters.</p>
+            <p>Another reader was interested in high performance workflow expert 
+              systems in network applications. As always, there are two issues, 
+              the tool and using the tool. For this type of application a tool 
+              is needed that can represent the workflow knowledge, and meet the 
+              performance constraints of the application.</p>
+            <p>In this case I see three tool choices based on the performance 
+              constraints: 1) pure compiled Prolog rules (as opposed to something 
+              layered on top of Prolog); 2) a Rete algorithm-based production 
+              system (efficient rule indexing); or 3) a custom knowledge representation 
+              and reasoning system written in C++ and tailored to the application.</p>
+            <p>Given the need for a user-friendly front-end for knowledge engineering, 
+              a hybrid approach probably makes the most sense. A front-end designed 
+              for expressive, easily-maintained knowledge development and maintenance 
+              could compile into a back end form suitable for high performance 
+              execution.</p>
+            <p>For example, user friendly rules could be compiled to either pure 
+              Prolog or <a href="http://www.ghg.net/clips/CLIPS.html">CLIPS</a> 
+              (Rete network production rules) rules.</p>
+            <p>One commercial site I have worked with provides their users with 
+              a spread sheet for expressing pricing and business rules for the 
+              mortgage loan industry. The spread sheet rules are then translated, 
+              based on application area, to either Prolog or <a href="http://herzberg.ca.sandia.gov/jess/">JESS</a> 
+              (CLIPS in Java).</p>
+            <p>What decides whether Prolog or JESS is used? Prolog is used for 
+              the more formally precise rules, such as pricing rules. JESS is 
+              used for more subjective business rules. </p>
+            <p>I welcome any thoughts or experiences from readers on this application.</p>
+            <h2><a name="links"></a>Links</h2>
+            <h3><a name="links_ai_expert"></a>The Best of AI Expert</h3>
+            <p>Each month selected articles from AI Expert are republished on 
+              the DDJ AI Expert Web site. Here are some related to this month's 
+              issues.</p>
+            <p><font color="#FF0000">In Practice - AI at Amex [Jan 93, pg 39]</font> 
+              -- Harvey P. Newquist III's study of Amex's use of AI, emphasizing 
+              the business mechanisms put in place to ensure a successful program.</p>
+            <p><font color="#FF0000">In Practice - American Express 2 [Feb 93, 
+              pg 59]</font> -- Part two of the above article.</p>
+            <p><font color="#FF0000">The Practical Applications of Prolog [Apr 
+              93, pg 25]</font> -- Al Roth, who was at the time the head of a 
+              Prolog advocacy group, provided this summary of Prolog applications.</p>
+            <p><font color="#FF0000">The Rete Matching Algorithm [Dec 92, pg 24]</font> 
+              -- Bruce Schneier explains the Rete algorithm and the hows and whys 
+              of its importance in high-performance expert systems. </p>
+            <h3><a name="links_general"></a>General AI</h3>
+            <p><a href="http://www.emsl.pnl.gov:2080/proj/neuron/">Cognitive Systems 
+              at Pacific Northwest National Laboratory</a> -- This Department 
+              of Energy multiprogram national laboratory does work in AI and provides 
+              an excellent site covering many branches of AI. When I first found 
+              this site, it had long lists of commercial applications in each 
+              area, but as I write this, most of those pages are under construction, 
+              although commercial neural networks were alive and well. Oh well, 
+              here's the link, keep it for a later date.</p>
+            <h3><a name="links_artificial_life"></a>Artificial Life</h3>
+            <p><a href="http://www.isd.atr.co.jp/~ray/pubs/zen/index.html">Zen 
+              and the Art of Creating Life</a> -- There are a number of summaries 
+              of Tom Ray's work, but this one from his earlier days is one of 
+              the best.</p>
+            <p><a href="http://www.isd.atr.co.jp/%7Eray/tierra/index.html">Tierra 
+              Home</a> -- The home page for the Tierra project, with many associated 
+              links.</p>
+            <p><a href="http://www.isd.atr.co.jp/%7Eray/pubs/alife7a/index.html">Aesthetically 
+              Evolved Virtual Pets</a> -- If you're tired of looking at code and 
+              want to see some neat pictures and movies even, this is an article 
+              on work using genetic algorithms to steer evolution of three-dimensional 
+              creatures moving is a simulated physical world. The creatures swim 
+              and walk in imaginative ways.</p>
+            <h3><a name="links_knowledge_base"></a>Knowledge Base Systems</h3>
+            <p><a href="http://www.sics.se/ktm/projects/kads.html">KADS</a> -- 
+              The European Esprit II research projects included one whose goal 
+              was to move to the next generation of sophistication of expert system 
+              development by providing a taxonomy and methodology for expert systems. 
+              KADS is the result of that work.</p>
+            <p><a href="ftp://ftp.claes.sci.eg/papers/KROL_ESwithAPP98.ps.zip">Knowledge 
+              Representation Object Language KROL</a> -- An expert system tool 
+              from CLAES built on top of Prolog that supports the KADS methodology 
+              for developing expert systems. This link leads to a download for 
+              a postscript document.</p>
+            <p><a href="ftp://ftp.claes.sci.eg/papers/reuse3.zip">Knowledge Sharing 
+              and Reuse (KSR)</a> -- A system designed to allow reuse of &quot;chunks&quot; 
+              of knowledge, again from CLAES. This link leads to a download for 
+              a postscript document.</p>
+            <p><a href="http://www.ghg.net/clips/CLIPS.html">CLIPS</a> 
+              -- C Language Integrated Production System is, as the name implies, 
+              a fast C implementation of the Rete algorithm for production rule 
+              systems. It is a very popular tool for many expert system applications.</p>
+            <p><a href="http://herzberg.ca.sandia.gov/jess/">JESS</a> -- Java 
+              Expert System Shell is, as the name hints at, CLIPS in Java.</p>
+            <h3><a name="links_logic_programming"></a>Logic Programming</h3>
+            <p><a href="http://www.coli.uni-sb.de/%7Ekris/prolog-course/">Prolog 
+              course</a> -- A good Prolog introduction from the Department of 
+              Computational Linguistics, University of the Saarland, Denmark, 
+              in the center of the Scandinavian hotbed of Prolog implementations. 
+              There are many free and commercial implementations of Prolog.</p>
+            <p><a href="http://www.mozart-oz.org/">Mozart</a> -- A relatively 
+              new language that is designed to support constraint and concurrent 
+              programming. It supports logic programming features as well, but 
+              in a more general manner. Mozart is freely available for both academic 
+              and commercial use.</p>
+            <h3><a name="links_connectionism"></a>Connectionism</h3>
+            <p><a href="http://neuron-ai.tuke.sk/NCS/VOL1/P3_html/vol1_3.html">History 
+              of Connectionism</a> -- This &quot;brief&quot; history by David 
+              Medler provides an excellent background into neural networks.</p>
+            <p><a href="http://www.shef.ac.uk/psychology/gurney/notes/index.html">Tutorial 
+              On Neural Nets</a> -- Dr. Kevin Gurney of the University of Sheffield 
+              provides an excellent set of notes on neural nets. A more complete 
+              version is available in book form, as explained on the Web site.</p>
+            <h3><a name="links_philosophy"></a>Philosophy</h3>
+            <p><a href="http://www.isd.atr.co.jp/%7Eray/pubs/kurzweil/index.html">Kurzweil's 
+              Turing Fallacy</a> -- Tom Ray's critique of Kurzweil's &quot;The 
+              Age of Spiritual Machines.&quot; You don't need to have read the 
+              book to enjoy the critique.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

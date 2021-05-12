@@ -1,0 +1,448 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Measuring Human Skill: An Expert System Approach</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (Win95; I) [Netscape]">
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<H1><FONT COLOR="#0000FF">Measuring Human Skill: An Expert System Approach</FONT></H1>
+
+<P>by Anne Breakey, Margarete Floeck, Pete Humphrey, and Jeff Skosnik</P>
+
+<P><I>[This article was originally published in PC AI magazine, Jul/Aug
+1997. The magazine can be reached at PC AI, 3310 West Bell Rd., Suite 119,
+Phoenix AZ, USA 85023 Tel: (602) 971-1869, FAX: (602) 971-2321, E-Mail:
+info@pcai.com, Web: http://www.pcai.com] </I></P>
+
+<H2><FONT COLOR="#000080">Introduction</FONT> </H2>
+
+<P>The measurement of human skill is important in many settings. It's particularly
+important at the British Columbia Institute of Technology, which offers
+industrial training programs in a variety of areas. In these fields, a
+poorly trained workforce could result in tragic consequences to both life
+and property. </P>
+
+<P>Motivated by the belief that an effective use of expert systems technology
+might lead to the development of superior assessment tools, our research
+group has developed an expert system-based approach to measuring human
+skill. Using Amzi! Prolog and Borland Delphi, we have created a dynamic
+assessment system (DAS), in which an expert system presents numerous questions
+to a user. The system generates questions by considering responses to earlier
+questions in the session. </P>
+
+<P>The fundamental thought process behind DAS is that an individual's responses
+to previous questions are often a good indicator of what to ask next. A
+paper-based examination, with its fixed set of questions, is not capable
+of dynamic question generation. We believe that this approach to assessment
+will result in a deeper probing of what an individual does, or does not,
+know. Our preliminary anecdotal data is consistent with this idea.</P>
+
+<H2><FONT COLOR="#000080">The Problem</FONT></H2>
+
+<P>Our initial problem concerned an unduly high failure rate in trades
+training programs in the Canadian apprenticeship system. Every individual
+within the apprenticeship system has already secured a job in his or her
+trade, and is alternating time on the job with time at a trade school.
+Failure at the trade school can cause severe problems for the individual
+and the employer. Individuals who fail at school often repeat their training,
+which can negatively affect their wages. </P>
+
+<P>Apart from its heavy cost in human terms, failure that results in repeated
+training increases the costs of delivering the apprenticeship program (and
+this program is under heavy financial pressures due to budget cutbacks).
+Another problem associated with failure in apprenticeship training is that
+the failure rate is higher for women and minorities than for white males,
+which raises equity issues. </P>
+
+<P>The causes for failure in training are, of course, complex and multiple.
+Improved training efforts can't overcome all of them. But improved efforts
+can overcome a significant proportion. In particular, we've had success
+by providing upgrade training in basic math and science prior to entry
+into first year apprenticeship training. The failure rate for the several
+thousand electrical apprentices in British Columbia is around 15%. It would
+not be appropriate to require every first-year apprentice to take upgrade
+training in math and science for the sake of the 15% who will probably
+fail without such training. At present, we use a simple paper-based exam
+in math and science to try to identify individuals who are at high risk
+of failure. This exam, however, is widely acknowledged not to do a particularly
+good job of identifying individuals who may benefit from the upgrade training.
+</P>
+
+<H2><FONT COLOR="#000080">Dynamic Assessment</FONT></H2>
+
+<P>Recognizing that the computer is capable of dynamic behavior, we thought
+that the best approach to computer-based examination would be an oral exam.
+In this type of exam, an individual's prior responses can determine the
+examiner's future questions. </P>
+
+<P>For example, a skilled teacher might ask a student: &quot;What is negative
+2 times negative 3?&quot; If the student responds &quot;Negative 6,&quot;
+the teacher would note that the student got the quantity right but the
+sign wrong. The teacher might then ask another similar question, and infer
+from the response that this student is weak in the area of signed numbers.
+Depending upon the purposes of the oral exam, the teacher might then drop
+all the other questions he or she might have asked except those relating
+to signed numbers. In this situation, the teacher is using expert knowledge
+to guide the questions in order to identify conceptual confusions and ignorance
+in broad areas.</P>
+
+<H2><FONT COLOR="#000080">An Expert Systems Approach</FONT></H2>
+
+<P>Every experienced teacher of elementary math is aware of many common
+errors. Quite often, the errors form a pattern, as a confused student does
+not incorrectly apply a correct principle of mathematics but rather correctly
+applies an incorrect principle. </P>
+
+<P>For example, to solve for x in the equation 3x = 9, a student might
+apply the false principle: subtract the numeral value (in this case 3)
+from both sides of the equation, and then rewrite the equation as x = 6.
+In fact, the correct principle is: divide both sides of the equation by
+the numeral value (3), and then (in this case) rewrite the equation as
+x = 3.</P>
+
+<P>We have found about a hundred principles for which our trades students
+(in common with many others, of course) have created false alternatives,
+which they apply consistently in their work. In our assessment system,
+we have the computer generate questions in which some of the multiple-choice
+answers reflect these common misconceptions. When a student selects an
+answer that suggests he or she may be applying a false principle, the computer
+dynamically generates a similar question. If the student repeats the error,
+the computer displays the principle that he or she should have used to
+solve the problem. Later in the assessment, the computer returns to all
+the questions for which the student received clues about the proper problem-solving
+techniques for that class of problem. </P>
+
+<P>If the student then correctly answers the question, it's reasonable
+to conclude that the student was unable to solve a certain type of mathematical
+problem due to a misconception about how to solve such problems. With minor
+coaching from the computer, the student was able to solve this type of
+problem -- i.e., the student can learn (some) math, and, what's more, can
+learn it from a computer. </P>
+
+<P>In this situation we infer that, although this student has some problems,
+he or she nevertheless is a good candidate for success in the apprenticeship
+training program, particularly if first given some remedial training. From
+this example, it's clear that innovative use of technology can lead to
+superior assessment in at least two ways: </P>
+
+<UL>
+<LI>by dynamically generating questions, we can individualize an exam to
+find the particular strengths and weaknesses of the individual undergoing
+assessment </LI>
+
+<LI>by providing &quot;tips&quot; and/or some limited instruction during
+the examination process itself, a dynamic assessment can also provide an
+indication of an individual's potential for learning. </LI>
+</UL>
+
+<P>Thus, the approach of dynamic assessment can not only obtain a better
+picture of what an individual actually knows, it can (to some degree) also
+determine the individual's learning potential in the problem domain relevant
+to his or her training needs.</P>
+
+<H2><FONT COLOR="#000080">Limitations of the Approach</FONT></H2>
+
+<P>The approach is very well-suited to adult learners about to enter training
+programs for which elementary mathematics is a prerequisite. As students
+move up to higher levels in their training programs, the possible causes
+of failure multiply and become more difficult to isolate. </P>
+
+<P>In the case of elementary mathematics, many adults (for example) don't
+know that the rule for dividing fractions is to invert and multiply. When
+they were taught this principle, their language skills and general comprehension
+were probably not at an adult level. Many children simply lack the intellectual
+maturity even to understand the language in which this basic principle
+is expressed. Our assessment software will quickly zero in on this sort
+of problem and notify the individual of the principle. In most cases, the
+adult learner easily grasps the principle when it is succinctly stated
+and presented as a clue for the next problem of this type. </P>
+
+<H2><FONT COLOR="#000080">Verification</FONT> </H2>
+
+<P>In cooperation with …we have just successfully completed a small pilot
+project with unemployed youth in which we used the DAS software to determine
+whether they would meet trades training entrance standards. In cooperation
+with the British Columbia Ministry of Labour, we will be using the dynamic
+assessment software on approximately 200 trades students about to enter
+first-year apprenticeship training. These 200 students are randomly drawn
+from 20 different trades in the electrical and mechanical occupations.
+We believe the dynamic assessment software will result in a 5% reduction
+of the failure rate, as compared with students evaluated via the paper
+examinations presently in use. Results on the success or failure of this
+pilot effort will be available in the first half of 1998.</P>
+
+<H2><FONT COLOR="#000080">Future Extensions</FONT> </H2>
+
+<P>We've demonstrated the DAS software to local industry and government
+in British Columbia. We've also shown it to the senior management of Confederation
+College in Thunder Bay, Ontario, which plans to use the software to support
+its trades training program. Given the strong interest already shown in
+the software, its continued use and further development appear certain.
+Two areas for further technical development are actively underway. </P>
+
+<P>The first area relates to the difficulty of applying the software to
+non-elementary skills, where the possible causes of failure decompose into
+a multitude of confusing possibilities. The premise from which we begin
+our investigation of this problem is that failure at a higher level is
+often due to the individual having marginal skill at a lower level. </P>
+
+<P>Many individuals for whom algebra appears to present insurmountable
+obstacles in fact have problems with arithmetic. Similarly, many individuals
+who fail college-level calculus repeat the subject only to fail again,
+because their real problem is that they do not have a proper grasp of algebra.
+This suggests a relationship among skills akin to the relationships expressed
+in a family tree. </P>
+
+<P>If this is the case, then (at least in the area of mathematics) the
+very complex relationships among different skills, at different levels,
+might be deducible in much the same way the family relationships are deducible
+in classic family tree programs. Because DAS is a Prolog-based system,
+the analogy between a family tree and the tree of knowledge is an interesting
+one to pursue. </P>
+
+<P>At present, assessments are composed in an ad hoc manner: each link
+from one question to the next is hand-coded; DAS does not provide any sort
+of conceptual framework to classify questions and organize them with respect
+to one another. We will recast the system so that, for a given domain,
+a &quot;tree of knowledge&quot; (similar to a family tree) is developed,
+and failure at one level in the tree will automatically result in the generation
+of a &quot;nearest ancestor&quot; question.</P>
+
+<P>The second area for further research relates to the use of synthetic
+speech. Our thought is to use the definite clause grammar, which Prolog
+supports, to generate verbal clues and help via one of the popular text-to-speech
+commercial development kits. This line of research stems from our interactions
+with the technical school in the Arab gulf, which has expressed a strong
+desire to develop tools for assessing English language skills, both written
+and oral. The native tongue of most of the students at the College is Arabic,
+and the language of instruction is English. Given Prolog's roots in natural
+language processing, this is a very exciting area for further applied research.</P>
+
+<H2><FONT COLOR="#000080">Application to Distance Education</FONT></H2>
+
+<P>Another area of application we intend to explore is the development
+of a new generation of distance education software. The instruction is
+&quot;assessment driven&quot; -- individuals will receive an initial assessment
+and then, if necessary, focused instruction will be provided online, followed
+by a re-assessment (and repeated training if necessary). </P>
+
+<P>Though a very natural extension to our present work, we will only undertake
+this effort after recasting DAS into the &quot;tree of knowledge&quot;
+model we described. Working in partnership with the Open Learning Agency
+in British Columbia, we will use the next generation of DAS software to
+develop an &quot;assessment-driven&quot; distance education training package.
+This package will train students in the field of programmable logic controllers
+and will teach elementary ladder logic programming.</P>
+
+<H2><FONT COLOR="#000080">Project Tools</FONT></H2>
+
+<P>Everyone on the DAS development team has a strong background in Prolog
+programming. Nevertheless, we felt that to program in a purely Prolog environment
+would be inefficient, particularly since we wanted to include multimedia
+and a sophisticated user interface. </P>
+
+<P>We decided to build the user interface in Borland's Delphi, which provides
+a visual development environment as well as an excellent database and user
+interface design tools. This meant that the Prolog portion of the overall
+program could handle decision-making and intelligent tasks (tasks for which
+Prolog is ideally suited). We selected Amzi! Prolog to use with Delphi
+because:</P>
+
+<UL>
+<LI>Amzi! Logic Server Technology made the integration of Prolog/Delphi
+straightforward and transparent </LI>
+
+<LI>Amzi! Inc. provides excellent technical support and participated actively
+in the development of DAS.</LI>
+</UL>
+
+<H2><FONT COLOR="#000080">A Software Engineering Perspective</FONT></H2>
+
+<P>From a software engineering perspective, the Dynamic Assessment System
+is especially noteworthy because of its unique integration of Amzi! Prolog
+and Borland's Delphi development environment. Although it's now a full-scale
+application, it started out as a means for exploring the possibilities
+for combining these two disparate programming environments. As a result,
+it uses some innovative techniques to make use of the best features of
+these two environments.</P>
+
+<P>In the system, Prolog predicates can request GUI services from Delphi
+by means of &quot;external predicates,&quot; a mechanism in Amzi! Prolog
+which lets Prolog access non-Prolog functions as though they were built-in
+predicates. Conversely, Delphi functions, written in Pascal, can invoke
+Prolog predicates, unify arguments, and backtrack to obtain additional
+solutions via call and redo functions.</P>
+
+<P>Because the Dynamic Assessment System is an MS Windows program and therefore
+event-driven, it presents some additional challenges. Delphi is designed
+primarily for the Windows environment, and the main event loop is its responsibility.
+It deals with the task of handling the Windows system and user input events.
+When the initial application form is created, the Delphi component initializes
+the Amzi! Prolog engine and registers the external predicates implemented
+in Pascal on the Delphi side. From that point on, all activity is scheduled
+in response to asynchronous events. </P>
+
+<P>In order to process a question, a Delphi function calls a Prolog predicate
+to present the question to the user. The Prolog code determines the components
+to display and how to display them, based on the definition of the current
+question and the user's performance on previous questions. The Prolog predicates,
+in turn, call external predicates supplied on the Delphi side to perform
+the actual GUI operations. </P>
+
+<P>When the user performs an action, such as requesting help or a hint,
+an appropriate Prolog predicate is called to determine the proper course
+of action. When the user selects an answer, the selection registers in
+a database and moves on to the Prolog engine, which determines the question
+to present next. Delphi uses its built-in relational database capabilities
+to track each student's performance and generates appropriate reports for
+administrators. </P>
+
+<P>One area in which the two systems are especially tightly coupled is
+in the equation-drawing facility. A generic text and symbol composition
+facility is included in the system that allows text and graphics elements
+to combine to produce equations and figures. These drawing algorithms were
+most easily expressible in Prolog. Because of the requirement that applications
+be able to redraw any portion of their window output, however, we designed
+these routines to compile equation definitions into a series of drawing
+primitives. Whenever the Delphi event-handling functions are notified to
+redraw the contents of the equation/figure windows, a Prolog predicate
+is called which runs down the list of drawing primitives to re-render the
+output equations and figures.</P>
+
+<P>By using the cross-language integration features of Amzi! Prolog, it
+was possible to develop the Dynamic Assessment System using Borland's Delphi
+to handle the composition and control of the user interface, and Amzi!
+Prolog to handle the question-management and presentation tasks. This allowed
+us to take advantage of the strengths of each tool and express different
+aspects of the system in the language best suited to the task.</P>
+
+<P><IMG SRC="assess3.gif"></P>
+
+<P>Figure 1: DAS&nbsp;has excellent plotting capabilities. Function plots
+are generated dynamically rather than stored. This saves disk space and
+allows more flexibility.</P>
+
+<H2><FONT COLOR="#000080">An AI Perspective</FONT></H2>
+
+<P>When a DAS session runs, it plays a Prolog script file. A Prolog script
+file consists of a set of question matrices. A particular question matrix
+consists of a set of frames with slots to hold initial and transient values.
+The system can generate slot values dynamically and update them dynamically
+in response to user behavior. The final frame in a given question is the
+reaction frame, in which the author of the particular assessment can stipulate
+a list of actions to be performed, given the response to the question at
+hand. </P>
+
+<P>This simple mechanism is extremely powerful, particularly given DAS's
+ability to generate equations and graphs dynamically. New question frames
+can be asserted into Prolog's database and then asked via next(Q) in the
+reaction frame of the current question. The default behavior is simply
+to ask the next question in the script file, unless instructed to do otherwise
+in the reaction frame. The expert rules accompanying particular script
+files are captured in the reaction frames. The actions slotted into the
+reaction frame can include:</P>
+
+<UL>
+<LI>popping a message to the screen giving the student a useful hint for
+the next question, </LI>
+
+<LI>going to a topic in an MS help file if more extensive help is needed
+</LI>
+
+<LI>generating a simpler question, given that the student is doing poorly
+at this level.</LI>
+</UL>
+
+<P>Script files can be composed dynamically from a Prolog database of question
+matrices: Expert principles generate the appropriate values for the various
+question matrices. Alternatively, one can write a complete script file
+in a standard program editor and the system can consult it at runtime.
+We compose simple script files in an MS word macro written for this purpose.
+If the reaction frame is empty in all questions, the system defaults to
+ask each question in the script in their listed order. The default behavior
+delivers a standard exam with a fixed set of questions asked in a fixed
+order. </P>
+
+<P>Listing 1 presents an excerpt from a Prolog script file, with some comments
+in italics preceded by %.</P>
+
+<P><IMG SRC="assess2.gif"></P>
+
+<P>Figure 2: The Question&nbsp;Design Form used to generate DAS&nbsp;script
+files</P>
+
+<TABLE BORDER=1 CELLPADDING=3 >
+<TR>
+<TD>
+<PRE>question(alg2, [                        %’alg2’ = question identifier; referenced in &quot;next(X)&quot; reaction frames 
+  category:'Algebra',                   % ‘Algebra’ = question topic; used to identify help topics
+  prompt:paint(                         % ‘paint’ creates a graphics windows
+    [$Solve for x:$,                    % this slot holds specific content of the question
+     $ $,                       
+     eq(y=m*x+b) ]),                    % eq(y= m*x + b) draws an equation into the graphics windows
+  response:choices(                     % defines a multiple choice question; alternative slot value = true/false
+    [a: paint([eq(x=(y-b)/m)]),         % choices given here
+     b: paint([eq(x=y/m-b)]),
+     c: paint([eq(x=m*y+b)]),
+     d: paint([eq(x=sqrt(m*(y/b)))]) ]),
+  answer:b,                             % indicates the correct answer
+     hint: text([$Divide both sides by m$]),  % this slot contains what is displayed when user clicks on hint
+     help: true,                        %  true makes the help button visible, giving access to help; alternative slot value = false
+     reaction: [                        %  reaction frame
+        ans(a): [qMake1, next(aa1)],    %  list of prolog clauses, execution triggered by user answer
+        ans(b): [qMake2, next(ab1)],    %  selection.   These clauses are used to capture expert rules
+        ans(c): [qMake3, next(ac1)],    %  defining system behavior in response to student 
+        ans(c): [qMake4, next(ad1)],    % performance.
+        ans(_): [help(linear), next(alg2)] ]   ]).   %  ‘ans(_)’ = &quot;Don’t know&quot;; reaction:  open help file.</PRE>
+</TD>
+</TR>
+</TABLE>
+
+<P>Listing 1. An excerpt from a Prolog script file </P>
+
+<P><IMG SRC="assess1.gif"></P>
+
+<P>Figure 3: The Screen resulting from the Prolog Script excerpt. </P>
+
+<H2><FONT COLOR="#000080">Biographies</FONT></H2>
+
+<P>Anne Breakey was Manager of Apprenticeship Standards for the province
+of British Columbia, Canada; she is now Director of Special Projects for
+Pacific AI.</P>
+
+<P>Margarete Floeck is the President of the Pacific Artificial Intelligence
+Systems Corporation (Albion, B.C., Canada). You can reach her via email
+at pai@mortimer.com or at (604) 467-4625.</P>
+
+<P>Pete Humphrey is with Stagecoach Consulting Services (Sandia Park, NM).
+You can reach him via email at pete@swcp.com or at (505) 286-1323. </P>
+
+<P>Jeff Skosnik is on leave from his position as the Program Head of Industry
+Services at the British Columbia Institute of Technology (Burnaby, B.C.,
+Canada). You can reach him care of Pacific AI. </P>
+
+<H2><FONT COLOR="#000080">Acknowledgments</FONT> </H2>
+
+<P>We gratefully acknowledge the contributions of Mary Kroening, Dennis
+Merritt, Joe Nodeland, and James Webb. James Webb is a student at the British
+Columbia Institute of Technology who wrote an MS Word Macro that generates
+Prolog assessment script files. This makes DAS available to non-prolog
+programmers and others who would prefer not to struggle with the syntax
+in the question frames of the Prolog script files for assessments.</P>
+
+<H2><FONT COLOR="#000080">Note</FONT> </H2>
+
+<P>Visit http://www.amzi.com for further information on the Delphi/Prolog
+programming environment.<BR>
+</P>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</HTML>

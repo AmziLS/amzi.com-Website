@@ -1,0 +1,646 @@
+<HTML>
+<HEAD>
+<TITLE> Automating Tech Support </TITLE>
+</HEAD>
+<BODY bgcolor=#FFFFFF text=#000000>
+
+
+<H1><FONT COLOR=blue>Automating Tech Support</FONT></H1>
+<P>
+<CITE>This is an expanded version of an article that appeared
+in Dr. Dobb's Sourcebook, Sep/Oct 1996.</CITE>
+
+
+<H2><FONT COLOR=navy>Introduction</FONT></H2>
+<P>
+As user of software, one of the primary reasons I use the web
+is for technical support. As a vendor of software, I would like
+to provide my users with the answers they need in the most timely
+and efficient manner possible.
+<P>
+But search engines, technical notes and FAQs really just scratch
+the surface of what is possible on the web. HTML has all the necessary
+tools to gather information from the user and present solutions.
+The missing piece is a logic-base to tie it all together intelligently
+and efficiently.
+<P>
+This article presents a system, called WebLS (pronounced webbles),
+that answers commonly asked technical support questions. WebLS
+is implemented using the CGI interface. The logic-base is implemented
+with the Amzi! Logic Server which uses the industry-standard language
+Prolog. However, nothing here is specific to the Amzi! implementation.
+The concepts can be implemented in other Prologs or even in other
+languages (although we think you'll find Prolog ideally suited
+to building logic-bases).
+
+
+<H2><FONT COLOR=navy>The Problem</FONT></H2>
+<P>
+Our goal is to build <B>and maintain</B> an on-line tech support
+system that can answer most new user's questions, clear up existing
+user's common misunderstandings, clarify documentation deficiencies
+and report known bugs and their workarounds. There are two sets
+of requirements to fill: the user's and the developer's.
+
+<H3>User Requirements</H3>
+<P>
+Users need to be able to access on-line technical support using
+any web browser. The questions need to be kept to a minimum and
+be easy to answer: multiple choice, yes/no and fill-in-the-blanks.
+<P>
+The answer needs to be complete and point to any additional resources
+needed to resolve the problem (such as the location of a patch
+file, sample code, etc.)
+
+<H3>Developer Requirements</H3>
+<P>
+The system needs to be available on many different web servers.
+Although Netscape and Microsoft are introducing APIs for communicating
+directly with web servers, CGI is currently the only common standard.
+However, because the CGI interface fires off a program each time
+a form is submitted, we need to minimize the number of times this
+happens.
+<P>
+Another requirement is that the state of the dialog needs to be
+maintained throughout the information gathering process with the
+user. As multiple users will be using on-line tech support simultaneously,
+the state for each of them must be kept separately. (Netscape's
+'cookies' could be used for this purpose but as cookies are not
+yet widely supported, a different approach is used.)
+<P>
+Finally, and most importantly, a tech support database will only
+be useful if it can be kept up-to-date. And it can only be kept
+up-to-date if the rules in the logic-base are easy to maintain.
+In addition, the logic-base needs to take advantage of existing
+resources, such as other on-line documents, pictures, databases,
+search engines, etc.
+<H2><FONT COLOR=navy>The Solution</FONT></H2>
+<P>
+WebLS fills the above requirements by integrating a logic-base
+with the CGI interface and HTML.
+<P> <IMG SRC="weblsarc.gif" width="611" height="258"> <BR>
+Figure 1: WebLS Architecture
+<P>
+HTML forms are ideal for gathering information from the user.
+Multiple pieces of information can be gathered at the same time.
+HTML documents can be constructed a piece at a time. And, most
+importantly, they can readily point to other resources, such as
+other documents, a particular place in another document, other
+files, directories of files, etc.
+<P>
+A logic-base ties everything together. It contains facts gathered
+from the user, and rules to determine the problem from the facts.
+The rules are easy-to-read and declarative so they are easy to
+maintain. The logic-base knows about related facts so it can batch
+questions together (to reduce the number of CGI invocations).
+<P>
+For WebLS, Prolog is used to construct and execute the logic-base.
+We use Prolog's ability to define new operators to implement the
+rule language, and its powerful, built-in search and pattern matching
+capabilities to determine which rules to use in a given situation.
+These features make Prolog an ideal choice for implementing custom
+logic-bases.
+
+
+<H2><FONT COLOR=navy>A Sample Tech Support Session</FONT></H2>
+<P>
+Before we get into how WebLS works, lets take a look at a problem
+resolution session for an Amzi! user.
+<P>
+First, general information about the user's environment and the
+problem area is gathered from the user with HTML forms. In this
+case the problem is in the IDE (Interactive Developer's Environment).
+<P> <IMG SRC="weblssamp1.gif" width="517" height="985"> <BR>
+Figure 2: An Initial HTML Form for Tech Support
+<P>
+Next, a short dialog takes place between the user and the system
+in order to narrow down the problem and gather specific details.
+In this case, the problem is the printer font size is too small.
+<P> <IMG SRC="weblssamp2.gif" width="517" height="462"> <BR>
+Figure 3: Tech Support Dialog
+<P>
+Once the problem has been determined an answer is presented. The
+answer can be a couple of paragraphs, or it can be another web
+document. In this case, a couple of sentences describes how to
+change the font size.
+<P> <IMG SRC="weblssamp3.gif" width="517" height="591"> <BR>
+Figure 4: A Problem Resolution
+
+
+<H2><FONT COLOR=navy>The Logic-Base</FONT></H2>
+<P>
+A logic-base in WebLS consists of:
+<UL>
+<LI>Facts,
+<LI>Methods for getting the values of facts,
+<LI>Lists of related facts, 
+<LI>Rules, and
+<LI>Methods for outputting answers. 
+</UL>
+<P>
+Facts are gathered from the user, or distilled from other facts.
+Examples of facts are: the error message, the program version,
+and the operating system. Rules are of the form if-then and check
+the values of facts to determine the problem. Methods define how
+to perform input and output using HTML.
+
+<H3>Facts</H3>
+<P>
+Facts are stored in the logic-base as attribute-value pairs. For
+example: the 'environment' attribute has the value 'Windows 95',
+the 'programName' attribute has the value 'Amzi! IDE'. 
+<H4>Asking for Facts</H4>
+<P>
+For each fact that can be obtained from the user, a method needs
+to be defined for asking it. WebLS implements three methods using
+HTML form components. They are:
+<OL>
+<LI>Fill-in-the-Blank
+<LI>Select from a Drop-Down List
+<LI>Answer Yes/No or Not Applicable
+</OL>
+<P>
+Below is an example of each. This is how we ask for the 'errorCode'
+attribute. The 5 is the HTML form field length and dollar signs
+($) are used to delimit strings.
+<BR><PRE>attr(errorCode, 
+   [
+   prompt = $What error code was displayed or 'none'?$, 
+   ask = field,
+   length = 5
+   ]).</PRE>
+<P>
+This is how we ask for a value from a list. The square brackets
+are used to bracket the list of choices.
+
+<BR><PRE>attr(environmentNameVer, 
+   [
+   prompt = $What environment are you running under?$,
+   ask = menu(['Windows 3.x', 'Windows 95', 'Windows NT', 'DOS', 'Linux'])
+   ]).</PRE>
+<P>
+This is how we ask a yes/no question.
+<BR><PRE>attr(usingDCG, 
+   [
+   prompt = $Are you using DCG in your Prolog module?$,
+   ask = yes
+   ]).</PRE>
+<P>
+
+<H4>Distilled Facts</H4>
+<P>
+Some facts WebLS does not ask the user for values for. Instead
+they are distilled from other facts. Usually this is done to group
+a set of related facts together. An example of a distilled fact
+is 'language', which has the value 'C/C++' if the fact 'languageTool'
+has any one of these values: 'Visual C++', 'Borland C++', 'Watcom
+C++', etc.
+
+<H4>Related Facts</H4>
+<P>
+In order to reduce the number of interactions with the user, the
+logic-base supports the concept of related facts. Entirely optional,
+they allow you to specify what facts are related. It lets you
+'group' facts together, so all the facts for a particular hypothesis
+can be gathered in a single form.
+<P>
+Here is how related facts are specified:
+<BR><PRE>attr(ideCommand, 
+   [...
+   related = [ideProblemType, amziVersion]
+   ... 
+   ]).</PRE>
+<P>
+This says that 'ideProblemType' and 'amziVersion' are related
+to 'ideCommand'. When the rules are executed, if WebLS is going
+to ask the user for ideProblemType, it will also ask for the other
+two facts as well.
+
+<H3>If-Then Rules</H3>
+<P>
+The heart of the logic-base is the rules. Rules can either directly
+determine the problem, or they can determine other facts (distilled
+facts). Here is a simple rule:
+<BR><PRE>
+if errorMessage = 'Code too long to load'
+then problem = srcbufTooSmall.</PRE>
+<P>
+It says if the attribute 'errorMessage' has the value specified
+then the problem is 'srcbufTooSmall'. Now there is nothing particularly
+difficult or remarkable about this rule, nor is there about most
+of the rules in WebLS. What is notable is that the rules are easy
+to read and can appear in the logic-base in any order. This makes
+is easy to maintain logic-bases with hundreds of rules. A Prolog
+'inference engine' (that's a fancy way to say search and pattern
+matching engine) scans the rules looking for ones that 'succeed.'
+A rule is said to succeed when all of the facts on the 'if' side
+match correctly.
+<P>
+Before we examine the inference engine, lets look at some more
+rules and how answers are outputted.
+<BR><PRE>if languageTool = 'Visual C++' or
+   languageTool = 'Borland C++' or
+   languageTool = 'Watcom C++'
+then language = 'C/C++'.</PRE>
+<P>
+This rule distills the fact 'language' from the user-provided
+fact 'languageTool'. This allows us to simplify rules such as
+the following:
+<BR><PRE>if language = 'C/C++' and
+   apiFunction = 'lsInit' and
+   ( (errorMessage = 'GPF (General Protection Fault)' and 
+     environmentNameVer = 'Windows 3.x') or
+   environmentNameVer = 'DOS' )
+then problem = cLargeModelRequired.</PRE>
+<P>
+Note here that more of the power of the rule language becomes
+evident. We can use 'and', 'or' and parenthesis to check facts.
+Also, not shown here, is the ability to check if an attribute
+is 'not equal' to a particular value.
+<P>
+Notice that rules that have determined an answer end with 'problem='.
+The logic-base has one final piece, that is outputting the answer
+associated with the problem.
+<H3>Answers</H3>
+<P>
+For each fact in the rule-base we had to define how to obtain
+its value. Similarly for every problem, we have to define how
+to output the answer. WebLS offers three options, the first two
+of which can be used in combination:
+<OL>
+<LI>Output HTML text optionally accompanied by a standard header
+and footer
+<LI>Output an existing (local) HTML file
+<LI>Redirect the user to another document or place on the web
+(by specifying a URL (Uniform Resource Locator)
+</OL>
+<P>
+Lets look at some examples. First outputting HTML text:
+<BR><PRE>answer(cLargeModelRequired,
+   [
+   text = [$16-bit C/C++ applications require the large memory model. $,
+           $Failure to use it leads to immediate GPFs.$]
+   ]).</PRE>
+<P>
+This answer is outputted when the problem is 'cLargeModelRequired'.
+The dollar signs are used around strings in the logic-base, and
+the square brackets are used around lists. So this answer is a
+list of two strings. 
+<P>
+If you would rather keep the answers in separate HTML documents,
+you can send them out as shown in this example:
+<BR><PRE>answer(lsxNotLoaded,
+   [
+   htmlFile = 'lsxintro.htm'
+   ]).</PRE>
+<P>
+The third approach is to redirect the user to another document.
+This lets you keep your answers in searchable, browseable documents
+and use tags to direct the user to the right place. For example:
+<BR><PRE>answer(componentNotInstalled,
+   [
+   url = 'http://www.amzi.com/install#delphi_component'
+   ]).</PRE><P>
+
+
+<H2><FONT COLOR=navy>Calling the Logic-Base from CGI</FONT></H2>
+<P>
+Now that we've described the contents of a logic-base, we can
+examine how it is executed. We mentioned before that an 'inference
+engine' is used to execute the rules. The inference engine in
+WebLS is written in Prolog. In fact many of the structures described
+above that form the logic-base use Prolog components such as strings
+and lists. The core of the search and pattern matching engine
+is accomplished in about 35 lines of Prolog code. Here is what
+it does:
+<OL>
+<LI>An initial form is displayed to gather information from the
+user and start a problem resolution session
+<LI>If the problem can be determined from gathered information,
+the answer is returned to the user and WebLS exits
+<LI>If not, a plausible hypothesis is determined
+<LI>All the facts needed to prove the hypothesis are asked, plus
+any related facts
+<LI>The existing facts are saved in a file on the web server and
+WebLS exits
+<LI>The process of finding a hypothesis and asking the user for
+facts repeats until an answer is found (or until no answer can
+be found)
+<LI>Finally a clean-up of the fact files is performed
+</OL>
+<P>
+Lets examine these steps in some detail.
+<H3>The Initial Form</H3>
+<P>
+The initial form is used to gather as much information as possible
+(without overwhelming the user) to determine a general direction
+to search for the answer. In Amzi!'s system, we ask for the error
+message because often it is possible to determine the problem
+directly from the message alone.
+<P>
+The Prolog-CGI interface reads the form values from the CGI input
+file and asserts the facts in the logic-base. The initial form
+is designed such that the attribute names are simply taken from
+the name of the form field. For example:
+<BR><PRE>&lt;INPUT NAME=&quot;errorCode&quot; TYPE=&quot;TEXT&quot; VALUE=&quot;none&quot;
+ROWS=1 SIZE=&quot;10&quot; ALIGN=left&gt;</PRE>
+<P>
+This gets the value for the attribute 'errorCode'.
+<P>
+WebLS writes the initial form to the CGI output file and exits.
+When the submit button (on the form) is pressed by the user, WebLS
+is started again and the form values are sent to it via the CGI
+interface.
+
+<H3>Check for an Answer</H3>
+<P>
+When WebLS starts again it reads the form values entered by the
+user and asserts the facts to the logic-base. Next, we run the
+logic-base to see if a rule can be found, whose facts are all
+known, and whose values match the criteria specified in the rule.
+To do this, the inference engine starts with the first rule in
+the logic-base and continues to examine the rules until one is
+found or there are no more rules. If the problem was identified,
+the answer is outputted for that problem and we proceed to the
+clean-up phase.
+<P>
+If the problem is not found, then we enter a dialog with the user
+to gather more information.
+
+<H3>Find a Hypothesis</H3>
+<P>
+To build the next form, we search the logic-base again. This time
+we look for the first rule whose known facts all match, and make
+a list of the unknown facts. For each unknown fact, its attr(...)
+definition is used to output the question to the HTML form. Also
+for each unknown fact, any and all related facts are also asked.
+The resulting form will be returned to the web server to be displayed
+to the user.
+
+<H3>Save the Known Facts</H3>
+<P>
+Before WebLS exits, the facts we already know are saved to a file.
+The name of the file is generated using a random number and is
+hidden in the submit button of the form we built above.
+
+<H3>Check the Hypothesis</H3>
+<P>
+When WebLS is started again, it picks up the name of the fact
+file from the submit button. It combines the new facts from the
+user with the facts we already knew and checks for an answer again.
+This process repeats until we find the problem or run out of hypotheses.
+
+<H3>Clean-Up</H3>
+<P>
+Finally we delete the fact file that we were saving the known
+facts in. We also delete any fact files that are more than an
+hour old. This is necessary because they will be left around when
+a user aborts out of a question-answer session.
+
+
+<H2><FONT COLOR=navy>Debugging Logic-Base Execution</FONT></H2>
+<P>
+In general you will find that logic-bases for technical support
+are 'flat'. This means that most rules won't depend on multiple
+layers of distilled facts. So debugging the rules is generally
+straight-forward.
+<P>
+WebLS includes a trace facility to assist in testing and debugging
+logic-bases. The trace lists all the known facts, and then shows
+each rule being tried, indicating which facts match, and which
+rule or hypothesis matches. When tracing is enabled, a URL pointing
+to the output is included on each page generated by WebLS. This
+allows you to examine the trace directly in your browser. 
+<P>
+A typical debugging session has you fill-in the answers on the
+form (in the same manner your users would), then see the trace
+to determine how the answer was reached, or why another set of
+facts is being asked for.
+<P>
+Below is a small logic-base and the trace of a particular run.
+<P><PRE>% ------------------------------------------------------------------- %
+%                           The Rule-Base                             %
+% ------------------------------------------------------------------- %
+
+%
+% Required definitions for Amzi!  Do not change or remove.
+%
+:- op(790, fx, if).     	% prefix operator
+:- op(780, xfx, then).  	% infix operator
+:- op(775, xfy, or).    	% infix that can be linked
+:- op(770, xfy, and).   	% infix that can be linked
+:- op(700, xfx, <=).		% infix operator
+:- op(700, xfx, include).	% infix operator
+
+system('Log File', 'C:\\AmziCGI\\logs\\lilrun.htm').
+system('Results Files', 'C:\\AmziCGI\\logs\\results.pro').
+system('Title', $Amzi! Problem Resolver$).
+system('Initial Form', $C:\\AmziCGI\\html\\testprob.htm$).
+system('AmziCGI Directory', $C:\\AmziCGI$).
+system('Form Action', 'Executable Path').
+system('Goal', 'problem').
+
+attr(errorCode, 
+     [
+     prompt = $What error code was displayed or 'none'?$,
+     ask = field,
+     length = 5
+     ]).
+
+attr(programType, 
+     [
+     prompt = $What program are you running?$,
+     ask = menu(['other', 'Amzi! Hello Program', 'Amzi! Sample Program',
+                 'Amzi! IDE', 'My Program', 'Windows Application'])
+     ]).
+
+if errorCode = '600' and
+   programType = 'Amzi! Hello Program' 
+then problem = helloXPL.
+
+if errorCode = '600' and
+   programType = 'Amzi! Sample Program' 
+then problem = sampleXPL.
+
+if errorCode = '600' and
+   programType = 'My Program' 
+then problem = missingXPL.
+
+answer(helloXPL, 
+       [
+       answer = [$The program is unable to locate the Amzi! Prolog object $,     
+                 $module, an XPL file. Make sure the AMZI installation $,
+                 $directory is in your path, and that HELLO.XPL file $,
+                 $exists in the path or the current directory.$]
+       ]).
+
+answer(sampleXPL, 
+       [
+       answer = [$The program is unable to locate the Amzi! Prolog object module, an XPL file. $,
+                 $Some of the Amzi! samples include source only, $,
+                 $and the PRO file needs to be compiled and linked $,
+                 $into an XPL file.$,
+                 $&lt;P&gt;If the XPL file exists, then it must be in your $,
+                 $path or the current directory.$]
+       ]).
+
+answer(missingXPL, 
+       [
+       answer = [$The program is unable to locate the Amzi! Prolog object $,
+                 $module, an XPL file. Make sure the the XPL file exists in $,
+                 $your path or the current directory.$,
+                 $<P>Note: Some development environments such as Visual Basic $,
+                 $and Delphi set the current directory to a directory you $,
+                 $might not have expected.$]
+       ]).
+</PRE><BR>
+Figure 5: A Sample Logic-Base
+<P>
+You can see in the listing above the three main parts of the logic-base.
+There are the rules. These are followed by the attr(...) definitions
+(procedures) and the answer definitions.
+<P><PRE>Logic-Base Debugging Trace
+system($Input File$,$C:\WEBSITE\CGI-TEMP\287WS.INI$).
+system('Content File','C:\WEBSITE\CGI-TEMP\287WS.INP').
+system('Output File','C:\WebSite\cgi-temp\287ws.out').
+. . .
+system('Log File','C:\AmziCGI\logs\lilrun.htm').
+system('Title',$Amzi! Problem Resolver$).
+system('Initial Form',$C:\AmziCGI\html\rptprob.htm$).
+system('AmziCGI Directory',$C:\AmziCGI$).
+system('Form Action','Executable Path').
+system('Goal',problem).
+
+cgi('Content Length','191').
+cgi('Content Type','application/x-www-form-urlencoded').
+. . .
+cgi('Executable Path','/cgi-win/cgirun.exe').
+cgi('Request Method','POST').
+cgi('Request Protocol','HTTP/1.0').
+
+fact(submitProblem,'Submit').
+fact(amziVersion,'3.3 Jan96').
+fact(environmentNameVer,'Windows 3.x').
+fact(apiFunction,none).
+fact(predicate,none).
+fact(languageTool,other).
+fact(programType,'Amzi! Sample Program').
+fact(errorCode,'600').
+fact(errorMessage,none).
+
+Processing POST method (subsequent times through)
+Opening fact file: submitProblem
+
+---> Calling logic-base for the first time
+
+Trying problem = helloXPL
+   Trying errorCode = 600
+   Matching errorCode is 600
+   Trying programType = Amzi! Hello Program
+Failing problem = helloXPL
+Trying problem = sampleXPL
+   Trying errorCode = 600
+   Matching errorCode is 600
+   Trying programType = Amzi! Sample Program
+   Matching programType is Amzi! Sample Program
+Matching problem = sampleXPL
+
+---> Logic-base succeeded in finding an answer: sampleXPL
+</PRE><BR>
+Figure 6: Trace of the Sample Logic-Base
+<P>
+This trace illuminates the 'backtracking' search that is inherent
+in the Prolog language and implemented in the WebLS inference
+engine. You can see the first rule matches on the errorCode ('600')
+but fails on the programType. The second rules matches on both
+and succeeds; that is, it identifies the problem as 'sampleXPL.'
+<H2><FONT COLOR=navy>Logic-Base Maintenance and Design Considerations</FONT></H2>
+<P>
+On-going maintenance of the logic-base is very straight-forward.
+The Amzi! tech support logic-base is organized by problem area.
+There is a section based on error message alone, then a section
+on the Amzi! samples, a section on the Amzi! IDE, a section on
+Prolog predicates, a section on Logic Server API calls and then
+sections for each of the tools and languages that Amzi! Logic
+Servers can be embedded into.
+<P>
+Everytime tech support writes up an answer for a customer, it
+forwards it to the logic-base developer who incorporates it into
+the rules in the appropriate section, and then adds the answer(...)
+definition for the problem. If the rule requires some new facts,
+attr(...) definitions (or rules) are created for each one.
+<P>
+The most important consideration when adding new rules, is to
+use related facts lists wherever possible. This reduces the number
+of interactions with the users, resulting in less frustration
+for them, and less load on the web server.
+<P>
+When debugging new rules, the trace facility described above is
+very useful for figuring out which rule succeeds and why. In addition
+to the trace facility, WebLS reports syntax errors in the logic-base
+as well as when attr(...) is not defined for a needed fact
+and when answer(...) is not defined for a reached conclusion.
+These errors are returned on an HTML error page designed for the
+purpose.
+<P> <IMG SRC="weblserr.gif"> <BR>
+Figure 7: WebLS' HTML Error Page
+
+
+<H2><FONT COLOR=navy>Future Directions</FONT></H2>
+<P>
+WebLS has many possibilities for the future. Some of them will
+hopefully be implemented by the time this article is published.
+<P>
+The first, and most obvious, is to e-mail unresolved problems
+to tech support. This e-mail would include the known facts, plus
+a free-form description of the problem.
+<P>
+It would also be useful to support large fields and fields with
+special characters that are saved in external files. Large field
+support would be enhanced by adding an operator 'contains' that
+checks if the field contains a particular word or phrase. A larger
+goal would be adding some natural language parsing using knowledge
+specific to the problem domain. (Prolog is very good at this.)
+<P>
+Another useful feature would be to save each transaction in an
+external database for later analysis. This would allow tech support
+managers to keep statistics regarding the use of the on-line system
+versus other support methods. It can help development managers
+to identify the areas where users have the most problems. And
+it can help the logic-base developer to craft better questions.
+<P>
+Along a similar vein, the on-line tech support system could use
+ODBC (or another means) to connect to, search and retrieve information
+from an existing tech support system or related database. And
+the tech support system could save the problems in the customer
+database so that when a human answers a tech support call, a log
+of the customer's use of the on-line system is made available.
+<P>
+Finally, the logic-base and inference engine could be shipped
+with the product to help new users through the early learning
+period as many new users encounter the same problems and have
+the same types of questions. Of course, the part shipped with
+the product would interface with the full web server-based system.
+<BR>
+<P>
+<I>WebLS is available for downloading free of charge from Amzi!'s
+web site, http://www.amzi.com. As of this writing, WebLS runs
+under Windows 95 and NT. Unix versions will also become available.
+Check the web site for the latest information. WebLS includes
+full source code, documentation plus some sample logic-bases.</I>
+<P>
+<I>Mary Kroening is a founder of Amzi! inc., and is developing
+WebLS and other interfaces between internet resources and the
+Amzi! Logic Server. She can be reached on www.amzi.com.<BR>
+</I>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</HTML>
+

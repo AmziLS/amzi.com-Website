@@ -1,0 +1,61 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>List Utilities</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->List Utilities<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<pre>member(X,[X|_]).
+member(X,[_|Y]) :- member(X,Y).
+
+append([], X, X).
+append([A|X], Y, [A|Z]) :- append(X, Y, Z).</pre>
+<h2>Exercises:</h2>
+<p>write_list(+L) - writes the elements</p>
+<p>length(+L,-N) - returns the length (use helper length3(L,0,N) 
+  that uses accumulator)</p>
+<p>sum(+L, -SUM) - sums a list of numbers</p>
+<p></p>
+<p>reverse(+L1, -L2) - reverses a list (use a helper predicate that has an accumulator, 
+  reverse3(+L1, [], -L2))</p>
+<p>insert(+X, +L1, -L2) - inserts an element in a sorted list. Use @&gt; and @&lt; 
+  to compare elements in sort order.</p>
+<p>delete(+X, +L1, -L2) - finds and deletes the element X from L1, returning L2 
+  without the element. <span class="weak">(it can succeed or fail if the element 
+  isn't there)</span></p>
+<p>nth(+N, +L, -X) - returns the Nth element in a list.</p>
+<p>random_elem(+L1, -X, -L2) - removes a random element from a list, returning 
+  what's left. good for dealing a deck of cards. There is an arithmetic atom, 
+  random, that has a random value between 0.0 and 1.0. Use it with the length 
+  of the list: <code>..., length(L1, LEN), N is 1 + integer(random * LEN), ...</code></p>
+<p>remove_dups(+L1, -L2) - L2 is L1 without any duplicate elements.</p>
+<p>split(+L1, A, -L2, -L3) - splits L1 at element A into two parts, L2 &amp; L3 
+  with A in the second part.</p>
+<p>shuffle(+L1, -L2) - randomly shuffles the elements of a list.</p>
+<p>flatten(+L1, -L2) - takes a list with embedded lists and flattens it to just 
+  a list of elements:<br>
+  <code>?- flatten([ [a,b, [c, d], e], f, [g, h] ], X).<br>
+  X = [a,b,c,d,e,f,g,h].</code></p>
+<h2>A set can be modeled as a sorted list with no duplicates.</h2>
+<p>union(+S1, +S2, -S3) - S3 is the union of S1 and S2.</p>
+<p>intersection(+S1, +S2, S3) - S3 is the intersection of S1 and S2.</p>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_080_lists_050.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_090_performance_010.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

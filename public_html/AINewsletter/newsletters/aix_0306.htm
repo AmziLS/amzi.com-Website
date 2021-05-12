@@ -1,0 +1,303 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->June 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <h2></h2>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>June 2003</h3>
+            <h2></h2>
+            <ul>
+              <li><a href="#feedback">Feedback</a> - Questions, errata</li>
+              <li><a href="#ontologies">Ontologies</a> - Meanings and relationships</li>
+              <li><a href="#common_sense">Common Sense</a> - Ontologies about 
+                everything</li>
+              <li><a href="#georeference">GeoReference</a> - Mining for gold with 
+                ontologies</li>
+              <li><a href="#links">Links</a></li>
+              <ul>
+                <li><a href="#links_ontologies">Ontologies</a></li>
+              </ul>
+            </ul>
+            <h2><a name="feedback"></a>Feedback</h2>
+            <p>One reader asked if Prolog was psychic and could tell that Price 
+              and PriceCents were the same in this example. Unfortunately psychic 
+              versions are only available at advanced wizardry research institutions. 
+              Normal programmers have to spell all their variables the same.</p>
+            <pre>
+price(StartHour, DurationMinutes, PriceCents) :-
+   StartHour < 7,
+   StartHour > 16,
+   Price is Duration * 10.
+</pre>
+            <p>(The error has been fixed in the archive version, plus the additional 
+              error that 8pm is 20:00 not 16:00. ed)</p>
+            <p>Sigh. I shouldn't edit the code for clarity when it's in the newsletter. 
+              I think I introduced a bug into the previous month's Bayesian example 
+              the same way. From now on all code will be cut and pasted directly 
+              from working programs and NOT editted again. I promise.</p>
+            <p>Also there was interest in the Rubik's cube program. <a href="http://www.amzi.com/articles/rubik.htm">http://www.amzi.com/articles/rubik.htm</a> 
+              is a link to a reprint of a PCAI article describing it.</p>
+            <p>As the article describes, the program is NOT a learning program. 
+              It has the strategy for solving the cube hard coded in the program. 
+              So it is an interesting example of knowledge engineering, not learning.</p>
+            <p>I believe there are learning versions of Rubik's Cube programs 
+              around, which an Internet search might turn up. Although, they might 
+              only work for 2x2 cubes.</p>
+            <h2><a name="ontologies"></a>Ontologies</h2>
+            <p>Early on AI researchers realized that a big problem with building 
+              &quot;intelligent&quot; systems was that computers lacked common 
+              sense knowledge of the world.</p>
+            <p>Consider, for example, trying to write a natural language understanding 
+              program with these two sentences:</p>
+            <p><i>It was a canary. The beak was injured.</i></p>
+            <p>It's one thing to be able to parse the words, but quite another 
+              to &quot;understand&quot; what it means. A human makes use of the 
+              knowledge that 1) a canary is a type of bird, and that 2) a beak 
+              is a part of a bird to understand this sentence.</p>
+            <p>So, in order to write a computer program that can understand those 
+              sentences, it is not enough to know grammar rules and parts of speach, 
+              it is also necessary to somehow encode the knowledge that a canary 
+              is a bird and a beak is a part of a bird.</p>
+            <p>This, in computer science terms, is an ontology.</p>
+            <p>One could argue that this is a poor word choice. If you look up 
+              ontology in the dictionary it talks about the philosophy of existence. 
+              Which makes software ontologies sound like something very heavy 
+              indeed.</p>
+            <p>But they're not. A software ontology is simply encoded knowledge 
+              about concepts and relationships. Like</p>
+            <pre>canary is_a bird.
+beak is_part_of bird.</pre>
+            <p>Often times an expert system has two parts. One is an ontology, 
+              describing the terminology of the domain; and the other is rules 
+              that are used to reason over that domain.</p>
+            <p>For example, a technical support system might have these rules 
+              to let a user know which way to tilt slashes in a directory path:</p>
+            <pre>If error = bad_path and directory_separator \= os_directory_separator then 
+  tilt_slashes.
+If operating_system = windows then os_directory_separator = backslash.
+If operating_system = unix then os_directory_separator = forwardslash.</pre>
+            <p>And be supported by this ontology:</p>
+            <pre>windows is_a operating_system.
+unix is_a operating_system.
+W2K is_a windows.
+XP is_a windows.
+W98 is_a windows.
+Linux is_a unix.
+Solaris is_a unix.</pre>
+            <p>Using the rules and ontology together, a tech support system could 
+              then have a dialog like this:</p>
+            <pre>What error? bad_path
+What directory_separator? forwardslash
+What operating_system? W98
+Recommendation: tilt_slashes</pre>
+            <p>It is the ontology that lets the rules act as if they understand 
+              that W98 is a windows operating system.</p>
+            <h2><a name="common_sense"></a>Common Sense</h2>
+            <p>We can see where an application might have use for a specific ontology, 
+              but some AI researchers are working in larger areas of discourse. 
+              They want to develop software that can understand any written discourse.</p>
+            <p>To do that, they needed to develop an ontology of everything.</p>
+            <p>This is a huge undertaking, and one of the giants of early AI work, 
+              Doug Lenat, set out to do exactly that. He and his colleagues have 
+              been working on the <a href="#cyc">Cyc</a>, from encyclopedia, project 
+              since 1987.</p>
+            <p>Cyc is huge repository of facts (1,000,000) about the world, such 
+              as trees usually grow outdoors and glasses should be held rightside-up. 
+              Interfaces are available for querying Cyc, so it's common sense 
+              language can be utilized in any application.</p>
+            <p>There are other efforts in similar veins. <a href="#thoughttreasure">ThoughtTreasure</a> 
+              in one with some interesting concepts of space connected by worm 
+              holes that can be used to understand discourse about, say going 
+              from the street into a restaurant. Using it as a tool, one could 
+              create an ontology about spaces, such as stores on a street, or 
+              a village, or a city, and understand discourse about those spaces.</p>
+            <p><a href="#wordnet">WordNet</a> might be called a dictionary/thesauraus++. 
+              A dictionary contains definitions, and a thesauraus contains relationships 
+              of a certain kind. WordNet expands on these concepts and stores 
+              many more types of relationships between words, inspired by psycho-linguistic 
+              studies of how humans store and retrieve words and meanings.</p>
+            <p>The WordNet documentation is full of words like meronym (part of 
+              relationships), holonym (the opposite of parts), and hyponym (hierarchical 
+              organization). Some of these are further subdivided. Meronyms come 
+              in different flavors, being components (branch/tree), members (tree/forest), 
+              and composites (airplane/aluminum). These examples are just some 
+              of the relationships for nouns. Verbs, adjectives and adverbs have 
+              their own similarly complex collection of relationships.</p>
+            <p>WordNet lets a program understand about the canary and its injured 
+              beak.</p>
+            <p><a href="#edr">EDR</a> is a similar project from Japan, with the 
+              added wrinkle that it has both Japanese and English lexical concepts 
+              that can be used for more accurate machine translation of documents.</p>
+            <p><a href="#ladl">LADL</a> is one from France, with French and English, 
+              but also support for other languages.</p>
+            <h2><a name="georeference"></a>GeoReference Online Ltd. - Mining with 
+              Ontologies</h2>
+            <p><a href="#link_georeference">GeoReference</a> is a company that 
+              has applied ontology technology to mineral exploration. They provide 
+              one product designed for mapping and geologic ontologies, LegendBurster, 
+              and another, MineMatch that uses those ontologies to match potential 
+              mining sites with the attributes of known successful sites.</p>
+            <p>The power of the ontology component is it allows field geologists 
+              to enter information about a location in a manner that can then 
+              be analyzed and understood by computer software. Without those ontological 
+              definitions of geologic concepts, the data could not be effectively 
+              analyzed.</p>
+            <p><img src="ontology_editor_0306.jpg" width="795" height="585"></p>
+            <p>The figure shows the ontology editor component of Georeference's 
+              software. You can see the various attributes and hierarchical relationships 
+              typical in many ontologies.</p>
+            <h2><a name="links"></a>Links</h2>
+            <h3><a name="links_ontologies"></a>Ontologies</h3>
+            <p><a href="http://www-ksl.stanford.edu/kst/what-is-an-ontology.html">http://www-ksl.stanford.edu/kst/what-is-an-ontology.html</a> 
+              - Tom Gruber of Stanford provides a definition of ontology as used 
+              in AI, as opposed to philosophy.</p>
+            <p><a href="http://ksl-web.stanford.edu">http://ksl-web.stanford.edu</a> 
+              - Stanford's Knowledge Systems Lab (KSL) is a leader in research 
+              on ontologies. This is the home page for that work. Checkout the 
+              online tools, such as Ontolingua, a tool for working with ontologies 
+              on the Web.</p>
+            <p><a href="http://www.ksl.stanford.edu/people/dlm/papers/ontology101/ontology101-noy-mcguinness.html">http://www.ksl.stanford.edu/people/dlm/papers/ontology101/ontology101-noy-mcguinness.html</a> 
+              - An excellent tutorial on how to build an ontology for a particular 
+              domain.</p>
+            <p><a href="http://www.w3.org/TR/webont-req/">http://www.w3.org/TR/webont-req/</a> 
+              - A paper on OWL (Web Ontology Language), the W3C's work on a common 
+              ontology language for the Web.</p>
+            <p><a name="thoughttreasure"></a><a href="http://www.signiform.com/tt/htm/tt.htm">http://www.signiform.com/tt/htm/tt.htm</a> 
+              - ThoughtTreasure is a common sense knowledge base and architecture 
+              for natural language processing that has a number of concepts, including 
+              grids for describing spaces, and worm holes for connecting spaces. 
+              So one grid might define the layout of a restaurant and a worm hole 
+              models the door to the grid representing the street. These concepts 
+              can be used to &quot;understand&quot; articles about people in restaurants.</p>
+            <p><a href="http://www.signiform.com/tt/book/index.html">http://www.signiform.com/tt/book/index.html</a> 
+              - This is an online version of Erik Meuller's book on ThoughtTreasure.</p>
+            <p><a name="wordnet"></a><a href="http://www.cogsci.princeton.edu/%7Ewn/">http://www.cogsci.princeton.edu/~wn/</a> 
+              - The home page for WordNet, an online lexical reference based on 
+              psycholinguistic theories of how humans store and retrieve word 
+              meanings.</p>
+            <p><a name="cyc"></a><a href="http://www.cyc.com/">http://www.cyc.com/</a> 
+              - The home page for Cycorp, Doug Lenat's company pursuing ongoing 
+              development and deployment of the Cyc common sense ontology.</p>
+            <p><a href="http://www.opencyc.org/">http://www.opencyc.org/</a> - 
+              The home page for OpenCyc, and open source version of Cyc that is 
+              developed cooperatively with Cycorp.</p>
+            <p><a name="edr"></a><a href="http://www.jsa.co.jp/EDR/">http://www.jsa.co.jp/EDR/</a> 
+              - The home page for EDR, a Japanese lexical ontology in both English 
+              and Japanese designed for general understanding and machine translation 
+              of texts.</p>
+            <p><a name="ladl"></a><a href="http://ladl.univ-mlv.fr/index.html">http://ladl.univ-mlv.fr/index.html</a> 
+              - The home page for LADL, a French, English, and other language 
+              linguistic database from the University of Marne-la-Vallee.</p>
+            <p><a name="link_georeference"></a><a href="http://www.georeferenceonline.com/">http://www.georeferenceonline.com/</a> 
+              - The home page for GeoReference, which describes their general 
+              purpose ontology tools and the geologic application, MineMatch, 
+              built on top of them.</p>
+            <p><a href="http://www.georeferenceonline.com/">http://www.georeferenceonline.com/</a> 
+              - A description of the ontologies used in MineMatch for geologic 
+              exploration.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

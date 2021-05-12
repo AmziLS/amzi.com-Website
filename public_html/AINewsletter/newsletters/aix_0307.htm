@@ -1,0 +1,400 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->July 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" -->
+		  <h1>AI Expert Newsletter</h1>
+<p><i>AI - The art and science of making computers do interesting things that 
+  are not in their nature.</i></p>
+            <h3>July 2003</h3>
+            <h2></h2>
+            <ul>
+              <li><a href = "#machines_think">Can Machines Think?</a></li>
+              <ul>
+                <li><a href="#turing_test">Turing Test</a></li>
+                <li><a href="#loebner_prize">Loebner Prize</a></li>
+              </ul>
+              <li><a href = "#machines_converse">Can Machines Converse?</a></li>
+              <ul>
+                <li><a href="#eliza">ELIZA</a></li>
+              </ul>
+              <li><a href="#people_think">Can People Think?</a></li>
+              <li><a href = "#chat_bots">Chat Bots</a></li>
+              <ul>
+                <li><a href="#alice">A.L.I.C.E.</a></li>
+                <li><a href="#mgonz">MGonz</a></li>
+              </ul>
+              <li><a href="#failing_turing_test">Failing the Turing Test</a></li>
+              <li><a href="#conferences">Conferences</a></li>
+              <li><a href="#links">Links</a></li>
+            </ul>
+           
+            <h2><a name="machines_think"></a>Can Machines Think?</h2>
+            <h3><a name="turing_test"></a>Turing Test</h3>
+            <p>In 1950 Alan Turing published <i><a href="#links">Computing Machinary 
+              and Intelligence</a></i> in the quarterly journal, Mind. Thanks 
+              to the Internet, its now easy to read this original article that 
+              is still to this day one of the defining works in AI. It is a great 
+              read.</p>
+            <p>In it he asked the question &quot;Can machines think?&quot;. And 
+              he proposed a simple test. If a human conversed, via keyboard, with 
+              a machine and with a human, and could not tell which was which, 
+              then that machine could be called &quot;intelligent&quot;. This 
+              is the famous <b>Turing Test</b>.</p>
+            <p>Over 50 years later, intelligent people are still debating whether 
+              or not the Turing Test has anything to do with machine intelligence 
+              or not.</p>
+            <h3><a name="loebner_prize"></a>Loebner Prize</h3>
+            <p>In 1990 <a href="#links">Hugh Loebner</a> offered $100,000 and 
+              a neat gold medal to the first person to write a computer program 
+              that passed the Turing Test. There is an annual competition at which 
+              various software authors compete for the prize.</p>
+            <p>A panel of judges carry on dialogs with a number of humans and 
+              machines. They then rate each on a scale from most machine like 
+              to most human like. The machine with the highest score wins the 
+              competition. If its score is competitive with the scores received 
+              by the humans, then the authors claim the medal and the money. If 
+              not, they get $2,000 and everyone tries again next year.</p>
+            <p>So far, the prize has not been claimed. Some claim it can't be 
+              done without the giant ontologies of common sense discussed last 
+              month; others claim it requires perfecting natural language understanding; 
+              and still others say a learning program is needed. But the best 
+              entries so far have been based on a very simple idea.</p>
+            <h2><a name="machines_converse"></a>Can Machines Converse?</h2>
+            <h3><a name="eliza"></a>ELIZA</h3>
+            <p>In 1966 Joseph Weizenbaum described his program <a href="#links">ELIZA</a>. 
+              It was a very simple pattern-matching program that generated realistic 
+              responses to its input. It was designed to mimic a psychiatrist. 
+              (Weizenbaum, Joseph &#147;ELIZA&#151;A Computer Program for the 
+              Study of Natural Language Communication between Man and Machine,&#148; 
+              Communications of the ACM, Vol. 9. No. 1 (January 1966))</p>
+            <p>For example, here's one of the ELIZA rules from one implementation 
+              of ELIZA. (See the <a href="#links">links</a> for source code in 
+              a number of languages.)</p>
+            <pre>rules([[dream,3],[
+   [1,[_],0,
+   [what,does,that,dream,suggest,to,you,?],
+   [do,you,dream,often,?],
+   [what,persons,appear,in,your,dreams,?],
+   [do,you,believe,that,dreaming,has,something,to,do,with,your,problem,?],
+   [newkey]]]]).
+ </pre>
+            <p>If the input had the word 'dream' in it, this rule would generate 
+              the response, using one of the four choices. It doesn't matter what 
+              the rest of the input was.</p>
+            <p>Think about this a second. These are pretty much the kinds of responses 
+              one would get in a conversation when bringing up a dream.</p>
+            <p>Another powerful idea in ELIZA was pronoun swapping. In the input, 
+              all first person pronouns became second person and visa versa. So 
+              an input like &quot;I remember Alaska&quot; would match the patterns 
+              in this rule (The 'Y' in the rules is a wild card.):</p>
+            <pre>rules([[remember,5],[
+   [1,[_,you,remember,Y],0,
+   [do,you,often,think,of,Y,?],
+   [does,thinking,of,Y,bring,anything,else,to,mind,?],
+   [what,else,do,you,remember,?],
+   [why,do,you,remember,Y,just,now,?],
+   [what,in,the,present,situation,reminds,you,of,Y,?],
+   [what,is,the,connection,between,me,and,Y,?]],
+   [2,[_,do,i,remember,Y],0,
+   [did,you,think,'I',would,forget,Y,?],
+   [why,do,you,think,i,should,recall,Y,now,?],
+   [what,about,Y,?],
+   [equal,[what,0]],
+   [you,mentioned,Y,.]],
+   [3,[_],0,
+   [newkey]]]]).
+ </pre>
+            <p>And generate a response like &quot;Do you often think of Alaska?&quot;.</p>
+            <p>Weizenbaum was horrified at how many people enjoyed chatting with 
+              ELIZA and that fact that even some therapists thought ELIZA was 
+              a useful therapeautic tool. He wrote ELIZA in part to prove that 
+              machines can NOT think. Yet people were interacting with the program 
+              as if it could.</p>
+            <p>But who do you enjoy talking to the most? Isn't it the person who 
+              listens, and ask questions prompting you to go on and on about yourself? 
+              ELIZA just follows the user's lead, letting him/her talk about whatever 
+              he/she wants. What more could someone want in a conversationalist? 
+              What more does a therapist do?<br>
+            </p>
+            <h2><a name="people_think"></a>Can People Think?</h2>
+            <p><a href="#links">Richard Wallace,</a> one of the developers of 
+              A.L.I.C.E., which won the Loebner competition (not the prize, just 
+              the most human-like of the machine contestants), observes that the 
+              majority of casual human dialog is really just simple pattern-matching 
+              response. He notes that people aren't really paying attention to 
+              each other and just spitting back responses based on what's on their 
+              mind and maybe a trigger or two from what they just heard.</p>
+            <p>The disturbing part of the debate on ELIZA is not whether it is 
+              intelligent or not. Clearly it's not.</p>
+            <p>The disturbing question is whether ELIZA is human-like or not. 
+              Clearly it is.</p>
+            <h2><a name="chat_bots"></a>Chat Bots</h2>
+            <p>ELIZA was fun, and prompted all sorts of derivitive works, generically 
+              called chat bots.</p>
+            <h3><a name="alice"></a>A.L.I.C.E.</h3>
+            <p> A.L.I.C.E. won the Loebner prize twice. It's really just a more 
+              sophisticated version of ELIZA with a much larger set of patterns. 
+              The development of the patterns is made easy by a standardized AI 
+              Markup Language (AIML) that is a well-formed XML. AIML can be used 
+              by anyone to create any sort of chat bot.</p>
+            <p>Here's some of the AIML from the winning version of A.L.I.C.E.</p>
+            <pre> &lt;category&gt;
+   &lt;pattern&gt;HOW AM I SUPPOSED *&lt;/pattern&gt;
+   &lt;template&gt;
+   &lt;random&gt;
+   &lt;li&gt;Carefully.&lt;/li&gt;
+   &lt;li&gt;Think about it.&lt;/li&gt;
+   &lt;li&gt;Don't just give up.&lt;/li&gt;
+   &lt;/random&gt;
+   &lt;think&gt;
+   &lt;set name=&quot;it&quot;&gt;
+   &lt;set name=&quot;topic&quot;&gt;
+   &lt;person/&gt;
+   &lt;/set&gt;
+   &lt;/set&gt;
+   &lt;/think&gt;
+   &lt;/template&gt;
+   &lt;/category&gt;
+ </pre>
+            <p>This, of course, fits the definition of AI used in this newsletter, 
+              which is the creation of a virtual machine to run programs written 
+              in a language well suited for a particular domain. In this case 
+              AIML is a perfect language for creating chat bots and an AIML runtime 
+              makes it go.</p>
+            <h3><a name="mgonz"></a>MGonz</h3>
+            <p>Maybe its not significant, but I thought it was funny. Mark Humphry 
+              wrote a chat bot to stand in his place when he was away from his 
+              computer. Here's some rules from it that are triggered by the keyword 
+              'Mark' in the input:</p>
+            <pre> ( (member 'mark input)
+   (delve '(
+   (mark isnt here and hes left me to deal with
+   cretins like you)
+   (forget mark i will destroy him like the others)
+   (mark doesnt want to talk to you fishface
+   why do you think im here)
+   (listen leave that jerk out of it talk to me)
+   )))
+ </pre>
+            <h2><a name="failing_turing_test"></a>Failing the Turing Test</h2>
+            <p><i>Dave: Open the pod bay door HAL<br>
+              HAL: I'm sorry, I can't do that Dave.</i></p>
+            <p>That scene from 2001 brilliantly captures all our fears of AI, 
+              the horror of unfeeling machines empowered to run our lives.</p>
+            <p>I recently installed anti-spam software and was experiencing the 
+              very human emotion of frustration trying to get the software to 
+              work. I'd clearly done something simple wrong, but couldn't figure 
+              out what. So I contacted tech support.</p>
+            <p>It was a Web site. The FAQ didn't have the answer. But they recommended 
+              Chat with a technical support person. Sounded good, so I tried it:</p>
+            <p>Technical Support Chat: You have been connected to Sean Bourke.<br>
+              Sean Bourke (S): Dennis, thank you for contacting McAfee<br>
+              S: How can I assist you today?<br>
+              Me (D): I just installed spam killer and don't seem to be able to 
+              get it to work.<br>
+              S: Are you receiving any error message?<br>
+              D: No, I got it to work once, but it didn't filter anything.<br>
+              I ran it over night, and it didn't find anything, yet when I ran<br>
+              Eudora, I had tons of spam, like usual.<br>
+              S: Dennis, if I understand correctly, you have the SpamKiller not 
+              filtering<br>
+              mesages. Is this correct?<br>
+              D: That is almost right. It found one message a little while ago. 
+              The <br>
+              blue arrow in on now<br>
+              S: I would be happy to assist you with that.<br>
+              D: OK, so give me a starting point. Is your name ELIZA?<br>
+              S: No.<br>
+              S: What is the version of SpamKiller that is installed on the system?<br>
+              D: I just installed it from your Web site yesterday, so its the 
+              latest<br>
+              version.<br>
+              ...<br>
+              S: Based on the information you have provided, I can now provide 
+              the<br>
+              steps that should resolve your issue. If at any time there is something<br>
+              you do not understand, will you please stop me and let me know?<br>
+              D: You didn't just type that did you? There's something non-human 
+              on<br>
+              your end.<br>
+              S: No, I am a real person here.<br>
+              D: You sound like ELIZA, give me some slang to prove you're human.<br>
+              S: I am going to send you some instructions that will open a new 
+              window.<br>
+              D: I'm reading them now, but I also do an AI newsletter and would 
+              like<br>
+              to write about you<br>
+              S: Okay<br>
+              (I followed the instructions, still didn't work)<br>
+              D: I've been pretty frustrated, if we can't get it going I'd like 
+              to know<br>
+              how to get a refund.<br>
+              S: Could you please tell me the country you are in?<br>
+              D: USA<br>
+              S: This issue or concern is supported by our Customer Service group. 
+              You<br>
+              may call 1-972-963-8000, select the option that best meets your 
+              needs, and they will be<br>
+              able to assist you.<br>
+              D: What is wrong with my installation of Spam Killer?<br>
+              S: Nothing is wrong. You will just need to follow a few steps to 
+              configure the spamkiller<br>
+              using the instructions that I sent you.<br>
+              D: But I did that! It doesn't work.</p>
+            <p>(Called phone number, just recorded menu items, referring me back 
+              to<br>
+              Web page that gives me the option of this chat again or paying $39 
+              to talk<br>
+              to someone.)</p>
+            <p>Well, the instructions were just how to re-install, which of course 
+              didn't work and subsequent passes through the same loop gave the 
+              same answer, so I did the logical thing and threw my mouse across 
+              the room and made a note not to get another radio controlled mouse.<br>
+            </p>
+            <h2><a name="conferences"></a>Conferences</h2>
+            <p>The 5th IFAC/CIGR Workshop on Artificial Intelligence in Agriculture<br>
+              will be held in Cairo on March 8-10 2004. Deadline for submitting<br>
+              extended abstract is Sept. 30,2003. More Information can be found 
+              at<br>
+              <a href="http://www.claes.sci.eg/aia04">www.claes.sci.eg/aia04</a></p>
+            <h2><a name="links"></a>Links</h2>
+            <p><a href="http://www.abelard.org/turpap/turpap.htm#the_imitation_game">http://www.abelard.org/turpap/turpap.htm#the_imitation_game</a> 
+              - Abelard's Web site has a full reprint of Turing's original paper, 
+              <i>Computing Machinery and Intelligence</i>, originally published 
+              in Mind. It's a fascinating read.</p>
+            <p><a href="http://cogsci.ucsd.edu/%7Easaygin/tt/ttest.html">http://cogsci.ucsd.edu/~asaygin/tt/ttest.html</a> 
+              - Ayse Pinar Saygin's Web site on the Turing Test. It has a number 
+              of interesting links to background and related material.</p>
+            <p><a href="http://www.loebner.net/Prizef/loebner-prize.html">http://www.loebner.net/Prizef/loebner-prize.html</a> 
+              - The home page for the Loebner Prize, which will be awarded to 
+              the first computer that can fool a panel of judges into thinking 
+              it is as human as humans also talking to the judges.</p>
+            <p><a href="http://www-ai.ijs.si/eliza-cgi-bin/eliza_script">http://www-ai.ijs.si/eliza-cgi-bin/eliza_script</a> 
+              - An implementation of ELIZA on the Web.</p>
+            <p><a href="http://www.compapp.dcu.ie/%7Ehumphrys/eliza.html">http://www.compapp.dcu.ie/~humphrys/eliza.html</a> 
+              - Mark Humphrys' humorous, and somewhat crude, variation on ELIZA, 
+              called MGonz. The site includes a long dialog with the system from 
+              someone who apparently thought it was real and full source code 
+              in Lisp and REXX.</p>
+            <p><a href="http://www-2.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/classics/eliza/0.html%20">http://www-2.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/classics/eliza/0.html 
+              </a>- CMU's AI repository page with numerous ELIZA implementations 
+              in a variety of languages.</p>
+            <p><a href="http://www.alicebot.org/anatomy.html">http://www.alicebot.org/anatomy.html</a> 
+              - Dr. Richard Wallace's excellent overview of chat bot technology 
+              in general, A.L.I.C.E., which won the Loebner competition in 2000 
+              and 2001, in particular, and what this all says about human intelligence. 
+              (Most of casual human conversation is non-understanding pattern-matching 
+              response. Hmmmm.)</p>
+            <p><a href="http://www.alicebot.org/">http://www.alicebot.org/</a> 
+              - The Web site for A.L.I.C.E.</p>
+            <p><a href="http://www.botspot.com/search/s-chat.htm">http://www.botspot.com/search/s-chat.htm</a> 
+              - A directory of a number of chat bots.</p>
+            <p><a href="http://www.loebner-atlanta.org/LPCindex.html%20">http://www.loebner-atlanta.org/LPCindex.html</a> 
+              - The home page for the 2002 Loebner competition. </p>
+            <p><a href="http://www.ellaz.com/">http://www.ellaz.com/</a> - And 
+              the 2002 winner is Ella, beating out notables like ALICE and Kurzweil's 
+              entry.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,46 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Arithmetic</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Arithmetic<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>A logical variable can be unified with the result of an arithmetic 
+  expression with this syntax:</p>
+<p>X is &lt;expression&gt;</p>
+<p>For example</p>
+<pre>?- X is 2 + 2.
+X = 4</pre>
+<p><em>NOTE</em> = is unification, NOT arithmetic 
+<pre>?- X = 2 + 2.
+X = 2 + 2</pre>
+<p>Arithmetic can be used in a rule:</p>
+<pre>distance(FROM, TO, DIST) :-
+   city(FROM, _, location(X1,Y1)),
+   city(TO, _, location(X2,Y2)),
+   DIST is sqrt( (X2-X1)**2 + (Y2-Y1)**2 ).
+</pre>
+<p>Testing it:</p>
+<pre>?- distance(lax, cvg, X).
+X = 29.0689 
+yes</pre>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_040_rules_020.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_040_rules_040.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

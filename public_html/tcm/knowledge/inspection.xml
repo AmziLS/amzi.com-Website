@@ -1,0 +1,89 @@
+<inspection><name type='logic'>eye_color</name><choices type='logic'>[blue, brown]</choices></inspection>
+<inspection><name type='logic'>feel</name><choices type='logic'>[good, bad]</choices></inspection>
+<inspection><name type='logic'>aggravate</name><choices type='logic'>[anger, bowel_movement, cold, cold_drink, eating, emotion, turmoil, heat, hot_drink, movement, pressure, rest, stress, warmth]</choices></inspection>
+<inspection><name type='logic'>ameliorate</name><choices type='logic'>[bowel_movement, cold, cold_drink, eating, hot_drink, movement, pressure, rest, warmth]</choices></inspection>
+<inspection><name type='logic'>appetite</name><choices type='logic'>[craving, good, hungery, normal, poor]</choices></inspection>
+<inspection><name type='logic'>aversion</name><choices type='logic'>[cold, heat, wind]</choices></inspection>
+<inspection><name type='logic'>chills</name><choices type='logic'>[lots, mild, no, yes]</choices></inspection>
+<inspection><name type='logic'>complexion</name><choices type='logic'>[blue, blushing, dark, pale, purple, red, sallow, white, yellow]</choices></inspection>
+<inspection><name type='logic'>constitution</name><choices type='logic'>[strong, weak]</choices></inspection>
+<inspection><name type='logic'>coughing_sound</name><choices type='logic'>[barking, hacking, loud, persistent, weak, whooping]</choices></inspection>
+<inspection><name type='logic'>defecate</name><choices type='logic'>[constipation, diarrhoea, normal]</choices></inspection>
+<inspection><name type='logic'>discharge</name><choices type='logic'>[thick, thin]</choices></inspection>
+<inspection><name type='logic'>discharge_color</name><choices type='logic'>[clear, green, yellow]</choices></inspection>
+<inspection><name type='logic'>discomfort</name><choices type='logic'>[hypochrondrium]</choices></inspection>
+<inspection><name type='logic'>ear</name><choices type='logic'>[tinnitus]</choices></inspection>
+<inspection><name type='logic'>emotion</name><choices type='logic'>[angry, happy, stressful, turmoil, sad, upset, worry]</choices></inspection>
+<inspection><name type='logic'>energy</name><choices type='logic'>[average, fatigue, high, lassitude, lethargy, low, tired, weak]</choices></inspection>
+<inspection><name type='logic'>feelings</name><choices type='logic'>[depression, irritability, palpitation, restlessness, quick_temper]</choices></inspection>
+<inspection><name type='logic'>fever</name><choices type='logic'>[high, mild, no]</choices></inspection>
+<inspection><name type='logic'>frequent</name><choices type='logic'>[very, not]</choices></inspection>
+<inspection><name type='logic'>fullness</name><choices type='logic'>[chest, epigastrium, none]</choices></inspection>
+<inspection><name type='logic'>heavy</name><choices type='logic'>[body, head, limbs, none]</choices></inspection>
+<inspection><name type='logic'>lips</name><choices type='logic'>[dry, none]</choices></inspection>
+<inspection><name type='logic'>location</name><choices type='logic'>[chest, epigastrium, frontal, head, hypochondrium, lower_abdomen, muscle, occipital]</choices></inspection>
+<inspection><name type='logic'>mouth</name><choices type='logic'>[dry]</choices></inspection>
+<inspection><name type='logic'>nasal</name><choices type='logic'>[discharge, obstruction]</choices></inspection>
+<inspection><name type='logic'>nose</name><choices type='logic'>[dry]</choices></inspection>
+<inspection><name type='logic'>nose_color</name><choices type='logic'>[normal, red]</choices></inspection>
+<inspection><name type='logic'>occurrence</name><choices type='logic'>[frequent, not_often, recurrence]</choices></inspection>
+<inspection><name type='logic'>oedema</name><choices type='logic'>[bottom_body, body, face, legs, top_body, stomach]</choices></inspection>
+<inspection><name type='logic'>pain</name><choices type='logic'>[ache, boring, burning, cold, colicky, cutting, distending, distressing, emptiness, hemialgia, lurking, pantalgia, pulling, pushing, sharp, soreness, spastic, stabbing, throbbing, wandering]</choices></inspection>
+<inspection><name type='logic'>pain(H1419)</name><choices type='logic'>[ache, boring, burning, cold, colicky, cutting, distending, distressing, emptiness, hemialgia, lurking, pantalgia, pulling, pushing, sharp, soreness, spastic, stabbing, throbbing, wandering]</choices></inspection>
+<inspection><name type='logic'>pain_location</name><choices type='logic'>[head, body, extremities]</choices></inspection>
+<inspection><name type='logic'>pain_with</name><choices type='logic'>[contraction, dislike_pressure, fixed_location, heaviness, preference_cold, preference_pressure, preference_warmth, radiation, spasm, suffocating_feeling, swelling]</choices></inspection>
+<inspection><name type='logic'>pulse_contour</name><choices type='logic'>[choppy_pulse, moving_pulse, surging_pulse, slippery_pulse]</choices></inspection>
+<inspection><name type='logic'>pulse_depth</name><choices type='logic'>[floating_pulse, hidden_pulse, sinking_pulse]</choices></inspection>
+<inspection><name type='logic'>pulse_force</name><choices type='logic'>[empty_pulse, firm_pulse, full_pulse, minute_pulse, soggy_pulse, weak_pulse]</choices></inspection>
+<inspection><name type='logic'>pulse_length</name><choices type='logic'>[long_pulse, short_pulse]</choices></inspection>
+<inspection><name type='logic'>pulse_rate</name><choices type='logic'>[moderate_pulse, racing_pulse, rapid_pulse, slow_pulse]</choices></inspection>
+<inspection><name type='logic'>pulse_rhythm</name><choices type='logic'>[intermittent_pulse, knotted_pulse, skipping_pulse]</choices></inspection>
+<inspection><name type='logic'>pulse_tension</name><choices type='logic'>[hollow_pulse, leather_pulse, tight_pulse, scattered_pulse, wiry_pulse]</choices></inspection>
+<inspection><name type='logic'>pulse_width</name><choices type='logic'>[big_pulse, fine_pulse]</choices></inspection>
+<inspection><name type='logic'>pulse_balance</name><conditions type='logic'>[neutral when pulse = normal, yin when pulse = (weak or scattered or hidden), yang when pulse = (strong or firm or full)]</conditions></inspection>
+<inspection><name type='logic'>respiratory</name><choices type='logic'>[dyspnea, rebellious, sob, sighing, weak, wheezing]</choices></inspection>
+<inspection><name type='logic'>sensation</name><choices type='logic'>[dizziness, fullness, heat, heaviness, nausea, numbness, palpitation, stiffness, stuffiness, tightness, tingling]</choices></inspection>
+<inspection><name type='logic'>affected_head</name><choices type='logic'>[ear, eye, frontal, gum, head, mouth, neck, nose, occipital, tooth, throat]</choices></inspection>
+<inspection><name type='logic'>affected_extremity</name><choices type='logic'>[ankle, arm, elbow, fingure, foot, forearm, hand, joint, knee, leg, limb, lower_limb, palm, upper_arm, upper_limb, sole, thigh, toe, wrist]</choices></inspection>
+<inspection><name type='logic'>affected_body</name><choices type='logic'>[back, body, muscle, skin, spine]</choices></inspection>
+<inspection><name type='logic'>affected_genitalia</name><choices type='logic'>[penis, scrotum, testes, uterus, vagina]</choices></inspection>
+<inspection><name type='logic'>affected_lower_body</name><choices type='logic'>[abdomen, coccyx, epigastrium, hypochondrium, lower_abdomen, lower_back, hip, sacrum]</choices></inspection>
+<inspection><name type='logic'>affected_upper_body</name><choices type='logic'>[shoulder, chest, rib, scapula]</choices></inspection>
+<inspection><name type='logic'>affected_internal</name><choices type='logic'>[brain, bone, gall, heart, kidney, large_intestine, liver, lung, small_intestine, spleen, stomach, bladder]</choices></inspection>
+<inspection><name type='logic'>sleep</name><choices type='logic'>[insomnia]</choices></inspection>
+<inspection><name type='logic'>speech</name><choices type='logic'>[delirious, dislike, feeble, hesitation, incoherent, laughing, muttering, reluctance, slurred, talk_sleep, talkative]</choices></inspection>
+<inspection><name type='logic'>sputum</name><choices type='logic'>[bloody, dry, sticky, thick, thin, watery]</choices></inspection>
+<inspection><name type='logic'>sputum_amount</name><choices type='logic'>[little, moderate, none, profuse, scanty]</choices></inspection>
+<inspection><name type='logic'>sputum_color</name><choices type='logic'>[clear, green, red, white, yellow]</choices></inspection>
+<inspection><name type='logic'>sputum_expectorate</name><choices type='logic'>[difficult, easy]</choices></inspection>
+<inspection><name type='logic'>stage</name><choices type='logic'>[acute, chronic]</choices></inspection>
+<inspection><name type='logic'>stiffness</name><choices type='logic'>[body, muscle, neck]</choices></inspection>
+<inspection><name type='logic'>stuffiness</name><choices type='logic'>[chest, epigastrium]</choices></inspection>
+<inspection><name type='logic'>stool</name><choices type='logic'>[dry, bloody, loose, mucus, undigested_food, sticky]</choices></inspection>
+<inspection><name type='logic'>stool_color</name><choices type='logic'>[black, dark, dark_yellow, green, qing, light_brown, pale, pale_yellow, red, dark_very]</choices></inspection>
+<inspection><name type='logic'>stool_shape</name><choices type='logic'>[long_thin, normal, pellets]</choices></inspection>
+<inspection><name type='logic'>sweat</name><choices type='logic'>[mild, no, profuse, spontaneous]</choices></inspection>
+<inspection><name type='logic'>sweat_area</name><choices type='logic'>[axillae, chest, feet, hands, head, palm]</choices></inspection>
+<inspection><name type='logic'>taste</name><choices type='logic'>[acrid, bitter, blend, pungent, salty, sour, sweet]</choices></inspection>
+<inspection><name type='logic'>temperature</name><choices type='logic'>[cold, cool, hot, warm]</choices></inspection>
+<inspection><name type='logic'>tension</name><choices type='logic'>[hypochrondria]</choices></inspection>
+<inspection><name type='logic'>thirst</name><choices type='logic'>[little, no, no_drink, very]</choices></inspection>
+<inspection><name type='logic'>throat</name><choices type='logic'>[congested, dry, itchy, scratchy, sore, ticklish]</choices></inspection>
+<inspection><name type='logic'>time_occur</name><choices type='logic'>[afternoon, day, evening, morning, night]</choices></inspection>
+<inspection><name type='logic'>tongue_body</name><choices type='logic'>[bleak, fissured, spotted, tender, tough]</choices></inspection>
+<inspection><name type='logic'>tongue_color</name><choices type='logic'>[blue, brown, crimson, pale, pink, purple, red, red_tip]</choices></inspection>
+<inspection><name type='logic'>tongue_coat</name><choices type='logic'>[none, peeled, root, snow, thick, thin, unroot]</choices></inspection>
+<inspection><name type='logic'>tongue_coat_color</name><choices type='logic'>[black, dark, grey, light, white, yellow]</choices></inspection>
+<inspection><name type='logic'>tongue_coat_distribution</name><choices type='logic'>[center, full, partial, sides]</choices></inspection>
+<inspection><name type='logic'>tongue_coat_texture</name><choices type='logic'>[dry, curdy, exfoliative, greasy, mouldy, moist, putrid, rough, slippery, sticky, wet]</choices></inspection>
+<inspection><name type='logic'>tongue_move_state</name><choices type='logic'>[flaccid, deviated, protruding, retracted, trembling, stiff]</choices></inspection>
+<inspection><name type='logic'>tongue_shape</name><choices type='logic'>[big, double_tongue, fat, long, short, swollen, small, thin, thorny, toothmarked]</choices></inspection>
+<inspection><name type='logic'>tongue_spirit</name><choices type='logic'>[lustrous, normal, withered]</choices></inspection>
+<inspection><name type='logic'>injury</name><choices type='logic'>[bruise, trauma]</choices></inspection>
+<inspection><name type='logic'>urination</name><choices type='logic'>[difficult, frequent, urgent]</choices></inspection>
+<inspection><name type='logic'>urine_amount</name><choices type='logic'>[profuse, scanty]</choices></inspection>
+<inspection><name type='logic'>urine_color</name><choices type='logic'>[bloody, clear, dark, mucus, pale, red, turbid, yellow]</choices></inspection>
+<inspection><name type='logic'>voice</name><choices type='logic'>[crying, groaning, hoarse, loud, muffled, nasal, rattling, strong, stuttering, weak]</choices></inspection>
+<inspection><name type='logic'>vomit</name><choices type='logic'>[yes, no]</choices></inspection>
+<inspection><name type='logic'>worse</name><choices type='logic'>[after_meal, before_meal, exertion, night, morning]</choices></inspection>
+<inspection><name type='logic'>complaint</name><choices type='logic'>[cough, pain]</choices></inspection>

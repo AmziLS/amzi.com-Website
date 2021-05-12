@@ -1,0 +1,466 @@
+<html>
+<head>
+<title>Best Practices for Rule-Based Application Development</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="TitleRow">
+<H1 class="dtH1"><a name="aj1rules"></a>Best Practices for Rule-Based Application Development</H1>
+</div>
+<p>(This article first appeared in the 1st Issue of Microsoft Architect's Journal)</p>
+<p>Dennis Merritt<br>
+Amzi! Inc.</p>
+
+<p>January 2004</p>
+
+<p><b>Summary: </b>Takes a high level view of knowledge and looks at different types of knowledge and their mappings to executable computer code to gain insights into when and why rule engines provide advantages over conventional software development tools. (19 printed pages)</p>
+
+<h4 class="dtH1">Contents</h4>
+
+<p><a href="#aj1rules_topic1" target="_self">Introduction</a><br>
+<a href="#aj1rules_topic2" target="_self">Factual Knowledge</a><br>
+<a href="#aj1rules_topic3" target="_self">Procedural Knowledge</a><br>
+<a href="#aj1rules_topic4" target="_self">Logical Knowledge</a><br>
+<a href="#aj1rules_topic5" target="_self">Conventional vs. Specialized Tools</a><br>
+<a href="#aj1rules_topic6" target="_self">Semantic Gap</a><br>
+<a href="#aj1rules_topic7" target="_self">There's If Then, and Then There's If Then</a><br>
+<a href="#aj1rules_topic8" target="_self">Databases for Rules</a><br>
+<a href="#aj1rules_topic9" target="_self">A Mixed Approach</a><br>
+<a href="#aj1rules_topic10" target="_self">Artificial Intelligence</a><br>
+<a href="#aj1rules_topic11" target="_self">Other Logical Virtual Engines</a><br>
+<a href="#aj1rules_topic12" target="_self">Data &amp; Process First, Then Logic</a><br>
+<a href="#aj1rules_topic13" target="_self">Logical Knowledge Tools</a><br>
+<a href="#aj1rules_topic14" target="_self">Short Case Studies</a><br>
+<a href="#aj1rules_topic15" target="_self">Detailed Case Study - Vaccinations</a><br>
+<a href="#aj1rules_topic16" target="_self">Conclusion</a><br>
+<a href="#aj1rules_topic17" target="_self">Resources</a></p>
+
+<h2 class="dtH1"><a name="aj1rules_topic1"></a>Introduction</h2>
+
+<p>The word 'knowledge', like many words adapted for computer science, has a technical meaning that is different from its common meaning-and like many such words, it has been defined and re-defined many times to suit the needs of various trends in computer science.</p>
+
+<p>This paper takes a high level view of knowledge, using the word in its more general sense, rather than as a specific technical term, and then looks at different types of knowledge and their mappings to executable computer code. The purpose is to gain insights into when and why rule engines provide advantages over conventional software development tools.</p>
+
+<p>The three types of knowledge considered are <i>factual, procedural,</i> and <i>logical</i>. These divisions correspond to the capabilities of computers. The first two map naturally to a computer's architecture; the third does not.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic2"></a>Factual Knowledge</h2>
+
+<p>Factual knowledge is just that, facts, or data. It can be facts about customers, orders, products, or the speed of light.</p>
+
+<p>Computers have memory and external storage devices. These are ideally suited to the storage and retrieval of factual knowledge. Database tools and programming languages that manipulate memory have evolved naturally from these basic components of machine architecture.</p>
+
+<p>Factual knowledge appears in the computer as either elements in a database or variables and constants in computer programs, as shown in <i>Figure 1</i>.</p>
+
+<p class="fig"><img src="aj1rules01.gif" alt="" border="0"></p>
+
+<p class="label"><b>Figure 1. Factual Knowledge</b></p>
+
+<h2 class="dtH1"><a name="aj1rules_topic3"></a>Procedural Knowledge</h2>
+
+<p>Procedural knowledge is the knowledge about how to perform some task. It can be how to process an order, search the Web, or calculate a Fourier transform. </p>
+
+<p>Computers have a central processing unit (CPU) that processes instructions one at a time. This makes a computer well-suited to storing and executing procedures. Programming languages that make it easy to encode and execute procedural knowledge, have evolved naturally from this basic computational component.</p>
+
+<p>Procedural knowledge appears in a computer as sequences of statements in programming languages, as shown in <i>Figure 2</i>.</p>
+
+<p class="fig"><img src="aj1rules02.gif" alt="" border="0"></p>
+
+<p class="label"><b>Figure 2. Procedural Knowledge</b></p>
+
+<h2 class="dtH1"><a name="aj1rules_topic4"></a>Logical Knowledge</h2>
+
+<p>Logical knowledge is the knowledge of relationships between entities. It can relate a price and market considerations, a product and its components, symptoms and a diagnosis, or the relationships between various tasks. </p>
+
+<p>Unlike for factual and procedural knowledge, there is no core architectural component of a computer that is well suited to the storage and use of logical knowledge.</p>
+
+<p>Typically, there are many independent chunks of logical knowledge that are too complex to store in a database, and lack an implied order of execution which makes them ill-suited for programming. Because it doesn't map well to the underlying computer architecture (as shown in <i>Figure 3</i>), logical knowledge is difficult to encode and maintain using the conventional database and programming tools that have evolved from a computer's architecture. </p>
+
+<p class="fig"><img src="aj1rules03.gif" alt="" border="0"></p>
+
+<p class="label"><b>Figure 3. Logical knowledge does not map well to computer architecture</b></p>
+
+<p>Specialized tools, which are effectively virtual machines better suited to logical knowledge, can often be used instead of conventional tools (as shown in <i>Figure 4</i>). Rule engines and logic engines are two examples.</p>
+
+<p class="fig"><img src="aj1rules04.gif" alt="" border="0"></p>
+
+<p class="label"><b>Figure 4. Using virtual machines for logical knowledge</b></p>
+
+<h2 class="dtH1"><a name="aj1rules_topic5"></a>Conventional vs. Specialized Tools</h2>
+
+<p>Logical knowledge is often at the core of business automation, and often is associated with the 'difficult' modules of an application. Consider, for example, a pricing module for phone calls or airline seats, or an order configuration module. Furthermore, logical knowledge is often changing. Government regulations are expressed as logical knowledge, as are the effects of changing market conditions. Business rules that drive an organization are almost always expressed as logical knowledge.</p>
+
+<p>Because of the critical role logical knowledge can play, there are good arguments for using specialized tools which make the encoding of logical knowledge quicker, easier and more reliable. There are also, however, good arguments against them, foremost being the ready pool of talent that is familiar with conventional tools. There is a lot to be said for sticking with the familiar, although in general the cost is lengthy development times, tedious maintenance cycles, a higher than normal error rate, and often compromises in the quality of service the application provides. On the other hand, there are some well known problems with rule engines and other tools designed for working with logical knowledge:
+
+</p><ul>
+	<li>There are many choices, and they are usually vendor specific. There isn't a standard rule language to use.</li>
+
+	<li>Each tool is better suited for some types of logical knowledge than other types. Rules that diagnose a fault need to behave different from rules that calculate a price, which in turn behave different from rules that dictate how an order can be configured.</li>
+
+	<li>Maintenance is not as easy as sometimes promised. It is important the rules all use similar terms and definitions, otherwise the interrelationships between the rules don't work as intended-making maintenance difficult. Furthermore, because there is no order to the rules, tracking interrelationships can be difficult.</li>
+
+	<li>There is no standard application program interface (API) for integrating a rule engine with other components of an application.</li>
+</ul>
+
+<p>Given these difficulties, is the payoff from using rule-based tools worth the investment? In many cases, yes! For example, one organization that provides online mortgage services replaced 5000 lines of procedural code to price mortgages, with 500 lines of logical rules. The logic-based solution was implemented in two months as opposed to the year invested in the original module. Maintenance turn around due to changing market conditions was reduced from weeks to hours, and the errors in the resulting code went to practically zero. </p>
+
+<p>One reason for near zero errors is simply that there's less code to go wrong, but the main reason is the code closely reflects the logical knowledge as it is expressed. There is no tricky translation from business specification to ill-suited procedural code.</p>
+
+<p>The biggest win of all might be the flexibility the logic-based solution provided them with, allowing them to expand their product offerings. They could now offer more and better mortgage pricing options for their customers, including the option of customizing the pricing logic for each institutional customer.</p>
+
+<p>This is not an uncommon story. The same benefits and 10 to 1 improvement ratio appear over and over again in the success stories of vendors of rule-based and logic technologies.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic6"></a>Semantic Gap</h2>
+
+<p>The concept of 'semantic gap' can be used to explain many of the issues with logical knowledge. A semantic gap refers to the difference between the way knowledge to be encoded in an application is naturally specified and the syntax of the computer language or tool used to do the encoding. For example, you can use assembler to code scientific equations. But it is tedious and error-prone because there is a large semantic gap between the syntax of assembler and an equation. The FORTRAN scientific programming language was invented to reduce the semantic gap. It allowed a programmer to code an equation in a way that was much closer to the way a scientist might write the equation on paper. The result was easier, quicker coding of engineering and scientific applications, and fewer errors.</p>
+
+<p>Factual knowledge and procedural knowledge are both readily coded in computers because there is a reasonably small semantic gap between the way facts and procedures are described and the tools for encoding them. As pointed out previously, this is because computers are inherently good at facts and procedures. The semantics of logical knowledge however does not map readily to conventional tools. Consider this piece of knowledge:</p>
+
+<p><i>The price of an airfare from Cincinnati to Denver is $741 if departing and returning midweek. It's $356 if the stay includes Saturday or Sunday.</i></p>
+
+<p>The meaning, or semantics, of this knowledge is best captured in a pattern-matching sense. It really means that the details of a proposed trip should be matched against the conditions in the rule, and the appropriate rule should be used to determine the fare.</p>
+
+<p>This sort of knowledge could be shoehorned into procedural code, but the semantics of procedural code are designed to express a sequence of operations, not a pattern-matching search. On the other hand, a rule engine is designed to interpret rules in a pattern-matching sense, so rules entered in such a tool will have a smaller semantic gap than rules encoded procedurally.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic7"></a>There's If Then, and Then There's If Then</h2>
+
+<p>It is very tempting to store if-then logical relationships in procedural code, especially since procedural code has if-then statements. In fact, not only is it tempting, it can work reasonably well up to a point. However there is a big difference between a logical relationship and a procedural if-then. A procedural if-then is really a branching statement, controlling the flow of execution of a procedure. If the condition is true, control goes one way, and if not control goes a different way. It's a fork in the road.</p>
+
+<p>It's the road bit that causes the trouble. A logical relationship can be coded as a procedural if-then, but must be placed somewhere along the road of execution of the procedure it is in. Furthermore, if there are more logical relationships, they too must be placed at some point in the procedural path-and, by necessity, the placement of one affects the behaviour of another. It makes a difference which rule gets placed first, and if there are branches from previous rules, and which branch a following rule is placed on.</p>
+
+<p>This is not a problem if the rules map easily to a decision tree, but in that case the knowledge is really procedural. It's also not a problem if there are a small number of rules, but as the number of rules increases it becomes very difficult to maintain them as forks in a procedural flow. The arbitrarily imposed thread of execution that links the various rules becomes extremely tangled, making the code difficult to write in the first place, and very difficult to maintain. This isn't to say it can't be done, or indeed that it isn't done; it often is. However, the module with the rules is often the most troublesome module in a system.</p>
+
+<p>Once encoded procedurally, logical knowledge is no longer easily accessible; that is, it no longer looks like a collection of rules and declarative relationships. The knowledge resource has, in a sense, been lost and buried in the code, just as a scientific equation can no longer be read if it is coded in assembler.</p>
+
+<p>The same is not true of either factual or procedural knowledge. In those cases, reading the code generally does show the underlying knowledge.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic8"></a>Databases for Rules</h2>
+
+<p>It is possible, in some cases, to shoehorn logical relationships into a database. If the relationships can be represented in a tabular form, then a database table can be used to encode the rule. So for example, if the amount of discount a customer got was dependent on the amount of previous sales at a few different levels, this could be represented as a table and stored in a database. However, as with the using procedures, the database approach is limited in that it only works for very clean sorts of logical relationships.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic9"></a>A Mixed Approach</h2>
+
+<p>Sometimes applications use a mixture of both the procedural and database approaches. Logical relationships that can be expressed in tables are stored in a database, and the remaining relationships are coded as procedural if-then statements.</p>
+
+<p>This can simplify the coding task, but it makes maintenance harder because the logical knowledge is now spread across two different vehicles.</p>
+
+<p>Despite these difficulties, there is a strong appeal to using data, procedure or both to encode logical knowledge, and that is that they are familiar techniques, and there are numerous individuals skilled in their use.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic10"></a>Artificial Intelligence</h2>
+
+<p>The problems with encoding logical relationships were first explored back in the 1970s by researchers at Stanford University. They were trying to build a system that advised physicians on courses of antibiotics for treating bacterial infections of the blood and meningitis. They found that the medical knowledge consists mainly of logical relationships that can be expressed as <i>if-then</i> rule.</p>
+
+<p>They attempted many times to encode the knowledge using conventional tools, and failed because of the problems described previously. </p>
+
+<p>If the problem with coding logical knowledge is that the nature of a computer is not well-suited to expressing logical relationships, then clearly the answer is to create a machine that is. Building specialised hardware is not very practical, but it turns out a computer is a good tool for creating virtual computers. This is what the researchers at Stanford did. They effectively created a virtual machine that was programmed using logical rules. This type of virtual machine is often called a rule engine.</p>
+
+<p>Why is a computer good at building a rule engine, but not the rules themselves? It is because behaviour of a rule engine can be expressed in a procedural algorithm, along the lines of:
+
+</p><ul>
+	<li>Search for a rule that matches the pattern of data</li>
+
+	<li>Execute that rule</li>
+
+	<li>Go to top</li>
+</ul>
+
+<p>The Stanford researchers who were working on the first rule-based systems had originally called their work 'heuristic programming,' which is, of course, a fancy way of saying rule-based programming. Because a large amount of human thought seems to involve the dynamic applying of pattern-matching rules stored in our brains, the idea surfaced that this was somehow 'artificial intelligence'. However the real reason for the growth of the term was pure and simple marketing-it was easier to get Department of Defence funding for advanced research on Artificial Intelligence (AI) than it was for heuristic programming. The term 'expert system' was also invented at about this time for the same reasons.</p>
+
+<p>The media too, was very excited about the idea of Artificial Intelligence and expert systems, and the software industry went through a cycle of tremendous hype about AI, followed by disillusionment as the technology simply couldn't live up to the hype. Those companies that survived and continue to market and sell the technology have found the term AI to be a detriment, so they looked for a different term. Now it is most often called rule-based programming.</p>
+
+<p>Whether you call it heuristic programming, Artificial Intelligence, expert systems, or business rule processing, the underlying technology is the same-a virtual engine that uses pattern-matching search to find and apply the right logical knowledge at the right time.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic11"></a>Other Logical Virtual Engines</h2>
+
+<p>Virtual engines programmed with declarative rules are not the only example of specialized software designed to deal with logical knowledge. Other such programs dramatically altered the course of the history of computing.</p>
+
+<p>In the early days of data processing, reports from a database had to be coded using COBOL. But reporting requirements were specified as logical relationships-these columns, these partial sums, etc. Culprit was a report writer that let a user specify in a declarative, logical, way the knowledge about a report. It would then generate the procedural code to make the report happen.</p>
+
+<p>The benefits were exactly as we've discussed-users could now create and maintain their own reports without having to go through a programmer. The result was quicker reports, faster turn around of new reports, and reporting that met user's needs much better than procedural approaches channelled through programming groups.</p>
+
+<p>The resistance to this technology was also exactly the same. Data processing departments did not want to use a separate tool for reports, they knew COBOL. The product only became a commercial success when it was marketed to the end-users, and not data processing departments.</p>
+
+<p>Culprit was the first commercial software product from a non-hardware company, launching the software industry.</p>
+
+<p>The VisiCalc spreadsheet program was another example. It let users easily describe the logical relationships between cells without having to write procedural code. As with rule-based languages and report writers, the key was a virtual engine that translated the logical knowledge into executable procedural code.</p>
+
+<p>Spreadsheet applications drove the early acceptance of personal computers.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic12"></a>Data &amp; Process First, Then Logic</h2>
+
+<p>Recent work at Stanford has explored the question of why AI is not more widely spread in medicine, but their observations apply to application software in general. Logical knowledge expresses relationships between entities, and unless those entities are available for computation, the logic cannot be automated.</p>
+
+<p>One can write a rule-based system that helps deal with patients and other aspects of health care, but without the underlying patient data to reason over, the logic base is of limited value.</p>
+
+<p>The same is true for other application areas. Without a database of product components, you can't build a configuration system, and without the raw data of phone call dates, times and durations, you can't implement a pricing module. </p>
+
+<p>The lack of underlying data reflects the delay in wide-spread adaptation of new technologies. It is just recently, for example, that a higher percentage of doctor's offices are using computer-based patient records.</p>
+
+<p>Likewise, it is only in recent years that more and more data is becoming available in relational databases that lend themselves to multiple application uses, rather than the application-specific files that have been used for most of the history of computing.</p>
+
+<p>Early AI success stories are related to applications that dynamically gather the data from users, as in diagnostic systems, or that work with organizations that have good computerized records, such as insurance and phone companies. As more and more data becomes readily accessible for multi-application use, there will be more and more applications deploying logical knowledge.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic13"></a>Logical Knowledge Tools</h2>
+
+<p>Tools for encoding and deploying logical knowledge are relatively straightforward. The two critical parts are a <i>knowledge representation language</i> and a <i>reasoning engine</i>.</p>
+
+<h3 class="dtH1">Knowledge Representation Language</h3>
+
+<p>Knowledge representation is the syntax of a particular tool. Each tool allows the entering of logical knowledge in a certain format, which might be simple if-then statements referencing simple entities, or complex if-then statements that reference complex objects and properties. They can be in and English like syntax or more closely resemble formal logic. The classic design tradeoffs of ease-of-use versus expressive power apply.</p>
+
+<p>A tool might provide other means for expressing logical knowledge as well, such as hierarchical structures,, and might include capabilities for expressing uncertainty. Uncertainty is useful for some types of applications, like diagnosis where there isn't a clear right answer, but just gets in the way for something like pricing where there is only one right answer. Uncertainty itself comes in competing flavours-fuzzy, Bayesian, and the original 'certainty factors'.</p>
+
+<h3 class="dtH1">Reasoning Engine</h3>
+
+<p>The reasoning engine determines how rules will be applied at runtime. All reasoning engines are basically pattern-matching search engines, looping through the rules, deciding which to use next, and then repeating the process until some end condition is reached. However, there can be major differences in how patterns are searched for, and what happens when a rule is used.</p>
+
+<p>The two basic strategies are <i>goal driven</i> and <i>data driven</i>. A goal driven reasoning engine looks for a rule that provides an answer for a goal, such as price. Having found one, it then looks for any sub-goals that might be necessary, such as customer status. A data driven reasoning engine looks at the current known data and picks a rule that can do something with that data. It then fires the rule, which will add or otherwise change the known data. For example a customer might want to configure a custom door, which is the first bit of data, and matches a rule that adds the data that hinges are needed, which leads to a rule that decides what type of hinges.</p>
+
+<p>Within these two basic schemes, there are many application-specific variations one might encounter. A diagnostic reasoning engine might have strategies that let it follow the most likely paths to a solution first, or the least expensive if there are requirements for the user to research more information.</p>
+
+<p>A critical aspect of any reasoning engine is an API that can be called from other application components. This lets logic bases be integrated into an application context in a manner that lets the logic base be updated without requiring updates to the main application code.</p>
+
+<h3 class="dtH1">Ontology</h3>
+
+<p>One of the biggest problems with maintaining a logic base is consistency of definitions. If you are writing a technical support system, for example, and one rule refers to Microsoft® Windows® and another to XP, well they won't communicate unless somehow the system 'understands' that XP is a type of Windows operating system. This, unfortunately, is the difficult part about maintaining a logic base. While it is easy to write and add rules, unless each rule author uses the same terminology the rules will not work as a cohesive unit.</p>
+
+<p>A solution to the naming problem is ontology. Just as with other terms, ontology is a perfectly normal word appropriated for use in computer science. The dictionary definition of ontology has little to do with the computer science use of the word. (Not surprisingly, the term ontology was coined by the same people who decided heuristic was a better word than rule.)</p>
+
+<p>A logic base ontology is a collection of definitions and relationships between entities that can then be used by other components of an application. An ontology would have the information that XP is a type of Windows. And that Windows is a type of operating system. An ontology would also know that Windows 2000, Win2000, and Win2K are all synonyms. Given an ontology, rules can now be entered that refer to XP and be 'understood' to refering to an operating system. For example a rule might have the condition 'if system is an operating system Ã,Â.', and that rule will fire if the value of system is XP. An ontology provides an alternate way to represent logical knowledge relating to terminology that is a powerful adjunct to the more common rules.</p>
+
+<h3 class="dtH1">Custom Rule Engines</h3>
+
+<p>Given the wide variety of ways in which rule engines can represent knowledge, reason with that knowledge, and integrate with the surrounding environment, it is sometimes difficult to choose the right one. A general purpose rule engine will fit a wide range of problems, but might not fit them very well, requiring some stuffing and bending around the corners. For this reason you will find rule engine products designed for specific applications. Microsoft BizTalk® Server is a perfect example. It is a tool designed for integrating business processes. It 'knows' about business process, and passing messages between them, and can be used to express the rules of which process fires when, under what conditions, and which other processes needed to be informed of what when it happens.</p>
+
+<p>There are also products for pricing problems, support problems, configuration problems and a number of other common areas. Each of these will work better for the problem domain they are designed for, but won't be much help for other problem areas.</p>
+
+<p>There is another option to consider as well, and that is the creation of a custom solution for a particular application. Rule engines are not that difficult to write, and building one for a particular application allows for the best possible knowledge representation, reasoning strategy and integration with the main components of the application. The key advantage relates back to semantic gap. A custom knowledge representation language can provide the smallest possible semantic gap for an application with the associated benefits of ease of development and ease of maintenance.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic14"></a>Short Case Studies</h2>
+
+<p>In order to better understand the advantages of rules-based solutions, consider the following case studies.</p>
+
+<h3 class="dtH1">Workflow</h3>
+
+<p>A number of companies use logic engines or specialized rule-based tools for encoding logical knowledge about workflow. Typically, these tools integrate with the larger facilities of an application with rules governing workflow.</p>
+
+<p>For example, one large supplier of workflow for the telecommunications industry has integrated the rules describing workflow with the facilities of the larger application context, so the rules can be directly applied to the tasks in the telecommunications domain.</p>
+
+<p>This allows for the separation of the business logic defining work flow rules from the procedural knowledge of the actual processes that need to be performed, and it puts that work flow knowledge in a representation that can be easily understood and maintained.</p>
+
+<h3 class="dtH1">Configuration</h3>
+
+<p>A vendor of windows and doors uses a logic base of rules to drive interactive product configuration through a Microsoft® Visual Basic® interface. Contractors use the Visual Basic program to determine the best configuration for a job site, and then automatically connect with the company's server for entering an order. They have customized their own development front-end using Excel, allowing the experts to directly maintain the logical knowledge of product configuration using a familiar tool. The spreadsheet is translated to a lower-level rule language that is then used to deploy the knowledge.</p>
+
+<p>Because the logic base is a separate entity from the main application code, it can be easily updated. Whenever the user, working with the Visual Basic program connects to the server, updates to the configuration logic base are automatically downloaded.</p>
+
+<p>The result is a very flexible and responsive architecture for providing their customers, the contractors, with a powerful tool for deciding on and ordering the best products for a particular job.</p>
+
+<h3 class="dtH1">Mining</h3>
+
+<p>A sophisticated pattern-matching application determines if a geologic site has good mining potential. The rules that match geologic characteristics and mining potential are in a logic base that is maintained separately from the Visual Basic interface that graphically displays geologic maps and other information about the potential site. Key to this application is an ontology of definitions of mining terminology that allows geologic field data to be easily accessed by the pattern-matching rules. Without the ontology, it would be very difficult for the rules to make use of the field data entered by different geologists with different ways of expressing the same geologic concepts. The ontology is stored and maintained as part of the logic base.</p>
+
+<p>The application is currently a stand-alone Visual Basic application but will be deployed on the Web using Visual Basic .NET.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic15"></a>Detailed Case Study-Vaccinations</h2>
+
+<p>Visual Data LLC provides a Microsoft® Windows® software product called <i>Office Practicum</i> for paediatrician's offices. It keeps medical records for patients and performs all of the 'data' and 'processing' functions you might expect.</p>
+
+<p>One of the items it tracks for a patient is vaccination history. It turns out that one of the problems for a paediatrician is following all of the complex rules and regulations for vaccinations, and scheduling children for future appointments based on their vaccination needs.</p>
+
+<p>Customers asked Visual Data to provide a feature in Office Practicum that would tell what vaccinations were up-to-date for a child on a visit, and which were due. It should also be able to provide reports on each child analyzing their vaccination histories, making sure they were in compliance with regulations for schools and summer camps. This took Visual Data into the realm of encoding logical knowledge. The knowledge about vaccinations is published in papers made available by the CDC. Each vaccine has one or more schedules of doses, based on the particular type of vaccine, and each has numerous exception rules that describe conditions when a vaccination may or may not be given.</p>
+
+<p>There are a number of interesting observations to be made about this application.</p>
+
+<h3 class="dtH1">Data and Process First, Then Logic</h3>
+
+<p>The first relates to the Stanford comment about AI in medicine, which was that AI had not advanced due to the lack of data. They observed that AI is really the encoding of logical relationships, but, without entities for the logical knowledge to reason over, there is no practical value in automating the logic. The vaccination program illustrates this.</p>
+
+<p>People in the past have worked on AI systems to automate vaccination logic, but the patient data on vaccination history was not readily available. It had to be typed in by hand as input to the system in order to get a vaccination schedule. However, any medical practitioner experienced in vaccinations could figure out the schedule directly from the data in about the same time without having to engage a computer in the process. So there wasn't much point.</p>
+
+<p>Office Practicum provides enough help in the day- to-day business of running a paediatrician's office that collecting data on patient histories comes naturally. Because that data is in the computer, and because the office is already using the computer for other aspects of managing the patient, it now makes sense to automate the logical knowledge for vaccination scheduling. In fact, it was the customers who started to ask for this feature, after using the software. They noted that all the vaccination information was in the computer, so why couldn't it automatically generate the vaccination schedules.</p>
+
+<h3 class="dtH1">Procedural Code Works, But Is Impractical</h3>
+
+<p>Visual Data first attacked the problem by attempting to encode the vaccination logic using procedural code. In their case the application is developed in Borland's Delphi, and they used Pascal for the encoding. The software worked, but was difficult to write, and was in a large complex module, and only provided some of the features they wanted to provide. </p>
+
+<p>However, the world of vaccines kept changing. New vaccines were coming out that combined earlier vaccines in a single vaccination with new more complex rules about the interactions between the components. Customers wanted to know when the software would support Pediatrix, a new complex multi disease vaccine. The software developers groaned.</p>
+
+<p>While they were a Delphi shop, and familiar with Delphi, and would love to do all their work in Delphi, they realized the vaccination module was just too difficult to maintain, so they opted for a logic base solution. The logic base reduced the code size from thousands of lines of code to hundreds of lines of easily understandable rules. It was the same 10:1 ratio seen so many times for these applications.</p>
+
+<p>Further, the rules were now in a format that their resident paediatrician, not a programmer, could understand. The application was restructured so that the Delphi code called the logic base, much the same way it called the database. The 'knowledge' of vaccination scheduling was now completely outside of the core Delphi code. The logic base can be updated without affecting the main application, just as the database can be updated without changing the application.</p>
+
+<p>Unlike the database, the logic base must be tested, and Office Practicum uses a tool set to independently test the rules. Regression tests are a part of the system, so that various scenarios can be automatically retested when changes are made to the logic base.</p>
+
+<h3 class="dtH1">The Nature of Vaccine Logical Knowledge</h3>
+
+<p>Visual Data did not use an off-the-shelf rule engine for a couple of reasons. One was cost, but more important, the logical knowledge of vaccines seemed to require its own specific set of ways to represent knowledge. These included definitions, tables and rules. While all three could be stored in rules, some of the visual clarity of the mapping from documentation to logic base would be lost. It would be better if the logic base more directly expressed the CDC logic.</p>
+
+<p>Further, most of the logical knowledge had to do with dates and date intervals expressed in any of the date units-days, months, weeks or years. The conditions in the rules needed to use the intervals and dates correctly, and assume age from context when appropriate.</p>
+
+<p>Accordingly the knowledge representation language for the vaccination system was designed to have
+
+</p><ul>
+	<li>An ontology of terms to store definitions.</li>
+
+	<li>A means of entering tabular knowledge.</li>
+
+	<li>A means of entering rules.</li>
+
+	<li>Language statements that recognized dates and date intervals.</li>
+</ul>
+
+<p>This made it easy to add new definitions without affecting the rules, allowed for the direct encoding of the basic tables, and enabled the rules to refer to the tables and reason with concepts such as the last live virus vaccination.</p>
+
+<h3 class="dtH1">Ontology</h3>
+
+<p>The ontology describes semantic relationships such as the various types of vaccines that are Hib vaccines, as well as distinguishing between those that contain PRP-OMP and those that don't. This is critical because different schedules are used for each.</p>
+
+<p>It also describes which vaccines are live virus vaccines, another critical fact used in many of the rules concerned with the interaction between different vaccines that both contain live viruses.</p>
+
+<p>Additionally, there are multi-vaccine products, such as a combined measles, mumps and rubella (MMR) vaccine. There are rules that are just concerned with, for example, whether or not a child had a measles vaccine, but the database might indicate MMR. This knowledge is all in the ontology as well.</p>
+
+<p>Here, for example, are the definitions in the logic base that indicate Varicella and Small Pox are live virus vaccinations:</p>
+
+<pre class="code">live_virus -&gt;&gt; 'Varicella'.
+live_virus -&gt;&gt; 'Small Pox'.
+</pre>
+
+<p>Here are some different types of Hib.</p>
+
+<pre class="code">'Hib' -&gt;&gt; 'HbOC'.
+'Hib' -&gt;&gt; 'PRP-OMP'.
+'Hib' -&gt;&gt; 'PRP-T'.
+</pre>
+
+<h3 class="dtH1">Tables</h3>
+
+<p>Standard tables provide the minimum age, recommended age, and minimum spacing interval for each dose of a vaccine. If this was all there was to the vaccination logic, then a database solution or other table lookup would have worked, although even the tables aren't that simple. For a given vaccine, different tables apply depending on factors such as whether it is a multi-vaccine, what the active components are, and whether or not the child has followed a standard schedule.</p>
+
+<p>Here's an example of a table in the logic base that describes the Hib schedule for vaccines containing PRP-OMP.</p>
+
+<pre class="code">table('Recommended B', [
+% Recommended Schedule B from 'DHS Hib 2003Mar' for vaccines
+% containing PRP-OMP
+%   Dose   Minimum   Minimum   Recommended
+%      Age   Spacing   Age
+   [1,   6 weeks,   none,   2 months],
+   [2,   10 weeks,   4 weeks,   4 months],
+   [3,   12 months,   8 weeks,   15 months]]).
+</pre>
+
+<h3 class="dtH1">Rules</h3>
+
+<p>The rules work in concert with the definitions and the tables. They are used to determine which table is appropriate in a given situation. They also provide coverage for all the exception cases, such as the fact that a given vaccine isn't necessary after a certain age, or that a schedule can't be kept if other live virus vaccines have been given, or what the corrective measures are if a previous vaccine was given earlier than allowed.</p>
+
+<p>Here's a relatively simple rule that fires when the Polio sequence is complete. Note that the ontology lets rules refer to either 'Polio' in general, or the two main vaccines, 'IPV' and 'OPV' separately. This rule describes when an OPV sequence is complete. The output includes an explanatory note that is displayed in verbose mode.</p>
+
+<pre class="code">complete :-
+   valid_count('OPV') eq 3,
+   vaccination(last, 'OPV') *&gt;= 4 years,
+   !,
+   output('Polio', [
+   status = complete,
+   citation = 'DHS IPV 2003Mar',
+   note = [
+      `-Complete: An all OPV, three dose sequence is complete when`,
+      `-the last dose is given after 4 years of age.` ]]).
+</pre>
+
+<h3 class="dtH1">Modularization</h3>
+
+<p>Modularization was a key requirement for this application. The tables and rules for each vaccine were kept in separate modules. The ontology, on the other hand, was in a common module as it was used by all the other modules.</p>
+
+<h3 class="dtH1">Reasoning Engine</h3>
+
+<p>The reasoning engine for the vaccine logic base is designed to meet a variety of application needs. It takes as input the vaccination history of a child and then goes to the module for each vaccine in question and gets the status information for that vaccine. This includes an analysis of the past vaccinations with that vaccine; the status as of today, the current office visit; and the recommended range and minimum dates for the next vaccination with that vaccine.</p>
+
+<p>Each module is designed with the same goal and output, and that goal is called by the reasoning engine. This allows for the easy addition of different vaccines, and the easy maintenance of any particular vaccine.</p>
+
+<p>The reasoning engine has an application program interface (API) that is used by the calling application. The API provides the various reports required for different uses. For example, it can tell what vaccines need to be given on the day of an office visit, or what vaccines will be needed for scheduling a follow-up visit. It also allows for short and verbose reporting and explanations of the recommendations, and provides the historical analysis reporting required for camp and school forms.</p>
+
+<h3 class="dtH1">Cost Benefit</h3>
+
+<p>The benefits from the logic base approach have been:
+
+</p><ul>
+	<li>a 90% reduction in code used for vaccine logic rules,</li>
+
+	<li>direct access to the knowledge by the in-house paediatrician,</li>
+
+	<li>localization of all the vaccine logic, which used to be scattered in the different parts of the application with different needs,</li>
+
+	<li>easy maintenance, and quality assurance testing, and</li>
+
+	<li>additional capabilities that were too hard to encode before, such as the complete analysis of past vaccination history and support for new multi-vaccine products.</li>
+</ul>
+
+<p>All of these benefits add up to the one major benefit, which is that their software now provides better services for their customers in this area which is critically important in the running of a paediatric office.</p>
+
+<p>The costs were:
+
+</p><ul>
+	<li>time spent investigating and learning about various alternative approaches for encoding the vaccination logic,</li>
+
+	<li>software license fees,</li>
+
+	<li>two month's development time, and</li>
+
+	<li>time spent learning the new technology.</li>
+</ul>
+
+<h2 class="dtH1"><a name="aj1rules_topic16"></a>Conclusion</h2>
+
+<p>Logical knowledge, unlike factual or procedural knowledge, is difficult to encode in a computer. Yet, the ability for an organization to successfully encode its logical knowledge can lead to better services for its users.</p>
+
+<p>The question then, is how best to encode logical knowledge. It can be shoe-horned into data-and procedure-based tools, but the encoding is difficult, the knowledge becomes opaque, and maintenance becomes a nightmare.</p>
+
+<p>Rule-based and logic-based tools are better suited to the encoding of logical knowledge, but require the selection of the proper tool for the knowledge to be encoded, and the learning of how to use that tool.</p>
+
+<p>Off-the-shelf rule or logic tools sometimes provide a good solution, but often the knowledge representation of the tool doesn't fit the actual knowledge, or the reasoning engine doesn't use the knowledge as it is supposed to be used. This leads to the same coding and maintenance problems experienced with conventional tools, but to a lesser extent depending on how big the semantic gap is between the knowledge and the tool.</p>
+
+<p>A viable alternative is the building of a custom logic-based language and reasoning engine. This allows for the closest fit between the coding of the knowledge and the actual knowledge, and for the cleanest integration between the tool and the rest of the application context.</p>
+
+<h2 class="dtH1"><a name="aj1rules_topic17"></a>Resources</h2>
+
+<p><a href="http://ksl-web.stanford.edu">http://ksl-web.stanford.edu</a></p>
+
+<p>Standford's Knowledge System Laboratory's home page has information about their current work with ontologies and other research areas, as well as links to related sites and organizations. </p>
+
+<p><a href="http://www.aaai.org">www.aaai.org</a></p>
+
+<p>American Association of Artificial Intelligence (AAAI) is a non-profit scientific organization devoted to supporting AI research and development. They have conferences and journals and an excellent <a href="http://www.aaai.org/AITopics/aitopics.html">Web site</a><i> </i>that introduces AI research and topics.</p>
+
+<p><a href="http://www.ddj.com/topics/ai">http://www.ddj.com/topics/ai</a></p>
+
+<p>Dr Dobb's Journal's Web site devoted to AI topics and links.</p>
+
+<p><a href="http://www.ainewsletter.com">www.ainewsletter.com</a></p>
+
+<p>Past issues of the DDJ AI Expert newsletter. You can subscribe to the newsletter at <a href="http://www.ddj.com">www.ddj.com</a></p>
+
+<p><a href="http://www.pcai.com">http://www.pcai.com</a></p>
+
+<p>PCAI Magazine has a wealth of information about AI technologies and products on their Web site.</p>
+
+<p>A Google search for 'business rule engine' will yield links to a number of commercial offerings.</p>
+<p> </p>
+<hr  size="1">
+<h4 class="dtH1">About the Author</h4>
+
+<p>Dennis Merritt is a principal in Amzi! Inc. (www.amzi.com), a small privately 
+  funded company specializing in tools for developing knowledge-based and AI components 
+  that can be embedded in larger application contexts. He has written two books 
+  and several articles on logic programming and expert systems, and is currently 
+  the editor of the Dr. Dobb's Journal AI Expert newsletter. Dennis can be reached 
+  on www.amzi.com/company/contact.htm</p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

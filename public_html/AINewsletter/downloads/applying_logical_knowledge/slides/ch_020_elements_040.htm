@@ -1,0 +1,43 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Predicates</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Predicates<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Predicates are one or more clauses with the same functor and number of arguments, 
+  arity. They should be contiguous. They are referred to in documentation by functor/arity.</p>
+<p><b>flight/4</b></p>
+<pre>flight(delta, 4, 'LAX', 'DEN').
+flight(delta, 5, 'BOS', 'LAX').
+flight(united, 14, 'ARB', 'CVG').</pre>
+
+<p><b>vehicle/2</b></p>
+<pre>vehicle(43, [make = 'Suburu', model = 'Forester', color = blue]).
+vehicle(44, [model = 'Miata', year = 1997, color = black]).</pre>
+
+<p><b>customer_status/2</b></p>
+<pre>customer_status(ID, good) :- account_balance(ID, past_due(DaysLate)), DaysLate < 30.
+customer_status(ID, poor) :- account_balance(ID, past_due(DaysLate)), DaysLate >= 30.
+customer_status(ID, excellent) :- owner_friend(ID).
+customer_status(ID, bad) :- customer(ID, name('Dastardly', 'Dan'))</pre>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_020_elements_030.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <a href="ch_020_elements_050.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

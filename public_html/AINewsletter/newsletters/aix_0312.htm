@@ -1,0 +1,603 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->December 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>December 2003</h3>
+            <ul>
+              <li><a href="#errata">Errata</a> - I messed up again</li>
+              <li><a href="#drug_interaction">A Case Study</a> - A drug interaction 
+                prototype</li>
+              <li><a href="#product_announcements">Product Announcements</a> - 
+                Product news provided by vendors</li>
+              <li><a href="#links">Links</a> - Some interesting links provided 
+                by readers</li>
+            </ul>
+            <h2><a name="errata"></a>Errata</h2>
+            <p>A few newsletters back I promised to only cut and paste working 
+              code in newsletters. I messed up again, sigh. The prices are wrong 
+              in the rules in the newsletter. As one reader pointed out, the rule-based 
+              approach is just as error prone as other methods.</p>
+            <p>(the error has been fixed in the archive version. ed)</p>
+            <p>Actually, its my cut and pasting that's flawed. I decided to change 
+              the prices midstream and failed to put the new prices in the rules 
+              in the newsletter, but ran the example from the updated rules on 
+              my machine. This time I really promise not to change code mid stream 
+              ever ever again.</p>
+            <p>However, it is interesting to note that the inadvertent bug in 
+              the pricing rules is much easier to find and correct than the deliberate 
+              bug in the procedural version. So maybe my cut and paste error actually 
+              serves to illustrate the clarity advantage of the rule-based approach.</p>
+            <h2> <a name="drug_interaction"></a>A Drug Interaction Prototype</h2>
+            <p>Last month we looked at a simple prototype for a rule-based system 
+              that dealt with pricing and similar problems. This month we've got 
+              a real world example of a drug interaction system (DIS) to work 
+              with. We'll use it as a case study in designing a knowledge representation 
+              language and reasoning engine for a specific type of application.</p>
+            <p>The example illustrates many of the issues with knowledge-based 
+              systems, in that there are different types of knowledge that need 
+              to be represented and used. Those needed for DIS are different from 
+              those needed for the pricing example used last month.</p>
+            <p>For DIS, the goal is to come up with a system that can use general 
+              principles of drug interaction to predict interactions of drugs 
+              that haven't been tested together. The source material was provided 
+              by Dr. Thomas Brown, author of Psychiatric Side Effects of Prescription 
+              and Over-the-Counter Medications, Second Edition (Washington DC, 
+              American Psychiatric Press, Inc, in press), who is an expert in 
+              neurological drug interactions.</p>
+            <h3>The Knowledge</h3>
+            <p>The first step is to start with a self-contained example. In this 
+              case it is the potentially deadly serotonin syndrome. Serotonin 
+              is a normal chemical messenger created by the cells in the body, 
+              but when the mechanism for the creation and/or use of serotonin 
+              is altered, problems can occur.</p>
+            <p>The serotonin syndrome is a drug side-effect that occurs when two 
+              conditions are met:</p>
+            <ul>
+              <li> there is an increase in the amount of serotonin outside the 
+                cells, and</li>
+              <li>either:</li>
+              <ul>
+                <li>an impairment in the body's ability to get rid of serotonin, 
+                  or</li>
+                <li>an aberration in the body's response to serotonin.</li>
+              </ul>
+            </ul>
+            <p>This is the basis for a &quot;first principles&quot; type system. 
+              Once we encode this knowledge, then the problem of predicting a 
+              drug interaction becomes one of determining if a combination of 
+              drugs or medical conditions causes the conditions leading to the 
+              serotonin syndrome.</p>
+            <p>Amphetamine, dextromethorphan, and alcohol are examples of agents 
+              that stimulate the release of serotonin. Citalopram, paroxetine, 
+              diabetes and St. John's wort all inhibit the body's ability to reabsorb 
+              serotonin. Buspirone stimulates the activity of serotonin once released.</p>
+            <p>Because the system will be designed to find all possible drug interactions, 
+              I've added a bit of first principles knowledge from my own research 
+              in neurological drugs. This will be used to test if the system finds 
+              all the information required.</p>
+            <p>That rule is a person becomes inebriated if the blood alcohol level 
+              increases, and that the blood alcohol level increases when a person 
+              consumes alcohol.</p>
+            <p>The prototype uses some concepts developed in last month's newsletter 
+              and adds some new ones for this particular problem. The code examples 
+              use Prolog, but any language can be used to implement the concepts 
+              presented.</p>
+            <p>Unlike with previous issues of the newsletter, the full code is 
+              not contained in the newsletter, just the significant bits, and 
+              the bits that weren't covered in other newsletters. Contact me if 
+              you are interested in receiving the full source code for the prototype.</p>
+            <h3>Frame Based</h3>
+            <p>A frame-based knowledge representation is convenient and can, at 
+              a later time, be easily mapped to a GUI development environment.</p>
+            <pre>rule('blood alcohol', [
+   value :: increased,
+   conditions ::
+      consumed = alcohol
+   ]).
+</pre>
+            <p>A frame is a general purpose knowledge structure that is composed 
+              of 'slots' where a slot is really just an attribute and a value. 
+              In the text form of a DIS frame a :: operator separates a slot from 
+              its value.</p>
+            <p>In a minor change from last month's rules, the name of the rule 
+              is now the name of an attribute, and the slot 'value' has the value 
+              of the attribute.</p>
+            <p>The example frame is for a rule about 'blood alcohol' and the two 
+              slots provide a value for 'blood alcohol' and the conditions under 
+              which that value is true. In customizing our system we can have 
+              any types of frames we want with any types of slots. </p>
+            <p>One can easily imagine a dialog box in a GUI with input fields 
+              for the various slots. That GUI would create the text file form 
+              shown above. But that's a future project, for now knowledge will 
+              be hand-coded into structures like the one above.</p>
+            <h3>Ontology Important</h3>
+            <p>Based on the preliminary documents it appears that a tremendous 
+              amount of the knowledge is really semantic, and semantic information 
+              is best stored in frames that are intended to be used as an ontology.</p>
+            <pre>word(alcohol, [
+   a_kind_of :: agent,
+   stimulates :: 'serotonin release'
+   ]).
+word(gin, [
+   contains :: alcohol
+   ]).
+word(martini, [
+   contains :: gin,
+   contains :: vermouth
+   ]).
+</pre>
+            <p>Note that our ontology for this application has more substance 
+              in it, with entries such as 'stimulates' added where appropriate. 
+              This will let us encode rules that have as a condition, for example: 
+              <i>stimulates serotonin release</i>, that will fire when the fact 
+              that a person consumed a martini is entered. This is because the 
+              reasoning engine is designed to understand the ontology and trace 
+              the relationships, in this case that a martini contains gin and 
+              gin contains alcohol and alcohol stimulates serotonin release.</p>
+            <h3>Rules</h3>
+            <p>The frames for rules simply specify the value for a factor and 
+              the conditions under which that value is appropriate. This gives 
+              us the flexibility to use the rules in a variety of reasoning strategies.</p>
+            <pre>Rule(inebriated, [
+   value :: true,
+   conditions ::
+      'blood alcohol' increased,
+   explanation :: [
+      `When alcohol content in blood increases, person gets drunk.`],
+   citation :: `Oct 2003 observations of Dennis Merritt`
+   ]).
+
+rule('blood alcohol', [
+   value :: increased,
+   conditions ::
+      consumed = alcohol
+   ]).</pre>
+            <p>These two rules state that the state inebriated is true if blood 
+              alcohol is increased and that blood alcohol is increased if alcohol 
+              was consumed.</p>
+            <p>Note that we've defined 'increased' as an operator that can appear 
+              after a value, which allows for more natural writing of rules with 
+              a condition like 'blood alcohol' increased, rather than 'blood alcohol' 
+              = increased.</p>
+            <p>The frame structures allow us to add other fields to use as we 
+              will. In this case a textual explanation of the rule and a citation 
+              is provided that might be used in explanations. These could be displayed 
+              by the reasoning engine when this rule takes effect, or just used 
+              as documentation during development.</p>
+            <h3>Boolean Values</h3>
+            <p>Version 0-0 of DIS assumes the world is black and white. Either 
+              blood alcohol is increased or it isn't, a person is inebriated or 
+              not. In the real system there will have to be some way to represent 
+              the shades of gray in the world. There are a number of choices and 
+              we need to decide on the best one.</p>
+            <p>Certainty factors (CF) are easy to implement and have a nice intuitive 
+              feel, but are not based on any mathematical theories.</p>
+            <p>Fuzzy logic seems like it would work well for some the knowledge. 
+              For example, fuzzy values map very nicely to words in the knowledge 
+              like &quot;increased&quot; above. The use of fuzzy values requires 
+              the development of small mathematical models that can be used to 
+              determine the relationship, for example, between consumed alcohol 
+              and blood alcohol, as well as the relationship between blood alcohol 
+              and inebriation.</p>
+            <p>But fuzzy logic doesn't capture other parts of the knowledge, in 
+              particular the desire to know if the serotonin syndrome is likely 
+              or not. In that case we really want more of a probability than a 
+              fuzzy value.</p>
+            <p>Bayesian probability is based on sound mathematics and seems like 
+              a good fit for representing the probabilities of various drug interactions.</p>
+            <p>But, stepping back, Bayesian probability doesn't capture the essence 
+              of the concept of inebriation. Increasing the consumption of alcohol 
+              doesn't increase the probability of inebriation, but rather increases 
+              the degree of inebriation.</p>
+            <p>Maybe some combination of fuzzy models and Bayesian probability 
+              is best? I'm not sure.</p>
+            <p>But for version 0-0 the world is black and white. You consume a 
+              martini, you're drunk; you have the conditions that trigger serotonin 
+              syndrome, you have serotonin syndrome. </p>
+            <h3>Reasoning Engine</h3>
+            <p>The first cut at the reasoning engine assumes that in the real 
+              world this system will work off data for a given individual. In 
+              other words, the data will be known and the system will output what 
+              conclusions might be drawn from that data.</p>
+            <p>So a data-driven approach was used. The system is started with 
+              initial data, and then the various rules are tried until none fit 
+              anymore. The system then reports on everything it knows.</p>
+            <p>So if the system started with the data (the square brackets means 
+              a list and there could be more things consumed):</p>
+            <pre>consumed = [martini]</pre>
+            <p>then it would output all of the derived information as well as 
+              the initial information.</p>
+            <pre>inebriated = true
+'blood alcohol' = increased
+'extra cellular serotonin' = increased
+consumed = [martini]
+</pre>
+            <p>A data-driven reasoning engine was used in version 0-0, but I'm 
+              not sure it really captures the essence of the problem. Data-driven 
+              (forward chaining) is very good for synthesizing solutions where 
+              there are seemingly infinite possibilities, such as in a configuration 
+              or planning system. In this case there is only a finite number of 
+              known outputs and probably a better reasoning strategy is one that 
+              simply walked a list of all solutions using each as a goal in a 
+              goal-driven approach, similar to what was used in last month's pricing 
+              example.</p>
+            <p>But version 0-0 started with data-driven approach and here is the 
+              code that implements it:</p>
+            <pre>figure_all :-
+   rule(Name, Attrs),
+   not(used(Name)),
+   get_slot(conditions, C, Attrs),
+   prove(C),
+   get_slot(value, V, Attrs),
+   asserta(known(Name, V)),
+   asserta(used(Name)),
+   !,
+   figure_all.
+figure_all.
+</pre>
+            <p>This is a simple forward-chainer that is not very efficient, but 
+              gets the job done for the prototype. It finds a rule that has not 
+              been used yet, and tries to prove the conditions. If it can prove 
+              the conditions, then the value in the rule is asserted as the value 
+              for the name of the rule and the rule is noted as having been used. 
+              The loop is then recursively started again.</p>
+            <p>If the conditions can't be proved, then the next rule is tried.</p>
+            <p>This simple strategy ensures that all the rules that can fire, 
+              will. And that rules that depend on other rules will simply wait 
+              until they have the conditions necessary to fire. The predicates 
+              <b>get_slot/3</b> and <b>prove/1</b> were covered in last month's 
+              newsletter. But we've added some conditions for <b>prove/1</b> that 
+              allows the rules to use the terms 'increased', 'impaired' and 'aberrated' 
+              as operators which makes for more readable rules.</p>
+            <pre>...
+prove(increased(X)) :-
+   known(X, increased),
+   !.
+prove(impaired(X)) :-
+   known(X, impaired),
+   !.
+prove(aberrated(X)) :-
+   known(X, aberrated),
+   !.
+...
+</pre>
+            <h3>General Pattern Rules</h3>
+            <p>Moving onto the real rules, the idea behind the system is to encode 
+              general patterns that might trigger even for unknown combinations 
+              of drugs. This suggests that the idea of logical, pattern-matching 
+              variables, might be useful in the rules.</p>
+            <pre>Rule('serotonin syndrome', [
+   value :: true,
+   conditions ::
+      'extra cellular serotonin' increased and
+      ( 'serotonin removal' impaired or
+        'serotonin response' aberrated ),
+   explanation :: [
+      `Serotonin syndrome results when two conditions are`,
+      `met: an increase in extra cellular serotonin and either`,
+      `an impaired or aberrated ability to deal with the extra`,
+      `serotonin.`],
+   Citation :: `Oct 2003 private communication with Dr. Thomas Brown`
+   ]).
+
+rule('extra cellular serotonin', [
+   value :: increased,
+   conditions ::
+      X stimulates 'serotonin release' and (consumed = X or condition = X)
+   ]).
+
+rule('serotonin removal', [
+   value :: impaired,
+   conditions ::
+       X inhibits 'reuptake of serotonin' and (consumed = X or condition = X)
+   ]).
+
+rule('serotonin response', [
+   value :: aberrated,
+   conditions ::
+      X stimulates 'serotonin activity' and (consumed = X or condition = X)
+   ]).
+</pre>
+            <p>Here we have a general rule for the serotonin syndrome and three 
+              rules that are used by it. Each of those is using the ontology to 
+              look for the sorts of things that might cause trouble. The logical 
+              variable lets us express the idea, as in the last rule, that <i>if 
+              there's an X that stimulates serotonin activity and X was consumed 
+              or X is a condition the person has, then the serotonin response 
+              is aberrated</i>.</p>
+            <p>Here are some additional ontology entries used in the following 
+              examples.</p>
+            <pre>Word('NyQuil(tm)', [
+   contains :: alcohol
+   ]).
+word('Effexor(TM)', [
+   a_kind_of :: venlafaxine
+   ]).
+word(venlafaxine, [
+   a_kind_of :: agent,
+   inhibits :: 'reuptake of serotonin'
+   ]).
+word(diabetes, [
+   a_kind_of :: condition,
+   inhibits :: 'reuptake of serotonin'
+   ]).
+</pre>
+            <p>So if we start the system with the data:</p>
+            <pre>consumed = ['NyQuil(TM)']
+condition = diabetes</pre>
+            <p>we get the following derived results.</p>
+            <pre>Inebriated = true
+'blood alcohol' = increased
+'serotonin syndrome' = true
+'serotonin removal' = impaired
+'extra cellular serotonin' = increased
+condition = diabetes
+consumed = ['NyQuil(TM)']
+</pre>
+            <p>Similarly if we start with</p>
+            <pre>consumed = [martini, 'Effexor(TM)']</pre>
+            <p>we get:</p>
+            <pre>inebriated = true
+'blood alcohol' = increased
+'serotonin syndrome' = true
+'serotonin removal' = impaired
+'extra cellular serotonin' = increased
+consumed = [martini, 'Effexor(TM)']
+</pre>
+            <p>There is an interesting design issue here. When logical variables 
+              are introduced into the rules, the rules become both more powerful 
+              and more difficult to use. I was talking with a language designer 
+              at IBM who indicated that as soon as you add pointers to a programming 
+              language you increase its expressive power but limit the number 
+              of programmers who can use it. Logical variables have the same effect 
+              on rule languages.</p>
+            <h3>Testing</h3>
+            <p>To facilitate testing, a file of test case data is kept. Here's 
+              two test cases used above:</p>
+            <pre>test(5, [
+   consumed :: [martini, 'Effexor(TM)']
+   ]).
+test(6, [
+   consumed :: ['NyQuil(TM)'],
+   condition :: diabetes
+   ]).
+</pre>
+            <h3>Custom Conditions</h3>
+            <p>As we move ahead in encoding knowledge, we'll come across various 
+              ideas we want to express. For example, the Sternbach diagnostic 
+              is a criteria that is defined as true when a patient has at least 
+              three findings from a set of eleven. So we create a syntax for expressing 
+              that idea and then making reasoning engine understand how to use 
+              it. A simple modification of prove/1 lets us now use some_of and 
+              one_of in the rules.</p>
+            <pre>Rule('Sternbach''s diagnosis', [
+   value :: true,
+   conditions ::
+      some_of(3, ['mental status change',
+         agitation, hypertension, uncoordination, myoclonus,
+         hyperreflexia, tremor, shivering, diaphoresis,
+         diarrhea, fever])
+   ]).
+
+rule('mental status change', [
+   value :: true,
+   conditions ::
+      one_of( [confusion, hypomania] )
+   ]).
+</pre>
+            <p>Testing these new rules and conditions with these inputs: </p>
+            <pre>test(4, [
+   'myoclonus' :: true,
+   'hypomania' :: true,
+   'shivering' :: true
+   ]).
+</pre>
+            <p>yields this result</p>
+            <pre>?- main.
+test? 4.
+'Sternbach''s diagnosis' = true
+'mental status change' = true
+shivering = true
+hypomania = true
+myoclonus = true
+
+yes
+</pre>
+            <h3>Next Steps</h3>
+            <p>The most critical next step for this system is to resolve the way 
+              uncertainty is dealt with. After that is done, additional examples 
+              of drug interactions knowledge can be added to this system to see 
+              what changes they may require.</p>
+            <h2><a name="product_announcements"></a>Product Announcements</h2>
+            <h3>Evolution Robotics</h3>
+            <p>(See review in <a href="http://www.ainewsletter.com/newsletters/aix_0303.htm">March 
+              2003</a> issue of this newsletter.)</p>
+            <p>Evolution Robotics announces a 50% price reduction for its ER1 
+              robot kit. The ER1 gives hands on experience with computer programming 
+              and basic engineering to technology enthusiasts, software developers, 
+              scientists and inventive young adults across the board. Additionally, 
+              the company announces the release of a noncommercial license version 
+              of its Evolution Robotics Software Platform 2.0 (ERSP-NC 2.0) specifically 
+              for use in the classroom. This offer is available exclusively to 
+              educational institutions. </p>
+            <p>The award-winning Evolution Robotics ER1 Robot is now available 
+              for as little as $299 - a 50% reduction. With its professional grade 
+              robotics software and highly customizable hardware, ER1 is the ideal 
+              gift for the inventive young adult or technology enthusiast on your 
+              gift list. The world\'s first autonomous mobile robot has been featured 
+              in CNN, MSNBC, PC Magazine, Time, Geek.com, Linux.com and other 
+              high profile media venues.</p>
+            <p> The ER1 is the first robot with professional-level robotics software 
+              and industrial grade hardware designed specifically for enthusiasts, 
+              educators and researchers. The ER1 has computer vision, hearing, 
+              speech, networking, remote control, e-mail, autonomous mobility, 
+              gripping, and IR sensing capabilities - all brought together with 
+              an open software system and a reconfigurable chassis. Robot enthusiasts 
+              and online Evolution Robotics communities agree that ER1 provides 
+              a powerful yet accessible hands-on experience in computer programming, 
+              basic engineering and an introduction to the world of robotics. 
+            </p>
+            <p> Additionally, the company announces the release of a noncommercial 
+              license version of its Evolution Robotics Software Platform 2.0 
+              (called ERSP(TM)-NC 2.0) specifically for use in classrooms. This 
+              offer will be available exclusively to educational institutions. 
+              Please send e-mail to education@evolution.com for pricing details.</p>
+            <p> ERSP 2.0 is a robot development platform comprised of four areas 
+              of functionality: vision, obstacle avoidance, interaction, and architecture. 
+              ERSP 2.0 includes library APIs, developer tools, and applications 
+              to aid in the robot and software development process. Available 
+              on Windows and Linux, education institutions can use ERSP-NC 2.0 
+              in classroom settings to facilitate research, education and encourage 
+              a deeper exploration of robotics and associated application development. 
+              ERSP is being used by a number of well known consumer electronics 
+              companies, including Sony, to develop new robot applications, and 
+              entirely new robots.</p>
+            <p><a href="http://www.evolution.com">www.evolution.com</a></p>
+            <h3>Amzi! inc.</h3>
+            <p>Amzi! has created a Prolog plug-in for the Eclipse Interactive 
+              Development Environment (IDE). Eclipse is an open source IDE that 
+              rivals the best of current commercial development environments. 
+              The Amzi! plug-in supports comprehensive project support, syntax 
+              coloring, predicate cross-reference and outline windows.</p>
+            <p>A full Prolog listener is included and a source code debugger that 
+              combines that best of conventional debuggers with the Prolog four-port 
+              model. The current line of code is color-coded by port in the source 
+              listing; a full stack trace is presented, which can be examined 
+              at any level; and the variable bindings for each stack frame are 
+              presented. The combination of these three elements makes for a very 
+              clear presentation of Prolog execution which is ideal for students 
+              and advanced developers alike.</p>
+            <p>Eclipse supports remote debugging, so compiled Prolog components 
+              running in larger mixed-language application contexts, and even 
+              on remote machines can be debugged as easily as local stand-alone 
+              Prolog projects.</p>
+            <p>The Eclipse plug-in is part of the Amzi! 7.0 release which is available 
+              in both Student and Professional Editions. See <a href="www.amzi.com">www.amzi.com</a> 
+              for details.<br>
+            </p>
+            <h2><a name="links"></a>Links</h2>
+            <p>These are some links provided by readers:</p>
+            <p><a href="http://www.iaail.org/">www.iaail.org</a> - The International 
+              Association for AI and the Law</p>
+            <p><a href="http://www.jurix.nl/">www.jurix.nl</a> - A forum on legal 
+              knowledge based systems based in the Netherlands and Flanders.</p>
+            <p><a href="http://ai.meetup.com/">http://ai.meetup.com/</a> - An 
+              international meet up site for people interested in AI. Meet ups 
+              are usually held on the fourth Tuesday of each month, but this month, 
+              because of the holidays it will be on December 16th at 7pm. Locations 
+              of meet ups are all around the globe.</p>
+            <p><a href="http://www.agiri.org/">http://www.agiri.org/</a> - The 
+              Artificial General Intelligence Research Institute (AGIRI) is working 
+              on the grand goal of true general purpose artificial intelligence. 
+              They have created a software engine, called Novamente, as a first 
+              step.</p>
+            <p><a href="http://www.goertzel.org/work.html">http://www.goertzel.org/work.html</a> 
+              - Links to the varied works of Ben Goertzel, one of the principle 
+              researchers in AGIRI.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,1127 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->June 
+                      2005 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <H1>AI Expert Newsletter</H1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>June 2005</h3>
+            <ul>
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#neural_gases">Neural Gases</a> 
+                <ul>
+                  <li><a href="#neural_gases_demo">Running the DemoGNG applet</a></li>
+                  <li><a href="#neural_gases_ng">The neural gas</a></li>
+                  <li><a href="#neural_gases_gng">The growing neural gas</a></li>
+                  <li><a href="#neural_gases_applications">Applications</a></li>
+                  <li><a href="#neural_gases_links">Links</a></li>
+                </ul>
+              </li>
+              <li><a href="#flanders_and_swann">There's a Hole in my Budget - 
+                qualitative reasoning, economics, and Flanders and Swann</a> 
+                <ul>
+                  <li><a href="#flanders_and_swann_in_prolog">Flanders and Swann 
+                    in Prolog</a></li>
+                  <li><a href="#flanders_and_swann_twists">Infinite loops, control-structure 
+                    bugs, and the twist in the tale</a></li>
+                  <li><a href="#flanders_and_swann_qualitative_reasoning">Qualitative 
+                    reasoning</a></li>
+                  <li><a href="#flanders_and_swann_from_novice_to_expert">From 
+                    novice economist to expert</a></li>
+                  <li><a href="#flanders_and_swann_cognitive_models_and_teaching">Cognitive 
+                    models and teaching</a></li>
+                  <li><a href="#flanders_and_swann_plagiarize">How to improve 
+                    your research output</a> 
+                  <li><a href="#flanders_and_swann_links">Links and other references</a></li>
+                </ul>
+              </li>
+              <li><a href="#lisp_as_bodily_detritus">"Lisp has all the visual 
+                appeal of oatmeal with fingernail clippings mixed in"</a> 
+                <ul>
+                  <li><a href="#lisp_as_bodily_detritus_links">Links</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p>&nbsp;</p>
+            <h2><a name="introduction">Introduction</a></h2>
+            <p> In our <a href="http://www.ainewsletter.com/newsletters/aix_0503.htm#neural_nets_on_the_web">March 
+              issue</a>, I explored some of the neural-net applets around the 
+              Web. One, intriguing because of the slowly growing network of lime 
+              green dots which writhes around inside as if struggling to escape, 
+              was the <a href="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/DemoGNG/GNG.html">DemoGNG 
+              applet for competitive learning</a>, written by Hartmut Loos and 
+              Bernd Fritzke at Bochum University. The applet says it implements 
+              "neural gases" and "growing neural gases"; since I'd not come across 
+              these before, I decided to write about them for this issue. There 
+              are also a few items vaguely connected with Lisp, some fun, some 
+              serious; and - inspired by a British comic song - a meander through 
+              qualitative reasoning, cognitive models in education, and economics. 
+              As ever, we welcome news, views, and comments. 
+            <div align=right> <a href="http://www.j-paine.org/">Jocelyn Paine</a></div>
+            <p></p>
+            <p>&nbsp;</p>
+            <h2><a name="neural_gases">Neural Gases</a></h2>
+            <p> So what's a neural gas? The DemoGNG applet page mentioned above 
+              links to the applet source code and documentation, to a <a href="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/DemoGNG/tex/DemoGNG/DemoGNG.html">user 
+              guide</a>, and to the authors' report <a href="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/JavaPaper/"><i>Some 
+              Competitive Learning Methods</i></a>. This explains that a neural 
+              gas is a particular kind of competitive learner. In general, competitive 
+              learning networks learn to cluster or classify their inputs, with 
+              different output nodes representing different clusters or classes. 
+              The outputs compete for inputs to represent. Kohonen self-organising 
+              feature maps are a well-known example. (As the comp.ai.neural-nets 
+              FAQ explains in <a href="http://www.faqs.org/faqs/ai-faq/neural-nets/part1/section-11.html"><i>How 
+              many kinds of Kohonen networks exist?</i></a>, there are several 
+              different kinds, with subtleties that are often ignored.) </p>
+            <p> Sometimes when using competitive learners for clustering, we want 
+              the clusters for their own sake, to tell us about the structure 
+              of the data. Sometimes we want to reduce each cluster to a representative 
+              element, as in signal quantisation. This first trains the learner 
+              on a sample of typical input signals, giving a set of clusters. 
+              Hopefully, the number of clusters is much less than the number of 
+              possible signals. We then allocate each cluster a number, and compress 
+              future data by mapping each signal to the number of the cluster 
+              it falls in, transmitting the number in place of the signal. And 
+              sometimes, we want information about the connectivity between clusters. 
+              At the <a href="#neural_gases_applications">end of this article</a>, 
+              there's a nifty example, skeletonising images of bacterial colonies 
+              to line segments. For more information on competitive learners, 
+              see the <i>Some Competitive Learning Methods</i> report: it's a 
+              nice comparison of competitive learners, using uniform terminology 
+              throughout, and not limited to neural gases. </p>
+            <p> Let's now turn from competitive learners in general to neural 
+              gases in particular, and a demonstration. </p>
+            <h3><a name="neural_gases_demo">Running the DemoGNG applet</a></h3>
+            <p> Start by loading <a href="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/DemoGNG/GNG.html">DemoGNG</a>. 
+              It has a lot of controls, of which I'll use probability distribution 
+              (just above bottom left); max nodes (to its right); start, stop, 
+              and reset; and the network model menu (at the top). Note that after 
+              a run, you need to press stop, and then reset to discard the current 
+              network and make a new. There's a speed control on the right, which 
+              you may want to change to suit your browser and computer. </p>
+            <p> Change the probability distribution to Rectangular. This draws 
+              a pale blue rectangle depicting the space of possible signals. On 
+              starting a run, the applet will create a network, and then train 
+              it by repeatedly feeding it two-dimensional input vectors which 
+              have an equal chance of lying anywhere within the rectangle, i.e. 
+              a uniform probability distribution. </p>
+            <p> Check the network model menu is set to its default of "growing 
+              neural net". Then press start, and see the network grow to the maximum 
+              number of nodes. These will be roughly evenly distributed within 
+              the rectangle. </p>
+            <p> Next, start another run in the rectangle, but before the run ends, 
+              change probability distribution to Ring. The network will flow and 
+              deform to redistribute its nodes evenly within the ring - a good 
+              example because it's highly symmetric. It's fun to see how nodes 
+              just inside the hole move toward and link to those in the body of 
+              the ring, breaking connections with their old neighbours. It reminds 
+              me of how new friendships form and old ones dissolve as one moves 
+              from one city to another. </p>
+            <p> You can move nodes yourself by left-clicking and dragging them. 
+              You can also move the entire signal distribution: Change probability 
+              distribution to Right Mouse. This will draw a small rectangle for 
+              the input space. Pressing the right mouse button will jump it to 
+              a new position; you can then release the button to leave it there, 
+              or drag and then release. This is a nice way to see how the network 
+              adapts to fast and slow changes in its inputs. </p>
+            <h3><a name="neural_gases_ng">The neural gas</a></h3>
+            <p> Now we've demonstrated growing neural gases, let's see how they 
+              work. We'll start with neural gases, because growing neural gases 
+              combine these with other components. You can get a feel for what 
+              a neural gas does and how fast it does it from the applet. From 
+              the network model menu, select Neural Gas. Change probability distribution 
+              to Rectangular, and max nodes to 10. If you just ended a run, press 
+              reset to generate a new network. Press start, and watch the nodes 
+              spread out evenly. Then try with 50 nodes. </p>
+            <p> Here's the essence of the algorithm: 
+            <pre>
+
+  Initialize the network to contain N randomly distributed nodes.
+
+
+
+  Then
+
+    Take the next input, i.e. a vector, which in this
+
+    demo is two-dimensional.
+
+  
+
+    Calculate each node's distance from the input.
+
+  
+
+    Move the node nearest to the input - the winning node -
+
+    still nearer it.
+
+
+
+    Move the second-nearest node nearer the input too,
+
+    but not so far.
+
+
+
+    Repeat with all the other nodes. As with the nearest
+
+    and second-nearest, they are moved less far as their
+
+    distance increases.
+
+  And repeat the loop
+
+</pre>
+            <p></p>
+            <p> The complete algorithm as written in the <a href="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/JavaPaper/node16.html#SECTION00610000000000000000">Neural 
+              Gas</a> page of <i>Some Competitive Learning Methods</i> contains 
+              calculations not shown above. These determine how far each node 
+              moves towards the input, and how the movement depends on time. The 
+              distance moved is a product of three factors. The first, the &epsilon; 
+              term, decreases with time, and gives a kind of annealing, so that 
+              movements are large when finding an initial solution, but get smaller 
+              as the net refines it. The second, h<sub>&lambda;</sub>, term, decreases 
+              with time and also with how far a node is from winning. (A quick 
+              qualitative-reasoning check on whether factors increase or decrease 
+              with their arguments helps when reading these algorithms, to avoid 
+              getting lost in details.) The third factor is simply the vector 
+              distance between the node and the input. Note that the report sometimes 
+              uses the subscript <sub><i>i</i></sub> to mean "initial", as well 
+              as an index. </p>
+            <p> The algorithm doesn't come with much explanation, but there's 
+              a readable introduction in Chapter 2 of <a href="http://www.booru.net/download/MasterThesisProj.pdf"><i>Growing 
+              Neural Gas. Experiments with GNG, GNG with Utility and Supervised 
+              GNG</i></a>, a Master's thesis by Jim Holmstr&ouml;m, Uppsala. Some 
+              notation, such as the symbol for an input vector, differs between 
+              this and <i>Some Competitive Learning Methods</i>. It's worth exploring 
+              how the parameters in the bottom line of menus affect learning; 
+              the course notes on <a href="http://www.cb.uu.se/~hamed/data_mining/lab3.pdf"><i>Classification 
+              and Clustering Using Artificial Neural Networks</i></a> by Hamed 
+              Muhammed at Uppsala suggest some experiments. </p>
+            <h3><a name="neural_gases_gng">The growing neural gas</a></h3>
+            <p> The growing neural gas algorithm is described on the <a href="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/JavaPaper/node19.html">Growing 
+              Neural Gas</a> page of <i>Some Competitive Learning Methods</i>. 
+              It starts with two nodes and grows its network a node at a time, 
+              using links generated by competitive Hebbian learning to guide their 
+              placement. Since these weren't in the neural gas, let's look at 
+              them next. </p>
+            <p> Competitive Hebbian learning, in this sense, trains a set of nodes 
+              on a sequence of inputs. Unlike in the neural gas, the nodes don't 
+              move; the goal is for them to grow links to one another as learning 
+              proceeds. A link between two nodes means the nodes are close together 
+              - neighbours - relative to the average spacing of the inputs. Links 
+              only grow between nodes in regions where inputs occur, so reflect 
+              the distribution of inputs. The mathematics behind this, cited in 
+              the <a href="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/JavaPaper/node17.html#chl">Competitive 
+              Hebbian Learning</a> page, and described in <a href="http://www.ks.uiuc.edu/Publications/Papers/paper.cgi?tbcode=MART94"><i>Topology 
+              representing networks</i></a> by Thomas Martinetz and Klaus Schulten, 
+              is specialised; but you can get a feel for where links place themselves 
+              by using the applet. Set the network model to Competitive Hebbian 
+              Learning, and then run it on various probability distributions, 
+              remembering that inputs are only generated in the pale blue areas. 
+            </p>
+            <p></p>
+            Growing neural gases, as I said, combine the neural gas algorithm 
+            with competitive Hebbian learning, in a network which grows a node 
+            at a time. Where to put this new node is decided by looking at the 
+            existing nodes' error fields. Each node has an error field which sums 
+            the squares of its distance from the inputs. Nodes with larger error 
+            fields will be covering larger regions of the input space, so it's 
+            appropriate to refine this coverage by inserting the new node nearby. 
+            (Intuitively speaking, the more inputs that occur in a region, the 
+            more attention we should pay it, and the smaller are the subregions 
+            we should divide it into when classifying inputs.) 
+            <p></p>
+            <p> As well as inserting new nodes, we move existing ones each time 
+              the network receives an input; but instead of moving all of them 
+              as in a plain neural gas, we move only two. One of these is the 
+              winner, i.e. the one nearest the input; the other is the one of 
+              its neighbours (i.e. the nodes linked to it) closest to the input. 
+            </p>
+            <p> When nodes move, they drag their links with them. The growing 
+              neural gas has an aging mechanism to remove old links and nodes 
+              that no longer reflect the distribution of inputs. </p>
+            <p> Growing neural gases are an elegant idea, and tempting because 
+              they don't need to know the input distribution. However, as ever 
+              with machine learning, it's worth testing learning performance, 
+              comparing with alternative methods, and looking at the statistical 
+              basics. Let's now turn to applications. </p>
+            <h3><a name="neural_gases_applications">Applications</a></h3>
+            <p> If you're interested in neural gases, Google will turn up an assortment 
+              of applications. One possibility, suggested in the Weblog of Semantic 
+              Web researcher <a href="http://leobard.twoday.net/stories/659872/">Leo 
+              Sauermann</a>, is analysing large semantic graphs. This would be 
+              an interesting experiment, as would others using non-numeric inputs. 
+              You'd need a measure of distance between inputs, but once that's 
+              done, the algorithm would probably carry across without trouble. 
+              The Neuromimetic intelligence team at INRIA are working on a possibly 
+              related <a href="http://www.inria.fr/rapportsactivite/RA2004/cortex/uid36.html">project</a>, 
+              using neural gases (which they find better than growing neural gases) 
+              for document classification. </p>
+            <p> I'll finish with an Indian project, which used growing neural 
+              gases to <a href="http://www.gsf.de/ILIAD/reports/ICIAP99.pdf"> 
+              classify filamentous bacteria in sewage</a>, by skeletonising images 
+              of them into line segments. As the authors say in <i>Shape Extraction 
+              of Volumetric Images of Filamentous Bacteria Using a Topology Preserving 
+              Feature Map</i>, the line segments were obtained in a very direct 
+              way, as just the links between nodes. </p>
+            <p> Filamentous bacteria live in colonies, joining together into <a href="http://www.environmentalleverage.com/Filamentous%20Bacteria%20Photomicrographs.htm">long 
+              thin filaments of cells</a>. When sewage is treated by mixing with 
+              air and letting microorganisms clean it by feeding on organic waste, 
+              amongst its inhabitants are assorted species of filamentous bacteria. 
+              In small concentrations, these are useful because they bind together 
+              aggregates of other bacteria living in the mix, meaning, for instance, 
+              that these precipitate out readily, and so are easy to remove. But 
+              large concentrations gum up the system; so it's important to know 
+              what species, and in what numbers, are living in your sewage tanks. 
+              This involves classifying the filaments' species by looking at properties 
+              such as their branching ratio, something almost impossible to do 
+              manually because they are so complex. </p>
+            <p> The authors first obtained images of the filaments using confocal 
+              laser scanning microscopy. This enables the 3D object to be scanned 
+              as a sequence of 2D sections; all done optically, so the filaments 
+              don't need to be physically sliced. After some preliminary cleaning 
+              up and separation into individual filaments, the images were converted 
+              into lists of voxels (the 3D equivalent of pixels). These voxel 
+              coordinates were then fed one at a time to a modified growing neural 
+              gas algorithm; each voxel caused a change in node positions, and 
+              possibly a new node to be formed. (The paper calls them processors 
+              rather than nodes.) The links amongst the nodes in the final state 
+              of the growing neural gas were the skeleton of the image, a collection 
+              of line segments. It was much easier to search these for properties 
+              indicating their species than it would have been the original image. 
+            </p>
+            <p> Compared with conventional skeleton-finding methods, say the authors, 
+              theirs was much less sensitive to noise, as well as being efficient 
+              in invariance to image rotation. The paper gives details of the 
+              algorithm, and shows some of the images before and after neural 
+              gassing. </p>
+            <p> Neural gases are a nice example of local behaviour generating 
+              global structure. They make me think of how a pack of hunting or 
+              foraging animals might be organised, if the inputs were food: to 
+              benefit the pack as a whole, it makes sense to have a "specialist" 
+              covering the region of most abundant food, and for its neighbours 
+              to pay attention to that area too; but this has to be balanced against 
+              the risk of neglecting the rest of the territory. Or perhaps the 
+              nodes could represent research groups, and the inputs scientific 
+              ideas. I'll leave it to the cynic to decide where research funding 
+              might enter this interpretation. </p>
+            <h3><a name="neural_gases_links">Links</a></h3>
+            <p> <a href="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/DemoGNG/GNG.html">www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/DemoGNG/GNG.html</a> 
+              - The DemoGNG (Version 1.5) applet, with links to source code, applet 
+              manual, and <i>Some Competitive Learning Methods</i>. The latter 
+              is at <a href="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/JavaPaper/">www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/JavaPaper/</a>. 
+            </p>
+            <p> <a href="http://www.booru.net/download/MasterThesisProj.pdf">www.booru.net/download/MasterThesisProj.pdf</a> 
+              - <i>Growing Neural Gas. Experiments with GNG, GNG with Utility 
+              and Supervised GNG</i>, Master's Thesis by Jim Holmstr&ouml;m, Uppsala, 
+              2002. Chapter 2 explains the growing neural gas algorithm. See also 
+              the screen shots and explanations in <i>Unsupervised ontogenetic 
+              networks</i> by Bernd Fritzke, at <a href="http://www.ki.inf.tu-dresden.de/~fritzke/papers/ncc2_4.pdf">www.ki.inf.tu-dresden.de/~fritzke/papers/ncc2_4.pdf</a>. 
+            </p>
+            <p> <a name="neural_gases_competitive_learning"></a> <a href="http://www.itee.uq.edu.au/~cogs2010/cmc/chapters/SOM/">www.itee.uq.edu.au/~cogs2010/cmc/chapters/SOM/</a> 
+              - <i>The Self Organizing Map: Unsupervised Competitive Learning</i>, 
+              by Simon Dennis, Queensland, 1997. A nice intro to competitive learning, 
+              with applets and exercises for them. </p>
+            <p> <a href="http://www.arch.usyd.edu.au/~rob/java/applets/neuro/LearningVectorQuantisationDemo.html">www.arch.usyd.edu.au/~rob/java/applets/neuro/LearningVectorQuantisationDemo.html</a> 
+              - <i>Learning Vector Quantisation</i> by Rob Saunders. An applet 
+              demonstrating the Learning Vector Quantisation algorithm, with Voronoi 
+              cells shown. The source can be downloaded. See also <i>Simple Competitive 
+              Learning</i> by Jenny Orr, Williamette, <a href="http://www.willamette.edu/~gorr/classes/cs449/Unsupervised/competitive.html">www.willamette.edu/~gorr/classes/cs449/Unsupervised/competitive.html</a>. 
+              This explains vector quantisation, with diagrams. </p>
+            <p> <a href="http://hw001.gate01.com/frog/kaeru/FrogCells.html">hw001.gate01.com/frog/kaeru/FrogCells.html</a> 
+              - "FROG CELLS" by Maeda Mameo. Saunders's page links to a "Frog 
+              Cells" page. That link is broken, but this one is probably the same. 
+              It displays dynamically updated Voronoi and Delaunay diagrams - 
+              a good way to appreciate them - and the code was used by Saunders 
+              in his applet. </p>
+            <p> <a href="http://www.ks.uiuc.edu/Publications/Papers/paper.cgi?tbcode=MART94">www.ks.uiuc.edu/Publications/Papers/paper.cgi?tbcode=MART94</a> 
+              - Online version of <i>Topology representing networks</i> by Thomas 
+              Martinetz and Klaus Schulten, from <i>Neural Networks</i>, volume 
+              7, 1994. Introduces and proves the properties of competitive Hebbian 
+              learning. </p>
+            <p> <a href="http://www.cb.uu.se/~hamed/data_mining/lab3.pdf">www.cb.uu.se/~hamed/data_mining/lab3.pdf</a> 
+              - <i>Classification and Clustering Using Artificial Neural Networks</i>, 
+              by Hamed Muhammed, Uppsala, 2001. Part of a data-mining course; 
+              introduces DemoGNG and sets exercises on the effect of changing 
+              its parameters. </p>
+            <p> <a href="http://mdp-toolkit.sourceforge.net/">mdp-toolkit.sourceforge.net/</a> 
+              - <i>Modular toolkit for Data Processing</i>. An open-source Python 
+              toolkit which views neural nets and other learning algorithms as 
+              processing elements through which data is piped. Processing elements 
+              can be linked, combining them into "flows". Includes a growing neural 
+              gas, as well as principal component analysis, independent component 
+              analysis, and slow feature analysis. Last updated at the end of 
+              2004. </p>
+            <p> <a href="http://www.gsf.de/ILIAD/reports/ICIAP99.pdf">www.gsf.de/ILIAD/reports/ICIAP99.pdf</a> 
+              - <i>Shape Extraction of Volumetric Images of Filamentous Bacteria 
+              Using a Topology Preserving Feature Map</i>, by U. Bhattacharya, 
+              V. Liebscher, A. Datta S. K. Parui, K. Rodenacker, and B. B. Chaudhuri, 
+              Indian Statistical Institute Calcutta and Neuherberg Germany, 1999. 
+              For beautiful microphotographs of filamentous bacteria, see <a href="http://www.environmentalleverage.com/Filamentous%20Bacteria%20Photomicrographs.htm">www.environmentalleverage.com/Filamentous%20Bacteria%20Photomicrographs.htm</a> 
+              at Environmental Leverage: <i>Turning Liabilities to Leverage!!!!</i> 
+            </p>
+            <p> <a href="http://www.ks.uiuc.edu/Research/Neural/neural_gas.html">www.ks.uiuc.edu/Research/Neural/neural_gas.html</a> 
+              - <i>Robot Control with the "Neural Gas" Algorithm</i>. Summary 
+              of research by Stanislav Berkovich at the Theoretical and Computational 
+              Biophysics Group, Urbana-Champaign. Uses a neural gas to divide 
+              a robot's visual input space into smaller patches which are more 
+              easily modelled by local maps. </p>
+            <p> <a href="http://leobard.twoday.net/stories/659872/">leobard.twoday.net/stories/659872/</a> 
+              - Leo Sauermann's blog. Sauermann works on the Semantic Web at <a href="http://www.dfki.de/web/">DFKI</a> 
+              and maintains gnowsis (at <a href="http://www.gnowsis.org/">www.gnowsis.org/</a>), 
+              DFKI's open-source Semantic Desktop environment. In his blog entry 
+              for 29 April 2005, he proposes DemoGNG for analysing large semantic 
+              nets. </p>
+            <p> <a href="http://www.inria.fr/rapportsactivite/RA2004/cortex/uid36.html">www.inria.fr/rapportsactivite/RA2004/cortex/uid36.html</a> 
+              - Project page of the Neuromimetic intelligence team at INRIA, who 
+              are using neural gases for document classification. </p>
+            <p> <a href="http://humanresources.web.cern.ch/humanresources/external/training/tech/special/DISP2003/DISP-2003_L21A_30Apr03.ppt">humanresources.web.cern.ch/humanresources/external/training/tech/special/DISP2003/DISP-2003_L21A_30Apr03.ppt</a> 
+              - PowerPoint slides on intelligent signal processing, by L&eacute;onard 
+              Studer, CERN. A presentation of neural nets (and fuzzy logic and 
+              evolutionary computing) for signal processing, with mention of Kohonen 
+              maps and brief mention of growing neural gases. </p>
+            <p> <a href="http://www.faqs.org/faqs/ai-faq/neural-nets/part1/section-11.html">www.faqs.org/faqs/ai-faq/neural-nets/part1/section-11.html</a> 
+              - <i>How many kinds of Kohonen networks exist?</i>, in the comp.ai.neural-nets 
+              FAQ. </p>
+            <p> <a href="http://www.neural-forecasting.com/source_code.htm">www.neural-forecasting.com/source_code.htm</a> 
+              - <i>Neural Network Software Resources for Developers</i>, from 
+              the Portal on forecasting with artificial neural networks. Links 
+              to DemoGNG and other neural net software, in C, C++, Java, Lisp, 
+              and Scheme. </p>
+            <p>&nbsp;</p>
+            <h2><a name="flanders_and_swann">There's a Hole in my Budget - qualitative 
+              reasoning, economics, and Flanders and Swann</a></h2>
+            <p> On the penultimate day of 2001, I took a train to Maastricht to 
+              see a historic event, the introduction of the Euro. The inauguration 
+              ceremony in Maastricht's lovely city square made an excellent and 
+              lavishly EU-funded New Year's party; and after it, I continued with 
+              a trip around Europe. I read articles in the Dutch papers about 
+              coin collectors with no guilders to collect; in the Belgian, about 
+              the ink rubbing off forged Euro notes; in the Spanish, allergies 
+              due to nickel in the Euro coins; in the Portuguese, the lady who 
+              got her conversion factor wrong and charged an entire month's salary 
+              into her mobile phone. But these were small difficulties: all the 
+              hastily-cobbled conversion software ran as it should, and Europe 
+              avoided total monetary collapse. </p>
+            <p> I ended up in Frankfurt at the Bundesbank's <a href="http://www.geldmuseum.de/">Money 
+              Museum</a>. Amongst its exhibits were a display about the benefits 
+              of monetary union; a Federal Reserve comic strip proclaiming the 
+              virtues of global free markets; and a Virtual Economy gaming console 
+              where you could be Finance Minister, balancing the economy against 
+              the demands of workers and businesses whilst being careful not to 
+              hurl it into a massive inflationary spiral. In fact, the whole museum 
+              is devoted to monetary stability and the avoidance of inflation. 
+              Which, given what happened during the 1920s, is not surprising. 
+              In 1920, a dollar was worth 40 Mark; by November 1923, it was 4.2&times;10<sup>12</sup> 
+              Mark. </p>
+            <p> Inflation in Britain never soared to such levels, but in 1951, 
+              it must have been sufficient to inspire the comic-song duo Flanders 
+              and Swann to write <a href="http://www.nyanko.pwp.blueyonder.co.uk/fas/and_hole.html"><i>There's 
+              a Hole in my Budget</i></a>. The lyrics go like this: 
+            <blockquote> DS: There's a hole in my budget, dear Harold, dear Harold, 
+              <br>
+              There's a hole in my budget, dear Harold, my dear.<br>
+              <br>
+              MF: Then mend it, dear Healy, dear Dennis, dear Dennis,<br>
+              Then mend it dear chancellor, dear Dennis, my dear.<br>
+              <br>
+              DS: But how shall I mend it, dear Wilson, dear Wilson,<br>
+              But how shall I mend it, dear Wilson, my dear?<br>
+              <br>
+              MS: By building up exports, dear Dennis, dear Dennis,<br>
+              By increased production, dear eyebrows, my dear.<br>
+              <br>
+              DS: But that means working harder, dear Harold, dear Harold,<br>
+              And the workers must have more incentives, my dear.<br>
+              <br>
+              MF: Then decrease taxation, dear Healy, dear Healy,<br>
+              And raise all their wages, dear Healy, my dear.<br>
+              <br>
+              DS: But where is the money to come from, dear Premier,<br>
+              But where is the money to come from, my dear?<br>
+              <br>
+              MF: Why, out of your budget, dear Healy, dear Healy,<br>
+              Why, out of your budget, dear Dennis, my dear.<br>
+              <br>
+              DS: But there's a hole in my budget, dear Harold, my dear! </blockquote>
+            The song's site says that Flanders and Swann wrote this in 1951; they 
+            rewrote the version above for the high inflation Britain suffered 
+            during the 1970s. (Harold Wilson was Prime Minister; Dennis Healey, 
+            with his notoriously bushy eyebrows, was Chancellor.) Stage directions 
+            are to perform the song as a "dialogue between the Prime Minister 
+            and Chancellor, who wander round the room in a slow inflationary spiral". 
+            <p></p>
+            <h3><a name="flanders_and_swann_in_prolog">Flanders and Swann in Prolog</a></h3>
+            <p> It's fun to translate this into Prolog. There are many possibilities, 
+              depending whether you're writing a planner, economic simulator, 
+              or whatever; how general you want it to be; and how much you want 
+              it to explain its conclusions. Here's a simple version, written 
+              thinking of the lines in the song as goals and subgoals: 
+            <pre>
+
+  can_get_money :- can_raise_exports.
+
+  can_raise_exports :- can_raise_production.
+
+  can_raise_production :- can_raise_workers_incentives.
+
+  can_raise_workers_incentives :- can_lower_taxes.
+
+  can_raise_workers_incentives :- can_raise_wages.
+
+  can_lower_taxes :- can_get_money.
+
+  can_raise_wages :- can_get_money.
+
+</pre>
+            Of course, this loops if you run it, which as with <a href="http://www.ecscoutnet.co.uk/information/campfire/Hole.html"><i>There's 
+            a Hole in my Bucket</i></a> on which it's based, was rather the authors' 
+            intention: 
+            <pre>
+
+  1 ?- consult('d:/ainews/flanders_and_swann.pl').
+
+  % d:/ainews/flanders_and_swann.pl compiled 0.00 sec, 48 bytes
+
+
+
+  Yes
+
+  2 ?- can_get_money.
+
+  ERROR: Out of local stack
+
+  Exception: (2,794,796) can_raise_workers_incentives ? 
+
+</pre>
+            <p></p>
+            <p> Here's a different translation: 
+            <pre>
+
+  direct_subgoal( get_money, raise_exports ).
+
+  direct_subgoal( raise_exports, raise_production ).
+
+  direct_subgoal( raise_production, raise_workers_incentives ).
+
+  direct_subgoal( raise_workers_incentives, lower_taxes ).
+
+  direct_subgoal( raise_workers_incentives, raise_wages ).
+
+  direct_subgoal( lower_taxes, get_money ).
+
+  direct_subgoal( raise_wages, get_money ).
+
+
+
+  subgoal( A, B ) :- direct_subgoal( A, B ).
+
+  subgoal( A, B ) :- direct_subgoal( A, Z ), subgoal( Z, B ).
+
+</pre>
+            This makes the causal network explicit, and allows us to interrogate 
+            it by asking which goals are subgoals of other goals, rather than 
+            just executing to find out whether some goal is or is not possible: 
+            <pre>
+
+  8 ?- subgoal( get_money, SG ).
+
+
+
+  SG = raise_exports ;
+
+  <i>etc...</i>
+
+
+
+  SG = raise_wages ;
+
+
+
+  SG = get_money ;
+
+</pre>
+            We often encounter this choice between explicitly representing information 
+            in some data structure or leaving it implicit in executable code. 
+            <p></p>
+            <p> As any good Prolog textbook will explain, the <code>subgoal</code> 
+              predicate is easily extended to find the path between two actions. 
+              The causal network can also be enhanced, for example by adding probabilities 
+              and Bayesian reasoning. </p>
+            <h3><a name="flanders_and_swann_twists">Infinite loops, control-structure 
+              bugs, and the twist in the tail</a></h3>
+            <p> The Budget song is funny because it describes an infinite loop. 
+              There's no solution, because you need the resource you're fixing 
+              in order to fix it. This reminded me of an <a href="#flanders_and_swann_winston">exercise</a> 
+              in the first edition of Patrick Winston's <i>Artificial Intelligence</i>. 
+              (Make sure to look for the first edition - later ones don't have 
+              this excercise.) </p>
+            <p> The exercise, written by Richard Brown, is problem 16-6 in Chapter 
+              17. He conjectures a correspondence between story twists and program 
+              bugs, and gives an example of a story involving recursion with no 
+              stopping case. This is Larry Niven's <i>Convergent Series</i>, in 
+              which a man escapes from a demon by drawing a pentacle on its stomach. 
+              The laws of demonology constrain demons to remain inside pentacles, 
+              and the demon senses the pentacle and shrinks itself to fit. The 
+              pentacle shrinks too; the demon shrinks more; and so on ad infinitum. 
+              The Budget song mirrors the same control-structure bug. </p>
+            <p> Brown identifies other bugs: the deadly embrace of parallel programming 
+              is mirrored in O. Henry's short story <a href="http://www.online-literature.com/o_henry/1014/"><i>The 
+              Gift of the Magi</i></a>; the Lisp <a href="http://xarch.tu-graz.ac.at/autocad/lisp/FAQ-link/msg00653.html">FUNARG 
+              problem</a>, by the Rosencrantz and Guildenstern business. Other 
+              kinds of bug, Brown says, can be summarised by giving the morals 
+              of fairy tales. The first moral to come to my mind was "Don't count 
+              your chickens before they're hatched". Could this be an admonition 
+              not to dimension dynamic arrays until you know how big they have 
+              to be? Brown ends by setting a problem to choose a bug, characterise 
+              it, and then write a short story with the bug as its twist. </p>
+            <h3><a name="flanders_and_swann_qualitative_reasoning">Qualitative 
+              reasoning</a></h3>
+            <p> Returning to Flanders and Swann, their song demonstrates a simple 
+              form of qualitative reasoning. Quantitative reasoning calculates 
+              with numerical values; <i>qualitative</i> reasoning abstracts these 
+              away into symbolic values. Thus, the Budget song is only interested 
+              in whether its economic variables go up or down, not by how much 
+              or how fast. Sometimes, a qualitative answer is necessary because 
+              we don't have precise numerical values; sometimes, because it's 
+              all we need in order to understand how something works - e.g. the 
+              direction each wheel turns in a gear train, or whether your Christmas 
+              tree lights will go out when a bulb blows in the circuit. </p>
+            <p> One kind of qualitative reasoning is what we do when we say "I 
+              want a beer. OK, I'm out of cash; got to go to a cash dispenser 
+              and get out &pound;20; oh blow it, I was overdrawn, and I'll be 
+              even more overdrawn now". In other words, negative plus negative 
+              is negative. We can easily code such rules in a symbolic language 
+              such as Lisp or Prolog: 
+            <pre>
+
+  sum(  neg, neg, neg ).
+
+  sum(  pos, pos, pos ).
+
+  mult( pos, pos, pos ).
+
+  mult( pos, neg, neg ).
+
+  mult( pos, zer, zer ).
+
+  mult( neg, neg, pos ).
+
+</pre>
+            On top of these, we can then write a symbolic evaluator which takes 
+            a formula, breaks it down into individual functions and their arguments, 
+            and calculates intermediate values and then a result in terms of the 
+            symbolic values of the arguments. 
+            <p></p>
+            <p> One problem with qualitative reasoning is that there isn't always 
+              enough information to determine a unique answer. If I tell you I 
+              was overdrawn but have now paid money into my account, you can't 
+              tell - unless I say how much I paid in - whether I am still overdrawn. 
+              It's easy enough to program around this, by making rules return 
+              sets of answers, saying for example that the sum of positive and 
+              negative can be any of negative, zero, or positive: 
+            <pre>
+
+  sum( neg, pos, [neg,zer,pos] ).
+
+</pre>
+            This, however, easily leads to a combinatorial explosion of possible 
+            answers. 
+            <p></p>
+            <p> In spite of combinatorial explosion, qualitative reasoning is 
+              extremely useful, and has attracted a lot of research. You can experiment 
+              with it for yourself: the third edition of Ivan Bratko's book <i>PROLOG 
+              Programming for Artificial Intelligence</i> has an excellent chapter 
+              on it. (Make sure to look for the third edition - earlier ones don't 
+              have all the material.) Prolog code for the book's examples can 
+              be downloaded from the <a href="http://cwx.prenhall.com/bookbind/pubbooks/bratko3_ema/chapter1/deluxe.html">book's 
+              Web site</a>, and includes qualitative models of simple circuits, 
+              a bath filling with water, and a block on a spring. </p>
+            <h3><a name="flanders_and_swann_from_novice_to_expert">From novice 
+              economist to expert</a></h3>
+            <p> On the <a href="http://www.nyanko.pwp.blueyonder.co.uk/fas/and_hole.html">Budget 
+              song page</a>, just after the lyrics, Flanders tells us: 
+            <blockquote> Yes, I'm rather proud of that, actually, how in 1951 
+              how we explained this involved economic truth in simple revue terms. 
+              Alas, all too true today. </blockquote>
+            A paper by Chris Riesbeck on <a href="#riesbeck"><i>Knowledge reorganisation 
+            and reasoning style</i></a> would suggest that, in explaining this 
+            involved economic truth, Flanders and Swann were thinking like expert 
+            economists rather than novices. 
+            <p></p>
+            <p> Why do I say that? Riesbeck was interested in how novices reorganise 
+              their memory structures as they learn. He compared how novice and 
+              expert economists solve problems, and developed models of each type 
+              of reasoning and a theory for how novices reorganise their memory 
+              as they gain expertise. </p>
+            <p> Compare two of his examples: 
+            <blockquote> Q: If the federal budget deficit went down, what would 
+              happen to the rate of inflation? <br>
+              A: I think inflation would go down, because people would have less 
+              money taken out of their weekly income, they would hopefully do 
+              some more saving, have more money to live on, not be pushing for 
+              higher wages, and that wouldn't be pushing inflation up. </blockquote>
+            <a name="flanders_and_swann_r2"></a> 
+            <blockquote> With the resulting structure of taxes and expenditures, 
+              the President is not going to be balancing the Federal budget in 
+              1984 or any other year. With high growth choked off by high interest 
+              rates, budget deficits are going to be bigger, not smaller. The 
+              result: more demands for credit and higher interest rates. 
+              <div align=RIGHT>Lester Thurow, <i>Newsweek</i>, 21 September 1981, 
+                p. 38</div>
+            </blockquote>
+            <p></p>
+            <p> The first transcript is from a novice who, Riesbeck claims, viewed 
+              the economy in terms of the goals of economic actors - workers, 
+              businesses, Government - and the subgoals needed to achieve these 
+              goals. For example, a business's goal is to raise income. One way 
+              to do so - a subgoal - is to raise sales. Other goals are to raise 
+              prices and to lower costs. One of the Government's goals is to lower 
+              the budget deficit (even though, in the real world, its actions 
+              might make one think otherwise). </p>
+            <p> In total, Riesbeck interprets the transcript in terms of these 
+              three actors, each having one top-level goal and two or three subgoals: 
+            <pre>
+
+  GOVERNMENT GOAL: lower the budget deficit
+
+                   SUBGOAL: raise taxes
+
+                   SUBGOAL: lower consumer spending
+
+
+
+  WORKERS' GOAL:   raise money
+
+                   SUBGOAL: lower taxes
+
+                   SUBGOAL: raise wages
+
+                   SUBGOAL: lower consumer spending 
+
+
+
+  BUSINESS GOAL:   raise money
+
+                   SUBGOAL: raise sales
+
+                   SUBGOAL: lower costs
+
+                   SUBGOAL: raise prices
+
+</pre>
+            The full reasoning goes like this: First, the Government, if it can 
+            lower the budget deficit, can afford to lower taxes. Second, workers, 
+            once taxes are lower, can reduce their wage demands. Third, businesses, 
+            if wages aren't going up, have no need to increase prices. Note that 
+            the reasoning is working both up and down the goal tree. Reasoning 
+            from goal to subgoal in the "workers" tree would be forward reasoning 
+            from end to means: IF you need to raise money THEN one way to do so 
+            is to get taxes lowered. Our novice is going in the opposite direction: 
+            BECAUSE taxes will be lower THEN the increase in wages can also be 
+            less (in fact, zero). 
+            <p></p>
+            <p> Now look at Riesbeck's <a href="#flanders_and_swann_r2">second 
+              example</a>, from a <i>Newsweek</i> finance columnist. This is more 
+              abstract, focussing directly on the economic variables and how they 
+              influence one another. Riesbeck claims such reasoning can be modelled 
+              as searching a graph whose nodes are economic variables, connected 
+              by links indicating whether one variable varies directly or inversely 
+              with the other. To answer a question such as "If the federal budget 
+              deficit went down, what would happen to the rate of inflation?" 
+              would involve searching the graph for a chain of influence links 
+              from budget deficit to inflation. This is more efficient than novice 
+              reasoning, because the data structure being searched is simpler, 
+              being a single graph instead of an intertangled forest of different 
+              actors' goal trees. </p>
+            <h3><a name="flanders_and_swann_cognitive_models_and_teaching">Cognitive 
+              models and teaching</a></h3>
+            <p> Models like Riesbeck's are useful in education, by helping teachers 
+              understand what goes on in their pupils' heads. One of the earliest 
+              and most famous is Young and O'Shea's <a href="#flanders_and_swann_young_oshea">production 
+              system model of children's subtraction</a>. They say that in standard 
+              educational theory, children's faulty arithmetic is due to misremembering 
+              "number facts", aggravated by problems such as bad setting-out, 
+              fatigue, carelessness, and poor concentration. So standard educational 
+              theory - this was written in 1981 - had concentrated on models for 
+              recall and use of correct number facts. </p>
+            <p> However, the children's errors may actually be due to failures 
+              in execution. We should regard the child as faithfully following 
+              wrong algorithms, not wrongly executing the correct one. Of course, 
+              this is a hypothesis; but it's worth taking seriously, because if 
+              true, it gives us more control over teaching. </p>
+            <p> Young and O'Shea went on to build a production system model of 
+              how children might acquire wrong algorithms rather than correct 
+              ones. They started with production system rules which modelled correct 
+              subtraction, and then showed that by slight changes to some of the 
+              rules, their model could account for more than 2/3 of the errors 
+              observed in their subjects' subtractions. Some of the rules were 
+              faulty because of wrong actions; others, because of wrong conditions. 
+              Consider this subtraction: 
+            <pre>
+
+  50
+
+  46
+
+  --
+
+  16
+
+  --
+
+</pre>
+            Its error could have been caused by a rule that was too general: one 
+            whose conditions don't discriminate between having the zero under 
+            a digit, or above. 
+            <p></p>
+            <p> Young and O'Shea concluded, amongst other things, that teachers 
+              tend to regard a a new skill as something that must be "consolidated" 
+              by repeated practice, as in language books that introduce past tenses 
+              and then set translations with all past tenses and no present tenses. 
+              But the rule model shows we must also train the student to discriminate 
+              when to apply rules, i.e. to get the conditions right. Such training 
+              may actually be hindered by consolidation. In the language example, 
+              old present tense rules may be lost or changed in favour of past 
+              tense ones. </p>
+            <p> Researchers have developed such cognitive models in many areas 
+              of education. I mentioned Riesbeck's model of economic learning; 
+              a more recent one, focussing on how experts switch easily between 
+              textual information and X-Y graphs, and why novices have difficulty 
+              doing the same, is <a href="http://www-2.cs.cmu.edu/afs/andrew.cmu.edu/usr13/al28/camera/TLS_94_1/TLS_94_1.html"><i>How 
+              Does an Expert Use a Graph? A Model of Visual and Verbal Inferencing 
+              in Economics</i></a> by Herbert Simon and colleagues at Carnegie 
+              Mellon. </p>
+            <p> Such work might help teachers explain to students how macroeconomics 
+              (the aggregate behaviour of economies in terms of variables such 
+              as inflation, Gross National Product, and unemployment) is related 
+              to microeconomics (the behaviour of individual actors). Could it 
+              also help us build artificially-intelligent economists? You wouldn't 
+              want to experiment on an actual economy, and the Money Museum gaming 
+              consoles I mentioned at the start of this article are too heavy 
+              to move; but if anybody wants to try out a computerised Chancellor 
+              of the Exchequer or Finance Minister program, I can point them at 
+              a testbed. It's a Web-based <a href="http://www.bized.ac.uk/virtual/economy/">virtual 
+              UK economy</a> which I and colleagues built a few years ago for 
+              teaching introductory economics, and where you play the role of 
+              Chancellor, set taxes and other variables, and then watch how your 
+              changes affect the economy over the next ten years. </p>
+            <h3><a name="flanders_and_swann_plagiarize">How to improve your research 
+              output</a></h3>
+            <p> If, when reading this article, you hadn't heard of Flanders and 
+              Swann, it may help to think of them as the English equivalent to 
+              <a href="http://en.wikipedia.org/wiki/Tom_Lehrer">Tom Lehrer</a>. 
+              I'll end this article with some advice from his song <i>Lobachevsky</i>. 
+              Written for mathematicians, it applies just as well to AI: 
+            <blockquote> Plagiarize,<br>
+              Let no one else's work evade your eyes,<br>
+              Remember why the good Lord made your eyes,<br>
+              So don't shade your eyes,<br>
+              But plagiarize, plagiarize, plagiarize...<br>
+              Only be sure always to call it please, "research". </blockquote>
+            <p></p>
+            <h3><a name="flanders_and_swann_links">Links and other references</a></h3>
+            <p> <a href="http://www.nyanko.pwp.blueyonder.co.uk/fas/and_hole.html">www.nyanko.pwp.blueyonder.co.uk/fas/and_hole.html</a> 
+              - <i>There's a Hole in my Budget</i>, from Flanders and Swann Online. 
+            </p>
+            <p> <a href="http://www.ecscoutnet.co.uk/information/campfire/Hole.html">www.ecscoutnet.co.uk/information/campfire/Hole.html</a> 
+              - The song is based on the traditional <i>There's a Hole in my Bucket</i>. 
+              Here's one of many listings, from the Erith and Crayford Scouts 
+              songs site. (For people from Maastricht, there's a version in local 
+              dialect at <a href="http://www.limburgzingt.nl/maast-l.htm">www.limburgzingt.nl/maast-l.htm</a>; 
+              search for "ummer".) </p>
+            <p> <a name="flanders_and_swann_winston"></a> Problem 16-6 (by Richard 
+              Brown) in Chapter 17, <i>Problems to think about</i>, from <i>Artificial 
+              Intelligence</i> (1st edition) by Patrick Winston, 1977. </p>
+            <p> <a href="http://www.online-literature.com/o_henry/1014/">www.online-literature.com/o_henry/1014/</a> 
+              - <i>The Gift of the Magi</i> by O. Henry, at The Literature Network. 
+            </p>
+            <p> <a href="http://xarch.tu-graz.ac.at/autocad/lisp/FAQ-link/msg00653.html">xarch.tu-graz.ac.at/autocad/lisp/FAQ-link/msg00653.html</a> 
+              - Posting explaining the Funarg problem on comp.lang.lisp by Barry 
+              Margolin, 27 April 2000. </p>
+            <p> Chapter on <i>Qualitative Reasoning</i>, from the book <i>PROLOG 
+              Programming for Artificial Intelligence</i> (3rd edition) by Ivan 
+              Bratko, 2001. </p>
+            <p> <a href="http://cwx.prenhall.com/bookbind/pubbooks/bratko3_ema/chapter1/deluxe.html">cwx.prenhall.com/bookbind/pubbooks/bratko3_ema/chapter1/deluxe.html</a> 
+              - Student resources page for <i>PROLOG Programming for Artificial 
+              Intelligence</i>, with source code for each chapter. The menu at 
+              the top selects the chapter: qualitative reasoning is near the end. 
+            </p>
+            <p> <a href="http://www.upc.es/web/QR2002/Papers/QR2002%20-%20Bandelj.pdf">www.upc.es/web/QR2002/Papers/QR2002%20-%20Bandelj.pdf</a> 
+              - <i>Qualitative Simulation with CLP</i>, by Aleksander Bandelj, 
+              Ivan Bratko and Dorian &#138;uc Faculty of Computer and Information 
+              Science University of Ljubljana, Slovenia. </p>
+            <p> <a href="http://www.qrg.northwestern.edu/papers/files/qpolitics_v4_KDF.pdf">www.qrg.northwestern.edu/papers/files/qpolitics_v4_KDF.pdf</a> 
+              - <i>Towards a qualitative model of everyday political reasoning</i>, 
+              by Kenneth Forbus and Sven Kuehne, Northwestern University. </p>
+            <p><a name="riesbeck"></a> <i>Knowledge reorganization and reasoning 
+              style</i> by Chris Riesbeck, in <i>Developments in expert systems</i>, 
+              edited by Mike Coombs, Academic Press, 1984. </p>
+            <p> <a name="flanders_and_swann_young_oshea"></a> <i>Errors in children's 
+              subtraction</i>, by Richard Young and Tim O'Shea, from <i>Cognitive 
+              Science</i>, volume 5, issue 2, 1981. </p>
+            <p> <a href="http://www.cogs.susx.ac.uk/users/bend/cogmod/compex2.html">www.cogs.susx.ac.uk/users/bend/cogmod/compex2.html</a> 
+              - <i>A Production System Model of Subtraction</i>, by Benedict du 
+              Boulay and Steve Torrance, from the Cognitive Modelling course at 
+              Sussex University, 2002. Shows output from a production system written 
+              in Pop-11 and based on the Young and O'Shea rules. </p>
+            <p> <a href="http://www-2.cs.cmu.edu/afs/andrew.cmu.edu/usr13/al28/camera/TLS_94_1/TLS_94_1.html">www-2.cs.cmu.edu/afs/andrew.cmu.edu/usr13/al28/camera/TLS_94_1/TLS_94_1.html</a> 
+              - <i>How Does an Expert Use a Graph? A Model of Visual and Verbal 
+              Inferencing in Economics</i> by Hermina Tabachneck, Anthony Leonardo, 
+              and Herbert Simon, Carnegie Mellon. See also their <i>CaMeRa: A 
+              Computational Model of Multiple Representations</i>, at <a href="http://www-2.cs.cmu.edu/afs/andrew.cmu.edu/usr0/psycam/public/camera/TLS_95_2/TLS_95_2.html">www-2.cs.cmu.edu/afs/andrew.cmu.edu/usr0/psycam/public/camera/TLS_95_2/TLS_95_2.html</a>. 
+            </p>
+            <p> <a href="http://www.cmpe.boun.edu.tr/courses/cmpe560/spring2004/dalk.ppt#8">www.cmpe.boun.edu.tr/courses/cmpe560/spring2004/dalk.ppt#8</a> 
+              - <i>Qualitative Modeling in Education</i> by Forbus and Bredeweg. 
+              See also Bredeweg's thesis at <a href="http://staff.science.uva.nl/~bredeweg/pdf/thesis/03Groen.pdf">staff.science.uva.nl/~bredeweg/pdf/thesis/03Groen.pdf</a>. 
+            </p>
+            <p> <a href="http://www.bized.ac.uk/virtual/economy/">www.bized.ac.uk/virtual/economy/</a> 
+              - <i>Virtual Economy</i>, by Andy Beharrell, Keith Church, Jocelyn 
+              Paine, and Graham Stark. Our be-your-own-Chancellor educational 
+              simulation of the British economy. See also Graham Stark's <i>Virtual 
+              Chancellor</i> at <a href="http://www.virtual-worlds.biz/vwc/">www.virtual-worlds.biz/vwc/</a>. 
+            </p>
+            <p> <a href="http://www.inc.com/magazine/19950915/2624.html">www.inc.com/magazine/19950915/2624.html</a> 
+              - <i>When Money Flowed Like Water</i>, by Doron Swade, from <i>Inc. 
+              Magazine</i>, September 1995. About the Phillips machine, a water-based 
+              analogue computer economic model, built from old Lancaster bomber 
+              parts. </p>
+            <p> <a href="http://www.j-paine.org/NarrativeTechnology.html">www.j-paine.org/NarrativeTechnology.html</a> 
+              - <i>The Lives Behind the Numbers On the Screen: Illustrating the 
+              Social Consequences of Economic Change By Telling Stories On the 
+              Web</i>. Some experiments in generating, from the output of <i>Virtual 
+              Economy</i>, stories about the effects of economic changes on individual 
+              people. </p>
+            <p> <a href="http://nostoc.stanford.edu/jeff/personal/diary/diary.html">nostoc.stanford.edu/jeff/personal/diary/diary.html</a> 
+              - <i>Diary of an Insane Cell Mechanic - A psychologist's descent 
+              into molecular biology</i>, by Jeff Shrager. Shrager worked on a 
+              model of multiple-representation reasoning in gas laser physics, 
+              which partly inspired the model described in Simon et. al.'s <i>How 
+              Does an Expert Use a Graph?</i>. He also wrote this <i>Diary</i>, 
+              and - amongst many other things - is principal investigator on the 
+              Web-based programmable biological knowledge-base <a href="http://nostoc.stanford.edu/Docs/index.html">BioLingua</a>, 
+              built on top of BioLisp. </p>
+            <p> <a href="http://nostoc.stanford.edu/jeff/precog/">nostoc.stanford.edu/jeff/precog/</a> 
+              - <i>Brain parts sort of involved in PreCognition: An fMRI study</i>. 
+              Shrager's parody of the electronic journal <a href="http://cogsci-online.ucsd.edu/"><i>Cognitive 
+              Science Online</i></a>. </p>
+            <p> <a href="http://en.wikipedia.org/wiki/Tom_Lehrer">en.wikipedia.org/wiki/Tom_Lehrer</a> 
+              - Wikipedia entry for Tom Lehrer. </p>
+            <p>&nbsp;</p>
+            <h2><a name="lisp_as_bodily_detritus">"Lisp has all the visual appeal 
+              of oatmeal with fingernail clippings mixed in"</a></h2>
+            <p> I found that quote, by Perl creator Larry Wall, in an <a href="http://www.theperlreview.com/Interviews/mjd-hop-20050407.html">interview 
+              with Mark Jason Dominus</a> about his book <i>Higher Order Perl</i>, 
+              which tells how to program with higher-order functions in Perl. 
+              It looks like an insult to Lisp, but it's really a compliment: Dominus 
+              has taken the notion of higer-order functional programming, popular 
+              in Lisp, for use in real-world Perl tasks such as typesetting, diagram 
+              generation, and HTML hacking. Higer-order functional programming 
+              passes functions as arguments to other functions, making it easy 
+              to iterate over structures without coding your own loops. In Lisp, 
+              calling 
+            <pre>
+
+  (mapcar #'+ '(1 2 3 4) '(5 6 7 8)) 
+
+</pre>
+            will run through both lists of numbers adding corresponding pairs; 
+            should you want to multiply instead, you pass the <code>*</code> function 
+            to <code>mapcar</code> instead of the <code>+</code> function: 
+            <pre>
+
+  (mapcar #'* '(1 2 3 4) '(5 6 7 8)) 
+
+</pre>
+            Coming from a different culture, many Perl programmers don't realise 
+            they can do the same. But you can, and it's a great way to write general 
+            and reusable code. 
+            <p></p>
+            <p> Lisp is regarded by <a href="http://en.wikipedia.org/wiki/Paul_Graham">Paul 
+              Graham</a>, author of <i>On Lisp</i> and <i>ANSI Common Lisp</i>, 
+              as the basis for his new language <a href="http://www.paulgraham.com/arc.html">Arc</a>, 
+              as he explains in <a href="http://www.paulgraham.com/popular.html"><i>Being 
+              Popular</i></a> and <a href="http://www.paulgraham.com/hundred.html"><i>The 
+              Hundred-Year Language</i></a>. Arc will be succinct, because <a href="http://www.paulgraham.com/power.html">"succinctness 
+              is power"</a>; but will not be object oriented, because <a href="http://www.paulgraham.com/noop.html">"there 
+              are five reasons people like object-oriented programming, and three 
+              and a half of them are bad"</a>. Other essays on Graham's site include 
+              <a href="http://www.paulgraham.com/venturecapital.html"><i>A Unified 
+              Theory of VC Suckage</i></a>, <a href="http://www.paulgraham.com/nerds.html"><i>Why 
+              Nerds are Unpopular</i></a>, and an <a href="http://www.paulgraham.com/essay.html">essay 
+              on essay-writing</a>. Did you know the word "meander" comes from 
+              a river in Turkey? I do now. </p>
+            <p> But perhaps I should forget Lisp. In his collection <a href="http://www.suslik.org/Humour/Computer/Langs/real_prog2.html"><i>More 
+              About Real Programmers</i></a>, Adrian Hilton tells us "Real programmers 
+              don't use LISP. Only effeminate programmers use more parentheses 
+              than actual code". The collection is one of many on the theme "Real 
+              programmers don't eat quiche", possibly inspired by <a href="http://www.pbm.com/~lindahl/real.programmers.html"><i>Real 
+              Programmers Don't Use Pascal</i></a>. The article is a companion 
+              to the heart-warming <a href="http://www.pbm.com/~lindahl/mel.html">story 
+              of Mel</a>, from the days when real computers were made from vacuum 
+              tubes and drums, and to optimise your code, you timed how fast the 
+              drum rotated. </p>
+            <p> Hilton's collection ends with the <i>real</i> history of Unix: 
+            <blockquote> In 1969, AT & T had just terminated their work with the 
+              GE/Honeywell/ AT & T Multics project. Brian and I had just started 
+              working with an early release of Pascal from Professor Nichlaus 
+              Wirth's ETH labs in Switzerland and we were impressed with its elegant 
+              simplicity and power. Dennis had just finished reading <a href="http://www.dooyoo.co.uk/printed-books/bored-of-the-rings-the-harvard-lampoon/#sd">'Bored 
+              of the Rings'</a>, a hilarious National Lampoon parody of the great 
+              Tolkien 'Lord of the Rings' trilogy. As a lark, we decided to do 
+              parodies of the Multics environment and Pascal. Dennis and I were 
+              responsible for the operating environment. We looked at Multics 
+              and designed the new system to be as complex and cryptic as possible 
+              to maximize casual users' frustration levels, calling it Unix as 
+              a parody of Multics, as well as other more risque allusions. Then 
+              Dennis and Brian worked on a truly warped version of Pascal, called 
+              'A'. When we found others were actually trying to create real programs 
+              with A, we quickly added additional cryptic features and evolved 
+              into B, BCPL and finally C. We stopped when we got a clean compile 
+              on the following syntax: 
+              <pre>
+
+   for(;P("\n"),R-;P("|"))for(e=C;e-;
+
+   P("_"+(*u++/8)%2))P("| "+(*u/4)%2);
+
+</pre>
+            </blockquote>
+            <p></p>
+            <h3><a name="lisp_as_bodily_detritus_links">Links</a></h3>
+            <p> <a href="http://www.theperlreview.com/Interviews/mjd-hop-20050407.html">www.theperlreview.com/Interviews/mjd-hop-20050407.html</a> 
+              - Interview with Mark Jason Dominus, from the Perl Review. </p>
+            <p> <a href="http://www.xoltar.org/2005/mar/17/higher-order-perl.html">www.xoltar.org/2005/mar/17/higher-order-perl.html</a> 
+              - Review of <i>Higher Order Perl</i> by Damian Conway, explaining 
+              how it will transform your programming. </p>
+            <p> <a href="http://www.paulgraham.com">www.paulgraham.com</a> - Paul 
+              Graham. His essays are linked from the left-hand navigation bar. 
+              See also <a href="http://en.wikipedia.org/wiki/Paul_Graham">en.wikipedia.org/wiki/Paul_Graham</a>. 
+            </p>
+            <p> <a href="http://www.pbm.com/~lindahl/real.programmers.html">www.pbm.com/~lindahl/real.programmers.html</a> 
+              - <i>Real Programmers Don't Use Pascal</i>. See <a href="http://www.pbm.com/~lindahl/mel.html">www.pbm.com/~lindahl/mel.html</a> 
+              for <i>The story of Mel</i>. </p>
+            <p> <a href="http://www.suslik.org/Humour/Computer/Langs/real_prog2.html">www.suslik.org/Humour/Computer/Langs/real_prog2.html</a> 
+              - <i>More About Real Programmers</i>, jokes collected by Adrian 
+              Hilton, ending with <i>UNIX and C a Hoax</i>. </p>
+            <p> <a href="http://www.topsail.org/tao.html">www.topsail.org/tao.html</a> 
+              - <i>The Tao Of Programming</i>. </p>
+            <p> <a href="http://www.dooyoo.co.uk/printed-books/bored-of-the-rings-the-harvard-lampoon/#sd">www.dooyoo.co.uk/printed-books/bored-of-the-rings-the-harvard-lampoon/#sd</a> 
+              - Review of <i>Bored of the Rings</i>. </p>
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome. Feel free to contact either myself (below) or Jocelyn &lt;popx@j-paine.org&gt; 
+              with comments, thoughts and suggestions.</P>
+            <P>Until next month, </P>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p>Copyright &copy;2005 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved </p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

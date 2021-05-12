@@ -1,0 +1,57 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Clauses</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Clauses<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+
+
+<p>Clauses are logic program building blocks. They can be <b>facts</b> or <b>rules</b>.</p>
+<h2>Fact</h2>
+<p><b>Syntactically</b> - A structure or atom, followed by a period (.)<br>
+  <b>Semantically</b> - a fact is always true. 
+</p>
+<pre>flight('Delta 432', 'Asheville', 'Miami').
+
+customer( 27, name('Smith', 'Fred'), vehicle(432) ).
+
+vehicle( 432, [make = 'Suburu', model = 'Forester', color = blue] ).
+
+something_always_true.</pre>
+<h2>Rule</h2>
+<p><em>Syntactically</em> - A fact, called the <em>head</em>, followed by :-, 
+  called the <em>neck</em>, followed by comma separated conditions, called the 
+  <em>body</em>, followed by a period (.)<br>
+  <em>Semantically</em> - The head of a rule is true only if the conditions of 
+  the body are true.</p>
+<pre>customer(X, good) :- account_balance(X, paid).
+
+bird(hawk) :- has(talons), flies(fast), vision(excellent).
+
+car_color(CustID, Color) :-
+  customer(CustID, _, vehicle(VehicleID)),
+  vehicle(VehicleID, PropertyList),
+  member(color = Color, PropertyList).</pre>
+
+<p>A fact is really a rule with no body; or more precisely a body which is always true.</p>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_020_elements_020.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <a href="ch_020_elements_040.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

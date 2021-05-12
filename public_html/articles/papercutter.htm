@@ -1,0 +1,241 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.6 [en] (WinNT; I) [Netscape]">
+   <title>Cutting the Guillotine Down to Size</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h1>
+<font color="#0000FF">Cutting the Guillotine Down to Size</font></h1>
+Michael L. Mc Hale
+<br>Roshan P. Shah
+<br>PaperCon in Atlanta Georgia
+<p><i>[This article was originally published in PC AI magazine, Volume
+13, Number 1 Jan/Feb 99. The magazine can be reached at PC AI, 3310 West
+Bell Rd., Suite 119, Phoenix AZ, USA 85023 Tel: (602) 971-1869, FAX: (602)
+971-2321, E-Mail: info@pcai.com, Web: http://www.pcai.com]</i>
+<h2>
+<font color="#000080">Abstract</font></h2>
+A program which computes layouts for a specialty paper cutting firm is
+described. The problem, the so-called 2-dimensional guillotine problem,
+is a constraint on a complete partition of 2-dimensional space. Like the
+complete partition, the guillotine problem remains NP hard. The constraints
+for our particular domain, however, allowed us to return a solution to
+the problem within acceptable time limits. To help ensure usability we
+developed the interface in Visual Basic while solving the partition in
+Amzi! Prolog. The problem, program design, implementation and related issues
+are covered in the paper.
+<h2>
+<font color="#000080">Introduction</font></h2>
+The partitioning of 2-dimensional space is a ubiquitous problem in industry.
+It appears in many forms from pallet loading to floor tile tessellation.
+A subset of the problem, the 2-dimensional guillotine problem, is almost
+as pervasive. Various aspects of the problem are found in industries that
+produce two dimensional sheets of glass, textiles and paper for example.
+We have produced a Prolog program which solves the guillotine problem for
+a specialty paper producer. The program has been put into use and has cut
+the time required for sheet layout while reducing waste.
+<h2>
+<font color="#000080">The Problem</font></h2>
+The general 2-dimensional partition problem, Figure 1, arises when a flat
+surface is to be subdivided into n pieces, as when subdividing land. If
+the pieces are determined a priori then some waste is allowable. This changes
+the problem to that of covering the surface to the greatest extent possible.
+In other words, the problem is to find the combination of pieces and the
+layout pattern that covers the surface and minimizes waste.
+<br>&nbsp;
+<blockquote><img SRC="paper1.gif" height=286 width=310> 
+  <p><i>Figure 1: General Partition</i></blockquote>
+
+<p><br>If the surface is a sheet (of material) and the pieces are to be
+cut from it, then the problem becomes the guillotine problem. The problem
+takes its name from the necessity of cutting the sheet completely across
+(like a guillotine) every time it is cut. Even if we only consider rectangular
+pieces, as required in our domain, the problem has an exponential search
+space. Each rectangle can be placed into any space large enough to hold
+it, and, as can be seen in Figure 2, each rectangle not only has a size
+but also an orientation.
+<br>&nbsp;
+<blockquote><img SRC="paper2.gif" height=187 width=194> 
+  <p><i>Figure 2: Partition with one size Piece</i></blockquote>
+
+<p><br>The necessity of cutting the sheet all the way across limits the
+number of combinations that have to be considered. That is, any configuration
+with pieces bisected by the cut are illegal. Figure 1 would be a legal
+configuration while Figure 2 would be illegal. This limiting of patterns
+in conjunction with a small sheet size and a small number of pieces makes
+the guillotine problem solvable for our domain.
+<h2>
+<font color="#000080">System Design</font></h2>
+The system we developed consists of a Visual Basic interface and an Amzi!
+Prolog logic engine that configures the layout. The interface is used for
+both user input and graphic output. When users start the program they enter
+the size of the main sheet. Then they have to enter the size of each of
+the pieces that are to be cut from it (Figure 3). They can also specify
+the minimum quantity for any of the sizes (ex., requiring at least 3 5x7
+sheets).
+<p><img SRC="paper3.gif" height=607 width=432> 
+<p><i>Figure 3: Piece Input</i>
+<p>The output of the system is a graphical display of the layout (Figure
+4). The user then has the choice of letting the system run again to find
+a better answer or to use the current answer. After an answer is selected
+it can be printed to the default printer. We used line patterns for the
+pieces to differentiate them when printed on a black and white printer.
+<p><img SRC="paper4.gif" height=638 width=889> 
+<p><i>Figure 4: Graphical Display of Layout</i>
+<h2>
+<font color="#000080">Logic Engine</font></h2>
+The logic engine uses a generate and test approach. While this approach
+does not guarantee optimal answers it does return very good layouts in
+a reasonable amount of time. The time issue was our main concern. A complete
+search is often possible but with the exponential nature of the domain
+we could not ensure any answer would be returned in a timely manner. Generate
+and test gives us complete control of the time. The answers may not be
+optimal but they can be incrementally improved by the system at the user's
+request.
+<p>The next section contains a more in- depth discussion of our use of
+generate and test.
+<h2>
+<font color="#000080">Generate and Test</font></h2>
+<font color="#000080">Placement Procedure</font>The program maintains three
+lists: one of pieces to be placed (the trial list); one of the pieces already
+placed (the placed list); and the other of the remaining empty spaces (the
+space list). When the placement process begins, the trial list holds the
+pieces that were created by the generate and test engine, the placed list
+is empty and the space list holds just one space; the main sheet. The procedure
+takes a piece from the trial list and finds the first space in the space
+list large enough to hold it. The piece may be placed either horizontally
+or vertically (ex., 5x7 or 7x5). An empty space
+<br>&nbsp;
+<blockquote><img SRC="paper5.gif" height=261 width=298> 
+  <p><i>Figure 5: Placement of a Piece</i></blockquote>
+
+<p><br>is divided into smaller spaces whenever a piece is placed within
+it: the part containing the piece, the part to the right (E) of the sheet,
+the part below the piece (S), and the remainder of the space (SE). See
+Figure 5. The program then adds the piece to the piece list and adds E
+and the concatenation of S and SE to the spaces list (the concatenation
+is allowed virtue of the guillotine).
+<p>This process continues until either all the pieces have been placed
+or none of the spaces in the space list are large enough to contain a piece.
+In the latter case, the procedure backtracks and tries a different configuration
+for the trial list. If none of the possible configurations are successful
+then it fails which causes a new trial list to be generated and the procedure
+restarts.
+<h2>
+<font color="#000080">Implementation</font></h2>
+Our reasons for choosing Prolog were its ability to rapidly prototype and
+to change control structures as needed. This was a fortuitous choice as
+we started by using a full search knowing that we could use the built-in
+top- down left-to-right control structure without loss of generality. That
+is, we could place the pieces starting with the upper left hand corner
+of the sheet and proceed first down then across the sheet and still get
+every configuration worth considering. When we ran into the time constraint
+we had to reprogram to generate and test. This was really minimal work.
+<p>The logic engine returns a list of four-tuples representing the placement
+of the pieces (piece, orientation, upper left corner, lower right corner).
+While this is a correct answer to the problem it is not very useful. Were
+this (the logic engine) a stand alone program we would want to make two
+further improvements: to represent the answer in a useful manner (i.e.,
+graphically) and to get user acceptance of the program without questioning
+our choice of language.
+<p>We could have done the graphics directly in Prolog though the best graphics
+package in Prolog lags somewhat behind other windows based languages such
+as Visual Basic, Visual C++ or Delphi. Visual Basic, for instance, allows
+a number of different scales (inches, centimeters, twips, ...), scaling
+of windows, the ability to reset coordinate systems and other useful graphics
+functions. Using Visual Basic also furthers our other goal of having the
+user accept the program because Visual Basic is a standard development
+system for Windows and therefore provides a comfortable, familiar environment
+for users. Adapting Visual Basic for the interface was rather straightforward
+as Amzi! Prolog has the "hooks" to allow it to be used as the inference
+engine for a Visual Basic front-end. In fact, Amzi! advertises what it
+calls a "Prolog sandwich"; a Prolog program embedded between C and Visual
+Basic. We believe that they are on the right track but just have not carried
+the idea through to completion.
+<h2>
+<font color="#000080">Multi-paradigmatic Programming</font></h2>
+The guillotine program is one of a set of programs we are developing as
+part of an in-house research program that is investigating multi-paradigmatic
+programming. Multi- paradigmatic programming uses multiple programming
+paradigms together to solve a single problem. We have used combinations
+of three paradigms as needed (logic, procedural and object oriented) using
+Windows (Windows 95 and Windows NT). Windows facilitates this type of programming
+by providing Object Linking and Embedding (OLE), Dynamic Data Exchange
+(DDE) and Dynamic Link Libraries (DLL). The last allows modules to be written
+as "black boxes". There is no need to determine what language the DLL was
+written in, only how to call and use it. DLL are a logical and powerful
+extension to the standard software library. The Windows system software
+dynamically links the appropriate DLL to a program at run time. Thus there
+is no need to recompile and link when building a program. We feel this
+raises software libraries and modular programming to a new level. This
+style of programming gives programmers a great deal of power and freedom
+but also raises some new questions.
+<p>The first question we usually encounter when explaining this approach
+is "why bother"? Obviously we could have written the whole guillotine program
+in Prolog. Why should we bother with Visual Basic or any other language?
+If there is only one programmer writing programs for their own use then
+there is no need to bother. However, if there is a team of programmers
+writing commercial programs then there are a number of reasons: the freedom
+for programmers to specialize in a language, the ability to easily create
+familiar looking applications, and a great speed-up in programming. The
+last point may need some defending, but picking the right tool for the
+job speeds up any job. Contrary to what their respective aficionados say,
+there is no perfect language. The reason people are using C (and C++) more
+and more is that it is capable of handling anything that needs to be done
+in a program. But there is a trade off in doing that. How many more hours
+would it take to produce a medium sized context free grammar in C then
+it would in Prolog? It could be written in C but why use C if Prolog were
+available? Likewise, if a program requires matrix manipulation why would
+Prolog be chosen? Each language has its strengths and weaknesses, by using
+the multi-paradigmatic approach the strengths are exploited while the weaknesses
+are avoided.
+<p>There is some overhead with the approach as each language has to have
+the capability and support for OLE, DDE and DLL. However more and more
+languages are being developed that do have that support. We have Prolog,
+Visual Basic, Lisp, Visual C++, Delphi and Smalltalk. Others, like APL
+and Scheme, are being developed. This allows a development team to select
+precisely the best language for a subset of the problem at hand. And the
+approach is not limited to just programming languages. The impetus for
+OLE was not languages but applications. So many of the applications have
+OLE, DDE and DLL support. This allows direct usage of databases, spreadsheets,
+advanced calculators, statistic packages, graphics packages and even word
+processors. Multi-paradigmatic programming then opens whole new vistas
+for practical applications in Prolog.
+<h2>
+<font color="#000080">Summary</font></h2>
+A program has been presented that solves the 2- dimensional guillotine
+problem for a specialty paper company. The program exploits Prolog's strengths:
+abstract data types; top-down, left-to-right control structure; recursion
+and backtracking. The program also uses Visual Basic for graphical output
+and as an user interface. This mixing of languages positively impacts our
+ability to write useful software and our ability to market embedded AI
+systems. It is a lesson learned that is well worth heeding.
+<h2>
+<font color="#000080">References</font></h2>
+Abel D.J. and J.L. Smith (1983). "A Data Structure and Algorithm based
+on a Linear Key for a Rectangle Retrieval Problem," Computer Vision, Graphics
+and Image Processing 24. October 1983.
+<p>Budd, T.A. (1995) Multiparadigm Programming in LEDA. Addison-Wesley.
+<p>Gonzalez, Razzazi, Shing and Zheng (1994). "On Optimal Guillotine Partitions
+Aprroximating Optimal d-Box Partitions", Computational Geometry: Theory
+and Applications, Volume 4, 1994.
+<p>Rahmani, J. (1995) "An Evolutionary Approach to Two- Dimensional Guillotine
+Cutting Problem," Proceedings of ICEC 95.
+<p>Samet, H. (1990) The Design and Analysis of Spatial Data Structures.
+Addison-Wesley, Reading, MA.
+<p>Tarnowski, A. (1992). "Exact Polynomial Algorithm for Special Case of
+the Two-Dimensional Cutting Stock Problem: (A) Guillotine Pallet Loading
+Problem", Technical Report 9205, Belarusian State University, Department
+of Mathematical Problems in CAD.
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

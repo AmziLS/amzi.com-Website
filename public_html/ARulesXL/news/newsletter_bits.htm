@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>ARulesXL Newsletter, 30 November 2005</title>
+<style type="text/css">
+<!--
+-->
+</style>
+</head>
+
+<body>
+<h1><a href="http://www.arulesxl.com"><img src="http://www.arulesxl.com/images/logo_shiprock2.gif" width="150" height="115" border="0" align="middle" /></a> <b><font face="Arial, Helvetica, sans-serif">ARulesXL <font color="#000099">Newsletter</font></font></b></h1>
+<h3>20 February 2006  </h3>
+<h2>Contents</h2>
+<ul>
+  <li><a href="#test">New Beta Test Release</a> </li>
+  <li><a href="#rules101">Business Rules 101</a> </li>
+</ul>
+<hr />
+<p>&nbsp;</p>
+<h2><a name="test"></a>New Beta Test Release </h2>
+<p>Beta Test Release version 1.1.16 is now available for downloading. It provides a number of bug fixes as well as a new License Manager. As before we recommend you start with the production release, 1.0.7 first, then replace it with the beta test release. You can download the beta test release now from <a href="http://www.arulesxl.com/download">www.arulesxl.com/download </a></p>
+<h3>Web Applications </h3>
+<p>For running ARulesXL rules in web applications, we now have VB.NET and Java/JSP/Servlet interfaces ready for early testing. If you are interested, please <a href="../company/contact.htm">contact us</a>.  This capability is not yet part of the beta test release general distribution.</p>
+<h3>Database Queries</h3>
+<p>Another feature under development is the ability to query MySQL databases from within rule sets. This offering will be expanded to ODBC in the future. If you are interested, please   <a href="../company/contact.htm">contact us</a>. </p>
+<h3>License Manager </h3>
+<p>The new ARulesXL License Manager makes it much easier to manage license keys. The License Manager now communicates directly with the ARulesXL website to get and return license keys. You can think of our website as a bank. When you purchase one or more copies, they are deposited into your account. You can withdraw a key for each PC you want to run ARulesXL on. If you want to transfer a license, you return the key to our website, and then it can be withdrawn again on a different PC.</p>
+<p>&nbsp;</p>
+<h2><a name="rules101"></a>Business Rules 101 </h2>
+<p>So you've started  Excel and looked at some of the ARulesXL samples or read through the tutorial, but you are wondering how to add business rules to one of your own spreadsheets. This introduction will describe the process a step at a time.</p>
+<p>There are three basic building blocks for a  rule set:</p>
+<ul>
+  <li>Outputs&#8212;the results of querying the rules.</li>
+  <li>Inputs&#8212;values that come from the user, data tables and other  sources.</li>
+  <li>Rules&#8212;deduce values for outputs based on the inputs.</li>
+</ul>
+<p>The process of building a rule set is an iterative one. In each iteration you determine and refine the outputs, inputs and rules, then you write more rules and test them. So the steps are:</p>
+<ol>
+  <li>Identify the <b>Outputs</b></li>
+  <li>Determine the <b>Inputs</b></li>
+  <li>Write the <b>Rules</b> Naturally</li>
+  <li>Determine How You will Use the <b>Outputs</b></li>
+  <li>Determine How You will Get the <b>Inputs</b>     </li>
+  <li><b>Write</b> the First <b>Rules</b></li>
+  <li><b>Test</b> the First Rules</li>
+  <li><b>Write</b> More Rules</li>
+  <li><b>Test</b> More Rules    </li>
+</ol>
+<h3>1. Identify the Outputs  </h3>
+<p>The first step is to determine what you want the result of your rules to be. Here are some possibilities:</p>
+<ul>
+  <li>A value that is used elsewhere in your spreadsheet, for example, the price of a product or service.</li>
+  <li>A sentence or paragraph that provides advice, for example, whether a particular suit can be brought in small claims court.</li>
+  <li>A determination, for example, approval for a loan application or recommending an organization type. </li>
+  <li>An analysis of table or form inputs, for example identifying problems in a profit and loss statement or  analyzing an expense report. </li>
+  <li>A list of parts needed to build or ship a product, for example, the parts needed to install a door or window or the cables for connecting all the peripherals to a PC or network.</li>
+  <li>A schedule of events or list of workflow actions. </li>
+</ul>
+<p>As you can see the range of results can be a simple, single value; a set of interdependent values;   or a full-text explanation. ARulesXL can produce all of these.</p>
+<p>As an example, suppose we want to advise on what type of shaft to install in a particular golf club (see the 'Product Advice.xls' sample in the beta test release). The output for this system is:</p>
+<ul>
+  <li> Shaft flex </li>
+  <li>Shaft tip stiffness </li>
+</ul>
+<p>For a loan application the output is 'approved' or 'denied' and an explanation if the loan was denied.  For a vaccination analysis, the output is an analysis of whether or not each vaccination given thus far was correct, and a plan for future vaccinations. For an expense report review, the output  highlights which expenses did not meet the guidelines along with an explanation for each. </p>
+<h3>2. Determine the Inputs </h3>
+<p>The next step is to make a list of the things that you need to know in order to generate the output identified in step 1. Don't worry about identifying every last one. Start with the primary inputs that come to mind. This list will expand (and contract) as you write your rules (later). Also, while you write your rules, you might find inputs that you can calculate (infer) and don't need to obtain from the user or other spreadsheet cells. </p>
+<p>Like outputs, inputs can be simple values like answers to questions; or lists; or n-dimensional arrays of values. </p>
+<p>For our golf shaft advisor, the inputs  are:</p>
+<ul>
+  <li>Swing speed (in mph)</li>
+  <li>Club type (driver, utility, iron, wedge)</li>
+  <li>Whether the player favors distance or accuracy</li>
+  <li>Whether the player wants a low, normal or high trajectory    </li>
+</ul>
+<p>The inputs for a vaccination advisor are the age of the child and a list of the vaccinations received each with a date administered and vaccine name. The inputs for loan application are the price of the property, the applicant's credit rating and monthly income, the down payment and the like. The inputs for product pricing are a list of items and the quantity for each one. The inputs for a workflow system are a list of services to be provided or tasks to be accomplished. </p>
+<h3>3. Write the  Rules Naturally </h3>
+<p>The easiest way to start writing rules is to think of them as a set of goals. The top-level goal is to produce the output(s) identified in step 1. For example, in our shaft advisor, the goal is to provide 'advice' containing:</p>
+<blockquote>
+  <p><font color="#000066">shaft flex <b>and</b> tip stiffness </font></p>
+</blockquote>
+<p>If this is your first rule set, you might find it easier to write your rules in plain English (French, Spanish, Chinese, etc.). Try to write them with two phrases:</p>
+<ul>
+  <li>one or more goals and their values </li>
+  <li>the conditions under which the goals are given values </li>
+</ul>
+<p>The general form is:</p>
+<blockquote>
+  <p>  <font color="#000066">a=1 <b>and</b> c=2 <b>when</b> x=m <b>and/or</b> y=n </font></p>
+</blockquote>
+<p>This means that 'a' and 'c' are goals and they are assigned the values 1 and 2 when the 'x' and 'y' goals already have the values m and/or n. Here are some examples:</p>
+<blockquote>
+  <p><font color="#000066">unit price = 5 when quantity &lt; 10<br />
+  price = unit price * quantity<br />
+  status = denied when credit rating &lt; 100<br />
+  next vaccine = birthdate + 6 months when vaccine count = 0 </font></p>
+</blockquote>
+<p>Goals are the heart of a rule set. When a rule set is queried, it tries to find the value of a goal. To do that, it has to find the values of all the sub-goals for that goal. So for the shaft advisor, our primary goal is to provide advice, and the advice consists of shaft flex and tip stiffness. In order to get a value for advice, the rule engine must get a value for shaft flex and tip stiffness. </p>
+<pre><font color="#990099">               advice
+              /      \
+      shaft flex    tip stiffness</font></pre>
+<p>For the shaft advisor, our first rule in plain English is:</p>
+<blockquote>
+  <p><font color="#000066">the advice is the recommended shaft flex <b>and</b> recommended tip stiffness</font></p>
+</blockquote>
+<p>Note this rule is comprised of two sub-goals, shaft flex and tip stiffness. Now we need some rules for them. These rules all use inputs from the user after the <b>when</b>. </p>
+<blockquote>
+  <p><font color="#000066">shaft flex is L <b>when</b> swing speed &lt; 75<br />
+    shaft flex is A <b>when</b> swing speed &gt; 75 and &lt; 85<br />
+  shaft flex is R <b>when</b> swing speed &gt; 85 and &lt; 95<br />
+  shaft flex is S <b>when</b> swing speed &gt; 95 and &lt; 105</font></p>
+  <p><font color="#000066">shaft tip is soft <b>when</b> using high degree driver <b>and</b> the player wants a normal to high ball flight<br />
+    shaft tip is stiff <b>when</b> using a driver &lt; 11 degrees <b>and</b> the players wants a low to normal ball flight<br />
+    shaft tip is stiff <b>when</b> the player wants accuracy over distance<br />
+    shaft tip is soft <b>when</b> the player wants distance over accuracy </font></p>
+</blockquote>
+<p>Write as many rules as come to mind easily. Don't worry about getting the  words exactly right, just try to follow the general form.</p>
+<h3>4. Determine the How You will Use the Outputs</h3>
+<p>Before you can actually create a rule set, you need to figure out how you are going to use the output from the rule queries. You could query for one goal per spreadsheet cell. For the golf shaft advisor, we could return the shaft flex in cell B2 and shaft stiffness in cell B3. Those values could then be used by other spreadsheet formulas and functions. This form of output is useful for any rule set that returns numeric values, like prices, for totalling. </p>
+<p>Another option is to return a sentence or paragraph for the spreadsheet user to read. That's what  the shaft advisor does. The top-level goal is called '<b>.</b>advice', which is the name of an object in ARulesXL. An object name begins with a period (.) and it has a value associated with it. The value can be a number, word, sentence or entire document. The latter forms are not  useful in a spreadsheet formulas or functions, but they are very good for regulatory or legal applications. </p>
+<p>You can also return an array of values (this is called an array query in Excel). In this case your goals would need to be an array. In ARulesXL an array object uses square brackets around the indices. For the shaft advisor sub-goals, we  use an array object consisting of two elements:</p>
+<blockquote>
+  <p><b><font color="#0000FF">.</font></b><font color="#0000FF">shaft[flex]<br /> 
+      <b>.</b>shaft[tip]</font></p>
+</blockquote>
+<p>ARulesXL lets you use words or number as indices, which makes the rules easier to read. We could  have used a separate object for each goal, for example, <b>.</b>shaft_flex and <b>.</b>shaft_tip. </p>
+<p>In  sophisticated applications you can return a multi-dimensional array of values (in essence a table). A vaccination advisor returns a table that analyzes each vaccination given to date, and another table that is a schedule of vaccinations to give in future. </p>
+<p>Since rule sets can have multiple goals, you might return different types of values for each goal. For example, a loan application returns a simple yes/no value for whether or not the application is approved, and then a sentence or two explaining if it was denied. </p>
+<h3>5. Determine How You will Get the Inputs</h3>
+<p>Inputs come from the spreadsheet user entering values into cells, or from the results of spreadsheet formulas. If the user is responding to a list of questions, the answers can be easily brought into the rule set using the <b>RTable()</b> function. For the shaft advisor, this is done as follows:</p>
+<blockquote>
+  <p><font color="#0000FF">=RTable(&quot;.in&quot;, A2:B5, TRUE, FALSE, TRUE)</font></p>
+</blockquote>
+<p>where cells A2 to B5 contain the following values:</p>
+<blockquote>
+  <table border="1" cellpadding="1" cellspacing="0">
+    <col width="105" />
+    <col width="138" />
+    <tr height="17">
+      <td width="10" bgcolor="#CCCCCC">&nbsp;</td>
+      <td width="150" height="17" bgcolor="#CCCCCC"><div align="center"><b>A</b></div></td>
+      <td width="150" bgcolor="#CCCCCC"><div align="center"><b>B</b></div></td>
+    </tr>
+    <tr height="17">
+      <td width="10" bgcolor="#CCCCCC"><b>2</b></td>
+      <td height="17" width="150">Swing    Speed</td>
+      <td width="150">77</td>
+    </tr>
+    <tr height="17">
+      <td width="10" bgcolor="#CCCCCC"><b>3</b></td>
+      <td width="150" height="17">Club Type</td>
+      <td width="150">Fairway Wood</td>
+    </tr>
+    <tr height="17">
+      <td width="10" bgcolor="#CCCCCC"><b>4</b></td>
+      <td width="150" height="17">Favor</td>
+      <td width="150">Accuracy</td>
+    </tr>
+    <tr height="17">
+      <td width="10" bgcolor="#CCCCCC"><b>5</b></td>
+      <td width="150" height="17">Ball Flight</td>
+      <td width="150">Normal</td>
+    </tr>
+  </table>
+</blockquote>
+<p>This creates an array object named '<b>.</b>in'. The first TRUE says the table has row headers (e.g. Swing Speed, Favor). The FALSE says the table does not have column headers in the first row (in other words, the first row contains data values). The last TRUE says we want this as a 1-dimensional vector. So the result of this <b>RTable()</b> is:</p>
+<blockquote>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><font color="#000066"><b>.</b>in['Swing Speed'] =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+    <td><font color="#000066">77</font></td>
+  </tr>
+  <tr>
+    <td><font color="#000066"><b>.</b>in['Club Type'] = </font></td>
+    <td><font color="#000066">'Fairway Wood' </font></td>
+  </tr>
+  <tr>
+    <td><font color="#000066"><b>.</b>in[Favor] =</font></td>
+    <td><font color="#000066">Accuracy</font></td>
+  </tr>
+  <tr>
+    <td><font color="#000066"><b>.</b>in['Ball Flight'] = </font></td>
+    <td><font color="#000066">Normal</font></td>
+  </tr>
+</table>
+</blockquote>
+<p>Note, names and values with spaces in them are quoted.</p>
+<p>In addition to <b>RTable()</b>, you can use the <b>RCell()</b>   function to get a value from a spreadsheet cell. For example </p>
+<blockquote>
+  <p><font color="#0000FF">=RCell(&quot;.discount&quot;, D8) </font></p>
+</blockquote>
+<p>sets the <b>.</b>discount object to the value in spreadsheet cell D8. </p>
+<p><b>RTable()</b> and <b>RCell()</b> functions must be inside a rule sets. The name of the rule set in the shaft advisor is 'ShaftRules'. The ARulesXL menu contains commands to create, rename and manage rule sets.</p>
+<p>If you want to check if the inputs in the shaft advisor were set correctly, you can type this rule set query function in any cell:</p>
+<blockquote>
+  <p><font color="#0000FF">=RQuery(ShaftRules, &quot;FIND .in['Club Type']&quot;)</font></p>
+</blockquote>
+<p>this should return the value 'Fairway Wood'.  </p>
+<p>You can also use <b>RTable()</b> to incorporate tables of values in your rules. The 'Product Advice.xls' spreadsheet that this introduction is based on does exactly that  to determine the shaft flex from the swing speed. </p>
+<h3>6. Write the First Rules   </h3>
+<p>The first rule returns the value for one of your   goals. If you query your rule set for multiple values, then you start by writing a rule for each of those goals. For the shaft advisor, the top-level goal is:</p>
+<blockquote>
+  <p><font color="#000066">the advice is the recommended shaft flex <b>and</b> recommended tip stiffness </font></p>
+</blockquote>
+<p>In ARulesXL, we write that as follows: </p>
+<blockquote>
+  <p><font color="#0000FF">.advice = &quot;Flex is &quot; &amp; .shaft[flex] &amp; &quot; Tip is &quot; &amp; .shaft[tip]</font></p>
+</blockquote>
+<p>This rule reads as &quot;the advice is a text string that includes the recommended shaft flex and the recommended shaft tip stiffness &quot;. Notice the advice goal requires finding values for two sub-goals: the flex and the tip. The next step is to write a couple of rules for each of the sub-goals. Referring back to our plain English rules:</p>
+<blockquote>
+  <p><font color="#000066">shaft flex is L <b>when</b> swing speed &lt; 75<br />
+    shaft flex is A <b>when</b> swing speed &gt; 75 and &lt; 85</font></p>
+  <p><font color="#000066">  shaft tip is stiff <b>when</b> the player wants accuracy over distance<br />
+    shaft tip is soft <b>when</b> the player wants distance over accuracy </font></p>
+</blockquote>
+<p>The rules are written as follows: </p>
+<blockquote>
+  <p><font color="#0000FF">.shaft[flex] = L WHEN .in['Swing Speed'] &lt;= 75<br />
+  .shaft[flex] = A WHEN .in['Swing Speed'] &gt; 75 and .in['Swing Speed'] &lt;= 85 </font></p>
+  <p><font color="#0000FF">.shaft[tip] = Stiff WHEN .in[Favor] =    Accuracy<br />
+    .shaft[tip]    = Soft WHEN .in[Favor] = Distance</font></p>
+</blockquote>
+<p>Note on the left side we are setting the value of one of our sub-goals (flex or tip stiffness), and the conditions (after the WHEN) refer to the user inputs loaded by <b>RTable()</b>. </p>
+<p>Some rule sets  have  multiple top-level goals. The value for a top-level goal is retrieved by using the <b>RQuery()</b> function. </p>
+<h3>7. Test the First Rules</h3>
+<p>In the shaft advisor, we  test the rules with this query:</p>
+<blockquote>
+  <p><font color="#0000FF">=RQuery(ShaftRules, &quot;FIND .advice&quot;)</font> </p>
+</blockquote>
+<p>This says query the 'ShaftRules' rule set and set the value of the current cell to the value of the <b>.</b>advice object. You should get: </p>
+<blockquote>
+  <p><font color="#000066">Flex is A Tip is Stiff </font></p>
+</blockquote>
+<p> if your inputs are set as shown above. When testing rule sets,  change the inputs to get different results to test all the  rules. Notice that the rules are reapplied when the input data changes due to Excel's spreadsheet recalculation. </p>
+<p>Let's examine  how the query actually works with a very simple example that contrasts traditional procedural execution (an ordered set of steps like Excel spreadsheet recalculation)  with how a rule engine operates. Take the following steps: </p>
+<blockquote>
+  <p><font color="#000066">a = 2<br />
+  b = 3<br />
+  c = a + b    </font></p>
+</blockquote>
+<p>In a procedural system, the steps  run in the order given. First 'a' is set to 2. Then 'b' is set to 3. Then 'c' is set to 5. However, if these are rules you could put them in this order (or any order for that matter):</p>
+<blockquote>
+  <p><font color="#000066">c = a + b<br />
+  a = 2<br />
+  b = 3    </font></p>
+</blockquote>
+<p>In a rule set you query for the value of 'c'. The rule engine finds a rule that can provide a value for 'c' (c = a + b) and sees that it needs to get a value for 'a'. So it looks for a rule that provides that value (a = 2). Next, it needs a rule that provides a value for 'b' (b = 3). Finally, since now it know the values of 'a' and 'b', it can calculate the value of 'c'. This is the essence of the process of querying rules (inferencing).  </p>
+<p>Let's look at how the first rules in the shaft advisor work. The query is to find a value for <b>.</b>advice. The rule engine does the following:</p>
+<ol>
+  <li><b>Find a rule</b> that returns a value for <b>.</b>advice.  There is only one: <br />
+  <font color="#0000FF">.advice = &quot;Flex is &quot; &amp; .shaft[flex] &amp; &quot; Tip is &quot; &amp; .shaft[tip]</font></li>
+  <li><b>Find  the value</b> for  <b>.</b>shaft[flex]. To do this:  
+    <ol>
+      <li><b>Check if the value is known</b> for <b>.</b>shaft[flex]. The known list is:<br />
+        <table border="0" cellspacing="0" cellpadding="1">
+          <tr>
+            <td><font color="#000066"><b>.</b>in['Swing Speed'] =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+            <td><font color="#000066">77</font></td>
+          </tr>
+          <tr>
+            <td><font color="#000066"><b>.</b>in['Club Type'] = </font></td>
+            <td><font color="#000066">'Fairway Wood' </font></td>
+          </tr>
+          <tr>
+            <td><font color="#000066"><b>.</b>in[Favor] =</font></td>
+            <td><font color="#000066">Accuracy</font></td>
+          </tr>
+          <tr>
+            <td><font color="#000066"><b>.</b>in['Ball Flight'] = </font></td>
+            <td><font color="#000066">Normal</font></td>
+          </tr>
+        </table>
+      All these values came from the RTable() function. The value for <b>.</b>shaft[flex] is not known. </li>
+      <li><b>Find a rule</b> that returns a value for <b>.</b>shaft[flex]. The first one is:<br/>
+	      <font color="#0000FF">.shaft[flex] = L WHEN .in['Swing Speed'] &lt;= 75</font></li>
+      <li><b>Check if the value is known</b> for .in['Swing Speed']. It is 77 (from RTable()). </li>
+      <li><b>Test the conditions</b> to see if 77 &lt;= 75. It is not.</li>
+      <li><b>Find another rule</b> that returns a value for <b>.</b>shaft[flex]. The next one is:     <br />
+    <font color="#0000FF">.shaft[flex] = A WHEN .in['Swing Speed'] &gt; 75 and .in['Swing Speed'] &lt;= 85</font> </li>
+      <li><b>Check if the value is known</b> for .in['Swing Speed']. It is 77 (from RTable()). </li>
+      <li><b>Test the conditions</b> to see if 77 &gt; 75 and &lt;= 85. It is.</li>
+      <li><b>Set the value</b> of .shaft[flex] to A. </li>
+    </ol>
+  <li><b>Find  the value</b> for <b>.</b>shaft[tip]. To do this:
+    <ol>
+      <li><b>Check if the value is known</b> for <b>.</b>shaft[tip]. The known list is:<br />
+        <table border="0" cellspacing="0" cellpadding="1">
+          <tr>
+            <td><font color="#000066">.shaft[flex] = </font></td>
+            <td><font color="#000066">A</font></td>
+          </tr>
+          <tr>
+            <td><font color="#000066"><b>.</b>in['Swing Speed'] =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+            <td><font color="#000066">77</font></td>
+          </tr>
+          <tr>
+            <td><font color="#000066"><b>.</b>in['Club Type'] = </font></td>
+            <td><font color="#000066">'Fairway Wood' </font></td>
+          </tr>
+          <tr>
+            <td><font color="#000066"><b>.</b>in[Favor] =</font></td>
+            <td><font color="#000066">Accuracy</font></td>
+          </tr>
+          <tr>
+            <td><font color="#000066"><b>.</b>in['Ball Flight'] = </font></td>
+            <td><font color="#000066">Normal</font></td>
+          </tr>
+        </table>
+      The value for <b>.</b>shaft[tip] is not known.  </li>
+      <li><b>Find a rule</b> that returns a value for <b>.</b>shaft[tip]. The first one is:<br/>
+      <font color="#0000FF">.shaft[tip] = Stiff WHEN .in[Favor] =    Accuracy</font></li>
+      <li><b>Check if the value is known</b> for .in[Favor]. It is Accuracy (from RTable()). </li>
+      <li><b>Test the conditions</b> to see if Accuracy = Accuracy. It does.</li>
+      <li><b>Set the value</b> of .shaft[tip] to Stiff. </li>
+    </ol>
+  </li>
+  <li><b>Set the value</b> for .advice to the values of .shaft[flex] and .shaft[tip] along with the text strings. </li>
+</ol>
+<p>If you are unfamiliar with how rules work, take a close look at the ARulesXL debugger (on the ARulesXL menu). It will help you understand how the rule engine finds and matches rules. Once you understand how this work (the process is called inferencing), it will become easier to write more rules. </p>
+<h3>8. Write More Rules</h3>
+<p>Now we can  write additional rules for the sub-goals .shaft[flex] and .shaft[tip]. These additional rules will use more of the inputs  identified in steps 2 and 5. When writing new rules, you will probably find new inputs you need to add to your rule set. </p>
+<p>The order of the rules in your rule set may affect the results. In general, you want to put the more specific rules first and the defaults last. When the rule engine looks for a rule for a particular sub-goal, it starts with the first one in the rule set, and tries to match the conditions on the WHEN side. So the rules for .shaft[tip] are ordered from the ones with the most conditions to the ones with the least as follows:</p>
+<blockquote>
+  <p>    <font color="#0000FF">.shaft[tip]    = Soft WHEN .in['Club Type'] = 'Driver &lt; 11 Degrees' AND .in['Ball    Flight'] = High OR .in['Ball Flight'] = Normal<br />
+  .shaft[tip]    = Stiff WHEN .in['Club Type'] = 'Driver &lt; 11 Degrees' AND .in['Ball    Flight'] &lt;&gt; High<br />
+  .shaft[tip]    = Soft WHEN .in['Club Type'] = 'Driver &lt; 11 Degrees' AND    .in[Favor] = Distance<br />
+.shaft[tip] = Stiff WHEN .in['Club Type'] =    'Driver &gt;= 11 Degrees'<br />
+.shaft[tip]    = Stiff WHEN .in['Club Type'] = 'Hybrid/Utility' OR .in[Favor] = Accuracy<br />
+.shaft[tip]    = Soft WHEN .in['Club Type'] &lt;&gt; 'Hybrid/Utility' OR .in[Favor] =    Distance<br />
+  .shaft[tip] = Stiff WHEN .in[Favor] =    Accuracy<br />
+    .shaft[tip]    = Soft WHEN .in[Favor] = Distance</font></p>
+</blockquote>
+<p>Hence the latter rules are more general and provide default values when more specific cases do not apply.</p>
+<h3>9. Test More Rules </h3>
+<p>Everytime you add a new set of rules, test them by changing your inputs. If you do not understand the results, use the ARulesXL debugger to learn how your rules are selected and matched. </p>
+<p>Also your system may grow in complexity with additional sub-goals. For example, our shaft advisor could recommend shaft bend point, weight and material. This would add three additional sub-goals onto the main advice goal. </p>
+<p>For more complex systems you might have many sub-goals.   And each sub-goal may itself have additional sub-goals. These complex systems are where rule technology really shines because the ARulesXL engine determines which sub-goals to process and the order to process them based on the inputs. Each time the inputs change, a different set of rules are used, often in a different order. But, you don't have to worry about that. This makes it easier to write and maintain rules as compared to technologies that do their processing step-by-step. </p>
+<p><br />
+We invite all feedback on this 'Rules 101' introduction. Please <a href="http://www.arulesxl.com/company/contact.htm">let us know</a> how we can improve it. </p>
+<p>&nbsp;</p>
+<hr />
+
+<p><font color="#000099" size="+2"><b><a href="http://www.arulesxl.com"><font face="Arial, Helvetica, sans-serif">www.arulesxl.com</font></a></b></font></p>
+<p><font size="-1">ARulesXL is a trademark of Amzi! inc. Excel is a registered trademark of Microsoft Corporation in the   United   States and/or other   countries.<br />
+</font></p>
+</body>
+</html>

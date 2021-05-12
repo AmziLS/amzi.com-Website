@@ -1,0 +1,61 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Exercises</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Exercises<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Update travel.pro</p>
+<p><em>see, tell(FILENAME)</em> redirects I/O to that file.</p>
+<p><em>seen, told</em> redirects I/O back to the console.</p>
+<p><em>reconsult(FILENAME)</em> consults predicates in a file, first erasing any 
+  previous in-memory clauses of the same functor/arity.</p>
+<ul>
+  <li>Comment out /* ... */ the passenger &amp; booking facts in <var>flight_data.pro</var>.</li>
+  <li>Create a CourseAir command <var>add_passenger/0</var>, to read passenger 
+    information and assert a new <var>passenger/3</var> clause.</li>
+  <li>Create <var>book_passenger(FLIGHT, LAST_NAME, FIRST_NAME)</var> that creates 
+    a new <var>booked/2</var> clause.. </li>
+  <li>Create <var>next_id/1</var> that retracts current_id/1, increments the value, 
+    and asserts a new current_id/1 that can be used to generate passenger IDs. 
+    <br>
+	<pre>next_id(NEXT) :-
+   retract(current_id(CURRENT)),
+   NEXT is CURRENT + 1,
+   assert(current_id(NEXT)).</pre> </li>
+   
+  <li>Save and Restore the booking data:
+    <ul>
+      <li><code>save_data :- tell('passenger_data.pro'), listing(passenger), listing(booking), 
+        listing(current_id), told.</code></li>
+      <li><code>restore_data :- reconsult(passenger_data).</code></li>
+      <li>Add these as goals before the <var>repeat</var> and after the <var>COMMAND=quit</var> 
+        in <var>main/0</var></li>
+      <li>Change travel project properties to exclude <var>passenger_data.pro</var> 
+        from builds.</li>
+	  <li>Create an initial passenger_data.pro file in the project with the single 
+        clause: <code>current_id(1000).</code></li>
+    </ul>
+  </li>
+  
+</ul>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_050_db_020.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_060_recursion_010.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

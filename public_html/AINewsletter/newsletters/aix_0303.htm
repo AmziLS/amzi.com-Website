@@ -1,0 +1,334 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->March 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <h2></h2>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>March 2003</h3>
+            <ul>
+              <li><a href="#quantum_computing">Quantum Information</a> - A different 
+                way of looking at things</li>
+              <li><a href="#er1">ER1 Robot</a> - A product review</li>
+              <li><a href="#links">Links</a></li>
+              <ul>
+                <li><a href="#links_aix">The Best of AI Expert</a></li>
+              </ul>
+            </ul>
+            <p>We have quantum information and a commercial robot product review 
+              this month. As always, feedback is welcome. dennis@ddj.com</p>
+            <h2><a name="quantum_computing"></a>Quantum Information</h2>
+            <p>Whenever we learn some fundamental different way of looking at 
+              things, our views of the familiar change. What was once obvious 
+              truth, becomes just a specific example of a broader, larger truth.</p>
+            <p>The ideas of quantum mechanics are expanding our fundamental understandings 
+              of information. Take logic for example.</p>
+            <p>We tend to understand logic as an abstract truth, a system of relationships 
+              not dependent on the physical world. Yet we developed logic to better 
+              describe our reality. In other words, the constructs of logic are 
+              determined by the physics we perceive.</p>
+            <p>Logical concepts of truth and falsehood correspond to physical 
+              states. A thing is or it isn't. Similarly, the logical operations 
+              'and', 'or' and 'not' make sense in our physical world.</p>
+            <p>Computationally, one can represent logic with physical bits that 
+              are either on or off, representing true and false. Logical computations 
+              are carried out on machines, whose behavior is dictated by the same 
+              physics that underlies the logic. So it all works.</p>
+            <p>But as bits and logical operations get closer to the atomic level, 
+              the very strange physics of quantum mechanics start to come into 
+              play. No longer does the physics of the computer correspond to the 
+              physics underlying our system of logic.</p>
+            <p>A quantum bit can be both 0 and 1 at the same time. In other words, 
+              it can be true-false. These are called qubits. There are transformations 
+              on qubits that are theoretically possible at the quantum level. 
+              These are called quantum gates, corresponding to logic gates. Just 
+              as qubits stretch our notions of truth, quantum gates stretch our 
+              notions of logical operations.</p>
+            <p>For example, because of the strange properties of quantum mechanics 
+              it is possible to create two identical quantum gates that each seem 
+              to randomize their input, but when linked together negate it. In 
+              other words, these particular quantum gates might be called the 
+              square root of 'not', because when linked they create 'not'.</p>
+            <p>So here we have a logic concept, the square root of 'not', that 
+              doesn't make any sense in the Newtonian world we think we inhabit, 
+              yet makes perfect sense in the quantum world.</p>
+            <p>Where do these ideas come from? From people who are looking at 
+              quantum information theory. They see the potential of looking at 
+              information in light of what is theoretically possible at the quantum 
+              level. They are like Turing, imagining machines that illuminate 
+              our understanding of mathematics and logic.</p>
+            <p>One of their flights of fancy led to the observation that you can 
+              perform quantum operations on strings of qubits and those operations 
+              are performed on all the bits in each of its two possible states. 
+              In other words, you can perform operations on all large integers 
+              of a certain size, simultaneously.</p>
+            <p>This means there is a class of calculation that, while intractable 
+              on a conventional computer, can be performed in a flash on a quantum 
+              computer.</p>
+            <p>One such calculation is finding factors of large integers. Factorization 
+              of large integers takes an unrealistically long time. Numbers of 
+              a hundred digits take billions of years to factor on a conventional 
+              computer, yet a quantum computer can theoretically do it in less 
+              than a second.</p>
+            <p>And what good is that? Modern cryptography is based entirely on 
+              that sort of mathematical problem. The whole idea of dual encryption 
+              keys is that one can create a public key, used to encode information 
+              and another private key, based on factors, that is used to decode 
+              the information.</p>
+            <p>Multiplying numbers is easy; finding the factors is hard. So a 
+              private key composed of large integers is created. They are multiplied 
+              to create the public encoding key. The factors of the private key 
+              are mathematically in the public key, but it is computationally 
+              impossible to get them out.</p>
+            <p> This means the information can be encoded and sent in a public 
+              forum, and only the original holder of the private key, the factors, 
+              can decode it. The security of the private key is based on the fact 
+              that, even if an eavesdropper gets the public key, it is impossible 
+              to factor it to learn the private key, which never needs to be transmitted.</p>
+            <p>But with a working quantum computer, it becomes trivial to find 
+              the private key. As soon as someone builds a quantum computer, encryption 
+              as we know it fails. This has captured attention and funding for 
+              what started as flights of fancy.</p>
+            <p>Curiously, quantum mechanics provides an alternative solution for 
+              cryptography. The problem with the keys is transporting them between 
+              sender and receiver. The dual keys currently being used solve that 
+              problem, as the private key never got transported.</p>
+            <p>Photons can be sent from one person to another, with quantum information 
+              representing encryption keys. The physics of quantum mechanics dictates 
+              that there can only be one receiver of the information. If someone 
+              else viewed the information, it would be corrupted and easily detected.</p>
+            <p>Theoretically then, a key can be safely transmitted so the encoded 
+              document can safely be sent by conventional means.</p>
+            <p>So can you build a quantum computer? They're trying and the first 
+              results are in. They've built a quantum computer that can tell, 
+              with a single look, whether a coin is fair, with two different sides, 
+              or unfair, with both sides the same. OK, its not much, but its still 
+              pretty amazing, and a start.</p>
+            <p><a href="http://www.qubit.org/">http://www.qubit.org/</a> - The 
+              Centre for Quantum Computation, an overview organization with a 
+              number of excellent tutorials.</p>
+            <h2></h2>
+            <p><a href="http://heart-c704.uibk.ac.at/DeutschJozsa.htm">http://heart-c704.uibk.ac.at/DeutschJozsa.htm</a> 
+              - A slide show on the quantum computer that can tell if a coin is 
+              fair or not.</p>
+            <p></p>
+            <h2><a name="er1"></a>ER1 Robot Review</h2>
+            <p><a href="https://www.evolution.com/">Evolution Robotic's</a> ER1 
+              is based on an interesting idea. It is sensors, locomotion and a 
+              brain for a laptop PC. In other words, it's everything that devious 
+              machine needs to become truly dangerous. In fact, the manual warns 
+              against leaving the ER1 turned on by itself.</p>
+            <p>The manual also clearly stated that the robot should only be run 
+              on pure battery power, with no cords to wall sockets. Well the first 
+              USB hub I got didn't work self-powered, so I needed to plug it in 
+              and figured I could start anyway.</p>
+            <p>The 'hello world' application for the ER1 is a behavior that recognizes 
+              the box it came in and moves towards it. I showed it the box and 
+              it rolled a foot forward. Perfect.</p>
+            <p>So I casually threw the box to the side. Big mistake. The ER1 wanted 
+              to know where it went and started a spinning behavior to look for 
+              it. It was very quickly tying itself up in the cord, and I quickly 
+              learned how difficult it is to work the mouse on a spinning laptop. 
+              Disaster was avoided by lifting the wheels off the ground with one 
+              hand and working the mouse to stop the behavior with the other.</p>
+            <p>In other words, dealing with a looping program is harder when the 
+              computer has wheels.</p>
+            <p>I vowed to pay better attention to the warnings and got the Adesso 
+              AUH-103 USB hub that Evolution recommends.</p>
+            <p>Back to the beginning. One part of the ESB is a chassis for a laptop, 
+              with wheels, a camera, and optionally a gripper arm and additional 
+              sensors. The kit comes with modular tubing that can be connected 
+              in a variety of ways. I followed the instructions, building the 
+              standard cradle for the PC.</p>
+            <p>The other part is the Robot Control Center software which is installed 
+              on the PC. This is where the major value of the ER1 is.</p>
+            <p>One of the major issues in robotics is getting the robot to sense 
+              and react to its surroudings. The ER1 can be shown a variety of 
+              objects and learn to recognize them. It can then easily be programmed 
+              with behaviors that take certain actions when a known object is 
+              recognized.</p>
+            <p>Inspired by RoboCup, described in last month's newsletter, I decided 
+              to start programming soccer playing behavior. I first showed it 
+              a beach ball, and then two stacks of child's blocks which were the 
+              goal.</p>
+            <p><img src="scoring_goal_0303.jpg" width="277" height="171"><br>
+              The ER1 scoring a goal.</p>
+            <p>&nbsp;</p>
+            <p><img src="robot_view_0303.jpg" width="768" height="558"><br>
+              What the ER1 saw.</p>
+            <p>I added two behaviors. When it saw the ball, it was to move forward, 
+              driving it ahead. When it saw the goal it would say &quot;gooooaaal 
+              gooooaaaal gooooaaaal&quot;. (It uses text to speech to communicate.)</p>
+            <p>I set the ball in front of the ER1, and started the behaviors. 
+              Sure enough, it rammed the ball towards the goal and when it got 
+              close enough said the &quot;gooooaaaal&quot;s, but said them fast, 
+              flat and stuttered the vowels. The ER1 is not going to replace soccer 
+              announcers anytime soon.</p>
+            <p>The ER1 has obstacle avoidance behaviors as well, but I didn't 
+              experiment with them, as they seemed to run against the grain of 
+              my soccer experiments. (As a kid, I used to crash my electric trains 
+              into piles of blocks as well.)</p>
+            <p>I experimented with face recognition. I had hoped it could distinguish 
+              between a scary face and a friendly face, and go backwards or fowards 
+              depending on which one it saw, but it couldn't distinguish the two 
+              faces very well. That is something they are working on for future 
+              releases. But it did definitely recognize me, it just couldn't tell 
+              whether I was scary or not.</p>
+            <p>While the vision capabilities are the most exciting feature of 
+              the ER1, it also can recognize sounds, voice and color and use them 
+              for triggers of behaviors as well.</p>
+            <p>It has other capabilities with e-mail, timers, recording pictures, 
+              and remote operation which I didn't experiment with.</p>
+            <p>I was interested in pushing on with the soccer experiments, but 
+              ran into the classic software trade off of ease-of-use versus expressive 
+              power. The user interface for the Robot Control Center (RCC) is 
+              a very visual and very intuitive way to create production rules 
+              of the form &quot;if this condition then take that action&quot;. 
+              One doesn't need to have any programming experience to enjoy experimenting 
+              with the possible behaviors of the ER1.</p>
+            <p>But the RCC interface is limited in its ability to only program 
+              relatively simple sequences of behaviors. Something more complex, 
+              like having the robot know where the goal is, find the soccer ball, 
+              and compute where to go to push the ball towards the goal, requires 
+              more direct programming of the ER1, and that can only be done using 
+              the C++ SDK for the ER1.</p>
+            <p>The C++ SDK should be available in beta by the end of this month. 
+              In addition to providing full programatic control of the robot, 
+              it also exposes the full power of the underlying Evolution Robotics 
+              Software Platform (ERSP).</p>
+            <p><a href="https://www.evolution.com/product/oem/">https://www.evolution.com/product/oem/ 
+              </a> has a full description of the ERSP, with technical white papers 
+              on robotic vision, navigation and other topics. These describe some 
+              very powerfull stuff, making it clear the ER1's RCC is only exposing 
+              the tip of the iceberg.</p>
+            <p>For example, the RCC is trained to recognize an object by simply 
+              showing it a picture of the object. It works well, and the object 
+              can be recognized with two-dimensional rotations, like if it is 
+              upside down, and at a variety of distances, and in a variety of 
+              lighting conditions. But clearly one picture can't be used to recognize 
+              an irregular three-dimensional object from various perspectives. 
+              The full ERSP allows a collection of images to be used for training 
+              object recognition.</p>
+            <p>I'm looking forward to seeing the C++ SDK.</p>
+            <h2><a name="links"></a>Links</h2>
+            <h3><a name="links_aix"></a>The Best of AI Expert</h3>
+            <p><b>Finding Decision Rules with Genetic Algorithms</b> [Mar 94] 
+              - There are a variety of techniques for extracting decision rules 
+              from a table of data representing choices. Jim Oliver describes 
+              a particularly clever one that uses genetic algorithms to zero in 
+              on the best rules.</p>
+            <p><b>Intelligent Road Transit: The Next Generation</b> [Apr 94] - 
+              Denny Rock, Doug Hoskins and Don Malkoff provide an overview of 
+              work done at the time for automatic handling of traffic. The problems 
+              they describe seem similar to the ones the RoboCup soccer robots 
+              are trying to solve, that is, automonous agents working together.</p>
+            <p><b>Artificial Intelligence in Wargames</b> [May 94] - Steve Estvanik 
+              provides an overview of AI techniques used to create realistic war 
+              games.</p>
+            <p>&nbsp;</p>
+            <h3>&nbsp;</h3>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,4 @@
+# Use PHP56 Single php.ini as default
+# AddHandler application/x-httpd-ea-php56 .php
+
+DirectoryIndex index.php index.html default.htm

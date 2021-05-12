@@ -1,0 +1,335 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->September 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <h3>September 2004</h3>
+            <h4>Dennis Merritt</h4>
+            <h2></h2>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <ul>
+              <li><a href="#diplomacy">Diplomacy</a> - AIs for a multiplayer game 
+                involving negotiation</li>
+              <li><a href="#smlnj">Standard Meta-Language</a> - A good language 
+                for developing AI </li>
+              <li><a href="#links">Links</a></li>
+            </ul>
+            <h2><a name="diplomacy"></a>Diplomacy</h2>
+            <p>Have you ever played Hasbro's (was Avalon Hill's) game Diplomacy? 
+              I've only played it a few times but found it to be one of the best 
+              games I'd ever played. It requires seven players, each running a 
+              European country around World War I. In many ways its a classic 
+              war game, where each player has armies that can be deployed and 
+              set to attack neighboring countries and/or defend held ground.</p>
+            <h3>The Game</h3>
+            <p>The players make their moves simultaneously, at least logically 
+              so. Each player writes down the movements for his/her armies and 
+              then all the moves are revealed at once. Each of the conflicts around 
+              the board is resolved. For example, France may have aligned some 
+              forces to attack Germany and Germany placed some defenders at the 
+              border. Depending on the number of units of each, the attack succeeds 
+              or fails and the pieces adjusted on the board to reflect the result 
+              of the conflict. Once all the conflicts are resolved, the cycle 
+              continues, until one player/country has conquered Europe.</p>
+            <p>What makes the game so fascinating is that no country has sufficient 
+              forces to dominate the game. So Germany, for example, can invade 
+              Russia, or invade France, or defend one or the other border, but 
+              can't do it all. So how does the German player decide? This is where 
+              the game gets it name. Before each move there is a &quot;diplomacy&quot; 
+              period where the players talk to each other in quiet corners of 
+              the room. Germany and France might decide to become allies, and 
+              both move to attack Russia, freeing each from having to worry about 
+              their common border.</p>
+            <p><img src="2004_09_real_diplomacy.gif" width="670" height="485"></p>
+            <p><font face="Arial, Helvetica, sans-serif"><b><font size="-1">Map 
+              1 - The game board for face-to-face play.</font></b></font></p>
+            <p>This is where the game gets nasty. Germany might also make a similar 
+              deal with Russia. And turn and attack France, whose borders were 
+              left open because France thought they were allied with Germany.</p>
+            <p>The skill of the game all resolves around the ability of a player 
+              to make strategic alliances, retain the trust of some allies while 
+              simultaneously betraying others, and thus manipulate his/her country 
+              into a position of European dominance. And its all very real, because 
+              if the French player saw the German player talking to the Russian 
+              player, then he/she would want to know why, and if Germany was planning 
+              to betray France, he/she would have to have a good reason to tell 
+              to France to maintain France's trust.</p>
+            <p>Fascinating. The problem was, at least when I played it, is in 
+              the process of winning the game, you lose friends and playing partners. 
+              So it might cost two or three friends a game. They sell t-shirts 
+              for Diplomacy with a logo of one country stabbing another in the 
+              back. The game is also relatively tedious to play, as it takes a 
+              while to go through each cycle of negotiation, move planning, and 
+              then resolution of conflicts.</p>
+            <h3>Real World</h3>
+            <p>How good is Diplomacy? Rumors were that it was very popular in 
+              the Kennedy White House, with the Kennedy's and Kissenger et.al. 
+              playing heated games into the night. During those days of the Cold 
+              War, I always wondered if there weren't Soviet bugs in the White 
+              House picking up quiet conversations between Kennedy and Kissenger 
+              about plans to invade Russia.</p>
+            <p>And how much did the artificial environment of the game Diplomacy 
+              influence decision making of international policy makers of the 
+              era?</p>
+            <p>Digressing: It seems clear that experience with the games of chess 
+              and/or go influence military leader's strategic approach to war. 
+              I was recently reading about WW II in the Pacific where I learned 
+              that the Japanese intent was not to invade America, but rather to 
+              threaten that in order to obtain and expand their sphere of influence 
+              in Asia. A very go-like idea. They were surprised that the Americans 
+              did not accept that; instead the American intent was to go straight 
+              to Tokyo. A very chess-like idea. Neither side understood the other's 
+              thinking &#151; the Americans afraid the Japanese were intent on 
+              reaching Washington (chess-like); the Japanese thinking the Americans 
+              would accept a resolution where both wound up with territory in 
+              the Pacific (go-like).</p>
+            <h3>Computerized Diplomacy</h3>
+            <p>Computers solve the two major problems with the game. You can now 
+              play online, so a computer handles the mechanics of conflict resolution; 
+              and you can play with people all over the World, so you alienate 
+              strangers instead of friends on your march to dominance.</p>
+            <p><img src="2004_09_computer_diplomacy.gif" width="581" height="501"></p>
+            <p><font face="Arial, Helvetica, sans-serif"><b><font size="-1">Map 
+              2 - Board position from a game in progress at the Diplomatic Pouch's 
+              web site.</font></b></font></p>
+            <h3>AI</h3>
+            <p>And now the fun bit, trying to get a computer to play Diplomacy. 
+              (Most of this material is derived from Danny Loeb's article on the 
+              Diplomacy programming project, see <a href="#links">links</a>.) 
+            </p>
+            <p>The first problem is to devise a language that can be used to communicate. 
+              While it might be tempting to try to solve the natural language 
+              problems in understanding negotiating discourse, that is really 
+              a different sort of problem; so the developers created a formal 
+              language, called the DPP Protocol, that is expressive enough to 
+              communicate about possibilities in the realm of Diplomacy. Here's 
+              a sample that threatens another player with war if he/she takes 
+              one of your cities:</p>
+            <pre>France: &quot;SND ENG (IFF DMZ(PAR BRE MAR) THN PCE ELS NOT(PCE))&quot;</pre>
+            <p>The diplomat discussed in Danny Loeb's article is the Bordeauz 
+              Diplomat. It has two main components, the strategic core and the 
+              negotiator. The strategic core provides all the capabilities of 
+              analyzing the values of positions and moves. It doesn't think, but 
+              rather just provides the analysis necessary for the negotiator.</p>
+            <p>The strategic core needs to determine the best moves for either 
+              an individual country or an alliance. At first glance, search trees 
+              similar to those imployed in two-player games might appear like 
+              a good approach for finding &quot;best&quot; moves. But the mathematical 
+              combinations are staggering. Unlike chess, which has 20 posible 
+              opening moves, seven player Diplomacy, with its &quot;simultaneous&quot; 
+              movement, has over four quadrillion possible opening moves.</p>
+            <p>Not only does this prohibit looking more than one move in advance, 
+              it makes it very difficult to simply find a &quot;best&quot; next 
+              move. The solution they game up with was to use a genetic search 
+              algorithm to find the next &quot;best&quot; move. Seed moves are 
+              used to start the search, and then those moves are randomly mutated 
+              in the hopes of finding better moves.</p>
+            <p>The strategic core is also used to evaluate potential new alliances, 
+              comparing their value to existing ones. Moves that are communicated 
+              as rumor or threats can be evaluated using the strategic core to 
+              see if the they are valid. The genetic search engine is used for 
+              that purpose as well, with the proposed move used as a seed. If 
+              after a number of cycles of evolution the move is still being considered, 
+              then it is a plausable move.</p>
+            <p>The moves of the last turn are processed by the strategic core 
+              to detect new alliances and backstabbing betrayals. This information 
+              all becomes useful to the negotiator in determine the trustworthiness 
+              of a potential ally.</p>
+            <p>Trustworthiness evaluation is also based on mutual gain. An ally 
+              who no longer gains by the alliance is deemed untrustworthy. In 
+              other words, it's critical to ask &quot;what's in it for you?&quot;<br>
+            </p>
+            <h3>Development Kits</h3>
+            <p>Development kits for creating diplomats are available in a number 
+              of languages, including C++ and Java. Check them out and let me 
+              know what you think.</p>
+            <h2><a name="smlnj"></a>Standard Meta-Lamguage (SML/NJ)</h2>
+            <p>LCS, a parallel processing version of SML, is a functional language 
+              used to build the Diplomacy AI. A functional language differs from 
+              conventional programming languages in that variable values cannot 
+              be changed. In fact, they are not called variables, but rather bindings 
+              to symbolic names. Once a symbolic name is bound, the value sticks.</p>
+            <p>On the one hand, this makes it difficult to do some standard sorts 
+              of programming things. On the other hand, it allows for a very clean 
+              declarative specification of a program because there is no state. 
+              In other words, what you see is what you get. In this way it is 
+              similar to logic programming.</p>
+            <p>ML also supports strict typing, making it harder than normal to 
+              create buggy programs and also making it possible to prove program 
+              correctness much more readily than with a conventional program. 
+              It supports polymorphism, which makes it possible to create generic 
+              functions that work on various types.</p>
+            <p>(Most of the following material is taken from Andrew Cumming's 
+              tutorial, see <a href="#links">links</a>.)</p>
+            <p>Programs in a functional language are, as the name implies, a collection 
+              of functions. For example, a function that doubles a value in ML 
+              is:</p>
+            <pre>fun double x = 2 * x;</pre>
+            <p>Functions refer to other functions, so to quadruple a value:</p>
+            <pre>fun quadruple x = double(double x);</pre>
+            <p>ML is strongly typed. It has the basic types like string and integer, 
+              and complex types of lists and tuples. A list is a list of items 
+              of the same type. A tuple is fixed length collection of a variety 
+              of types, including complex types. Between tuples and lists, ML 
+              provides for very powerful data representation.</p>
+            <p>Here's an example of tuple with its associated type declaration:</p>
+            <pre>(true,3.5,&quot;x&quot;, (4,5) ) : bool * real * string * (int * int)</pre>
+            <p>And a list:</p>
+            <pre>[(2,3),(2,2),(9,1)] : (int * int) list</pre>
+            <p> ML has a pattern-matching algorithm that examines complex types 
+              and generates bindings for embedded names in those types. For example, 
+              at the ML interpreter prompt, which is hyphen (minus sign) -, one 
+              can ask to bind one complex type to another.</p>
+            <pre>- val (d,e) = (2,&quot;two&quot;);
+val d = 2 : int
+val e = &quot;two&quot; : string</pre>
+            <p> In this case the two symbolic names within the tuple (d,e) are 
+              appropriately bound.</p>
+            <p>Given that you can't change a binding, iterative loops of conventional 
+              languages don't work. As you might expect, recursion is used instead 
+              for looping. Here's the classic factorial definition as expressed 
+              in ML:</p>
+            <pre>fun factorial 0 = 1
+| factorial n = n * factorial(n-1);</pre>
+            <p></p>
+            <p>And this leads to the possibility of writing powerful functions 
+              for processing lists. Here's how to sum a list of integers:</p>
+            <pre>fun sum nil = 0
+| sum(h::t) = h + sum t;</pre>
+            <p>The result is a language that, like Lisp and Prolog, is an expressive 
+              language for implementing AI applications that generally require 
+              symbolic manipulation, pattern-matching and search. It is a good 
+              tool for building a Diplomacy AI.<br>
+            </p>
+            <h2><a name="links"></a>Links</h2>
+            <p><a href="http://www.starblood.org/daide/">www.starblood.org/daide/</a> 
+              - Diplomacy AI Center resource Web site.</p>
+            <p><a href="http://ca.geocities.com/bmr335/dipai.html">ca.geocities.com/bmr335/dipai.html</a> 
+              - Brian Robert's collection of links to articles about Diplomacy 
+              AI. He is also the author of a Diplomacy bot.</p>
+            <p><a href="http://www.diplom.org/">www.diplom.org/</a> - The home 
+              page of The Diplomatic Pouch, a resource for all things Diplomacy, 
+              include a zine with many articles on Diplomacy AI.</p>
+            <p><a href="http://devel.diplom.org/DipPouch/Zine/S1995M/Loeb/Project.html">http://devel.diplom.org/DipPouch/Zine/S1995M/Loeb/Project.html</a> 
+              - Danny Loeb's article on the Diplomacy programming project.</p>
+            <p><a href="http://www.smlnj.org/">www.smlnj.org/</a> - The home page 
+              for Standard ML, a functional language with many good features for 
+              AI and logic applications. It is the language used for implementing 
+              the Diplomacy AI modules.</p>
+            <p><a href="http://www.dcs.napier.ac.uk/course-notes/sml/manual.html">www.dcs.napier.ac.uk/course-notes/sml/manual.html</a> 
+              - A good tutorial on ML by Andrew Cumming.</p>
+            <p><a href="http://www.faqs.org/faqs/meta-lang-faq/">http://www.faqs.org/faqs/meta-lang-faq/</a> 
+              - FAQ for ML.</p>
+            <hr>
+            <p>As always, feedback ideas and interesting links and other contributions 
+              are welcome. Past issues are available at either <a href="www.ddj.com">www.ddj.com</a> 
+              or <a href="www.ainewsletter.com">www.ainewsletter.com</a>.</p>
+            <p>Until next month,</p>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p></p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

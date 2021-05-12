@@ -1,0 +1,247 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->October 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+           <h3>October 2003</h3>
+
+            <ul>
+              <li><a href="#robocup">RoboCup 2003</a></li>
+              <li><a href="#ai_law">AI and the Law</a></li>
+              <li><a href="#links">Links</a></li>
+            </ul>
+            <h2><a name="robocup"></a>RoboCup News</h2>
+            <p>The RoboCup-2003 competitions were held in Padua Italy in July. 
+              There were a number of levels of competition, from simulation, with 
+              no real robots, up to humanoid. Humanoid robots just compete at 
+              penalty kicks and the like at this point.</p>
+            <p>Each year the rules of the competitions are upgraded to reflect 
+              the improved capabilities of the robot competitors, so I suspect 
+              the rules for humanoid robots will gradually evolve to the stated 
+              RoboCup goal of fielding a robotic team that can beat a human one.</p>
+            <p>The smaller robots are playing real soccer. The links below include 
+              some video clips that show them in action.</p>
+            <p>One of the smaller leagues is called the Small-Sized League. It's 
+              robots are coffee-can size and play on a surface about the size 
+              of ping pong table, using an orange golf ball. The robots are autonomous 
+              but radio controlled from computers, and global vision is shared 
+              among them, provided by cameras mounted above the playing field.</p>
+            <p>This year Cornell's Big Red team won, defeating the University 
+              of Queensland Australia's RoboRoos by a score of 1-0 in overtime. 
+              Given that Cornell had won a few years previous with a score of 
+              10-0 and then 7-6, before losing a year, it appears that defenses 
+              are getting much better.</p>
+            <p>Cornell provides some of the best documentation I've found on robotic 
+              soccer, and sure enough, the design goals for the 2003 team included 
+              improved defense. They had special goalie programming introduced 
+              this year, and had modifications to the dribbling mechanisms that 
+              made it easier for their robots to strip the ball from opposing 
+              robots.</p>
+            <p>Cornell assembles a team of students and faculty at the beginning 
+              of each academic year, with the goal of fielding a better team in 
+              the Summer's competition. The team starts, like any good athletic 
+              team, by studying last year's game films.</p>
+            <p>Cornell's project goals provide a good insight into the state of 
+              the art. Some of the things they wanted to improve in 2003 were:</p>
+            <ul>
+              <li> setup times,</li>
+              <li>maintenance of down robots,</li>
+              <li>onboard sensing to prevent missed passes,</li>
+              <li>better defense through strategy,</li>
+              <li>more accurate kicking and dribbling,</li>
+              <li>easier manufacturability,</li>
+              <li>adaptive game learning,</li>
+              <li>use of a goalie,</li>
+              <li>keep sources of funding going.</li>
+            </ul>
+            <p>Note the emphasis on defense in this year's designm, explaining 
+              the low scoring results.</p>
+            <p>The Cornell project was divided into modular components. For example 
+              there was a group working on mechanical design, and that group was 
+              subdivided into a group working on the drive mechanism, the dribbling 
+              subsystem, and the kicking subsystem.</p>
+            <p>This means there were people working all year on just coming up 
+              with a better kicking mechanism for a coffed-can sized robot. They 
+              did, last years kicking arm warped on off center kicks, costing 
+              them accuracy.</p>
+            <p>The dribbling mechanism of Cornell's robots was accredited with 
+              being a major factor in previous year's victories. This year they 
+              were working on better control, pass reception, and the ability 
+              to steal the ball from opponents.</p>
+            <p>This was all done within a budget of $30,000 from corporate and 
+              alumni sponsors.</p>
+            <h2><a name="ai_law"></a>AI and the Law</h2>
+            <p>It is tempting to look at applying AI to the law, using computer 
+              programs to determine points of law and thus avoiding some of the 
+              costs of human decision making.</p>
+            <p>Law is represented as rules, which seems to imply a rule-based 
+              technology; and as cases, which seems to imply a case-based reasoning 
+              technology. And reasoning is used deduce conclusions from the rules 
+              and cases, which seems to imply some sort of logic or theorem proving 
+              technology.</p>
+            <p>Research and experimental systems have been built using each of 
+              these, and the discussion on whether or not they are practical always 
+              revolves around the issues of fuzziness in the law. Michael Aikenhead's 
+              paper has some interesting thoughts on rule-base and case-based 
+              implementations of AI legal systems, and suggests they are limited.</p>
+            <p>As a point of criticism of rule-based systems, he uses this example 
+              of a law: <i>no vehicles allowed in the park</i>.</p>
+            <p>The problem, he notes, is what's a vehicle? Is a bicycle allowed? 
+              or a police car? While he argues the problem is difficult, it seems 
+              that this is just the sort of problem that an ontology could solve.</p>
+            <p>Looking through the titles of papers in the International Association 
+              for AI and Law, it appears that is exactly one of the hot areas 
+              of research. Mark Lauritsen's article goes into details on a law 
+              ontology, refining concepts such as &quot;concept maps&quot;, which 
+              seem exactly what is needed to answer the question of what is a 
+              vehicle.</p>
+            <p>Michael Aikenhead also goes on to discuss the potential for argumentative 
+              systems. Robert Kowalski shows how to use logic programming for 
+              a theorem proving approach to computerizing law.</p>
+            <h2><a name="links"></a>Links</h2>
+            <p><a href="http://robocup.mae.cornell.edu/documentation/robocup/2003/2003ME.pdf">http://robocup.mae.cornell.edu/documentation/robocup/2003/2003ME.pdf</a> 
+              - Home page for the Cornell RoboCup project.</p>
+            <p><a href="http://robocup.mae.cornell.edu/documentation/robocup/2003/2003ME.pdf">http://robocup.mae.cornell.edu/documentation/robocup/2003/2003ME.pdf</a> 
+              - The best documentation I've found so far on building a RoboCup 
+              robot. It's a fascinating story of engineering goals</p>
+            <p><a href="http://www.icsi.berkeley.edu/%7Ebehnke/papers/FU-Fighters2002.pdf">http://www.icsi.berkeley.edu/~behnke/papers/FU-Fighters2002.pdf</a> 
+              - A good overview document on the FU Fighters RoboCup team from 
+              Freie University, Berlin Germany.</p>
+            <p><a href="http://www.java-video.de/stock99/">http://www.java-video.de/stock99/</a> 
+              - Java applet video of the FU Fighters small robots in action.</p>
+            <p><a href="http://arti.vub.ac.be/RoboCup/rules/rules.html">http://arti.vub.ac.be/RoboCup/rules/rules.html</a> 
+              - The rules for the small robot competitions. </p>
+            <p><a href="http://www.iaail.org/">http://www.iaail.org/</a> - International 
+              Association for AI and the Law home page. This is an organization 
+              you can join with a journal devoted to AI and the law.</p>
+            <p><a href="http://www.denniskennedy.com/ailaw.htm">http://www.denniskennedy.com/ailaw.htm</a> 
+              - Dennis Kennedy's web site which is intended to be a starting point 
+              for locating resources on AI and the Law. Lots of good links.</p>
+            <p><a href="http://qsilver.queensu.ca/law/smith.htm">http://qsilver.queensu.ca/law/smith.htm</a> 
+              - An excellent article by J.C. Smith and Daphne Gelbart introducing 
+              the concepts of different types of legal reasoning and how they 
+              might be modelled by AI systems.</p>
+            <p><a href="http://www.law.warwick.ac.uk/ltj/5-1c.html">http://www.law.warwick.ac.uk/ltj/5-1c.html</a> 
+              - Some interesting thoughts on whether AI can be applied to the 
+              law or not, by Michael Aikenhead of Collingwood College. Maybe some 
+              of his criticisms are based on rigid sorts of views of AI systems.</p>
+            <p><a href="http://www.kluweronline.com/issn/0924-8463">http://www.kluweronline.com/issn/0924-8463</a> 
+              - Home page for the Artificial Intelligence and Law journal. Not 
+              cheap.</p>
+            <p><a href="http://www.bileta.ac.uk/ailaw/ailaw.html">http://www.bileta.ac.uk/ailaw/ailaw.html</a> 
+              - The AI and Law Group of the British and Irish Legal Education 
+              Technology Association home page, with a number of good links.</p>
+            <p><a href="http://www.capstonepractice.com/OntoOpen.html">http://www.capstonepractice.com/OntoOpen.html</a> 
+              - Marc Lauritsen's article proposing ontologies for the law, with 
+              concepts like &quot;concept maps&quot;.</p>
+            <p><a href="http://elj.warwick.ac.uk/jilt/artifint/2hunter/contents.htm">http://elj.warwick.ac.uk/jilt/artifint/2hunter/contents.htm</a> 
+              - And how about neural networks for encoding the law?</p>
+            <p><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/law.html">http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/law.html</a> 
+              - Robert Kowalski's thoughts on how logic programming can be applied 
+              to the law.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

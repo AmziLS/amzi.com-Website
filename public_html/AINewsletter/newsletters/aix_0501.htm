@@ -1,0 +1,1554 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->January 
+                      2005 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <H1>AI Expert Newsletter</H1>
+            <P><I>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</I></P>
+            <H3>January 2005</H3>
+            <UL>
+              <LI><A HREF="#introduction">Introduction</a></LI>
+              <LI> <A HREF="#introduction"></a><A HREF="#alphabet">An AI Alphabet</A></LI>
+              <UL>
+                <LI><A HREF="#a">AI-complete</A></LI>
+                <LI><A HREF="#b">Babelfish</A></LI>
+                <LI><A HREF="#c">Compositionality</A></LI>
+                <LI><A HREF="#c_hacek">&#268;apek</A></LI>
+                <LI><A HREF="#d">Death and Downloading</A></LI>
+                <LI><A HREF="#e"><I>Elephants Don't Play Chess</I></A></LI>
+                <LI><A HREF="#f">Fear of RDF</A></LI>
+                <LI><A HREF="#g">Grandmother Cell</A></LI>
+                <LI><A HREF="#h">Hofstadter</A></LI>
+                <LI><A HREF="#i">Intelligence Amplification</A></LI>
+                <LI><A HREF="#j">Jokes</A></LI>
+                <LI><A HREF="#k">Kibertron, Kawada, Kawasaki, and Kokoro Dreams</A></LI>
+                <LI><A HREF="#l">Lenat</A></LI>
+                <LI><A HREF="#m">Meme</A></LI>
+                <LI><A HREF="#n">Neats versus Scruffies</A></LI>
+                <LI><A HREF="#o">OpenCyc</A></LI>
+                <LI><A HREF="#p">Phone</A></LI>
+                <LI><A HREF="#q">Quantum Computer</A></LI>
+                <LI><A HREF="#r">Republic</A></LI>
+                <LI><A HREF="#s">Science, Simplification, and Special Somersaults</A></LI>
+                <LI><A HREF="#t">Teledildonics</A></LI>
+                <LI><A HREF="#u">Unconvincing</A></LI>
+                <LI><A HREF="#v">Vac Hack</A></LI>
+                <LI><A HREF="#w">Winter</A></LI>
+                <LI><A HREF="#x">Xenopsychology</A></LI>
+                <LI><A HREF="#y"><I>You, Robot</I></A></LI>
+                <LI><A HREF="#z">Zombie</A></LI>
+              </UL>
+              <LI><A HREF="#sources">Islands of Truth in the Net of a Million 
+                Lies</A></LI>
+              <LI><A HREF="#tekkotsu_and_cognitive_robotics">Tekkotsu and Cognitive 
+                Robotics</a></LI>
+              <UL>
+                <LI> <A HREF="#tekkotsu_and_cognitive_robotics"></a><A HREF="#tekkotsu_links">Links</A></LI>
+              </UL>
+            </UL>
+            <H2><A NAME="introduction">Introduction</A></H2>
+            <P> Welcome to a new year and the January AI 2005 Expert. This month, 
+              I decided to take a cue from the Christmas special issue magazines 
+              and do something a little different. So I've put together an alphabetical 
+              Artificial Intelligence miscellany for your delight and delectation. 
+              AI being as rich and diverse as it is, there's a lot of variety: 
+              new and old; applied and pure; people and programs; from AI-complete 
+              problems to a zomboid Santa Clause. Next month's Newsletter will 
+              include a do-it-yourself on machine learning using Prolog and other 
+              free software, while in a future issue I hope to include a tutorial 
+              on the connection between symbolic and subsymbolic reasoning. <BR>
+            <DIV ALIGN=right> Happy New Year!<BR>
+              <A HREF="http://www.j-paine.org/">Jocelyn Paine</A></DIV>
+            <p></P>
+            <H2><A NAME="alphabet">An AI Alphabet</A></H2>
+            <H3><A NAME="a">AI-complete</A></H3>
+            <P> According to that compendium of hacker slang and culture the <A HREF="http://www.catb.org/~esr/jargon/">Jargon 
+              File</A>, an AI-complete problem is <A HREF="http://www.catb.org/~esr/jargon/html/A/AI-complete.html">one 
+              that requires creating human-level intelligence</A>. Computer vision, 
+              for example, is generally believed to be such a problem. However, 
+              this wasn't always the case: <A HREF="http://www.geek.com/news/geeknews/2003Mar/bch20030324019266.htm">legend 
+              has it</A> that back in 1967, Marvin Minsky assigned computer vision 
+              to one of his students as a summer project. And despite the next 
+              entry in this alphabet, literary quality language translation - 
+              more than just converting reports and making approximate estimates 
+              at Google pages - is probably another. If setting or choosing student 
+              projects, it is wise to check for AI-completeness. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.catb.org/~esr/jargon/">www.catb.org/~esr/jargon/</A> 
+              - Jargon File main page. To get to the dictionary, go to "Browse 
+              the Jargon File", and then to the "Glossary" link about half way 
+              down the contents. </P>
+            <H3><A NAME="b">Babelfish</A></H3>
+            <P> Small, yellow, mind-bogglingly improbable, and a biological universal 
+              translator when resident in your ear, the <A HREF="http://en.wikipedia.org/wiki/Babel_fish">Babelfish</A> 
+              in Douglas Adams's <I>Hitch Hiker's Guide to the Galaxy</I> gave 
+              its name to AltaVista's <A HREF="http://world.altavista.com/">Babel 
+              Fish</A> online translation service. This is claimed to be the first 
+              to hit the Web, but it is no longer alone. Earlier this year, I 
+              found myself using the <A HREF="http://translation2.paralink.com/">PROMT</A> 
+              online English-Russian translator to help me parameterise the error 
+              messages in a <A HREF="http://62.237.131.18/darts_web/index.php">Web-based 
+              Russian economic simulator</A>. Type fragments of Russian text on 
+              a virtual Cyrillic keyboard, paste into a Web text box, bash the 
+              <I>Translate</I> button, check the English, then type, paste and 
+              translate back. Wouldn't this have seemed utterly science-fictional 
+              back when the name AI was coined? Back when the First Officer in 
+              any self-respecting space opera would stuff xenocontaminant swabs 
+              into his utility belt and sling a universal translator pack over 
+              his shoulder just before venturing out onto the alien soil... </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://en.wikipedia.org/wiki/Babel_fish">en.wikipedia.org/wiki/Babel_fish</A> 
+              - Wikipedia entry for Douglas Adams's fish, including his <A HREF="http://en.wikipedia.org/wiki/Fideism">fideist</A> 
+              disproof of the existence of God. <BR>
+              <A HREF="http://w4.systranlinks.com/">w4.systranlinks.com/</A> - 
+              Systran, the translation engine on which Babel Fish is based. <BR>
+              <A HREF="http://world.altavista.com/">world.altavista.com/</A> - 
+              The Babel Fish online translator. <BR>
+              <A HREF="http://translation2.paralink.com/">translation2.paralink.com/</A> 
+              - The PROMT online translator. <BR>
+              <A HREF="http://sirio.deusto.es/abaitua/konzeptu/ta/vic.htm">sirio.deusto.es/abaitua/konzeptu/ta/vic.htm</A> 
+              - <I>Is it worth learning translation technology?</I> by Joseba 
+              Abaitua, University of Deusto, enquiring what human translators 
+              need know of computer translation. He examines Jaime de Ojeda's 
+              Spanish translation of Lewis Carroll's <I>Twinkle, twinkle, little 
+              bat</I> and the problems a mechanical Ojeda would have in solving 
+              the "formal hurdles" of Carroll's original. </P>
+            <H3><A NAME="c">Compositionality</A></H3>
+            <P> Compositional systems are those whose meanings can be calculated 
+              as a function of their parts and the way these are put together. 
+              Thus the meaning, or value, of the expression 1*2+3*4 can be calculated 
+              by applying the add function to the meaning of parts 1*2 and 3*4. 
+              Compositionality is good when designing data structures and programming 
+              languages, because it makes things built from them modular and easy 
+              to process by recursive decomposition, without having to worry about 
+              the context the parts occur in. Simon Peyton-Jones has an excellent 
+              example in his <A HREF="http://www.cs.uu.nl/docs/vakken/ia/stof/compcontracts.pdf"><I>Composing 
+              Contracts: An Adventure in Financial Engineering</I></A>, where 
+              he describes how to build representations for a large number of 
+              financial contracts, and a compositional semantics for calculating 
+              their value. The compositionality makes it much easier to add new 
+              kinds of contracts than in other valuation engines. </P>
+            <P> Compositionality in representational systems is deemed so important 
+              that AAAI organised an autumn conference this year on <A HREF="http://www.aaai.org/Symposia/Fall/2004/fss-04.html">compositional 
+              connectionism in cognitive modeling</A>. I'll end this entry with 
+              a quote from the call for papers: 
+            <BLOCKQUOTE> The open-ended productivity of the human capabilities 
+              aspired to by AI (e.g., perception, cognition, and language) is 
+              generally taken to be a consequence of compositionality; i.e., the 
+              ability to combine constituents recursively. The aim of this symposium 
+              is to expose connectionist researchers to the broadest possible 
+              range of conceptions of composition - including those conceptions 
+              that pose the greatest challenge for connectionism - while simultaneously 
+              alerting other AI and cognitive science researchers to the range 
+              of possibilities for connectionist implementation of composition. 
+            </BLOCKQUOTE>
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.cs.uu.nl/docs/vakken/ia/stof/compcontracts.pdf">www.cs.uu.nl/docs/vakken/ia/stof/compcontracts.pdf</A> 
+              - <I>Composing Contracts: An Adventure in Financial Engineering</I>. 
+              <BR>
+              <A HREF="http://courses.essex.ac.uk/lg/LG619/Semantics1/">courses.essex.ac.uk/lg/LG619/Semantics1/</A> 
+              - Doug Arnold's course notes on Prolog and natural language processing, 
+              Essex University. There are two links to an introduction to compositional 
+              semantics using lambda-calculus and Prolog. <BR>
+              <A HREF="http://www.aaai.org/Symposia/Fall/2004/fss-04.html">www.aaai.org/Symposia/Fall/2004/fss-04.html</A> 
+              - Page for the AAAI Fall 2004 Symposium Series, with a link to the 
+              symposium on compositional connectionism in cognitive modeling. 
+              I haven't found any of the papers available online, although they 
+              exist in dumb media as an AAAI Press technical report - see <A HREF="http://www.aaai.org/Press/Reports/Symposia/Fall/fs-04-03.html">www.aaai.org/Press/Reports/Symposia/Fall/fs-04-03.html</A>. 
+              However, the two links below indicate the kind of work that goes 
+              on. Both papers describe attempts to design nets with compositional 
+              semantics. Rushton does this by using activation values which are 
+              matrices rather than scalars, and can represent several binary relations 
+              at once; Werning uses oscillatory neural networks. <BR>
+              <A HREF="http://www.cs.ttu.edu/~rushton/compsem.htm">www.cs.ttu.edu/~rushton/compsem.htm</A>, 
+              <I>Compositional Semantics in a Localist Neural Network</I> J.N. 
+              Rushton, University of Georgia. <BR>
+              <A HREF="http://service.phil-fak.uni-duesseldorf.de/ezpublish/index.php/filemanager/download/4/salzburg.pdf">service.phil-fak.uni-duesseldorf.de/ezpublish/index.php/filemanager/download/4/salzburg.pdf</A> 
+              - <I>Semantic Models in Neural Networks</I>, by Markus Werning, 
+              University of D&uuml;sseldorf. </P>
+            <H3><A NAME="c_hacek">&#268;apek</A></H3>
+            <P> &#268; is for two &#268;apeks. As everyone knows, it was Czech 
+              author Karel &#268;apek who wrote <A HREF="http://jerz.setonhill.edu/resources/RUR/"><I>Rossum's 
+              Universal Robots</I></A>, the play in which mad inventor Old Rossum 
+              usurps the role of the Creator by artificially reproducing a man 
+              in painstaking detail, while the practical industrialist Young Rossum 
+              produces a stripped-down version of humanity to be sold as inexpensive 
+              workers. Many people also believe he invented the word "robot", 
+              but apparently it was actually his brother Josef. Had Karel done 
+              so, <A HREF="http://capek.misto.cz/english/robot.html">we'd now 
+              be studying laborics</A>. </P>
+            <P> The word itself is derived from a Slavonic root for "work", but 
+              there's some disagreement on its exact connotations. Some references 
+              say it didn't just mean "work", but work done as a serf - <A HREF="http://www.maxmon.com/1921ad.htm">the 
+              most convincing I've seen</A> is that when Czechoslovakia was still 
+              feudal, "robota" referred to those days of the week that peasants 
+              had to work without pay on the lands of noblemen. After feudalism 
+              passed, "robota" continued to be used for work that one wasn't exactly 
+              doing voluntarily or for fun, while today's younger Czechs and Slovaks 
+              tend to use it to mean work that's boring or uninteresting. </P>
+            <P> &#268;apek did not write only about robots. <I>The Gardener's 
+              Year</I> is a sweet little gardening diary, surprisingly similar 
+              in feeling to the way an English author might write. <A HREF="http://www.catbirdpress.com/bookpages/apoc.htm"><I>Apocryphal 
+              Tales</I></A> views historical and mythical figures from an unusual 
+              angle, for example the baker whose business slumps because of the 
+              miracle of the loaves and fishes. <I>War with the Newts</I> pits 
+              humanity against giant newts (who behave better than most humans), 
+              with satire on journalistic writing, animal intelligence testing, 
+              and much else. And in <I>The Absolute at Large</I>, atom-splitting 
+              power stations release the God immanent within every particle of 
+              matter; unfortunately, since there is more than one power station, 
+              they each give rise to their own Gods, which then begin to fight. 
+            </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://en.wikipedia.org/wiki/Karel_Capek">en.wikipedia.org/wiki/Karel_Capek</A> 
+              - Wikipedia entry for &#268;apek, with summaries and publication 
+              details for some of his books. <BR>
+              <A HREF="http://capek.misto.cz/english/robot.html">capek.misto.cz/english/robot.html</A> 
+              - Dominik Zunt's site on &#268;apek, with evidence for Josef as 
+              originator of the word "robot". <BR>
+              <A HREF="http://www.maxmon.com/1921ad.htm">www.maxmon.com/1921ad.htm</A> 
+              - Maxfield and Montrose about the word. <BR>
+              <A HREF="http://jerz.setonhill.edu/resources/RUR/">jerz.setonhill.edu/resources/RUR/</A> 
+              - Dennis Jerz's page on &#268;apek contains a detailed summary of 
+              <I>Rossum's Universal Robots</I>. <BR>
+              <A HREF="http://www.catbirdpress.com/bookpages/apoc.htm">www.catbirdpress.com/bookpages/apoc.htm</A> 
+              - About <I>Apocryphal Tales</I>. <BR>
+              <A HREF="http://www.frc.ri.cmu.edu/robotics-faq/1.html">www.frc.ri.cmu.edu/robotics-faq/1.html</A> 
+              - The Robotics FAQ on origin and early uses of the word "robot", 
+              Asimov included. It suggests this nice little definition of robotics: 
+            <BLOCKQUOTE> Force through intelligence.<BR>
+              Where AI meet the real world. </BLOCKQUOTE>
+            <p></P>
+            <H3><A NAME="d">Death and Downloading</A></H3>
+            <P> We'd all like to avoid death, but biology doesn't want to cooperate. 
+              So why not download our mind to a computer? This won't be a new 
+              idea to most AI-ers. <A HREF="http://radio.cbc.ca/programs/quirks/archives/02-03/oct19.html">According 
+              to Raw Kurzweil</A>, we'll be able to do so by 2040. But in a <A HREF="http://slashdot.org/article.pl?sid=02/10/21/0249259">Slashdot 
+              thread</A>, "cshotton" suggests that Ray's timetable is based on 
+              hardware extrapolation and ignores the complexity of the software 
+              needed, while "MercuryWings" imagines a Microsoft Brain XP download 
+              where downloadees have to be restored from tape after a crash, and 
+              any thought about open source software such as Linux causes a nasty 
+              pain down your side to prevent viral GPL contamination. I'm sure 
+              downloading will eventually be possible - but will it be by running 
+              a massively detailed neural or sub-neural simulation, or by emulating 
+              the mind's symbol-level processing? And let's hope the downloadees 
+              don't become zombies. But anyway, this - the avoidance of death 
+              - must surely be the most noble goal of AI. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.kurzweilai.net/">www.kurzweilai.net/</A> - Kurzweil's 
+              site. <BR>
+              <A HREF="http://radio.cbc.ca/programs/quirks/archives/02-03/oct19.html">radio.cbc.ca/programs/quirks/archives/02-03/oct19.html</A> 
+              - CBC Radio's <I>Quirks & Quarks</I>, with links to Ray Kurzweil's 
+              interview in which he sets out a timetable for the development of 
+              downloading, itself downloadable as MP3 or OGG. <BR>
+              <A HREF="http://www.penguinputnam.com/static/packages/us/kurzweil/">www.penguinputnam.com/static/packages/us/kurzweil/</A> 
+              - Review of Kurzweil's <I>The Age of Spiritual Machines</I>. <BR>
+              <A HREF="http://slashdot.org/article.pl?sid=02/10/21/0249259">slashdot.org/article.pl?sid=02/10/21/0249259</A> 
+              - Slashdot mind-downloading thread. Some rubbish, but interesting 
+              and amusing postings too. <BR>
+              <A HREF="http://minduploading.org/">minduploading.org/</A> - Home 
+              page for the Society of Neural Prosthetics and Whole Brain Emulation 
+              Science. A quick browse through the references and resources will 
+              demonstrate just how much we still need to find out about neurobiology 
+              before downloading (or uploading as some call it) becomes reality. 
+            </P>
+            <H3><A NAME="e"><I>Elephants Don't Play Chess</I></A></H3>
+            <P> Elephants don't play chess. They can find food, locate and dock 
+              with mates, and do all the other things needed for a happy, long 
+              and trombipulative life in a complex and uncertain environment, 
+              but what they can't do is play chess. In other words, they don't 
+              do symbol manipulation, but they survive without needing to. This 
+              was the theme of <A HREF="http://people.csail.mit.edu/u/b/brooks/public_html/">Rodney 
+              Brooks</A>'s paper <A HREF="http://people.csail.mit.edu/u/b/brooks/public_html/papers/elephants.pdf"><I>Elephants 
+              Don't Play Chess</I></A>. He argued that the traditional AI approach 
+              of manipulating symbols and explicitly representing goals was flawed, 
+              leading to brittle software that, when embodied in robots, would 
+              fnd it difficult and computationally expensive to get around in 
+              the real world. As an alternative, he proposed "subsumption" architectures, 
+              based on layers of steadily more complex behaviours. </P>
+            <P> For example, a robot vacuum cleaner might have a level-1 layer 
+              which just makes it wander randomly round the room, the only sensory 
+              input being from a touch sensor which causes it to turn slightly 
+              and back off when it hits something. This could be supplemented 
+              with a level-2 layer which uses simple light sensing to bias movement 
+              towards darker regions - likely to be under furniture, where dust 
+              is often ignored. On top of this, a level-3 layer might monitor 
+              the weight of the dust bag, and rebias movement towards a fixed 
+              "emptying" station once the weight crosses a certain threshold. 
+            </P>
+            <P> The point is that these layers are simple to implement and test, 
+              involve direct sensor-to-motor links rather than computationally 
+              slow cognition, and allow systems to be developed incrementally, 
+              while having some ability to get around in the real world right 
+              from the start. As with any approach, subsumption architectures 
+              in particular, and Brooks's approach to robotics in general, have 
+              their critics. However, Brooks's ideas are now being applied, not 
+              only to <A HREF="http://www.doc.ic.ac.uk/~nd/surprise_95/journal/vol4/pma/report.html">Mars 
+              exploration robots</A>, but to the literally more mundane matter 
+              of home robotics: his company <A HREF="http://www.irobot.com/home.cfm">iRobot</A> 
+              markets the Roomba autonomous vacuum cleaner. For more on this, 
+              see my alphabet entry for <A HREF="#v">"V"</A>. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://people.csail.mit.edu/u/b/brooks/public_html/">people.csail.mit.edu/u/b/brooks/public_html/</A> 
+              - Rodney Brooks's home page. <I>Elephants Don't Play Chess</I> is 
+              linked via his publications page here, as are other papers on the 
+              same topic. <BR>
+              <A HREF="http://ai.eecs.umich.edu/cogarch3/">ai.eecs.umich.edu/cogarch3/</A> 
+              - <I>Comparative Reference of Cognitive Architectures</I> by Scott 
+              Dexter, Daniel McKown, Seth Rogers, Richard Simpson, and William 
+              Walsh, University of Michigan. A useful comparison, covering subsumption 
+              amongst other architectures. <BR>
+              <A HREF="http://citeseer.ist.psu.edu/song96sumpy.html">citeseer.ist.psu.edu/song96sumpy.html</A> 
+              - Citeseer abstract and links to <I>SUMPY: A Fuzzy Software Agent</I>, 
+              by Hongjun Song, Stan Franklin, and Aregahegn Negatu. A well-known 
+              paper on an unusual use of subsumption, namely a software agent 
+              which helps maintain a Unix file system by compressing and backing 
+              up files. <BR>
+              <A HREF="http://www.oricomtech.com/misc/fandm.htm">www.oricomtech.com/misc/fandm.htm</A> 
+              - <I>Some ideas abstracted from reading Rodney Brooks' book Flesh 
+              and Machines</I>. Point-by-point summary from Oricom Technologies, 
+              including (under the heading "Symbiotic Home Lifeforms"), three 
+              paragraphs on vacuum cleaners and the Roomba. <BR>
+              <A HREF="http://www.doc.ic.ac.uk/~nd/surprise_95/journal/vol4/pma/report.html">www.doc.ic.ac.uk/~nd/surprise_95/journal/vol4/pma/report.html</A> 
+              - <I>Exploring Mars Using Intelligent Robots</I> by Paris Andreou 
+              and Adonis Charalambides, Imperial College. A fairly non-technical 
+              discussion of how to construct a Mars Exploration Rover designed 
+              around a subsumption architecture. There's a good selection of links 
+              and printed references. <BR>
+              <A HREF="http://www.irobot.com/home.cfm">www.irobot.com/home.cfm</A> 
+              - iRobot home page. </P>
+            <H3><A NAME="f">Fear of RDF</A></H3>
+            <P> Many programmers find the Semantic Web language <A HREF="http://www.xml.com/pub/a/2001/01/24/rdf.html">RDF</A> 
+              scary, because it's touted as a system for giving the Web artificial 
+              intelligence, and that sounds difficult. So reports the <A HREF="http://www.aaai.org/AITopics/html/archvE12.html">December 
+              2004 AAAI news</A>, following a feature in the Sydney Morning Herald. 
+              In fact though, it continues, RDF is just a metadata language, or 
+              language for describing data. Using RDF is about adding such metadata 
+              to the Web so content can be better used by programs. So to do my 
+              bit to dispel the fear, I link below to one beginner's guide to 
+              RDF and two tutorials on using it with Prolog. It's amusing to note 
+              that attitudes to AI vary; the quote below is from the first of 
+              those RDF-Prolog tutorials: 
+            <BLOCKQUOTE> The AI label tends to mark things which aren't yet implemented 
+              in a generally useful manner, often because hardware or general 
+              practices haven't yet caught up. That seems to describe the Semantic 
+              Web pretty well. </BLOCKQUOTE>
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/archvE12.html">www.aaai.org/AITopics/html/archvE12.html</A> 
+              - AAAI December 2004 news page. Search for "metadata" to find the 
+              Sydney Morning Herald feature. <BR>
+              <A HREF="http://www.xml.com/pub/a/2001/01/24/rdf.html">www.xml.com/pub/a/2001/01/24/rdf.html</A> 
+              - <I>What is RDF?</I> by Tim Bray, updated by Dan Brickley. An easy-to-read 
+              XML.com tutorial on RDF for beginners. <BR>
+              <A HREF="http://www.xml.com/pub/a/2001/04/25/prologrdf/">www.xml.com/pub/a/2001/04/25/prologrdf/</A> 
+              and <A HREF="http://www.xml.com/pub/a/2001/07/25/prologrdf.html">www.xml.com/pub/a/2001/07/25/prologrdf.html</A> 
+              - Bijan Parsia's XML.com tutorials on RDF for Prolog programmers, 
+              using SWI Prolog. A few broken links, but still useful. <BR>
+              <A HREF="http://www.swi-prolog.org/packages/">www.swi-prolog.org/packages/</A> 
+              - The SWI-Prolog libraries page, including an RDF parser and utilities 
+              for storing and querying RDF. </P>
+            <H3><A NAME="g">Grandmother Cell</A></H3>
+            <P> It is rumoured that, in a certain UK university psychology lab, 
+              the monkeys used as one researcher's experimental subjects have 
+              developed specialised neurons that fire only when confronted by 
+              him. Whether or not this is true, in theories of perception, a Grandmother 
+              Cell is a neuron so specialised that it fires only when confronted 
+              by the face of one's grandmother. The term can, it seems, <A HREF="http://www.bbsonline.org/Preprints/OldArchive/bbs.page.html">be 
+              traced back</A> to a lecture series delivered by Jerome Lettvin 
+              in 1969, where he introduced, in a discussion on neural representation, 
+              a hypothetical neuroscientist who discovers in the brains of his 
+              animal subjects 
+            <BLOCKQUOTE> some 18,000 neurons... that responded uniquely only to 
+              the animal's mother, however displayed, whether animate or stuffed, 
+              seen from before or behind, upside down or on a diagonal, or offered 
+              by caricature, photograph or abstraction. </BLOCKQUOTE>
+            The idea may have originated with one of the early models of visual 
+            perception, Oliver Selfridge's Pandemonium. When applied to letter 
+            recognition, this bottom-up model would start with detectors for low-level 
+            features such as vertical lines, horizontal lines, and parts of circles. 
+            These would feed to higher-level detectors for particular letters, 
+            which would themselves feed to a top-level detector that selects the 
+            most highly activated letter detector and hence the most probable 
+            letter. This is the analogue of the grandmother cell. 
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.bbsonline.org/Preprints/OldArchive/bbs.page.html">www.bbsonline.org/Preprints/OldArchive/bbs.page.html</A> 
+              - <I>Connectionist Modelling In Psychology: A Localist Manifesto</I> 
+              by Mike Page of the Medical Research Council Cognition and Brain 
+              Sciences Unit. An interesting paper in which the author compares 
+              distributed representations in connectionist models with localised 
+              representations, distinguishes between distributed processing and 
+              distributed representation, and shows that distributed models supplemented 
+              with local representations can model pyschological phenomena that 
+              fully distributed models cannot. This paper was the source of my 
+              quote on grandmother cells; the author also explains the "Yellow 
+              Volkswagen cell" . <BR>
+              <A HREF="http://www.cs.nott.ac.uk/~esg/memory.html">www.cs.nott.ac.uk/~esg/memory.html</A> 
+              - Course notes on models of human memory by Elizabeth Gordon at 
+              Nottingham. These contain brief evaluations of Pandemonium and other 
+              models - including Minsky's Society of Mind, Kanerva's Sparse Distributed 
+              Memory and Hofstadter's Copycat - against human performance. Other 
+              links on her <A HREF="http://www.cs.nott.ac.uk/~esg">home page</A> 
+              include her games research, based around Nilsson's <A HREF="http://robotics.stanford.edu/users/nilsson/trweb/tr.html">teleo-reactive 
+              agents</A> and the <A HREF="http://gamebots.sourceforge.net/">Gamebots</A> 
+              toolkit. <BR>
+              <A HREF="http://vision.psy.mq.edu.au/~darrenb/objects.BW.pdf">vision.psy.mq.edu.au/~darrenb/objects.BW.pdf</A> 
+              - Course slides on object recognition by Darren Burke at Macquarie, 
+              with brief sections on template matching, Pandemonium, Marr, and 
+              Beiderman. His <A HREF="http://vision.psy.mq.edu.au/~darrenb/objects.BW.pdf">home 
+              page</A> links to other interesting stuff, including research on 
+              visual perception in penguins and sea lions, and on why echidna 
+              brains are so unusually big. </P>
+            <H3><A NAME="h">Hofstadter</A></H3>
+            <P> Douglas Hofstadter is the author of <I>G&ouml;del, Escher, Bach</I>, 
+              a book which, with its whimsical form-follows-function dialogues 
+              and examinations of logic, truth and beauty, G&ouml;del's theorem, 
+              Zen, levels of explanation, and Lisp, became popular in the early 
+              80s. He followed it with <I>Metamagical Themas</I>, a collection 
+              of essays first published in <I>Scientific American</I>, and which 
+              show a fascination with style, analogy, metaphor, and translation. 
+              For example: what do all the diverse typefaces we use to write an 
+              A have in common? How could we build a program to recognise that 
+              they're all A's? Turning this through 90 degrees, what is the essence 
+              that distinguishes Courier, say, from Helvetica? If we'd never seen 
+              a B before, how could we build a program to extract the essence 
+              of Helvetica-ness from a Helvetica A and apply it to make a Helvetica 
+              B? How could we apply this essence to letters in a different writing 
+              system, for example Cyrillic, Hebrew, or Chinese? </P>
+            <P> At the Indiana University Center for Research on Concepts and 
+              Cognition, Hofstadter and colleagues have implemented these ideas 
+              in various programs with "fluid concept" architecture. For example, 
+              the "Copycat" program was written to solve analogy problems such 
+              as this: 
+            <BLOCKQUOTE> Suppose the letter-string abc were changed to abd; how 
+              would you change the letter-string ijk in “the same way”? </BLOCKQUOTE>
+            Possible solutions are: 
+            <BLOCKQUOTE> 1. The rightmost letter was replaced by d, hence: ijk 
+              ->ijd. <BR>
+              2. The whole string was replaced by abd, hence ijk -> abd. <BR>
+              3. All c’s were changed to d’s, hence ijk -> ijk. <BR>
+              4. The rightmost letter was replaced by its alphabetic successor: 
+              ijk -> ijl. Most people would give this answer, and apparently so 
+              does Copycat, on 980 out of 1000 runs. </BLOCKQUOTE>
+            See the links below for more on his research, and my entry for <A HREF="#s">"S"</A> 
+            for thoughts on his approach to AI research. 
+            <p></P>
+            <P> Hofstadter's interests in translation extend far beyond computing. 
+              <A HREF="http://www.bloomington.in.us/~abangert/person.html"><I>A 
+              Person Paper on Purity in Language</I></A>, first published in <I>Metamagical 
+              Themas</I> and purporting to be by William Satire - an allusion 
+              to <I>New York Times</I> columnist William Safire - is a satirical 
+              and extremely clever piece on racism and sexist language. This is 
+              how it begins: 
+            <BLOCKQUOTE> It's high time someone blew the whistle on all the silly 
+              prattle about revamping our language to suit the purposes of certain 
+              political fanatics. You know what I'm talking about-those who accuse 
+              speakers of English of what they call "racism." This awkward neologism, 
+              constructed by analogy with the well-established term "sexism," 
+              does not sit well in the ears, if I may mix my metaphors. But let 
+              us grant that in our society there may be injustices here and there 
+              in the treatment of either race from time to time, and let us even 
+              grant these people their terms "racism" and "racist." How valid, 
+              however, are the claims of the self-proclaimed "black libbers," 
+              or "negrists"-those who would radically change our language in order 
+              to "liberate" us poor dupes from its supposed racist bias? Most 
+              of the clamor, as you certainly know by now, revolves around the 
+              age-old usage of the noun "white" and words built from it, such 
+              as chairwhite, mailwhite, repairwhite, clergywhite, middlewhite, 
+              Frenchwhite, forewhite, whitepower, whiteslaughter, oneupwhiteship, 
+              straw white, whitehandle, and so on ... </BLOCKQUOTE>
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.cogs.indiana.edu/people/homepages/hofstadter.html">www.cogs.indiana.edu/people/homepages/hofstadter.html</A> 
+              - Douglas Hofstadter's home page. <BR>
+              <A HREF="http://en.wikipedia.org/wiki/Douglas_Hofstadter">en.wikipedia.org/wiki/Douglas_Hofstadter</A> 
+              - Wikipedia entry. <BR>
+              <A HREF="http://www.cogsci.indiana.edu/">www.cogsci.indiana.edu/</A> 
+              - Center for Research on Concepts and Cognition home page. The link 
+              to "research topic pages" leads to more detailed explanations of 
+              the group's research , though some of the pages on specific implementations 
+              are unfortunately still empty. <BR>
+              <A HREF="http://web.ulyssis.org/~joa/zsp/fluidconcepts/">http://web.ulyssis.org/~joa/zsp/fluidconcepts/</A> 
+              - <I>Fluid Concept Architecture: A Critical Evaluation</I> by Joaquin 
+              Vanschoren, University of Leuven. An interesting attempt to get 
+              down inside the Copycat architecture and analyse how it works. <BR>
+              <A HREF="http://www.cs.pdx.edu/~mm/how-to-get-copycat.html">www.cs.pdx.edu/~mm/how-to-get-copycat.html</A> 
+              - Links to the original source of Copycat, in a somewhat outdated 
+              Lisp, and to a Java reimplementation by Scott Bolland, University 
+              of Queensland. <BR>
+              <A HREF="http://pp.kpnet.fi/seirioa/cdenn/hofstadt.htm">pp.kpnet.fi/seirioa/cdenn/hofstadt.htm</A> 
+              - Daniel Dennett's highly complimentary review of Hofstadter and 
+              colleagues' <I>Fluid Concepts and Creative Analogies</I>, including 
+              a point-by-point summary of their work, and comparison with other 
+              AI architectures. <BR>
+              <A HREF="http://www.bloomington.in.us/~abangert/person.html">www.bloomington.in.us/~abangert/person.html</A> 
+              - Links to various copies of <I>A Person Paper on Purity in Language 
+              (with Post Scriptum)</I>. </P>
+            <H3><A NAME="i">Intelligence Amplification</A></H3>
+            <P> I is for Intelligence Amplification, or the use of computing devices 
+              to supplement human brain power. Examples include pen and paper, 
+              slide rules, calculators, computer algebra, the Web, search engines, 
+              and online translators. Some people believe that, rather than work 
+              on general AI, which may be impossible in principle, or at least 
+              infeasible in practice, we should concentrate instead on IA tools 
+              for specific tasks. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.businessintelligence.com/ex/asp/code.128/xe/article.htm">www.businessintelligence.com/ex/asp/code.128/xe/article.htm</A> 
+              - <I>Where is the "Intelligence" behind "Business Intelligence"?</I> 
+              Thoughts on AI and IA by Jay Liebowitz from the Department of Business 
+              and Management at Johns Hopkins University. <BR>
+              <A HREF="http://www.aleph.se/Trans/Individual/Intelligence/">www.aleph.se/Trans/Individual/Intelligence/</A> 
+              - Anders Sandberg's pages on transhumanism and IA. Topics linked 
+              range from mind downloading to intelligence amplification without 
+              computers, including memory-improvement systems and smart drugs. 
+            </P>
+            <H3><A NAME="j">Jokes</A></H3>
+            <P> In my time demonstrating the <A HREF="http://www.robots.ox.ac.uk/~aisoc">Oxford 
+              University AI Society</A> at Freshers' Fair, the following two "jokes" 
+              have been thrown at me all too often: "What, Artificial Intelligence? 
+              That's far too hard for me; I don't even have any real intelligence". 
+              And, "What, Artificial Intelligence? I need that; I don't even have 
+              any real intelligence". This entry is, however, not about jokes 
+              aimed at AI, but those generated and enjoyed by it. </P>
+            <P> Here's a joke said to have been popular in Russia before the Soviet 
+              Union broke up: 
+            <BLOCKQUOTE> Two people are talking about democracy. One is American 
+              and one is Russian. The American tells the Russian: "We have freedom 
+              in America - we can stand next to the White House and call our president 
+              stupid without fear of being punished." The Russian replied, "We 
+              also have freedom in Russia. We can stand in front of the Kremlin 
+              and call your president stupid without being punished, too." </BLOCKQUOTE>
+            Somehow, this joke seems to be an analogy that hasn't quite worked 
+            out. Perhaps it's like someone telling you the answer to 
+            <BLOCKQUOTE> Suppose the letter-string ab were changed to ba; how 
+              would you change the letter-string abA in “the same way”? </BLOCKQUOTE>
+            is baA, when you would expect it to be baB. If that reminds you of 
+            my entry on <A HREF="#h">Hofstadter's work</A>, that's not surprising: 
+            he has taken a lot of interest in the subject, as <A HREF="http://www.lyons42.com/seminars/HofstPunsAndHumor.html">the 
+            seminar linked below on computer puns and humour demonstrates</A>. 
+            Now, as an exercise for the academic reader, what if anything is strange 
+            about <A HREF="http://www.stenmorten.com/English/essays/analogies.php">the 
+            following analogy</A>? 
+            <BLOCKQUOTE> The juvenile sea squirt wanders through the sea searching 
+              for a suitable rock or hunk of coral to cling to and make its home 
+              for life. For this task, it has a rudimentary nervous system. When 
+              it finds its spot and takes root, it doesn’t need its brain anymore, 
+              so it eats it! (It's rather like getting tenure.) </BLOCKQUOTE>
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.lyons42.com/seminars/HofstPunsAndHumor.html">www.lyons42.com/seminars/HofstPunsAndHumor.html</A> 
+              - <I>Are Computers Approaching Human-Level Creativity? Seminar #4 
+              of 5: Puns and Humor</I>. Organised by Douglas Hofstadter, and including 
+              Marvin Minsky as panelist, this is an amusing account of a seminar 
+              on computer humour. I'm not sure whether that's because of the panelists' 
+              insights, or despite them. <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/toons.html">www.aaai.org/AITopics/html/toons.html</A> 
+              - AAAI's cartoons page. Below the cartoons are links to various 
+              pieces of work on humour research, including the feature just cited. 
+              <BR>
+              <A HREF="http://www.stenmorten.com/English/essays/analogies.php">www.stenmorten.com/English/essays/analogies.php</A> 
+              - This short Copycat-related page contains the Dennett sea-squirt/tenure 
+              analogy. </P>
+            <H3><A NAME="k">Kibertron, Kawada, Kawasaki, and Kokoro Dreams</A></H3>
+            <P> OK, I admit it. I just wanted an excuse to look at pictures of 
+              some really B-I-I-I-G robots, and some of the manufacturers' names 
+              began with K. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.androidworld.com/prod01.htm">www.androidworld.com/prod01.htm</A> 
+              - <I>World's greatest android projects</I> page. Lots of robot pin-ups, 
+              with links to the parent universities or companies. I was highly 
+              amused to see that the name of one Australian robot, GURoo, developed 
+              by Gordon Wyeth and colleagues at Queensland, started with the initial 
+              letters of the words "Grossly Underfunded". Will this start a trend? 
+            </P>
+            <H3><A NAME="l">Lenat</A></H3>
+            <P> L is for Lenat. Roughly half-way between the birth of Lisp and 
+              the end of the Japanese Fifth Generation project, Douglas Lenat 
+              wrote the mathematical discovery program AM, to test the hypothesis 
+              that simple heuristics and a uniform control structure could generate 
+              creativity. AM was initialised with definitions of various set-theoretic 
+              functions, plus heuristics for creativity. These included rules 
+              like (I translate from the Lisp) "If a function is interesting, 
+              its inverse is worth investigating"; "A concept is more interesting 
+              if it has been discovered by several independent routes"; and "The 
+              result of making both arguments of a two-argument function the same 
+              may be interesting". From these, AM conjectured the existence of 
+              integers, addition, multiplication, factorisation, primes, the Unique 
+              Factorisation Theorem, and Goldbach's conjecture. </P>
+            <P> These results were impressive, and caused much argument about 
+              whether Lenat had biased his creativity heuristics towards such 
+              discoveries. But unfortunately, AM then spun off into unproductive 
+              conjectures about numbers with prime numbers of prime factors and 
+              other such stuff. This led Lenat to argue that as AM discovered 
+              new mathematical entities, it would need to discover new discovery 
+              rules too. Mathematicians realise that set theory is a different 
+              kind of beast from number theory: research methods that suit one 
+              don't suit the other. To put this into practice, Lenat designed 
+              AM's successor Eurisko, which did try to discover new discovery 
+              rules as it ran, evaluating each new rule by its usefulness at making 
+              discoveries. </P>
+            <P> Eurisko is fun because it gave rise to a lot of folklore. There's 
+              an amusing little bit at the end of George Johnson's popular account, 
+              <A HREF="http://www.aliciapatterson.org/APF0704/Johnson/Johnson.html"><I>Eurisko, 
+              The Computer With A Mind Of Its Own</I></A>. He tells how, in Eurisko, 
+              sometimes a "mutant" heuristic would appear that did little more 
+              than continually cause itself to be triggered, causing an infinite 
+              loop. During one run, Lenat noticed that the number representing 
+              the usefulness of one newly discovered heuristic kept rising, indicating 
+              that Eurisko had made a particularly valuable find. As it turned 
+              out the heuristic performed no useful function. It simply examined 
+              the pool of new concepts, located those with the highest usefulness 
+              values, and marked them as having been created by itself.. Read 
+              the article also to find out how Eurisko was banned from the Traveller 
+              war-game tournament, because it proved too successful at generating 
+              unbeatable strategies. </P>
+            <P> These days, Lenat is best known for Cyc, his attempt to express 
+              as much as possible of human knowledge in logical form, as a resource 
+              of common-sense knowledge for AI reasoning systems. According to 
+              Marvin Minsky in a <A HREF="http://www.wired.com/news/technology/0,1282,58714,00.html">speech 
+              delivered in 2003</A>, AI has been brain dead for 15 years, Cyc 
+              being one of the few worthwhile exceptions. Others may disagree 
+              - but where else can you find what <A HREF="http://www.sciam.com/page.cfm?section=sidebar&articleID=00063887-5C1E-1C6D-84A9809EC588EF21"><I>Scientific 
+              American</I></A> tells us is just one of the chunks of knowledge 
+              in Cyc's knowledge base. Need I translate? 
+            <PRE>
+
+(holdsIn (YearFn 1998)
+
+(embarrassed BillClinton
+
+(sexualPartner 
+
+MonicaLewinsky
+
+BillClinton)))
+
+</PRE>
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.aliciapatterson.org/APF0704/Johnson/Johnson.html">www.aliciapatterson.org/APF0704/Johnson/Johnson.html</A> 
+              - <I>Eurisko, The Computer With A Mind Of Its Own</I> by freelance 
+              writer George Johnson. A nice popular-science account of AM and 
+              Eurisko, and of why Lenat wrote them. <BR>
+              <A HREF="http://www.agorics.com/Library/agoricpapers/ce/ce5.html">www.agorics.com/Library/agoricpapers/ce/ce5.html</A> 
+              - Paper on appling market discipline to Eurisko's rules. <BR>
+              <A HREF="http://web.media.mit.edu/~haase/thesis/node52.html">web.media.mit.edu/~haase/thesis/node52.html</A> 
+              - Thesis on the discovery program Cyrano, by Ken Haase, MIT. Includes 
+              a reasonably detailed comparison with AM, and a run through AM's 
+              discoveries. <BR>
+              <A HREF="http://www.wired.com/news/technology/0,1282,58714,00.html">www.wired.com/news/technology/0,1282,58714,00.html</A> 
+              - <I>Wired</I> feature on Minsky's recent pronouncement: <I>AI Founder 
+              Blasts Modern Research</I>. <BR>
+              <A HREF="http://www.cyc.com/">www.cyc.com/</A> - Cycorp home page. 
+              <BR>
+              <A HREF="http://boole.stanford.edu/cyc.html">boole.stanford.edu/cyc.html</A> 
+              - A somewhat sceptical 1994 report on Cyc by Vaughan Pratt, Stanford. 
+              <BR>
+              <A HREF="http://www.robotwisdom.com/ai/cycresources.html">www.robotwisdom.com/ai/cycresources.html</A> 
+              - An assortment of Cyc-related links from Jorn Barger. <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/common.html">www.aaai.org/AITopics/html/common.html</A> 
+              - Some useful links on common-sense reasoning from AAAI, including 
+              classic papers such as John McCarthy's 1959 <A HREF="http://www-formal.stanford.edu/jmc/mcc59.html"><I>Programs 
+              with Common Sense</I></A>, news, and various items concerning Cyc. 
+              Search for "An Entity Named Monica" to find <I>Scientific American</I>'s 
+              Cyc translation of presidential mis-doings. </P>
+            <H3><A NAME="m">Meme</A></H3>
+            <P> The word "meme" was coined by Richard Dawkins in his book <I>The 
+              Selfish Gene</I> to denote a piece of information that, like a gene, 
+              can replicate and evolve. Examples of memes include proselytizing 
+              religions, catchphrases, nursery rhymes, advertising jingles, and 
+              the idea of memes itself. If genes compete for physical resources 
+              such as food and light, memes can be seen as competing for resources 
+              such as storage space (whether in books, academic papers, Web pages, 
+              or brains) and replication efficiency (whether by word-of-mouth 
+              gossip, transfer of virus-infected floppies, or propagation of Internet 
+              worms). It's hard to make memetics, the study of memes, as rigorous 
+              as genetics, because genes, or at least DNA strands, are clearly-definable 
+              physical objects. But there have been some interesting attempts 
+              at applying memetics to, for example, <A HREF="http://users.lycaeum.org/~sputnik/Memetics/day.life.html">memory</A>. 
+              Anyway, as Edmund Chattoe's paper on <A HREF="http://www.sosig.ac.uk/iriss/papers/paper37.htm"><I>Virtual 
+              Urban Legends: Investigating the Ecology of the World Wide Web</I></A> 
+              illustrates, some of it needs no excuse other than that it's fun. 
+            </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://en.wikipedia.org/wiki/Meme<.A> - Wikipedia entry for "meme". An interesting and fairly
+
+detailed discussion, with a good selection of links.
+
+><BR>
+              </a><A HREF="http://users.ipfw.edu/waldschg/linx1l.htm">users.ipfw.edu/waldschg/linx1l.htm</A> 
+              - Huge list of memetics links from G.B. Waldschmidt at Indiana University 
+              - Purdue University Fort Wayne. <BR>
+              <A HREF="http://users.lycaeum.org/~sputnik/Memetics/">users.lycaeum.org/~sputnik/Memetics/</A> 
+              - A long list of links to memetics-related publications, including 
+              papers by Richard Dawkins, Daniel Dennett and Peter Medawar. <BR>
+              <A HREF="http://www.sosig.ac.uk/iriss/papers/paper37.htm">www.sosig.ac.uk/iriss/papers/paper37.htm</A> 
+              - <I>Virtual Urban Legends: Investigating the Ecology of the World 
+              Wide Web</I> by Edmund Chattoe, Sociology Department, Oxford University. 
+              <BR>
+              <A HREF="http://users.lycaeum.org/~sputnik/Memetics/day.life.html">users.lycaeum.org/~sputnik/Memetics/day.life.html</A> 
+              - <I>A Day in the Life of a Meme</I> by Liane Gabora, Center for 
+              the Study of the Evolution and Origin of Life, University of California. 
+              The paper, which "outlines a theory of how memes evolve, and illustrates 
+              how a memetic perspective provides not only not only a foundation 
+              for research into the dynamics of concepts and artifacts at the 
+              societal level, but a synthetic framework for understanding how 
+              mental representations are generated, organized, stored, retrieved, 
+              and expressed at the level of the individual", is a meme-based theory 
+              of memory. <BR>
+              <A HREF="http://vmyths.com/">vmyths.com/</A> - The Vmyths site, 
+              where you can "Learn about com­puter virus myths, hoaxes, urban 
+              legends, hys­teria, and the impli­ca­tions if you be­lieve in them". 
+              Not unrelated to memes, since both computer viruses, and hoaxes 
+              about computer viruses, can be seen as memes. </P>
+            <H3><A NAME="n">Neats versus Scruffies</A></H3>
+            <P> Is there one general principle underlying intelligence, or is 
+              it a collection of domain-specific hacks and tricks bodged together? 
+              Roughly speaking, "neats" believe the former and "scruffies" the 
+              latter. Or, as the <A HREF="http://www.catb.org/~esr/jargon/html/N/neats-vs--scruffies.html">Jargon 
+              File</A> puts it, neats tend to believe that logic is king, while 
+              scruffies favor looser, more ad-hoc methods driven by empirical 
+              knowledge. </P>
+            <P> According to Wendy Lehnert, in her AI memoir <A HREF="http://www-nlp.cs.umass.edu/ciir-pubs/cognition.pdf"><I>Cognition, 
+              Computers, and Car Bombs: How Yale Prepared Me for the 90's</I></A>, 
+              the term originated with Roger Schank and Robert Abelson in their 
+              research into detailed symbolic models of human memory and belief. 
+              As Lehnert says, 
+            <BLOCKQUOTE> In particular, certain personality traits go hand and 
+              hand with certain styles of research. Schank and Abelson hit upon 
+              one such phenomenon along these lines and dubbed it the neats vs. 
+              the scruffies. These terms moved into the mainstream AI community 
+              during the early 80s, shortly after Abelson presented the phenomenon 
+              in a keynote address at the Annual Meeting of the Cognitive Science 
+              Society in 1981. </BLOCKQUOTE>
+            She goes on to quote from this address to the effect that because 
+            the world is messy, 
+            <BLOCKQUOTE> models of mind become garrulous and intractable as they 
+              become more and more realistic. If one's emphasis is on science 
+              more than on cognition, however, the canons of hard science dictate 
+              a strategy of the isolation of idealized subsystems which can be 
+              modeled with elegant productive formalisms. Clarity and precision 
+              are highly prized, even at the expense of common sense realism. 
+              To caricature this tendency with a phrases from John Tukey, the 
+              motto of the narrow hard scientist is, "Be exactly wrong, rather 
+              than approximately right". </BLOCKQUOTE>
+            <p></P>
+            <P> But the conflict goes deeper. Indeed, 
+            <BLOCKQUOTE> the stylistic division is the same polarization that 
+              arises in all fields of science, as well as in art, in politics, 
+              in religion, in child rearing - and in all spheres of human endeavor. 
+              Psychologist Silvan Tomkins characterizes this overriding conflict 
+              as that between characterologically left-wing and right-wing world 
+              views. The left-wing personality finds the sources of value and 
+              truth to lie within individuals, whose reactions to the world define 
+              what is important. The right-wing personality asserts that all human 
+              behavior is to be understood and judged according to rules or norms 
+              which exist independent of human reaction. </BLOCKQUOTE>
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.catb.org/~esr/jargon/html/N/neats-vs--scruffies.html">www.catb.org/~esr/jargon/html/N/neats-vs--scruffies.html</A> 
+              - Jargon File entry. <BR>
+              <A HREF="http://www-nlp.cs.umass.edu/ciir-pubs/cognition.pdf">www-nlp.cs.umass.edu/ciir-pubs/cognition.pdf</A> 
+              - <I>Cognition, Computers, and Car Bombs: How Yale Prepared Me for 
+              the 90's</I>, by Wendy Lehnert. <BR>
+              <A HREF="http://www.cs.bham.ac.uk/research/cogaff/sloman.scruffy.ai.pdf">www.cs.bham.ac.uk/research/cogaff/sloman.scruffy.ai.pdf</A> 
+              - <I>Must Intelligent Systems Be Scruffy?</I> by Aaron Sloman. An 
+              entertaining general paper, written in 1989 as connectionism was 
+              becoming popular, in which he asserts that yes, they must, even 
+              to the extent of forcing us to deal with "scruffy semantics". But, 
+              he concludes, horrified rejection of AI is not the correct response. 
+              <BR>
+              <A HREF="http://scruffy.csail.mit.edu/scruffspace/index.php/Scruffy%3F">scruffy.csail.mit.edu/scruffspace/index.php/Scruffy%3F</A> 
+              - The <I>Scruffspace</I> forum article for "Scruffy?", concerning 
+              first use of the words. Their main page says 
+            <BLOCKQUOTE> scruffspace is dedicated to those interested in applying 
+              ai techniques to shape every aspect of humans' lives. more specifically, 
+              it is a common ground for exchanging resources pertaining to understanding 
+              how and what techniques in modern artificial intelligence can be 
+              applied to solving problems in ubiquitous computing. it is maintained 
+              by Max, with the hopes that it will attract other scruffies who 
+              will contribute to make this a more interesting resource. </BLOCKQUOTE>
+            <p></P>
+            <H3><A NAME="o">OpenCyc</A></H3>
+            <P> I have just been told that Taiwan has no ambassador from the US, 
+              but does deploy an air-to-air missile called the AIM-7M. Or, as 
+              my informant expressed it, 
+            <PRE>
+
+&lt;owl:Class rdf:ID="AIM-7M-AirToAirMissile"&gt; 
+
+&lt;rdfs:comment&gt;A kind of #$AirToAirMissile currently (2000) 
+
+  used by #$Taiwan-RepublicOfChina.
+
+&lt;/rdfs:comment&gt; 
+
+&lt;rdf:type rdf:resource="#ExistingObjectType" /&gt; 
+
+&lt;rdf:type rdf:resource="#ProductTypeByBrand" /&gt; 
+
+&lt;rdf:type rdf:resource="#FormalProductType" /&gt; 
+
+&lt;rdfs:subClassOf rdf:resource="#AirToAirMissile" /&gt; 
+
+&lt;rdfs:subClassOf rdf:resource="#GuidedMissile" /&gt; 
+
+&lt;/owl:Class&gt; 
+
+
+
+&lt;owl:Class rdf:ID="Ambassador"&gt; 
+
+&lt;rdfs:comment&gt;A collection of persons; a subset of #$Diplomat. Each 
+
+  element of #$Ambassador is a person who is the officially appointed  
+
+  chief representative of a country's government in dealing with another  
+
+  government or an international organization. For example, the collection 
+
+  #$Ambassador includes the U.S. ambassadors to #$Japan, #$Russia, 
+
+  #$China-PeoplesRepublic, and other countries, and also the U.S. 
+
+  ambassador to the #$UnitedNationsOrganization. A country sends 
+
+  an ambassador to another country only if it officially recognizes that 
+
+  country's sovereign status; e.g., currently there is no U.S. ambassador 
+
+  to #$Taiwan-RepublicOfChina.
+
+&lt;/rdfs:comment&gt; 
+
+&lt;rdf:type rdf:resource="#PersonTypeByOccupation" /&gt; 
+
+&lt;rdf:type rdf:resource="#PersonTypeByPositionInOrg" /&gt; 
+
+&lt;rdfs:subClassOf rdf:resource="#Minister-Diplomatic" /&gt; 
+
+&lt;/owl:Class&gt;
+
+</PRE>
+            These are only two of the assertions in OpenCyc's latest release of 
+            its "<A HREF="http://www.w3.org/2004/OWL/">OWL</A> scaffolding", an 
+            ontology or knowledge-classification hierarchy containing, it is claimed, 
+            links relating over 60,000 items. 
+            <p></P>
+            <P> Now, I'm not currently writing any military or diplomatic reasoning 
+              programs. But the same source also tells me that the abominable 
+              snowman is a sentient, mythological, hairy animal; abrin is a powdery 
+              biological toxin; absinthe is an illegal liquor with a bitter taste; 
+              and Absolut is a brand of vodka. Presumably, were I to search for 
+              "vodka", I'd find it's a legal liquor with a burning taste. Olympic 
+              pentathlon, skeet shooting, and soling; paper clips, paper bags, 
+              Paxil and petals; confusion (generic), Confucian gifts; these are 
+              a few of my favourite things. Sorry, got a bit carried away there. 
+              Anyway, this is a huge repository of common-sense information, and 
+              it's all free! This is <A HREF="http://www.opencyc.org/">OpenCyc</A>, 
+              the open-source version of Lenat's Cyc. One must know how to use 
+              these ontologies, of course - I committed an error by saying the 
+              knowledge base had told me the AIM-7M is used by Taiwan, because 
+              that was only in the comment, so can't (yet...) be interpreted by 
+              a machine. But the point is that this and the rest of OpenCyc's 
+              knowledge are all open source. With such resources now available, 
+              combined with the power of modern computers, this is an excellent 
+              time to experiment with common-sense reasoning in AI. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.opencyc.org/">www.opencyc.org/</A> - OpenCyc 
+              home page. The ontology referred to above, and the licence conditions, 
+              are both linked from here. <BR>
+              <A HREF="http://www.w3.org/2004/OWL/">ww.w3.org/2004/OWL/</A> - 
+              Home page for OWL, linking to a wide range of resources. <BR>
+              <A HREF="http://www.ainewsletter.com/newsletters/aix_0306.htm">www.ainewsletter.com/newsletters/aix_0306.htm</A> 
+              - <I>AI Expert Newsletter</I> for June 2003, with Dennis Merrit's 
+              explanation of ontologies and common-sense reasoning, and links 
+              to ontologies and related software. <BR>
+              <A HREF="http://www.opensource.org/">www.opensource.org/</A> - Home 
+              page for the Open Source Initiative. Lots of information on topics 
+              such as GPL and other open-source licenses, possible business models 
+              for open-source software, and the advantages of open-source development. 
+              <BR>
+              <A HREF="http://management.itmanagersjournal.com/management/04/05/10/2052216.shtml?tid=85">management.itmanagersjournal.com/management/04/05/10/2052216.shtml?tid=85</A> 
+              - <I>Seven open source business strategies for competitive advantage</I>. 
+              An interesting article from <I>IT Manager's Journal</I> on profiting 
+              from open-sourcing one's software. </P>
+            <H3><A NAME="p">Phone</A></H3>
+            <P> I recently read <I>Time's Eye</I>, the new Stephen Baxter and 
+              Arthur C Clarke novel which has mysterious satellites appear and 
+              scramble time, forming a patchwork of eras into which are thrown 
+              an ape-woman, some twenty first-century soldiers and astronauts 
+              and their futuristic mobile phone, Rudyard Kipling, and Alexander 
+              the Great and Genghis Khan, with their hordes. Perhaps it's because 
+              numerically speaking, most of the others were soldiers looting and 
+              pillaging everything in sight, but I found the book's most sympathetic 
+              character to be the mobile phone. Equipped with "sentience circuits", 
+              the phone is ever-helpful, offering much-needed advice on everything 
+              from weather conditions to history; and it talks and jokes with 
+              its users as if it were human. When at the end of one chapter, it 
+              has to be turned off to conserve a no-longer-replaceable battery 
+              and asks "Will I dream?", I felt a definite pang. </P>
+            <P> Many SF authors have coined names for their personal intelligence 
+              assistants - compad, comsole, belt, spex - and it's exciting to 
+              think that we've advanced so far that Baxter and Clarke could extrapolate 
+              an existing device rather than having to invent one. But do I feel 
+              like that about my own mobile? Or Microsoft's paperclip? Or any 
+              photocopier I have ever met anywhere in the world? No. Tools like 
+              these need to do much more to understand their user's current state 
+              and goals, to plan how to help, and to understand how to give advice 
+              or assistance with least irritation to the user, bearing in mind 
+              his current mental and emotional state. There is actually a lot 
+              of research on this, but it's so difficult that very little has 
+              yet entered our everyday applications. The <A HREF="http://www.aaai.org/AITopics/html/interfaces.html">AAAI 
+              page on interfaces</A> has some interesting news items, such as 
+              this one from the January 2005 <I>Scientific American</I>: "'If 
+              we could just give our computers and phones some understanding of 
+              the limits of human attention and memory, it would make them seem 
+              a lot more thoughtful and courteous,' says Eric Horvitz of Microsoft 
+              Research. Horvitz, [Roel] Vertegaal, [Ted] Selker and [Rosalind] 
+              Picard are among a small but growing number of researchers trying 
+              to teach computers, phones, cars and other gadgets to behave less 
+              like egocentric oafs and more like considerate colleagues." </P>
+            <P> And in another novel, <I>3001: The Final Odyssey</I>, Arthur C 
+              Clarke suggests that considerate software may make humans more considerate, 
+              too: 
+            <BLOCKQUOTE> Illogical though it seemed, most of the human race had 
+              found it impossible <I>not</I> to be polite to its artificial children, 
+              however simple-minded they might be. Whole volumes of psychology, 
+              as well as popular guides (<I>How Not to Hurt Your Computer's Feelings</I>; 
+              <I>Artificial Intelligence - Real Irritation</I> were two of the 
+              best-known titles) had been written on the subject of Man-Machine 
+              etiquette. Long ago it had been decided that, however inconsequential 
+              rudeness to robots might appear to be, it should be discouraged. 
+              All too easily, it could spread to human relationships as well. 
+            </BLOCKQUOTE>
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/interfaces.html">www.aaai.org/AITopics/html/interfaces.html</A> 
+              - AAAI page on interfaces, with a good variety of news and background 
+              reading. Search for "Considerate Computing" to find the quote above. 
+              <BR>
+              <A HREF="http://www.sfrevu.com/ISSUES/2004/0401/Stephen%20Baxter/Review.htm">www.sfrevu.com/ISSUES/2004/0401/Stephen%20Baxter/Review.htm</A> 
+              - SFRevu interview with Stephen Baxter. To quote the interviwer: 
+            <BLOCKQUOTE> ... I think we underestimate our ability to anthropomorphize 
+              devices. I've always felt bad for Clarke's Hal-9000 in 2001, and 
+              yes, the cell phone in Time's Eye is one of my favorite characters, 
+              though I wish it had gotten more air time. </BLOCKQUOTE>
+            <p></P>
+            <H3><A NAME="q">Quantum Computer</A></H3>
+            <P> Need an efficient sort? Here's the <A HREF="http://www.catb.org/~esr/jargon/html/B/bogo-sort.html">Jargon 
+              File</A> recommendation for a linear-time version: 
+            <BLOCKQUOTE> A spectacular variant of bogo-sort [algorithm which repeatedly 
+              throws a deck of cards in the air, picks them up at random, and 
+              then tests whether they are in order] has been proposed which has 
+              the interesting property that, if the Many Worlds interpretation 
+              of quantum mechanics is true, it can sort an arbitrarily large array 
+              in linear time. (In the Many-Worlds model, the result of any quantum 
+              action is to split the universe-before into a sheaf of universes-after, 
+              one for each possible way the state vector can collapse; in any 
+              one of the universes-after the result appears random.) The steps 
+              are: 1. Permute the array randomly using a quantum process, 2. If 
+              the array is not sorted, destroy the universe (checking that the 
+              list is sorted requires O(n) time). Implementation of step 2 is 
+              left as an exercise for the reader. </BLOCKQUOTE>
+            As an implementation hint, should step 2 prove too challenging, I 
+            recommend inserting a small explosive charge into your PC and hooking 
+            it to the sortedness test, thus merely destroying <I>yourself</I> 
+            instead. Subjectively, the result will be the same, since all versions 
+            of you that perceive the array as unsorted will vanish, the only surviving 
+            subjective awareness being one that perceives the sorted version of 
+            the array. 
+            <p></P>
+            <P> Quantum bogo-sort is a spoof, but if you were brave enough to 
+              try it, would it actually work? It is after all just a form of distributed 
+              computation, albeit an extreme one which grabs resources not from 
+              adjacent chips on a bus or computers in a network, but from adjacent 
+              universes in a multiverse. And this, roughly speaking, is the principle 
+              behind quantum computation, a topic which is taken very seriously 
+              indeed. To quote from an FAQ at the <A HREF="http://www.qubit.org">Centre 
+              for Quantum Computation</A>, 
+            <BLOCKQUOTE> What's all this about parallel universes? If you only 
+              want to predict what quantum computers will be able to do, you only 
+              need the equations of quantum mechanics. But if you want to explain 
+              how they will do it, you need to understand that the computer you 
+              can see and touch is only one tiny facet of a far larger object, 
+              which is just as real even though its existence is only detectable 
+              indirectly, through the computational work it does for us. The best 
+              way to describe the structure of a quantum computer is not at present 
+              clear, but in some respects it is like many computers similar to 
+              the one we see, performing different but correlated computations 
+              which affect each other through quantum interference. </BLOCKQUOTE>
+            In fact, the Centre has such excellent tutorials on its site that 
+            I shall plead lack of space and leave you to follow their links. I 
+            have also included two links as starting points for the question of 
+            whether or not our minds use, or require, quantum effects - a belief 
+            held, as many readers will know, by cosmologist Roger Penrose amongst 
+            others. And to finish, for those with sufficient maths, I highly recommend 
+            his new book <I>The Road to Reality</I> as a guide to the mathematics 
+            underlying our universe. 
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.catb.org/~esr/jargon/html/B/bogo-sort.html">www.catb.org/~esr/jargon/html/B/bogo-sort.html</A> 
+              - Jargon File entry for bogo-sort. <BR>
+              <A HREF="http://www.qubit.org/">www.qubit.org/<A> - Centre for Quantum 
+              Computation. <BR>
+              </a></a><A><A HREF="http://www.qubit.org/people/david/">www.qubit.org/people/david/</A> 
+              - David Deutsch's home page. Deutsch wrote <A HREF="http://www.qubit.org/people/david/FabricOfReality/FoR.html"><I>The 
+              Fabric of Reality</I></A>, a fascinating justification of the many-universes 
+              interpretation, based on four main strands: quantum physics; the 
+              theory of evolution; the theory of computation; and the theory of 
+              knowledge, explanation and understanding. The book has many enjoyable 
+              insights, of which I'll mention just one: that many-universes gives 
+              us a way to distinguish knowledge (or useful information) from junk. 
+              Think of a sequence of DNA in some organism, containing one subsequence 
+              of meaningful genetic coding and one of junk DNA. The meaningful 
+              coding will have had an important causal role in each universe, 
+              because it helped determine the organism. So in those universes 
+              where the organism is the same, so will be the non-junk DNA. The 
+              junk DNA has no such role, and so will vary at random. <BR>
+              <A HREF="http://home.earthlink.net/~djmp/FabricOfReality.html">home.earthlink.net/~djmp/FabricOfReality.html</A> 
+              - David Park's review of <I>The Fabric of Reality</I>. <BR>
+              <A HREF="http://www.edge.org/q2004/q04_print.html">www.edge.org/q2004/q04_print.html</A> 
+              - Fun page of aphorisms and laws which I discovered linked from 
+              Deutsch's blog. <BR>
+              <A HREF="http://en.wikipedia.org/wiki/Roger_Penrose">en.wikipedia.org/wiki/Roger_Penrose</A> 
+              - Wikipedia entry for Roger Penrose, including his views on consciousness 
+              and quantum mechanics. <BR>
+              <A HREF="http://www.consciousness.arizona.edu/quantum-mind2/">www.consciousness.arizona.edu/quantum-mind2/</A> 
+              - Synopsis of the topics covered by the Tucson Quantum Mind Conference, 
+              2003. <BR>
+              <A HREF="http://www.321books.co.uk/reviews/the-road-to-reality-by-roger-penrose.htm">www.321books.co.uk/reviews/the-road-to-reality-by-roger-penrose.htm</A> 
+              - About Penrose's <I>The Road to Reality</I>. </a></P>
+            <A> 
+            <H3><A NAME="r">Republic</A></H3>
+            <P> Become the leader of one million artificial intelligences! This 
+              is the promise of Elixir Studio's long-awaited game <A HREF="http://www.elixir-studios.co.uk/nonflash/republic/republic.htm"><I>Republic: 
+              The Revolution</I></A>, finally released in late 2003. Set in the 
+              ex-Soviet breakup country of Novistrana, Republic is a game of politics. 
+              Starting with a single loyal supporter, a tiny secret HQ and a very 
+              small base of local support, you must build up a nationwide faction 
+              powerful enough to oust the President and take over Novistrana, 
+              while fighting off other factions who vye for control. There is 
+              much devious social interaction, as you persuade, hire and recruit 
+              all manner of specialist characters to your cause or use less ethical 
+              methods such as blackmail to achieve your aims. </P>
+            <P> Rendered by Elixir's "Totality Engine", the graphics is said to 
+              be superbly detailed, and looks it from the screen shots - for example, 
+              each post-Revolution building has its own unique pattern of bullet 
+              holes. And the AI is said to be equally detailed: as your viewpoint 
+              roams the city, characters go about their daily business, buying 
+              loaves of bread, entering caf&eacute;s, commuting on the city transport 
+              system. Many details remain confidential (I would love to see an 
+              open source version), but from a <A HREF="http://www.strategyplanet.com/republic/ai.shtml">Strategyplanet 
+              interview</A>, <A HREF="http://ai-depot.com/FiniteStateMachines/FSM-Framework.html">finite-state 
+              machines</A> appear to form an important part of the implementation. 
+              The AAAI page on <A HREF="http://www.aaai.org/AITopics/html/video.html">video 
+              games, toys, robotic pets and entertainment</A> carries news on 
+              a huge variety of games: it's fascinating to watch this and other 
+              sources to see the latest tricks used by designers as they build 
+              AI into their games. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.elixir-studios.co.uk/nonflash/republic/republic.htm">www.elixir-studios.co.uk/nonflash/republic/republic.htm</A> 
+              - Elixir's Republic page. <BR>
+              <A HREF="http://archive.gamespy.com/interviews/august02/republic/">archive.gamespy.com/interviews/august02/republic/</A> 
+              - In a <I>GameSpy</I> interview with James "Prophet" Fudge, Elixir 
+              explain why playing a shadow government could be more fun than attending 
+              the <I>Republic</I>an National Convention. <BR>
+              <A HREF="http://www.deadalfs.co.uk/reviews/1023/">www.deadalfs.co.uk/reviews/1023/</A> 
+              - "DNM"'s review of Republic for <I>Deadalfs</I>. One of the more 
+              critical I have read, suggesting that the AI made little difference 
+              to the reviewer's enjoyment. <A HREF="http://www.strategyplanet.com/republic/ai.shtml">www.strategyplanet.com/republic/ai.shtml</A> 
+              - Jonathan Mayer's detailed examination of where AI features in 
+              Republic. <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/video.html">www.aaai.org/AITopics/html/video.html</A> 
+              - This AAAI page on video games, toys, robotic pets and entertainment 
+              has lots of interesting games material. Search for "Game sequel 
+              takes leaps in AI technology" and read about the new Sims game. 
+              Like Republic, this would appear to have some nifty AI. <BR>
+              <A HREF="http://ai-depot.com/FiniteStateMachines/FSM-Framework.html">ai-depot.com/FiniteStateMachines/FSM-Framework.html</A> 
+              - <I>A Finite State Machine Framework</I> by Jason Brownlee. Short 
+              tutorial from AI depot, with state diagrams, showing how finite 
+              state machines are used in Quake. Of course, any commercial game 
+              will use many confidential tricks not covered in such publications. 
+            </P>
+            <H3><A NAME="s">Science, Simplification, and Special Somersaults</A></H3>
+            <P> Back under my entry for <A HREF="#h">"H"</A>, I wrote about Douglas 
+              Hofstadter's work on understanding analogical problem-solving and 
+              the nature of style. One project I hinted at but didn't name is 
+              <A HREF="http://www.cigital.com/~gem/lspirit.html">Letter Spirit</A>. 
+              This tries to understand two important aspects of letters: the "categorical 
+              sameness" possessed by letters belonging to a given category, for 
+              example "a"; and the "stylistic sameness" possessed by letters belonging 
+              to a given style, for example Helvetica. It does so by designing 
+              "gridfonts" - lowercase alphabets whose letters are made by selecting 
+              straight line segments from a predefined grid. Style comes in because 
+              the program is first seeded with one or more letters drawn upon 
+              the grid in a particular way, and must then try to draw the other 
+              letters in the same style. This is made more difficult because the 
+              grids are usually small - 6 by 2 in the Letter Spirit page cited 
+              above - so there's very little freedom to vary the way any given 
+              letter is drawn. </P>
+            <P> Now think of some well-known modern art movements - Impressionist, 
+              Fauvism, Art Nouveau, Art Deco, Cubism. Each has its own style, 
+              but it's difficult to say just what distinguishes one from another. 
+              The history of artistic styles is a huge subject. Do the cognitive 
+              mechanisms underlying it have anything in common with styling Letter 
+              Spirit's 26 letters in their tiny grids? Can we possibly learn anything 
+              useful about style in general by playing around with such microworlds? 
+              Hofstadter argues that we can, and that just as in other sciences, 
+              where to study a phenomenon we isolate it as far as possible from 
+              other influences, so should we when doing AI. Unfortunately, this 
+              is not the way most AI research proceeds. </P>
+            <P> Whether or not you believe that analogy and style are central 
+              to cognition, the use of microworlds is an important question for 
+              AI. Let me finish with a quote from a source I've mentioned before, 
+              Daniel Dennett's <A HREF="http://pp.kpnet.fi/seirioa/cdenn/hofstadt.htm">review 
+              of Hofstadter's work</A>. Are <I>your</I> somersaults special? 
+            <BLOCKQUOTE> Hofstadter has numerous important reflections to offer 
+              on "the knotty problem of evaluating research," and one of the book's 
+              virtues is to draw clearly for us "the vastness of the gulf that 
+              can separate different research projects that on the surface seem 
+              to belong to the same field. Those people who are interested in 
+              results will begin with a standard technology, not even questioning 
+              it at all, and then build a big system that solves many complex 
+              problems and impresses a lot of people." He has taken a different 
+              path, and has often had difficulties convincing the grown-ups that 
+              it is a good one: "When there's a little kid trying somersaults 
+              out for the first time next to a flashy gymnast doing flawless flips 
+              on a balance beam, who's going to pay any attention to the kid?" 
+              A fair complaint, but part of the problem, now redressed by this 
+              book, was that the little kid didn't try to explain (in an efficient 
+              format accessible to impatient grown-ups) why his somersaults were 
+              so special. </BLOCKQUOTE>
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.cigital.com/~gem/lspirit.html">www.cigital.com/~gem/lspirit.html</A> 
+              - <I>The Letter Spirit project</I>. Introduction to the project, 
+              with pictures of various gridfonts, and links to research papers. 
+              <BR>
+              <A HREF="http://pp.kpnet.fi/seirioa/cdenn/hofstadt.htm">pp.kpnet.fi/seirioa/cdenn/hofstadt.htm</A> 
+              - Daniel Dennett's highly complimentary review of Hofstadter and 
+              colleagues' <I>Fluid Concepts and Creative Analogies</I>, including 
+              a point-by-point summary of their work, and comparison with other 
+              AI architectures (also linked from my entry on "Hofstadter"). <BR>
+              <A HREF="http://www.acm.org/crossroads/xrds10-2/hofstadter.html">www.acm.org/crossroads/xrds10-2/hofstadter.html</A> 
+              - <I>A Day in the Life of... Douglas Hofstadter</I>, from the ACM 
+              student magazine <I>Crossroads</I>. <BR>
+              <A HREF="http://cf.hum.uva.nl/mmm/papers/h-93-a.html">cf.hum.uva.nl/mmm/papers/h-93-a.html</A> 
+              - Paper on <I>A microworld approach to the formalization of musical 
+              knowledge</I> by Henkjan Honing, Music Cognition Research Group 
+              (MMM), University of Amsterdam and Radboud University Nijmegen. 
+              Paper on applying AI to musical cognition. Microworlds play a key 
+              role in this research, and the paper includes a defence of their 
+              use. </P>
+            <H3><A NAME="t">Teledildonics</A></H3>
+            <P> Teledildonics is the integration of telepresence with sex. Classified 
+              by the <A HREF="http://www.catb.org/~esr/jargon/html/T/teledildonics.html">Jargon 
+              File</A> as "ha ha only serious", the word is, according to <A HREF="http://en.wikipedia.org/wiki/Teledildonics">Wikipedia</A>, 
+              not so humorous and speculative that it can't be used in serious 
+              contexts, and is indeed the only commonly-used word to express the 
+              precise concept. So far, teledildonics seems limited to <A HREF="http://www.wired.com/news/culture/0,1284,66052,00.html">mobile 
+              phone attachments</A> and <A HREF="http://www.wired.com/news/culture/0,1284,65064,00.html">Internet-controlled 
+              sex toys</A> on the tactile side, and virtual chatbot girlfriends 
+              (see AAAI link below) on the psychoemulatory. But as our understanding 
+              of neural interfacing increases, I am certain that this <A HREF="http://www.monzy.com/ecg/">Erotic 
+              Computation Group page</A> will no longer be just a spoof. Ah well, 
+              that's quite enough work for tonight. Time to turn down the lights, 
+              open a bottle of wine, and load my favourite recording onto the 
+              pornograph... </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.catb.org/~esr/jargon/html/T/teledildonics.html">www.catb.org/~esr/jargon/html/T/teledildonics.html</A> 
+              - Jargon File entry. <BR>
+              <A HREF="http://en.wikipedia.org/wiki/Teledildonics">en.wikipedia.org/wiki/Teledildonics</A> 
+              - Wikipedia entry. <BR>
+              <A HREF="http://www.wired.com/news/culture/0,1284,66052,00.html">www.wired.com/news/culture/0,1284,66052,00.html</A> 
+              - <I>Wired</I> on sex attachments for <I>Cell Phones That Do It</I>. 
+              <BR>
+              <A HREF="http://www.wired.com/news/culture/0,1284,65064,00.html">www.wired.com/news/culture/0,1284,65064,00.html</A> 
+              - <I>Wired</I> on the <I>Ins and Outs of Teledildonics</I>, featuring 
+              the Internet-controllable sex toys. <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/archvE11.html">www.aaai.org/AITopics/html/archvE11.html</A> 
+              - AAAI report - search for "Sex, lies and AI" - on a Hong Kong company 
+              with whose virtual hi-res chatbot you can carry on a virtual affair 
+              by phone. <BR>
+              <A HREF="http://www.monzy.com/ecg/">www.monzy.com/ecg/</A> - An 
+              amusing spoof page for the MIT Erotic Computation Group. </P>
+            <H3><A NAME="u">Unconvincing</A></H3>
+            <P> "Unconvincing" is an adjective that applies to almost every film 
+              ever made about AI. And as AAAI's <A HREF="http://www.aaai.org/AITopics/html/scifi.html">science 
+              fiction page</A> reports from the <A HREF="http://www.times-archive.co.uk/news/pages/tim/2000/03/17/timaonaon02002.html">Artificial 
+              Intelligence in the cinema</A> site, almost every robot film ever, 
+              from Robby the Robot in The Mechanical Statue (1907) and Proteus 
+              IV in The Rubber Man (1909) onwards, concern mechanical men going 
+              out of control. The provision of counterexamples is left as an exercise 
+              for the viewer. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/scifi.html">www.aaai.org/AITopics/html/scifi.html</A> 
+              - AAAI's science fiction page. This includes a link to <A HREF="http://www.times-archive.co.uk/news/pages/tim/2000/03/17/timaonaon02002.html">Artificial 
+              Intelligence in the cinema</A> and other film sites. </P>
+            <H3><A NAME="v">Vac Hack</A></H3>
+            <P> I have long believed that - as I suggested in the <A HREF="http://www.ainewsletter.com/newsletters/aix_0411.htm">November 
+              2004 AI Expert</A> - one of the main forces driving robotics will 
+              be the non-threatening and enjoyable niche for robot pets and other 
+              toys. Now I learn there's another. According to a <I>US Today</I> 
+              feature reported by the <A HREF="http://www.aaai.org/AITopics/html/rooms.html">AAAI 
+              page on <I>Smart Rooms, Smart Houses & Household Appliances</I></A>, 
+              it's aging baby boomers, who, as they get older, will need, and 
+              be happy to buy, increasing amounts of hi-tech domestic help, the 
+              <A HREF="http://www.onrobo.com/reviews/At_Home/Vacuum_Cleaners/">new 
+              robot vacuum cleaners</A> included. </P>
+            <P> This brings me back to my alphabet entry for <A HREF="#e">"E"</A>. 
+              Vacuum cleaners don't play chess. This is because they - or at least 
+              the <A HREF="http://www.irobot.com/home.cfm">Roomba</A>, manufactured 
+              by Rodney Brooks's company <A HREF="http://www.irobot.com">iRobot</A> 
+              - are, like elephants, controlled by a subsumption architecture. 
+              As "profesor" says on the <A HREF="http://slashdot.org/articles/02/10/18/167257.shtml?tid=159">robot-vacuum 
+              cleaner Slashdot thread</A>: 
+            <BLOCKQUOTE> it's neat to watch it and see the subsumption architecture 
+              in action: "Oh look, it changed from spiraling behavior to wall 
+              following. Now it's just going straight then turning when it finds 
+              a wall." </BLOCKQUOTE>
+            <p></P>
+            <P> One side-effect of these new robots is vacuum-cleaner hackers. 
+              Under the heading "Geek DIY", the AAAI page on <A HREF="http://www.aaai.org/AITopics/html/soft.html"><I>Software, 
+              Open Source Projects & Hardware</I></A> reports that Phil Mass, 
+              Chris Casey and Elliot Mack, part of the Roomba design team, had 
+              in fact hoped that it would intrigue robotics enthusiasts: 
+            <BLOCKQUOTE> The Roomba is a tempting hacker target - big payload, 
+              multiple onboard sensors. But its cleaning duties get in the way. 
+            </BLOCKQUOTE>
+            Despite the fact that the machine will insist in trying to clean up, 
+            there is a Roomba hackers' site, at <A HREF="http://www.roombacommunity.com/">www.roombacommunity.com/</A>. 
+            One of their projects is the <A HREF="http://www.roombacommunity.com/products/zoomba/">Zoomba</A>, 
+            a Roomba with its microprocessor replaced so it can be used as a platform 
+            for robotics experimentation. Suggested applications include a Zoomba 
+            maze solver, and a mobile security robot made from a Zoomba with wireless 
+            Webcam. There's even Zoomba tag - get two Zoombas, control them with 
+            Javelin Stamp micros, and program them to find and chase one another. 
+            <p></P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/rooms.html">www.aaai.org/AITopics/html/rooms.html</A> 
+              - AAAI page on <I>Smart Rooms, Smart Houses & Household Appliances</I>. 
+              The news item about baby boomers and home robots can be found under 
+              the heading "Domestic bliss through mechanical marvels". <BR>
+              <A HREF="http://www.onrobo.com/reviews/At_Home/Vacuum_Cleaners/">www.onrobo.com/reviews/At_Home/Vacuum_Cleaners/</A> 
+              - A good selection of robot vacuum cleaners from the OnRobo home 
+              and entertainment robotics site. <BR>
+              <A HREF="http://slashdot.org/articles/02/10/18/167257.shtml?tid=159">slashdot.org/articles/02/10/18/167257.shtml?tid=159</A> 
+              - Slashdot thread. The posting about watching the subsumption architecture 
+              is by "profesor", October 18. <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/soft.html">www.aaai.org/AITopics/html/soft.html</A> 
+              - AAAI page on <I>Software, Open Source Projects & Hardware</I>. 
+              The item about hacking the Roomba is under the heading "Geek DIY". 
+              <BR>
+              <A HREF="http://www.roombacommunity.com/">www.roombacommunity.com/</A> 
+              - The Roomba Community hacker site. This page links to the <A HREF="http://www.roombacommunity.com/products/zoomba/">Zoomba</A> 
+              project. <BR>
+            </P>
+            <H3><A NAME="w">Winter</A></H3>
+            <P> W is for Winter. Not the one currently reducing my neighbourhood 
+              to near-Siberian cold, but the AI Winter of the late 80s. The phrase 
+              was coined by analogy with "nuclear winter" - the theory that mass 
+              use of nuclear weapons would blot out the sun with smoke and dust, 
+              causing plunging global temperatures, a frozen Earth, and the extinction 
+              of humanity. The AI Winter merely caused the extinction of AI companies, 
+              partly because of the hype over expert systems and the disillusionment 
+              caused when business discovered their limitations. These included 
+              brittleness, and the inability to explain their advice at a level 
+              of abstraction na&iuml;ve users could understand. H P Newquist's 
+              book <I>The Brain Makers</I> is an interesting read on the business 
+              aspects of the Winter - he describes how the only demo one company 
+              could give of their technology was a baby expert system for choosing 
+              the best wine to accompany a dinner - but a <A HREF="http://www.amazon.com/exec/obidos/tg/detail/-/0672304120/002-5934449-5620836?v=glance">review 
+              on Amazon</A> advises taking his account with a grain of salt. Some 
+              posters on a recent AI winter comp.lang.lisp discussion advise doing 
+              the same, while others say it's pretty accurate. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.amazon.com/exec/obidos/tg/detail/-/0672304120/002-5934449-5620836?v=glance">www.amazon.com/exec/obidos/tg/detail/-/0672304120/002-5934449-5620836?v=glance</A> 
+              - Amazon review of <I>The Brain Makers</I>. <BR>
+              <A HREF="http://www.dreamsongs.com/NewFiles/Hopl2.pdf">www.dreamsongs.com/NewFiles/Hopl2.pdf</A> 
+              - Guy Steele and Richard Gabriel's paper on the evolution of Lisp, 
+              from Lisp 1.5 in 1960 to standards development at the turn of the 
+              90s. This looks briefly at the Winter from the viewpoint of Lisp. 
+              <BR>
+              The thread mentioned on comp.lang.lisp started in April 2003 under 
+              the title "history of AI Winter?". </P>
+            <H3><A NAME="x">Xenopsychology</A></H3>
+            <P> X is for Xenopsychology, the study of extraterrestrial cognition. 
+              We don't know any E.T.'s, apart perhaps from some fossil Martian 
+              bacteria which wouldn't have done much cognition anyway, but we 
+              can still hypothesise about the way they think. Fredzzpyggl and 
+              Bobsqrppyx may have 17 tentacles per head, look like molten bagpipes 
+              swimming in a sodium sea, and text one another by smell-phone, but 
+              according to <A HREF="http://web.media.mit.edu/~minsky/">Marvin 
+              Minsky</A>, we'll <A HREF="http://web.media.mit.edu/~minsky/papers/AlienIntelligence.html">still 
+              be able to communicate with them</A>, because as problem-solvers, 
+              they'll face the same limitations on space, time, and materials 
+              as us, and hence evolve similar mental processes. These include 
+              symbolic representations for plans and goals, and economic thinking 
+              to allocate sparse resources. Not everyone would agree, as I've 
+              indicated in the links below. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://web.media.mit.edu/~minsky/">web.media.mit.edu/~minsky/</A> 
+              - Marvin Minsky's home page. His paper, <I>Communication with Alien 
+              Intelligence</I>, is linked from there. <BR>
+              <A HREF="http://www.lehigh.edu/~mhb0/aiforcogs7.html">www.lehigh.edu/~mhb0/aiforcogs7.html</A> 
+              - Mark Bickhard's tutorial on the physical symbol system hypothesis. 
+              He cites Tim Smither's view that the idea of organisms making symbolic 
+              representations of plans and goals is just folk psychology: unhelpful 
+              in designing robots, and unlikely in natural intelligences. </P>
+            <H3><A NAME="y"><I>You, Robot</I></A></H3>
+            <P> Under the heading <I>You, Robot</I>, <A HREF="http://www.aaai.org/AITopics/html/current.html">AAAI 
+              News</A> reports that <A HREF="http://www.frc.ri.cmu.edu/~hpm/">Hans 
+              Moravec</A>, like Ray Kurzweil, believes we'll one day download 
+              our minds into computers. But that's a long way off. In the meantime, 
+              he has started a company, <A HREF="http://www.seegrid.com/">Seegrid</A>, 
+              to build vision systems that enable robots to move supplies around 
+              warehouses with no human direction. Most industrial robots don't 
+              have vision, and hence find it extremely difficult to deal with 
+              uncertainty. </P>
+            <P> As Moravec says, it's a long way from downloading minds, but you 
+              have to start somewhere. Nearly everything sold has to be warehoused 
+              at some point, and at some point it must also be rerouted and shipped. 
+              Seegrid's robots can automate the work now done by human workers 
+              who move millions of tons of supplies and products using dollies, 
+              pallet jacks and forklifts. In the warehouse or out of it, if robots 
+              are going to succeed, the world cannot be adapted to them; they 
+              have to adapt to the world, just like the rest of us. </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.frc.ri.cmu.edu/~hpm/">www.frc.ri.cmu.edu/~hpm/</A> 
+              - Hans Moravec's home page. <BR>
+              <A HREF="http://www.seegrid.com/">www.seegrid.com/</A> - Seegrid 
+              home page. <BR>
+              <A HREF="http://www.aaai.org/AITopics/html/current.html">www.aaai.org/AITopics/html/current.html</A> 
+              - AAAI news page with the Seegrid report. The original feature, 
+              from <I>Scientific American</I>, is linked from there. </P>
+            <H3><A NAME="z">Zombie</A></H3>
+            <P> Once upon a time, there was a man who like everybody else, had 
+              a brain and a mind; and who not like <I>everybody</I> else, believed 
+              his consciousness to be separate from both. Perhaps caused by one 
+              or the other - an epiphenomenon - but certainly not an influence 
+              on either. One day his much-loved pet hamster was run over by a 
+              bus. Heart is pierced by grief, all our hero wanted was to die. 
+              At the same time, he realised how distressing his suicide would 
+              be to friends and family. </P>
+            <P> Suddenly, from a puff of smoke, stepped an angel who proffered 
+              a marvellous potion. One sip, the angel explained, and consciousness 
+              would be entirely annulled - our hero would never feel anything, 
+              never be <I>aware</I>, ever again. But since consciousness is merely 
+              an epiphenomenon of the brain, this would not affect body and behaviour, 
+              which would carry on exactly as if he were still conscious. Barely 
+              hesitating, the grieving protagonist snatched the potion from the 
+              angel's hand and downed it in one, extinguishing his subjective 
+              awareness for ever. His body, however, continued its daily round. 
+              Twenty-four hours later, with another puff of smoke, the angel reappeared 
+              and asked him how he felt. "That potion you gave me", complained 
+              the protagonist, "didn't work at all. I still feel as much grief, 
+              as much loss, as I ever did." </P>
+            <P> This, roughly, is the plot of <I>An Unfortunate Dualist</I>, a 
+              little fable by philosopher <A HREF="http://www.indiana.edu/~alldrp/members/smullyan.html">Raymond 
+              Smullyan</A>, which appears reprinted in the excellent collection 
+              of philosophical essays <I>The Mind's I: Fantasies and Reflections 
+              on Self and Soul</I> by Hofstadter and Dennett. The protagonist 
+              is a "zombie" - a character who lacks consciousness, but who acts 
+              otherwise exactly as he would if he had it. Zombies frequently participate 
+              in philosophical thought experiments. Often, they do so to demonstrate 
+              how ridiculous it is to assume that one can run an exact simulation 
+              of a human, for example a downloaded brain, without it being conscious. 
+            </P>
+            <P> <B>Links:</B> <BR>
+              <A HREF="http://www.indiana.edu/~alldrp/members/smullyan.html">www.indiana.edu/~alldrp/members/smullyan.html</A> 
+              - Indiana University page for Raymond Smullyan. <BR>
+              <A HREF="http://www.artsci.wustl.edu/~philos/MindDict/zombie.html">www.artsci.wustl.edu/~philos/MindDict/zombie.html</A> 
+              - The entry for "zombie" in Chris Eliasmith's Web dictionary of 
+              Philosphy of Mind. <BR>
+              <A HREF="http://ase.tufts.edu/cogstud/papers/unzombie.htm">ase.tufts.edu/cogstud/papers/unzombie.htm</A> 
+              - An excerpt from Daniel Dennett's paper <I>The Unimagined Preposterousness 
+              of Zombies</I>, which he begins with the following provocative remarks: 
+            <BLOCKQUOTE> Sometimes philosophers clutch an insupportable hypothesis 
+              to their bosoms and run headlong over the cliff edge. Then, like 
+              cartoon characters, they hang there in mid-air, until they notice 
+              what they have done and gravity takes over. Just such a boon is 
+              the philosophers' concept of a zombie, a strangely attractive notion 
+              that sums up, in one leaden lump, almost everything that I think 
+              is wrong with current thinking about consciousness. Philosophers 
+              ought to have dropped the zombie like a hot potato, but since they 
+              persist in their embrace, this gives me a golden opportunity to 
+              focus attention on the most seductive error in current thinking. 
+            </BLOCKQUOTE>
+            <BR>
+            <A HREF="http://members.aol.com/lshauser/zomboid.html">members.aol.com/lshauser/zomboid.html</A> 
+            - <I>Zombies Invade Philosophy!</I> home page. Links to a lot of interesting 
+            philosophy, including papers and a links page by philosopher David 
+            Chalmers. As with Dennett, his stuff is definitely worth reading. 
+            <BR>
+            <A HREF="http://www.atomicdeathray.com/unprofessional/zombies/zombies.html">www.atomicdeathray.com/unprofessional/zombies/zombies.html</A> 
+            - It's Christmas, so I'll finish with this little story, <I>Zombies 
+            of the North Pole</I>. Written by David Bryant, it features Santa 
+            Clause as you've never seen him before. 
+            <p></P>
+            <H2><A NAME="sources">Islands of Truth in the Net of a Million Lies</A></H2>
+            <P> I want to credit <A HREF="http://www.aaai.org/">AAAI</A>, the 
+              American Association for Artificial Intelligence, many of whose 
+              pages I've linked to as backup for my alphabet entries. They have 
+              a diverse collection of resources on various aspects of AI, with 
+              pointers to background reading as well as news. Less seriously, 
+              I've referred to pages from the <A HREF="http://www.catb.org/~esr/jargon/">Jargon 
+              File</A>. A few of my links point at <A HREF="http://en.wikipedia.org/wiki/">Wikipedia</A> 
+              entries. These can be handy summaries, but one should read them 
+              with caution - some appear to be incomplete, or even wrong in parts. 
+              It's a shame that many Wikipedia authors seem not to declare themselves; 
+              doing so would provide some chance of evaluating their biases and 
+              experience. And to anyone new to the Web, it's worth noting that 
+              in his novel <I>A Fire Upon the Deep</I>, Vernor Vinge called his 
+              galaxy-spanning communications network, " the Net of a Million Lies". 
+              Or as <A HREF="http://www.physics.wustl.edu/~visser/physics-216/resources-216.html">Matt 
+              Visser's relativity resource page has it</A>, "the net is an example 
+              of semi-organized anarchy with zero quality control". And of course, 
+              textbooks, course notes and research papers can contain errors and 
+              oversimplifications, on the Web or off it. </P>
+            <H2><A NAME="tekkotsu_and_cognitive_robotics">Tekkotsu and Cognitive 
+              Robotics</A></H2>
+            <P> Following last issue's feature on <A HREF="http://www.ainewsletter.com/newsletters/aix_0412.htm#aibo">programming 
+              the Aibo</A>, <A HREF="http://www-2.cs.cmu.edu/~dst/">David Touretzky</A> 
+              mailed to say that he is creating a "Cognitive Robotics" course 
+              for Carnegie Mellon that will use AIBO as the platform. Together 
+              with <A HREF="http://www.ri.cmu.edu/people/tira_thompson_ethan.html">Ethan 
+              Tira-Thompson</A> and colleagues, David is developing higher-level 
+              cognitive primitives for the <A HREF="http://www-2.cs.cmu.edu/~tekkotsu/">Tekkotsu</A> 
+              open-source robot-programming framework that will allow AIBO to 
+              be programmed at a more abstract level than currently possible. 
+              Some preliminary information is available in their paper <A HREF="http://www-2.cs.cmu.edu/~tekkotsu/media/FS5-04Tira-ThompsonE.pdf"><I>Cognitive 
+              Primitives for Mobile Robots</I></A>. </P>
+            <H3><A NAME="tekkotsu_links">Links</A></H3>
+            <P> <A HREF="http://www.ainewsletter.com/newsletters/aix_0412.htm">www.ainewsletter.com/newsletters/aix_0412.htm</A> 
+              - Jocelyn Paine's feature on programming the Sony Aibo, from the 
+              December 2004 AI Expert. </P>
+            <P> <A HREF="http://www-2.cs.cmu.edu/~dst/">www-2.cs.cmu.edu/~dst/</A> 
+              - David Touretzky's home page. </P>
+            <P> <A HREF="http://www-2.cs.cmu.edu/~tekkotsu/">www-2.cs.cmu.edu/~tekkotsu/</A> 
+              - Tekkotsu home page. </P>
+            <P> <A HREF="http://www-2.cs.cmu.edu/~tekkotsu/media/FS5-04Tira-ThompsonE.pdf">www-2.cs.cmu.edu/~tekkotsu/media/FS5-04Tira-ThompsonE.pdf</A> 
+              - <I>Cognitive Primitives for Mobile Robots</I>, by Ethan Tira-Thompson, 
+              Neil Halelamien, Jordan Wales, and David Touretzky, Carnegie Mellon 
+              University. </P>
+            </a> 
+            <P></P>
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome. Feel free to contact either myself (below) or Jocelyn &lt;popx@j-paine.org&gt; 
+              with comments, thoughts and suggestions.</P>
+            <P>Until next month, </P>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p>Copyright &copy;2004 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved </p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>2.01</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 2.0.1.22 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>Amzi! inc.</Company_Name>
+		<Address_1>47 Redwood Road</Address_1>
+		<Address_2 />
+		<City_Town>Asheville</City_Town>
+		<State_Province>NC</State_Province>
+		<Zip_Postal_Code>28804</Zip_Postal_Code>
+		<Country>USA</Country>
+		<Company_WebSite_URL>http://www.arulesxl.com</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Amzi!</Author_First_Name>
+			<Author_Last_Name>inc.</Author_Last_Name>
+			<Author_Email>info@arulesxl.com</Author_Email>
+			<Contact_First_Name>Technical</Contact_First_Name>
+			<Contact_Last_Name>Support</Contact_Last_Name>
+			<Contact_Email>support@arulesxl.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>sales@arulesxl.com</Sales_Email>
+			<Support_Email>support@arulesxl.com</Support_Email>
+			<General_Email>info@arulesxl.com</General_Email>
+			<Sales_Phone>828-350-0350</Sales_Phone>
+			<Support_Phone>http://forum.arulesxl.com</Support_Phone>
+			<General_Phone>828-350-0350</General_Phone>
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>ARulesXL</Program_Name>
+		<Program_Version>2.0.6</Program_Version>
+		<Program_Release_Month>01</Program_Release_Month>
+		<Program_Release_Day>17</Program_Release_Day>
+		<Program_Release_Year>2007</Program_Release_Year>
+		<Program_Cost_Dollars>99</Program_Cost_Dollars>
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other />
+		<Program_Type>Commercial</Program_Type>
+		<Program_Release_Status>New Release</Program_Release_Status>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>WinME,Windows2000,WinXP,Windows2003</Program_OS_Support>
+		<Program_Language>English,French</Program_Language>
+		<Program_Change_Info>Install</Program_Change_Info>
+		<Program_Specific_Category>Business</Program_Specific_Category>
+		<Program_Category_Class>Business::Accounting &amp; Finance</Program_Category_Class>
+		<Program_Categories>Accounting, Finance</Program_Categories>
+		<Program_System_Requirements />
+		<Includes_JAVA_VM>N</Includes_JAVA_VM>
+		<Includes_VB_Runtime>N</Includes_VB_Runtime>
+		<Includes_DirectX>N</Includes_DirectX>
+		<File_Info>
+			<Filename_Versioned />
+			<Filename_Previous />
+			<Filename_Generic />
+			<Filename_Long />
+			<File_Size_Bytes>8665496</File_Size_Bytes>
+			<File_Size_K>8462</File_Size_K>
+			<File_Size_MB>8.26</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>Y</Has_Expire_Info>
+			<Expire_Count>30</Expire_Count>
+			<Expire_Based_On>Days</Expire_Based_On>
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>business rules, excel. spreadsheet, modeling, planning, decision support, analysis, rule engine, expert system, decision support, computational analysis</Keywords>
+			<Char_Desc_45>Add Business Rules to Your Excel Spreadsheets</Char_Desc_45>
+			<Char_Desc_80>Integrate Decision Support with Computational Analysis in Excel</Char_Desc_80>
+			<Char_Desc_250>ARulesXL™ turns any Microsoft Excel spreadsheet into a powerful tool for delivering business rule applications.Rules are queried like a database, and are easy to code, maintain and audit. Use ARulesXL for analysis, modeling, pricing, planning, etc.</Char_Desc_250>
+			<Char_Desc_450>ARulesXL™ turns any Microsoft Excel spreadsheet into a powerful tool for delivering business rule applications. Instead of difficult to code, maintain and understand Excel IF statements, rules are entered in a natural and easy to understand syntax. The rules are queried, much like a database and are: easier to code, easier to maintain, more reliable, and easily audited. Use ARulesXL for analysis, modeling, pricing, application approvals, etc.</Char_Desc_450>
+			<Char_Desc_2000>ARulesXL™ turns any Microsoft® Excel® spreadsheet into a powerful tool for delivering business rule applications.
+
+Instead of difficult to code, maintain and understand Excel IF statements, rules are entered in a natural and easy to understand syntax. The rules are queried, much like a database. Rules entered using ARulesXL are: easier to code, easier to maintain, more reliable, and easily audited. 
+
+Price Waterhouse Canada is one of the first commercial users of ARulesXL and is using the product for developing equity compensation analysis tools. Visual Data LLC, vendor of Office Practicum™ pediatric office software, is using ARulesXL for the development and testing of rules used in vaccination planning.
+
+Visit www.arulesxl.com to download an evaluation copy and see it at work on a variety of application ideas, including: legal document assembly, pricing, product advice, business rules (incorporation, loan approval, licensing), and medical advice (vaccination planning).</Char_Desc_2000>
+		</English>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>http://www.arulesxl.com</Application_Info_URL>
+			<Application_Order_URL>http://www.arulesxl.com/download</Application_Order_URL>
+			<Application_Screenshot_URL>http://www.arulesxl.com/images/loan.jpg</Application_Screenshot_URL>
+			<Application_Icon_URL />
+			<Application_XML_File_URL>http://www.arulesxl.com/download/pad_file_arulesxl.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>http://www.arulesxl.com/download</Primary_Download_URL>
+			<Secondary_Download_URL />
+			<Additional_Download_URL_1 />
+			<Additional_Download_URL_2 />
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions />
+		<EULA>See website or software</EULA>
+	</Permissions>
+	<ASP>
+		<ASP_FORM>Y</ASP_FORM>
+		<ASP_Member>N</ASP_Member>
+		<ASP_Member_Number />
+	</ASP>
+</XML_DIZ_INFO>

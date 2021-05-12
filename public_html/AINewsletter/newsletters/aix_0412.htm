@@ -1,0 +1,802 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->December 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <H1>AI Expert Newsletter</H1>
+            <P><I>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</I></P>
+            <H3>December 2004</H3>
+            <UL>
+              <LI><A HREF="#introduction">Introduction</A></LI>
+              <LI><A HREF="#dishbrain">Somewhere in Florida, Disembodied Rat Neurons 
+                Dream of Flying a Fighter Jet</A></LI>
+              <UL>
+                <LI><A HREF="#dishbrain_links">Links</A></LI>
+              </UL>
+              <LI><A HREF="#w2_mind">World Wide Mind</A></LI>
+              <UL>
+                <LI><A HREF="#w2m_servers">Mind servers and world servers</A></LI>
+                <LI><A HREF="#soml">Society Of Mind Markup language</A></LI>
+                <LI><A HREF="#subminds">Minds and subminds</A></LI>
+                <LI><A HREF="#have_a_go">Try it for yourself</A></LI>
+                <LI><A HREF="#w2_mind_links">Links</A></LI>
+              </UL>
+              <LI><A HREF="#adams">Douglas Adams, interactive fiction, and Ronald 
+                Reagan v0.9</A></LI>
+              <UL>
+                <LI><A HREF="#ideology_machine">Barry Goldwater and the Ideology 
+                  Machine</A></LI>
+                <LI><A HREF="#adams_links">Links</A></LI>
+              </UL>
+              <LI><A HREF="#aibo">Programming the Sony Aibo Robot Dog</A></LI>
+              <UL>
+                <LI><A HREF="#aibo_introduction">Your little plastic pal who's 
+                  fun to be with</A></LI>
+                <LI><A HREF="#hardware_and_software">What's in an Aibo?</A></LI>
+                <LI><A HREF="#yro">YART, R-CODE and OPEN-R</A></LI>
+                <LI><A HREF="#tekkotsu">Tekkotsu</A></LI>
+                <LI><A HREF="#prolog_and_fp">Prolog, SWI-Prolog, and functional 
+                  programming on Aibo</A></LI>
+                <LI><A HREF="#aibo_in_teaching">Aibo at school and university</A></LI>
+                <LI><A HREF="#aibo_moves">Warning! Aibo moves!</A></LI>
+                <LI><A HREF="#aibo_conclusion">Conclusion</A></LI>
+                <LI><A HREF="#aibo_links">Links</A></LI>
+              </UL>
+              <LI><A HREF="#acknowledgements">Acknowledgements</A></LI>
+            </UL>
+            <H2><A NAME="introduction">Introduction</A></H2>
+            <P> Welcome to the December AI Expert. In this issue, I look at programming 
+              the Sony Aibo robot dog, the World Wide Mind, and (with some help 
+              from <I>Hitch Hiker's Guide to the Galaxy</I> author Douglas Adams), 
+              Ronald Reagan. But first, some truly remarkable neural network news 
+              from the University of Florida. It's <I>probably</I> not yet feasible 
+              to do this at home, but it would be great to see the technology 
+              taken up by private experimenters. </P>
+            <H2><A name="dishbrain">Somewhere in Florida, Disembodied Rat Neurons 
+              Dream of Flying a Fighter Jet </A></H2>
+            <P> Thus begins a <A HREF="http://www.wired.com/news/medtech/0,1286,65438,00.html">feature</A> 
+              in <I>Wired</I>'s on this month's lead news. As reported there, 
+              and in the <A HREF="http://www.napa.ufl.edu/2004news/braindish.htm">University 
+              of Florida News</A> for October 21, <A HREF="http://www.bme.ufl.edu/people/detailperson.php?PEOPLE_id=2">Thomas 
+              DeMarse</A>, a professor of biomedical engineering at Florida, has 
+              cultured a collection of 25,000 rat neurons on an electrode array, 
+              and then trained them to fly a simulated F-22 fighter jet. </P>
+            <P> When DeMarse first put the neurons in the culture dish, they looked 
+              like little more than grains of sand sprinkled in water. However, 
+              individual neurons soon begin to extend microscopic lines toward 
+              each other and make synaptic connections: 
+            <BLOCKQUOTE> You see one extend a process, pull it back, extend it 
+              out - and it may do that a couple of times, just sampling who’s 
+              next to it, until over time the connectivity starts to establish 
+              itself. </BLOCKQUOTE>
+            <P> The electrode array on which the neurons are growing is connected 
+              to a desktop PC running the fighter simulator. This sends them information 
+              about flight conditions: whether the plane is flying straight and 
+              level or is tilted to the left or to the right. The electrodes pick 
+              up the neurons' responses and send them back to the simulator, thus 
+              controlling the fighter: 
+            <BLOCKQUOTE> Initially when we hook up this brain to a flight simulator, 
+              it doesn’t know how to control the aircraft. So you hook it up and 
+              the aircraft simply drifts randomly. And as the data comes in, it 
+              slowly modifies the (neural) network so over time, the network gradually 
+              learns to fly the aircraft. </BLOCKQUOTE>
+            <P> It's always risky to accept popular press accounts of research, 
+              and the peer-reviewed paper on this work has apparently not yet 
+              been published. However, some information can be found. A <A HREF="http://www.bme.ufl.edu/research/projects/detailproject.php?RP_id=4">brief 
+              account of the hardware</A> on the university site tells us that 
+              the electrode array, supplied by <A HREF="http://www.multichannelsystems.com/">Multi 
+              Channel Systems</A>, consists of 60 electrodes, each capable of 
+              both recording and stimulating neural activity. The electrodes, 
+              30 microns wide, were spaced 200 microns apart in an 8-by-8 grid. 
+              This kind of array was not developed solely for probing neural activation: 
+              a <A HREF="http://www.nmi.de/englisch/showprj.php3?id=22&typ=1">Natural 
+              and Medical Sciences Institute page</A> of the University of T&uuml;bingen 
+              indicates their use on heart and retinal cells. Pharmacology is 
+              one application, using the electrodes to examine how drugs affect 
+              the patterns of activity in the tissue. </P>
+            <P> How can the neurons know to make signals the fighter simulator 
+              can understand? If the setup is similar to that in a paper on previous 
+              research, <A HREF="http://www.bme.ufl.edu/documents/the_neurally_10.pdf"><I>The 
+              Neurally Controlled Animat: Biological Brains Acting with Simulated 
+              Bodies</I></A>, then there is cooperation between the computer and 
+              the network. The paper describes how the neurons - derived from 
+              18-day old rat embryos - were cultured, forming after a few days 
+              a complex network. After one month, this had become relatively stable 
+              in its activity. Via the electrodes, the neurons were connected 
+              to a simulated animal living within a room with four walls and a 
+              few internal barriers. The computer analysed neural activity recorded 
+              by the electrodes into sequences of action-potential spikes. These 
+              spike trains were then passed through a clustering algorithm to 
+              detect frequently-occurring spike patterns. Some of these patterns 
+              were allocated arbitrarily to motion commands: forward, back, and 
+              so on. When the simulated animal received sensory input, e.g. by 
+              hitting a wall, this was fed back to the electrodes and hence to 
+              the neurons, thus creating a continuously running cells-to-computer-to-cells 
+              feedback system. </P>
+            <P> The aim of this research is not to replace US Air Force pilots 
+              by dishfuls of rat cortical cells, but to help understand signals 
+              and coding in the nervous system. That said, the research is exciting 
+              purely for its technological potential. Most computing technology 
+              eventually moves out of the lab to the hackers, and if it can be 
+              done without hurting animals (one can envisage a neural-culture 
+              supply house, perhaps...) I would love to see this taken up and 
+              developed by home hobbyists. </P>
+            <H3><A NAME="dishbrain_links">Links</A></H3>
+            <P> <A HREF="http://www.wired.com/news/medtech/0,1286,65438,00.html">www.wired.com/news/medtech/0,1286,65438,00.html</A> 
+              - <I>Wired</I>'s write-up. See <A HREF="http://www.napa.ufl.edu/2004news/braindish.htm">www.napa.ufl.edu/2004news/braindish.htm</A> 
+              for the original University of Florida news item. </P>
+            <P> <A HREF="http://www.bme.ufl.edu/people/detailperson.php?PEOPLE_id=2">www.bme.ufl.edu/people/detailperson.php?PEOPLE_id=2</A> 
+              - Home page for Thomas DeMarse. </P>
+            <P> <A HREF="http://www.bme.ufl.edu/research/projects/detailproject.php?RP_id=4">www.bme.ufl.edu/research/projects/detailproject.php?RP_id=4</A> 
+              - Summary of how the multi-channel arrays were used, with a photograph. 
+            </P>
+            <P> <A HREF="http://www.multichannelsystems.com/">www.multichannelsystems.com/</A> 
+              - Home page for Multi Channel Systems. </P>
+            <P> <A HREF="http://www.nmi.de/englisch/showprj.php3?id=22&typ=1">www.nmi.de/englisch/showprj.php3?id=22&typ=1</A> 
+              - <I>Application of microelectrode array (MEA) technology in pharmaceutical 
+              biotechnology</I>, University of T&uuml;bingen summary. </P>
+            <P> <A HREF="http://www.ecmjournal.org/journal/supplements/vol006supp01/pdf/38.pdf">www.ecmjournal.org/journal/supplements/vol006supp01/pdf/38.pdf</A> 
+              - <I>Micropatterned Neural Nets on Different Solid Surfaces</I>, 
+              poster summary from the Max Planck Institute for Polymer Research. 
+            </P>
+            <P> <A HREF="http://www.bme.ufl.edu/documents/the_neurally_10.pdf">www.bme.ufl.edu/documents/the_neurally_10.pdf</A> 
+              - <I>The Neurally Controlled Animat: Biological Brains Acting with 
+              Simulated Bodies</I>. This is a readable paper by DeMarse and colleagues 
+              on the earlier experiment in which neurons were used to control 
+              a simulated animal in its virtual world. It describes how signals 
+              from the neurons were interpreted by the software. </P>
+            <P> <A HREF="http://www.neuro.gatech.edu/groups/potter/potter.html">www.neuro.gatech.edu/groups/potter/potter.html</A> 
+              - Home page for Steve Potter, one of DeMarse's collaborators. There 
+              are some interesting links on consciousness, artificial life, self-organising 
+              systems and other topics. </P>
+            <P> <A HREF="http://www.neurodudes.com/archives/000068.html">www.neurodudes.com/archives/000068.html</A> 
+              - Posting (which introduced me to the word "hybrot") about this 
+              work from the Neurodude list, "at the intersection of neuroscience 
+              and AI". This list seems to carry interesting news from time to 
+              time. </P>
+            <P> <A HREF="http://science.slashdot.org/article.pl?sid=04/10/24/0024241&tid=191&tid=126&tid=14">http://science.slashdot.org/article.pl?sid=04/10/24/0024241&tid=191&tid=126&tid=14</A> 
+              - Copious Slashdot postings on the research. </P>
+            <H2><A NAME="w2_mind">World Wide Mind</A></H2>
+            <P> The <A HREF="http://w2mind.org/">World Wide Mind</A> is a project 
+              that aims to help people collaborate on AI by sharing components 
+              over the Web. As the originators say on their site, 
+            <BLOCKQUOTE> This work proposes that the construction of advanced 
+              artificial minds may be too difficult for any single laboratory 
+              to complete. At the moment, no easy system exists whereby a working 
+              mind can be made from the components of two or more laboratories. 
+              This system aims to change that, and accelerate the growth of Artificial 
+              Intelligence, once the requirement that a single laboratory understand 
+              the entire system is removed. </BLOCKQUOTE>
+            This is something that looks valuable - and fun - for teaching AI, 
+            so let me say a bit about the implementation. 
+            <H3><A NAME="w2m_servers">Mind servers and world servers</A></H3>
+            <P> The idea is that collaborators provide either a mind (or part 
+              of a mind) or a world in which the mind can operate. Such a component 
+              is called a "service". Services use standard HTTP protocol: in other 
+              words, they run on Web servers, and can be implemented using CGI, 
+              servlets, and other standard authoring techniques. </P>
+            <P> To ensure smooth collaboration, services must follow a standard 
+              protocol. Each service can be asked to perform various actions and 
+              send back various types of information. As an example, to create 
+              a world, one sends its server a <CODE>newrun</CODE> message. The 
+              world-simulator on the server is duty-bound by the protocol to understand 
+              this message and to reply by creating a new instance of the world 
+              and sending back an ID for it. </P>
+            <P> A world must also understand the <CODE>getstate</CODE> message, 
+              which asks it to return its current state, and the <CODE>takeaction</CODE> 
+              message, which tells it to perform a given action - such as moving 
+              a block in a blocks world - and update its state accordingly. These 
+              ideas will be familiar to anyone who has built simulated environments 
+              for AIs. There are various other messages, all described in the 
+              documentation linked at the end of this article. </P>
+            <P> Not surprisingly, given their autonomy, minds respond to a different 
+              set of messages. It's still necessary to create an instance before 
+              use, but one then sends it a <CODE>getaction</CODE> message, together 
+              with the ID for a world. This instructs it to "think" about what 
+              it must do next. The action it returns can then be fed back to its 
+              world by a <CODE>takeaction</CODE> message. </P>
+            <P> In order that a user can access the same instance of a mind or 
+              world in each transaction, its author preserve state on the server 
+              across transactions. This involves session-handling, which all Web 
+              authoring systems now provide. </P>
+            <H3><A NAME="soml">Society Of Mind Markup language</A></H3>
+            <P> To accomodate arbitrarily complicated messages and replies, the 
+              World Wide Mind authors have defined an XML-based language called 
+              SOML, or "Society Of Mind Markup Language". This name is taken from 
+              Marvin Minsky's book <I>The Society of Mind</I>, which envisages 
+              human minds as a society of collaborating agents. For those who 
+              don't know XML, there's no mystery to it: it's just a way to encode 
+              feature-attribute tree structures in a standard text-based (and 
+              highly verbose) syntax. Any programming language these days will 
+              have tools for parsing XML. The World Wide mind site includes a 
+              definition of SOML. Note incidentally that although SOML is standardised, 
+              the way worlds and minds convey their states and actions isn't, 
+              as these are carried as data within the XML. One world might describe 
+              itself using Prolog predicates, while another sends back vectors 
+              of object colour-location-size triples. </P>
+            <H3><A NAME="subminds">Minds and subminds</A></H3>
+            <P> World Wide Mind had the objective of making it easy to build AIs 
+              out of shared components, and so a mind can call upon any number 
+              of subminds, wherever they are in the world. To do so, it just uses 
+              SOML and messages as above, instantiating a submind and passing 
+              it a request for action. </P>
+            <H3><A NAME="have_a_go">Try it for yourself</A></H3>
+            <P> Any system that uses the Web for its internal messaging is never 
+              going to push the envelope of speed - the phrase "vaster than continents 
+              and more slow" comes to mind. However, it does look extremely useful 
+              for teaching, enabling teachers and students to share components 
+              and build upon one another's work. It could also inspire some interesting 
+              competitions, so why not have a go for yourself? The site comes 
+              with two example worlds. One was built by ALifer Toby Tyrrell as 
+              part of his University of Edinburgh research into action-selection 
+              mechanisms, and models a complex environment inhabited by a creature 
+              with multiple conflicting goals. The other is a simple blocks world 
+              containing a robot arm and a few blocks it can move around, and 
+              uses Prolog as a state-description language. If you're giving an 
+              AI course and want to give your students something to get them started 
+              quickly, these would be good starting points. </P>
+            <H3><A NAME="w2_mind_links">Links</A></H3>
+            <P> <A HREF="http://w2mind.org/">http://w2mind.org/</A> - Home page 
+              for the World Wide Mind project. </P>
+            <P> <A HREF="http://w2m.comp.dit.ie/services/">http://w2m.comp.dit.ie/services/</A> 
+              - The documentation, SOML and message protocols included, and the 
+              example worlds, are all linked from this page, rather than w2mind.org. 
+            </P>
+            <H2><A NAME="adams">Douglas Adams, interactive fiction, and Ronald 
+              Reagan v0.9</A></H2>
+            <P> 
+            <BLOCKQUOTE> It occurred to me, watching the Mondale/Reagan debates 
+              on television, that, on one side at least, we were watching 2K man 
+              in action. Ol' Ronnie is not, let us be honest, about to surprise 
+              the world by coming up with, for instance, a Unified Field Theory. 
+              If he were to play chess against a large block of wood, then I for 
+              one would not know where to put my money. It also occurred to me 
+              that the people responsible for briefing Reagan for these confrontations 
+              have therefore to give him the bare minimum number of facts that 
+              he could get hold of, and the maximum number of ways in which he 
+              could get hold of them. Added to that he must have a lot of long 
+              stop responses with which to field questions which he did not know 
+              the answer to or simply did not understand. Which is exactly the 
+              way in which you set about writing a program to mimic conversation. 
+            </BLOCKQUOTE>
+            <P> This quote comes from an article in the British humorous weekly 
+              <I>Punch</I>, published sometime in the early '80s. To explain it, 
+              I should point out that Adams, author of the <I>Hitch Hiker's Guide 
+              to the Galaxy</I>, was an unusually clear thinker, as the following 
+              excerpt from <I>The Restaurant at the end of the Universe</I> illustrates. 
+              Arthur Dent and Ford Prefect have leapt into a matter transporter 
+              to escape certain death, and have been teleported to a space ark 
+              which they will later discover to be packed with cryogenically frozen 
+              telephone-sanitisers and advertising executives. In this scene, 
+              just after they arrive, they find themselves captured by the ark's 
+              Number Two officer and dragged to see its Captain: 
+            <BLOCKQUOTE> 
+              <P> Number Two's eyes narrowed and became what are known in the 
+                Shooting and Killing People trade as cold slits, the idea presumably 
+                being to give your opponent the impression that you have lost 
+                your glasses or are having difficulty keeping awake. Why this 
+                is frightening is an, as yet, unresolved problem. </P>
+              <P> He advanced on the Captain, his (Number Two's) mouth a thin 
+                hard line. Again, tricky to know why this is understood as fighting 
+                behaviour. If, while wandering through the jungle of Traal, you 
+                were to come across the fabled Ravenous Bugblatter Beast, you 
+                would have reason to be grateful if its mouth was a thin hard 
+                line rather than, as it usually is, a gaping mass of slavering 
+                fangs. </P>
+            </BLOCKQUOTE>
+            It does seem to me that Adams has a point. And his clear thinking 
+            makes much sense when applied to Reagan, too. 
+            <P> Adams was a keen observer of computing and the software industry. 
+              In <I>Dirk Gently's Holistic Detective Agency</I>, he imagines an 
+              AI company, WayForward Technologies, who have invented a novel decision-support 
+              system. Instead of deciding for you which actions are best for your 
+              business, it asks which decision you would like to reach, and then 
+              outputs an impregnable argument with which to justify it to your 
+              critics. Now <I>there's</I> an interesting research project. </P>
+            <P> In the story, WayForward have sold their program to the Pentagon, 
+              who want to generate arguments justifying Star Wars (the missile 
+              defence, not the film). This becomes a bit worrying for one of the 
+              employees, who after reverse-engineering recent US policy statements, 
+              notices that while the US Navy is clearly using version 2.00, the 
+              arguments expressed by the Air Force are still generated by the 
+              algorithms from beta-test version 1.5. This notwithstanding, the 
+              Pentagon sale is just starting to make WayForward: 
+            <BLOCKQUOTE> the only British software company that could be mentioned 
+              in the same sentence as such major U.S. companies as Microsoft or 
+              Lotus. The sentence would probably run along the lines of "WayForward 
+              Technologies, unlike such major U.S. companies as Microsoft or Lotus...", 
+              but it was a start. </BLOCKQUOTE>
+            In all, <I>Dirk Gently's Holistic Detective Agency</I> is a fun read 
+            - amongst its cast is a time-travelling Cambridge don who uses his 
+            time machine to go back and watch TV programs because he can't cope 
+            with his video-recorder's user-interface - and, 20 years later, it 
+            is interesting to relive the personal computer craze of the times. 
+            <P> Returning to Reagan, the <I>Punch</I> quote with which I started 
+              was inspired when Adams combined his observations of the software 
+              industry - and perhaps of US politics - with an interest in interactive 
+              fiction, itself inspired when he began writing a <A HREF="http://www.douglasadams.com/creations/infocomjava.html ">text-adventure 
+              version of <I>Hitch Hiker's</I></A>. Adams explains, in a quote 
+              from Neil Gaiman's biography of him <I>Don't Panic</I>, that as 
+              he watched Reagan and Mondale: 
+            <BLOCKQUOTE> 
+              <P> I thought, 'This is exactly the way you program a computer to 
+                appear to be taking part in a conversation.' So, with a friend 
+                in New York, I was going to do a program to emulate Reagan, so 
+                you could sit down and talk to a computer and it would respond 
+                as Reagan would. And then we could do a Thatcher one, and after 
+                a while you could do all the world leaders, and get all the various 
+                modules to talk to each other. [World Wide Mind, anyone?] </P>
+              <P> After that we were going to do a program called <I>God</I>, 
+                and program all God's attributes into it, and you'd have all the 
+                different denominations of God on it ... you know, a Methodist 
+                God, a Jewish God, and so on... I wanted to be the first person 
+                to have computer software burned in the Bible Belt, which I felt 
+                was a rite of passage that any young medium had to pass through. 
+              </P>
+              <P> However, with the recession in the American computer industry, 
+                all that came to nothing, largely because the people who wanted 
+                to do it with me discovered they didn't have cars or money or 
+                jobs. </P>
+            </BLOCKQUOTE>
+            <H3><A NAME="ideology_machine">Barry Goldwater and the Ideology Machine</A></H3>
+            <P> Adams did not produce a Reagan game, and there is not, as far 
+              as I know, a Reagan simulator on the market. But believe it or not, 
+              there was once a Barry Goldwater simulator. In her <I>Artificial 
+              Intelligence and Natural Man</I>, still tbe best general book on 
+              pre-1980s AI, Margaret Boden describes Abelson's Ideology Machine, 
+              a program designed to model how mental belief structures determine 
+              one's reply to questions such as "If the Communists attack Thailand, 
+              what will happen?" (Abelson was working bang in the middle of the 
+              Cold War.) </P>
+            <P> Abelson chose Goldwater because of his exceptionally clearcut 
+              and unchanging (rigid...?) ideology. To the Thailand question, Ideology 
+              Machine would apparently reply: 
+            <BLOCKQUOTE> If Communists attack Thailand, Communists take over unprepared 
+              nations unless Thailand ask-aid-from United States and United-States 
+              give-aid-to Thailand. </BLOCKQUOTE>
+            As Boden remarks, this answer appears reasonable enough as words to 
+            be put into the mouth of Goldwater, while appropriately inappropriate 
+            if suggested as coming from, for example, Tito. The point is that 
+            such a model must explain differences, i.e. what it is about Goldwater's 
+            conceptual structures that would cause him to answer differently from 
+            Tito. This it did by analysing the question to give a starting node 
+            in the belief-graph verbalised below, and then following the links 
+            round to generate its answer: 
+            <BLOCKQUOTE> The Communists want to dominate the world and are continually 
+              using Communist schemes (Branch 5) to bring this about; these schemes 
+              when successful bring Communist victories (Branch 6) which will 
+              eventually fulfil their ultimate purpose; if on the other hand the 
+              Free World really uses its power (Branch 4), then Communist schemes 
+              will surely fail (Branch 7), and thus their ultimate purpose will 
+              be thwarted. However, the misguided policies of liberal dupes (Branch 
+              2) result in inhibition of full use of Free World power (Branch 
+              3); therefore it is necessary to enlighten all good Americans with 
+              the facts so that they may expose and overturn these misguided liberal 
+              policies (Branch 1). </BLOCKQUOTE>
+            Any relation to the policies of any current leader is entirely coincidental. 
+            <P> For further reading, I recommend Boden's section on Abelson. The 
+              political science link below surveys various projects, and it's 
+              interesting too to follow up later references to Abelson and Roger 
+              Schank, with whom Abelson began a long collaboration on modelling 
+              belief structures. </P>
+            <H3><A NAME="adams_links">Links</A></H3>
+            <P> <A HREF="http://www.douglasadams.com/creations/infocomjava.html">www.douglasadams.com/creations/infocomjava.html</A> 
+              - Hitch Hiker's Guide to the Galaxy Infocom Adventure, including 
+              a Java applet that you can play online. It is claimed that this 
+              may be the only text-adventure that lies to its players! </P>
+            <P> <A HREF="http://www.ainewsletter.com/newsletters/aix_0406.htm">www.ainewsletter.com/newsletters/aix_0406.htm</A> 
+              - AI Expert Newsletter for June 2004 contains Dennis Merritt's nice 
+              explanation of interactive fiction, with numerous links. </P>
+            <P> <A HREF="http://web.syr.edu/~satucker/ai.html">http://web.syr.edu/~satucker/ai.html</A> 
+              - A survey covering the Ideology Machine and other AI applications 
+              to political science, written by Gavan Duffy and Seth Tucker, Syracuse 
+              University Department of Political Science. </P>
+            <H2><A NAME="aibo">Programming the Sony Aibo robot dog</A></H2>
+            <P> When Sony brought out Aibo in 1999, they <A HREF="http://www.aibo-friends.com/contentid-36.html">sold 
+              3,000 in a mere 20 minutes</A> over the Internet. Since then, <A HREF="http://www.aibo-europe.com/1_1_3_aibo_story.asp">Aibo 
+              has already gone through five versions</A>, the latest being the 
+              wireless-enabled ERS-7. In this feature, I recount what I disovered 
+              about how to program Aibo, and his uses in teaching. </P>
+            <H3><A NAME="aibo_introduction">Your little plastic pal who's fun 
+              to be with</A></H3>
+            <P> If you're interested in programming an Aibo, the first step is 
+              to buy one - or to decide whether you can afford to, since Aibo 
+              is not cheap. Looking for online shops so I could check prices, 
+              I found a confusing tangle of URLs - sony.com, sony.net, sonystyle.com, 
+              aibo-europe.com, shop.sonystyle-europe.com. According to the <A HREF="http://www.sony.net/Products/aibo/index.html">sony.net 
+              shop</A>, Aibo sells at &pound;1,399 in the UK, $1,899 in the US, 
+              and 1,999&euro; in the Eurozone. (This may not be the best Sony 
+              site, since the Europe page lacks online shops for Greece and other 
+              countries, while the French will not be pleased to see that one 
+              of their links contains a dud country code, causing their page to 
+              appear in German.) Teachers and researchers should look out for 
+              educational discounts, and it's also worth checking for reconditioned 
+              second-hand Aibos. </P>
+            <P> Let me add that the price is actually excellent value when you 
+              consider the development and engineering that has gone into Aibo. 
+              He has become deservedly popular for teaching robotics, at school 
+              as well as in university. </P>
+            <H3><A NAME="hardware_and_software">What's in an Aibo?</A></H3>
+            <P> Sony have numerous descriptions of Aibo scattered over their sites 
+              - there's a nice little tour via the Sonystyle "Product Tour" link 
+              on their <A HREF="http://www.sonystyle.com/is-bin/INTERSHOP.enfinity/eCS/Store/en/-/USD/LC_ViewPage-Start?isurl=true&basetemplate=/lc/base/lc_hf.isml&page=static/lc/aibo/index.isml">Aibo 
+              learning centre</A> page at www.sonystyle.com. I'd give the URL 
+              in my links list below, but it's far too big to fit on a line, being 
+              well over 100 characters long. </P>
+            <P> More information on Aibo's hardware can be gleaned from notes 
+              written by various universities for their robotics courses. According 
+              to the <A HREF="http://www.cs.pitt.edu/~don/cs1567/current/lab1-tekkotsu.pdf">University 
+              of Pittsburgh</A>, the ERS-7 contains: 
+            <UL>
+              <LI>320 line CCD camera with color segmentation hardware. 
+              <LI>2 IR distance sensors. 
+              <LI>Position encoders for all joints' actuator motors. 
+              <LI>Joint actuation motors, as follows: 
+                <UL>
+                  <LI>Tail: left/right; 
+                  <LI>Neck: up/down; 
+                  <LI>Head: left/right and up/down; 
+                  <LI>High shoulder, 2 per leg: in/out and forward/backward; 
+                  <LI>Knee: bend position; 
+                  <LI>Ankle: bend position. 
+                </UL>
+              <LI>Touch-sensor switches: 1 in the head (1), 3 in the back, and 
+                in the chin. 
+              <LI>Accelerometer for detecting falls and pick-ups. 
+              <LI>Switch sensors on each paw pad. 
+              <LI>Stereo microphone. 
+              <LI>Audio channel. 
+              <LI>Wireless network channel. 
+              <LI>Slot for removable memory stick. 
+            </UL>
+            <P> The software is harder to find out about. Aibo's joints give it 
+              a good number of degrees of freedom, and its native software is 
+              geared towards using this for lifelike "pet emulation", as the list 
+              of primitive actions demonstrates: 
+            <UL>
+              <LI>Play Alone - things Aibo does by himself 
+              <LI>Play with Human - things Aibo does with you 
+              <LI>Play with Robot - things Aibo does with other Aibos 
+              <LI>Play with Object - things Aibo does with things (usually pink 
+                balls) 
+              <LI>Show emotions / moods (joy, fear, disgust, ...) 
+              <LI>Show feelings (bored, embarrased, dislike, ...) 
+              <LI>Physiological reactions (cold, hot, itchy, peeing, ...) 
+              <LI>Requests (play with me) 
+              <LI>Reflexes (react to noise or surprise) 
+              <LI>Show Intentions (just say no) 
+              <LI>Offensive (attack, provoke, escape) 
+              <LI>Guard / Defensive (attack, cover, threaten) 
+              <LI>Contact - Aibo raises paw to touch something (in different locations) 
+              <LI>Tactile - Reactions to being touched (hate it, pressed, tickled) 
+              <LI>Special case position changes (advanced) 
+              <LI>Ball search and tracking (advanced) 
+            </UL>
+            <P> As AI-ers, we want to know what Aibo can do with his senses. Sony 
+              say the ERS-7 recognises its owner's face, as well as the blocky 
+              black-and-white pattern on the marker pole of its recharging station. 
+              Aibo ships with two toys - a ball and a bone, the "Aibone" [oh dear] 
+              - and the recognition software apparently knows about these. That 
+              they're both coloured a lurid and unlikely pink suggests that Aibo's 
+              object-recognition abilities are not overly discriminating. This 
+              is backed up by a disappointed review from <A HREF="http://www.onrobo.com/cgi-bin/rms2/magpie/do/submit.cgi?product-sku=on00ers700rosny">"etienne" 
+              of Brussels</A> on the <I>Home Robot News and Reviews</I> site. 
+              Having said that, Sony have still packed a huge amount into Aibo. 
+            </P>
+            <H3><A NAME="yro">YART, R-CODE, and OPEN-R</A></H3>
+            <P> If you want to try some elementary programming, an easy way to 
+              begin is the YART graphical editor written by <A HREF="http://www.aibohack.com/index.html">AiboPet</A>. 
+              He, incidentally, is one of Aibo's most notorious hackers, having 
+              become famous when <A HREF="http://www.sciam.com/article.cfm?articleID=0005510C-EABD-1CD6-B4A8809EC588EEDF&pageNumber=1&catID=4">Sony 
+              invoked the US Digital Millennium Copyright Act against him</A> 
+              for cracking Aibo's protection and reverse-engineering its software. 
+              Returning to YART, the tool lets you define responses that Aibo 
+              must execute when he detects certain conditions. For example, you 
+              can program Aibo to sit alone and groom himself when the touch sensor 
+              in his head is pressed for a long time, or even to dance. AiboPet's 
+              site contains a wealth of information on this. </P>
+            <P> YART works by expanding its user's condition-response pairs into 
+              R-CODE, Sony's BASIC-like scripting language. R-CODE is fine for 
+              extending Aibo's repertoire of pet-like behaviours, but it is limited 
+              and can't access all of his hardware, so I'll just mention it in 
+              passing. Sony implicitly admits this in that while they permit commercial 
+              use of their R-CODE development kit, they don't for OPEN-R, which 
+              I'll get onto next. </P>
+            <P> Lower-level than R-CODE, OPEN-R gives you more power. It implements 
+              an object-oriented interface based on C++, which allows you to control 
+              everything from the gain values of Aibo's actuators to getting data 
+              from his camera and communication via his LAN. One very important 
+              topic here is parallelism. The OPEN-R programming model views Aibo 
+              as a collection of concurrently executing OPEN-R objects (not the 
+              same as C++ objects, note) which communicate by message passing. 
+              You can't use OPEN-R unless you thoroughly understand this. The 
+              best help I've found is a <A HREF="http://www.ensta.fr/%7Ebaillie/tutorial_OPENR_ENSTA-1.0.pdf">OPEN-R 
+              tutorial</A> by Francois Serra and Jean-Christophe Baillie from 
+              ENSTA. As they say in their introduction, Sony's official Web-based 
+              documentation is incomplete, and some examples, including an often-cited 
+              ball tracker, are not at all easy to understand. Because of this, 
+              they wrote this tutorial as a service to the research community. 
+              It looks like essential reading for anybody beginning OPEN-R. </P>
+            <H3><A NAME="tekkotsu">Tekkotsu</A></H3>
+            <P> OPEN-R is powerful, but for serious AI, I'd recommend <A HREF="http://www-2.cs.cmu.edu/~tekkotsu">Tekkotsu</A>, 
+              and not merely because it is free and open-source. Tekkotsu is a 
+              rapid-application development framework developed at Carnegie Mellon 
+              University. Amongst the reasons for recommending it is that it removes 
+              some of the low-level tedium of robot programming, as well as the 
+              complications of OPEN-R parallelism. Amongst other things, it centralises 
+              sensory processing in one place, preventing code duplication, and 
+              making it possible for programmers to use an event-driven style 
+              - familiar to most C++ and Java users - for handling perceptions. 
+              This is nice: as an example, the Tekkotsu <A HREF="http://www-2.cs.cmu.edu/%7Edst/Tekkotsu/Tutorial/events.shtml">tutorial</A> 
+              shows events being used, in less than a page of C++, to detect when 
+              Aibo's pink ball passes into or out of his field of vision. </P>
+            <H3><A NAME="prolog_and_fp">Prolog, SWI-Prolog, and functional programming 
+              on Aibo</A></H3>
+            <P> Computer scientists rightly attach importance to functional and 
+              logic programming languages, because of their clean semantics. There's 
+              been a lot of research on such languages applied to various kinds 
+              of parallel systems, so I was interested to see whether they'd been 
+              tried for Aibo. Disappointingly, a search turned up very little. 
+              Jelle Herold at the University of Utrecht has <A HREF="http://www.cs.uu.nl/docs/vakken/aibop/6-AIBOP-aibo_3apl.pdf">slides</A> 
+              describing a reimplementation of Utrecht's <A HREF="http://www.cs.uu.nl/3apl/">3APL 
+              cognitive agent language</A> for Aibo. Another <A HREF="http://defekt.nl/aibo3apl/moin.cgi/FrontPage?action=show&redirect=StartSeite">collection 
+              of pages on this work</A> mentions that <A HREF="http://www.swi-prolog.org/">SWI-Prolog</A> 
+              has been ported to Aibo, with the help of SWI's author Jan Wielemaker. 
+              A download is available; it would be a good start for anyone interested 
+              in logic programming and Aibo. </P>
+            <P> As far as functional languages go, Ian Horswill of Northwestern 
+              University describes a simple functional language called <A HREF="http://www.cs.northwestern.edu/~ian/grl-paper.pdf">GRL</A>, 
+              based on Lisp. This allows robot behaviours to be written and composed 
+              in a modular fashion, and has apparently been tried on prototypes 
+              of Aibo. </P>
+            <H3><A NAME="aibo_in_teaching">Aibo at school and university</A></H3>
+            <P> Tekkotsu itself is an example of software developed for university 
+              work, and it has been used in numerous courses. Just as one example 
+              of a non-Tekkotsu course, I have linked at the end to <A HREF="http://www.cs.uno.edu/~starapor/research/project2/">a 
+              course at the University of New Orleans</A>, which involved a mapping 
+              and path-planning project, using an interface between Java/R-CODE 
+              interface. </P>
+            <P> In schools, the <A HREF="http://www.cis.plym.ac.uk/cis/projects/fprojects.html">Natural 
+              Object Categorisation Research Group</A> at Plymouth University 
+              have been exploring how robotics can be incorporated into the UK 
+              National Curriculum. As <A HREF="http://www.cis.plym.ac.uk/cis/projects/aiboschool.html">they 
+              say</A>, 
+            <BLOCKQUOTE> Using AIBO robots in the class is easy and fun to do. 
+              You can extend pupil understanding of control and AI from traffic 
+              light controllers and state machines to state of art intelligent 
+              machines. AIBO robots can see, walk, navigate around obstacles and 
+              even talk to each other. These complex interactions with the real 
+              world provide an excellent introduction to today's state of art 
+              machines and to the future (their future) of intelligent machines. 
+              Using AIBO allows learners to be exposed to very high level concepts 
+              in machine control that is common in the latest intelligent machines, 
+              including cellnet phones and electronic games and the complex management 
+              control systems in every car. </BLOCKQUOTE>
+            They link to some interesting reports and videos about teaching. The 
+            youngest group taught was only between 7 and 10 years, and used flow 
+            charts to program simple behaviours into Aibo. 
+            <H3><A NAME="aibo_moves">Warning! Aibo moves!</A></H3>
+            <P> Although I once read about a DEC-10 program which made a disc 
+              drive "walk" across the room, most programmers can assume their 
+              computer will remain safely where they leave it. Not so Aibo. And 
+              since Aibo is expensive, and contains fine moving parts, some care 
+              is needed. As one user says, though it may be cute to make Aibo 
+              bob his head up and down in a greeting, letting the code loop until 
+              his battery runs down or joints seize up is not a good idea. Similarly, 
+              if you are working on a desk or table, remember that Aibo may walk 
+              off the edge and damage himself in a fall. He is fragile. </P>
+            <H3><A NAME="aibo_conclusion">Conclusion</A></H3>
+            <P> I've tried here to hack my way through the jungle of Aibo information. 
+              There's masses of stuff out there, from little R-CODE routines to 
+              make your doggie dance and sing, to experimental robot languages 
+              and Aibo application development frameworks. If you're interested 
+              in "pet emulation", either for yourself or perhaps in teaching children, 
+              AiboPet's graphical R-CODE interface <A HREF="http://www.aibohack.com/rcode/yart.htm">YART</A> 
+              has a lot of work behind it. Look also to see what Sony are currently 
+              offering in the way of graphical editors. The Plymouth <A HREF="http://www.cis.plym.ac.uk/cis/projects/AIBO%20school/RM%20&%20TF_web%20sites%20report.pdf"><I>Browsing 
+              the Web to get familiarised with Aibo</I></A> is a nice little guide 
+              which links to many useful sites. </P>
+            <P> Serious AI-ers should look at <A HREF="http://www-2.cs.cmu.edu/~tekkotsu">Tekkotsu</A>, 
+              a standardised and reliable, free, open-source, framework which 
+              avoids a lot of the low-level programming tedium. Read also the 
+              <A HREF="http://www.ensta.fr/%7Ebaillie/tutorial_OPENR_ENSTA-1.0.pdf">ENSTA 
+              tutorial on OPEN-R</A>, which explains a lot that's hard to find 
+              out elsewhere. Researchers interested in language design could note 
+              that despite all the (justified) claims in favour of functional, 
+              logic and equational languages, these are yet to be proven on Aibo; 
+              though Jelle Herold's SWI-Prolog might offer one starting point. 
+              And how about seeing how those rat cortical neurons would fare when 
+              given control of a robot dog? </P>
+            <H3><A NAME="aibo_links">Links</A></H3>
+            <P> <A HREF="http://www.sony.net/Products/aibo/index.html">www.sony.net/Products/aibo/index.html</A> 
+              - One of many Sony sales sites. </P>
+            <P> <A HREF="http://www.aibo-europe.com/1_1_3_aibo_story.asp">www.aibo-europe.com/1_1_3_aibo_story.asp</A> 
+              - Brief history slide-show from Sony, with pictures of the prototypes. 
+            </P>
+            <P> <A HREF="http://www-2.cs.cmu.edu/~tekkotsu/AiboInfo.html">http://www-2.cs.cmu.edu/~tekkotsu/AiboInfo.html</A> 
+              - >From the people who brought you Tekkotsu, a summary of Aibo's 
+              hardware, with pictures. This URL, on a major hobby site, links 
+              to pictures of the innards from two early models: <A HREF="http://www.aibosite.com/sp/gen/index-2.html">www.aibosite.com/sp/gen/index-2.html</A>. 
+            </P>
+            <P> <A HREF="http://www.onrobo.com/cgi-bin/rms2/magpie/do/submit.cgi?product-sku=on00ers700rosny">www.onrobo.com/cgi-bin/rms2/magpie/do/submit.cgi?product-sku=on00ers700rosny</A> 
+              - Searching for "etienne" on this <I>Home Robot News and Reviews</I> 
+              page will find you a disappointed review of Aibo's sensory software. 
+              N.B. Always check model numbers when reading reviews, as there has 
+              been a lot of progress since the first model. </P>
+            <P> <A HREF="http://www.the-gadgeteer.com/sony-aibo-review.html">www.the-gadgeteer.com/sony-aibo-review.html</A> 
+              - A rather amusing review of Aibo, from the point of view of a dog 
+              owner. To quote, "Supposedly the robot has 'free will'.... but, 
+              I think I'd like it better if it always did what I asked of it. 
+              I've already got a real dog with free will and it's not all it's 
+              cracked up to be let me tell ya. :-)". Incidentally, the link <I>Dogs 
+              in Elk Carcass</I>, <A HREF="http://www.farmount.org/nightshade/dogelk.html">www.farmount.org/nightshade/dogelk.html</A>, 
+              is a hilarious account of what happens when free will in real dogs 
+              goes very badly awry. </P>
+            <P> <A HREF="http://www.aibohack.com/">www.aibohack.com/</A> - AiboPet's 
+              site. There are links to YART tutorials, and information on R-CODE 
+              and OPEN-R. At least with the latter two, it will help to have looked 
+              at the Sony software development site, <A HREF="http://openr.aibo.com/">http://openr.aibo.com/</A>. 
+              Amongst other information, this contains FAQs on R-CODE and OPEN-R. 
+              The AiboLife site www.aibo-life.org contains, under the URL <A HREF="http://www.aibo-life.org/forums/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=7;t=000053">www.aibo-life.org/forums/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=7;t=000053</A>, 
+              some R-CODE snippets sent in by users. There is also an R-CODE reference 
+              here, <A HREF="http://www.etc.cmu.edu/bvw/aibo/docs/rcode-ers7-cmdref-20040501_E.txt">www.etc.cmu.edu/bvw/aibo/docs/rcode-ers7-cmdref-20040501_E.txt</A>, 
+              with short examples of each language construct. </P>
+            <P> <A HREF="http://www.ensta.fr/%7Ebaillie/tutorial_OPENR_ENSTA-1.0.pdf">www.ensta.fr/%7Ebaillie/tutorial_OPENR_ENSTA-1.0.pdf</A> 
+              - The ENSTA OPEN-R tutorial. Recommended to all OPEN-R programmers. 
+            </P>
+            <P> <A HREF="http://www-2.cs.cmu.edu/~tekkotsu">http://www-2.cs.cmu.edu/~tekkotsu</A> 
+              - Home page for Tekkotsu. Recommended. The page includes links to 
+              a beginner's tutorial, and to downloads. </P>
+            <P> <A HREF="http://www.cs.uu.nl/docs/vakken/aibop/6-AIBOP-aibo_3apl.pdf">www.cs.uu.nl/docs/vakken/aibop/6-AIBOP-aibo_3apl.pdf</A> 
+              - As an example of work on language development, here are slides 
+              describing a reimplementation of the 3APL agent language for Aibo. 
+              For 3APL itself, see <A HREF="http://www.cs.uu.nl/3apl/">www.cs.uu.nl/3apl/</A>. 
+              For an Aibo port of SWI-Prolog, with download, see <A HREF="http://defekt.nl/aibo3apl/moin.cgi/FrontPage?action=show&redirect=StartSeite">http://defekt.nl/aibo3apl/moin.cgi/FrontPage?action=show&redirect=StartSeite</A>. 
+            </P>
+            <P> <A HREF="http://www.cs.northwestern.edu/~ian/grl-paper.pdf">www.cs.northwestern.edu/~ian/grl-paper.pdf</A> 
+              - Ian Horswill's Lisp-based GRL language, which has been tested 
+              on Aibo prototypes. </P>
+            <P> <A HREF="http://cogrob.ensta.fr/publis/epirob2004-baillie.pdf">http://cogrob.ensta.fr/publis/epirob2004-baillie.pdf</A> 
+              - <I>Grounding Symbols in Perception with two Interacting Autonomous 
+              Robots</I>. This paper, by the ENSTA team who produced the OPEN-R 
+              tutorial, investigates the symbol-grounding problem using Aibos. 
+              It also describes URBI - Universal Robotic Body Interface - a layer 
+              that like Tekkotsu sits above OPEN-R in order to simplify programming. 
+            </P>
+            <P> <A HREF="http://www.cs.uno.edu/~starapor/research/project2/">www.cs.uno.edu/~starapor/research/project2/</A> 
+              - An example of university teaching using Aibo, a project that does 
+              mapping and path planning. </P>
+            <A HREF="http://www.cis.plym.ac.uk/cis/projects/AIBO%20school/RM%20&%20TF_web%20sites%20report.pdf">www.cis.plym.ac.uk/cis/projects/AIBO%20school/RM%20&%20TF_web%20sites%20report.pdf</A> 
+            - <I>Browsing the Web to get familiarised with Aibo</I>. This is the 
+            summary of Aibo Web resources produced at Plymouth. I recommend it 
+            to school teachers and indeed, all Aibo users. This page, <A HREF="http://www.cis.plym.ac.uk/cis/projects/aiboschool.html">www.cis.plym.ac.uk/cis/projects/aiboschool.html</A>, 
+            describes the various levels of school teaching done with Aibo. 
+            <P> <A HREF="http://www.sciam.com/article.cfm?articleID=0005510C-EABD-1CD6-B4A8809EC588EEDF">www.sciam.com/article.cfm?articleID=0005510C-EABD-1CD6-B4A8809EC588EEDF</A> 
+              - <I>Scientific American</I> article on AiboPet and the Digital 
+              Millennium Copyright Act. There is an article by <I>Wired</I> at 
+              <A HREF="http://www.wired.com/news/business/0,1367,48088,00.html?tw=wn_story_related">www.wired.com/news/business/0,1367,48088,00.html?tw=wn_story_related</A>, 
+              and a page on <I>The DMCA vs. the First Amendment</I>, by Tekkotsu 
+              researcher David Touretzky, at <A HREF="http://www-2.cs.cmu.edu/~dst/DMCA/Gallery/">http://www-2.cs.cmu.edu/~dst/DMCA/Gallery/</A>. 
+              It includes a link to the letter Sony sent AiboPet. </P>
+            <P> <A HREF="http://sitereview.org/?article=370">http://sitereview.org/?article=370</A> 
+              - Aibo security alert! Spoof on the buffer-overflow attack that 
+              invades Aibo with experimental PitBull code. </P>
+            <H2><A NAME="acknowledgements">Acknowledgements</A></H2>
+            <P> Thanks to Steven Green of Greenius, <A HREF="http://www.greenius.ltd.uk/">http://greenius.ltd.uk</A>, 
+              for telling me about the University of Florida work. </P>
+            <P></P>
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome. Feel free to contact either myself (below) or Jocelyn &lt;popx@j-paine.org&gt; 
+              with comments, thoughts and suggestions.</P>
+            <P>Until next month, </P>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p>Copyright &copy;2004 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved </p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

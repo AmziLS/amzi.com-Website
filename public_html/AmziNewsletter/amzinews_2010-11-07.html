@@ -1,0 +1,127 @@
+<html>
+
+<head>
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#ffffff">
+    <tr> 
+      <td valign="top" align="left" colspan="3" width="740"><img src="http://www.amzi.com/AmziNewsletter/images/amzi_newsletter.jpg" width="700" height="125"></td>
+    </tr>
+</table>
+ 
+
+<table width="700" border="3" bordercolor="#000000" cellspacing="5" cellpadding="5"  bgcolor="#FFFFCC">
+  <tr>
+    <td width="350" valign="top">
+    <h3 align="left"><a href="http://www.amzi.com">www.amzi.com</a></h3>
+    <hr>
+    <h2 align = "center">Contents</h2>
+    <ul>
+    <li> Notes on new newsletter, website, release, packaging & pricing</li>
+    <li>Domain-specific languages &amp; Prolog</li>
+    <li>Notes from the forum - permutation</li>
+    </ul>
+    
+    <hr>
+    <h2 align = "center">New Newsletter</h2>
+    <p>Welcome to the first edition of a new Amzi! newsletter. Hopefully you want to receive this and will enjoy the articles on applications of Prolog, Expert Systems and AI, but if not click here: 
+      <unsubscribe>Unsubscribe</unsubscribe></p>
+      <p align="center"><a href="http://www.amzi.com/AmziNewsletter/index.php">Read on the Web</a></p>
+    <p>Sign up at the reworked Web site: <a href="http://www.amzi.com">www.amzi.com</a></p>
+    <hr>
+    <h2 align="center">New Release</h2>
+    <p> <a href="http://www.amzi.com/AmziPrologLogicServer/store.php">Amzi! Prolog + Logic Server 9.4.4</a> is now available for download and/or purchase. </p>
+    <p>New features include: </p>
+    <ul>
+      <li> Fixes to the source code debugger,</li>
+      <li> Support for the new free student edition, and</li>
+      <li> Removal of limited-feature versions of the software. </li>
+    </ul>
+    <hr>
+    <h2 align="center"> Domain-Specific Languages </h2>
+    <p> Prolog is exceptionally well suited for developing domain-specific languages (DSL). </p>
+    <p> In a DSL, the knowledge representation is very close to the way the domain experts express it. This has significant advantages: </p>
+    <ul>
+      <li> It can be more easily maintained and/or vetted directly by those experts. </li>
+      <li> Reliability is increased due to a smaller gap between the way the knowledge is expressed and how it is coded. </li>
+      <li> Turn around time for new knowledge is decreased, due the efficiency of having the experts code the knowledge directly with minimal or no need of programmer assistance. </li>
+    </ul>
+    <p> Implementing a DSL in Prolog has three steps: </p>
+    <ul>
+      <li> Design Prolog structures to represent the knowledge, </li>
+      <li>Implement a reasoning engine that uses that knowledge appropriately, and</li>
+      <li>Design an  API so the DSL can be accessed from a host language for deployment. </li>
+    </ul>
+    <p>The steps for builing DSLs will be covered in future issues of this newsletter, using as an example  a prototype recently developed for a bank wishing to automate decision tree knowledge from a policy manual.</p>
+    <p>Prolog is well suited for building DSLs due to:</p>
+    <ul>
+      <li>The structure and list notation that makes it easy to represent complex concepts,</li>
+      <li>The backtracking search execution that makes it easy to define how to reason over the structures and lists,</li>
+      <li>Amzi!'s Logic Server API that makes it easy to deploy the DSL in any application environment.</li>
+    </ul>
+    <p> Amongst Amzi! customers, DSLs have been used by: </p>
+    <ul>
+      <li> Major banks to allow changes to mortgage packages be maintained and deployed by the mortgage experts (Java &amp; Prolog), </li>
+      <li> Health care providers to allow pediatricians to update the constantly changing rules for vaccinations (Delphi &amp; Prolog), </li>
+      <li>Manufacturing companies to allow marketing and sales people to maintain product configuration knowledge for cost estimation software (VB &amp; Prolog).</li>
+    </ul>
+    <p>If you have any suggestions for this newsletter or topics you would like to see covered, contact us: <a href="http://www.amzi.com/company/contact_form.php">Contact</a></p>    
+    <p align="center">&nbsp;</p>
+</td>
+    <td width="350" valign="top">
+    <h3 align="right"> 2010-11-07 </h3>
+    <hr>
+    <h2 align="center"> New Pricing &amp; Packaging </h2>
+    <p>Amzi! packaging is now simplified into three options:</p>
+    <ul>
+      <li><b>Student</b> -- Amzi! Prolog with the full Eclipse-based IDE, including the source code debugger that makes it easy to understand Prolog execution behavior. Does NOT include the Logic Server or runtime distribution.</li>
+      <li><b>Full</b> -- Amzi! Prolog with Logic Server, including the Logic Server for embedding and/or extending Prolog in/with other application environments, and unlimited royalty free runtime distribution. (This was previously called the 'Professional Edition'.)</li>
+      <li><b>Evaluation</b> -- Like Full, but for a limited time and without runtime distribution.</li>
+    </ul>
+    <p>Amzi! pricing is available either on an individual or site-wide basis. For <b>individuals:</b></p>
+    <ul>
+      <li>Student -- Free.</li>
+      <li>Full -- $298.</li>
+      <li>Evaluation -- Free.</li>
+    </ul>
+    <p>All <b>site-wide licenses</b> allow anyone in the licensed domain, including students and faculty in academic institutions, to download and run the 'Full' edition of Amzi! Prolog + Logic Server.</p>
+    <ul>
+      <li>Academic Institutions -- $895.</li>
+      <li>Commercial/Government -- $5,000</li>
+    </ul>
+    <p align="center"> <a href="http://www.amzi.com/AmziPrologLogicServer/store.php">Download and/or Purchase</a></p>
+    <hr>
+    <h2 align="center">From the Forum<br/>Permutations</h2>
+    <p><b>Question:</b> Hi, I was wondering how could i generate all possible permuations of a given list </p>
+    <p>ie. given a list [a,b,c] it would return me a list of all possible permutations <br>
+    </p>
+    <p><b>Answer:</b> Typically one uses an intermediate predicate that extracts a member from a list and returns the shortened list of remaining entries: </p>
+    <p>
+      extract([H|T],H,T).<br>
+      extract([H|T],X,[H|L]) :- extract(T,X,L).<br>
+    </p>
+    <p>That code snippet keeps the order of list entries stable. We can use it to concisely define a permutation generator:</p>
+    <p>
+      permute([],[]).<br>
+      permute(L,[X|T]) :- extract(L,X,S), permute(S,T).<br>
+    </p>
+    <p>Because extract/2 allows (by design) backtracking over all the entries in a list, permute/2 will not permit the tail-recursion optimization (because in general backtrack points will be open when permute invokes itself). </p>
+    <p>The approach above is suitable for classroom exercises. A more careful implementation is required to manage the stack efficiently for permuting long lists. However no amount of care can optimize away the combinatorial explosion in time required to generate all permutations of a long list, so perhaps this is suffiicient. </p>
+    <p>If you Google for &quot;Prolog code permutations&quot; you will see that a permutation generator is often used with generate-and-test approaches to combinatorial problems, such as the 8 Queens problem (where the ranks of the chess queens must be a permutation of their files). </p>
+    <p>Finally once you have a nondeterministic predicate that can produce all the &quot;solutions&quot; (permutations in this case), and you wish to realize them as a single list of those solutions, there is a built-in predicate findall/3 which will do this for you. There's a brief discussion and link to the Amzi! Prolog documentation of this predicate in a recent thread in this forum begun by Torsten Pietrek.</p>
+    <p><br>
+      Chip Eastham</p>
+    <p>&nbsp;</p>
+<p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p>The Amzi! Newsletter is sent periodically to Amzi! inc. customers and subscribers.<br />
+    Click here if you do not want to receive future Amzi! Newsletters: <unsubscribe>Unsubscribe</unsubscribe><br />
+    If you wish to contact us click here: <a href="http://www.amzi.com/company/contact_form.php">Contact Us</a></p>
+
+ 
+</body>
+</html>
+

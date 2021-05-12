@@ -1,0 +1,50 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Lists</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Lists<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Lists are nested structures, just like Turkish dolls, but with a syntactic 
+  sugar that makes them more readable. They are written like:</p>
+<p><code>[apple, pear, plum, cherry]</code> </p>
+<p>But can really be thought of as:</p>
+<p><code>c( apple, c( pear, c( plum, c( cherry, c))))</code></p>
+<p>A special syntax gets the first and second arguments:</p>
+<code>[HEAD | TAIL]</code>
+<p>HEAD - the first element of the list.<br>
+  TAIL - the LIST of remaining elements.</p>
+<p>Which is the same as:</p>
+<p><code>c(HEAD, TAIL)</code></p>
+<pre>?- [HEAD|TAIL] = [apple, pear, plum, cherry].
+HEAD = apple
+TAIL = [pear, plum, cherry]
+</pre>
+<pre>?- c(HEAD,TAIL) = <code>c( apple, c( pear, c( plum, c( cherry, c))))</code>.
+HEAD = apple
+TAIL = <code>c( pear, c( plum, c( cherry, c)))</code></pre>
+<p>A special token <code>[]</code> <span class="weak">(which is an atom)</span> 
+  is the empty list, same as <code>c</code> the wooden doll.</p>
+<h2>The TAIL of a list is ALWAYS another list, or the empty list, so it can be 
+  fed to recursive predicates.</h2>
+
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_080_lists_030.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_080_lists_050.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

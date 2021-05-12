@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Instructions for installation of The Car Identifier <br>
+  on an IIS enabled personal machine</h2>
+<p>In its current form it is designed to run on an IIS machine only.<br>
+  <br>
+  1) Install all files to the C:\inetpub\wwwroot directory, preserving the file 
+  structure that exists in the zip file.<br>
+  <br>
+  After unzip you should have the following directories added to your wwwroot 
+  folder, also give them the access permissions (using the IIS Manager in your 
+  Control Panel) highlighted in <font color="#009900">green</font> and application 
+  permissions highlighted in <font color="#FF00FF">pink</font><br>
+  <br>
+  /CarIdentity/images/ (46 Files) <font color="#009900">read</font> &amp; <font color="#FF00FF">scripts</font><br>
+  /CarIdentity/report_files/ (16 Files)<br>
+  /CarIdentity/scripts/ (13 Files) <font color="#009900">read, script source access</font> 
+  &amp; <font color="#FF00FF">Execute (includes scripts)</font><br>
+  /CarIdentity/ (11 Files) <font color="#009900">read</font> &amp; <font color="#FF00FF">Execute 
+  (includes scripts)</font><br>
+  /database/ (2 Files)<br>
+  / (6 Files)<br>
+  <br>
+  2) Make the cars.mdb database in /database/ a system DSN with the name &quot;cars&quot;<br>
+  <br>
+  3) Run the website using http://localhost<br>
+</p>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>ARulesXL Newsletter, 11 April 2006</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1><a href="http://www.arulesxl.com"><img src="http://www.arulesxl.com/images/logo_shiprock2.gif" width="150" height="115" border="0" align="middle" /></a> <b><font face="Arial, Helvetica, sans-serif">ARulesXL <font color="#000099">Newsletter</font></font></b></h1>
+<h3>11 April 2006 </h3>
+<h2>Contents</h2>
+<ul>
+  <li><a href="#tax">Tax Form Sample Spreadsheet</a></li>
+  <li><a href="#beta">New Beta Test Release</a></li>
+  <li><a href="#api">Querying ARulesXL Rulesets on the Web and in Applications</a></li>
+</ul>
+<hr />
+<h2><a name="tax" id="tax"></a>Tax Form Sample Spreadsheet </h2>
+<p>It's tax time in the U.S. and a new sample celebrates that time by showing 
+  how ARulesXL can be used to easily encode the rules for filling in a form. The 
+  sample uses the simple U.S. Tax Form 1040EZ form to illustrate a number of key points:</p>
+<ul>
+  <li>How to develop a form and rule set so that the cells in the form are synchronized 
+    with the rules and properties of the rule set.</li>
+  <li>The readability and ease of verification of the form rules, as well as the 
+    ease with which the application can be updated in following years.</li>
+  <li>The use of secondary rule sets for tax worksheets used to compute values 
+    on the form. For example, one secondary rule set is used to determine 'earned 
+    income credit' (EIC) eligibility and another is used to calculate the value 
+    of the 'earned income credit' if appropriate. Both are called from the primary 
+    rule set filling out form 1040EZ.</li>
+  <li>The EIC eligibility rule set shows one approach to implementing a decision 
+    tree by dynamically changing questions in cells.</li>
+</ul>
+<p>The application is designed with the rule sets next to the forms, which makes 
+  it easy to see how the two interact. That particular approach would also be 
+  a good one for developing this sort of application, allowing experts in the 
+  field to work with developers while creating and verifying the rules. When moving 
+  to production, however, it might make more sense to move the rule sets to their 
+  own worksheets in the application, leaving just the forms for the user to interact 
+  with. </p>
+<p>The sample is called EZTax and is included as part of the new beta test release. (The sample will not run on earlier versions of ARulesXL.) </p>
+<h2><a name="beta"></a>New Beta Test Release </h2>
+<p>A new Beta Test release is available, 1-1-20-Beta. It features the new ARulesXL API (Application Programming Interface) that lets you query rulesets from a variety of web and stand-alone applications. The API will be a feature in the Professional Edition of ARulesXL that will be introduced at version 2.0. </p>
+<p>It also adds the tax form sample (see above) a new function, EVALUATE, and 
+  documentation on a number of other functions added in previous beta releases. 
+</p>
+<h3>EVALUATE() Function</h3>
+<p>EVALUATE() lets you call Excel functions from ARulesXL rules. It takes a string 
+  as an argument which has the expression to evaluate. This means you can dynamically 
+  create the function calls and arguments from within a rule set.</p>
+<p>For example, in the new EZTax.XLS sample, the Excel function VLOOKUP is needed 
+  to find the tax from an Excel table named TaxTable. The lookup is based on the 
+  taxable income and whether the return is for a single person or a married couple 
+  filing jointly. The rules to find the tax value look like this:</p>
+<pre><font color="#0000FF">   .TaxTableColumn = 3 WHEN .FilingStatus = single
+   .TaxTableColumn = 4 WHEN .FilingStatus = joint
+   .Tax = EVALUATE( &quot;VLOOKUP(&quot; &amp; .TaxableIncome &amp; &quot;, TaxTable,&quot; &amp; .TaxTableColumn &amp; &quot;)&quot; )</font></pre>
+<h2><a name="api"></a>Querying ARulesXL Rulesets on the Web and in Applications </h2>
+<p>ARulesXL rule sets are developed and maintained in Microsoft Excel spreadsheets. 
+  The functions RCell() and RTable() can be used to get data from spreadsheet 
+  cells into rule sets, and RQuery() can be used outside a rule set to put computed 
+  rule set properties in spreadsheet cells, as well as provide input values for 
+  the rule set.</p>
+<p>The rule sets developed under Excel can, of course, be easily deployed in Excel. 
+  But they can also be exported for deployment in other application contexts.</p>
+<p>Two features make this possible:</p>
+<ul>
+  <li>An 'Export' item on the ARulesXL menu that exports the rules and associated 
+    data to an external binary file.</li>
+  <li>The ARulesXL Application Programming Interface (API) that lets you query 
+    those rule sets from other application contexts.</li>
+</ul>
+<p>The ARulesXL API includes functions that perform the same duties as RCell() 
+  &amp; RTable() for making data available to a rule set, and RQuery() for getting 
+  results back from a rule set.</p>
+<p>The ARulesXL API allows you to run rulesets in a variety of languages and tools. 
+  You load inputs from a variety of data sources (e.g. databases, users, networks), 
+  and query the ruleset to obtain results. You can display those results in your 
+  application's user interface or in Web pages. You can also use the results programmatically 
+  to create schedules, orders, analyses, recommendations and more.</p>
+<p>The API is implemented as a class in most environments. The class has methods 
+  to open and close rulesets, load data and issue queries. Most of the methods 
+  are common across environments, although language specific methods are provided 
+  to use language-specific data collections, arrays, etc.</p>
+<p>The API is under active development. The documentation is a first draft and is available from the ARulesXL program menu. The interfaces currently available or planned are:</p>
+<UL>
+  <LI>C++ Class (planned) 
+  <LI>Delphi Component 
+  <LI>Java Class 
+  <LI>VB.NET Class 
+  <LI>VBA Interface (planned) </LI>
+</UL>
+<p>The VBA interface is a special case, as it allows you to use VBA code with 
+  rule sets running in Excel. This lets you create more powerful ARulesXL/Excel 
+  applications. See the BudgetAnalysis.xls sample for an example of its use, although 
+  the call syntax is not in its final form yet.</p>
+<p>The general methods are described in the new API Reference Manual. Each environment has its own chapter to discuss its   installation, usage and language specific methods. </p>
+<p>The Export command and ARulesXL API are part of the new beta test release and 
+  will be available in the new Professional Edition of ARulesXL to be introduced 
+  with version 2.0. </p>
+<hr />
+<p><font color="#000099" size="+2"><b><a href="http://www.arulesxl.com"><font face="Arial, Helvetica, sans-serif">www.arulesxl.com</font></a></b></font></p>
+<p><font size="-1">To <a href="http://www.arulesxl.com/mail/mailinglist.htm">subscribe or unsubscribe</a> visit our website. <br>
+ARulesXL is a trademark of Amzi! inc. Excel is a registered trademark of Microsoft Corporation in the   United   States and/or other   countries.</font></p>
+</body>
+</html>

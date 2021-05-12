@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Amzi! Prolog + Logic Server 3.3 -- Opening the &quot;Closed
+World&quot; of Prolog</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (Win95; I) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF">
+
+<H1><FONT COLOR="#0000FF">Amzi! Prolog + Logic Server 3.3 -- Opening the
+&quot;Closed World&quot; of Prolog</FONT></H1>
+
+<P>by Arvindra Sehmi </P>
+
+<P>[Used with the kind permission of PC AI Magazine, 602/971-1869, info@pcai.com.
+From the Sep/Oct 1995 issue.] </P>
+
+<P><I>This review examines Amzi! Prolog, a compact, portable Edinburgh
+standard Prolog, and its Logic Server, a comprehensive and intuitive API
+for embedding Prolog components in host language environments.</I> </P>
+
+<H3>Introduction</H3>
+
+<P>Included in the theoretical foundation of Prolog is the assumption that
+nothing exists outside of Prolog's logic base of facts and rules. This
+is called the &quot;closed world assumption.&quot; The phrase &quot;closed
+world&quot; also reminds me of how closed and inaccessible Prolog's logic-based
+computational paradigm has been for the mainstream programmer. </P>
+
+<P>While strong procedurally, mainstream tools don't provide the power
+of Prolog's assertional database, symbolic pattern matching and search
+algorithms, and automatic memory management features. </P>
+
+<P>Wouldn't it be better to use C/C++ and Prolog together--each one for
+things it is good at rather than fudge the programming paradigm of the
+one in the other? That may be the obvious thing to do, but on the PC platform,
+and until quite recently, all established Prolog systems presented their
+deductive proof machinery to the programmer in a way which was non-intuitive
+and quite difficult to use from an external procedural host language. </P>
+
+<P>Most Prologs that implement host language interfaces do so in a way
+that forces the host language programmer to think of a Prolog program as
+just another procedural extension of the host language. In fact, what we
+actually need is the ability to treat a Prolog program as a logicbase which
+responds to queries just like Prolog, and why not? It's Prolog, after all,
+that we want to access in the first place! </P>
+
+<P>For example, over the last year I was beginning to find that more than
+50% of one of my Prolog applications was concerned with getting data into
+and out of the system, mostly via a graphical user interface, and that
+Prolog was becoming difficult to use efficiently. I seriously contemplated
+a port of my application to C/C++ under Windows, yet I bemoaned the loss
+of all of Prolog's wonderful features. Happily, I came across a pre-release
+version of Amzi! (then called Cogent) Prolog and its Logic Server API.
+The Logic Server hit the target. I could do all my procedural tasks in
+C/C++ yet use Prolog to manage declarative tasks. </P>
+
+<P>Despite some problems with pre-release software (which Amzi! has since
+resolved) I was left convinced that Amzi!'s approach to interfacing Prolog
+and procedural languages was the right one. The Logic Server API recognizes
+that a Prolog program is fundamentally closer to a database than it is
+to a sequential program. As such, the API presents an interface to C/C++
+to interact with the Logic Server that is similar to database interfaces.
+It lets the C/C++ programmer interact with Prolog in much the same way
+a Prolog programmer interacts with Prolog at the standard '?-' prompt of
+a Prolog listener. In my mind this is as intuitive as one can get in an
+interface to Prolog. </P>
+
+<H3>Application Building Tools</H3>
+
+<P>The full Professional Amzi! Prolog system includes an Edinburgh-standard
+Prolog, Prolog development tools and the Logic Server API. It supports
+16/32-bit DOS and 16/32-bit Windows. A 16-bit only Professional Edition
+is available, as well as a Personal Edition that has restrictions on commercial
+distribution. (Amzi! places no distribution royalties or restrictions on
+the Professional Editions.) A Student Edition includes the Prolog pieces,
+but not the Logic Server API. (Non-PC versions are available as well. Contact
+Amzi! for details.) To keep customers up-to-date with rapidly evolving
+Windows development environments, the vendor also offers a subscription
+service that provides automatic updates for a year. </P>
+
+<P>The development tools include the compiler, interpreter, Windows interactive
+development environment (IDE), interactive debugger, DCG, numerous example
+programs and technical papers, and hardcopy and on-line documentation.
+The documentation could stand some consolidation and perhaps a clearer
+distinction between technical and general aspects of the system. </P>
+
+<P>The Logic Server API provides the tools for integrating Prolog and host
+languages. It includes static link libraries for a variety of C/C++ compilers
+and environments and 16- and 32- bit Windows dynamic link libraries (DLL)
+callable from any Windows development tool that can call a DLL. The vendor
+provides cover functions for Visual Basic, Access, Delphi, and Smalltalk,
+as well as a C++ wrapper around the Logic Server. </P>
+
+<P>To implement embedded applications, a developer first uses the IDE to
+develop and test the Prolog components. Then the Logic Server is used to
+make that Prolog code available to the host language application. </P>
+
+<H3>The Prolog</H3>
+
+<P>Amzi! Prolog is close to a 'pure' Edinburgh-standard Prolog with relatively
+few vendor additions. Because it's based on the Warren Abstract Machine
+(WAM), supporting both compiled and interpreted (dynamic) Prolog code,
+you can use it to design 'serious' applications by reusing your own code
+and drawing upon the masses of freely available public domain Prolog libraries.
+</P>
+
+<P>Amzi! moves you toward a unique view of its positioning in the Prolog
+market. It aims to be a component of an application written in other languages.
+In this vein, it's important to point out that the product doesn't have
+built-in predicates for constructing GUI/Windows interfaces and it doesn't
+try to compete with MSVC++ or VB or Delphi. Instead it's designed to work
+with these other tools. </P>
+
+<P>Thus, I believe that Amzi! Prolog is not the Prolog to use for building
+large-scale stand-alone Prolog applications for Windows, but that it <B>is</B>
+the Prolog to use as a component of a larger programming effort. I've endeavoured
+to capture this philosophy in the design of the application described in
+the sidebar. </P>
+
+<H3>The IDE</H3>
+
+<P>The IDE is the newest part of Amzi! Prolog. It offers some polish to
+the overall product and provides the essential toolset (listener, standard
+Edinburgh 4-port debugger, editor, compiler, and linker). These tools are
+also available in DOS command-line form. Figure 1 shows the IDE window
+with the sidebar application being debugged via the listener and debug
+dialog window. </P>
+
+<P><IMG SRC="pcairevw_ide.gif" ALT="Amzi! IDE Screen Shot" HEIGHT=582 WIDTH=780 ALIGN=BOTTOM> 
+</P>
+
+<P>Figure 1 </P>
+
+<P>The IDE could use some work on usability aspects of the listener and
+debugger. Specifically, the listener could do with better use of cutting
+and pasting of queries from earlier parts of the session window and/or
+a query history mechanism. The '?-' prompt should be harder to delete.
+It would be helpful to be able to recover the prompt by hitting the Return
+key. Compiler error messages can be somewhat cryptic and difficult to interpret.
+</P>
+
+<P>At present the IDE/debugger is suitable only for standalone Prolog program
+development, which means you develop the Prolog components of an embedded
+application separate from the host language development. The Prolog components
+are compiled and linked into a binary form for loading by the Logic Server.
+</P>
+
+<P>As you read this review, Amzi! is working on additional tools to enable
+easier debugging of embedded components from a mixed language environment,
+and is continuing to improve the IDE. </P>
+
+<H3>The API</H3>
+
+<P>To use the Logic Server from C/C++ under Windows, you need a Windows
+C/C++ compiler. You include the header file 'amzi.h' or 'amzi.hpp' in your
+C/C++ files where you reference API calls, add your Logic Server calls
+and link the application with one of several Logic Server dynamic or static
+libraries. </P>
+
+<P>On running the application, API calls are quickly load the Logic Server
+and rapidly initialize it with the precompiled Prolog component of your
+application. Then, you call and redo any goals and manipulate returned
+bindings as you would if the Prolog program was loaded into a Prolog listener.
+You finish by closing down the Logic Server. </P>
+
+<P>This minimal C program fragment will runs the main/0 predicate in the
+Prolog program foo.pro (lsXXXX denotes API functions): </P>
+
+<PRE>#include &lt;amzi.h&gt;
+   :
+lsInit(&quot;foo&quot;);
+lsLoad(&quot;foo&quot;);
+lsMain();      // calls main/0 in Prolog
+lsClose();
+   :
+</PRE>
+
+<P>Using the API is like using ODBC for databases. It has tools for any
+type of query and for easily mapping Prolog terms to and from host language
+variables. The API can </P>
+
+<UL>
+<LI>consult Prolog files from C/C++ </LI>
+
+<LI>make Prolog queries via constructed terms and/or C/C++ strings </LI>
+
+<LI>convert C/C++ variables to and from Prolog terms </LI>
+
+<LI>redo queries to obtain multiple solutions </LI>
+
+<LI>construct simple Prolog terms (e.g., atoms, strings, floats) from C/C++
+variables </LI>
+
+<LI>get values from Prolog terms into C/C++ variables </LI>
+
+<LI>manipulate Prolog structures in C/C++ </LI>
+
+<LI>make and access Prolog lists </LI>
+
+<LI>assert and retract to and from the Prolog database </LI>
+
+<LI>redirect Prolog I/O to C/C++ </LI>
+
+<LI>trap and report Prolog execution errors </LI>
+</UL>
+
+<P>The foreign language extension aspects of Amzi! Prolog are powerful.
+They let you define new Prolog built-in predicates in the host language
+(e.g., C/C++) and they become transparent extensions to the underlying
+Prolog engine. Unlike foreign language extensions in other Prolog systems,
+Amzi!'s have no strongly typed mappings from Prolog to C/C++ functions.
+Instead, they can take any type and number of arguments and argument instantiations.
+The API easily determines argument-type information to direct host control
+flow. Dynamically typed argument bindings can be constructed and returned
+to Prolog. </P>
+
+<P>The only disadvantage I see with Amzi!'s approach is that the extended
+Prolog predicate definitions in the host language have nil arguments (except
+for the Prolog Engine ID) and therefore some confusion can creep in when
+maintaining the code correspondence with the predicate/function written
+in Prolog. The best way around this is simply to make sure you properly
+document the functions. </P>
+
+<H3>Distributing Applications</H3>
+
+<P>You can distribute application executables royalty free. You distribute
+executables with your application's compiled binary Prolog file. You can
+optionally include Prolog source files intended for dynamic use. You also
+include a DLL for the Prolog engine, unless you chose to use one of the
+static link libraries which become part of your executable. </P>
+
+<P>The Windows footprint of the running Prolog Logic Server is typically
+around 400K. The DLL takes up 180K of that and various Prolog runtime stacks,
+heaps, etc. might take up another 200K+. You can customize the runtime
+environment using an .INI file that will allow you tune the Prolog environment
+based on your application needs. </P>
+
+<H3>The Future</H3>
+
+<P>All API functions take a Prolog Engine ID which the API initialization
+function returns. At present this parameter has no use, but the idea is
+to eventually allow a single application to invoke multiple (possibly multi-tasking/threading)
+Prolog engines. If this does materialize, you can imagine a Pandora's box
+of smart applications ready to burst onto the market (e.g., in personal
+information management, collaborative systems, workflow and process re-engineering,
+distributed multiple agent systems, intelligent integration of legacy applications,
+flexible manufacturing systems, scheduling, data interpretation, monitoring
+and control, and more). </P>
+
+<H3>Conclusion</H3>
+
+<P>Amzi! Prolog is a solid, commercial grade, no-frills Prolog. Through
+its Logic Server API it's ideal for embedding. With a few more improvements
+to the IDE to support debugging embedded components, the product will be
+a breeze and a pleasure to use. Host language integration is easy. </P>
+
+<P>I believe that few applications can do without a symbolic program component.
+You can do sophisticated things so quickly that arguments against using
+Prolog, say, in small specific doses, are very weak indeed. Weary programmers
+looking for new tricks, something to add pepper and spice to your applications,
+should look to the Amzi! Logic Server and enter the &quot;opened world&quot;
+of Prolog. </P>
+
+<P><I>Arvindra Sehmi holds a Ph.D. in Biomedical Engineering from Leicester
+University, U.K. A user of Prolog for applied AI research for 8 years,
+he is investigating distributed multi-agent AI and nearing completion of
+an MBA in the Business School of the Open University.</I> </P>
+
+<H1><FONT COLOR="#0000FF">A Blackboard Application</FONT></H1>
+
+<P>wxTinyBB is a small Blackboard (BB) Knowledge Base System that illustrates
+the use of Amzi! Prolog and its Logic Server. The application is a hybrid
+of C/C++ and Prolog. The BB logical inferencing is implemented under Prolog,
+whereas the GUI and procedural control is implemented using VC++ and the
+public domain wxWindows GUI C++ class library. The choice of these non-Prolog
+tools is for my own benefit. Choose any others to suit yourself--the Logic
+Server imposes no restrictions. </P>
+
+<P>The BB system is composed of independent knowledge sources (KS), which
+cooperate in problem-solving with the other KSs, communicating via a central
+BB. Each KS is triggered by and responds to changes on the BB. An active
+KS will invoke its rules and procedures and post its conclusions on to
+the BB. The new state of the BB is then available to be read by any of
+the KSs (including the one that has just acted). These, in turn, make further
+modifications, and so on. </P>
+
+<P>In this implementation, the user enters information through the GUI.
+It is then stored on the BB through Logic Server calls. The Prolog BB system
+is then activated and responds to the changed state and sends its current
+recommendations to the main output window. The output is implemented through
+extended predicates that let Prolog code talk directly to the window. </P>
+
+<P>The Prolog predicate that activates the BB is </P>
+
+<PRE>activate_ks :-
+   knowledge_source(
+   ...
+</PRE>
+
+<P>It is called from C like this </P>
+
+<PRE>   tf = lsExecStr(engid, &amp;term, &quot;activate_ks&quot;);
+</PRE>
+
+<P>As the code progresses information is written from Prolog code such
+as this </P>
+
+<PRE>   ...
+   execute_ks_procs(Procs),
+   c_wxWrite(RuleName),
+   ...
+</PRE>
+
+<P>c_wxWrite/1 is a custom extended predicate, that takes its Prolog argument
+and writes it to a window using wxWindow functions. This particular implementation
+shows how wxWrite/1 can handle each Prolog type differently, although it
+isn't necessary--a Logic Server function converts any given term to a string.
+</P>
+
+<PRE>/* define Prolog predicate to C function map */
+PRED_INIT extPreds[] =
+{
+   {&quot;c_wxWrite&quot;,      1,      p_wxWrite}, 
+   ...
+// c_wxWrite/1 : c_wxWrite(+Term)
+TF p_wxWrite(ENGid eid) {
+   extern char szBuffer[];
+   pTYPE pt;
+   int i;
+   // get type of input parameter #1
+   pt = lsGetParmType(CurEng, 1);
+   switch (pt) {
+      case pATOM:  // map Prolog atom to C string
+         lsGetParm(eid, 1, cSTR, szBuffer);
+         break;
+      case pINT:   // map Prolog integer to C integer
+         lsGetParm(eid, 1, cINT, &amp;i);
+         sprintf(szBuffer, &quot;%d&quot;, i);
+         break;
+      ...
+   }
+   // display parameter string in GUI textwindow
+   wxPrintf(&quot;%s&quot;, szBuffer);
+   return(TRUE);
+}
+</PRE>
+
+<P>The list box in the figure below displays the observations. It illustrates
+the easy mapping between Prolog lists and GUI list boxes. The possible
+observations are held in Prolog as a list. </P>
+
+<PRE>observations_list([
+   'radar1(positive)', 'radar2(positive)', ...
+</PRE>
+
+<P>The Prolog list is mapped to the listbox with these Logic Server calls.
+The first call queries the logic base, the second call gets the first argument,
+which is the desired list, and the while loop walks through the list, popping
+each element from the Prolog list into the wxWindows listbox. </P>
+
+<PRE>   lsExecStr(eid, &amp;t, &quot;observations_list(ObsL)&quot;);
+   lsGetArg(eid,t,1,cTERM,&amp;tlist);
+   while (OK == lsPopList(eid,&amp;t2,cSTR,szBuffer))
+   {
+      ObsLstBox-&gt;Append(szBuffer);
+      ((theApp.wxTinyBB)-&gt;wxTinyBBLivePnl)-&gt;cObs++;
+   }
+</PRE>
+
+<P>I've posted the full <A HREF="http://www.amzi.com/download/demos/WXTINYBB.ZIP">wxTinyBB
+example</A> on Amzi!'s FTP site. In addition to the Logic Server, the example
+illustrates blackboard systems, intelligent agents and truth maintenance.
+(Via the web, http://www.amzi.com or via FTP, ftp.amzi.com in directory
+/pub/demos/wxtinybb.zip) </P>
+
+<P><IMG SRC="pcairevw_tiny.gif" ALT="Tiny BB Screen Shot" HEIGHT=573 WIDTH=476 ALIGN=BOTTOM> 
+</P>
+
+<P>The listbox illustrates the easy mapping between Prolog lists and GUI
+listboxes. </P>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</HTML>

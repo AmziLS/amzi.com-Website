@@ -1,0 +1,47 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Difference Lists</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Difference Lists<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Often algorithm and/or data modelling decisions can have a larger impact on 
+  performance than other factors. Difference lists are an example.</p>
+<p>Difference lists use the same principle as the Russian Dolls with an extra 
+  argument. Just as in that case, they can make for faster processing.</p>
+<p>Difference lists use a pair of lists to represent a list:<br>
+  The first is the full list;<br>
+  the second is the tail of the first.</p>
+<p>For example, to represent [a,b,c] as a difference list pair: <code>[a,b,c|X], 
+  X</code>.</p>
+<p>Consider parsing - want to find a noun, say <code>[washing, machine]</code>, from the front 
+  of a list <code>[washing, 
+  machine, spinning, out, of, control]</code> and also get the rest of the list <code>[spinning, out, 
+  of, control]</code> for further parsing. A simple fact 
+  and quick unification does the job with a difference list:</p>
+<p>noun( [washing, machine | X], X ).</p>
+<p>Without the difference list we would need append/3 or a similar predicate to 
+  split the list.</p>
+<p>See the natural_language files in samples/singles.</p>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --> <a href="ch_090_performance_020.htm"> 
+  <img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <a href="ch_100_projects_010.htm"> <img src="../images/next.gif" width="30" height="30" border="0"></a> 
+  <!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

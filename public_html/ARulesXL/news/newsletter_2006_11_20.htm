@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>ARulesXL Newsletter, 10 October 2006</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1><a href="http://www.arulesxl.com"><img src="http://www.arulesxl.com/images/logo_shiprock2.gif" width="150" height="115" border="0" align="middle" /></a> <b><font face="Arial, Helvetica, sans-serif">ARulesXL <font color="#000099">Newsletter</font></font></b></h1>
+<h3>20 November 2006 </h3>
+<h2>Contents</h2>
+<ul>
+  <li><a href="#arulesxl">ARulesXL 2.0 Final </a></li>
+</ul>
+<p>View this newsletter <a href="http://www.arulesxl.com/news/newsletter_2006_11_20.htm">on the web</a> </p>
+<hr />
+<h2><a name="arulesxl" id="arulesxl"></a>ARulesXL 2.0 Final </h2>
+<p>The 2.0 version of ARulesXL is now ready for downloading and purchase. Current trial users gain an additional 30 days when installing the newest 2.0.3 release. </p>
+<p>Thanks to everyone who provided feedback and suggestions during the beta test period. </p>
+<p>The primary innovations are in the user interface including easier ways to 
+  write and debug rules. The major features of 2.0 are: </p>
+<ul>
+  <li><b>Decision tables</b> integrated with rule sets, so tables can express 
+    regular cases and rules capture exceptional cases.</li>
+  <li><b>Instant checking</b> during rule entry with clear messages indicating 
+    where the problem is and how to fix it.</li>
+  <li>A powerful, yet easy-to-use <b>trace facility</b> that demonstrates how 
+    rules are selected and executed, then answers found.</li>
+  <li>The ability to <b>export rule sets</b> to run under Web Servers and in VB, 
+    C#, Java, Delphi and Extend Modelling applications.</li>
+  <li>The ability to distribute exported rule sets to run under Excel, which allows 
+    the users to change the input data on the spreadsheet and see the new query 
+    results; rules can be optionally shown to the users, but not modified.</li>
+  <li>Functions for building your own macros and commands in Excel that can access 
+    rule set inputs, queries and outputs.</li>
+  <li>Improved menus, documentation and access to help.</li>
+</ul>
+<h3>Decision Tables</h3>
+<p>For many applications decision tables are an easier way to represent rules. 
+  For example, here are phone call pricing rules:</p>
+<p align="center"><img src="http://www.arulesxl.com/news/images/screen_decision_tables.gif" width="738" height="572"></p>
+<p>Note, the * as a value in the .rate table means that property can have any 
+  value.</p>
+<p>Because you can mix rules with decision tables, you can handle the cases where 
+  90% of the knowledge can be expressed in a decision table, but the other 10% 
+  requires explicit rules. See the documentation and the <i>Decision Tables.xls</i> 
+  sample for details. </p>
+<h3>Instant Rule Checking</h3>
+<p>As you type rules into rule sets, they are checked. If there is a problem, the rule is highlighted in red and an error message is displayed. </p>
+<p align="center"><img src="http://www.arulesxl.com/news/images/screen_rule_error.gif" width="575" height="125"></p>
+<p align="left">This lets you quickly find and resolve problems. When the problem, is resolved, the rule text is returned to its original color. </p>
+<p align="left">When you are done changing and adding rules, click outside the rule set and the dependent queries will be recalculated. </p>
+<h3>Powerful Trace</h3>
+<p>The ARulesXL Trace makes use of an Excel worksheet to display the state of 
+  execution of a rule query. It is controlled by it's own menu bar for easy examination 
+  of the original rules and the trace. You can trace into rules or skip the details, 
+  allowing you to quickly get to the rule in question. The trace displays the 
+  rules as they execute and keeps a list of all the properties determined so far. 
+</p>
+<p>Trace is excellent for both debugging ARulesXL applications and for learning 
+  how a business rule engine works. Towards this end, the trace  produces a log of each step of the reasoning process. You can view this log in Excel using ARulesXL | Open Trace Log File. </p>
+<p>Here's a screen shot from the middle of a trace from the sample <i>Loan Approval.xls</i>.</p>
+<p align="center"><a href="http://www.arulesxl.com/images/trace_load_approval_trace.htm"><img src="http://www.arulesxl.com/images/trace_loan_approval_small.gif" width="300" height="263" border="0"></a><br>
+  <font face="Arial, Helvetica, sans-serif" size="-1">(Click on image to see larger 
+  version</font>)</p>
+<p> The  Trace is documented in both the Tutorial and the Reference documentation.</p>
+<h3>Exporting Rule Sets to Web Servers and Other Applications </h3>
+<p>The ARulesXL runtime lets you export rule sets to a machine-independent binary 
+  file and then query them from Web Servers, stand-alone applications and Extend 
+  models. Language interfaces are provided for VB, C#, Java and Delphi on Windows 
+  and Java and C++ for Unix. There is a complete manual on the API (Application 
+  Program Interface), and samples for many languages and environments. If you 
+  need an interface for another language, tool or environment, please contact 
+  us.</p>
+<p>The runtime makes ARulesXL a powerful development tool for back-end knowledge 
+  bases. For example, the <a href="http://www.arulesxl.com/vaclogic/index.htm">VacLogic</a> application 
+  is developed and maintained using the ARulesXL Excel development environment, 
+  but is deployed as a component in a Delphi application for running pediatric 
+  offices.</p>
+<p>The runtime is part of the new Professional Edition of ARulesXL.</p>
+<h3>Exporting Rule Sets for Distribution under Excel </h3>
+<p>In addition to exporting to other environments, rule sets can be 'exported' to run under Excel. This allows you to distribute your rule sets to users so they can run them under Excel, changing the inputs and seeing the query results. You can leave the rules visible on the spreadsheets for the users to read, or you can delete or hide them. In either case, the users cannot modify the rule sets. However, if you leave the rules in place, your users can upgrade to the Standard Edition and then change the rule sets.</p>
+<p>This feature is part of the Professional Edition. </p>
+<h3>Using ARulesXL in Excel Macros and Commands</h3>
+<p>The Excel Add-in provides a handful of query functions that allow you to build macros that query rule sets. These query functions along with the RANGE() function in rule sets lets you display the output data in any form you like and highlight items in the input data. See the 'Budget Analysis.xls' sample and the API documentation for details. </p>
+<p>This feature is part of the Professional Edition. </p>
+<h3>Improved Menus, Documentation and Help</h3>
+<p>On the right-mouse cell menu in Excel, you will find the most commonly used ARulesXL functions. Also, Excel's Insert Function facility has ARulesXL as a category describing the parameters and pointing to the help files.</p>
+<p>From the ARulesXL menu in Excel you can access the documentation, samples and support forum. </p>
+<p>The ARulesXL manual and API Manual (available under ARulesXL on the Windows Start Menu) have been reworked for better readability and improved tutorials and examples.  </p>
+<h3>Download &amp; Buy</h3>
+<p>The Standard Edition remains at its  introductory price of $99 per user. The Professional Edition is priced at $899 per   user, and includes 10 runtime licenses. Both Editions include the first year's maintenance so you can install all new releases for the next 12 months.</p>
+<hr />
+<p><font color="#000099" size="+2"><b><a href="http://www.arulesxl.com"><font face="Arial, Helvetica, sans-serif">www.arulesxl.com</font></a></b></font></p>
+<p><font size="-1">To <a href="http://www.arulesxl.com/mail/mailinglist.htm">subscribe or unsubscribe</a> visit our website. <br>
+ARulesXL is a trademark of Amzi! inc. Excel is a registered trademark of Microsoft Corporation in the   United   States and/or other   countries.</font></p>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->May 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>May 2003</h3>
+            <ul>
+              <li><a href="#middle_east">Middle East</a></li>
+              <li><a href="#cathaia">Cathaia</a> - Bayesian and Neural Networks 
+                at Work</li>
+              <li><a href="#ai_languages">AI Languages</a> - Lisp, Prolog and 
+                more</li>
+              <li><a href="#ai_performance">AI Performance</a> - The speed of 
+                AI code</li>
+              <li><a href="#code_corner">Code Corner</a> - Two faces of Prolog</li>
+              <li><a href="#links">Links</a></li>
+              <ul>
+                <li><a href="#links_aix">The Best of AI Expert</a></li>
+                <li><a href="#links_ai_languages">AI Languages</a></li>
+              </ul>
+            </ul>
+         
+            <h2><a name="middle_east"></a>Middle East</h2>
+            <p>A classic story tells of blind men describing an elephant, each 
+              with his own ideas based on which part of the elephant he was touching. 
+              In my work providing software for educational institutions I get 
+              to touch the Middle East.</p>
+            <p>I've recently touched, via the Internet, students in Iran and Israel. 
+              They all seem alike to this blind observer--bright students enjoying 
+              the challenges of implementing AI projects. It was Iranian students 
+              that sparked my interest in RoboCup soccer, and Israeli students 
+              that sparked my interest in the complexities of parsing bi-directional 
+              language.</p>
+            <p>The World is not so grim when touching the side of education.</p>
+            <h2><a name="cathaia"></a>Cathaia - Bayesian and Neural Networks at 
+              Work</h2>
+            <p>Cathaia is a small company using AI technologies to provide a competitive 
+              edge in services for telecommunications and other industries. Headquartered 
+              in Dublin, Ireland, they have a branch in Budapest Hungary, and 
+              customers in Germany and Mexico.</p>
+            <p>Their area of specialty is network management, workflow and other 
+              business support and decision support applications, all areas that 
+              are well suited for AI techniques. They use both neural networks 
+              and Bayesian belief networks (BBN) in their products. Populating 
+              a BBN is always a tricky problem, and they have tools that aid in 
+              that, including the capability of porting rules from more rigid 
+              formats into the more flexible belief network nodes.</p>
+            <p>While they examined various commercial offerings for BBNs, they 
+              decided to write their own reasoning engine and knowledge representation 
+              in pure Java, which also gave them the integration they wanted with 
+              the rest of their application suite.</p>
+            <p>You can learn more at <a href="http://www.cathaia.com/eng/index.html">http://www.cathaia.com/eng/index.html</a>.</p>
+            <h2><a name="ai_languages"></a>AI Languages</h2>
+            <p>Prolog is one of the oldest AI languages, right after Lisp. The 
+              history of the two languages is a tale of the power of belief in 
+              supposedly technical, objective individuals. The Lisp people in 
+              the major AI centers in the United States were, for some reason, 
+              very threatened by Prolog, and spent a lot of time saying bad things 
+              about it. As a result, it was never that popular in the U.S., but 
+              got a large following in the AI communities of Europe and Asia.</p>
+            <p>In the 1980s that all changed and Patrick Winston, one of the greats 
+              of MIT's AI Lab, wrote the forward for Ivan Bratko's excellent Prolog 
+              book, <i>Prolog Programming for Artificial Intelligence</i>. (I 
+              highly recommend any of Patrick Winston's books on AI. They are 
+              extremely well written and the ones with Lisp code ground AI concepts 
+              firmly in working code.)</p>
+            <p>Why are Prolog and Lisp good languages for AI? They are both symbolic 
+              languages, which means it is very easy to manipulate symbols without 
+              having to declare them. What's a symbol? Just a character string 
+              that represents something, like a piece on a chess board, a word 
+              in a natural language sentence, or a condition in a rule. Last month 
+              we looked at symbols representing probabilities in some code for 
+              Bayesian belief networks.</p>
+            <p>Why not C++ or Java for AI? Well, no good reason really, any language 
+              can be used to program anything. The issue is one of productivity 
+              and expressability. In a non-symbolic language, variables need to 
+              be allocated for the various entities being reasoned over in the 
+              program, and comparison functions used to test for similar entities.</p>
+            <p>An AI program often involves pattern-matching and search of symbols 
+              (text strings) related to a problem domain. A language like Lisp 
+              or Prolog makes it easy to code and express that sort of logic.</p>
+            <p>The savings can be quite dramatic for the right types of program. 
+              Pricing rules in commercial applications are a good example. <a href="#eotek">eoTek</a>, 
+              a company offering services to the mortgage loan industry, replaced 
+              5000 lines of pricing code written in Java with 500 lines of Prolog 
+              code. The reduced code size, and declarative nature of the code, 
+              had the additional benefit of greatly reducing the quality assurance 
+              stage that was necessary in providing a service such as theirs.</p>
+            <p>There are many variations on Lisp and Prolog available as well, 
+              as individuals tinker with the aspects of the languages. Scheme 
+              is my favorite of the Lisp variations. The concepts in Prolog show 
+              up in languages like Mozart, covered in an earlier newsletter, and 
+              Mercury. These last two languages are powerful tools offering multiple 
+              ways of expressing concepts, allowing the programmer a variety of 
+              options for different portions of an application.</p>
+            <h2><a name="ai_performance"></a>AI Performance</h2>
+            <p>In the past, performance has always been an issue with AI languages. 
+              They had trouble keeping up with hard-core programming languages 
+              like C/C++. So developers of AI languages put a lot of effort into 
+              making them as efficient as possible. Still there was a large performance 
+              gap. Prolog, in particular, had a bad reputation for performance.</p>
+            <p>In the mid 1980s I had written a Prolog program that solved the 
+              Rubik's Cube puzzle. It took four to five minutes on my old 286 
+              computer. In other words, if you wanted to do a Rubik's Cube worth 
+              of AI processing, you would need to get a cup of coffee while you 
+              waited.</p>
+            <p>Today, that same program solves 10 cubes per second on this four 
+              year old computer. In other words, you can do a Rubik's Cube worth 
+              of AI processing with every keystroke on today's machines.</p>
+            <p>Couple that with the tremendous overhead introduced into other 
+              software, such as Windows, Java, and .NET, and the overhead of network 
+              communications, and suddenly, the performance aspects of an AI component 
+              of an application becomes negligible.</p>
+            <p>And that's for an average, performance wise, Prolog implementation. 
+              There are faster Prologs and also Mercury, a Prolog derivative, 
+              which claims to be faster than the fastest Prologs.</p>
+            <p>Moore's law is making AI more and more practical every year. This 
+              was one of Kurzweil's themes in his book, <i>The Age of Spiritual 
+              Machines</i> (reviewed in an earlier newsletter). It is just a matter 
+              of time, he claims, before full human intelligence is realized in 
+              software.</p>
+            <h2><a name="code_corner"></a>Code Corner - The Two Faces of Prolog</h2>
+            <p>Prolog is a confusing language because it is really two languages 
+              in one. It is said Prolog is very simple and easy to use. This is 
+              true. It is said that Prolog is obtuse and difficult to learn. This 
+              is also true. It is said Prolog has only limited applicability. 
+              This is true. It is said Prolog can be used for all sorts of wondrous 
+              applications. This is also true.</p>
+            <p>One face of Prolog is as a simple, straightforward rule language 
+              that can be used to easily implement efficient logic bases of formal 
+              rules. Pricing, tax code, and automated form-filling are some examples 
+              of this type of application. In these cases, the business rules 
+              are mapped directly to Prolog rules.</p>
+            <p>For example, consider these Prolog rules for a simple phone pricing 
+              system. The price is ten cents a minute before 7:00AM and after 
+              8:00PM, and 25 cents a minute in between. </p>
+            <pre>
+price(StartHour, DurationMinutes, PriceCents) :-
+   StartHour < 7,
+   StartHour > 20,
+   PriceCents is DurationMinutes * 10.
+price(StartHour, DurationMinutes, PriceCents) :-
+   StartHour >= 7,
+   StartHour =< 20,
+   PriceCents is DurationMinutes * 25.
+</pre>
+            <p>It doesn't take much training to learn the <b>:-</b> (called the 
+              neck) symbol means &quot;if&quot; and how these declarative rules 
+              directly encode the business logic for pricing. Also, anything beginning 
+              with an upper case letter is a logical variable, so these predicates 
+              expect StartHour and DurationMinutes as input, and output PriceCents.</p>
+            <p>The rules can refer to other rules and encode a complexity that 
+              matches the complexity of the business rules, for example the nightmare 
+              of pricing air fares.</p>
+            <p>It is this use of Prolog that is easy, but limited. It's great 
+              for crisp business rules, but you cannot readily use Prolog like 
+              this for anything involving uncertainty, or requiring the construction 
+              of solutions, as in an application that creates product configurations 
+              for customers. Pricing configurations, and bill-of-materials, on 
+              the other hand, fit nicely into this simple subset of Prolog.</p>
+            <p>The other face of Prolog is the use of rules as meta-rules. That 
+              is, the rules are used to describe ways of representing knowledge 
+              and ways of reasoning with that knowledge. This use of Prolog often 
+              requires using recursion, unification (pattern-matching) of complex 
+              structures, and list manipulation, all concepts that require more 
+              work to master. But once mastered, they enable remarkable expressiveness 
+              of complex programming concepts.</p>
+            <p>For example, here's a few lines of Prolog code that implements 
+              an object-oriented system with full polymorphism (the ability to 
+              send the same message to different object types with appropriate 
+              responses).</p>
+            <p>First, Prolog structures are used to represent the knowledge of 
+              the objects. These are class definitions with the signature of the 
+              type of object, and the methods that can be called for that object. 
+              This is the knowledge representation for our system.</p>
+            <pre>oo_class( rectangle(H, W), 
+          methods([ ( area(A) :- A is H * W ), 
+                    ( perimeter(P) :- P is 2 * (H + W) ) 
+                  ]) ). 
+oo_class( circle(R), 
+          methods([ ( area(A) :- A is pi * R * R ), 
+                    ( perimeter(P) :- 2 * pi * R ) 
+                  ]) ). 
+</pre>
+            <p>Next, a single Prolog meta-rule implements a polymorphic &quot;send&quot;, 
+              the heart of any OO system. This is the reasoning engine for the 
+              system. It is a logical specification of the program. What is the 
+              logical specification of &quot;send&quot; in an OO system?</p>
+            <ul>
+              <li>find the class definition for the object, and its list of methods;</li>
+              <li>find the method that matches the message being sent to the object;</li>
+              <li>call that method with the object's data.</li>
+            </ul>
+            <p>Here it is in Prolog:</p>
+            <pre>
+oo_send(Object, Message) :- 
+  oo_class(Object, methods(Ms)), 
+  member((Message :- Method), Ms), 
+  call(Method). 
+</pre>
+            <p>An additional meta-rule that finds a member of a list is also needed.</p>
+            <pre>
+member(X, [X|_]). 
+member(X, [_|Z]) :- member(X, Z).</pre>
+            <p>While the code for pricing was probably pretty clear, this code 
+              might look obtuse if you don't know Prolog. This is the face of 
+              Prolog that is harder to learn, but is extremely powerful for implementing 
+              all sorts of applications that are, as in our definition of AI, 
+              not in the nature of computers.</p>
+            <p>If the code above was in a file, called oo.pro, it could be tested 
+              in a Prolog listener like this:</p>
+            <pre>
+?- consult(oo).
+yes
+?- oo_send(circle(1), area(A)).
+A = 3.14159
+yes
+?- oo_send(rectangle(2,4), area(A)).
+A = 8.0
+yes
+</pre>
+            <p>It is only one's imagination that limits the breadth of custom 
+              systems that can be built using these concepts.</p>
+            <h2><a name="links"></a>Links</h2>
+            <h3><a name="links_aix"></a>The Best of AI Expert</h3>
+            <p><b>Using C++ for Backpropagation [July 1994] </b>- David Cox outlines 
+              a C++ approach to implementing back propagation (how neural nets 
+              learn) neural networks. He illustrates the advantages of using object-oriented 
+              thinking in modeling the problem of neurons and synapses. Who says 
+              you need AI languages for AI?</p>
+            <p><b>Fuzzy Cognitive Maps Model Social Systems [July 1994]</b> - 
+              Rod Taber describes a tool called called Fuzzy Cognitive Map (FCM) 
+              that is designed to model complex social systems. It allows for 
+              the specification of fuzzy causal links, such as increased drug 
+              prices lead to increased consumer costs which lead to increased 
+              political pressure for reform which lead to increased bureaucracy 
+              etc. etc. Such a model can be used to predict changes in complex 
+              systems.</p>
+            <p><b>Fuzzy Virtual Worlds [July 1994]</b> - Bart Kosko and Julie 
+              Dickerson describe another use of fuzzy cognitive maps (FCM) for 
+              modeling in virtual reality systems. In stead of causal links between 
+              social systems, they talk of causal links describing behaviors of 
+              sharks and other fish. Fun stuff.</p>
+            <h3><a name="links_ai_languages"></a>AI Languages</h3>
+            <p><a href="http://www.cs.mu.oz.au/research/mercury/">http://www.cs.mu.oz.au/research/mercury/</a> 
+              - the home page for the Mercury project, with full documentation, 
+              a tutorial, and tools for developers as well as users.</p>
+            <p><a href="http://www.swiss.ai.mit.edu/projects/scheme/">http://www.swiss.ai.mit.edu/projects/scheme/</a> 
+              - a home page for Scheme resources.</p>
+            <p><a href="http://cs.wwc.edu/%7Ecs_dept/KU/PR/Scheme.html">http://cs.wwc.edu/~cs_dept/KU/PR/Scheme.html</a> 
+              - a tutorial for Scheme.</p>
+            <p><a href="http://www.apl.jhu.edu/%7Ehall/lisp.html">http://www.apl.jhu.edu/~hall/lisp.html</a> 
+              - an excellent compendium of books and resources about Lisp. I second 
+              the author's endorsement of Abelson and Sussman's book as one of 
+              the great computer science books.</p>
+            <p><a name="eotek"></a><a href="http://www.amzi.com/customers/eotek.htm">http://www.amzi.com/customers/eotek.htm</a> 
+              - an Amzi! customer story describing eoTek's use of Prolog for pricing 
+              logic.</p>
+            <p></p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

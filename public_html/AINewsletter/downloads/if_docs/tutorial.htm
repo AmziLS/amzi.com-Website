@@ -1,0 +1,1167 @@
+<html>
+<head>
+<title>AIFT Tutorial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+<body bgcolor="#FFFFFF" text="#000000">
+<h1>AIFT Tutorial</h1>
+<p>For the tutorial we will create a new game, called <i>Portals</i>. It will 
+  explore a navigation scheme based on the portals between places. Places are 
+  connected to portals, rather than each other, and to get to another place the 
+  player issues a command to go through that portal.</p>
+<p>The strategy for creating any new game is to copy the template game provided 
+  with the system, and modify it to create a new game. (If there was a wizard, 
+  the template game is what it would create.)</p>
+<p>You can also copy and modify one of the other more developed games and use 
+  it as a starting point instead. This would allow you to take advantage of whatever 
+  logic that game contains that you might want to reuse.</p>
+<p>Tactically, there are three basic approaches to developing a new game:</p>
+<ul>
+  <li>Use a standard text editor (not word processor) to develop the game logic 
+    files and test those files directly in the AIFT directory;</li>
+  <li>Use Amzi! Prolog + Logic Server to develop, test and debug the game, taking 
+    advantage of its Eclipse IDE features such as an outliner, cross reference, 
+    source code debugger and syntax-colored editors; or</li>
+  <li>Use any one of the other excellent ISO Prolog implementations available 
+    to develop and test the code.</li>
+</ul>
+<p>The tutorial will provide details on the first two development methods, but 
+  for most of the tutorial it doesn't matter which one you use.</p>
+<ul>
+  <li><a href="#getting_started">Getting Started</a></li>
+  <ul>
+    <li><a href="#text_editor_start">Text Editor</a></li>
+    <li><a href="#eclipse_start">Amzi! Eclipse IDE</a></li>
+  </ul>
+  <li><a href="#game_architecture">Game Architecture</a></li>
+  <li><a href="#logicbase_basics">Logic Base Basics</a></li>
+  <li><a href="#frames_data_model">Frames Data Model</a></li>
+  <li><a href="#toolkit_architecture">Tool Kit Architecture</a></li>
+  <li><a href="#portals">Creating <i>Portals</i>, The Tutorial Game</a></li>
+  <ul>
+    <li><a href="#begin">Begin</a></li>
+    <li><a href="#initializing">Initializing the Data Model</a></li>
+    <li><a href="#grammar_rules">Grammar Rules</a></li>
+    <li><a href="#go">Go - Move Someplace</a></li>
+    <li><a href="#helper_rules">Helper Rules</a></li>
+    <li><a href="#look">Look - Looking About</a></li>
+    <li><a href="#passing_through">Pass Through a Portal</a></li>
+    <li><a href="#portal_puzzles">Portal Puzzles</a></li>
+    <li><a href="#solving_tools">Tools for Solving Puzzles</a></li>
+    <li><a href="#debugging_eclipse">Debugging (Eclipse)</a></li>
+    <li><a href="#running">Running the Game</a></li>
+    <li><a href="#gui">Running the GUI</a></li>
+  </ul>
+  <li><a href="#projects">Projects</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2><a name="getting_started"></a>Getting Started</h2>
+<h3> <a name="text_editor_start"></a>Text Editor</h3>
+<p>With a text editor, you start with the template files in the AIFT directory.</p>
+<h4>Copy and Rename Templates</h4>
+<ul>
+  <li>copy <i>template.pro</i> to <i>portals.pro</i></li>
+  <li>copy <i>template_english.pro </i>to <i>portals_english.pro</i></li>
+  <li>copy <i>template.bat</i> to <i>portals.bat</i></li>
+</ul>
+<h4>Test</h4>
+<p>Edit <i>portals.bat</i> so that it's one line of code is:</p>
+<pre>amzi_if portals portals_english</pre>
+<p>Click on <i>portals.bat</i> and make sure a game that does nothing appears.</p>
+<h4>Modify</h4>
+<p>In <i>portals.pro</i>, find these two lines (not necessarily together in the 
+  file):</p>
+<pre>title_version(`Template`, 1)
+file_extension(`.tmp`)</pre>
+<p>and change them to:</p>
+<pre>title_version(`Portals`, 1).
+file_extension(`.ptl`).</pre>
+<p>This will give the new game a title and an extension to use when a game is 
+  saved. </p>
+<h4>Test</h4>
+<p>Test <i>portals.bat</i> again, and see if the title has changed to <i>Portals</i>.</p>
+<p>From here continue to use your text editor make the changes as described in 
+  the rest of the tutorial.</p>
+<h3><a name="eclipse_start"></a>Amzi! Eclipse IDE</h3>
+<h4>Setting up the Tutorial Project</h4>
+<p>Eclipse is a very powerful, feature-rich, development environment that takes 
+  a little getting used to, but once you understand it, it provides a wealth of 
+  features that make development easier. The most confusing part is often just 
+  getting the projects set up right and, unfortunately, that's the first thing 
+  that must be done.</p>
+<h4>Plan:</h4>
+<p>The plan is to create three projects. Two are imported projects that already 
+  exist in the sources. These are the libraries that support the games, called 
+  <i>if_src</i>, and the blank game template, called <i>if_template</i>. Your 
+  games will use the shared files in <i>if_src</i>, and often be started by making 
+  a copy of <i>if_template</i>. </p>
+<h4>Steps:</h4>
+<p>These are the steps to implement the plan.</p>
+<p><b>File/Import</b> - select the directory <i>aift/src</i>. It should create 
+  a project for you called <i>if_src</i>. This project has the shared resources 
+  used by all games.</p>
+<p><b>File/Import</b> - select the directory <i>aift/template</i>. It should create 
+  a project for you called <i>if_template</i>. It has the template game that can 
+  be copied to create new games.</p>
+<p>Select the <i>if_template</i> project and right click. Select copy from the 
+  pop-up menu.</p>
+<p>Select paste and then put the copy of the project into a folder in <i>aift/games</i>, 
+  called <i>if_portals</i>.</p>
+<p>Right click on the <i>if_portals</i> project and select project properties 
+  at the bottom.</p>
+<p>In <b>Build/Executable</b> libraries make sure the <i>list</i> library is checked 
+  and the LSX <i>atcltk</i> is checked.</p>
+<p>In <b>Build/Executable</b> libraries change the name of the .xpl file to be 
+  <i>if_portals.xpl</i>.</p>
+<p>In <b>Project/References</b> click in the box next to the <i>if_src</i> project.</p>
+<p>Close the properties window.</p>
+<p>Select the <i>if_tutorial</i> project. Then from the main menu select <b>run/run 
+  as interpreted project</b>.</p>
+<p>A Prolog listener window will open at the bottom, with a ?- prompt.</p>
+<p>Type <font color="#0066FF">main.</font> (The ending period is required at the 
+  ?- prompt.)</p>
+<pre>?- main.</pre>
+<p>The GUI for the game should start. Close it with the window close icon.</p>
+<p>Type <font color="#0066FF">quit.</font> at the ?- prompt and the listener will 
+  close.</p>
+<pre>?- quit.</pre>
+<h4>Editing the Tutorial Game</h4>
+<p>Next, make initial modifications to the name of the game, and run it both in 
+  the GUI and command line.</p>
+<p>Expand the <i>if_portals</i> project.</p>
+<p>Right click on the <i>template.pro</i> file and rename it to <i>portals.pro</i>.</p>
+<p>Right click on the <i>template_english.pro</i> file and rename it to <i>portals_english.pro</i></p>
+<p>Double click on <i>portals.pro</i>, an editor window will appear.</p>
+<p>In <i>portals.pro</i>, find these two lines (not necessarily together in the 
+  file):</p>
+<pre>title_version(`Template`, 1)
+file_extension(`.tmp`)</pre>
+<p>and change them to:</p>
+<pre>title_version(`Portals`, 1).
+file_extension(`.ptl`).</pre>
+<p>This will give the new game a title and an extension to use when a game is 
+  saved. </p>
+<p>Save the file using <b>file/save</b> or the disk icon in the tool bar.</p>
+<p><i>Hint</i>: In the outline window on the right you will see <b>title_version/2 
+  </b>and <b>file_extension/1</b> - you can use this outline to quickly fine facts 
+  and rules of the game logic. Clicking on the outline entires will bring you 
+  to the corresponding rule in the file.</p>
+<h4>Running the Game from Eclipse, GUI and Console modes</h4>
+<p>To run in the GUI select <b>Run/Run As/Interpreted Project</b>. This will load 
+  the project in the listener window. Type <font color="#0066FF">main.</font> 
+  to start the game.</p>
+<pre>?- main.</pre>
+<p>The GUI should appear with the new title. Exit using the window close icon. 
+  Then quit the listener.</p>
+<pre>?- quit.</pre>
+<p>For development, its easier to run the game directly in the listener, which 
+  is <b>console</b> mode. To do that change the line:</p>
+<pre>user_interface(gui)</pre>
+<p>to</p>
+<pre>user_interface(console).</pre>
+<p>Run it again. This time it should run entirely in the listener window.</p>
+<p>You will probably run in console mode during most of development, but use the 
+  <b>gui</b> mode to check how it appears in the GUI from time-to-time.</p>
+<h2><a name="game_architecture"></a>Game Architecture</h2>
+<p>A Game has the following components:</p>
+<ul>
+  <li>Initialization</li>
+  <li>Input Grammar and Vocabulary</li>
+  <li>Commands</li>
+  <li>Logic Rules</li>
+  <li>Output Text</li>
+</ul>
+<p>It is specified using:</p>
+<ul>
+  <li>Prolog logical facts and rules</li>
+  <li>Prolog grammar rules</li>
+  <li>IF-specific supports predicates</li>
+</ul>
+<h2><a name="logicbase_basics"></a>Logic Base Basics</h2>
+<p>See the <i>Adventure in Prolog</i> tutorial that comes with Amzi! to learn 
+  more about Prolog. (<i>Adventure in Prolog</i> also uses a simple IF game for 
+  teaching, but does not make use of the tool kit. It uses a simpler game model 
+  designed to illustrate Prolog.)</p>
+<p>A logic base is composed of three basic entities:</p>
+<ul>
+  <li><b>Facts</b>, which corresponds to database rows</li>
+  <li><b>Rules</b>, which correspond to database queries</li>
+  <li><b>Built-in Predicates</b>, which provide extra-logical services, like reading 
+    and writing</li>
+</ul>
+<p>The syntactic building blocks of a logic base are:</p>
+<ul>
+  <li><b>atoms</b> - beginning with lower case and containing just alphanumeric 
+    characters or an underscore.</li>
+  <li><b>strings</b> - containing anything, delimited by back quotes (``)</li>
+  <li><b>logical variables</b> - beginning with upper case letter or underscore, 
+    these are pattern-matching variables, taking values from query and fact patterns, 
+    rather than assignment</li>
+  <li><b>structures</b> - an atom followed by parenthesis and comma-delimited 
+    arguments</li>
+  <li><b>lists</b> - square brackets ([]) containing comma-delimited elements. 
+    the special pattern-matching notation [X|Y] can be used to get the first element 
+    of a list (X) of arbitrary length, and the list of remaining elements Y.</li>
+</ul>
+<p>They are all referred to by the catch-all word <b>term</b>.</p>
+<p>The syntax of a fact is: <font color="#0066FF">PredicateName(Arg1, Arg2, ..., ArgN).</font></p>
+
+<p><b>PredicateName</b> is an atom and the arguments are other legal terms.</p>
+<p>Example:</p>
+<pre>text(hello, `Hello`).
+text(good_bye, `Good Bye`).
+text(hello, `Hola`).
+text(good_bye, `Adios`).</pre>
+<p>Facts are not used too much in creating games, since a built-in frame system 
+  is used for most data modelling. This will be discussed later.</p>
+<p>The syntax of a rule is: <font color="#0066FF">PredicateName(Arg1, Arg2, ..., 
+  ArgN) :- Goal1, Goal2, ... GoalN.</font></p>
+<p>The <b>PredicateName</b> and arguments is called the head of the rule. The 
+  <b>:-</b> symbol is called the neck and means <b>if</b>. The goals are patterns 
+  used to match other predicate names in rules and facts.</p>
+<p>Note that there is no real distinction between facts and rules. A <b>predicate</b> 
+  is defined by one or more facts and/or rules with the same predicate name.</p>
+<p>A fact then, is an assertion that something is true.</p>
+<p>A rule is an assertion that something is true if some other things are true. 
+  For example:</p>
+<pre>hello_defined :-
+   text(hello, _).</pre>
+<p></p>
+<p>Is a rule that says <b>hello_defined</b> is true if there is a fact that matches 
+  the goal pattern <font color="#0066FF">text(hello, _)</font>.</p>
+<p>Sometimes the truth/falsity of a rule is not really relevant, and the purpose 
+  of the rule is to get to a goal which is a built-in predicate that has some 
+  effect that has nothing to do with logic, such as:</p>
+
+<pre>speak(Token) :-
+  text(Token, Text),
+  write(Text).</pre>
+<p>Logically, this rule says: <b>speak(Token)</b> is true if there is a predicate 
+  (fact or rule) that matches the pattern <font color="#0066FF">text(Token, Text)</font> 
+  and <font color="#0066FF">write(Text)</font> is true.</p>
+<p>The way the pattern matching works is, if there are logical variables in the 
+  pattern they become bound to a value that makes the pattern match work.</p>
+<p>So in the example, if a query <font color="#0066FF">speak(hello)</font> was 
+  made, then <font color="#0066FF">Token</font> would be bound to <font color="#0066FF">hello</font>, 
+  and the goal <font color="#0066FF">text(hello, Text)</font> would be tried. 
+  It would match the text fact <font color="#0066FF">text(hello, `Hello`)</font> 
+  if <font color="#0066FF">Text</font> was bound to the string <font color="#0066FF">`Hello`</font>, 
+  which is what happens. The final goal is then <font color="#0066FF">write(`Hello`)</font> 
+  which really doesn't have anything to do with logic but simply writes Hello 
+  to the console window.</p>
+<p>The speak rule can be used to write out the text associated with a given atom, 
+  using the text facts in the earlier example.</p>
+<p>There might be more than one fact or rule that matches a goal pattern, in which 
+  case the logical execution engine notes that as a <b>choice point</b>. If something 
+  else is not true, <b>fails</b>, then execution backs up to the choice point 
+  and another match is tried.</p>
+<p>Failure can be forced with the built-in predicate <b>fail</b>.</p>
+<p>We can use that to make our speak rule write both the English and Spanish words 
+  for hello:</p>
+<pre>speak(Token) :-
+  text(Token, Text),
+  write(Text),
+  fail.</pre>
+<p>Now the goal <font color="#0066FF">speak(hello)</font> will cause first <font color="#0066FF">`Hello`</font> 
+  to be written, and then failure would go back to the choice point and <font color="#0066FF">Text</font> 
+  would be bound to <font color="#0066FF">`Hola</font>` instead and it would be 
+  written as well. Similarly, <font color="#0066FF">speak(good_bye)</font> will 
+  write <font color="#0066FF">`Good Bye`</font> and then <font color="#0066FF">`Adios`</font>.</p>
+<p>Prolog implementations come with many built-in predicates that can be used 
+  for various purposes.</p>
+<p>The Amzi! IF Toolkit has a number of application-specific built-in predicates 
+  that are useful for building IF games.</p>
+<h2><a name="frames_data_model"></a>The Frames Data Model</h2>
+<p>The Amzi! IF Toolkit contains support for a frame system which is used for 
+  creating the data model of the game. A frame basically has a name and then an 
+  arbitrary number of slots. Some frames in a game might look like:</p>
+<pre>frame(kitchen, [place, north=hall, lights=off, contains=table]).
+frame(table, [support, at=kitchen, contains=newspaper, contains=napkins]).</pre>
+<p>The first frame is named <font color="#0066FF">kitchen</font>, and it has four 
+  slots describing it. The second frame is named <font color="#0066FF">table</font> 
+  and also has four slots. The power of the frame system is a frame can have any 
+  number of slots in any order, and the slots can be freely used by the pattern-matching 
+  of the logic engine.</p>
+<p>The game designer uses whatever slots suit his/her purpose. So maybe slots 
+  like <font color="#0066FF">north=hall</font> are used for connections, or maybe 
+  the game uses direct connections represented by <font color="#0066FF">connects=hall</font>. 
+  In <i>Portals</i>, we'll see frames for portals and places connecting indirectly 
+  through those portals.</p>
+<p>The frames are not referenced directly, but rather through the application-specific 
+  predicates provide by the toolkit. These are:</p>
+<blockquote>
+  <p><b>make( Name, Slots )</b> - create a new frame of the given name with the 
+    specified slots.<br>
+    <b>query( Name, QueryPatterns )</b> - find values for slots<br>
+    <b>delete( Name, DeletePatterns )</b> - delete certain slot values<br>
+    <b>add( Name, AddPatterns )</b> - add certain slot values<br>
+    <b>change( Name, ChangePatterns )</b> - change certain values.<br>
+    <b>dump( Name )</b> - for debugging, display the frame.<br>
+    <b>dump</b> - for debugging, display all frames.</p>
+</blockquote>
+<p>You can experiment with the frame tools directly from the listener. First, 
+  select <b>run/run_as/interpreted project</b>. Then import the frames module, 
+  which was already loaded with the project, so that it's predicates can be used 
+  directly, and try these experiments:</p>
+<pre>?- import(frames).
+
+yes
+?- make( kitchen, [ lights = on ] ).
+
+yes
+?- query( kitchen, [lights = X] ).
+
+X = on 
+
+yes
+?- add( kitchen, [connects = porch, contains = table ] ).
+
+yes
+?- make( table, [at=kitchen, supporting=newspaper] ).
+
+yes
+?- dump.
+
+kitchen
+   connects = porch
+   contains = table
+   lights = on
+table
+   at = kitchen
+   supporting = newspaper
+
+yes
+?- change( kitchen, [lights=off] ).
+
+yes
+
+?- dump(kitchen).
+
+kitchen
+   lights = off
+   connects = porch
+   contains = table
+
+yes
+
+?- add(kitchen, [ceiling_fan = on] ).
+
+yes
+?- breezy(X) :- query(X, [ceiling_fan = on] ).
+Term asserted
+?- breezy(kitchen).
+
+yes
+?- change(kitchen, [ceiling_fan = off] ).
+
+yes
+?- breezy(kitchen).
+no
+?- is_in(Place, Item) :- query(Place, [contains = X]), query(X, [supporting=Item] ).
+Term asserted
+?- is_in(kitchen, newspaper).
+
+yes
+?- delete(table, [supporting=newspaper]).
+
+yes
+?- is_in(kitchen, newspaper).
+no
+?- dump.
+
+kitchen
+   ceiling_fan = off
+   lights = off
+   connects = porch
+   contains = table
+table
+   at = kitchen
+
+yes
+?- </pre>
+<h2><a name="toolkit_architecture"></a>IF Toolkit Architecture</h2>
+<p>The IF Toolkit provides for the basic runtime environment of the game and also 
+  provides services for the game.</p>
+<p>Execution begins in the toolkit, which uses either the <b>console</b> or <b>gui</b> 
+  user interface depending on which is set in the game module.</p>
+<p>The user interface module then waits for user commands and calls <font color="#0066FF">begin(new)</font> 
+  when the game is to begin. This is automatic in the console, but requires the 
+  user to select <b>file/new</b> in the GUI.</p>
+<p>So the game has to implement, in the game module:</p>
+<pre>begin(new) :- ...</pre>
+<p>Typically, <font color="#0066FF">begin(new) </font>will call a predicate to 
+  initialize the data model, and then display some initial information.</p>
+<p>The user interface then waits for commands from the player. When it receives 
+  a command, it calls the language module's <b>player</b> grammar rule to parse 
+  the command.</p>
+<p>So the game has to implement, in the language module a <b>player</b> grammar 
+  rule (grammar rules will be discussed a later):</p>
+<pre>player( Command ) --&gt; ...</pre>
+<p>Note that this is not strictly necessary to define the grammar rules during 
+  initial game development. They can be added later. If there are no grammar, 
+  the input is assume to be exactly the commands. So, for example, if &quot;go 
+  north&quot; is entered it is interpreted as the command [go, north].</p>
+<p>It is grammar rules that allow &quot;north&quot;, &quot;n&quot;, &quot;go to 
+  the north&quot;, etc. to all mean, as well, [go, north].</p>
+<p>After getting the command, the engine calls the games <b>tick</b> predicate 
+  to execute a move in the game.</p>
+<p>So the game has to implement, in the game module:</p>
+<pre>tick(Command) :- take_action(Command), ...</pre>
+<p>There is a hand-shake between the engine and the game logic. <b>tick</b> calls 
+  <b>take_action</b>, which is defined in the engine.</p>
+<p><b>take_action</b> makes use of an <b>action</b> predicate defined in the game 
+  that maps commands to rules.</p>
+<p>This architecture makes it possible for the engine to know what the verbs of 
+  the game are, and provide general purpose hooks to those verbs.</p>
+<p>So the game has to implement:</p>
+<pre>action( Command1, Rule1 ).
+action(Command2, Rule2 ).
+  ...</pre>
+<p>That's it.</p>
+<p>Now the game can get other services from the engine.</p>
+<p><b>output( X )</b> - is used to output tokens, and fill in the blanks as necessary</p>
+<p><b>get_input_name(Token, Text)</b> - uses the grammar rules to find the preferred 
+  way for the player to refer to something.</p>
+<p><b>get_output_name(Token, Text)</b> - uses the text facts to find the description 
+  associated with something.</p>
+<p>And there are all the built-in predicates of Prolog and its libraries.</p>
+<p>These include useful things like:</p>
+<p><b>is</b> - evaluates arithmetic functions (do not use =). ex. X is 2 + 2.</p>
+<p><b>&gt;</b> - tests values, also &lt; &gt;= and =&lt;. X &gt; Y</p>
+<p><b>findall</b> - findall the items that meet a criteria and store them in a 
+  list</p>
+<p>See the Prolog documentation for further details.</p>
+<h2><a name="portals"></a>Portals, the Tutorial Game</h2>
+<p>Portals will be a simple game that illustrates one approach to getting from 
+  place to place. The idea will be that each place has portals that connect it 
+  to other places, and those portals have properties. This architecture makes 
+  it easy to implement puzzles associated with the passages from place to place.</p>
+<p>The places will be:</p>
+<blockquote>
+  <p><b>kitchen</b> - connected via the kitchen door portal to the porch, which 
+    is jammed one way and locked the other.<br>
+    <b>hall</b> - connected via the hall door portal to the kitchen, and the cellar 
+    stairs portal to the cellar. The cellar stairs are dangerous in the dark.<br>
+    <b>cellar</b> - connected via the cellar stairs back to the hall, and a bulk 
+    head door, which is locked, to the porch.<br>
+    <b>porch</b> - connect by the kitchen door portal which is locked.</p>
+</blockquote>
+<p>So the trick is to go from the kitchen to the kitchen, via all the places.</p>
+<h3><a name="begin"></a>Begin</h3>
+<p>The game needs to first define <b>begin(new)</b> which typically calls <b>initialize</b> 
+  and displays a welcome. We can modify the template's original <b>begin(new)</b> 
+  so it looks like this:</p>
+<pre>begin(new) :-
+   initialize,
+   output( welcome ).
+</pre>
+<p>And then add <b>welcome</b> text to <i>portals_english.pro</i> like this:</p>
+<pre>text(welcome,
+   [`Welcome to Portals. You're in the kitchen but the door to `,
+    `the back porch is locked and the lock is jammed on the inside. `,
+    `You need to open it from the outside. ` ]).
+</pre>
+<p>Notice that text can either be a string, or a list of strings, or, as we'll 
+  see, a list of strings and variables that are used to dynamically fill in the 
+  text. If there is a list of strings, they are concatenated and the result is 
+  word-wrapped in the output.</p>
+<p>Run the game (<b>run/run_as/interpreted project</b>). We can't do much yet, 
+  except see the welcome and quit.</p>
+<pre>?- main.
+
+
+Welcome to Portals. You're in the kitchen but the door 
+to the back porch is locked and the lock is jammed 
+on the inside. You need to open it from the outside. 
+
+
+> quit
+good_bye
+
+
+yes
+?- quit.
+</pre>
+<h3><a name="initializing"></a>Initializing the Data Model</h3>
+<p>Having come up with the idea for the game, we need to create a data model that 
+  supports it. In this case we will have frames that represent the places in the 
+  game, and each place will have as attributes the portals that are available 
+  to that place. Here is how we initalize the game with this idea:</p>
+<pre>initialize :-
+   clear,     % Clear the frame database.
+   make( kitchen, [ portal=hall_door, portal=kitchen_door ] ),
+   make( hall, [portal=hall_door, portal=cellar_stairs] ),
+   make( cellar, [ portal=cellar_stairs, portal=bulk_head] ),
+   make( porch, [ portal=kitchen_door, portal=bulk_head] ),
+   make( you, [at=kitchen] ).
+</pre>
+<p>For diagnostic purposes, we are probably going to want to see the state of 
+  the game so we can add a command (which we won't tell the player about) that 
+  dumps the frames we've created. We create a verb for it in <i>portals_english.pro</i> 
+  and an <b>action</b> associated with it in <i>portals.pro</i>.</p>
+<pre>verb(dump) --> [dump].  % in portals_english.pro
+action( [dump], dump ).  % in portals.pro</pre>
+<p>Now testing the game.</p>
+<pre>?- main.
+
+
+Welcome to Portals. You're in the kitchen but the door 
+to the back porch is locked and the lock is jammed 
+on the inside. You need to open it from the outside. 
+
+
+> dump
+
+cellar
+   portal = cellar_stairs
+   portal = bulk_head
+hall
+   portal = hall_door
+   portal = cellar_stairs
+kitchen
+   portal = hall_door
+   portal = kitchen_door
+porch
+   portal = kitchen_door
+   portal = bulk_head
+you
+   at = kitchen
+> quit
+
+yes
+?- quit.
+</pre>
+<p>Next we need to implement a command that lets us get around, but first a digression 
+  on grammar rules.</p>
+
+<h3><a name="grammar_rules"></a>Grammar Rules Digression</h3>
+<p>We're starting with a command <b>go</b>, that will let the player directly 
+  go to another place. They will, of course, pass through a portal, but for now 
+  we are just looking at the grammar rules.</p>
+<p>Commands are represented internally in the game by a list. The first token 
+  in the list is the verb of the command. The other tokens, if any, are the arguments 
+  of the command. So the command to <b>go</b> to the <b>kitchen</b> internally 
+  is <font color="#0066FF">[go, kitchen].</font> The command to <b>look</b> is: 
+  <font color="#0066FF">[look]</font>.</p>
+<p>The grammar rules let us parse the player's input into these commands. So, 
+  depending on how we specify the rules, the player might be able to type: &quot;go 
+  to the kitchen&quot;, or maybe just &quot;kitchen&quot; and the command <font color="#0066FF">[go,kitchen]</font> 
+  is picked up in either case.</p>
+<p>Grammar rules are written with a <b>--&gt;</b> symbol. They are similar to 
+  logic rules, except they hide some of their arguments which contain the input 
+  stream of tokens. The simple grammer rules provided in the template are:</p>
+<pre>player( [V, O] ) -->
+   verb(V),
+   object(O).
+player( [V] ) -->
+   verb(V).
+</pre>
+<p>The first one can be read as saying: &quot;The input command is [V, O] if a 
+  verb V can be parsed from the beginning of the input followed by an object O.&quot; 
+  As with logic rules, a leading upper case letter indicates a variable.</p>
+<p>The second one reads: &quot;The input is a single verb [V] if all that there 
+  is in the input stream is a verb V.&quot;</p>
+<p>Other grammer rules then define verb and object. When a grammar rule does not 
+  refer to other grammar rules, but instead identifies actual input words, it 
+  is called a terminal. The terminal grammar rules are used to define the input 
+  vocabulary using list notation..</p>
+<p>So for example, we might allow both &quot;go&quot; and &quot;go to&quot; to 
+  signify the command <b>go</b>. This would be specified:</p>
+<pre>verb(go) --> [go].
+verb(go) --> [go,to].</pre>
+<p>We might want to let the player add an article (the, a) before a noun. In that 
+  case we might create a secondary grammar rule for objects saying &quot;there 
+  is an object, O, if there is an article followed by a noun O.&quot;</p>
+<pre>object(O) --> article, noun(O).</pre>
+<p>And then define article to either be <font color="#0066FF">the</font>, <font color="#0066FF">a</font>, 
+  or nothing:</p>
+<pre>article --> [the].
+article --> [a].
+article --> [].</pre>
+<p>And noun:</p>
+<pre>noun(kitchen) --> [kitchen].</pre>
+<p>Now the grammar will accept &quot;go kitchen&quot;, &quot;go to the kitchen&quot;, 
+  and &quot;go a kitchen&quot; all to mean <font color="#0066FF">[go, kitchen]</font>.</p>
+<p>What if we want to be able to allow the player to simply type the name of a 
+  place and have it interpret that as a command to go to that place? Well the 
+  first thing is to distinguish place nouns from other nouns:</p>
+<pre>noun(N) --> thing(N).
+noun(N) --> place(N).</pre>
+<p>And then replace <font color="#0066FF">noun(kitchen) --&gt; [kitchen]</font> 
+  with:</p>
+<pre>place(kitchen) --> [kitchen].</pre>
+<p>And add a new grammer rule at the top:</p>
+<pre>player( [go, P] ) -->
+  place(P).</pre>
+<p>Each of the grammar rules for player will be tried in order. If other rules 
+  fail, and the first and only word is a place name, then the new rule will succeed, 
+  and the command <font color="#0066FF">[go, kitchen] </font>will be parsed from 
+  the input &quot;kitchen&quot;.</p>
+<h3><a name="go"></a>Go - Moving About</h3>
+<p>Now, down to the business of actually implementing <b>go</b>. To begin with 
+  there won't be any contraints other than the fact that to get from one place 
+  to another there has to be a connecting portal.</p>
+<p>First we add the required items to the input grammar, using somewhat simpler 
+  rules than discussed in the preceding section:</p>
+
+<pre>verb(go) --> [go].
+
+object(kitchen) --> [kitchen].
+object(cellar) --> [cellar].
+object(cellar) --&gt; [basement].
+object(hall) --> [back, hall].
+object(hall) --> [hall].
+object(porch) --> [back, porch].
+object(porch) --> [porch].
+</pre>
+<p>Note that there are multiple input words that can be used to indicate the <b>hall</b>, 
+  or the <b>cellar</b>.</p>
+<p>The grammar rules can be used in reverse to find the words used to specify, 
+  say <b>hall</b>. When used this way they will find the first option. For <b>hall</b> 
+  in this case, the first option is &quot;back hall&quot;. In the game, when the 
+  <b>input_name</b> for <b>hall</b> is needed for output, &quot;back hall&quot; 
+  will be used.</p>
+<p>Next we add the new <b>action</b> to the game logic:</p>
+<pre>action( [go, X], go(X) ). </pre>
+<p>And finally the logic rule that implements the action:</p>
+<pre>go(X) :-
+   query( you, [at=H] ),
+   query( H, [portal=P] ),
+   query( X, [portal=P] ),
+   change( you, [at=X] ),
+   output( now_at(X) ),
+   !.
+go(X) :-
+   output( cannot_get_to(X) ).
+</pre>
+
+<p>There are two rules for <b>go</b>. The first is the one that is used if all 
+  the conditions for going someplace are met. The second is used if the first 
+  one fails. Why might the first one fail? Well most likely because there isn't 
+  a portal P that is the same P for both the here place, H, and the there place 
+  X.</p>
+<p>Notice how the bindings of logical variables work. The first goal winds up 
+  binding the value of the logical variable H to the place where <b>you</b> is 
+  at. The second goal winds up binding the value of P to the first portal available 
+  for the place H. The third goal uses that binding of P to see if the place X 
+  also has the same portal. If it doesn't, execution backtracks to the second 
+  goal which might find a second portal, and P is now bound to that second portal. 
+  The third goal is tried again.</p>
+<p>If it succeeds, then the <b>change</b> goal is executed, moving the player 
+  to place X, and the output is generated. The ! (cut) tells the logic engine 
+  to forget about any choice points, because we've got a solution we're happy 
+  with.</p>
+<h3><a name="helper_rules"></a>Helper Rules</h3>
+<p>Now, the way we wrote <b>go</b> is OK, but sometimes there are goals that keep 
+  getting repeated, and it makes sense to create helper rules. For example, we 
+  often want to know where <b>here</b> is. So we can write a rule:</p>
+<pre>here(H) :-
+   query( you, [at=H] ).</pre>
+<p>And then use that instead in the rule:</p>
+<pre>go(X) :-
+   here(H),
+   query( H, [portal=P] ),
+   query( X, [portal=P] ),
+   change( you, [at=X] ),
+   output( now_at(X) ),
+   !.
+go(X) :-
+   output( cannot_get_to(X) ).</pre>
+<p>We can also implement a general test for whether we can go somewhere:</p>
+<pre>can_go(Here, There) :-
+   query(Here, [portal=P]),
+   query(There, [portal=P]).</pre>
+<p>The <b>can_go</b> rule will succeed or fail depending on whether there is a 
+  common portal between the two places. Using it in our rule:</p>
+<pre>go(X) :-
+   here(H),
+   can_go(H, X),
+   change( you, [at=X] ),
+   output( now_at(X) ),
+   !.
+go(X) :-
+   output( cannot_get_to(X) ).</pre>
+<p>So rules can refer to other rules, which can refer to other rules, etc.</p>
+<p>We can defer the output text to later and test it now. When output is requested 
+  for a token without any associated text in <i>portals_english.pro,</i> then 
+  just the token is output. This is good for testing.</p>
+<pre>> go back hall
+now_at(hall)
+
+> go porch
+cannot_get_to(porch)
+
+> go cellar
+now_at(cellar)
+</pre>
+<p>Adding the output text patterns in <i>portals_english.pro</i>:</p>
+<pre>text(now_at(X),
+   [`You are now at the `, X, `.`] ).
+text(cannot_get_to(X),
+   [`You can't get to the `, X, ` from here.` ]).
+</pre>
+<p>And testing:</p>
+<pre>> go back hall
+You are now at the back hall.
+
+> go porch
+You can't get to the back porch from here.
+</pre>
+<h3><a name="look"></a>Look</h3>
+<p>We can now implement <b>look</b> that will describe the player's surroundings. 
+  For <i>Portals</i>, this means describing the portals and other things.</p>
+<p>First we add the vocabulary and the command in <i>portals_english.pro</i> and 
+  <i>portals.pro</i>:</p>
+<pre>verb(look) --> [look].  % in portals_english.pro
+
+action( [look], look ).   % in portals.pro
+</pre>
+<p>Then for <b>look</b>, we can copy the code from the <i>Cloak of Darkness</i> 
+  game, and modify it to show portals instead of connections.</p>
+<pre>look :-
+   here(Place),
+   get_input_text(Place, ShortText),
+   get_output_text(Place, LongText),
+   output( [ShortText, `:\n`, LongText] ),
+   look_portals(Place),
+   !.
+
+look_portals(Place) :-
+   output( portals ),
+   query( Place, [portal=P] ),
+   get_input_text(P, PText),
+   get_output_text( portal(P, Place), LongText ),
+   output( [PText, `: `, LongText] ),
+   fail.
+look_portals(_).
+</pre>
+<p> Note that as we display the portals we use a structure token for output, portal(P, 
+  Place), which has two arguement, the first being the portal and the second the 
+  place we're at. This lets us use different text for a portal depending on which 
+  side we're looking at it from.</p>
+<pre>text( portals,
+   `You can see various portals to other places:` ).
+text(portal( hall_door, kitchen),
+   `An doorway to the hall.` ).
+text(portal( hall_door, hall),
+   `An doorway to the kitchen.` ).
+text(portal(kitchen_door, kitchen),
+   `An old door that leads outside.` ).
+text(portal(kitchen_door, porch),
+   `A screen door and old fashioned door that leads inside.` ).
+text(portal(bulk_head, cellar),
+   `A clumsy metal overhead bulkhead door, with a lock on it.` ).
+text(portal(bulk_head, porch),
+   `A blue painted bulk head door leading under the house.` ).
+text(portal(cellar_stairs, hall),
+   `Some ill-kept stairs lead down.` ).
+text(portal(cellar_stairs, cellar),
+   `Some ill-kept stairs lead up.` ).
+</pre>
+<p>Trying it:</p>
+<pre>> look
+kitchen:
+The kitchen with a cheap linoleum floor.
+
+You can see various portals to other places:
+
+hall door: An doorway to the hall.
+kitchen door: An old door that leads outside.
+> go hall
+You are now at the back hall.
+
+> look
+back hall:
+A small crowded hall filled with lots of junk.
+
+You can see various portals to other places:
+
+hall door: An doorway to the kitchen.
+cellar stairs: Some ill-kept stairs lead down.
+> </pre>
+<h3><a name="passing_through"></a>Passing through portals</h3>
+<p>The next step is to let the player navigate by passing through the portals. 
+  So we create a new command, <b>pass</b>, that takes a portal as an argument. 
+  It's basically the same as <b>go</b>, but we make a few changes.</p>
+<p>First, we change <b>can_go</b> so that it has three arguments. If <b>can_go</b> 
+  is called with Here and There 
+  bound, it will return a value for P, being the portal between here and there. 
+  If Here and P are bound, then it will return the value of There. This is the 
+  way logical variables work. They just match patterns, and they can be matched 
+  with any combinations of input variables bound.</p>
+<p>We also add There \= Here, because otherwise the rule will succeed allowing 
+  a place to connect to itself.</p>
+<pre>can_go(Here, There, P) :-
+   query(Here, [portal = P] ),
+   query(There, [portal = P] ),
+   There \= Here,
+   !.
+can_go(Here, There, _) :-
+   output( cannot_get_to(There) ),
+   !,
+   fail.
+</pre>
+<p>Then we create <b>pass</b> which is like <b>go</b>, but takes a portal as an 
+  argument. <b>can_go</b> returns, and now we can call a new rule, <b>safe_passage</b>, 
+  that checks to see if we can actually use the portal that we now know exists.</p>
+<pre>pass(P) :-
+   here(H),
+   can_go(H, X, P),
+   safe_passage(P, H, X),
+   change( you, [at=X] ),
+   output( now_at(X) ),
+   !.
+pass(_).
+</pre>
+<h3><a name="portal_puzzles"></a>Portal Puzzles</h3>
+<p>Here's the rules for <b>safe_passage</b> that basically define all the portal 
+  puzzles in the game:</p>
+<pre>safe_passage(Portal, Here, There) :-
+   query( Portal, [locked] ),
+   output( locked(Portal) ),
+   !,
+   fail.
+safe_passage(Portal, Here, There) :-
+   query( Portal, [from(Here) = locked]),
+   output( locked(Portal) ),
+   !,
+   fail.
+safe_passage(Portal, Here, There) :-
+   query( Portal, [from(Here) = broken]),
+   output( broken(Portal) ),
+   !,
+   fail.
+safe_passage(cellar_stairs, hall, _) :-
+   query( cellar_stairs, [dark] ),
+   output( fall_down_stairs(hall) ),
+   !.
+safe_passage(cellar_stairs, cellar, _) :-
+   query( cellar_stairs, [dark] ),
+   output( fall_down_stairs(cellar) ),
+   !,
+   fail.
+safe_passage(_, _, _).
+
+</pre>
+<p>Notice that we've made some other changes. We've put the problem handling messages 
+  in both <b>can_go</b> and <b>safe_passage</b>, and we've used !, fail for the 
+  cases that are a problem for the player. This means that <b>can_go</b> or <b>safe_passage</b> 
+  might fail if the player can't actually use the portal. When they fail, the 
+  first rules of <b>go</b> and <b>pass</b> also fail.</p>
+<p>It's cleaner for the game if a command always succeeds, so we add a second 
+  rule for <b>go</b> and <b>pass</b> that simply does nothing. It's called in 
+  those cases where the first rule failed because <b>can_go</b> or <b>safe_passage</b> 
+  failed.</p>
+<p>On the language side we add nouns which are portals:</p>
+<pre>portal(hall_door) --> [hall,door].
+portal(kitchen_door) --> [kitchen,door].
+portal(cellar_stairs) --> [cellar,stairs].
+portal(cellar_stairs) --> [stairs].
+portal(bulk_head) --> [bulk,head].
+</pre>
+<p>Verbs that mean pass:</p>
+<pre>verb(pass) --> [pass,through].
+verb(pass) --> [go,through].
+verb(pass) --> [go,down].
+verb(pass) --> [go,up].
+verb(pass) --> [go].
+</pre>
+<p>A grammar rule that insists the object of the pass verb must be a portal:</p>
+<pre>player( [pass, P] ) -->
+   verb(pass),
+   portal(P).
+</pre>
+<p>Add a clause to <b>get_input_words</b>, so the game can display the input names 
+  of portals: </p>
+<pre>get_input_words(Name, Words) :-
+   portal(Name, Words, []),
+   !.
+</pre>
+<p>And finally the new text for various portal situations:</p>
+
+<pre>text( portals,
+   `You can see various portals to other places:` ).
+text(portal( hall_door, kitchen),
+   `An doorway to the hall.` ).
+text(portal( hall_door, hall),
+   `An doorway to the kitchen.` ).
+text(portal(kitchen_door, kitchen),
+   `An old door that leads outside.` ).
+text(portal(kitchen_door, porch),
+   `A screen door and old fashioned door that leads inside.` ).
+text(portal(bulk_head, cellar),
+   `A clumsy metal overhead bulkhead door, with a lock on it.` ).
+text(portal(bulk_head, porch),
+   `A blue painted bulk head door leading under the house.` ).
+text(portal(cellar_stairs, hall),
+   `Some ill-kept stairs lead down.` ).
+text(portal(cellar_stairs, cellar),
+   `Some ill-kept stairs lead up.` ).
+
+text( locked(P),
+   [`The `, P, ` is locked.`] ).
+text( broken(P),
+   [`The `, P, ` is broken, maybe try from the other side.`] ).
+text( fall_down_stairs(hall),
+   [`The stairs were cluttered with stuff, a clear home safety violation, `,
+    `and you trip and tumble to the bottom.  If this were a more serious `,
+    `game you might have been hurt.` ]).
+text( fall_down_stairs(cellar),
+   `You trip on all the clutter on the stairs, and wind up back in the cellar.` ).</pre>
+<p>Trying it:</p>
+<pre>> look
+kitchen:
+The kitchen with a cheap linoleum floor.
+
+You can see various portals to other places:
+
+hall door: An doorway to the hall.
+kitchen door: An old door that leads outside.
+> go through kitchen door
+The kitchen door is broken, maybe try from the other 
+side.
+
+> go through hall door
+You are now at the back hall.
+
+> look
+back hall:
+A small crowded hall filled with lots of junk.
+
+You can see various portals to other places:
+
+hall door: An doorway to the kitchen.
+cellar stairs: Some ill-kept stairs lead down.
+> go down cellar stairs
+The stairs were cluttered with stuff, a clear home 
+safety violation, and you trip and tumble to the bottom. 
+ If this were a more serious game you might have been 
+hurt.
+
+You are now at the cellar.
+
+> look
+cellar:
+The cellar of an old house, damp and dingy.
+
+You can see various portals to other places:
+
+cellar stairs: Some ill-kept stairs lead up.
+bulk head: A clumsy metal overhead bulkhead door, with 
+a lock on it.
+> go up stairs
+You trip on all the clutter on the stairs, and wind 
+up back in the cellar.
+</pre>
+<h3><a name="solving_tools"></a>The tools to solve the puzzles</h3>
+<p>Next we provide the player with the tools to solve the puzzles. First the verbs 
+  and objects, including a grammar rule for <b>object(X)</b> that lets a portal 
+  be a general purpose object as well. This is so unlock can refer to a portal.</p>
+<pre>verb(unlock) --> [unlock].
+verb(turn_on) --> [turn, on].
+verb(turn_off) --> [turn, off].
+
+object(light_switch) --> [light, switch].
+object(light_switch) --> [light].
+object(light_switch) --> [switch].
+object(X) --> portal(X).
+
+</pre>
+<p>Then the actions:</p>
+<pre>action( [unlock,X], unlock(X) ).
+action( [turn_on, X], turn_on(X) ).
+action( [turn_off, X], turn_off(X) ).
+</pre>
+<p>And we put the light switch for the cellar stairs in the hall:</p>
+<pre>   make( hall, [portal=hall_door, portal=cellar_stairs, light_switch=off] ),
+</pre>
+<p>Then we add a bunch of rules for turning things on and off, and unlocking portals. 
+  For turn on and off we choose to handle special cases in a separate rule, called 
+  effects. It sets any side effects of an action, in this case making the cellar 
+  stairs light or dark.</p>
+<p>There are many other ways to implement the same thing. There could have been 
+  a rule named <b>is_dark</b> that, for the cellar stairs checks the status of 
+  the switch. That way we wouldn't need to change the dark property of the cellar 
+  stairs. It's a matter of style which method is used.</p>
+<p>For unlocking, we recognize the two-sided unlock problem as well as the single 
+  lock. Here are the various rules:</p>
+<pre>turn_on(X) :-
+   here(H),
+   query(H, [X=off]),
+   change(H, [X=on]),
+   effects(H, [X=on]).
+turn_on(_) :-
+   output( cannot_do ).
+
+turn_off(X) :-
+   here(H),
+   query(H, [X=on]),
+   change(H, [X=off]),
+   effects(H, X=off).
+turn_off(_) :-
+   output( cannot_do ).
+
+effects(hall, light_switch=on) :-
+   delete( cellar_stairs, [dark] ),
+   !.
+effects(hall, light_switch=off) :-
+   add( cellar_stairs, [dark] ),
+   !.
+
+unlock(P) :-
+   here(H),
+   query(H, [portal=P] ),
+   query(P, [locked]),
+   delete(P, [locked]),
+   !.
+unlock(P) :-
+   here(H),
+   query(H, [portal=P]),
+   query(P, [from(H)=locked] ),
+   change(P, [from(H) = unlocked] ).
+</pre>
+<p>And add an ending condition for the game:</p>
+<pre>done :-
+   here(kitchen),
+   query( kitchen_door, [from(porch) = unlocked] ),
+   output( solved ),
+   !.
+</pre>
+<p>And the final two messages:</p>
+<pre>text( cannot_do,
+   `Can't do that for some reason.` ).
+text( solved,
+   `You got that door open, now we can fix it.`).
+</pre>
+<p>Trying it:</p>
+<pre>> turn on light switch
+Can't do that for some reason.
+
+</pre>
+<h3><a name="debugging_eclipse"></a>Debugging (Eclipse IDE)</h3>
+<p>Uh oh. It didn't work. We can study the code or use the source code debugger. 
+  To use the debugger, quit this run and select <b>run/debug_as/interpreted project</b>.</p>
+<p>This will put you in the debugger screen. There are many things that can be 
+  done in the debugger and you'll need to read the documentation to learn all 
+  its features. For now:</p>
+<ul>
+  <li> in the source code edit window, go to the line which has 'turn_on(X) :-'</li>
+  <li> use the right mouse to toggle a break point</li>
+  <li>in the debug listener window, type main. at the ?-</li>
+  <li>the game starts and immediately pauses in the debugger.</li>
+  <li>in the debugger tool bar, click on the triangular 'play' icon.</li>
+  <li>now the game continues, go to the hall and then enter the turn on light 
+    switch command</li>
+  <li>the debugger will pause at the line we put the break on.</li>
+  <li>in the upper right window, select from the tabs at the bottom 'variables'</li>
+  <li>you'll now see the bindings for the variables in the source code, in this 
+    case X and H.</li>
+  <li>in the upper left you'll see the call stack, which came from begin into 
+    the game to tick to turn on.</li>
+  <li>click the step into icon in the debugger tool bar</li>
+  <li>you'll see the colors and lines change in the source code as it steps from 
+    line to line, switching from calling a goal (green) to exiting a goal (grey).</li>
+  <li>After a few steps it will look like:</li>
+</ul>
+<p><img src="debug_1.gif" width="879" height="781"></p>
+<p>Notice that H picked up the value of 'hall', which is correct, and X is light_switch, 
+  which it should be. Continuing</p>
+<ul>
+  <li>click the step into until we run into the failure. The failure is indicated 
+    by a red line in the source code:</li>
+</ul>
+<p><img src="debug_2.gif" width="879" height="781"></p>
+<p>Now sometimes a failure is normal, and if we continued we would see the source 
+  code debugger trace the execution backwards and restart with a new rule that 
+  might then succeed.</p>
+<p>But in this case we expected the call to <b>effects</b> to succeed. And it 
+  didn't. Examining this code more closely we see that the problem is we called 
+  the goal <b>effects</b> with a square brackets, but we implemented the head 
+  of the rule without a square brackets. So we remove the square brackets from 
+  the call to <b>effects</b>.</p>
+<h3><a name="running"></a>Running</h3>
+<p>And now we can run the game to completion:</p>
+<pre>?- main.
+
+
+Welcome to Portals. You're in the kitchen but the door 
+to the back porch is locked and the lock is jammed 
+on the inside. You need to open it from the outside. 
+
+
+> go through hall door
+You are now at the back hall.
+
+> look
+back hall:
+A small crowded hall filled with lots of junk.
+
+There is a light switch which is off.
+
+You can see various portals to other places:
+
+hall door: An doorway to the kitchen.
+cellar stairs: Some ill-kept stairs lead down.
+> turn light on
+The template game did not understand the input.
+
+> turn on light
+> go down cellar stairs
+You are now at the cellar.
+
+> look
+cellar:
+The cellar of an old house, damp and dingy.
+
+You can see various portals to other places:
+
+cellar stairs: Some ill-kept stairs lead up.
+bulk head: A clumsy metal overhead bulkhead door, with 
+a lock on it.
+> go through bulk head
+The bulk head is locked.
+
+> unlock bulk head
+> go through bulk head
+You are now at the back porch.
+
+> look
+back porch:
+A porch with a grill and a wonderful place to watch 
+fireflies.
+
+You can see various portals to other places:
+
+kitchen door: A screen door and old fashioned door 
+that leads inside.
+bulk head: A blue painted bulk head door leading under 
+the house.
+> unlock kitchen door
+> go kitchen
+You are now at the kitchen.
+
+You got that door open, now we can fix it.
+
+
+yes
+?- </pre>
+<h3><a name="gui"></a>GUI</h3>
+<p>The last step is to check the GUI version. Change the line that specifies the 
+  user_interface to user_interface(gui). Run interpreted, type main and you should 
+  be able to start playing:</p>
+<p><img src="portals_1.gif" width="467" height="489"></p>
+<p>To distribute the game, you can copy <i>portals.pro</i>, <i>portals_english.pro</i> 
+  to the runtime AIFT directory, and create an <i>portals.bat</i> file like the 
+  other .bat files.</p>
+<h2><a name="projects"></a>Projects</h2>
+<p>Add help, hints and options to Portals to make it easy for a new player. See 
+  other sample games for ideas.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

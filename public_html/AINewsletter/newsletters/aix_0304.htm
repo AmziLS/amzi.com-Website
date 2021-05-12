@@ -1,0 +1,462 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->April 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <h3>April 2003</h3>
+            <ul>
+              <li><a href="#cf_to_bayesian">Reasoning about Uncertainty, Bayesian 
+                Belief Networks</a></li>
+              <ul>
+                <li><a href="#certainty">Certainty Factors</a></li>
+                <li><a href="#bayesian">Bayesian Belief Networks</a></li>
+                <li><a href="#fuzzy">Fuzzy Logic</a></li>
+              </ul>
+              <li><a href="#code_corner">Code Corner</a> - Experiments with Bayes</li>
+              <li><a href="#links">Links</a></li>
+              <ul>
+                <li><a href="#links_aix">The Best of AI Expert</a> - Three neural 
+                  network articles </li>
+                <li><a href="#links_ai_in_medicine">AI in Medicine</a> - Introductions 
+                  to medical AI</li>
+                <li><a href="#links_quantum">Quantum Computing Language</a> - 
+                  Learn to program quantum computers now</li>
+                <li><a href="#links_bayesian">Bayesian Belief Networks</a> - Tutorials, 
+                  background and resources</li>
+              </ul>
+            </ul>
+            <p>As always, feedback is welcome. dennis@ddj.com</p>
+            <h2><a name="cf_to_bayesian"></a>Reasoning about Uncertainty, Bayesian 
+              Belief Networks</h2>
+            <h3><a name="certainty"></a>Certainty Factors</h3>
+            <p>The first expert systems were research efforts in the medical diagnostic 
+              domain. The researchers quickly found out that dealing with, and 
+              propagating, uncertainty was a critical issue for medical systems. 
+              Typically medical experts hedged their opinions with words like 
+              &quot;likely&quot; and &quot;may&quot;.</p>
+            <p>The researchers invented the concept of certainty factors (CFs) 
+              to represent this uncertainty. These were numbers between 0 and 
+              100. A given bit of data had a CF associated with it. For example 
+              the symptom &quot;patient has a cough&quot; might have a CF of 70 
+              if its not clear how bad the patient's cough is.</p>
+            <p>Rules would also have CFs, so the rule that &quot;if a patient 
+              has a cough then the patient has a cold&quot; might also have a 
+              CF, say 60. The CF of the symptom is then mathematically combined 
+              with the CF of the rule to come up with a CF for the final diagnosis.</p>
+            <p>An diagnostic expert system could then, given a set of symptoms, 
+              generate a number of possible diagnoses and the CF associated with 
+              each.</p>
+            <p>(Note that uncertainty is only critical for certain types of applications. 
+              The expert system in a doctor's office that helps fill out insurance 
+              forms needs to say exactly what form to fill out, not provide a 
+              menu of probable choices ranked by possibility.)</p>
+            <p></p>
+            <p>The formula for propagating CFs was developed by &quot;feel&quot;, 
+              tweaked until the medical experts were comfortable with the results.</p>
+            <p>Many expert system tools provide CFs as part of their knowledge 
+              representation and reasoning engine.</p>
+            <h3><a name="bayesian"></a>Bayesian Belief Networks</h3>
+            <p>It wasn't long before more rigorous types pointed out that probability 
+              theory already had all the tools necessary for propagating belief, 
+              in Bayesian theory. And it was mathematically precise, not like 
+              the ad hoc CFs.</p>
+            <p>Thrown on the defensive, the CF creators argued that there is so 
+              much uncertainty in the uncertainty estimates in an expert system 
+              that it hardly matters if they are propagated with mathematical 
+              precision. If a doctor estimates that a cough implies a cold with 
+              certainty 60, that could really be anywhere from 40 to 80.</p>
+            <p>Moving to the offensive, the CF creators noted that it was much 
+              more complex to use probability theory.</p>
+            <p>Complexity has never slowed the research community down, and a 
+              wealth of work has been done on Bayesian belief networks (BBNs). 
+              These use rigorous mathematics to propagate belief (probabilities) 
+              between connected nodes in a network.</p>
+            <p>Using a BBN, the cough/cold example would be represented: P(cough, 
+              0.7), P(cold | cough, 0.6). The first is just the probability the 
+              symptom is a cough. The second is the conditional probability that 
+              the disease is a cold given the symptom cough. </p>
+            <p>But, it would also be necessary to include P(not cough, 0.3) and 
+              P(cold | not cough, 0.2) for the formulas to be used to accurately 
+              determine P(cold). That is because the probability of the patient 
+              having a cold is a combination of the probability given a cough 
+              as a symptom and the probability of having a cold if not cough is 
+              a symptom.</p>
+            <p>And if the node describing the conditional probability of a cold, 
+              given a cough, were to be connected to other nodes, then we would 
+              also need to specify P(not cold|cough) and P(not cold|not cough).</p>
+            <p>It is this requirement for a matrix of conditional probabilities 
+              that adds overhead to the development of BBNs.</p>
+            <p>But, the potential of a BBN is fantastic. All the factors in a 
+              particular problem domain can be connected together in dependency 
+              networks, with the conditional probabilities at each node specified 
+              as above. Then, as evidence about a situation is gathered, that 
+              evidence, which itself is expressed as a probability, can be propagated 
+              through the entire belief network, updating the beliefs of all the 
+              other nodes.</p>
+            <p>This means propagating both backwards and forwards, which is where 
+              the real power of Bayes' theorem comes to bear. It states that one 
+              can compute the P(A|B) from P(B|A) by the formula:</p>
+            <pre>P(A|B) = P(B|A) * P(A) / P(B).</pre>
+            <p>This equation has another very important implication. It overcomes 
+              the CF creator's objection that estimates of uncertainty are themselves 
+              extremely uncertain. Consider the cough/cold example.</p>
+            <p>It is difficult to determine the probability that someone has a 
+              cold given they have a cough. A doctor will go by feel, indicating 
+              a cold is likely if the patient has a cough.</p>
+            <p>But, it is easy to measure exactly how many patients that visit 
+              the doctor have colds, how many have the symptoms of a cough, and, 
+              most important, how many who have colds have a cough.</p>
+            <p>That is, whereas determining P(cold|cough) is hard, we can use 
+              statistics to exactly determine P(cough|cold).</p>
+            <p>Armed with Bayes theorem, and P(cold) and P(cough) in the doctor's 
+              office, we can then precisely compute P(cold | cough) given P(cough 
+              | cold).</p>
+            <pre>P(cold | cough) = P(cough | cold) * P(cold) / P(cough).</pre>
+            <p>It is no longer necessary to estimate what &quot;likely&quot; means.</p>
+            <p>One can imagine great networks of linked conditional probabilities 
+              used to model different application domains, that react to evidence, 
+              propagating beliefs, and that is exactly what people do with Bayesian 
+              belief networks (BBNs).</p>
+            <p>There are many deployed applications using BBNs, and there are 
+              a number of commercial products available as well.</p>
+            <p>But there are technical problems, the first being that propagation 
+              is computationally too hard given a significant number of nodes 
+              -- unless you make assumptions and limitations as to the type of 
+              network you build.</p>
+            <p>The second is that it is difficult to get all of the probability 
+              data for the nodes. As the CF creators pointed out, what good is 
+              it if the data is wrong?</p>
+            <p>Researchers are working on both these areas, with learning algorithms 
+              for developing BBNs from statistical data, and better algorithms 
+              for propagating beliefs.</p>
+            <p>See the <a href="#links_bayesian">links</a> below to learn more 
+              about what can and has been done with BBNs, and where the current 
+              research is going.</p>
+            <h3><a name="fuzzy"></a>Fuzzy Logic</h3>
+            <p>Fuzzy logic remains as a topic for a later date, but I'll briefly 
+              mention it here for completeness.</p>
+            <p>Fuzzy logic is another approach to reasoning with uncertainty, 
+              in which variables in a system, instead of having probabilities, 
+              have a degree of truth associated with them. So rather than being 
+              true (1.0) or false (0.0) a fuzzy variable might be &quot;most likely 
+              true&quot; (0.8). Like with both probability theory and CFs, there 
+              are rules for combining and propagating fuzzy truth values.</p>
+            <p>One can immediately see an advantage of fuzzy logic over probability 
+              in the cough/cold situation. It's not really that the patient has 
+              a probability of a cough, but rather a degree of cough, from mild 
+              to severe. This is naturally represented as a fuzzy truth value.</p>
+            <p>But one can also immediately see the disadvantage, because the 
+              result of a diagnostic system should be the probability that the 
+              patient has a cold, not a degree of cold.</p>
+            <p>If it were simple, it wouldn't be AI.</p>
+            <h2><a name="code_corner"></a>Code Corner - Probability and Bayes</h2>
+            <p>Prolog is a popular language for AI for a very simple reason. It 
+              has built in pattern-matching (unification) and search (backtracking) 
+              algorithms. And much of AI is exactly about pattern-matching and 
+              search -- searching for patterns in if-then rules for an inference 
+              engine; searching for patterns and moves in game playing; searching 
+              for patterns in vision and natural language application; etc. etc.</p>
+            <p>Because the programmer doesn't have to code the pattern-matching 
+              and search in a Prolog application, the code is often very concise 
+              and easy to read. Here's an example from some simple experiments 
+              with Bayes theorem and probability, where a few lines of code can 
+              be used to answer queries about the probability of various events.</p>
+            <p>A simple example relating cancer and smoking, similar to the cold/cough 
+              analysis above, came from <a href="#norman_fenton">Norman Fenton's</a> 
+              tutorial. We can write a small Prolog program that lets us play 
+              with that data and Bayes theorem.</p>
+            <p>First we represent the basic probability facts as Prolog facts:</p>
+            <pre>
+p(patient(cancer), 0.1).
+p(patient(smoker), 0.5).
+</pre>
+            <p>We then represent the conditional probabilities, using a ^ operator:</p>
+            <pre>
+cp(patient(smoker) ^ patient(cancer), 0.8).
+</pre>
+            <p>Next we write query rules that can be used to find various probabilities. 
+              There are three rules, covering the case where the probability is 
+              known, the conditional probability is known, or we can compute the 
+              conditional probability using Bayes theorem. Words beginning with 
+              upper case letters are variables in Prolog. Note that the third 
+              rule recursively calls itself to get the individual probabilities. 
+            </p>
+            <pre>
+getp(A,P) :-
+   p(A,P), !.
+getp(A^B, P) :-
+   cp(A^B, P), !.
+getp(A^B, P) :-
+   cp(B^A, Pba),
+   getp(A, Pa),
+   getp(B, Pb),
+   P is Pba * Pa / Pb.
+</pre>
+            <p> We now have a simple system for representing and querying knowledge 
+              expressed as probabilities. We can consult these facts and rules 
+              into a Prolog listener and try it:</p>
+            <pre>
+?- getp(patient(cancer), P).
+P = 0.1 
+
+?- getp(patient(smoker)^patient(cancer), P).
+P = 0.8 
+
+?- getp(patient(cancer)^patient(smoker), P).
+P = 0.16 
+</pre>
+            <p>One of the fun things about reading probability papers is they 
+              have <a href="http://www.rube-goldberg.com/html/gallery.htm">Rube 
+              Goldberg</a> like examples. Here's a more complex set of a chain 
+              of facts, probably relating to the author's vacation. This one comes 
+              from an online lecture available from <a href="#temple">Temple</a> 
+              University.</p>
+            <pre>p(bonus, 0.6).
+
+cp(money ^ bonus, 0.8).
+cp(money ^ not bonus, 0.3).
+
+cp(hawaii ^ money, 0.7).
+cp(Hawaii ^ not money, 0.1).
+
+cp(san_francisco ^ money, 0.2).
+cp(san_francisco ^ not money, 0.5).
+
+cp(wierd_people ^ san_francisco, 0.95).
+cp(wierd_people ^ not san_francisco, 0.6).
+
+cp(surfing ^ Hawaii, 0.75).
+cp(surfing ^ not Hawaii, 0.2).</pre>
+            <p>Note that in this case, except for bonus, we don't always have 
+              a direct probability that we can use to get P(A) when needed. There 
+              is another formula that can be used to compute P(A) from P(A|B) 
+              when needed.</p>
+            <p>P(A) = sum( P(A|B) * P(B) )</p>
+            <p>So in the example, if we wanted to compute P(surfing), it depends 
+              on P(Hawaii) which depends on P(money) which depends on P(bonus). 
+              We can expand our query rules to include linked probabilities like 
+              this. Prolog's recursion handles this nicely. (Prolog's findall 
+              finds all the instances and stores them in a list; we add a sum 
+              rule to add the elements in the list.)</p>
+            <p>We also need a rule to calculate not P, which probability theory 
+              says is 1 - P.</p>
+            <pre>
+getp(not A, P) :-
+   getp(A, Pn),
+   P is 1 - Pn, !.
+getp(A, P) :-
+  findall(P, (
+     cp(A ^ B, P1),
+     getp(B, P2),
+     P is P1*P2
+     ), L),
+  sum(L, P).
+
+sum(L, Sum) :-
+  sum(L, 0, Sum).
+sum([], Sum, Sum).
+sum([A|Z], Acc, Sum) :-
+  Acc2 is Acc + A,
+  !, sum(Z, Acc2, Sum).
+</pre>
+            <p>We can try this in a listener:</p>
+            <pre>
+?- getp(surfing, P).
+P = 0.453 
+</pre>
+            <p>We can also change the probability of the bonus, to see how that 
+              affects the probability of surfing.</p>
+            <pre>
+?- retract(p(bonus,_)).
+
+?- assert(p(bonus,0.3)).
+
+?- getp(surfing, P).
+P = 0.4035 
+</pre>
+            <p>That let's us see top down affects. What about rippling Bayes theorem 
+              back up to see what the fact that someone went surfing means for 
+              the probability they had a bonus? That's harder and requires propagating 
+              beliefs through the network. But its not too hard for graphs without 
+              loops, and there is a relatively straightforward algorithm for doing 
+              it that was originally published by Judea Pearl in 1988 in a book 
+              called <i>Probabilistic Reasoning in Intelligent Systems</i>, published 
+              by Morgan Kaufman.</p>
+            <p>There is a concise explanation of the algorithm in <a href="#facundo">Facundo 
+              Bromberg's</a> final project report, which describes a Java implementation 
+              of the algorithm. The <a href="#temple">Temple University</a> tutorial 
+              points to a Prolog program which does the same. The Prolog code 
+              is relatively obtuse unless you have the paper version of the algorithm 
+              to study as well.</p>
+            <p>Work in AI is all about knowledge representation and reasoning 
+              engines. Those two aspects are clear in this little example. The 
+              <b>p</b> and <b>cp</b> facts used above are a knowledge representation 
+              language for a probability network. The <b>getp</b> rules are a 
+              reasoning engine that uses that knowledge representation.</p>
+            <h2><a name="links"></a>Links</h2>
+            <h3><a name="links_aix"></a>The Best of AI Expert</h3>
+            <p>The June 1994 issue had three excellent articles on neural networks.</p>
+            <p><b>Object-Oriented Neural Networks</b> [Jun 1994] - Ivo Vondrak 
+              provides a clean object-oriented design for implementing your own 
+              neural network application.</p>
+            <p><b>Tuning Neural Networks with Genetic Algorithms</b> [Jun 1994] 
+              - Kurzweil has suggested the way to build an artificial brain is 
+              to have neural networks tuned with genetic algorithms, and some 
+              of the leading edge game-playing software is using the same approach. 
+              Dan Murray provides details of the approach in this article.</p>
+            <p><b>Activating Neural Networks: Part I</b> [Jun 1994] - Anthony 
+              Kempka looks into the details of activation functions, the little 
+              equations that decide when a neuron fires. He discusses a variety 
+              of functions and their impact on the behavior of a neural net, but 
+              also points out that the use of backpropagation for learning severely 
+              restricts the types of functions that can be used.</p>
+            <h3><a name="links_ai_in_medicine"></a>AI in Medicine</h3>
+            <p><a href="http://www.coiera.com/aimd.htm">http://www.coiera.com/aimd.htm</a> 
+              - This is a chapter from Enrico Coiera's book, &quot;Medical Informatics, 
+              The Internet and Telemedicine&quot;. It provides a good introduction 
+              to the topic of AI in medicine.<br>
+            </p>
+            <p><a href="http://www.elsevier.nl/locate/artmed">http://www.elsevier.nl/locate/artmed</a> 
+              - Elsevier, which published a number of learned journals, has one 
+              called Artificial Intelligence in Medicine. This is its home page.</p>
+            <h3><a name="links_quantum"></a>Quantum Computing</h3>
+            <p><a href="http://tph.tuwien.ac.at/%7Eoemer/qcl.html">http://tph.tuwien.ac.at/~oemer/qcl.html</a> 
+              Bernhard &Ouml;mer is working on Quantum Computer Language (QCL) 
+              which is aimed at overcoming some of the notational and usability 
+              issues that have confused those, including this editor, attempting 
+              to wrap their brains around programming with bits that are 0 and 
+              1 at the same time. He has software that can be downloaded and used, 
+              although I suspect it just simulates the quantum computer, so it 
+              can be run on Newtonian machines.</p>
+            <h3><a name="links_bayesian"></a>Bayesian Belief Networks</h3>
+            <p><a name="norman_fenton"></a><a href="http://www.dcs.qmul.ac.uk/%7Enorman/SERENE_Help/start.htm">http://www.dcs.qmul.ac.uk/~norman/SERENE_Help/start.htm</a> 
+              - Norman Fenton has included an excellent, not too technical, tutorial 
+              on probability and Bayesian belief networks (BBNs) in the documentation 
+              on SERENE, which is a safety and risk evaluation system that uses 
+              a BBN. There is a fascinating section on the difficulties people 
+              have in grasping realistic probabilities. The tutorial includes 
+              a good section on other resources for BBN information. </p>
+            <p><a name="temple"></a><a href="http://yoda.cis.temple.edu:8080/UGAIWWW/lectures/bnets.html">http://yoda.cis.temple.edu:8080/UGAIWWW/lectures/bnets.html</a> 
+              - Temple University has a number of interesting lectures available 
+              online. This is one on Bayesian belief networks and includes working 
+              Prolog source code for belief propagation in networks where there 
+              is only one path between nodes.</p>
+            <p><a name="facundo"></a><a href="http://www.public.iastate.edu/%7Ebromberg/cs572/finalproject/Report.pdf%20">http://www.public.iastate.edu/~bromberg/cs572/finalproject/Report.pdf</a> 
+              - Facundo Bromberg's AI Final Project Report has a clear, concise 
+              summary of the algorithm for belief propagation in networks without 
+              loops, or directed acyclic graphs (DAGs), which was originally published 
+              in Judea Pearl's 1988 book, <i>Probabilistic Reasoning in Intelligent 
+              Systems</i>, published by Morgan Kauffman.</p>
+            <p><a href="http://www.auai.org/">http://www.auai.org/</a> - Home 
+              page for Association for Uncertainty in Artificial Intelligence, 
+              lots of good links and pointers.</p>
+            <p><a href="http://www.ai.mit.edu/%7Emurphyk/Bayes/bayes.html">http://www.ai.mit.edu/~murphyk/Bayes/bayes.html</a> 
+              - Kevin Murphy has written an excellent in depth look at belief 
+              networks that doesn't shy away from equations and the difficult 
+              issues. It also has numerous links to other resources on BBNs.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

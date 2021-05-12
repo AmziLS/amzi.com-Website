@@ -1,0 +1,65 @@
+Amzi! Prolog + Logic Server End User License Agreement
+
+AMZI! INC. ("AMZI!") IS WILLING TO LICENSE THIS SOFTWARE TO YOU ONLY IF YOU ACCEPT ALL OF THE TERMS IN THIS LICENSE AGREEMENT. PLEASE READ THE TERMS CAREFULLY BEFORE USING THE SOFTWARE, BECAUSE BY INSTALLING THIS SOFTWARE YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THESE TERMS, AMZI! WILL NOT LICENSE THIS SOFTWARE TO YOU, AND YOU MAY NOT USE THE SOFTWARE. IN THAT CASE YOU SHOULD DESTROY ALL COPIES OF THIS SOFTWARE AND CONTACT AMZI! OR YOUR PLACE OF PURCHASE FOR A REFUND. 
+
+SOFTWARE LICENSE 
+
+Ownership of the Software. The enclosed Amzi! software program ("Software") and the accompanying written materials ("Documentation") are owned by Amzi! [or its suppliers] and are protected by United States copyright laws and by international treaties. The Software is licensed, not sold. 
+
+The Software is used by a programmer ("Developer") to create executable software "Programs" and the "Distributable Runtime" is used to run the Programs on a Windows, Unix or other operating system ("Platform"). "Windows" is any Windows operating system from Microsoft. "Unix" is any Unix-based operating system and includes Linux, BSD, NetBSD, Solaris and HP/UX. 
+
+Amzi! reserves all rights not expressly granted. 
+
+License Rights--The "Grant of License" section that applies to you depends on the Edition you are running and the type of license you have purchased. If you do not have a license key you are using the Free Edition. Licenses can be either for an "Individual" or "Enterprise".  An Enterprise might be a corporation, government organization, or academic institution.  Typically pricing will be different for academic use, but the license privileges are the same.
+
+The editions of the software are:
+
+Free Edition - non-distributable, personal development system for pure Prolog development and study. (no license key). 
+ 
+Full Edition - full-feature development system with integration to other tools and full-feature distributable runtime for professional and other use (requires license).
+
+Evaluation Edition - Full system for a limited time for evaluation. (requires activation).
+
+The Individual License privileges for each are:
+
+Free Edition Grant of License--Amzi! grants you the right to install and use the Software on one or more computers owned by you for your personal and/or educational use. You may not redistribute any other part of the Software. 
+
+Full Edition Grant of License--For each Individual License you have purchased, Amzi! grants to you, as an individual, the right to use a copy of the Software on one or more computers for your own individual use.  You may not install the software on a machine for another individual to use. You may distribute your Programs according to the terms of the "Amzi! Prolog Redistributable Runtime Software" paragraphs below.
+
+Amzi! Prolog Distributable Runtime Software--For each Individual License you have purchased, Amzi! grants to you the royalty-free right to reproduce and distribute an unlimited number of copies of: (1) the executable files (Program) created using the Software and (2) the Amzi! Prolog distributable runtime modules identified in the accompanying written materials as "Redistributable" provided that you: (a) write your Program with a licensed, activated copy of the Software, (b) do not include a Prolog compiler in your Program, (c) include the Redistributable modules only in conjunction with and as a part of your Program, (d) include a valid copyright notice and (e) agree to indemnify, hold harmless Amzi! and its suppliers from and against any claims or lawsuits, including reasonable attorney's fees, that arise or result from the use or distribution of your Program.
+
+Under no conditions may you distribute the source code, listener, IDE, compiler, linker, libraries or documentation included in this Software. Licensing arrangements different from these can be provided under special agreements.  Please contact Amzi! for details.  
+
+Evaluation Edition Grant of License--The privileges for Evaluation are the same as those for an Individual License, except that they expire after the allotted time period.  Redistribution of evaluation applications is allowed, but only during the allotted time period.
+
+The Enterprise License privileges are:
+
+Enterprise Grant of License--Every individual in the Enterprise, either commercial or non-commercial, has the same privileges and restrictions stated in the Full Edition Grant of License above.
+
+Other privileges and restrictions:
+
+Updates. Upon receipt of future updates of the Software (an "Update"), you may use or transfer the Update only in conjunction with your then existing Software. The Software and all Updates are licensed as a single product, and the Updates may not be separated from the Software for use by more than one individual at any time. 
+
+Restrictions on Use and Transfer. You may not copy the Software or Documentation except solely for your Individual or Enterprise use. You may not rent, lease, lend or provide commercial hosting services with the Software or otherwise transfer or assign the right to use the Software except as provided below. You may not reverse engineer, decompile, or disassemble the Software, except and only to the extent that such activity is expressly permitted by applicable law. You may not create derivative works from the Software or the Documentation. 
+
+Sample Code. You have a royalty-free license to incorporate the source code for the modules designated as "Samples" into your own Programs and distribute the executable files created from that source code according to the terms stated above.
+
+Export Restrictions. This Software is subject to U.S. Export Administration Regulations. You may not acquire, ship, transfer, or reexport the Software into any country or to any person or entity prohibited by the Regulations including, but not limited to, the countries of Cuba, Iran, Iraq, Libya, North Korea, Sudan, and Syria. You warrant and represent that neither the U.S.A. Bureau of Export Administration nor any other federal agency has suspended, revoked or denied your export privileges. This license is valid only for use within the country of the original purchaser or, if purchased in the EEC (European Economic Community), within any country in the EEC. 
+
+Termination. Amzi! may terminate this Agreement if you fail to comply with its terms and conditions. In such event, you must destroy all copies of the Software. 
+
+General. Whenever possible, each provision of this License Agreement shall be interpreted in a manner as to be valid and effective under applicable law. If any provision is found to be unlawful, void or for any reason unenforceable, then that provision shall be deemed severable from this License Agreement and shall not affect the validity and enforceability of the remaining provisions. This Agreement is governed by the laws of the State of North Carolina. For questions concerning this Agreement, please contact Amzi! inc. 83 Vance Crescent Ext., Asheville, NC 28806 U.S.A., Telephone +1-828-350-0350. 
+
+LIMITED WARRANTY 
+
+Amzi! warrants that the Software will perform substantially in accordance with the accompanying Documentation for a period of 90 days from the date of your receipt of the Software. Any implied warranties on the Software are limited to 90 days. Some states do not allow limitations on duration of an implied warranty, so the above limitation may not apply to you. 
+
+AMZI! DISCLAIMS ALL OTHER WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT, WITH RESPECT TO THE SOFTWARE AND THE ACCOMPANYING WRITTEN MATERIALS. This limited warranty gives you specific legal rights. You may have others, which vary from state to state. 
+
+AMZI! INC.'S ENTIRE LIABILITY AND YOUR EXCLUSIVE REMEDY SHALL BE, AT AMZI! INC.'S CHOICE, EITHER (A) RETURN OF THE PRICE PAID OR (B) REPLACEMENT OF THE SOFTWARE THAT DOES NOT MEET AMZI! INC.'S LIMITED WARRANTY AND WHICH IS RETURNED TO AMZI! WITH A COPY OF YOUR RECEIPT. Any replacement Software will be warranted for the remainder of the original warranty period or 30 days, whichever is longer. 
+
+IN NO EVENT WILL AMZI! BE LIABLE TO YOU FOR DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ANY LOSS OF PROFITS, LOST SAVINGS, BUSINESS INTERRUPTION, LOSS OF INFORMATION OR ANY OTHER PECUNIARY LOSS) OR OTHER INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE SOFTWARE, EVEN IF AMZI! HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. Because some states do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to you. 
+
+U.S. GOVERNMENT RESTRICTED RIGHTS 
+
+The Software and documentation are provided with Restricted Rights. Use, duplication, or disclosure by the Government is subject to restrictions set forth in subparagraph (c)(1) of The Rights in Technical Data and Computer Software clause at DFARS 252.227-7013 or subparagraphs (c)(1) and (2) of Professional Computer Software-Restricted Rights at 48 CFR 52.227-19, as applicable. Manufacturer is Amzi! inc. 83 Vance Crescent Ext., Asheville, NC 28806 U.S.A. 

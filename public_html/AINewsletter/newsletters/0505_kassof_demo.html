@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"        "http://www.w3.org/TR/xhtml1/DTDn/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><title>Change Event</title><meta http-equiv="content-type" content="text/html; charset=windows-1252" /><script type="text/javascript">var startMenuSet = false;var endMenuSet = false;var durationMenuSet = false;
+function endMenuChanged() {
+	var endMenu = document.getElementById("endMenu");	var endIndex = endMenu.selectedIndex;	var endMinutes = eval(endMenu[endIndex].value);		var startMenu = document.getElementById("startMenu");	var startIndex = startMenu.selectedIndex;	var startMinutes = eval(startMenu[startIndex].value);	var durationMenu = document.getElementById("durationMenu");	var durationIndex = durationMenu.selectedIndex;	var durationMinutes = eval(durationMenu[durationIndex].value);
+
+	endMenu.style.fontStyle = "normal";
+
+	if(endIndex > 0) {
+		endMenuSet = true;
+	} else {
+		endMenuSet = false;		
+	}
+
+	if(startMinutes >= endMinutes) {		startMenu.selectedIndex = 0;
+		startMenuSet = false;
+		if (!durationMenuSet && durationIndex > 0) {
+			durationMenu.selectedIndex = 0;
+			durationMenuSet = false;
+		}
+		startMenu.style.color = "black";
+		endMenu.style.color = "black";
+		durationMenu.style.color = "black";	}
+
+	if(durationMenuSet && endMinutes - durationMinutes < 360) {		durationMenu.selectedIndex = 0;
+		durationMenuSet = false;
+		if (!startMenuSet && startIndex > 0) {
+			startMenu.selectedIndex = 0;
+			startMenuSet = false;
+		}
+		startMenu.style.color = "black";
+		endMenu.style.color = "black";
+		durationMenu.style.color = "black";	}
+
+
+	if (!durationMenuSet && startMenuSet) {		if (endMenuSet && startIndex > 0 && endIndex > 0 && endMinutes > startMinutes) {			durationMenu.selectedIndex = (endMinutes - startMinutes) / 60;
+			durationMenu.style.fontStyle = "italic";		} else {			durationMenu.selectedIndex = 0;
+			durationMenu.style.fontStyle = "normal";		}	}
+
+	if (durationMenuSet && !startMenuSet) {		if (endMenuSet && endIndex > 0) {			startMenu.selectedIndex = (endMinutes - durationMinutes) / 60 - 5;
+			startMenu.style.fontStyle = "italic";		} else {			startMenu.selectedIndex = 0;
+			startMenu.style.fontStyle = "normal";		}	}
+
+	if (endMenuSet && endMinutes == 420) {
+		if (!durationMenuSet) {
+			durationMenu.selectedIndex = 1;
+			durationMenu.style.fontStyle = "italic";
+		}
+		if (!startMenuSet) {
+			startMenu.selectedIndex = 1;
+			startMenu.style.fontStyle = "italic";
+		}
+	}
+
+	if ((!endMenuSet || endMinutes != 420) && !startMenuSet && !durationMenuSet) {
+		startMenu.selectedIndex = 0;
+		durationMenu.selectedIndex = 0;
+	}
+
+	if (startMenuSet && durationMenuSet) {
+		if(endMenuSet && startMinutes + durationMinutes != endMinutes) {
+			startMenu.style.color = "red";
+			endMenu.style.color = "red";
+			durationMenu.style.color = "red";
+		} else {
+			startMenu.style.color = "black";
+			endMenu.style.color = "black";
+			durationMenu.style.color = "black";
+		}
+	}
+	var minutes;	for (var i = 0; i < startMenu.length; i++) {
+		minutes = eval(startMenu[i].value);
+
+		if (durationMenuSet && endMenuSet) {
+			if(minutes + durationMinutes == endMinutes) {
+				startMenu[i].style.fontStyle = "italic";
+				startMenu[i].style.color="black";
+			} else {
+				startMenu[i].style.fontStyle = "normal";
+				startMenu[i].style.color="red";
+			}
+		} else if ((endMenuSet && minutes >= endMinutes) || (durationMenuSet && minutes + durationMinutes > 1440)) {
+			startMenu[i].style.fontStyle = "normal";			startMenu[i].style.color="red";		} else {
+			startMenu[i].style.fontStyle = "normal";			startMenu[i].style.color="black";		}	}
+
+	for (var i = 0; i < endMenu.length; i++) {		minutes = eval(endMenu[i].value);
+
+		if (durationMenuSet && startMenuSet) {
+			if(startMinutes + durationMinutes == minutes) {
+				endMenu[i].style.fontStyle = "italic";
+				endMenu[i].style.color="black";
+			} else {
+				endMenu[i].style.fontStyle = "normal";
+				endMenu[i].style.color="red";
+			}
+		} else if ((startMenuSet && minutes <= startMinutes) || (durationMenuSet && minutes < 360 + durationMinutes)) {
+			endMenu[i].style.fontStyle = "normal";			endMenu[i].style.color="red";		} else {
+			endMenu[i].style.fontStyle = "normal";			endMenu[i].style.color="black";		}	}
+
+	for (var i = 0; i < durationMenu.length; i++) {
+		minutes = eval(durationMenu[i].value);
+
+		if (startMenuSet && endMenuSet) {
+			if(minutes == endMinutes - startMinutes) {
+				durationMenu[i].style.fontStyle = "italic";
+				durationMenu[i].style.color="black";
+			} else {
+				durationMenu[i].style.fontStyle = "normal";
+				durationMenu[i].style.color="red";
+			}
+		} else if ((startMenuSet && minutes + startMinutes > 1440) || (endMenuSet && endMinutes < 360 + minutes)) {
+			durationMenu[i].style.fontStyle = "normal";
+			durationMenu[i].style.color="red";		} else {
+			durationMenu[i].style.fontStyle = "normal";			durationMenu[i].style.color="black";		}	}}function startMenuChanged() {	var startMenu = document.getElementById("startMenu");	var startIndex = startMenu.selectedIndex;	var startMinutes = eval(startMenu[startIndex].value);		var endMenu = document.getElementById("endMenu");	var endIndex = endMenu.selectedIndex;	var endMinutes = eval(endMenu[endIndex].value);
+	
+	var durationMenu = document.getElementById("durationMenu");	var durationIndex = durationMenu.selectedIndex;	var durationMinutes = eval(durationMenu[durationIndex].value);
+
+	startMenu.style.fontStyle = "normal";
+
+	if(startIndex > 0) {
+		startMenuSet = true;
+	} else {
+		startMenuSet = false;
+	}
+	if(startMinutes >= endMinutes) {		endMenu.selectedIndex = 0;
+		endMenuSet = false;
+		if (!durationMenuSet && durationIndex > 0) {
+			durationMenu.selectedIndex = 0;
+			durationMenuSet = false;
+		}
+		startMenu.style.color = "black";
+		endMenu.style.color = "black";
+		durationMenu.style.color = "black";	}
+
+	if(durationMenuSet && startMinutes + durationMinutes > 1440) {		durationMenu.selectedIndex = 0;
+		durationMenuSet = false;
+		if (!endMenuSet && endIndex > 0) {
+			endMenu.selectedIndex = 0;
+			endMenuSet = false;
+		}
+		startMenu.style.color = "black";
+		endMenu.style.color = "black";
+		durationMenu.style.color = "black";	}	if (!durationMenuSet && endMenuSet) {		if (startMenuSet && startIndex > 0 && endIndex > 0 && endMinutes > startMinutes) {			durationMenu.selectedIndex = (endMinutes - startMinutes) / 60;
+			durationMenu.style.fontStyle = "italic";
+		} else {			durationMenu.selectedIndex = 0;
+			durationMenu.style.fontStyle = "normal";		}	}
+
+	if (durationMenuSet && !endMenuSet) {		if (startMenuSet && startIndex > 0) {			endMenu.selectedIndex = (startMinutes + durationMinutes) / 60 - 6;
+			endMenu.style.fontStyle = "italic";
+		} else {			endMenu.selectedIndex = 0;
+			endMenu.style.fontStyle = "normal";		}	}
+
+	if (startMenuSet && startMinutes == 1380) {
+		if (!durationMenuSet) {
+			durationMenu.selectedIndex = 1;
+			durationMenu.style.fontStyle = "italic";
+		}
+		if (!endMenuSet) {
+			endMenu.selectedIndex = endMenu.length - 1;
+			endMenu.style.fontStyle = "italic";
+		}
+	}
+
+	if (!endMenuSet && (!startMenuSet || startMinutes != 1380) && !durationMenuSet) {
+		endMenu.selectedIndex = 0;
+		durationMenu.selectedIndex = 0;
+	}
+
+	if (durationMenuSet && endMenuSet) {
+		if(startMenuSet && startMinutes + durationMinutes != endMinutes) {
+			startMenu.style.color = "red";
+			endMenu.style.color = "red";
+			durationMenu.style.color = "red";
+		} else {
+			startMenu.style.color = "black";
+			endMenu.style.color = "black";
+			durationMenu.style.color = "black";
+		}
+	}	var minutes;
+	for (var i = 0; i < startMenu.length; i++) {
+		minutes = eval(startMenu[i].value);
+
+		if (durationMenuSet && endMenuSet) {
+			if(minutes + durationMinutes == endMinutes) {
+				startMenu[i].style.fontStyle = "italic";
+				startMenu[i].style.color="black";
+			} else {
+				startMenu[i].style.fontStyle = "normal";
+				startMenu[i].style.color="red";
+			}
+		} else if ((endMenuSet && minutes >= endMinutes) || (durationMenuSet && minutes + durationMinutes > 1440)) {
+			startMenu[i].style.fontStyle = "normal";			startMenu[i].style.color="red";		} else {
+			startMenu[i].style.fontStyle = "normal";			startMenu[i].style.color="black";		}	}	for (var i = 0; i < endMenu.length; i++) {		minutes = eval(endMenu[i].value);
+
+		if (durationMenuSet && startMenuSet) {
+			if(startMinutes + durationMinutes == minutes) {
+				endMenu[i].style.fontStyle = "italic";
+				endMenu[i].style.color="black";
+			} else {
+				endMenu[i].style.fontStyle = "normal";
+				endMenu[i].style.color="red";
+			}
+		} else if ((startMenuSet && minutes <= startMinutes) || (durationMenuSet && minutes < 360 + durationMinutes)) {
+			endMenu[i].style.fontStyle = "normal";			endMenu[i].style.color="red";		} else {
+			endMenu[i].style.fontStyle = "normal";			endMenu[i].style.color="black";		}	}
+	for (var i = 0; i < durationMenu.length; i++) {
+		minutes = eval(durationMenu[i].value);
+
+		if (startMenuSet && endMenuSet) {
+			if(minutes == endMinutes - startMinutes) {
+				durationMenu[i].style.fontStyle = "italic";
+				durationMenu[i].style.color="black";
+			} else {
+				durationMenu[i].style.fontStyle = "normal";
+				durationMenu[i].style.color="red";
+			}
+		} else if ((startMenuSet && minutes + startMinutes > 1440) || (endMenuSet && endMinutes < 360 + minutes)) {
+			durationMenu[i].style.fontStyle = "normal";
+			durationMenu[i].style.color="red";		} else {
+			durationMenu[i].style.fontStyle = "normal";			durationMenu[i].style.color="black";		}	}}
+
+function durationMenuChanged() {	var startMenu = document.getElementById("startMenu");	var startIndex = startMenu.selectedIndex;	var startMinutes = eval(startMenu[startIndex].value);		var endMenu = document.getElementById("endMenu");	var endIndex = endMenu.selectedIndex;	var endMinutes = eval(endMenu[endIndex].value);	var durationMenu = document.getElementById("durationMenu");	var durationIndex = durationMenu.selectedIndex;	var durationMinutes = eval(durationMenu[durationIndex].value);
+
+	durationMenu.style.fontStyle = "normal";
+
+	if(durationIndex > 0) {
+		durationMenuSet = true;
+	} else {
+		durationMenuSet = false;
+	}
+
+	if(durationMenuSet && startMinutes + durationMinutes > 1440) {		startMenu.selectedIndex = 0;
+		startMenuSet = false;
+		if (!endMenuSet && endIndex > 0) {
+			endMenu.selectedIndex = 0;
+			endMenuSet = false;
+		}
+		startMenu.style.color = "black";
+		endMenu.style.color = "black";
+		durationMenu.style.color = "black";	}
+
+	if(durationMenuSet && endMenuSet && endMinutes - durationMinutes < 360) {		endMenu.selectedIndex = 0;
+		endMenuSet = false;
+		if (!startMenuSet && startIndex > 0) {
+			startMenu.selectedIndex = 0;
+			startMenuSet = false;
+		}
+		startMenu.style.color = "black";
+		endMenu.style.color = "black";
+		durationMenu.style.color = "black";	}
+
+	if (startMenuSet && !endMenuSet) {		if (durationMenuSet && durationIndex > 0) {			endMenu.selectedIndex = (startMinutes + durationMinutes) / 60 - 6;
+			endMenu.style.fontStyle = "italic";		} else {			endMenu.selectedIndex = 0;
+			endMenu.style.fontStyle = "normal";		}	}
+
+	if (endMenuSet && !startMenuSet) {		if (durationMenuSet && durationIndex > 0) {			startMenu.selectedIndex = (endMinutes - durationMinutes) / 60 - 5;
+			startMenu.style.fontStyle = "italic";		} else {			startMenu.selectedIndex = 0;
+			startMenu.style.fontStyle = "normal";		}	}
+
+	if (durationMenuSet && durationMinutes == 1080) {
+		if (!startMenuSet) {
+			startMenu.selectedIndex = 1;
+			startMenu.style.fontStyle = "italic";
+		}
+		if (!endMenuSet) {
+			endMenu.selectedIndex = endMenu.length - 1;
+			endMenu.style.fontStyle = "italic";
+		}
+	}
+
+	if (!endMenuSet && !startMenuSet && (!durationMenuSet || durationMinutes != 1080)) {
+		endMenu.selectedIndex = 0;
+		startMenu.selectedIndex = 0;
+	}
+
+
+	if (startMenuSet && endMenuSet) {
+		if(durationMenuSet && startMinutes + durationMinutes != endMinutes) {
+			startMenu.style.color = "red";
+			endMenu.style.color = "red";
+			durationMenu.style.color = "red";
+		} else {
+			startMenu.style.color = "black";
+			endMenu.style.color = "black";
+			durationMenu.style.color = "black";
+		}
+	}
+
+	for (var i = 0; i < startMenu.length; i++) {
+		minutes = eval(startMenu[i].value);
+
+		if (durationMenuSet && endMenuSet) {
+			if(minutes + durationMinutes == endMinutes) {
+				startMenu[i].style.fontStyle = "italic";
+				startMenu[i].style.color="black";
+			} else {
+				startMenu[i].style.fontStyle = "normal";
+				startMenu[i].style.color="red";
+			}
+		} else if ((endMenuSet && minutes >= endMinutes) || (durationMenuSet && minutes + durationMinutes > 1440)) {
+			startMenu[i].style.fontStyle = "normal";			startMenu[i].style.color="red";		} else {
+			startMenu[i].style.fontStyle = "normal";			startMenu[i].style.color="black";		}	}	for (var i = 0; i < endMenu.length; i++) {		minutes = eval(endMenu[i].value);
+
+		if (durationMenuSet && startMenuSet) {
+			if(startMinutes + durationMinutes == minutes) {
+				endMenu[i].style.fontStyle = "italic";
+				endMenu[i].style.color="black";
+			} else {
+				endMenu[i].style.fontStyle = "normal";
+				endMenu[i].style.color="red";
+			}
+		} else if ((startMenuSet && minutes <= startMinutes) || (durationMenuSet && minutes < 360 + durationMinutes)) {
+			endMenu[i].style.fontStyle = "normal";			endMenu[i].style.color="red";		} else {
+			endMenu[i].style.fontStyle = "normal";			endMenu[i].style.color="black";		}	}
+	for (var i = 0; i < durationMenu.length; i++) {
+		minutes = eval(durationMenu[i].value);
+
+		if (startMenuSet && endMenuSet) {
+			if(minutes == endMinutes - startMinutes) {
+				durationMenu[i].style.fontStyle = "italic";
+				durationMenu[i].style.color="black";
+			} else {
+				durationMenu[i].style.fontStyle = "normal";
+				durationMenu[i].style.color="red";
+			}
+		} else if ((startMenuSet && minutes + startMinutes > 1440) || (endMenuSet && endMinutes < 360 + minutes)) {
+			durationMenu[i].style.fontStyle = "normal";
+			durationMenu[i].style.color="red";		} else {
+			durationMenu[i].style.fontStyle = "normal";			durationMenu[i].style.color="black";		}	}}
+</script></head><body style="background: #F5F5DC; color: #000000"><br /><form action="CHANGE?" method="post" name="form1"><fieldset><legend style="font-family:Arial; color:#993333; background: none"><b>Logical Spreadsheet Demo</b></legend><table cellspacing="3"><tbody><tr><th align="left" valign="top" style="color:#660099">Start</th><td valign="top">  </td><td><select id="startMenu" onchange="startMenuChanged()"><option></option><option value="360">6:00 am</option><option value="420">7:00 am</option><option value="480">8:00 am</option><option value="540">9:00 am</option><option value="600">10:00 am</option><option value="660">11:00 am</option><option value="720">12:00 pm</option><option value="780">1:00 pm</option><option value="840">2:00 pm</option><option value="900">3:00 pm</option><option value="960">4:00 pm</option><option value="1020">5:00 pm</option><option value="1080">6:00 pm</option><option value="1140">7:00 pm</option><option value="1200">8:00 pm</option><option value="1260">9:00 pm</option><option value="1320">10:00 pm</option><option value="1380">11:00 pm</option></select></td><td></td></tr><tr><th align="left" valign="top" style="color:#660099">End</th><td valign="top">  </td><td><select id="endMenu" onchange="endMenuChanged()"><option></option><option value="420">7:00 am</option><option value="480">8:00 am</option><option value="540">9:00 am</option><option value="600">10:00 am</option><option value="660">11:00 am</option><option value="720">12:00 pm</option><option value="780">1:00 pm</option><option value="840">2:00 pm</option><option value="900">3:00 pm</option><option value="960">4:00 pm</option><option value="1020">5:00 pm</option><option value="1080">6:00 pm</option><option value="1140">7:00 pm</option><option value="1200">8:00 pm</option><option value="1260">9:00 pm</option><option value="1320">10:00 pm</option><option value="1380">11:00 pm</option><option value="1440">12:00 am</option></select></td><td></td></tr><tr><th align="left" valign="top" style="color:#660099">Duration</th><td valign="top">  </td><td><select id="durationMenu" onchange="durationMenuChanged()"><option></option><option value="60">1 hour</option><option value="120">2 hours</option><option value="180">3 hours</option><option value="240">4 hours</option><option value="300">5 hours</option><option value="360">6 hours</option><option value="420">7 hours</option><option value="480">8 hours</option><option value="540">9 hours</option><option value="600">10 hours</option><option value="660">11 hours</option><option value="720">12 hours</option><option value="780">13 hours</option><option value="840">14 hours</option><option value="900">15 hours</option><option value="960">16 hours</option><option value="1020">17 hours</option><option value="1080">18 hours</option></select></td><td></td></tr></tbody></table></fieldset></form>
+This demo requires a modern browser with JavaScript turned on.  For the full experience, it requires  the Mozilla Firefox browser.  Internet Explorer 6 works well also.
+</body></html>

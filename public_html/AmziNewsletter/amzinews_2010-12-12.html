@@ -1,0 +1,173 @@
+<html>
+
+<head>
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#ffffff">
+    <tr> 
+      <td valign="top" align="left" colspan="3" width="740"><img src="http://www.amzi.com/AmziNewsletter/images/amzi_newsletter.jpg" width="700" height="125"></td>
+    </tr>
+</table>
+
+<table width="700" border="0" bordercolor="#000000" cellspacing="5" cellpadding="5"  bgcolor="#FFFFCC">
+  <tr>
+    <td width="350" valign="top">
+    <h3 align="left"><a href="http://www.amzi.com">www.amzi.com</a></h3>
+    </td>
+    <td width="350" valign="top">
+    <h3 align="right"> 2010-12-12 </h3>
+    </td>
+</tr>
+</table>
+
+<table width="700" border="1" bordercolor="#000000" cellspacing="5" cellpadding="5"  bgcolor="#FFFFCC">
+  <tr>
+    <td width="700" valign="top">
+
+    <h2 align = "center">Contents</h2>
+    <ul>
+    <li> Introduction</li>
+    <li>Domain Specific Languages - knowledge representation</li>
+    <li>Notes from the forum - knowledge representation for chess problems</li>
+    </ul>
+    
+    <hr>
+    <h2 align = "center">Welcome</h2>
+    <p>To read this newsletter on the Web: <a href="http://www.amzi.com/AmziNewsletter/index.php">Read on the Web</a><br/>
+      To unsubscribe: 
+      <unsubscribe>Unsubscribe</unsubscribe><br/>
+      To subscribe: <a href="http://www.amzi.com">Subscribe</a>    </p>
+    <p>Welcome to the next Amzi! newsletter. In the <a href="amzinews_2010-11-07.html">last issue</a> we introduced our new pricing schedules, introduced the topic of Domain Specific Languages (DSLs), and had a selection from the forum.</p>
+    <p>First, let me thank all those who purchased the new individual licenses, and those institutions which purchased site licenses. For those wishing to purchase licenses, either as individuals or for your educational or commercial institution, please visit the <a href="../AmziPrologLogicServer/store.php">Amzi! store</a>.</p>
+    <p>You can also download the free version of Amzi! Prolog without the Logic Server there as well.</p>
+    <p>On DSLs, we covered the three steps towards implenting one. 1) Knowledge representation, 2) Reasoning engine, and 3) API for embedding the DSL.</p>
+    <p>In this newsletter we'll introduce the sample decision tree domain and show one way to implement the knowledge representation.</p>
+    <p>The 'From the Forum' section by Chip Eastham also discusses the importance of knowledge representation for building applications in Prolog.</p>
+    <hr>
+
+    <h2 align="center"> Domain-Specific Languages </h2>
+    <p> Prolog is exceptionally well suited for developing domain-specific languages (DSL). In this newsletter we will illustrate this by implementing a system that automates the decision trees used by a bank working with Amzi!. Their use of decision trees makes sense for this application, as it has often been said that decision trees are the easiest form of knowledge representation for people to understand.</p>
+    <p>The decision trees for this application are used to classify financial products based on the sorts of investments they contain. They are constructed so that each node has only a yes/no exit from it.</p>
+    <p>Here are two examples. The first is a simple tree that determines whether a fund can be called a fixed income fund or not. While the first tree is simple, the criteria at node #2 is relatively complex, and involves determining the values of a number of facts pertinent to the decision.</p>
+    <p><img src="http://www.amzi.com/AmziNewsletter/images/dtree_bonds_1.jpg" width="650" height="220"></p>
+    <p>As with any software development, one of the key decisions is names. For this application we need names for the decision trees and names for the facts used by and derived from the trees. We've call the first tree <b>fixed_income_relevance</b>. The fact that it produces a value for we call <b>fixed_income</b>. It's value is either true or false depending on the path taken.</p>
+    <p>The second tree is more complex and representative of the rest of the trees. It represents the second step in a multistep process used to fully define and classify a fund. The trees do refer to each other, so a node in one tree might be using a fact that is determined by another.</p>
+    <p><img src="http://www.amzi.com/AmziNewsletter/images/dtree_bonds_2.jpg" width="650" height="406"></p>
+    <p>This tree is given the name <b>bond_universe</b> and the fact it determines is <b>bond_universe_classification</b> with values like money_market or emerging_markets.</p>
+    <p>There are three issues with representing these trees in code. How to represent:</p>
+    <ul>
+      <li>Each node of the tree,</li>
+      <li>The decision criteria at each node, and</li>
+      <li>The facts which need user input.</li>
+    </ul>
+    <h3>The Nodes</h3>
+    <p>Frames are a common way to represent complex data structures. A frame is composed of a collection of slots, each of which has values. For the nodes of the tree, we need a frame with slots for:</p>
+    <ul>
+      <li>The criteria,</li>
+      <li>Where to go if true, and</li>
+      <li>Where to go if false.</li>
+      </ul>
+      <p>(Note that for this particular bank, the decision tree nodes are all yes/no decisions, so our Domain Specific Language for them reflects that.  In the future, we might want to expand the decision tree model so that it can react to a wider variety of possibilities at each node.)</p>
+    <p>Frame-like structures are easy to represent in Prolog using a combination of Prolog structures and lists. The structure holds the basic frame, and a list is used for the slots. Thus, the first node of the first tree can be represented like this:</p>
+        <p>(If you are new to Prolog, read <a href="http://www.amzi.com/AdventureInProlog/index.php">Adventure in Prolog</a> or any of the other excellent online tutorials.)</p>
+
+
+    <pre>dtree_node(fixed_income_relevance:1, [
+   criteria =
+     ( fixed_income_percentage >= 90 ),
+   yes = fixed_income_relevance:2,
+   no = fixed_income_relevance:4 ]).</pre>
+    <p>It represents the knowledge of the first node, which is if the <b>fixed_income_percentage</b> is greater or equal to 90, then go to node #2, otherwise go to node #4.</p>
+    <p>The predicate, <b>dtree_node/2</b>, is used to define the node frames. The first argument is an identifier for the node. In this case it is the name of the decision tree followed by the number of the node.</p>
+    <p>The second argument of <b>dtree_node/2</b> is a list of attribute = value pairs for the slots, where the attributes are <b>criteria</b>, <b>yes</b> (where to go if the criteria is true), and <b>no</b> (where to go if the criteria is false).</p>
+    <h3>The Criteria</h3>
+    <p>Node 2 from the first decision tree has a much more complicated criteria. We express  it's node like this:</p>
+    <pre>dtree_node(fixed_income_relevance:2, [
+   criteria =
+     ( convertibles_percentage =< 70 and
+       asset_backed_percentage + mortgage_backed_percentage =< 90 and
+       equity_percentage == 0 and
+       cash_percentage + other_percentage =< 10 ),
+   yes = fixed_income_relevance:3,
+   no = fixed_income_relevance:4 ]).</pre>
+   <p>Here we can see the second design decision, which is how to express the criteria. We've decided on a notation using fact names, comparison operators and logical ands and ors.  We do have to define 'and' and 'or' as Prolog infix operators, using the same precedence and associativity as the standard ',' and ';' Prolog operators.</p>
+   <pre>:- op(1000, xfy, and).
+:- op(1100, xfy, or).</pre>
+   <p>This notation makes the criteria easy to read and verify because it is very close to the original specification. It is also not difficult to write Prolog code in the reasoning engine that can evaluate the criteria expressed in this manner.</p>
+   <p>The final two nodes of the first decision tree are terminal, or ending nodes. There are no criteria, just simply the setting of the value of a fact. The fact name we've used for this decision tree is fixed_income. Here's the two terminal nodes setting the two choices:</p>
+   <pre>dtree_node(fixed_income_relevance:3, [
+   terminal,
+   fact = fixed_income,
+   value = true ]).
+dtree_node(fixed_income_relevance:4, [
+   terminal,
+   fact = fixed_income,
+   value = false ]).
+</pre>
+   <p>We can similarly encode the nodes for the second decision tree as well. Here, for example, is the representation of node 3 of the second tree:</p>
+   <pre>dtree_node(bond_universe:3, [
+   criteria =
+     ( junk_emerging_market_bond_exposure_percent >= 10
+       or
+       convertibles_percentage >= 20
+       or
+       asset_backed_percentage + mortgage_backed_percentage =< 20 ),
+   yes = bond_universe:8,
+   no  = bond_universe:5 ]).</pre>
+   <p>It illustrates the use of 'or' in the criteria.</p>
+   <h3>The Facts</h3>
+   <p>The next issue is representing the facts. They need to by tied to questions implied in the original document.</p>
+   <p>Look again at node #1 of the fixed_income_relevance tree and notice it asks for the percentage which is fixed income. We represent that fact as <b>fixed_income_percentage</b>, and then create a frame structure for representing a fact and it's related prompts. Here is the frame for that first fact:</p>
+   <pre>fact(fixed_income_percentage, [
+   prompt = english : `What percentage is fixed income?` ]).
+</pre>
+   <p>Note that this frame structure can also accomodate additional slots for translations of the questions into other languages. This could also be made more complex by adding slots that are used for validation of the input, but for this simple prototype we leave that part out.</p>
+   <p>Similarly, we can add the rest of the required facts for the first decision tree.</p>
+   <pre>fact(asset_backed_percentage, [
+   prompt = english : `What percentage is asset backed?` ]).
+fact(cash_percentage, [
+   prompt = english : `What percentage is cash?` ]).
+fact(convertibles_percentage, [
+   prompt = english : `What percentage is convertibles?` ]).
+fact(equity_percentage, [
+   prompt = english : `What percentage is equities?` ]).
+fact(mortgage_backed_percentage, [
+   prompt = english : `What percentage is mortgage backed?` ]).
+fact(other_percentage, [
+   prompt = english : `What percentage is others?` ]).
+</pre>
+   <h3>What's Next</h3>
+   <p>The next issue of this newsletter will go into implementing a reasoning engine that makes use of this knowledge representation. When asked to find the value of fixed_income, it will go to the first tree, start at node #1 and work it's way towards finding a value, asking questions as needed along the way.</p>
+   <p>But for now, we've got knowledge being encoded in a way that is very close to the original specification. This makes it easier to encode the knowledge, and makes the programming task of mapping the original specifications into coded structures much less error prone and more readily adapted to changing business requirements.</p>
+   <p>The knowledge representation has also been constrained to fit within standard Prolog syntax with the addition of definitions of the operators 'and' and 'or'. Another option would have been to design a completely unique syntax and then use Prolog's Definite Clause Grammar capability to parse that syntax into structures such as the ones we used.</p>
+   <p>One could also make a graphical front end on the knowledge representation, so that the knowledge engineer could manipulate symbols directly, and then use the Logic Server API to call Prolog for the creation of the internal representation above.</p>
+   <p>For example, it could be incorporated into the Eclipse tools for application development. A plug-in could be written that works with the Amzi! Eclipse plug-in to allow graphics and this representation to work together.</p>
+   <p>Dennis Merritt</p>
+   <hr>
+    <h2 align="center">From the Forum<br/>
+    Knowledge Representation for Knights</h2>
+    <p>[Re: prolog, knight attack in one-dimenstional array]<br>
+      [Chip is responding here to inquiries on how to represent knight moves in chess. ed.]</p>
+    <p>Well, trying things is good. Perhaps you can see the point of my tactical suggestion, that the representation of the chessboard squares be useful for answering the question of what squares are attacked by a knight.</p><p>
+      You've asked about taking a general NxN chessboard and representing it positionally as a "one-dimensional array" (actually, this being Prolog, we'd likely settle for a list). It becomes difficult to figure out which knight moves are possible, right?</p><p>
+      Let's go the other direction. How can we describe the knight's move? Then what representation of squares will make that easy to say in Prolog?</p><p>
+    ...</p>
+    <p>At the risk of saying too much, here's a more explicit suggestion.</p><p>
+        Prolog allows us a lot of freedom with the language. We can invent "functors" that construct terms from (usually simpler) terms.</p><p>
+        Here we need to represent the squares of a chessboard (or chessboards of varying sizes, NxN).</p><p>
+        The positional representation, even as a two-dimensional array, is not very helpful, and flattening it to a one-dimensional array even less so, when we need to define what square attacks another viz-a-viz the knight's move. If a positional representation is useful, e.g. for display purposes, one can always be reconstructed from a more explict representation.</p><p>
+        What would this be? Consider the chess notations. They vary, but in addition to a provision for designating chess pieces (which we don't necessarily need if all the pieces are knights) the game notation has to designate squares, generally both the from and the to squares. Some modified Cartesian coordinates are employed for this.</p><p>
+        So I suggest letting a functor&nbsp;cSqr/2&nbsp;that gives the square as constructed from rank and file numbers. Eg. cSqr(1,1) through cSqr(8,8) for a canonical chessboard. The chessboard itself could then be a list of all the valid squares, which of course depends on the size N chosen.</p><p>
+        With this representation a predicate that defines a knight's move can be concisely expressed in arithmetic terms. Either the ranks differ in absolute value by 1 and the files by 2, or vice versa.</p><p>
+        regards, chip</p>    </td>
+  </tr>
+</table>
+<p>The Amzi! Newsletter is sent periodically to Amzi! inc. customers and subscribers.<br />
+    Click here if you do not want to receive future Amzi! Newsletters: <unsubscribe>Unsubscribe</unsubscribe><br />
+    If you wish to contact us click here: <a href="http://www.amzi.com/company/contact_form.php">Contact Us</a></p>
+
+ 
+</body>
+</html>
+

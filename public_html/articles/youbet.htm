@@ -1,0 +1,424 @@
+<html>
+<head>
+<title>Practical Application of Prolog to eBusiness: A Racing Case Study</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p>Reprinted with permission from &quot;AI at Work&quot;, PC AI Magazine (<a href="http://www.pcai.com">www.pcai.com</a>), 
+  March/April 2001.</p>
+<table width="100%" border="1" cellspacing="5" cellpadding="5" bgcolor="#FF0000">
+  <tr>
+    <td> 
+      <h1 align="center"><font color="#FFFFFF"><b>Practical Application of Prolog 
+        to eBusiness:<br>
+        </b></font><b><font color="#FFFFFF">A Racing Case Study</font></b></h1>
+      </td>
+  </tr>
+</table>
+<p>
+<table border="1" cellspacing="5" cellpadding="5" bgcolor="#CCCCFF">
+  <tr>
+    <td> 
+      <p>AI Product Exercised<br>
+        Product: Amzi! Prolog Logic Server<br>
+        Vendor: Amzi! Inc.<br>
+        www. amzi.com</p>
+      </td>
+  </tr>
+</table>
+<h2 align="left">Introduction</h2>
+<p> <img src="youbet_race.gif" width="330" height="236" align="right">A number 
+  of emerging trends in eBusiness can benefit by departing from procedural languages. 
+  Data interchange with disparate systems and the increased sophistication and 
+  dependency on codifying business rules are just two areas presenting business 
+  challenges that the Prolog language is well suited to address.</p>
+<p>
+  To illustrate the possibilities, lets see
+  how Youbet.com has applied Prolog in the
+  advancement of its eBusiness strategy. Along
+  the way, we&#146;ll also review key lessons and
+  considerations when applying Prolog to realworld
+  problems.</p>
+<h2> Data Interchange With Legacy Systems</h2>
+<p>
+  The strength of a typical eBusiness
+  resides in its ability to connect a variety of
+  business systems directly to the end user &#151;
+  usually requiring a large amount of data
+  interchange. Typically, proprietary vendor
+  record types are converted to a more useful
+  form, perhaps XML. One challenge here is
+  the time required to establish, test and
+  deploy the &#147;glue&#148; software required to interface
+  the systems. Frequent vendor upgrades
+  or the vendor&#146;s own XML initiatives can create
+  an ongoing maintenance burden for the
+  development team.</p>
+<h2> Codifying Business Rules</h2>
+<p>
+  Analytics is often described as the next
+  revolution in internet technology. In short,
+  companies analyze their customer behavior
+  and develop business rules to maximize revenue
+  growth, loyalty and customer satisfaction.
+  From the proverbial business rule &#151;
+  &#147;check credit limit&#148; &#151; to more sophisticated
+  rules &#151; &#147;show customer related books of
+  interest&#148; &#151; business rules are constantly
+  changing and growing increasingly complex.
+  What these types of problems have in
+  common is they are both difficult to develop
+  and maintain with traditional programming
+  languages. They are all ideal applications for
+  Prolog. In fact, these applications are so
+  suited to representation in Prolog that they
+  seem too simple.</p>
+<h2> The Problem Domain &#151; Youbet.com</h2>
+<p>
+  Youbet.com provides a real-time racing
+  and handicapping service for the established
+  horse racing customer. The service provides
+  live audio/video, real-time information feeds
+  and information products, deriving its revenue from subscription fees, information
+  product sales, and where legal, live wagering.
+  It provides access to over 60 tracks around
+  the country, as well as Australia and Canada.
+  The service is available on the Internet
+  through a web browser or a standalone webenabled
+  CD based application.</p>
+<p>Our challenge is to satisfy the needs of
+  the racing enthusiast. Whether they be an
+  owner, an established handicapper or a
+  weekend player, they need timely and germane
+  information about the races they are
+  interested in. There is a wealth of information
+  available, including: live odds, late
+  changes, audio/video, past performances, tip
+  sheets and live commentary from the track.
+  Our business depends on our ability to integrate
+  all this data and to combine it into an
+  intelligent presentation for the user.</p>
+<h2> The Youbet Architecture</h2>
+<p>
+  Youbet uses an N-tier architecture to
+  connect web browsers through a session layer
+  to application servers, vendor systems and
+  databases. Communication between servers
+  is typically done through messaging. This
+  allows us to easily integrate the variety of
+  application servers, vendor systems and databases
+  that our service depends on.</p>
+<p>
+  Vendor interchange, and codification of
+  business rules are all implemented through
+  messaging middleware in the application
+  tier. A Java based application server with an
+  integrated Prolog rule base performs these
+  functions.</p>
+<p> The process of interfacing a Prolog rulebase with Java is very straightforward 
+  using a Prolog implementation such as Amzi! Prolog + Logic Server. Once the 
+  amzi.ls package is imported into a Java application, you can consult Prolog 
+  files. You can also extend or optimize Prolog by mapping Java methods to extended 
+  predicates, which are called from the Prolog code.</p>
+<p><img src="youbet_architecture.gif" width="562" height="288"></p>
+<p><i><b>Figure 1: N-Tier Architecture</b></i></p>
+<h2>The Racetrack Application</h2>
+
+<table width="42%" border="0" cellspacing="0" cellpadding="0" align="right">
+  <tr> 
+    <td>
+      <p><img src="youbet_server.gif" width="261" height="354"></p>
+      <p><i><b>Figure 2: Application Server Architecture</b></i></p>
+    </td>
+  </tr>
+</table>
+<p>Here is one scenario for this application server that involves data interchange 
+  and business rules:</p>
+<blockquote> 
+  <p> <i>Receive live messages from a racetrack. If the message contains race 
+    results, update content on a web server[1].</i></p>
+</blockquote>
+<p> Despite the simplicity of this example, the same techniques can be employed 
+  to provide a wide range of compelling user features.</p>
+
+<h2>The Implementation</h2>
+<p>
+  The scenario above is implemented as
+  follows:</p>
+<ol>
+  <li> An outside server sends a message containing live data from the racetrack.</li>
+  <li> The Java server receives the message and calls a method handler.</li>
+  <li> The foreign message is converted into a crude XML representation.</li>
+  <li> The XML is translated to a vendor specific XML format.</li>
+  <li> The message is processed according to business rules for the application 
+    domain. For example: <i>If this is an odds message, store the XML on the web 
+    server.</i></li>
+</ol>
+<h2> Program Organization</h2>
+<p>
+  While program organization is always
+  important, it is critical in a hybrid application
+  (i.e. Java and Prolog). Developers seem
+  to have difficulty thinking procedurally and
+  declaratively at the same time. They must be
+  able to work primarily in one language at a
+  time or productivity and quality suffers. In
+  this system, steps 3, 4 &amp; 5 are performed in
+  Prolog.</p>
+<p>
+  A good design allows the Prolog code
+  to be tested directly in the Prolog interpreter
+  (listener), in a hybrid test harness and in the
+  final application. This requires a test framework
+  and the ability to pump test messages
+  from the listener, test predicates, data files
+  and the network.</p>
+<p><img src="youbet_program.gif" width="561" height="358"></p>
+<p><b><i>Figure 3: Program Structure</i></b></p>
+<p>
+  Figure 3 shows the relationship of key
+  predicates &#150; the lines representing dependencies
+  between predicates. The ovals represent
+  predicates that are stored in the same
+  file. The predicates responsible for steps 3, 4
+  &amp; 5 of the scenario are also indicated.</p>
+<p>
+  The main processing is performed by
+  the following predicates:</p>
+<ul>
+  <li>Main entry point from Java unifies an inbound message with side effects 
+    such as modifying the database or sending other messages (processMessage/1).</li>
+  <li>Unify a message in the vendor format (SDL) with its equivalent expressed 
+    as symbolic XML (sdl_rsx/2).</li>
+  <li>The DCG representation of the SDL grammar, unifies a difference list with 
+    a parse tree (sdl/3).</li>
+  <li>Unify raw symbolic XML with the normalized Document Type Definitions (DTDs) 
+    compliant XML (rsx_sym/2).</li>
+  <li>Unify any symbolic representation of XMLwith the actual XML (text sym_xml/2).</li>
+</ul>
+<p>
+  The remaining 3 predicates implement
+  a very flexible test harness. They are present
+  in every file. If your Prolog implementation
+  supports name spaces, this is very straightforward.</p>
+<ul>
+  <li> Unify with testSuite(<i>pattern</i>) for the current file and selfTest 
+    for every file it depends on, where pattern describes a subset of test cases 
+    (self- Test/0).</li>
+  <li>Unify a message in the vendor format (SDL) with all testCases that are described 
+    by <i>pattern</i> (testSuite/1).</li>
+  <li>A rule describing a specific test case and identified by a unique term. 
+    A set of test cases is constructed for every predicate in the file. The test 
+    cases are expanded over time to form a regression test suite (testCase/1).</li>
+</ul>
+<p>
+  These predicates allow the developer to
+  build a solid testable rule-base without having
+  to leave the Prolog environment. The
+  same test cases can be executed in a hybrid
+  test harness and the final application. A
+  comprehensive regression test can be performed
+  at any time.</p>
+<h2> Parsing</h2>
+<p>
+  In steps 3 and 4, the central problem is
+  parsing a foreign grammar. This is a common
+  class of problems at Youbet.com since
+  we have to interface with a number of different
+  data sources. Before settling on Prolog,
+  we explored several other approaches.</p>
+<blockquote>
+  <p> <b>The traditional approach</b> &#151; Implement a state machine based parser 
+    (perhaps using tools such as Lex and Yacc).</p>
+  <p> <b>The OOP approach</b> &#151; Implement a parser based on dissecting the 
+    grammar into a class hierarchy.</p>
+  <p> <b>The AI approach</b> &#150; Implement a Baucus Normal Format (BNF) style 
+    grammar using Prolog.</p>
+</blockquote>
+<p>
+  First the system converts a vendor
+  message (character list) to a parse tree
+  (Sdl_rsx). The vendor grammar is represented
+  by a set of Definite Clause Grammar
+  (DCG) rules that converts the vendor
+  grammar into a parse tree. By structuring
+  the parse tree as follows, the conversion to
+  XML is trivial:</p>
+<blockquote>
+  <pre>node ==&gt; &lt;node name&gt;*, attributeList, nodeList | &lt;text&gt;   
+attributeList ==&gt; [attribute, &#133;]   
+nodeList ==&gt; [node, &#133;]   
+attribute ==&gt; &lt;attribute name&gt;*, &lt;attribute value&gt;</pre>
+</blockquote>
+<p>
+  * Expressed as a functor</p>
+<p> For example, the XML: </p>
+<blockquote>
+  <pre>&lt;odds track=&#146;AQUEDUCT&#146; race=&#146;3&#146; type=&#146;WIN&#146;&gt;
+    &lt;entry horse=&#146;1&#146; value=&#146;3-2&#146;/&gt; 
+    &lt;entry horse=&#146;2&#146; value=&#146;5-1&#146;/&gt; 
+&lt;/odds&gt;</pre>
+</blockquote>
+<p>
+  is equivalent to the following Prolog structure.</p>
+<blockquote>
+  <pre>odds([track(&#145;AQUEDUCT&#146;),race(3),type(&#145;WIN&#146;)],[
+   entry([horse(1),value(&#145;3-2&#146;)],[]),
+   entry([horse(1),value(&#145;3-2&#146;)],[])
+])</pre>
+</blockquote>
+<p>
+  This simplified structure can be easily
+  extended to support the broader XML
+  specification.</p>
+<p> <img src="youbet_parsing.gif" width="695" height="485"></p>
+<p><b><i>Table 1: Comparison of Parsing Techniques</i></b></p>
+<h2>Message Translation</h2>
+<p>
+  The parser is most efficent if it is implemented
+  as a single-pass parser with minimum
+  backtracking. However, the resultant
+  XML may not be ideal for the final stage of
+  processing. The vendor data may be organized
+  in a non-intuitive way or may utilize
+  keys or abbreviations that need to be
+  resolved. Or the XML may not identify
+  records of a specific type in a uniform way.
+  Even though other approaches were
+  explored, expressing the translation logic in
+  Prolog was ideal since complex rules can be
+  easily expressed, enhanced and maintained.
+  The ability to add powerful heuristics is
+  probably one of the greatest benefits of this
+  approach since data may contain missing or
+  inaccurate data can be corrected over time as
+  patterns are identified.</p>
+<p>
+  The data is transformed by developing
+  a set of rules (rsx_sym) to describe these
+  abnormalities. Since the XML is already represented
+  as a Prolog structure, symbolic
+  manipulation converts this structure to a
+  format compatible with a standard or vendor
+  neutral DTD. If you plan to resolve
+  keys or abbreviations, it is useful to use a
+  Prolog implementation (such as Amzi!) that
+  interfaces with SQL databases.</p>
+<h2> Representing Business Rules</h2>
+<p>
+  In the application server, business rules
+  effect change by sending messages to other
+  systems or by directly acting on the database.
+  In this case, sending a message to a server
+  that writes files to a web server. Complex
+  rules that depend on multiple event conditions
+  and/or database state changes can be
+  easily expressed. This higher order processing
+  can take advantage of the full range of Prolog
+  constructs and is tailored to the problem
+  domain. The effects of the rule can be implemented
+  as extended predicates in Java.</p>
+<p>
+  Another example of a business rule use
+  is in the categorization of news feeds used to
+  deliver relevant, value-added content &#151; personalizing
+  the user experience. The rule here
+  is:</p>
+<blockquote>
+  <p> <i>Categorize articles by related players and teams, then deliver these 
+    articles to users who are interested in these players and teams.</i></p>
+</blockquote>
+<p>
+  Sports articles are received as messages
+  from news wire services which are converted
+  into XML as described earlier. At the completion
+  of step 4, the article is in a uniform
+  symbolic representation. Individual words in
+  the article are tokenized and represented as
+  atoms. The article is then unified against a
+  set of rules that look for common references
+  to specific players and teams. Prolog facts
+  describing players and teams are stored in
+  the SQL database so they are accessible
+  throughout the system and easily maintained.
+  As a final step, the articles are stored
+  and cross referenced in the database.</p>
+<p>
+  Just as in message translation, a major
+  benefit of the Prolog approach is the ability
+  to add new heuristics as the application
+  evolves. A natural progression here would be:</p>
+<ul>
+  <li> Recognize only full player names and team names.</li>
+  <li> Add the ability to recognize common nicknames and abbreviations.</li>
+  <li>Recognize common misspellings, player trades and other complex relationships.</li>
+</ul>
+<p>
+  Once the problem domain is better
+  understood, consider implementing a metagrammar
+  and interpreter/compiler for rule
+  expression. This will make it substantially
+  easier for business analysts and ASEs to
+  maintain the rule base. Meta grammars are
+  easily implemented in Prolog.</p>
+<p> Users can demo the product by going to <a href="http://racing.youbet.com">http://racing.youbet.com</a>. 
+  You need to become a no obligation trial member to use the product.</p>
+<h2> Conclusion</h2>
+<p>
+  It&#146;s hard to imagine a successful eBusiness
+  that does not have a demand for data
+  interchange, or business rules. The nature of
+  these problems presents opportunities for a
+  Prolog rule-base embedded within a larger
+  application architecture.</p>
+<p>
+  Youbet.com has applied AI technology
+  and a common architecture to develop an
+  approach that ties Prolog and messaging
+  technology together producing a powerful
+  problem solving tool in the application tier.
+  This tool establishes a solid foundation on
+  which the business rules essential to the success
+  of our customer retention strategies are
+  built. Incorporating new rules is easy without
+  requiring significant re-work. Futhermore,
+  with the correct meta-grammars we believe
+  that the maintenance of many business rules
+  can be moved to less technical staff. To date,
+  we use Prolog to integrate the data from four
+  different vendors into our eBusiness presence
+  and many additional applications and
+  enhancements are being considered.</p>
+<p>
+  Using Prolog in a mixed language, distributed
+  environment has also posed special
+  challenges. Here are some issues to consider
+  before using this approach:</p>
+<ul>
+  <li> Problem type &#150; Is the problem suited to a declarative language? Do 
+    performance constraints require predictably fast response?</li>
+  <li>Skill set &#150; Are the application software engineers ready to think declaratively?</li>
+  <li> Tool selection &#150; Does the Prolog implementation provide a solid IDE, 
+    interface with procedural languages and RDBMS?</li>
+  <li>Developer productivity &#150; How will the code be tested during and after 
+    development? Will developers be required to task switch between languages? 
+    Will there be a meta-language for describing business rules?</li>
+</ul>
+<hr>
+<p>Douglas Tung, C.T.O. and Chief Architect of Youbet.com, an online interactive 
+  horse racing experience can be reached at dwtung@yahoo.com. The Youbet web site 
+  is <a href="http://www.youbet.com">www.youbet.com</a>.</p>
+<p> [1] For simplification, this example has been modified from practice.</p>
+<p> [2] For one modest grammar, the parser consisted of over 100 code files, some 
+  representing trivial language elements.</p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

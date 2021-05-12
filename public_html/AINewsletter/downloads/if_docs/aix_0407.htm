@@ -1,0 +1,1047 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->July 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <h3>July 2004</h3>
+            <h4>Dennis Merritt</h4>
+            <h2></h2>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <ul>
+              <li><a href="#user_interfaces">Intelligent and Deceptive User Interfaces</a></li>
+              <li><a href="#rules_objects">Rules vs. Objects</a></li>
+              <li><a href="#logicbases">Application Specific Logicbases</a></li>
+              <li><a href="#code_corner">Code Corner - A Logicbase Approach to 
+                IF</a></li>
+            </ul>
+            <p>As work slowed down for the summer, and inspired by the thriving 
+              interactive fiction (IF) community detailed in last month's newsletter, 
+              I decided to spend more time on interactive fiction (IF) tools, 
+              so that's what this newsletter is about. In one sense, its a specialized 
+              application area, but the issues with IF tools apply to other areas 
+              of AI as well, such as: </p>
+            <ul>
+              <li>pitfalls with &quot;intelligent&quot; interfaces;</li>
+              <li>when to use rules versus when to use objects; and </li>
+              <li>how to augment logic for a particular application area.</li>
+            </ul>
+            <p>The IF tools developed for this newsletter are available in the 
+              download area of <a href="http://www.ainewsletter.com">www.ainewsletter.com</a>. 
+              As always, any and all feedback is welcome.</p>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis</a></p>
+            <h2><a name="user_interfaces"></a>Intelligent and Deceptive User Interfaces</h2>
+            <p><i>The Design of Everyday Things</i> by Donald A. Norman is a fantastic 
+              book that provides insight into the user interfaces of all sorts 
+              of things. He talks about doors, phones, light switches and the 
+              like, but there is a lot to be learned from him that applies to 
+              software as well.</p>
+            <p>A key concept in user interface is that the interface lead the 
+              user to a good conceptual model of the thing. For example, if you 
+              approach a door that has a handle you can grab, then you form a 
+              mental image of a door you can pull, and you pull. If it was a push 
+              door, then you pull in vain, feel like a fool, before pushing the 
+              door open.</p>
+            <p>On the other hand, a metal plate clearly indicates a door that 
+              can be pushed. But if that plate runs across the whole door, then 
+              you don't get a good mental image of which way the door opens, and 
+              you might wind up pushing on the hinge side.</p>
+            <p>We often run into doors that take a couple of tries to open because 
+              of bad interface design.</p>
+            <p>I recently took a shower in a house that had a fiendishly clever 
+              way of changing the water from the spigot to the shower head. Instead 
+              of an ugly lever on top of the spigot, the actual bottom of the 
+              spigot head could be rotated. It was a startling clean, very beautiful 
+              design. But to someone, like myself, first encountering it, I was 
+              left baffled for the longest time wondering how to get the shower 
+              to go.</p>
+            <p>The interface was deliberately deceptive, hiding the ugly workings 
+              by making the shower/spigot toggle lever look like something else. 
+              Pretty, but very frustrating to the first time user.</p>
+            <p>Taking this to software then, a goal in user interface design should 
+              be to lead the user to a good understanding of how the particular 
+              software works. Interfaces that lead the user away from that understanding 
+              are deceptive and frustrating, particularly to first time users.</p>
+            <p>The reason is we, as people, act based on our mental models. When 
+              we get a mental model of something, such as software, that is incorrect, 
+              we are led to try things which won't work, and wind up frustrated. 
+              On the other hand, when an interface leads to a good mental model, 
+              and we try things that work, it is satisfying, and leads us to continue 
+              to explore the software further, which, with a good interface leads 
+              to an even better understanding, etc. etc.</p>
+            <h3>HTML Editors</h3>
+            <p>While pondering a good example, I deleted some text in this article, 
+              and in addition to deleting the text, the tags of an adjacent heading 
+              changed as well. The delete key is a deceptive interface in this 
+              editor. It leads one to believe it deletes, yet it also changes 
+              adjacent HTML tags as well. I can't honestly say as I have a good 
+              mental model of exactly when and why that happens.</p>
+            <p>Which is why notepad and other pure text editors are often the 
+              editors of choice for HTML. While it is a pain to have to manually 
+              type all the tags, it is a user interface that much more clearly 
+              leads the user to a good conceptual model of how HTML works.</p>
+            <p>An HTML editor is deceptive in that it hides the ugly tags. Yet 
+              the insertion point is often ambiguous leading to strange behavior 
+              that is frustrating. It seems most good HTML tools, like Dream Weaver 
+              which I'm using, also provide the ability to edit the tagged text 
+              directly. This will be necessary up until the the day when they 
+              finally work out an interface that intuitively exposes all of the 
+              power of HTML.</p>
+            <h3>Rule-based Languages</h3>
+            <p>Rule-based languages have a similar problem. They present an interface, 
+              the rule syntax, which makes them appear as declarative chunks of 
+              knowledge. But how does the rule engine choose which rules to fire 
+              when? Without this knowledge a developer cannot effectively write 
+              rules, yet there is usually nothing in the syntax of the rules that 
+              even hints at that information.</p>
+            <p>The LEX and MIA strategies of OPS5 production (forward-chaining) 
+              rules are a perfect example. The designers wanted to have the rules 
+              fire in the most intuitive manner possible, so they coded complex 
+              algorithms that decided which rule to pick when many could fire. 
+              One strategy opted for rules with conditions referring to recently 
+              updated facts; the other opted for rules with greatest &quot;specicifity&quot;, 
+              meaning the most specific rule of those available would be chosen.</p>
+            <p>This was clever, but led to frustration as a developer's rules 
+              didn't execute as expected. Only after getting a full understanding 
+              of how LEX or MIA works could a programmer effectively use OPS5. 
+              In other words, the interface was deceptive in that it made it appear 
+              as if the rules were executing in an intuitive manner, but as soon 
+              as they didn't, the developer was left scratching his/her head in 
+              confusion.</p>
+            <p>KBMS was another production rule system inspired by OPS5, but it 
+              had an interface that better lead a developer to understanding its 
+              conflict resolution strategies. The first rules fired before the 
+              latter rules if there was a conflict. In other words, what you saw 
+              was what you got. And, that order could be overridden by specifying 
+              priorities on rules. While not as elegant as LEX or MIA, it was 
+              a lot easier for developers to understand.</p>
+            <h3>Natural Language and Interactive Fiction (IF)</h3>
+            <p>And finally to IF, which is what this newsletter is about. Many 
+              people criticize IF because it is frustrating to play because you 
+              wind up thrashing about trying things that don't seem to have any 
+              effect. I believe this is because the classic IF user interface 
+              is deliberately deceptive, and those that enjoy playing IF have 
+              developed a good understanding of how IF works despite the interface.</p>
+            <p>The underlying data model for an IF game is a collection of information 
+              about the people, places and things that are important in the game. 
+              This might include where the player is at, whether a room is lit 
+              or not, and what items a player is carrying.</p>
+            <p>And there are, internally, formal commands that manipulate that 
+              data. For example &quot;put cloak on hook&quot; will change the 
+              data model so the cloak, which was associated with the player, is 
+              now associated with the hook.</p>
+            <p>Now what makes a game fun is the puzzles. These are bits of the 
+              game that don't work in a standard manner, and the player needs 
+              to figure out some sequence of moves that will solve the puzzle. 
+              For example, in the very simple demonstration game, Cloak of Darkness, 
+              the barroom is dark and the reason is the cloak absorbs light.</p>
+            <p>When the player gets to the barroom, then the game informs him/her 
+              it is dark. OK. So the player naturally tries to turn on the light, 
+              but is told that's not a good idea. Hmmmm. This is where the problem 
+              arises. Is the player failing to turn on the light because of a 
+              misunderstanding of the game's vocabulary and commands? Or is this 
+              the meat of the puzzle?</p>
+            <p>There is nothing in the user interface of clever text to give the 
+              player even a clue. The experienced gamer might know what sorts 
+              of things should and shouldn't work, and will quickly move on. But 
+              the newbie?</p>
+            <p>This is often discussed on the IF discussion groups as the guess-the-verb 
+              problem. Numerous suggestions for menus and the like are often shot 
+              down because of a fear the menus will take away from the exploratory 
+              nature of the game, and also create a boring click-on-all-alternatives 
+              approach to solving the game.</p>
+            <p>Another example of the deliberately deceptive appears in one implementation 
+              of Cloak of Darkness where the hook in the cloak room, where you 
+              are supposed to hang the cloak, is described in the main body of 
+              text of the cloak room. In other words, it is not indicated as being 
+              an object in the room that the player can manipulate, but rather 
+              appears like part of the general description.</p>
+            <p>This too is deliberately deceptive, forcing the player to guess 
+              at which of the text in the description is meaningful for the game 
+              and which isn't.</p>
+            <p>It seems to me that IF would be better off if the games kept all 
+              of the wonderful text and descriptions output to the player, but 
+              also provided solid information about the internal game model and 
+              how the player might manipulate it. The idea would be to give the 
+              player the required tools for playing the game, but not the solution 
+              to the puzzle.</p>
+            <p>In reality, this is exactly the information that experienced IF 
+              games carry in their heads. It's just unavailable to the new player. 
+              See the code corner for some possible solutions.</p>
+            <h2><a name="rules_objects"></a>Rules vs Objects</h2>
+            <p>Object-oriented (OO) programming was a major breakthrough in software 
+              development, allowing a developer to easily keep data, and the procedures 
+              that work on that data, together. This was a more natural approach 
+              than older programming styles that forced a programmer to keep data 
+              and procedures separate.</p>
+            <p>But there are times when you would rather keep the data and procedures 
+              separate. Typically this occurs when you have operations that work 
+              on two or more objects that are peers. In other words, the operation 
+              is happening at a higher conceptual level than any of the objects.</p>
+            <p>The ugliness associated with C = A + B in a pure OO language reveals 
+              this weak knee. Because A and B are objects, you can't simply add 
+              them. You need to send the + message to one of them or the other.</p>
+            <p>In other words, the developer must make an arbitrary decision as 
+              to whether the addition will happen in the A object or the B one. 
+              And when that happens, the code loses the clarity of the idea that 
+              the addition is actually happening at a higher conceptual level 
+              than in either of the two objects.</p>
+            <p>Rules are often used to express relationships between different 
+              data elements in an application. They, like math operations, express 
+              concepts that do not rightly belong in any one data element or another. 
+              In this sense, they have a lot in common with database queries, 
+              where a query ties together data from different tables in a database.</p>
+            <p>Because a rule relates two or more data structures, it is most 
+              naturally represented as something external to both. In an OO application, 
+              however, the rule must be shoehorned into one object or the other. 
+              As with any procedural approach, if there are a large number of 
+              rules, this quickly causes the logic of the rules to be lost in 
+              arbitrary procedural decisions.</p>
+            <p>A pricing application, for example, is difficult to write procedurally 
+              because a price is related to many different data tables. It is 
+              easier to code a pricing application with a set of rules that are, 
+              in a sense, above the data structures and objects of the application, 
+              and which are triggered by patterns and interrelationships between 
+              those data structures and objects.</p>
+            <p>Coding IF presents a similar problem. The commands of the game, 
+              in general, change the relationships between the objects describing 
+              the game. The puzzles of the game invariably are defined in terms 
+              of relationships between the objects of the game.</p>
+            <p>Consider a command to turn on the light in the room. Whether or 
+              not this is possible requires data from the room object, the light 
+              object, and the player object which invariably has something to 
+              do with these puzzles.</p>
+            <p>In an OO game implementation the developer must artificially decide 
+              if that logic should that be associated with a light source, or 
+              the room, or the player. In a rule-based implementation, the logic 
+              is more clearly expressed externally to the various elements.</p>
+            <p>So objects are great for representing the data structures of a 
+              game, but the commands and puzzles are more naturally represented 
+              as rules.</p>
+            <p>In the case of IF, there is another advantage to having the rules 
+              represent the actions and separate from the data. It makes it very 
+              easy to implement meta rules that can provide a mechanism of hints 
+              to help steer the player into a good conceptual model of how the 
+              game works.</p>
+            <h2><a name="logicbases"></a>Application Specific Logicbases</h2>
+            <p>Logic is often a good way to express rules, especially if the rules 
+              are crisp, that is, without uncertainty or fuzziness. But it is 
+              rare that the required knowledge all fits neatly into logical relationships. 
+              There's always some ugly bits that aren't expressed cleanly using 
+              logic. (Sigh, just like OO isn't right for everything, neither is 
+              logic.)</p>
+            <p>In order to get the benefits of logic for an application, it is 
+              a good idea to create a library of helper, or application-specific 
+              predicates that carry out the work that is not easily expressed 
+              in logical relationships. The implementation of these predicates 
+              can be hidden, so that the knowledge engineers only need to work 
+              with the crisp, cleaner portions of the rules.</p>
+            <p>An example of this was the vaccination system mentioned a few issues 
+              back. In that application, application-specific predicates that 
+              handled date arithmetic and managed information gathering were hidden, 
+              so that the vaccination rules themselves could simply refer to them, 
+              checking, for example, if the second measles vaccination was after 
+              the second birthday or not.</p>
+            <p>The same approach can be used to create a tool for developing interactive 
+              fiction.</p>
+            <h2><a name="code_corner"></a>Code Corner - A Logicbase Approach to 
+              Interactive Fiction (IF)</h2>
+            <p>This month's code corner serves as initial documentation for the 
+              interactive fiction tool set and examples that are available for 
+              download from the <a href="http://www.ainnewsletter.net">newsletter 
+              downloads</a>.</p>
+            <p>Logicbase refers to the subset of logic programming that is most 
+              closely related to relational database. The facts/data in a logicbase 
+              are similar to relational data records; and the rules in a logicbase 
+              are similar to database queries. The tool for developing IF described 
+              here takes advantage of these attributes. The state of the game 
+              is represented in logical data structures, and logical relationships 
+              are used to describe the permissible actions.</p>
+            <p>There is a tremendous advantage in the logicbase approach, in that 
+              it offers, like other rule-based technologies, up to a 10-1 productivity 
+              gain for the right sort of application. And the rules that govern 
+              IF are the right sort of application.</p>
+            <p>This means that it is practical to create new and different sets 
+              of rules for governing the manipulation of objects and the movements 
+              of players in a game. It is not necessary to use a tool that has 
+              hard-coded into it all of the sorts of features one might like, 
+              such as support for lights, burnable objects, weights, tunneling, 
+              time travel, or whatever, because it is easy to add the features 
+              one needs as needed. </p>
+            <p>There were some other design goals in this system:</p>
+            <ul>
+              <li>Separate the text from the game logic, so translations to other 
+                national languages are easily supported.</li>
+              <li>Separate the allowed input vocabulary and grammar from the game 
+                logic, again to support different national languages.</li>
+              <li>Create a verb/action oriented coding environment that clearly 
+                brings out the logic of the commands.</li>
+              <li>Use a simple rule language that makes it easy to model any sort 
+                of game environment, allowing easy experimentation with game models 
+                that are different from the conventional IF ones.</li>
+              <li>Take advantage of the verb/action oriented coding to support 
+                context-sensitive hints and help that lead the player to a good 
+                understanding of the game mechanics without revealing the solutions 
+                to puzzles.</li>
+              <li>Use the input vocabulary and grammar to create the short form 
+                descriptions of items in the game, which ensures that the player 
+                is presented with text tokens that can be directly reused in commands.</li>
+            </ul>
+            <h3>Architecture</h3>
+            <p>The basic flow of control of the game is:</p>
+            <ul>
+              <li>Player enters natural language like command in a supported national 
+                language.</li>
+              <li>The grammar rules are used to parse the input to a formal command 
+                using the internal tokens of the game.</li>
+              <li>The formal command is passed to the game engine</li>
+              <li>The rules of the game engine are used to manipulate the data 
+                structures of the game.</li>
+              <li>Output tokens are generated as appropriate.</li>
+              <li>The national language text associated with the output tokens 
+                is presented to the player.</li>
+            </ul>
+            <p>For example:</p>
+            <blockquote> 
+              <p>The player might enter: &quot;hang the velvet cloak on the brass 
+                hook&quot;.</p>
+              <p>This gets parsed to the command: [put_on, cloak, hook] which 
+                is passed to the game engine.</p>
+              <p>The game engine then calls the rule: put_on(cloak,hook).</p>
+              <p>The pattern rule which fires might be: put_on(X,Y) :- delete( 
+                me, [wearing = X] ), add( Y, [contains = X] ), output(put_on(X,Y)). 
+                Where X and Y are variables that are bound to cloak and hook for 
+                the example.</p>
+              <p>The output token put_on(X,Y) might have the English text pattern: 
+                `The `, X, ` is now on the `, Y, `.`</p>
+            </blockquote>
+            <p>To create a game then requires the creation of two modules. One 
+              is the game logic, containing the commands and the mapping between 
+              commands and the rules of the game. The other is the national language 
+              module that has both the input vocabulary and grammar, and the text 
+              for the various output tokens. However, the national language module 
+              can be added later, as the game can be played using just the internal 
+              tokens during development.</p>
+            <h3>The Data Model</h3>
+            <p>Frames are a subset of objects, without the procedures, that provide 
+              a very flexible representation mechanism for the state of a game. 
+              Frames are not a standard part of logicbase, so support for frames 
+              becomes part of the set of application-specific support predicates.</p>
+            <p>A frame is represented by a name, and a list of slots and values. 
+              Rather than manipulate the frame structures directly, a set of predicates 
+              are provided to manipulate them:</p>
+            <blockquote> 
+              <p><b>make( Name, Slots )</b> - create a new frame of the given 
+                name with the specified slots.<br>
+                <b>query( Name, QueryPatterns )</b> - find values for slots<br>
+                <b>delete( Name, DeletePatterns )</b> - delete certain slot values<br>
+                <b>add( Name, AddPatterns )</b> - add certain slot values<br>
+                <b>change( Name, ChangePatterns )</b> - change certain values.</p>
+            </blockquote>
+            <p>For example, to create a frame to represent a place:</p>
+            <pre>make( duck_pen, [gate=close, contains=egg, contains=ducks, connects=yard] ).</pre>
+            <p>To ask if it contains an egg:</p>
+            <pre>query( duck_pen, [contains=egg] ).</pre>
+            <p>To ask where it connects (tokens beginning with upper case are 
+              variables) the query</p>
+            <pre>query( duck_pen, [connects=X] )</pre>
+            <p>will bind X with 'yard'.</p>
+            <p>To change the gate status to open:</p>
+            <pre>change( duck_pen, [gate=open] ).</pre>
+            <h3>The Game Rules</h3>
+            <p>The rules are written using the logicbase syntax of Prolog. The 
+              basic format is:</p>
+            <blockquote> 
+              <p><b>RulePattern :- Goal1, Goal2, ... GoalN</b>.</p>
+            </blockquote>
+            <p>Where</p>
+            <ul>
+              <li>RulePattern has the name of the rule and its arguments;</li>
+              <li><b>:-</b> is read as <b>if</b>;</li>
+              <li>The commas separating the list of goals are read as <b>and</b>; 
+                and</li>
+              <li>The goals are other query patterns.</li>
+            </ul>
+            <p>Here's an example initialization rule for a game that creates:</p>
+            <ul>
+              <li> a game frame for keeping track of the number of moves;</li>
+              <li>two frames describing places in the game and their contents 
+                and relationships; and</li>
+              <li>a frame for player, called you, specifying the initial location.</li>
+            </ul>
+            <pre>initialize :-
+   clear,
+   make( game, [ moves=0 ] ),
+   make( duck_pen, [connects=yard, contains=egg, contains=ducks] ),
+   make( yard, [connects=duck_pen] ),
+   make( you, [at=yard] ).
+</pre>
+            <p>Two commands in the game engine that manipulate these structures 
+              might be <b>go</b> and <b>take</b>. These commands are implemented 
+              as rules. Variables, indicated by initial upper case letters, make 
+              the rules general.</p>
+            <pre>go(Place) :-
+   change( you, [at=Place] ),
+   output( now_at(Place) ),
+   !.
+
+take(Thing) :-
+   query( you, [at=Here] ),
+   delete( Here, [contains=Thing] ),
+   add( you, [carrying=Thing] ),
+   output( now_have(Thing) ).
+</pre>
+            <p>A table of actions maps commands, represented as lists of tokens, 
+              to the rules. So far the two rules these would be:</p>
+            <pre>action( [go, Place], go(Place) ).
+action( [take, Thing], take(Thing) ).
+</pre>
+            <p>The application-specific supporting predicates allow the game to 
+              be run even if there are no national language text files. When supporting 
+              text is missing, the token is written as-is; and when the input 
+              vocabulary is missing, the internal command is created directly 
+              from the input tokens.</p>
+            <p>So, with just the code we've written so far, the game can be played:</p>
+            <pre>> go duck_pen
+now_at(duck_pen)
+> take egg
+now_have(egg)
+> go yard
+now_at(yard)
+> go outer_space
+now_at(outer_space)
+</pre>
+            <p>Well it works, but it lets us go into outer space, when that isn't 
+              really somewhere we should be able to go. Additional rules are added 
+              to define the constraints and put out appropriate messages. The 
+              rules are considered in the order they are written.</p>
+            <p>The exclamation mark at the end of each rule tells the game engine 
+              not to consider any other rules once this one has completed.</p>
+            <p>So in the following example, the first rule will succeed if it 
+              is NOT true that there is a connection. Notice that it just puts 
+              out a message and does not change the state of the game. But, if 
+              the first rule fails, meaning there IS a connection, then the second 
+              rule will be used which does change the state of the game to reflect 
+              the move.</p>
+            <pre>go(Place) :-
+   query( you, [at=Here] ),
+   not query( Here, [connects=Place] ),
+   output( cannot_go(Place) ),
+   !.
+go(Place) :-
+   change( you, [at=Place] ),
+   output( now_at(Place) ),
+   !.
+</pre>
+            <p>Now the game keeps us in line:</p>
+            <pre>> go outer_space
+cannot_go(outer_space)
+> go duck_pen
+now_at(duck_pen)
+</pre>
+            <p>The rules for go can then be further modified to support other 
+              constraints that we might want to model in the game. For example, 
+              if we wanted to add the idea of a gate that needs to be opened, 
+              the initialization and rules would change like this:</p>
+            <pre><font color="#666666">initialize :-
+   make( duck_pen, [connects=yard, contains=egg, contains=ducks,</font> gate=closed<font color="#666666">] ),
+   make( yard, [connects=duck_pen] ),
+   make( you, [at=yard] ).
+go(Place) :-
+   query( you, [at=Here] ),
+   not query( Here, [connects=Place] ),
+   output( cannot_go(Place) ),
+   !.</font>
+go(Place) :-
+   query( Place, [gate=closed] ),
+   output( gate_closed ),
+   !.
+<font color="#666666">go(Place) :-
+   change( you, [at=Place] ),
+   output( now_at(Place) ),
+   !.</font>
+</pre>
+            <p>Of course, now we have to add a command to let the player open 
+              the gate:</p>
+            <pre>open_passage(Passage) :-
+   query( you, [at=Here] ),
+   query( Here, [connects=Place, Passage=closed] ),
+   change( Place, [Passage=open] ),
+   output( opened ),
+   !.
+open_passage(Passage) :-
+   output( cant_open(Passage) ),
+   !.
+</pre>
+            <p> We use open_passage since open is a reserved word, but this doesn't 
+              effect the player because we map the input commands to the rule 
+              with:</p>
+            <pre>action( [open, X], open_passage(X) ).</pre>
+            <h4>Compass navigation digression</h4>
+            <p>Notice that this example implements a navigation mechanism based 
+              on connections between places, which the player will use with commands 
+              like &quot;go to the duck pen&quot;. This is a bit different from 
+              the normal IF navigation mechanism that uses compass directions, 
+              where the player navigates with commands like &quot;go west&quot;. 
+            <p>We could have implemented compass navigation just as easily: 
+            <pre>initialize :-
+   make ( duckpen, [east = yard, contains = egg, contains = ducks] ),
+   make( yard, [west = duckpen] )
+   make (you, [at = yard] ).
+
+go(Direction) :-
+   query( you, [at = Here]),
+   not query( Here, [ Direction = _ ] ),
+   output( cannot_go ),
+   !.
+go(Direction) :-
+   query( you, [at = Here] ),
+   query( Here, [ Direction = NewPlace] ),
+   change( you, [at = NewPlace] ).
+</pre>
+            <p>Now &quot;go west&quot; will get the player from the yard to the 
+              duck pen.</p>
+            <p>While sometimes compass navigation leads to interesting puzzles, 
+              for the most part, in my opinion, it simply adds a level of overhead 
+              in moving about the game, so I prefer the direct navigation. But 
+              this is the key point.</p>
+            <p><i>Because it is so easy to create the game mechanics, the author 
+              can implement whatever mechanics make the most sense to him/her.</i></p>
+            <p>So I like connections, someone else likes north/south, another 
+              might support both, and yet another might use X,Y,Z coordinates 
+              and let the player turn, step, etc. An X,Y,Z coordinate game model 
+              would allow support for interesting game options like tunneling 
+              when two places are geometrically close, or allowing explosives 
+              to open up new connections.</p>
+            <p>An X,Y,Z model would also make more sense if the game engine was 
+              used to support graphics instead of text.</p>
+            <p>Now a problem with this flexibility in game mechanics is that, 
+              using navigation as an example, an experienced IF player might expect 
+              navigation to be by compass direction. <i>But if there were good 
+              hints and help, then the mechanics of a particular game would be 
+              much more transparent, and the author would not have to rely on 
+              the player having in depth experience with IF games and conventions</i>.</p>
+            <h3>Text Output</h3>
+            <p>The actual output text is stored in a separate module, usually 
+              in a separate file. It is a collection of logical relations between 
+              the internal tokens and text to be displayed. The text can be a 
+              simple string, or a list (denoted by square brackets) of strings 
+              and variables (initial upper case letter) used to dynamically construct 
+              the output text. Strings are denoted by back quotes and can contain 
+              anything. Here's some examples for the game so far:</p>
+            <pre>text( gate_closed,
+   `The gate is closed.` ).
+text( cannot_go(Place),
+   [`You can't get to the `, Place, ` from here.`] ).
+text( now_at(Place),
+   [`You are now at the `, Place, `.`] ).
+text(now_have(X),
+   [`You are now carrying the `, X, `.`] ).
+</pre>
+            <p>The support for text is part of the application-specific extensions 
+              for the IF authoring tool. The 'output' predicate does the dirty 
+              work of finding the right national language file, if any, and doing 
+              the text substitution, if required, using for the variables the 
+              <b>input name</b> if it can be found, or the <b>internal</b> name 
+              if not.</p>
+            <p>The <b>internal name</b> is the name that is used in the game logic, 
+              such as <b>duck_pen</b>. It never contains spaces and always begins 
+              with a lower case letter.</p>
+            <p>The <b>input name</b> of a game token is the first choice of text 
+              that the player can use to refer to the item. <i>It is derived directly 
+              from the input vocabulary</i>. This is a key point. It means that 
+              when the game outputs a message about an item, it uses the exact 
+              wording that the player can then use to refer to that item.</p>
+            <p>So, the vocabulary for duck_pen might have &quot;duck pen&quot; 
+              as the first of multiple allowed input phrases, in which case it 
+              will be what is displayed. So the message now_at(duck_pen) will 
+              expand to: &quot;You are now at the duck pen&quot;.</p>
+            <p>In the Spanish version of the game (excuse my weak Spanish), the 
+              input vocabulary for <b>duck_pen</b> might be &quot;el corral por 
+              patos&quot; (Is corral right for ducks?) and the text for now_at(X) 
+              would be:</p>
+            <pre>text( now_at(Place),
+   [`Ahora esta a `, Place, `.`]).
+</pre>
+            <p>so the message comes out: &quot;Ahora esta a el corral por patos&quot;.</p>
+            <h3>Grammar Input</h3>
+            <p>For input, you define both the grammar rules and the vocabulary. 
+              Here's the grammar rule for commands with either a verb and an object, 
+              or just a verb. It allows for an optional article as well, being 
+              'the' or 'a'. These basic rules would be changed for languages that 
+              had different verb, object orders.</p>
+            <pre>player( [V, O] ) -->
+   verb(V),
+   article,
+   object(O).
+player( [V] ) -->
+   verb(V).
+</pre>
+            <p>The verbs and objects are defined with the actual words. So the 
+              player can input either &quot;take&quot; or &quot;pick up&quot; 
+              to invoke the verb <b>take</b>.</p>
+            <pre>verb(go) --> [go].
+verb(go) --> [go, to].
+verb(take) --> [take].
+verb(take) --> [pick, up].
+
+object(O) --> thing(O).
+object(O) --> place(O).
+
+thing(egg) --> [duck,egg].
+thing(egg) --> [egg].
+thing(ducks) --> [small, flock, of, ducks].
+thing(ducks) --> [ducks].
+thing(gate) --> [gate].
+
+place(duck_pen) --> [duck, pen].
+place(duck_pen) --> [pen].
+place(yard) --> [yard].
+</pre>
+            <p>And finally the articles, which are just ignored:</p>
+            <pre>article --> [the].
+article --> [a].
+article --> [].
+</pre>
+            <p>The grammar can be further modified to make it easier for the player. 
+              For example, supposed we wanted to the let the player invoke the 
+              <b>go</b> verb by just entering a place. By making a distinction 
+              between things and places, as we did, this is possible by simply 
+              adding another grammar rule:</p>
+            <pre>player( [go, P] ) -->
+   place(P).
+<font color="#666666">player( [V, O] ) -->
+   verb(V),
+   article,
+   object(O).
+player( [V] ) -->
+   verb(V).</font>
+</pre>
+            <p>Playing the game with the new inputs and outputs from the previous 
+              section:</p>
+            <pre>> go to the duck pen
+The gate is closed.
+
+> open gate
+opened
+
+> pen
+You are now at the duck pen.
+
+> pick up the egg
+You are now carrying the duck egg</pre>
+            <p>Notice how in each case the output uses the phrases &quot;duck 
+              pen&quot; and &quot;duck egg&quot;, no matter what was input. These 
+              are the first choices for input phrases for the internal names <b>duck_pen</b> 
+              and <b>egg</b>. <i>This interaction makes it much less likely that 
+              the player will stumble about using the wrong words to refer to 
+              a game element.</i></p>
+            <p>A Spanish version of the program might have these as part of the 
+              input vocabulary:</p>
+            <pre>verb(go) --> [vaya, a].
+verb(take) --> [levante].
+verb(take) --> [toma].
+thing(egg) --> [huevo, de, pato].
+thing(egg) --> [huevo].
+</pre>
+            <p>And a play would look like:</p>
+            <pre>> vaya a el corral por patos
+Ahora esta a el corral por patos.
+
+> levante el huevo de pato
+Tiene el huevo de pato.
+</pre>
+            <h3>User Friendly Information</h3>
+            <p>IF games always provide some tools for examining the surroundings. 
+              Here's the step-by-step way to add a command to the game, in this 
+              case <b>look</b>. It will display information about the place, its 
+              connections and contents. It will use the input names for the game 
+              elements so the player can easily use them in following commands.</p>
+            <p>1) Add the new verb and vocabulary to the inputs:</p>
+            <pre>verb(look) --> [look].
+</pre>
+            <p>2) Map the new command to a rule:</p>
+            <pre>action( [look], look ).
+</pre>
+            <p>3) Implement the rule. There are a number of points to note here.</p>
+            <ul>
+              <li>We keep wanting to know where 'here' is, so we add a helper 
+                rule that other rules can use to make that easier.</li>
+              <li>The application-specific predicates include <b>get_input_text</b> 
+                and <b>get_output_text</b> which can be used to more precisely 
+                control the output, in this case displaying both the input name 
+                and output text for a place.</li>
+              <li>Fail is a goal that fails. It causes the rule engine to backtrack, 
+                looking for other solutions. In this case that behavior is used 
+                to force the queries for connects= and contains= to find all the 
+                connections and contents.</li>
+            </ul>
+            <pre>here(H) :-
+   query( you, [at=H] ).
+
+look :-
+   here(H),
+   look(H).
+   
+look(Place) :-
+   get_input_text(Place, ShortText),
+   get_output_text(Place, LongText),
+   output( [ShortText, `: `, LongText] ),
+   look_connections(Place),
+   look_items(Place),
+   !.
+
+look_connections(Place) :-
+   query( Place, [connects=X] ),
+   output_nospace( can_go(X) ),
+   fail.
+look_connections(_).
+
+look_items(Place) :-
+   query( Place, [contains=X] ),
+   output_nospace( can_see(X) ),
+   fail.
+look_items(_).
+</pre>
+            <p>4) Add the new required output text.</p>
+            <pre>text(yard,
+   `A yard with grass and dandelions about.` ).
+text(duck_pen,
+   `A smelly noisy pen for ducks.` ).
+text(can_go(X),
+   [`You can go to the: `, X] ).
+text(can_see(X),
+   [`You can see a: `, X] ).
+</pre>
+            <p>Playing the game it looks like this:</p>
+            <pre>> look
+yard: A yard with grass and dandelions about.
+
+You can go to the: duck pen
+
+> duck pen
+The gate is closed.
+
+> Open gate
+opened
+
+> go to the pen
+You are now at the duck pen.
+
+> look
+duck pen: A smelly noisy pen for ducks.
+
+You can go to the: yard
+You can see a: duck egg
+You can see a: small flock of ducks
+
+> take the small flock of ducks
+You are now carrying the small flock of ducks.
+</pre>
+            <p>OK, maybe we shouldn't let the player take the ducks. Special handling 
+              and the light touch of many IF games, which makes them so entertaining, 
+              can be easily added. We also add another useful helper rule to determine 
+              if a thing is 'here' or not. It's here if either the player is carrying 
+              it, or its contained at the place where the player is. The text 
+              for duck_problems will contain some wise remarks about the problems 
+              with trying to carry a bunch of ducks.</p>
+            <pre>is_here(X) :-
+   query(you, [carrying=X] ).
+is_here(X) :-
+   here(H),
+   query(H, [contains=X] ).
+   
+take(ducks) :-
+   is_here(ducks),
+   output( duck_problems ),
+   !.
+take(Thing) :-
+   here(H),
+   delete( H, [contains=Thing] ),
+   add( you, [carrying=Thing] ),
+   output( now_have(Thing) ),
+   !.
+take(Thing) :-
+   output( not_here(Thing) ),
+   !.
+</pre>
+            <h3>Help, Context-Sensitive Hints, and Options</h3>
+            <p>It's easy to add a help command that outputs the basics of the 
+              game. This should describe how to use the standard commands of the 
+              game, such as <b>look</b>. It should also suggest that if the player 
+              gets stuck, or is learning their way around the game, then hints 
+              and options will help.</p>
+            <pre>text(help,
+   [`The basic commands are:\n`,
+    `   look - look about\n`,
+    `   hint - get possible verbs\n`,
+    `   options - get all options\n`,
+    `   quit - quit the game\n` ]).
+</pre>
+            <p>Implementing context-sensitive hints is relatively straight forward. 
+              First we define a rule called <b>option</b> that for each command 
+              defines when that command is an option. It is purely up the game 
+              designer on how tight or loose to make these options which will 
+              be shown to the player if he/she asks. For the sample game we might 
+              define the options for the commands like this:</p>
+            <blockquote> 
+              <p><b>go</b> - is an option when there is a connection to somewhere, 
+                but we don't check for gates or other obstacles.<br>
+                <b>take</b> - is an option when there is something contained in 
+                the place the player is at, but we don't check for things that 
+                might not be able to be taken.<br>
+                <b>drop</b> - is an option if the player is carrying something.<br>
+                <b>open</b> - is an option if there is something that can be opened.</p>
+            </blockquote>
+            <p>Here's the code that implements these rules:</p>
+            <pre>option( [go, X] ) :-
+   here(H),
+   query( H, [connects=X] ).
+option( [take, X] ) :-
+   here(H),
+   query( H, [contains=X] ).
+option( [drop, X] ) :-
+   query( you, [carrying=X] ).
+option( [open, X] ) :-
+   here(H),
+   query( H, [connects=Y] ),
+   query( Y, [X=closed] ).
+</pre>
+            <p>A rule called <b>options</b> can then be implemented that walks 
+              through all the possible options. Because we didn't use the exclamation 
+              point to tell the rule engine to stop after finding a solution, 
+              the fail in <b>options</b> will cause the rule engine to backtrack 
+              through all the options.</p>
+            <pre>options :-
+   option(Command),
+   get_input_text(Command, Text),
+   output_nospace(Text),
+   fail.
+Options :-
+   output_nospace(``).
+</pre>
+            <p>Hints are a little trickier. For hints we don't want to lay out 
+              all the options, but just the verbs that are in play, and it would 
+              be nice to have a more condensed sort of output. To do this we use 
+              the syntax [V|_] which lets us just pick up the first token of a 
+              list, and some more application-specific extensions to find all 
+              of the verbs and their text first, then remove the duplicates and 
+              display the list on one line.</p>
+            <pre>hint :-
+   findall(T,
+      ( option( [V|_] ),
+        get_input_text(V, T) ),
+      Verbs ),
+   remove_dups(Verbs, VerbsNoDups),
+   output(verbs_to_try(VerbsNoDups)).
+</pre>
+            <p>We can now run the game and watch how the hints and options change 
+              with the situation.</p>
+            <pre>> help
+The basic commands are:
+   look - look about
+   hint - get possible actions
+   options - get all options
+   quit - quit the game
+
+> hint
+Try one of these actions: go to, open
+
+> options
+go to duck pen
+open gate
+
+> open gate
+opened
+
+> go pen
+You are now at the duck pen.
+
+> Hint
+Try one of these actions: go to, take
+
+> options
+go to yard
+take duck egg
+take small flock of ducks
+
+> take egg
+You are now carrying the duck egg.
+
+> Options
+go to yard
+take small flock of ducks
+drop duck egg
+
+> hint
+Try one of these actions: go to, take, drop
+</pre>
+            <p>This facility makes it easy to create a game that a player can 
+              learn as he/she plays. The hints and options are voluntary, but 
+              they could be very useful for the first few moves in a new game. 
+              The player would very quickly get the hang of things and be able 
+              to start playing. They wouldn't be needed again until the player 
+              got stuck.</p>
+            <p>Note that the options as coded here would not give away the solutions 
+              to any of the puzzles often found in IF. They simply lay out the 
+              possible moves at a point and place in the game. They don't suggest 
+              the complex sequence of moves that might be necessary to solve some 
+              puzzle.</p>
+            <p>They can also be deliberately misleading, suggesting actions that 
+              lead to the funny messages at the various dead ends. For example, 
+              in the sample game the option to take the ducks is clearly presented 
+              for the player to try. But, and this is the main point, they steer 
+              the player away from thrashing about trying to figure out what's 
+              possible and what's not.</p>
+            <h3>Mechanical Details</h3>
+            <p>The application-specific predicates provide other services for 
+              the game as well, such as save and restore (they just write all 
+              the frames out to a file and/or read them back).</p>
+            <p>Other mechanics, such as keeping score and counting moves, and 
+              using different displays based on whether a place has been visited 
+              or not, are all easily coded into the game as well. They are, like 
+              everything else, just tokens in the frames that are manipulated 
+              by the rules.</p>
+            <p>Here's a general game frame that can be used to keep score:</p>
+            <pre>   make( game, [ moves=0, score = 0 ] )</pre>
+            <p>This is the entry point to the game logic that is called for each 
+              move. It can be used to implement moves by non-playing characters 
+              and the like. For example, the ducks might move about on each turn. 
+              Here we just keep track of the moves:</p>
+            <pre>tick(Command) :-
+   take_action(Command),
+   change( game, [moves+1] ).
+</pre>
+            <p>We could similarly increment the score after certain key moves, 
+              such as if the player takes the duck egg.</p>
+            <p>In any case, the game continues to evolve, limited only by the 
+              imagination and creativity of the author.</p>
+            <h3>GUI</h3>
+            <p>Graphical interfaces are nice, and the tool described here comes 
+              with the option to run in a graphical environment.</p>
+            <p align="center"><img src="2004_07_if_tutorial.jpg" width="467" height="492"></p>
+            <p>The help and language menus are driven from the game, and the names 
+              of the menu items are driven from the national language module used 
+              for the game. The player can switch back and forth from one language 
+              to another.</p>
+            <h3>Beta Version</h3>
+            <p>A beta version of this tool for developing IF is available in the 
+              download section of the newsletter archives. It contains two small 
+              sample games, one is <i>Duck World</i> which is similar to what 
+              was discussed here but with non-playing characters, and the other 
+              is <i>Cloak of Darkness</i>, and equally trivial game designed to 
+              be used to compare various IF authoring tools.</p>
+            <p>Any and all comments are welcome.</p>
+            <p></p>
+            <hr>
+            <p>As always, feedback ideas and especially interesting links are 
+              welcome. Past issues are available at either <a href="www.ddj.com">www.ddj.com</a> 
+              or <a href="www.ainewsletter.com">www.ainewsletter.com</a>.</p>
+            <p>Until next month,</p>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,3444 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->March 
+                      2005 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <H1>AI Expert Newsletter</H1>
+            <P><I>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</I></P>
+<H3>March 2005</H3>
+
+
+
+
+<UL>
+
+
+
+<LI><A HREF="#introduction">Introduction</a></LI><LI>
+
+
+
+<A HREF="#introduction"></a><A HREF="#neural_nets_on_the_web">Neural Nets on the Web</A>
+
+    <UL>
+
+    <LI><A HREF="#neural_nets_on_the_web_artificial_neuron">The artificial neuron</A></LI>
+
+    <LI><A HREF="#neural_nets_on_the_web_other_lausanne">Perceptrons, and biologically realistic neurons</A></LI>
+
+    <LI><A HREF="#neural_nets_on_the_web_hopfield">Hopfield networks</A></LI>
+
+    <LI><A HREF="#neural_nets_on_the_web_other_sites">Other sites</A></LI>
+
+    <LI><A HREF="#neural_nets_on_the_web_links">Links</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#loglan">The Logical Languages Loglan and Lojban</A>
+
+    <UL>
+
+    <LI><A HREF="#loglan_history_1">The Sapir-Whorf hypothesis, or, how our language determines our thought</A></LI>
+
+    <LI><A HREF="#loglan_history_2">James Cooke Brown and Loglan</A></LI>
+
+    <LI><A HREF="#loglan_construction">How Loglan was constructed</A></LI>
+
+    <LI><A HREF="#loglan_the_schism">The great Loglan-Lojban schism</A></LI>
+
+    <LI><A HREF="#loglan_grammar_names">The grammar of Loglan - names</A></LI>
+
+    <LI><A HREF="#loglan_grammar_predicates">The grammar of Loglan - predicates</A></LI>
+
+    <LI><A HREF="#loglan_grammar_predicates_and_more_predicates">The grammar of Loglan - more predicates</A></LI>
+
+    <LI><A HREF="#loglan_grammar_object_descriptions">The grammar of Loglan - describing objects</A></LI>
+
+    <LI><A HREF="#loglan_grammar_masses">The grammar of Loglan - sets of objects and typical objects</A></LI>
+
+    <LI><A HREF="#loglan_grammar_general">Some general points</A></LI>
+
+    <LI><A HREF="#loglan_no">The many implications of "no"</A></LI>
+
+    <LI><A HREF="#loglan_and_mmi">Loglan and man-machine interaction</A></LI>
+
+    <LI><A HREF="#loglan_and_mt">Loglan and machine translation</A></LI>
+
+    <LI><A HREF="#loglan_and_rdf">Loglan, RDF, and ontologies</A></LI>
+
+    <LI><A HREF="#loglan_links">Links and other references</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#leibniz">Leibniz's Calculus of Reason</A>
+
+    <UL>
+
+    <LI><A HREF="#leibniz_links">Links</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#shrdlu">The Resurrection of Etaoin Shrdlu</A>
+
+    <UL>
+
+    <LI><A HREF="#shrdlu_links">Links</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+</UL>
+
+
+
+
+
+
+
+<H2><A NAME="introduction">Introduction</A></H2>
+
+
+
+<P>
+
+Back in 1995, applets seemed so wonderful. James Gosling,
+
+one of Java's developers, 
+
+<A HREF="http://java.sun.com/features/1998/05/birthday.html">recalls</A> 
+
+a demonstration he gave to a group of Internet and entertainment
+
+professionals: 
+
+<BLOCKQUOTE>
+
+As the talk began, Gosling noticed 
+
+that many people were only casually paying attention. After all, 
+
+what was so exciting about a new language driving a page of text 
+
+and illustrations in a clone of Mosaic? 
+
+Then Gosling moved the mouse over an illustration of a 3D molecule 
+
+in the middle of the text. The 3D molecule rotated with the mouse movement. 
+
+Back and forth, up and around. "The entire audience went 'Aaaaaaah!'" 
+
+says Gosling. "Their view of reality had completely changed because it MOVED." 
+
+</BLOCKQUOTE>
+
+Ten years later, applets haven't become as popular as everyone hoped. 
+
+However, there are some nice ones around, especially for 
+
+teaching, and I start this month's issue with a look
+
+at what's available for demonstrating neural nets.
+
+The rest of the issue has a linguistic flavour, with
+
+a long feature on Loglan and Lojban, artificial 
+
+speakable languages designed around logic; a quote from
+
+Leibniz on his dreams for such a language; and a glance
+
+at the resurrection of Terry Winograd's natural-language
+
+program
+
+Shrdlu.
+
+<DIV ALIGN=right>
+
+<A HREF="http://www.j-paine.org/">Jocelyn Paine</A></DIV>
+
+<p></P>
+
+
+
+
+
+
+<H2><A NAME="neural_nets_on_the_web">Neural Nets on the Web</A></H2>
+
+
+
+<P>
+
+More than symbolic AI, neural nets seem to
+
+lend themselves to applet demonstrations - perhaps
+
+because compared with trees, graphs, and other
+
+structures, displaying the output is relatively
+
+straightforward. In this article, I want to talk
+
+about some of the applets I found on the Web.
+
+</P>
+
+
+
+
+
+<H3><A NAME="neural_nets_on_the_web_artificial_neuron">The artificial neuron</A></H3>
+
+
+
+<P>
+
+I did a lot of searching before starting to write. The 
+
+best site I found was 
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/index.html"><I>Neural 
+
+Java: Neural Networks Tutorial with Java Applets</I></A> 
+
+at the &Eacute;cole Polytechnique F&eacute;d&eacute;ral de Lausanne. 
+
+(As usual, the list at the end of the feature 
+
+shows all the URLs referred to.) This
+
+page links to a lot of demos, of which 
+
+one of the
+
+best was also one of the simplest,
+
+conceptually speaking. This is the
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/aneuron/html">artificial neuron</A>,
+
+which demonstrates the structure and behaviour
+
+of a single neuron. This is the biologically
+
+unrealistic kind, as used in perceptrons, back-prop,
+
+and most other neural nets.
+
+</P>
+
+
+
+<P>
+
+The original applet was written by Fred Corbett - link-rot
+
+has swallowed his page - and modified by
+
+Olivier Michel and Alix Herrmann. It shows a single neuron
+
+running up the applet area, with inputs, synaptic weights, weighted sum,
+
+threshold, activation function, and output, all clearly labelled;
+
+there's a checkbox to hide the labels if you find them
+
+distracting. Text fields display the current value of
+
+inputs, weights and threshold; you can type new
+
+values into these and hit RETURN, and the
+
+applet will immediately recalculate and display new results for
+
+the following stages, without you needing to find and press
+
+the CALCULATE button. 
+
+</P>
+
+
+
+<P>
+
+The neuron's activation
+
+function is plotted in a neat little graph just below the
+
+output; clicking on this cycles through a range of
+
+functions - linear, Gaussian, step, sigmoid. After
+
+changing the activation function, you do need to press
+
+CALCULATE. This is, to my mind, a flaw: the controls would be
+
+more consistent if the applet recalculated immediately the
+
+graph were changed.
+
+</P>
+
+
+
+<P>
+
+The colours of background, neuron, buttons, labels, and other
+
+components have been well chosen, so that they're not
+
+garish or distracting - with the possible exception
+
+of the pink arrows linking the
+
+labels to what they label.
+
+</P>
+
+
+
+<P>
+
+The applet is embedded in 
+
+the middle of a page which has some exercises below it, and
+
+a brief theory section above. This lists the neuron's parts
+
+- inputs, weights, and so on - and is nice because 
+
+you can fit the applet and the list onto the
+
+screen at the same time. Each item in the list is linked to
+
+a glossary entry. That for "activation function" shows
+
+the graph of each function accompanied by its equation; that for
+
+"neuron output" has the formula for weighted sum. Just above
+
+the applet, there's a final link, to the instructions for use.
+
+</P>
+
+
+
+<P>
+
+To bring in a bit of history, always worth doing, the 
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/index.html">Neural 
+
+Java</A> page also has a 
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/mcpits/html/index.html">McCulloch-Pitts</A> 
+
+neuron.
+
+Simpler than the applet above, this has the nifty feature that
+
+you can
+
+toggle inputs from excitatory to inhibitory by clicking
+
+on the synapse. Unfortunately, "McCulloch" is misspelt in
+
+two places, one being the bold and large-text page heading.
+
+</P>
+
+
+
+
+
+<H3><A NAME="neural_nets_on_the_web_other_lausanne">Perceptrons, and biologically realistic neurons</A></H3>
+
+
+
+<P>
+
+Lausanne's <A HREF="http://diwww.epfl.ch/mantra/tutorial/english/perceptron/html/index.html">perceptron</A>
+
+builds on the artificial neuron,
+
+extending it with the ability to set the 
+
+input-output pattern to train on by
+
+clicking the output column of a truth table.
+
+Training rate and number of iterations can
+
+be selected, and you can either train in one
+
+go, or single-step. As training proceeds, the
+
+applet displays the "decision hyperplane" - the line
+
+separating the two classes of inputs - evolving
+
+in the input space.
+
+</P>
+
+
+
+<P>
+
+There are many other applets in this collection,
+
+including: multi-layer perceptrons; multi-layer perceptron for
+
+character recognition; a radial basis function network;
+
+and a Gaussian mixture network. Unusually - but
+
+pleasingly - amongst the sites
+
+I visited, some applets are more biologically realistic. One of these 
+
+is Sebastien Baehni's
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/retina/html/index.html">retina
+
+simulator</A>, which models
+
+the retina as a resistance-capacitance network,  
+
+allowing you to set the network's parameters, draw a simple
+
+shape, and then see the result of passing that
+
+input through the retinal layers. The applet code
+
+can be downloaded, and
+
+there are links to JavaDoc documentation.
+
+</P>
+
+
+
+<P>
+
+Another applet, written by Florian Seydoux, models the
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/spiking/html/SingleNeuron.html">membrane potential of a single spiking neuron</A>.
+
+This has an elaborate Swing-based display, 
+
+which I did find slow to load. I couldn't
+
+find any explanatory text, and it
+
+wasn't immediately obvious how to start
+
+a run (an unlabelled arrow button in
+
+the top right-hand corner), but it's an
+
+interesting model.
+
+</P>
+
+
+
+
+
+<H3><A NAME="neural_nets_on_the_web_hopfield">Hopfield networks</A></H3>
+
+
+
+<P>
+
+The applets I've looked at above are one-shot networks, but
+
+Lausanne also have a 
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/hopfield/html/index.html">Hopfield model</A>,
+
+adapted by Olivier Michel 
+
+from an applet by Matt Hill. This allows you to 
+
+draw patterns on a small grid by clicking its squares and
+
+then either store them, or use them
+
+as test patterns to recall one already stored. A nice
+
+feature is that you can recall a pattern, change a
+
+few of its squares, and then use it as another test,
+
+watching the network (if your changes weren't too great)
+
+undo the damage. 
+
+</P>
+
+
+
+<P>
+
+This, and some of the other Hopfield applets around,
+
+demonstrate the Hopfield
+
+net acting as an autoassociator, 
+
+but ignore its 
+
+<A HREF="http://www.itee.uq.edu.au/~cogs2010/cmc/chapters/Hopfield/">dynamics</A>.
+
+This would admittedly be difficult, since the net's
+
+state has as many dimensions as the number of
+
+neurons, but it would be interesting to
+
+see someone try. The nearest I've found is an
+
+applet written by Richard DeVaul at MIT to demonstrate
+
+<A HREF="http://web.media.mit.edu/~rich/research/mathModel/optimize/Annealing.html">simulated annealing in spin glasses</A>.
+
+This generates a set of 100-particle spin glasses,
+
+depicting each glass as a dot in two-dimensional space,
+
+with distance from the centre of a circle representing energy.
+
+As the
+
+glasses cool, one sees a group of dots
+
+moving from the energy maximum at the centre
+
+to various points on the circle's circumference.
+
+</P>
+
+
+
+
+
+<H3><A NAME="neural_nets_on_the_web_other_sites">Other sites</A></H3>
+
+
+
+<P>
+
+There are many other neural-net applets on the Web, though the
+
+Lausanne ones must be amongst the best-designed and best-explained.
+
+One of the other collections resides at Wayne State University's
+
+<A HREF="http://neuron.eng.wayne.edu/software.html">
+
+Computation and Neural Networks Laboratory</A>. However,
+
+although it appears in many resource lists, the
+
+site is poorly presented, with spelling mistakes, poor
+
+text layout, dead links, and some applets whose only documentation is
+
+a research paper whose content doesn't match the
+
+applet controls. It's a shame, because some applets,
+
+such as the
+
+<A HREF="http://neuron.eng.wayne.edu/bpBallBalancing/ball5.html">ball-balancer</A>,
+
+must have needed a lot of work. 
+
+
+Having said that, they're useful resources, although
+
+if using them in teaching, you might need to 
+
+write some explanations.
+
+</P>
+
+
+
+<P>
+
+Applets take a lot of time and effort to write well, 
+
+so it's not surprising there aren't more around. All
+
+credit to those who have put in the hours and made
+
+their work available to the rest of us.
+
+</P>
+
+
+
+
+
+<H3><A NAME="neural_nets_on_the_web_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://java.sun.com/features/1998/05/birthday.html">java.sun.com/features/1998/05/birthday.html</A> -
+
+<I>Java Technology: the early years</I>, by Jon Byous.
+
+"Chances are, everything you know about Java technology is only a few years old. 
+
+There's a good reason for that: On May 23, 1998 the technology officially celebrated its third birthday. 
+
+As part of the celebration, we interviewed several members of the Java 
+
+technology team who have been around since the early days, and we put together this retrospective to share with the readers of java.sun.com. 
+
+Join us on a stroll through history". 
+
+<P>
+
+
+
+<P>
+
+<A HREF="http://java.sun.com/products/jlf/ed2/book/">java.sun.com/products/jlf/ed2/book/</A> -
+
+<I>Java Look and Feel Guidelines</I>, 2nd edition. Web version of Sun's
+
+book on the good design of Java user interfaces, including those for applets.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/index.html">diwww.epfl.ch/mantra/tutorial/english/index.html</A> -
+
+<I>Neural Java: Neural Networks Tutorial with Java Applets</I>, 
+
+&Eacute;cole Polytechnique F&eacute;d&eacute;ral de Lausanne. This contains the following applets mentioned above:
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/aneuron/html">artificial neuron</A>;
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/mcpits/html/index.html">McCulloch-Pitts neuron</A>;
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/perceptron/html/index.html">perceptron learning</A>;
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/retina/html/index.html">retina simulation</A>;
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/spiking/html/SingleNeuron.html">membrane potential of a single spiking neuron</A>;
+
+<A HREF="http://diwww.epfl.ch/mantra/tutorial/english/hopfield/html/index.html">Hopfield model</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.saliege.com/dynamique/projet/neurones/Hopfield.html">www.saliege.com/dynamique/projet/neurones/Hopfield.html</A> -
+
+G&eacute;rard Chevet's Hopfield applet (in French). 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://web.media.mit.edu/~rich/research/mathModel/optimize/Annealing.html">web.media.mit.edu/~rich/research/mathModel/optimize/Annealing.html</A> -
+
+The spin glass annealing applet, by Richard DeVaul, MIT. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.itee.uq.edu.au/~cogs2010/cmc/chapters/Hopfield/">www.itee.uq.edu.au/~cogs2010/cmc/chapters/Hopfield/</A> -
+
+<I>The Hopfield Network: Descent on an Energy Surface</I>, by
+
+Simon Dennis, University of Queensland.
+
+A nice account of Hopfield networks, their dynamics, and basins
+
+of attraction.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://neuron.eng.wayne.edu/software.html">neuron.eng.wayne.edu/software.html</A> -
+
+Computation and Neural Networks Laboratory,
+
+Wayne State University. This contains the 
+
+<A HREF="http://neuron.eng.wayne.edu/bpBallBalancing/ball5.html">ball balancing</A>
+
+applet by Paul Watta and Mohamad Hassoun.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/DemoGNG/GNG.html">www.neuroinformatik.ruhr-uni-bochum.de/ini/VDM/research/gsn/DemoGNG/GNG.html</A> -
+
+DemoGNG applet for competitive learning, by Hartmut Loos and Bernd Fritzke,
+
+Systems Biophysics
+
+Institute for Neural Computation, Ruhr-Universit&auml;t Bochum.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://staff.aist.go.jp/utsugi-a/Lab/Links.html">staff.aist.go.jp/utsugi-a/Lab/Links.html</A> -
+
+Applets for Neural Networks and Artificial Life.
+
+This site often appears in resource lists, but I haven't
+
+yet looked into it.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.hav.com/nnhtml.htm">www.hav.com/nnhtml.htm</A> -
+
+<I>The HTML Neural Net Consulter</I> from hav.Software. Two
+
+JavaScript net demonstrations.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.statsoftinc.com/textbook/stneunet.html">www.statsoftinc.com/textbook/stneunet.html</A> -
+
+StatSoft's Neural Networks page. A collection of short entries covering much that's worth
+
+knowing about problem solving with neural networks.
+
+Some examples are geared towards StatSoft's Statistica neural networks software,
+
+but the page is still a useful reference source which doesn't, as some texts do,
+
+ignore the connection with statistics. Indeed, this page is just part of StatSoft's Electronic
+
+Statistics Textbook, whose contents page at 
+
+<A HREF="http://www.statsoft.com/textbook/stathome.html">www.statsoft.com/textbook/stathome.html</A> 
+
+reveals it to be a compendium of information on everything from cluster analysis to quality
+
+control charts.
+
+</P>
+
+
+
+<P>
+
+<A HREF="ftp://ftp.sas.com/pub/neural/FAQ.html">ftp://ftp.sas.com/pub/neural/FAQ.html</A> -
+
+The comp.ai.neural-nets FAQ. Since the last modification date given is for 2002,
+
+this may be an old version (there are many versions, of varying dates, scattered
+
+around the Web), or perhaps it is no longer being maintained. Nevertheless, useful,
+
+detailed answers to questions. E.g. under
+
+"How many kinds of Kohonen networks exist?":
+
+"Teuvo Kohonen is one of the most famous and prolific researchers in neurocomputing, 
+
+and he has invented a variety of networks. But many people refer to 'Kohonen networks'
+
+without specifying which kind of Kohonen network, and this lack of precision can lead to confusion. 
+
+The phrase 'Kohonen network' most often refers to one of the following three types of networks: ...". 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.phys.uni.torun.pl/~duch/CI.html#Neural%20Networks">www.phys.uni.torun.pl/~duch/CI.html#Neural%20Networks</A> -
+
+Wlodzislaw Duch's links list for <I>Computational intelligence: numerical methods
+
+Neural networks and relevant math</I>. An extremely thorough list: even
+
+though it has the usual proportion of dead links, there's a wealth of good material and
+
+a good starting point, covering financial applications, polyhedral computation,
+
+Reactive Tabu Search, Chernoff faces, the Euroattractor conference, and
+
+iterons, filtrons, and cellular automata.
+
+ The last modification date of 18.02.2005 at the bottom
+
+of the page gives confidence it's still being cared for.
+
+</P>
+
+
+
+
+
+
+
+<H2><A NAME="loglan">The Logical Languages Loglan and Lojban</A></H2>
+
+
+
+<P>
+
+Eskimos have 500 words for snow! In fact they don't, as
+
+I'll explain later. But the hypothesis behind this common
+
+urban myth is a serious one, and it's the same hypothesis
+
+that gave rise to Loglan and Lojban, logical languages
+
+packed with features to make you think more rationally.
+
+These, and their relevance to AI, are what I am going to
+
+talk about in this article.
+
+</P>
+
+
+
+
+
+<H3><A NAME="loglan_history_1">The Sapir-Whorf hypothesis, or, how our language determines our thought</A></H3>
+
+
+
+<P>
+
+The 500-words myth arose from the Sapir-Whorf hypothesis,
+
+named after linguist and anthropologist 
+
+Edward Sapir and his colleague and student Benjamin Whorf.
+
+A strong statement of the hypothesis
+
+says that the way we think about the world is determined by
+
+how our language describes reality. Thus, so the popular accounts
+
+go, because Russian has two words for "blue",
+
+Russians will perceive two shades of blue where we see only one;
+
+because the language of the Hopi Indians has no tenses,
+
+the Hopi anticipated Eninstein's relativistic view 
+
+of the Universe as an unchanging block extending through space-time.
+
+</P>
+
+
+
+<P>
+
+A different version of the hypothesis permits language to both influence
+
+and be influenced by thought - hence, the Eskimos might have
+
+all those words for snow because they live amongst, and need to
+
+work with, so many different varieties of the stuff. I'm
+
+not going to comment further - the intellectual history is complicated, and 
+
+I haven't read much of what Whorf or Sapir actually wrote - but I've selected some links
+
+<A HREF="#loglan_sapir_whorf">for the end of this article</A>,
+
+including debunkings of the snow myth. 
+
+Sapir-Whorf has generated a dreadful lot of rubbish: beware of anything
+
+that gives undue reverence to Hopi relativity, neurolinguistic programming,
+
+or the cultural relativism of scientific truth.
+
+</P>
+
+
+
+
+
+<H3><A NAME="loglan_history_2">James Cooke Brown and Loglan</A></H3>
+
+
+
+<P>
+
+After surviving the Oxford weather for the past three weeks,
+
+I feel I have words for every kind of rain, hail, sleet and snow ever
+
+precipitated. However, rather than testing myself for the influence
+
+of weather words on thought, I've been doing 
+
+what James Cooke Brown would have wanted me to do - exposing my brain
+
+to the language he invented. This is Loglan: a language intended to
+
+be as rich as any natural language, but with a unique
+
+logic-based structure. 
+
+</P>
+
+
+
+<P>
+
+Nowdays, Loglan interests people because of its basis in logic and
+
+its relevance to computing. That's how I shall approach it and its
+
+offshoot, Lojban. However, when James Cooke Brown
+
+began, logic was secondary. He wanted to test the Sapir-Whorf
+
+hypothesis by creating a language that would be different in
+
+<I>some</I> extreme way from natural languages. Making it
+
+extremely logical, rather than, say, extremely literary, just
+
+happened to be most feasible. This is how, in his book
+
+<A HREF="http://www.loglan.org/Loglan1/index.html"><I>Loglan 1: A Logical Language</I></A>,
+
+he explains his project:
+
+<BLOCKQUOTE>
+
+<P>
+
+In 1955 there was no experimental linguistics. But the then very rapid 
+
+development of theoretical and mathematical linguistics seemed to be 
+
+transcending the earlier descriptive stage of that science, and hence 
+
+to offer clear if tentative guidelines for the construction of just 
+
+such a culture-free language as my strategy required. ...
+
+</P>
+
+<P>
+
+But if the constructed language were to serve as a laboratory 
+
+instrument - something to "release", as it were, or at least 
+
+increase the probability of observing, Whorfian effects - it 
+
+would obviously not do to imitate any natural language or group of 
+
+languages too closely. What was wanted, apart from smallness, was
+
+ not a typical human language, but a severely atypical one. For if the 
+
+Whorfian effects of second-language learning turned out to be elusive -
+
+and compared to those of primary language learning, which we had decided 
+
+were impossible to isolate, we could certainly expect them to be minor -
+
+they would probably not be revealed in a single culture in a single try. 
+
+In fact, we could probably expect the complete pattern of any given second 
+
+language's Whorfian effects to emerge only against the background of many 
+
+primary cultures, and perhaps only then after many tries. Thus a language 
+
+constructed to release measurable Whorfian effects when learned as a 
+
+second language should offer fairly large structural contrasts with 
+
+all the first languages that might be involved. Since any natural 
+
+language might eventually be involved, what was required was a diminutive 
+
+but nevertheless genuine human language which was easily learned by adults 
+
+and which differed from all natural languages in some scientifically interesting 
+
+way. ...
+
+</P>
+
+<P>
+
+The most promising way to create such a difference, it seemed to me, was to 
+
+exaggerate some natural function of human language, that is, to increase the 
+
+functional adequacy of some complex of linguistic structures in a way that 
+
+would have a strong independent likelihood of enhancing the measurable
+
+performance of its learners on some specified set of tasks. Besides, in 
+
+its original formulation the Whorf hypothesis is a negative one: language 
+
+limits thought. One way of disclosing such phenomena is to take the suspected 
+
+limits off, more precisely, to push them outward in some direction in which 
+
+removing limits would have predictable effects. So it was settled. The diminutive 
+
+language should also be a functionally extreme one in some known or presumable 
+
+way: an extremely poetic one, say, or an extremely efficient one, or extremely logical.
+
+</P>
+
+<P>
+
+Now there is very little scientific knowledge about the literary functions 
+
+of language, and while a lot is known about efficient codes, it is hard to 
+
+relate this property to Whorfian effects. Enhancing and clarifying the logical 
+
+structures of the diminutive language, however, seemed to answer all the 
+
+requirements of the project. There is a very considerable body of knowledge 
+
+about the formal properties of logical systems; and a hyperlogical linguistic 
+
+structure should have a clear and interesting Whorfian effect if it had any: 
+
+namely the facilitation of certain identifiable kinds of thought. Not only 
+
+that, but a language which only faintly promised such a mind-enhancing effect
+
+would almost certainly prove attractive to a large body of potential learners, 
+
+namely students. Thus the idea of Loglan as a hyperlogical or thought-facilitating 
+
+language had a very natural birth.
+
+</P>
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="loglan_construction">How Loglan was constructed</A></H3>
+
+
+
+<P>
+
+Brown wrote an article for the June 1960 issue of <I>Scientific American</I>
+
+which explains very clearly how he constructed Loglan's
+
+vocabulary and grammar. Most artificial languages intended for
+
+international communication, such as
+
+Esperanto, have vocabularies made up of natural-language
+
+roots. One of the earliest, Volap&uuml;k, had a high
+
+proportion of Germanic roots: its name is from
+
+the German "Weltsprache" or "world speech", mangled
+
+to fit Volap&uuml;k's sound structure. More often though, the
+
+creators of such languages have based them on Latin and
+
+Greek roots, because of their internationality.
+
+</P>
+
+
+
+<P>
+
+To avoid such cultural bias, Brown started with 
+
+the most frequently-spoken natural languages, which he deemed to be
+
+English, Mandarin, Hindi, Russian, Spanish, Japanese, French, and
+
+German. To make a Loglan word for some concept, he took words from each
+
+of these languages, and blended them in various ways, selecting 
+
+some sounds and rejecting others. He scored each blend
+
+by adding up the proportion of sounds from each language, weighted by
+
+the language's importance: English weighted higher than Mandarin,
+
+and Mandarin higher than Hindi, because of the number of speakers.
+
+The total score for each blend measured its learnability by speakers
+
+of all eight languages, weighted by each language's importance. 
+
+</P>
+
+
+
+<P>
+
+As an example, Loglan for "blue" is <CODE>blanu</CODE>. This contains all the
+
+sounds from "blue"; all those from "lan", Mandarin for "blue"; and
+
+all those from the German "blau", if the dipthong "au" is split
+
+into its constituent vowels. But it contains only 2/3 of French "bleu",  
+
+1/2 of Hindi "nila", 1/2 of Spanish "azul", 2/7 of
+
+Russian "galuboi", and
+
+none of the Japanese "ao" or "kon". To score "blanu", each fraction
+
+was multiplied by the weighting for its language. 
+
+Brown did the same for other trial words for "blue", such
+
+as <CODE>blula</CODE> and <CODE>lablu</CODE>. <CODE>blanu</CODE>
+
+scored highest. 
+
+</P>
+
+
+
+<P>
+
+Some other Loglan words which display their English ancestry
+
+are: <CODE>prano</CODE> ("run"); 
+
+<CODE>briki</CODE> ("brick"); <CODE>cefli</CODE> ("chef"); and 
+
+<CODE>vegri</CODE> ("green"). For what it's worth, I
+
+find these and other words pretty easy to recall. 
+
+</P>
+
+
+
+
+
+<H3><A NAME="loglan_the_schism">The great Loglan-Lojban schism</A></H3>
+
+
+
+<P>
+
+Before moving on to grammar, I want to say a bit about
+
+Lojban, a younger offshoot of Loglan. Lojban users are more active
+
+on the Web and in discussion groups than Loglan users, and
+
+Lojban's Web site is bigger, with many more teaching
+
+materials. Because of this, I spent most of this
+
+article's preparation time on Lojban,
+
+not Loglan.
+
+</P>
+
+
+
+<P>
+
+Lojban arose because of an intellectual property dispute. 
+
+between Brown and the Lojbanists-to-be. Summarising the
+
+accounts I've read, it seems that
+
+the Lojbanists wanted to change Loglan to fix problems, and
+
+also to publish wordlists and other materials; Brown, on the
+
+other hand, regarded Loglan as an unfinished research project,
+
+and so wanted final control over the language, as well as
+
+royalties on the published materials. The dispute resulted in
+
+a court case over the name "Loglan", which Brown trademarked.
+
+Bob leChavalier, chief engineer of Lojban, founded 
+
+The Logical Language Group, and Lojban went on to emerge as a
+
+complete language. In fact, it was already in use in 1987.
+
+In October 1987, leChavalier
+
+married co-Lojbanist Nora Tansky. The marriage vows were spoken in
+
+primitive Lojban.
+
+</P>
+
+
+
+<P>
+
+The good news for anyone wanting to use Lojban in
+
+computing is that it has a large Web site at
+
+<A HREF="http://www.lojban.org/">www.lojban.org/</A>, with language
+
+manuals and other reference material, as well as texts
+
+written in or translated into Lojban. Be warned - Lojban
+
+uses words from its own vocabulary for grammatical terms such
+
+as "pronoun" and "sentence", even when talking about them
+
+in English. This is more precise, since its grammar is
+
+so different from that of the natural
+
+languages, but it does mean you'll need to learn
+
+the terminology before being able to make much sense of the texts. 
+
+</P>
+
+
+
+
+
+<H3><A NAME="loglan_grammar_names">The grammar of Loglan - names</A></H3>
+
+
+
+<P>
+
+I'll now talk about grammar. As I mentioned above, I'm going to
+
+describe Lojban, not Loglan, because more has been published about 
+
+it. The grammatical structure of
+
+Lojban and Loglan is similar; they do have different vocabularies,
+
+because the Lojbanists rebuilt the words from scratch, using
+
+more accurate estimates of the numbers of speakers of world
+
+languages. 
+
+</P>
+
+
+
+<P>
+
+Before describing how Lojban handles predicates, I need some
+
+objects for them to relate. So like any language teacher trying to 
+
+convey first impressions of a language
+
+while avoiding the complexities of noun declension, I'll start
+
+with proper names.
+
+</P>
+
+
+
+<P>
+
+All parts of speech in Lojban have a specified pattern of consonants and
+
+vowels, making it possible for human and computer to parse a sentence even
+
+when they don't know what its words mean. 
+
+The basic predicate words, for example, must follow the pattern CVCCV 
+
+or CCVCV, as shown by <CODE>dunda</CODE>, 
+
+meaning "give", and <CODE>klama</CODE>, meaning "go".
+
+</P>
+
+
+
+<P>
+
+To accomodate the huge variety of names for people, cities, and everything
+
+else, Lojban restricts
+
+them less than it does other words. However, 
+
+changes are often still necessary when Lojbanising a name.
+
+Moreover, Lojban doesn't allow sounds foreign to its repertoire: thus it
+
+lacks both English "th" sounds, because most people around
+
+the world can't say them. Some names, incidentally, puzzled me
+
+when I started, because they had an <I>a</I> where I would
+
+expect <I>o</I> to be the nearest Lojban vowel.
+
+I think this is because
+
+the names were translated by Americans, for whose pronounciation
+
+<I>a</I> was closer. This would explain why the
+
+Loglan translation of the childrens' "See Spot run!" - yes, there
+
+really is one - is <A HREF="http://www.loglan.org/Texts/vizka-la-spat.html"><I>Vizka La Spat</I></A>.
+
+</P>
+
+
+
+<P>
+
+Let's make some names then. My name, Jocelyn, becomes
+
+<CODE>DJOselin.</CODE>. This has two unusual features: the capitals, and the full stop.
+
+The capitals indicate that the stress falls on the
+
+first syllable, contrary to Lojban's default stress rule. Lojban is designed to
+
+be audio-visually isomorphic, meaning that there's a one-to-one
+
+correspondence between the written and spoken forms of a word; thus,
+
+written Lojban always indicates stress, rather than leaving it to the imagination as in
+
+English. The full stop is not a sentence terminator: Lojban uses it to indicate 
+
+a slight spoken pause, thus preventing the name running into the next
+
+word and causing ambiguity. Names which start with a vowel need
+
+a pause at the beginning as well as the end: Oxford becomes
+
+<CODE>.oksfyrd.</CODE>. 
+
+</P>
+
+
+
+
+
+<H3><A NAME="loglan_grammar_predicates">The grammar of Loglan - predicates</A></H3>
+
+
+
+<P>
+
+Now we have some objects, let's relate them, starting with
+
+the Lojban translation of "Jocelyn goes to Oxford":
+
+<BLOCKQUOTE>
+
+<CODE>la DJOselin. klama la .oksfyrd.</CODE>  
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+The little word <CODE>la</CODE> looks like a French or Spanish "the", but
+
+means something more like "the object that I know by the following name". 
+
+<CODE>klama</CODE> means "go". More precisely, <CODE>klama</CODE> is a predicate. Looking
+
+in the <A HREF="#loglan_dictionary">dictionary</A>, I found it was defined as:
+
+<BLOCKQUOTE>
+
+<B>goes</B>: <CODE>klama</CODE>: x1 comes/| to destination x2 from origin x3 via route 
+
+x4 using means/vehicle x5 [also travels, journeys, moves, leaves to ... from ...; 
+
+x1 is a traveller; (x4 as a set includes points at least sufficient to constrain the route relevantly)] 
+
+</BLOCKQUOTE>
+
+Like a comment in any well-documented program, the
+
+definition tells us the meanings of the arguments. The first
+
+is the actor doing the going, and the second is their destination.
+
+<p></P>
+
+
+
+<P>
+
+Altogether, <CODE>klama</CODE> has five arguments, and we can fill them in
+
+as follows:
+
+<BLOCKQUOTE>
+
+<CODE>la DJOselin. klama la .oksfyrd. la kardif. la bristyl. la ferstgreituestyrn.</CODE>  
+
+</BLOCKQUOTE>
+
+I've used more names here. <CODE>kardif.</CODE> and <CODE>bristyl.</CODE>
+
+are Cardiff and Bristol. <CODE>ferstgreituestyrn.</CODE> is my attempt
+
+at Lojbanising the train company First Great Western, which
+
+runs trains on that line. I haven't shown you how to omit
+
+arguments yet, so I needed something to fill the "via" place.
+
+<p></P>
+
+
+
+<P>
+
+In fact, trailing arguments can be omitted just by not writing them. So
+
+<BLOCKQUOTE>
+
+<CODE>la DJOselin. klama la .oksfyrd.</CODE>  
+
+</BLOCKQUOTE>
+
+means "Jocelyn goes to Oxford".
+
+<p></P>
+
+
+
+<P>
+
+Omitting non-trailing arguments calls for more grammar. One way
+
+is to use <CODE>zo'e</CODE>, "something not important". So if I want 
+
+not to say where I came from, I can write:
+
+<BLOCKQUOTE>
+
+<CODE>la DJOselin. klama la .oksfyrd. zo'e la bristyl. la ferstgreituestyrn.</CODE>   
+
+</BLOCKQUOTE>
+
+and I can avoid naming the means of travel too, either by omitting it
+
+or by replacing it with the "something not important":
+
+<BLOCKQUOTE>
+
+<CODE>la DJOselin. klama la .oksfyrd. zo'e la bristyl.</CODE>  
+
+</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+
+<CODE>la DJOselin. klama la .oksfyrd. zo'e la bristyl. zo'e</CODE>  
+
+</BLOCKQUOTE>
+
+The apostrophe in <CODE>zo'e</CODE> indicates that the two vowels are
+
+pronounced separately rather than running together as a dipthong.
+
+<p></P>
+
+
+
+<P>
+
+According to Nick Nicholas and Robin Turner in their 
+
+<A HREF="http://ptolemy.tlg.uci.edu/~opoudjis/lojbanbrochure/lessons/book1.html"><I>Lojban For Beginners</I></A>,
+
+most people don't write more than one <CODE>zo'e</CODE>.
+
+Lojban doesn't prohibit it, because such a sentence would still mean
+
+something, but it does provide other grammatical possibilities.
+
+These include the argument-position indicators <CODE>fa</CODE>, <CODE>fe</CODE>, <CODE>fi</CODE>, <CODE>fo</CODE>, 
+
+and <CODE>fu</CODE>, which act like
+
+keyworded arguments in some programming languages. Thus,
+
+<BLOCKQUOTE>
+
+<CODE>la DJOselin. klama la .oksfyrd. fu la ferstgreituestyrn.</CODE> 
+
+</BLOCKQUOTE>
+
+ - "Jocelyn goes to Oxford by First Great Western", where
+
+<CODE>fu</CODE> marks the phrase following as the fifth place.
+
+<p></P>
+
+
+
+<P>
+
+These argument-position markers can be used in any order,
+
+so I could have written
+
+<BLOCKQUOTE>
+
+<CODE>fu la ferstgreituestyrn. klama fe la .oksfyrd. fa la DJOselin.</CODE> 
+
+</BLOCKQUOTE>
+
+<CODE>fa</CODE> and
+
+its fellows would be very useful in Prolog when passing 
+
+partially parameterised predicates to <CODE>maplist</CODE>
+
+and other higher-order predicates.
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="loglan_grammar_predicates_and_more_predicates">The grammar of Loglan - more predicates</A></H3>
+
+
+
+<P>
+
+Perhaps my subsconscious is still running on the 500 types of snow, but
+
+the first word my cursor fell on in the English-Lojban dictionary
+
+was "umbrella". This is the definition:
+
+<BLOCKQUOTE>
+
+<B>umbrella</B>:
+
+<CODE>santa</CODE>: 
+
+x1 is an |/parasol shielding x2 from x3, made of material x4, supported by x5.
+
+</BLOCKQUOTE>
+
+So although "umbrella" is a noun, when you open it into
+
+the Lojban world, it unfolds into a predicate. 
+
+<p></P>
+
+
+
+<P>
+
+In fact, Lojban does not distinguish between nouns, adjectives, adverbs 
+
+and verbs. They're all predicates. Here are some other
+
+weather-related words:
+
+<BLOCKQUOTE>
+
+<B>cold</B>: <CODE>lenku</CODE>: x1 is |/cool by standard x2.<BR>
+
+<B>fall</B>: <CODE>farlu</CODE>: x1 falls/drops to x2 from x3 in gravity well/frame of reference x4 [note: things can | in spin, thrust, or tide as 
+
+well as gravity; (agentive "drop" = one of two <CODE>lujvo</CODE>: <CODE>falcru</CODE> and <CODE>falri'a</CODE>)]. 
+
+<B>hail</B>: <CODE>bratu</CODE>: x1 is |/sleet/freezing rain/solid precipitation of material/composition including x2 [this is the substance, 
+
+not the act or manner of its falling, which is <CODE>carvi</CODE>].<BR> 
+
+<B>rain</B>: <CODE>carvi</CODE>: x1 rains/showers/[precipitates] to x2 from x3; x1 is precipitation [not limited to '|'].<BR>
+
+<B>wet</B>: <CODE>cilmo</CODE>: x1 is moist/|/damp with liquid x2.<BR> 
+
+<B>winter</B>: <CODE>dunra</CODE>: x1 is |/wintertime [cold season] of year x2 at location x3.<BR>
+
+</BLOCKQUOTE>
+
+The entry for "hail" is so right - sleet, freezing rain, and solid precipitation
+
+is <I>exactly</I> what Oxford has been suffering.
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="loglan_grammar_object_descriptions">The grammar of Loglan - describing objects</A></H3>
+
+
+
+<P>
+
+Loglan uses predicates to describe actions. It also uses predicates
+
+to describe objects, with the help of the word
+
+<CODE>le</CODE>. Here's "Jocelyn goes to Oxford by train":
+
+<BLOCKQUOTE>
+
+<CODE>la DJOselin. klama la .oksfyrd. fu le trene</CODE> 
+
+</BLOCKQUOTE>
+
+where the definition of <CODE>trene</CODE> is
+
+<BLOCKQUOTE>
+
+<B>train</B> (vehicle): <CODE>trene</CODE> (<CODE>ren re'e</CODE>): x1 is a | [vehicle] of cars/units x2 (mass) 
+
+for rails/system/railroad x3, propelled by x4 [a railed vehicle or | of vehicles; 
+
+also subway (= <CODE>tu'unre'e</CODE>), metro, trolley, tramway (= <CODE>lajre'e</CODE>), roller coaster; 
+
+monorail (= <CODE>dadre'e</CODE>); cable car, sky car, ski lift (= <CODE>cildadre'e</CODE>)]
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+What's happening in this sentence is that <CODE>le</CODE> converts a predicate
+
+into some object I'm thinking about that the predicate describes.
+
+Imagine two robots speaking Prolog to
+
+one another. One says to the other:
+
+<PRE>
+
+  ?- find_referent_of_name( 'Jocelyn', A1 ), 
+
+     find_referent_of_name( 'Oxford', A2 ), 
+
+     find_referent_of_noun( train, A5 ),
+
+     mark_as_unknown( A3 ),
+
+     mark_as_unknown( A4 ),
+
+     update_your_world_model_with_event( goes( A1, A2, A3, A4, A5 ) ).
+
+</PRE>
+
+That, roughly, is the effect the speaker wants to have on the listener.
+
+Whereas <CODE>la</CODE> told the listener to identify the object referred to by
+
+a proper name, <CODE>le</CODE> tells them to identify the object referred to by
+
+a description.
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="loglan_grammar_masses">The grammar of Loglan - sets of objects and typical objects</A></H3>
+
+
+
+<P>
+
+I now want to tell some jokes:
+
+<BLOCKQUOTE>
+
+Q: Did you know a man is knocked down on Britain's roads
+
+every eight minutes?<BR>
+
+A: No.<BR>
+
+Q: Yes there is, and he's getting pretty fed up about it.
+
+</BLOCKQUOTE>
+
+
+
+<BLOCKQUOTE>
+
+Johnny's mother: Johnny told me he got 100 in his tests yesterday!<BR>
+
+Johnny's mother: He did - 50 in spelling and 50 in arithmetic.
+
+</BLOCKQUOTE>
+
+
+
+<BLOCKQUOTE>
+
+Teacher: Suzie, please spell "cattle".<BR>
+
+Suzie: C-A-T-T-T-L-E.<BR>
+
+Teacher: Leave out one of the Ts.<BR>
+
+Suzie: Which one?
+
+</BLOCKQUOTE>
+
+
+
+<BLOCKQUOTE>
+
+Q: Name five things that contain milk.<BR>
+
+A: Butter, cheese, ice cream, and two cows.
+
+</BLOCKQUOTE>
+
+All these rely on ambiguity for their effect. If any Lojbanists are reading 
+
+this, I'd like to issue them as a challenge, because I suspect
+
+they'd be impossible to translate without losing the humour. Lojban is
+
+probably too precise.
+
+<p></P>
+
+
+
+<P>
+
+The first joke, for instance, appears to be confusing two meanings of "a": 
+
+"the typical", 
+
+and "a particular individual". The point is that
+
+in English, "a" can indicate typicality.
+
+When I say "a Macintosh is an elegant machine", I am talking
+
+not about a specific machine - that one on my desk, or in the dealer's window -
+
+but about the typical Mac. In the same way, I might say "a typical child in
+
+England starts school at the age of five". Lojban provides a particle for such references,
+
+<CODE>le'e</CODE>. 
+
+In general, Lojban enforces great precision in distinguishing between
+
+particular individuals, the typical individual, sets, 
+
+members of sets, and masses such as sand
+
+or water. 
+
+</P>
+
+
+
+
+
+<H3><A NAME="loglan_grammar_general">Some general points</A></H3>
+
+
+
+<P>
+
+Rather than continuing with the grammar in detail, I'll
+
+leave the task to one of the excellent teaching texts.
+
+Instead, I want to utter a few generalities about what
+
+Lojban can do.
+
+</P>
+
+
+
+<P>
+
+Lojban has equivalents for tenses and
+
+spatial adverbs and prepositions - and,
+
+being regular, treats both the same way, since location
+
+in time is the same kind of concept as location in space.
+
+It has pronouns - and distinguishes between the
+
+inclusive "we" which includes the listener, and the exclusive "we" which
+
+doesn't.
+
+And it has words for "and" and "or" - and
+
+distinguishes between "inclusive or" and "exclusive or". 
+
+</P>
+
+
+
+<P>
+
+Lojban also has material
+
+implication, the logical "if". But, as the following extract from 
+
+<A HREF="http://www.lojban.org/publications/level0/brochure-utf/lingissues.html#AEN12390"><I>What is Lojban?</I></A> shows, it takes pains to distinguish this
+
+from the "if" which means causation:
+
+<BLOCKQUOTE>
+
+<P>
+
+Lojban connectives cannot be used to correctly translate English 
+
+"If you water it, it will grow", because material implication is too weak 
+
+and the special causal connectives, which connect assertions, are 
+
+too strong. What can be done instead?
+
+</P>
+
+<P>
+
+The English sentence "If you water it, it will grow" looks superficially like 
+
+a Lojban <CODE>na.a</CODE> connection (material implication), but it 
+
+actually has causal connotations not present in <CODE>na.a</CODE>. Therefore, a 
+
+proper translation must involve the notion of cause. Neither the Lojban coordinating 
+
+causal conjunction nor the two correlative subordinating causal conjunctions 
+
+(one of which subordinates the cause and the other the effect) will serve, 
+
+since these require that either the cause, or the effect, or both be asserted. 
+
+Instead, the correct translation of the English involves 'cause' as a predicate, 
+
+and might be paraphrased "The event of your watering it is a cause of the 
+
+event of its future growing." 
+
+(<CODE>roda zo'u lenu do jacysabji da cu rinka lenu da ba banro</CODE>)
+
+</P>
+
+</BLOCKQUOTE>
+
+I have known authors of expert-system knowledge bases who used logical "if"
+
+when they meant causation: that quote should be required reading for such people.
+
+<p></P>
+
+
+
+<P>
+
+Lojban has imperatives - "come here!", "turn the light off", "please close
+
+the door". It has indicators for emotional attitude, such as surprise, interest,
+
+amusement, and love. (However, 
+
+as linguist Geoffrey Sampson says
+
+in his <A HREF="http://www.grsampson.net/Vloj.html">review</A> of John Cowan's book 
+
+<I>The Complete Lojban Language</I>, 
+
+this part of
+
+the language embodies some questionable analyses of human emotion.) 
+
+And if you want to be deliberately imprecise, you can: Lojban allows you to
+
+create metaphors by combining predicates but without specifying the
+
+relationship between them. This is what I would be doing when writing
+
+"knowledge base" or "expert system" in English, were it not that we've
+
+evolved generally agreed-upon interpretations for these phrases.
+
+</P>
+
+
+
+<P>
+
+You can even write poetry in Lojban, at least in the weak sense that
+
+word order is sufficiently malleable for you to rearrange words until
+
+you find an arrangement that best suits your desired rhyme, alliteration,
+
+or scansion. Ambiguities such as the line "And all the air a solemn
+
+stillness holds" from Gray's <I>Elegy</I> - where either 
+
+the air or the stillness could be
+
+doing the holding - probably can't be translated; but then, avoiding such
+
+ambiguities is exactly why Lojban is worth study by anybody concerned with
+
+linguistic analysis.
+
+</P>
+
+
+
+
+
+<H3><A NAME="loglan_no">The many implications of "no"</A></H3>
+
+
+
+<P>
+
+Before moving on to Lojban and AI, I want to look at one final
+
+topic, negation. 
+
+When I started reading about Lojban, I wondered how
+
+much there could be to say. Surely 
+
+building negation into Lojban was just be a matter of
+
+creating a word for "not" and adding 
+
+brackets to delimit its scope? 
+
+In fact, the matter is a lot richer, and
+
+should interest those working with subjects such
+
+as speech-act theory and discourse analysis.
+
+</P>
+
+
+
+<P>
+
+In point of fact,
+
+Lojban does have brackets. The words
+
+<CODE>ke</CODE> and <CODE>ke'e</CODE> are used to bracket combinations
+
+of predicates, distinguishing for example
+
+"a new (freight train)" from "a (new freight) train".
+
+However, as Sampson says
+
+in his review:
+
+<BLOCKQUOTE>
+
+In theory, standard predicate-logic notation could itself be made speakable, 
+
+by assigning pronunciations to signs such as brackets and comma. But - 
+
+leaving aside the 
+
+fact that any standard logical system ignores many humanly-important considerations which 
+
+Lojban does express, such as a speaker's emotional attitude to the 
+
+propositions he states - 
+
+such a language would be unusable. It would be grossly cumbersome, and would do 
+
+nothing to cater to speakers' needs to foreground or suppress particular elements, 
+
+or structure information into different perspectives. These things are facilitated 
+
+in English by mechanisms alien to logical notation, such as the passive construction. Lojban 
+
+generalizes devices such as the passive, and the contrast between forethought and afterthought 
+
+sequencing ("if p then q" versus "q, if p"), to provide even more flexibility than is typical 
+
+of natural languages. 
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+Several examples are explored in 
+
+<A HREF="http://www.lojban.org/publications/reference_grammar/chapter15.html">Chapter 15</A>
+
+of the Lojban reference grammar: "'No' Problems: On Lojban Negation". 
+
+The most extreme is "metalinguistic negation", where
+
+something is wrong with the statement being negated.
+
+In this case, it's meaningless to talk about its
+
+truth value; the negation can make no sense until
+
+the speaker has corrected their error.
+
+A notorious example is the sentence
+
+"I have not stopped beating my wife", when I never
+
+started in the first place. Others are "5 is not blue" - colour
+
+doesn't apply to numbers - and "the current King of France is not bald",
+
+which is meaningless because there is no current King of
+
+France. 
+
+</P>
+
+
+
+
+<P>
+
+To avoid such pitfalls, Lojban allows you, if asked 
+
+"have you stopped beating your wife", to reply
+
+<CODE>na'i</CODE>. Your questioner will understand this
+
+not as in English - 
+
+"no (and therefore, since I
+
+haven't stopped, I'm still beating)" - but as "sorry, your
+
+question was meaningless".
+
+</P>
+
+
+
+<P>
+
+Another type of negation, explained earlier
+
+in the same chapter, is "scalar negation". This
+
+is exemplified by the sentence "the chair
+
+is not brown". This does negate one fact -
+
+that the chair is brown - but we also understand it
+
+as providing positive information, namely that 
+
+there is still a chair, and that it does
+
+still have a colour, and that this colour is
+
+something other than brown. 
+
+</P>
+
+
+
+<P>
+
+Lojban has another word for "no" when you
+
+want to give this kind of answer. The problem
+
+then becomes that it could cause ambiguities.
+
+For example, if I say
+
+"I am not going to Oxford from Cardiff", does
+
+this mean I'm not going anywhere, or that I
+
+am going to Oxford but not from Cardiff, or that I
+
+am going from Cardiff but to somewhere other than Oxford?
+
+The point is that I may want to tell you that there
+
+is still <I>some</I> relationship between
+
+me and Oxford, or me and Cardiff, or me and movement;
+
+it's just not the one stated. Lojban provides a way
+
+to do so.
+
+</P>
+
+
+
+
+
+<H3><A NAME="loglan_and_mmi">Loglan and man-machine interaction</A></H3>
+
+
+
+<P>
+
+What use could Loglan or Lojban be to computing and AI? 
+
+Many science-fiction readers will
+
+have first heard of Loglan in Robert Heinlein's novel 
+
+<I><A HREF="http://www.zompist.com/heinlein.html">The Moon
+
+is a Harsh Mistress</A></I>, in which the protagonist converses in
+
+Loglan with Mike, the intelligent computer.
+
+In fact, James Cooke Brown proposed Loglan for man-machine
+
+interaction in <I>Loglan 
+
+1: A Logical Language</I>.
+
+He did admit few would learn it solely for this purpose, 
+
+but hoped it might become used if ever enough
+
+people had already learnt it for other reasons.
+
+</P>
+
+
+
+<P>
+
+I have found one
+
+program for analysing Lojban, written,
+
+not surprisingly, in Prolog. This is
+
+<A HREF="http://www.tlg.uci.edu/~opoudjis/">Nick Nicholas</A>'s
+
+<A HREF="http://www.lojban.org/files/software/analyser">semantic
+
+analyser</A>, written in 
+
+<A HREF="http://www.cs.mu.oz.au/~lee/src/nuprolog/">NU-Prolog</A>.
+
+In <A HREF="http://www.lojban.org/files/papers/lojban_parser_paper">a paper on the program</A>,
+
+Nicholas gives the following example of parsing
+
+<CODE>mi prami lo prenu ku poi ke'a citka lo cakla</CODE>: "I love the person who eats a
+
+chocolate"
+
+<PRE>
+
+  q(suho(1), _FJKWJ, prenu(_FJKWJ, _FJKDO, _FJKDP, _FJKDQ, _FJKDR),
+
+  q(suho(1), _FJKGU, cakla(_FJKGU, _FJKLJ, _FJKLK, _FJKLL, _FJKLM), _FJKIQ,
+
+  citka(_FJKWJ, _FJKGU, _FJKGV, _FJKGW, _FJKGX)), prami(mi, _FJKWJ, _FJJZA,
+
+        _FJJZB, _FJJZC))
+
+</PRE>
+
+which can be displayed more legibly as:
+
+<PRE>
+
+  \exists X:
+
+    person(X), {first restriction on X}
+
+    (\exists Y:
+
+      chocolate(Y); (eats(X,Y))); {second restriction on X}
+
+    (loves(me,X)).
+
+</PRE>
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="loglan_and_mt">Loglan and machine translation</A></H3>
+
+
+
+<P>
+
+Brown proposes other applications of Loglan, including
+
+machine translation.
+
+The idea is an old and familiar one,
+
+namely that we translate one language to another by
+
+extracting the meaning of the source, representing it in a completely
+
+language-independent form, and then translating this semantic representation
+
+back into the target. The intermediate meaning representation is the
+
+interlingua or interlanguage, also known as the pivot language. 
+
+</P>
+
+
+
+<P>
+
+Many formalisms have been put forward for interlinguas. One of the
+
+first was Schank's <A HREF="http://www.cs.cf.ac.uk/Dave/AI2/node69.html">Conceptual Dependency</A>,
+
+which analyses natural language statements into
+
+primitives such as "exchange possession of", "move location of",
+
+"move bodypart", and "pass food into body through orifice". 
+
+Although not invented with translation in mind, some researchers
+
+did try using it in small systems. A modern example is 
+
+<A HREF="http://www-clips.imag.fr/geta/User/wang-ju.tsai/unllinks.html">UNL</A>
+
+or Universal Networking Language, developed under the auspices
+
+of the United Nations University in Tokyo. The UNL site has several
+
+presentations demonstrating small UNL translations of natural language. It
+
+also has a lot of dead links and no publications after 2002, suggesting
+
+that the project has been abandoned.
+
+</P>
+
+
+
+<P>
+
+Interlinguas are not widely used.
+
+Most machine translators
+
+prefer the "transfer" method. Unlike an interlingua, this
+
+requires a separate translation program for each source-target
+
+language pair: a transfer translator for all EU languages, for
+
+example, would need an English-German translator, and
+
+a Polish-Dutch, and a Portuguese-Czech, and many others.
+
+The advantage of transfer is that it doesn't try to
+
+extract and represent the meaning of its input. Instead, it carries
+
+out a relatively superficial syntactic analysis and
+
+transformation: the kind of almost word-for-word conversion one might do in transforming
+
+the Dutch 
+
+"er kwam een klop op de deur" into "there came a knock on the door".
+
+You can find out more from the introduction to Maria Flanagan's dissertation
+
+<A HREF="http://www.cs.tcd.ie/courses/csll/flanagmr0001.ps"><I>Extended Transfer 
+
+Architecture for German Machine Translation</I></A>.
+
+</P>
+
+
+
+<P>
+
+Although transfer works moderately well for
+
+languages of similar structure, it might not for
+
+languages as different as some of those in the
+
+Pacific Rim countries. An interlingua would
+
+be more suitable.
+
+This is Nick Nicholas's view in
+
+his paper
+
+<A HREF="http://citeseer.ist.psu.edu/27803.html"><I>Lojban 
+
+as a Machine Translation Interlanguage in the Pacific</I></A>,
+
+</P>
+
+
+
+
+
+<H3><A NAME="loglan_and_rdf">Loglan, RDF, and ontologies</A></H3>
+
+
+
+<P>
+
+An <A HREF="#loglan_ontology">ontology</A> specifies the
+
+vocabulary to be shared between programs
+
+engaged in some common task. I revealed
+
+a small, and rather military-oriented, part 
+
+of OpenCyc's ontology in my <A HREF="http://www.ainewsletter.com/newsletters/aix_0501.htm#o">AI
+
+Alphabet</A>; there are now many others in existence.
+
+Given that
+
+Lojban has a vocabulary
+
+honed over the years for describing almost everything in
+
+everyday life in logical terms, even including
+
+Aesop's fable of <A HREF="http://www.lojban.org/publications/level0/brochure/lorxu.html">The Fox 
+
+and the Crow</A>, has it been used 
+
+as an ontology?
+
+</P>
+
+
+
+<P>
+
+In point of fact, there seems to be very little. I did find two
+
+postings on <A HREF="#loglan_rdf">Loglan and RDF</A>, linked at
+
+the end. Both were by Steve Pomeroy, one proposing that
+
+to understand how to implement negation in RDF, it was worth looking
+
+at Lojban, and one giving a Lojban
+
+translation of some of the RDF
+
+used to describe the
+
+FOAF, or Friend of a Friend, project.
+
+</P>
+
+
+
+<P>
+
+With what I now know of them, I think Loglan and Lojban
+
+are definitely worth considering as
+
+ready-made logical formalisms for any AI task involving
+
+linguistic analysis.
+
+As Nick Nicholas says 
+
+in his <A HREF="http://www.tlg.uci.edu/~opoudjis/Play/lojban.html">Lojban page</A>:
+
+<BLOCKQUOTE>
+
+The attraction Lojban holds for me is that it is one formal 
+
+model of language which actually puts its money where its 
+
+mouth is, and tries to take on an entire linguistic system 
+
+rather than toy sentences and a postage stamp's worth of vocabulary. 
+
+The language's detailed and painstakingly compiled language definition 
+
+materials are available, the 'write-up' has been completed, and 
+
+the reference grammar has been published. 
+
+</BLOCKQUOTE>
+
+Or, to quote Sampson again:
+
+<BLOCKQUOTE>
+
+In general, Lojban constitutes a strikingly thorough working-out of its 
+
+creators' goals, and its design is responsive to a rich, 
+
+subtle understanding of linguistics and philosophical logic. 
+
+</BLOCKQUOTE>
+
+I shall propose one final test: once <A HREF="http://www.asterix-international.de/asterix/collection2.shtml">Asterix</A>
+
+has been translated into Lojban, we shall know it has arrived as a
+
+<I>real</I> language.
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="loglan_links">Links and other references</A></H3>
+
+
+
+<!-- Loglan and Lojban: general -->
+
+
+
+<P>
+
+<I>Loglan</I> by James Cooke Brown, in <I>Scientific American</I>, volume 202, June 1960.
+
+A very clear explanation of why and how Loglan was constructed.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.loglan.org/">www.loglan.org/</A> - 
+
+The Loglan Institute, with links to teaching materials and
+
+other resources. James Cooke Brown's book on
+
+Loglan, <I>Loglan 1: A Logical Language</I>, is at 
+
+<A HREF="http://www.loglan.org/Loglan1/index.html">www.loglan.org/Loglan1/index.html</A>,
+
+from where his views on Loglan for AI and machine translation are linked. The
+
+translation of "See Spot run" is at
+
+<A HREF="http://www.loglan.org/Texts/vizka-la-spat.html">www.loglan.org/Texts/vizka-la-spat.html</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.lojban.org/">www.lojban.org/</A> - The Lojban site.
+
+Navigation around the site is fairly easy: good places
+
+to start are the <A HREF="http://www.lojban.org/en/help.html">Help page</A>,
+
+the <A HREF="http://www.lojban.org/en/resources/faq.html">FAQ</A>, and
+
+the introductory book <I>What is Lojban?</I>
+
+at <A HREF="http://www.lojban.org/en/publications/level0.html">www.lojban.org/en/publications/level0.html</A>.
+
+This book contains the translation of Aesop's <I>The Fox and
+
+The Crow</I>.
+
+The chapter on negation I referred to
+
+from the reference grammar is at
+
+<A HREF="http://www.lojban.org/publications/reference_grammar/chapter15.html">www.lojban.org/publications/reference_grammar/chapter15.html</A>.
+
+</P>
+
+
+
+<A NAME="loglan_dictionary"></A>
+
+<P>
+
+<A HREF="http://members.fortunecity.com/jeroenkuiper/Linguistics/Lojban/Dictionary/aindex.html">members.fortunecity.com/jeroenkuiper/Linguistics/Lojban/Dictionary/aindex.html</A> -
+
+A draft English-Lojban dictionary. I think this is somewhat out of date, but it was
+
+OK for illustrating the principles, and 
+
+faster to use than the interface to the current
+
+dictionary project at <A HREF="http://www.lojban.org/jbovlaste/">www.lojban.org/jbovlaste/</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://home.bluemarble.net/~langmin/miniatures/lojban.htm">home.bluemarble.net/~langmin/miniatures/lojban.htm</A> -
+
+<I>Do You Speak <U>Logic</U>?</I> by William Z. Shetter. A nice little essay.
+
+His other features on linguistics and language are also fun to read.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www-106.ibm.com/developerworks/rational/library/2740.html">www-106.ibm.com/developerworks/rational/library/2740.html</A> -
+
+<I>Using UML to understand Lojban</I> 
+
+ by J&eacute;r&ocirc;me Desquilbet of IBM.
+
+An unusual, but very readable, application of UML.
+
+For non-UMLers, it's also a good demonstration of 
+
+UML itself.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://ptolemy.tlg.uci.edu/~opoudjis/lojbanbrochure/lessons/less2changeplaces.html">ptolemy.tlg.uci.edu/~opoudjis/lojbanbrochure/lessons/less2changeplaces.html</A> -
+
+<I>Lojban for Beginners</I> by Robin Turner and Nick Nicholas. 
+
+Really nice introduction, which I used in constructing some of my examples.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.grsampson.net/Vloj.html">www.grsampson.net/Vloj.html</A> - 
+
+The review by Geoffrey Sampson at the University of Sussex, 
+
+of John Cowan's book <I>The Complete Lojban Language</I>. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www2.cmp.uea.ac.uk/~jrk/conlang.html">www2.cmp.uea.ac.uk/~jrk/conlang.html</A> -
+
+Richard Kennaway's annotated resource list for artificial languages.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.zompist.com/kit.html">www.zompist.com/kit.html</A> - 
+
+Mark Rosenfelder's <I>Language Construction Kit</I> pages. A fun way
+
+to learn some linguistics while reading about how to create languages
+
+with the same characteristics that natural ones have.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.zompist.com/heinlein.html">www.zompist.com/heinlein.html</A> - 
+
+Mark Rosenfelder's review of <I>The Moon is a Harsh Mistress</I>.
+
+</P>
+
+
+
+
+
+<!-- Sapir-Whorf -->
+
+<A NAME="loglan_sapir_whorf"></A>
+
+
+
+<P>
+
+<A HREF="http://en.wikipedia.org/wiki/Sapir-Whorf_Hypothesis">en.wikipedia.org/wiki/Sapir-Whorf_Hypothesis</A> -
+
+A good Wiki entry on the Sapir-Whorf hypothesis. There are links to
+
+entries for Loglan and Lojban.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://venus.va.com.au/suggestion/sapir.html">venus.va.com.au/suggestion/sapir.html</A> 
+
+and <A HREF="http://www.aber.ac.uk/media/Documents/short/whorf.html">www.aber.ac.uk/media/Documents/short/whorf.html</A> -
+
+Notes on the Sapir-Whorf Hypothesis by Lawrence Campbell and Daniel Chandler respectively.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.sfs.nphil.uni-tuebingen.de/linguist/issues/5/5-1239.html">www.sfs.nphil.uni-tuebingen.de/linguist/issues/5/5-1239.html</A> -
+
+Postings from LINGUIST List 5.1239, 6 November 1994, on the Eskimo words
+
+for "snow". Includes a count of the snow words in the Eskimo language Yup'ik by Anthony Woodbury,  
+
+University of Texas at Austin.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.derose.net/steve/guides/snowwords/">www.derose.net/steve/guides/snowwords/</A> - 
+
+<I>"Eskimo" words for snow</I>,
+
+by Steven Derose. Reviews Geoffrey Pullum's book 
+
+<I>The Great Eskimo Vocabulary Hoax</I>, and cites an interesting-sounding paper by Laura
+
+Martin:
+
+<I>Eskimo Words for Snow: A case study in the genesis and decay of an 
+
+anthropological example</I> in <I>American Anthropologist</I>, volume 88, 1986.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.bohemica.com/?m=catalog&s=258&a=138">www.bohemica.com/?m=catalog&s=258&a=138</A> - 
+
+Amusing list of Czech words for which English has no equivalent, from Dominik Luke&#269;,
+
+Bohemica.com.
+
+</P>
+
+
+
+<!-- Nick Nicholas's semantic analyser -->
+
+
+
+<P>
+
+<A HREF="http://www.lojban.org/files/software/analyser">www.lojban.org/files/software/analyser</A> -
+
+Nick Nicholas's semantic analyser for Lojban, written in NU-Prolog; there's a paper on the program
+
+at <A HREF="http://www.lojban.org/files/papers/lojban_parser_paper">www.lojban.org/files/papers/lojban_parser_paper</A>.
+
+Nicholas's home page
+
+is at <A HREF="http://www.tlg.uci.edu/~opoudjis/">www.tlg.uci.edu/~opoudjis/</A>; apart from his Lojban links and
+
+translations at
+
+<A HREF="http://www.tlg.uci.edu/~opoudjis/Play/lojban.html">www.tlg.uci.edu/~opoudjis/Play/lojban.html</A>,
+
+there's some useful material on rendering Greek in Unicode, and -
+
+oh gosh - <I>Hamlet</I> 
+
+translated into Klingon. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cs.mu.oz.au/~lee/src/nuprolog/">www.cs.mu.oz.au/~lee/src/nuprolog/</A> -
+
+The NU-Prolog home page.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://gollem.science.uva.nl/SWI-Prolog/mailinglist/archive/old/1298.html">gollem.science.uva.nl/SWI-Prolog/mailinglist/archive/old/1298.html</A> -
+
+A posting by Richard O'Keefe explaining how <CODE>when</CODE> annotations,
+
+used in Nicholas's analyser, affect the order in which goals are called.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://sow.lcs.mit.edu/2004/proceedings/Speer.pdf">sow.lcs.mit.edu/2004/proceedings/Speer.pdf</A> -
+
+<I>Meeting the Computer Halfway: Language Processing in the Artificial Language
+
+Lojban</I> by Rob Speer and Catherine Havasi, MIT. Short paper describing
+
+a Lojban question-answering program written in Python, probably at a very early
+
+stage in the project. 
+
+</P>
+
+
+
+
+
+<!-- Loglan as pivot language -->
+
+
+
+<P>
+
+<A HREF="http://swpat.ffii.org/xatra/lojban/index.en.html">swpat.ffii.org/xatra/lojban/index.en.html</A> -
+
+<I>EU Patents in Logical Language!</I>, on the Foundation for a Free Information Infrastructure site.
+
+The FFII lobbies against European software patents - see, for example,
+
+their <A HREF="http://webshop.ffii.org/">webshop.ffii.org/</A> page, which demonstrates
+
+that many typical components of a typical Web shopping site are patented. They 
+
+propose patents be published in a language such as Lojban, as a starting point for unambiguous
+
+translation into the EU languages. (They also say that development
+
+of software tools for logical languages would be harmed if
+
+that software could be patented.)
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cs.cf.ac.uk/Dave/AI2/node69.html">www.cs.cf.ac.uk/Dave/AI2/node69.html</A> -
+
+Notes on Conceptual Dependency, from Cardiff
+
+School of Computer Science.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.fitug.de/debate/9811/msg00297.html">www.fitug.de/debate/9811/msg00297.html</A> -
+
+Posting to the UNL list briefly comparing UNL and Lojban.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www-clips.imag.fr/geta/User/wang-ju.tsai/unllinks.html">www-clips.imag.fr/geta/User/wang-ju.tsai/unllinks.html</A> -
+
+The UNL Center page. Most of the presentations and PDFs
+
+contain samples of UNL.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cs.tcd.ie/courses/csll/flanagmr0001.ps">www.cs.tcd.ie/courses/csll/flanagmr0001.ps</A> -
+
+<I>Extended Transfer Architecture for German Machine Translation</I> by 
+
+Marian Flanagan, Trinity College Dublin. 
+
+This describes a Prolog implementation
+
+of the so-called "shake-and-bake" transfer method. It also
+
+explains the different translation methods, and looks
+
+at how some of today's systems work. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://citeseer.ist.psu.edu/27803.html">citeseer.ist.psu.edu/27803.html</A> -
+
+<I>Lojban as a Machine Translation Interlanguage in the Pacific</I> by 
+
+Nick Nicholas.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.rickharrison.com/language/mtil.html">www.rickharrison.com/language/mtil.html</A> -
+
+<I>On the unsuitability of "logical languages" 
+
+for use as interlinguas in machine translation</I>, by Rick Morneau.
+
+</P>
+
+
+
+
+
+<!-- Loglan and RDF -->
+
+
+
+<A NAME="loglan_rdf"></A>
+
+
+
+<P>
+
+<A HREF="http://norman.walsh.name/2004/04/02/notinrdf">norman.walsh.name/2004/04/02/notinrdf</A> -
+
+<I>Not in RDF</I>: "There isn’t really a simple "not" operator in RDF. Nevertheless, it’s useful, 
+
+particularly for establishing default values. So what can we do?". An essay by
+
+Norman Walsh on implementing "not" in RDF, taking into account the difference
+
+between open-world and closed-world views of negation. The replies on this
+
+page include Steve Pomeroy's suggestion to look at how
+
+Lojban describes negation.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.w3.org/2000/10/swap/doc/cwm">www.w3.org/2000/10/swap/doc/cwm</A> - 
+
+Cwm main page. Cwm is a forward-chaining reasoner for processing RDF, 
+
+used in Walsh's essay.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.w3.org/DesignIssues/Notation3.html">www.w3.org/DesignIssues/Notation3.html</A> -
+
+W3C's Notation 3 page. Notation 3, or N3, is a superset of RDF, and
+
+easier for humans to read and write. Walsh uses it with cvm in his essay.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.w3.org/TR/rdf-primer/">www.w3.org/TR/rdf-primer/</A> -
+
+W3C's RDF primer. A good introduction. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://staticfree.info/blog/lang/lojban2rdf.comments">staticfree.info/blog/lang/lojban2rdf.comments</A> -
+
+The other posting by Pomeroy, a Lojban
+
+translation of some RDF used to describe the
+
+<A HREF="http://www.foaf-project.org/">FOAF</A> - Friend of a Friend - project.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://freshmeat.net/projects/jbofihe/">freshmeat.net/projects/jbofihe/</A> -
+
+Main page for jbofihe, a parser for checking the syntax of Lojban text.
+
+It also translates Lojban into pseudo-English - Pomeroy
+
+uses it to translate his Lojban translation of RDF.
+
+</P>
+
+
+
+<A NAME="loglan_ontology"></A>
+
+
+
+<P>
+
+<A HREF="http://www.ainewsletter.com/newsletters/aix_0501.htm#o">www.ainewsletter.com/newsletters/aix_0501.htm#o</A> -
+
+My AI Alphabet entry for OpenCyc, with a brief excerpt from
+
+the OpenCyc ontology.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.aaai.org/AITopics/html/ontol.html">www.aaai.org/AITopics/html/ontol.html</A> - 
+
+AAAI Ontologies page.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www-ksl.stanford.edu/kst/what-is-an-ontology.html">www-ksl.stanford.edu/kst/what-is-an-ontology.html</A> -
+
+<I>What is an Ontology?</I> by Tom Gruber, Stanford.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.asterix-international.de/asterix/collection2.shtml">www.asterix-international.de/asterix/collection2.shtml</A> -
+
+The languages of Asterix.
+
+</P>
+
+
+
+
+
+<H2><A NAME="leibniz">Leibniz's Calculus of Reason</A></H2>
+
+
+
+<P>
+
+... Whence it is manifest that if we could find characters or signs appropriate for expressing all our thoughts as definitely and as exactly as arithmetic expresses numbers or geometric analysis expresses lines, we could in all subjects in so far as they are amenable to reasoning accomplish what is done in Arithmetic and Geometry. 
+
+</P>
+
+<P>
+
+For all inquiries which depend on reasoning would be performed by the transposition of characters and by a kind of calculus, which would immediately facilitate the discovery of beautiful results. For we should not have to break our heads as much as is necessary today, and yet we should be sure of accomplishing everything the given facts allow. 
+
+</P>
+
+<P>
+
+Moreover, we should be able to convince the world what we should have found or concluded, since it would be easy to verify the calculation either by doing it over or by trying tests similar to that of casting out nines in arithmetic. And if someone would doubt my results, I should say to him: "Let us calculate, Sir," and thus by taking to pen and ink, we should soon settle the question. 
+
+</P>
+
+<P>
+
+I still add: in so far as the reasoning allows on the given facts. For although certain experiments are always necessary to serve as a basis for reasoning, nevertheless, once these experiments are given, we should derive from them everything which anyone at all could possibly derive; and we should even discover what experiments remain to be done for the clarification of all further doubts. That would be an admirable help, even in political science and medicine, to steady and perfect reasoning concerning given symptoms and circumstances. For even while there will not be enough given circumstances to form an infallible judgment, we shall always be able to determine what is most probable on the data given. And that is all that reason can do. 
+
+</P>
+
+<P>
+
+Now the characters which express all our thoughts will constitute a new language which can be written and spoken; this language will be very difficult to construct, but very easy to learn. It will be quickly accepted by everybody on account of its great utility and its surprising facility, and it will serve wonderfully in communication among various peoples, which will help get it accepted. Those who will write in this language will not make mistakes provided they avoid the errors of calculation, barbarisms, solecisms, and other errors of grammar and construction. In addition, this language will possess the wonderful property of silencing ignorant people. For people will be unable to speak or write about anything except what they understand, or if they try to do so, one of two things will happen: either the vanity of what they advance will be apparent to everybody, or they will learn by writing or speaking. As indeed those who calculate learn by writing and those who speak sometimes meet with a success they did not imagine, the tongue running ahead of the mind. This will happen especially with our language on account of its exactness. So much so, that there will be no equivocations or amphibolies, and everything which will be said intelligibly in that language will be said with propriety. This language will be the greatest instrument of reason. 
+
+</P>
+
+<P>
+
+I dare say that this is the highest effort of the human mind, and when the project will be accomplished it will simply be up to men to be happy since they will have an instrument which will exalt reason no less than the Telescope perfects our vision. It is one of my ambitions to accomplish this project if God gives me enough time. I owe it to nobody but myself, and I had the first thought about it when I was 18 years old, as I have a little later evidenced in a published treatise (De Arte Combinatoria, 1666). And as I am confident that there is no discovery which approaches this one, I believe there is nothing so capable of immortalizing the name of the inventor. But I have much stronger reasons for thinking so, since the religion I follow closely assures me that the love of God consists in an ardent desire to procure the general welfare, and reason teaches me that there is nothing which contributes more to the general welfare of mankind than the perfection of reason. 
+
+</P>
+
+
+
+
+
+<H3><A NAME="leibniz_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://www.rbjones.com/rbjpub/philos/classics/leibniz/meth_math.htm">www.rbjones.com/rbjpub/philos/classics/leibniz/meth_math.htm</A> -
+
+<I>The Method of Mathematics</I>
+
+by Gottfried Wilhelm Leibniz,
+
+Preface to the General Science. 
+
+From RBJones.com, "The home of metaphysical positivism".
+
+</P>
+
+
+
+
+
+
+
+<H2><A NAME="shrdlu">The Resurrection of Etaoin Shrdlu</A></H2>
+
+
+
+<P>
+
+One program that would have been easier to write
+
+if we typed at computers in Lojban is
+
+Shrdlu, Terry Winograd's natural-language
+
+understander. Every AI textbook carries
+
+a reproduction of Shrdlu's sparse virtual
+
+world, a schematic robot gripper poised above
+
+a collection of wire-frame pyramids and cubes 
+
+standing on a tabletop. Under this will invariably
+
+be found 
+
+a sample of Shrdlu dialogue - 
+
+<BLOCKQUOTE>
+
+Person: PICK UP A BIG RED BLOCK. <BR>
+
+Computer: OK. (does it) <BR>
+
+Person: GRASP THE PYRAMID. <BR>
+
+Computer: I DON'T UNDERSTAND WHICH PYRAMID YOU MEAN. <BR>
+
+Person: FIND A BLOCK WHICH IS TALLER THAN THE ONE YOU ARE HOLDING AND PUT IT INTO THE BOX. <BR>
+
+Computer: BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM HOLDING. <BR>
+
+Computer: OK. (does it) 
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+Shrdlu became famous as <I>the</I> example of
+
+pronoun disambiguation and procedural
+
+semantics. To 
+
+<A HREF="http://www.semaphorecorp.com/misc/shrdlu.html">quote</A> 
+
+Winograd:
+
+<BLOCKQUOTE>
+
+The system answers questions, 
+
+executes commands, and accepts information in an interactive 
+
+English dialog... The system contains a parser, a recognition 
+
+grammar of English, programs for semantic analysis, and a 
+
+general problem solving system... It can remember and 
+
+discuss its plans and actions as well as carrying them out... 
+
+Knowledge in the system is represented in the form of procedures, 
+
+rather than tables of rules or lists of patterns. 
+
+</BLOCKQUOTE>
+
+<p>Now the Semaphore Corporation have put together a <A HREF="http://www.semaphorecorp.com/misc/shrdlu.html">collection 
+  of links</A> to Shrdlu's creators and their reminiscences and source code. For 
+  this and other information, including Winograd's account of how Shrdlu gained 
+  its name from Linotype by way of <I>Mad</I> magazine, follow my links. </p>
+<h2>Logic, Rules and Spreadsheets</h2>
+<p>An early beta version of an Excel add-in that supports rules and logic is available 
+  for those interested in exploring the integration of inferencing and spreadsheet 
+  calculation and providing feedback on initial directions of the product. If 
+  you are interested, send an e-mail to <a href="http://www.ainewsletter.com/contact.htm">Dennis</a>.</p>
+
+
+
+
+
+<H3><A NAME="shrdlu_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://www.semaphorecorp.com/misc/shrdlu.html">www.semaphorecorp.com/misc/shrdlu.html</A> -
+
+<I>SHRDLU resurrection</I>, from
+
+Semaphore Corporation.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://hci.stanford.edu/~winograd/shrdlu/">hci.stanford.edu/~winograd/shrdlu/</A> -
+
+Terry Winograd's Shrdlu page, with
+
+dialogue and an original screen display
+
+showing Shrdlu at home in its blocks world.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://hci.stanford.edu/~winograd/shrdlu/name.html">hci.stanford.edu/~winograd/shrdlu/name.html</A> -
+
+Winograd on <I>How SHRDLU got its name</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.poplog.org/docs/popdocs/pop11/teach/msdemo">www.poplog.org/docs/popdocs/pop11/teach/msdemo</A> -
+
+<I>TEACH MSDEMO</I>, by Richard Bignell and Aaron Sloman. 
+
+The teaching notes for
+
+MSBlocks, a mini-Shrdlu written in the Poplog
+
+programming language. One of many AI tutorials
+
+distributed with Poplog.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.j-paine.org/students/practicals/popbeast/popbeast.html">www.j-paine.org/students/practicals/popbeast/popbeast.html</A> -
+
+<I>AI and PopBeast</I>. Students' practical notes I once wrote describing 
+
+my Prolog-based AI which lived in a virtual world and interfaced
+
+simple language-understanding to a planner. Another
+
+mini-Shrdlu, 
+
+demonstrating planning, referent disambiguation, 
+
+and propositional representations.
+
+</P>
+
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome. Feel free to contact either myself (below) or Jocelyn &lt;popx@j-paine.org&gt; 
+              with comments, thoughts and suggestions.</P>
+            <P>Until next month, </P>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p>Copyright &copy;2004 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved </p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

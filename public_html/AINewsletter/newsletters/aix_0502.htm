@@ -1,0 +1,3469 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->February 
+                      2005 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <H1>AI Expert Newsletter</H1>
+            <P><I>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</I></P>
+            <H3>February 2005</H3>
+
+
+<UL>
+
+
+
+<LI><A HREF="#introduction">Introduction
+
+</a></LI><LI>
+
+
+
+<A HREF="#introduction"></a><A HREF="#bots">Nano-engineered robots crawl on muscle-powered silicon legs</A>
+
+    <UL>
+
+    <LI><A HREF="#bots_links">Links</a></LI>
+
+    </UL>
+
+</LI><LI>
+
+
+
+<A HREF="#bots_links"></a><A HREF="#ants">The Anthill as Computer</A>
+
+</LI>
+
+
+
+<LI><A HREF="#starlogo">Artificial Ants, Mindstorms, and StarLogo</A>
+
+    <UL>
+
+    <LI><A HREF="#starlogo_links">Links</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#mathematics_and_coffee">Mathematics, Creativity, and Strong Black Coffee</A>
+
+</LI>
+
+
+
+<LI><A HREF="#copycat_code_corner">Computational Creativity I - solving analogy problems with Copycat</A>
+
+    <UL>
+
+    <LI><A HREF="#copycat_conceptual_slippage">Conceptual slippage</A></LI> 
+
+    <LI><A HREF="#copycat_why_so_vital">Why is analogical thought so important?</A></LI> 
+
+    <LI><A HREF="#copycat_how_it_works">How Copycat works</A></LI> 
+
+    <LI><A HREF="#copycat_getting_started">Running Copycat</A></LI>
+
+    <LI><A HREF="#copycat_d1">Demonstration 1: a simple analogy problem</A></LI>
+
+    <LI><A HREF="#copycat_d2">Demonstration 2: group runs and non-determinism</A></LI>
+
+    <LI><A HREF="#copycat_code_corner_links">Links</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#mathematics_and_alchemy">Mathematics and Alchemy</A>
+
+</LI>
+
+
+
+<LI><A HREF="#ilp_code_corner">Computational Creativity II - machine learning with Inductive Logic
+
+Programming and Aleph</A>
+
+    <UL>
+
+    <LI><A HREF="#ilp_readable_rules">ILP, readable rules, and drug discovery</A></LI>
+
+    <LI><A HREF="#ilp_other_applications">Other applications</A></LI>
+
+    <LI><A HREF="#ilp_getting_started_with_prolog">Installing and running Prolog</A></LI>
+
+    <LI><A HREF="#ilp_getting_started_with_aleph">Installing Aleph</A></LI>
+
+    <LI><A HREF="#ilp_trains">Ryszard Michalski's train challenge to machine learning</A></LI>
+
+    <LI><A HREF="#ilp_trainspotting">Describing trains in Prolog</A></LI>
+
+    <LI><A HREF="#ilp_running_the_trains">Demonstration 1: learning about the structure of trains</A></LI>
+
+    <LI><A HREF="#ilp_describing_molecules">Describing molecules in Prolog</A></LI>
+
+    <LI><A HREF="#ilp_learning_recursive_programs">Demonstration 2: learning recursive programs</A></LI>
+
+    <LI><A HREF="#ilp_three_types_of_input">What data do we need?</A></LI>
+
+    <LI><A HREF="#ilp_foreign_data">Getting non-Prolog data into Aleph</A></LI>
+
+    <LI><A HREF="#ilp_where_next">Where next?</A></LI>
+
+    <LI><A HREF="#ilp_code_corner_links">Links</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+</UL>
+
+
+
+
+
+<H2>New Downloads</H2>
+<p>Course notes and samples for an introductory Prolog course are now available 
+  from the downloads section of <a href="http://www.ainewsletter.com/">www.ainewsletter.com</a>. 
+  The course includes a logic-base approach to a normal business application, 
+  airline pricing and booking; numerous exercises in recursion and nested structures; 
+  and a frame-based system with property list matching utilities that can be used 
+  for ontologies and numerous other applications.</p>
+
+<p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+</p>
+
+
+<H2><A NAME="introduction">Introduction</A></H2>
+
+
+
+<P>
+
+Welcome to the February AI Expert.
+
+As promised last month, I have the do-it-yourself
+
+on Inductive Logic Programming, and another do-it-yourself
+
+on the Copycat analogical-reasoning program, which explores
+
+the emergent subcognitive behaviour that its authors
+
+believe to be the crux of creativity. If it is, I believe
+
+it must also be the essence of aesthetics. To complement these,
+
+there are some quotes on creativity and emergence,
+
+and a pointer to StarLogo, a language for teaching about
+
+parallel and emergent behaviour. But first, some abnormally muscular robots.
+
+<DIV ALIGN=right>
+
+<A HREF="http://www.j-paine.org/">Jocelyn Paine</A></DIV>
+
+<p></P>
+
+
+
+
+
+<H2><A NAME="bots">Nano-engineered robots crawl on muscle-powered silicon legs</A></H2>
+
+
+
+<P>
+
+From the number of times I've heard it reported, my first piece of news
+
+has grabbed media attention as science rarely does. Perhaps that's
+
+because it is claimed to use nanotechnology. In the
+
+UK, what we mainly hear of nanotechnology is the dangers. Grey goo
+
+will eat the Earth! <A HREF="http://news.bbc.co.uk/1/hi/sci/tech/3883749.stm">Prince Charles 
+
+warns of risks!</A> Tiny particles will rot our lungs! (This last may be true, but is also a 
+
+long way from the precision atomic-scale engineering 
+
+that nanotechnology is really about.)
+
+</P>
+
+
+
+<P>
+
+As reported by
+
+<A HREF="http://news.bbc.co.uk/1/hi/sci/tech/4181197.stm">BBC News Online</A>, 
+
+University of California researchers 
+
+have created robot "legs" less than a millimetre long, consisting of rat heart-muscle cells grown onto
+
+silicon or plastic "bones". Nano-scale engineering controls where the cells
+
+attach to one another as they grow, so that they form a muscle rather than some
+
+random blob of tissue; and the skeleton too is precision-engineered, with tiny
+
+hinges that allow it to move and bend.
+
+</P>
+
+
+
+<P>
+
+A bit of Web searching turned up more information.
+
+The research was done by
+
+<A HREF="http://www.cnsi.ucla.edu/faculty/montemagno_c.html">Carlo Montemagno</A> 
+
+and colleagues at the 
+
+<A HREF="http://www.cnsi.ucla.edu/mainpage.html">UCLA California NanoSystems Institute</A>.
+
+From this <I>New Scientist</I>
+
+<A HREF="http://www.newscientist.com/article.ns?id=dn4714">feature</A>
+
+and the papers I've linked at the end,
+
+<A HREF="http://www.spie.org/paper/FirstSelf.pdf"><I>First self-assembled microrobots powered by muscle</I></A>
+
+and
+
+<A HREF="http://www.foresight.org/Conferences/MNT6/Papers/Montemagno/index.html"><I>Constructing Biological Motor Powered Nanomechanical Devices</I></A>,
+
+it seems the crucial advance is
+
+in growing the muscles and attaching them to
+
+their skeleton. Previous muscle-mechanical systems have used 
+
+muscle bundles extracted intact from animals; but here,
+
+the researchers persuaded the muscles to assemble themselves.
+
+The first step was to fabricate the
+
+skeleton from a silicon wafer, forming a 50-micrometre wide arch. The
+
+researchers coated this with 
+
+a special polymer into which finely spaced
+
+patterns were etched, and a gold film deposited on top.
+
+Then flesh was put onto these bones.
+
+The silicon-polymer-gold combination was placed into a cell culture medium.
+
+The polymer took up water, forming a gel in which the cells could
+
+grow and differentiate,
+
+lining up along the patterns to form complete muscle bundles attached to
+
+the skeleton. And, as <A HREF="http://www.newscientist.com/article.ns?id=dn4714"><I>New Scientist</I></A>
+
+says, when the researchers looked into their microscopes, 
+
+they were amazed to see their musclebot crawling around.
+
+</P>
+
+
+
+<P>
+
+Once we can build complete robots in this way, 
+
+they will pose bizarre challenges to
+
+AI. How much autonomy will the muscle-drive
+
+have? What's the most appropriate control architecture?
+
+(That would make an interesting simulation project.)
+
+Must we still worry about inverse joint kinematics,
+
+or can we just hook up a handful of touch-sensory neurons and
+
+let the system learn to walk for itself? Most importantly,
+
+how do we wire in a sense of self-preservation? For,
+
+as student fees increase...
+
+<BLOCKQUOTE>
+
+I'm terribly sorry, Professor, but I was working
+
+late last night, I'd missed lunch, and the vending
+
+machine was out of order. I've eaten your robot.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="bots_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://news.bbc.co.uk/1/hi/sci/tech/4181197.stm">news.bbc.co.uk/1/hi/sci/tech/4181197.stm</A> -
+
+<I>'Living' robots powered by muscle</I>. The BBC News feature.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://news.bbc.co.uk/1/hi/sci/tech/3883749.stm">news.bbc.co.uk/1/hi/sci/tech/3883749.stm</A> -
+
+<I>Prince warns of science 'risks'</I>, also from the BBC.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.newscientist.com/article.ns?id=dn4714">www.newscientist.com/article.ns?id=dn4714</A> -
+
+<I>First robot moved by muscle power</I>, from <I>New Scientist</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.sciencentral.com/articles/view.php3?article_id=218391960">http://www.sciencentral.com/articles/view.php3?article_id=218391960</A> -
+
+ScienCentral's popular-science page
+
+on biobots and molecular motors, including Montemagno's work.
+
+Some nice links.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cnsi.ucla.edu/faculty/montemagno_c.html">www.cnsi.ucla.edu/faculty/montemagno_c.html</A> - 
+
+Carlo Montemagno's home page. The UCLA California NanoSystems Institute is at
+
+<A HREF="http://www.cnsi.ucla.edu/mainpage.html">www.cnsi.ucla.edu/mainpage.html</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.spie.org/paper/FirstSelf.pdf">www.spie.org/paper/FirstSelf.pdf</A> -
+
+<I>First self-assembled microrobots powered by muscle</I>, by
+
+Jianzhong Xi, Jacob Schmidt, and Carlo Montemagno. Technical descriptions
+
+of how the biobots were built; assumes knowledge of the nano-engineering techniques.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.foresight.org/Conferences/MNT6/Papers/Montemagno/index.html">www.foresight.org/Conferences/MNT6/Papers/Montemagno/index.html</A> -
+
+<I>Constructing Biological Motor Powered Nanomechanical Devices</I>
+
+by Carlo Montemagno, George Bachand, Scott Stelick, and Marlene Bachand. A 
+
+draft paper for the Sixth Foresight Conference on Molecular Nanotechnology. 
+
+Most of the paper is about molecular motors, but it also describes patterning techniques
+
+similar to those used in guiding the biobots' muscle growth. Quite apart from that, it's
+
+amazing to see serious plans to use single proteins as
+
+motors. I love the authors' phrase
+
+"Despite the superb performance of the F<sub>1</sub>-ATPase motor protein ..." - it
+
+sounds like something from a review of motorbike engines.
+
+</P>
+
+
+
+
+
+<H2><A NAME="ants">The Anthill as Computer</A></H2>
+
+
+
+<P>
+
+<BLOCKQUOTE>
+
+<P>
+
+A solitary ant, afield, cannot be considered to have much of anything on
+
+his mind; indeed, with only a few neurons strung together by fibers, he can't
+
+be imagined to have a mind at all, much less a thought. He is more like a
+
+ganglion on legs. Four ants together, or ten, encircling a dead moth on
+
+a path, begin to look more like an idea. They fumble and shove, gradually
+
+moving the food toward the Hill, but as though by blind chance.
+
+It is only when you watch the dense mass of thousands of ants,
+
+crowded together around the Hill, blackening the ground, that
+
+you begin to see the whole beast, and now you observe it thinking,
+
+planning, calculating. It is an intelligence, a kind of live
+
+computer, with crawling bits for its wits.
+
+</P>
+
+
+
+<P>
+
+At a stage in the construction, twigs of a certain size are needed, and
+
+all the members forage obsessively for twigs of just this size.
+
+Later, when outer walls are to be finished, the size must change, and as
+
+though given orders by telephone, all the workers shift the search to
+
+the new twigs. If you disturb the arrangement of a part of the Hill,
+
+hundreds of ants will set it vibrating, shifting, until it is put
+
+right again. Distant sources of food are somehow sensed, and long lines,
+
+like tentacles, reach out over the ground, up over walls, behind
+
+boulders, to fetch it in.
+
+</P>
+
+<DIV ALIGN=RIGHT>From <I>The Lives of a Cell</I> by Lewis Thomas.</DIV>
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+
+
+<H2><A NAME="starlogo">Artificial Ants, Mindstorms, and StarLogo</A></H2>
+
+
+
+<P>
+
+This can't be math I'm doing. It's fun and math ain't. So says one of the children
+
+quoted in Seymour Papert's book <I>Mindstorms</I>. Papert, 
+
+co-founder with Marvin Minsky of the MIT Artificial 
+
+Intelligence Lab, invented Logo, the Basic-like language in which children
+
+can write programs to control a computer-driven turtle, and hence learn about
+
+mathematical concepts such as polygons and interior-angle sums, as 
+
+well as meta-cognitive concepts such as the need to debug one's learnt
+
+knowledge. He developed this into the idea of educational microworlds,
+
+a theme explored in <I>Mindstorms</I>.
+
+</P>
+
+
+
+<P>
+
+I recently discovered a parellel implementation of Logo, 
+
+<A HREF="http://education.mit.edu/starlogo/">StarLogo</A>, through
+
+a mention in John Hiler's Weblog-related Weblog
+
+<A HREF="http://www.microcontentnews.com/entries/20021220-2589.htm">Microcontent News</A>.
+
+He describes experiments with a 
+
+<A HREF="http://www.cs.ucc.ie/~dgb/courses/ai/notes/myants.slogo">StarLogo ant simulator</A>,
+
+complete with food and pheremone trails. The behaviour
+
+generated by the simulator is complex, but emerges from
+
+four simple rules - and Hiler proposes that you could
+
+model blogging behaviour with this, for example, by replacing
+
+the rule "look for food" by "look for news". 
+
+</P>
+
+
+
+<P>
+
+Microcontent News appears to be no longer active, but the ant simulator
+
+is still available. StarLogo was designed as a tool for teaching children, by
+
+experts in teaching, and it's a simple way to demonstrate emergent behaviour, including
+
+ideas from Artificial Life.
+
+</P>
+
+
+
+
+
+<H3><A NAME="starlogo_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://www.microcontentnews.com/entries/20021220-2589.htm">www.microcontentnews.com/entries/20021220-2589.htm</A> -
+
+Microcontent News page for December 20, 2002, John Hiler's entry on the ant simulator.
+
+The simulator source is at 
+
+<A HREF="http://www.cs.ucc.ie/~dgb/courses/ai/notes/myants.slogo">www.cs.ucc.ie/~dgb/courses/ai/notes/myants.slogo</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://education.mit.edu/starlogo/">education.mit.edu/starlogo/</A> -
+
+StarLogo.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://web.media.mit.edu/~mres/">web.media.mit.edu/~mres/</A> -
+
+Mitchel Resnick, developer of StarLogo and author of
+
+<I>Turtles, Termites, and Traffic Jams: An Exploration in Massively Parallel Microworlds</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.thepangburns.com/jesse/projects/ant_simulation.htm">www.thepangburns.com/jesse/projects/ant_simulation.htm</A> -
+
+Another StarLogo ant simulator, by Jesse Pangburn.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.papert.org/">www.papert.org/</A> -
+
+Seymour Papert. Links to the LCSI company for constructivist educational
+
+technology using Logo microworlds, the Logo Foundation, LEGO Mindstorms, and many
+
+papers on topics such as school reform and how computers help children learn. 
+
+</P>
+
+
+
+
+
+<H2><A NAME="mathematics_and_coffee">Mathematics, Creativity, and Strong Black Coffee</A></H2>
+
+
+
+<P>
+
+<BLOCKQUOTE>
+
+For fifteen days I strove to prove that there could not be any functions 
+
+like those I have since called Fuchsian functions. I was then very
+
+ ignorant; every day I seated myself at my work table, stayed an 
+
+hour or two, tried a great number of combinations and reached no 
+
+results. One evening, contrary to my custom, I drank black coffee 
+
+and could not sleep. Ideas rose in crowds; I felt them collide 
+
+until pairs interlocked, so to speak, making a stable combination. 
+
+By the next morning I had established the existence of a class of 
+
+Fuchsian functions, those which come from the hypergeometric series; 
+
+I had only to write out the results, which took but a few hours.
+
+...
+
+<p></P>
+
+
+
+<P>
+
+...
+
+Permit me a rough comparison. Figure the future elements of our
+
+combinations [full-fledged ideas] as something like the hooked
+
+atoms of Epicurus. During the complete repose of the mind, these
+
+atoms are motionless, they are, so to speak, hooked to the wall;
+
+so this complete rest may be indefinitely prolonged without the
+
+atoms meeting, and consequently without any combination
+
+between them.
+
+</P>
+
+
+
+<P>
+
+On the other hand, during a period of apparent rest and 
+
+unconscious work, certain of them are detached from the wall and
+
+put in motion. They flash in every direction through the space
+
+(I was about to say the room) where they are enclosed, as
+
+would, for example, a swarm of gnats or, if you prefer a more
+
+learned comparison, like the molecules of gas in the kinematic
+
+theory of gases. Then their mutual impacts may produce new
+
+combinations...
+
+</P>
+
+
+
+<P>
+
+Now our will did not choose them at random; it pursued a
+
+perfectly determined aim. The modified atoms are therefore
+
+not any atoms whatsoever; they are those from which we might
+
+reasonably expect the desired solution. Then the mobilised
+
+atoms undergo impacts which make them enter into 
+
+combinations among themselves or with other atoms at rest which
+
+they struck against in their course. Again I beg pardon, my comparison
+
+is very rough, but I scarcely know how otherwise to make my
+
+thoughts understood.
+
+</P>
+
+<DIV ALIGN=RIGHT>By Henri Poincar&eacute;; quoted in
+
+<I>The Psychology of Invention in the Mathematical Field</I>
+
+by Jaques Hadamard.</DIV> 
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+
+
+<H2><A NAME="copycat_code_corner">Computational Creativity I - solving analogy problems with Copycat</A></H2>
+
+
+
+<P>
+
+<BLOCKQUOTE>
+
+Strange though it may seem, <I>nondeliberate yet nonaccidental slippage
+
+permeates our mental processes, and is the very crux of fluid thought</I>.
+
+</BLOCKQUOTE>
+
+In the early 1980s, Douglas Hofstadter took over the <I>Mathematical
+
+Games</I> column of <I>Scientific American</I>, and wrote a number of essays
+
+under the heading <I>Metamagical Themas</I>, later collecting them into
+
+a book published under the same name. He covered many topics, from the 
+
+arbitrariness of the genetic code to the threat of nuclear war; for me,
+
+the most interesting are about creativity, where he mentions
+
+ideas which he and colleagues at the 
+
+Fluid Analogy Research Group went on to implement in their programs.
+
+<p></P>
+
+
+
+<P>
+
+The quote above is from one of Hofstadter's essays, <I>Variations on
+
+a Theme as the Crux of Creativity</I>.
+
+Scott Bolland has written a nifty applet reimplementation of 
+
+Hofstadter and Melanie Mitchell's 
+
+Copycat program; it's easy to run, and I'd like to use it
+
+to introduce you to some of these ideas.
+
+</P>
+
+
+
+
+
+<H3><A NAME="copycat_conceptual_slippage">Conceptual slippage</A></H3> 
+
+
+
+<P>
+
+Consider the following questions:
+
+<UL>
+
+<LI><P>What is to <B>ijk</B> as <B>abd</B> is to <B>abc</B>?</P></LI>
+
+<LI><P>What is to <B>iijjkk</B> as <B>abd</B> is to <B>abc</B>?</P></LI>
+
+<LI><P>What is to <B>xyz</B> as <B>abd</B> is to <B>abc</B>?</P></LI>
+
+</UL>
+
+These are all simple letter-string problems. To the first, you'd
+
+probably say the answer is <B>ijl</B>, since the <B>c</B> in
+
+<B>abc</B> has gone to a <B>d</B>, and to "do the same thing" to the
+
+<B>k</B>, we move it one letter forward too, making it an <B>l</B>.
+
+<P>
+
+
+
+<P>
+
+The second problem is less straightforward, because <B>iijjkk</B> has no
+
+immediately obvious mapping onto <B>abc</B>, making it 
+
+harder to see to which part of it we should "do the same thing" to as we did to
+
+the <B>c</B>.
+
+One possibility is to map the
+
+final <B>k</B> onto the <B>c</B> and move it one letter forward,
+
+giving us <B>iijjkl</B>. However, it seems more elegant
+
+to map two letters each of one sequence onto one of the other, making the
+
+final <B>kk</B> correspond to the <B>d</B>. Then we move both letters
+
+forward, giving the answer <B>iijjll</B>.
+
+This is what Hofstadter calls conceptual slippage. The <B>kk</B> isn't
+
+actually the same kind of thing as the <B>c</B>, and we have to "slip"
+
+our notion of it to perceive it as such. 
+
+</P>
+
+
+
+<P>
+
+People give a variety of answers to the third problem. One I, as well
+
+as Hofstadter, find
+
+particularly elegant, is <B>wyz</B>. Here, the <B>a</B> has been mapped to
+
+the <B>z</B> and the <B>c</B> has been mapped to
+
+the <B>x</B>, so that one sequence is reversed with respect to the
+
+other. Then, to preserve symmetry, the relation of alphabetic successor between
+
+<B>c</B> and <B>d</B> is also reversed, so that to find the answer to
+
+the problem, "doing the same thing" to <B>x</B> takes its alphabetic
+
+predecessor, converting it to <B>w</B>. The conceptual slippage here applies
+
+more to the relation between letters than to the letters themselves as it
+
+did in the previous example.
+
+</P>
+
+
+
+
+
+<H3><A NAME="copycat_why_so_vital">Why is analogical thought so important?</A></H3> 
+
+
+
+<P>
+
+These letter-string puzzles are fun, but have they really anything to
+
+do with the heavy-duty creative thought practised by an Einstein, a Shakespeare, or
+
+a Turing? To try and justify Hofstadter's assertion that they do,
+
+I created the following analogy problems:
+
+<UL>
+
+<LI><P>What is to Prolog (or logic) as classes are to Java?</P></LI>
+
+<LI><P>What is to reasoning by association as Boolean algebra is to reasoning by deduction?</P></LI>
+
+<LI><P>What is to liquid methane as Terrestrial biochemistry is to water?</P></LI>
+
+<LI><P>What is to integers as union is to sets?</P></LI>
+
+<LI><P>What is to 5-8 as 1 is to 5-4?</P></LI>
+
+<LI><P>What is to 10&divide;3 as 2 is to 10&divide;5?</P></LI>
+
+<LI><P>What is to -9 as 3 (and -3) are to 9?</P></LI>
+
+<LI><P>What is to groups as primes are to integers?</P></LI>
+
+<LI><P>What is to homosexual love as marriage is to heterosexual?</P></LI>
+
+<LI><P>What is to "mimsy" (or "wabe", or "borogroves", ...) as German is to English?</P></LI>
+
+<LI><P>What is to line drawing as minor chords are to music?</P></LI>
+
+</UL>
+
+<p></P>
+
+
+
+<P>
+
+Two in
+
+computing; one (inspired by the <A HREF="http://news.bbc.co.uk/1/hi/sci/tech/4193043.stm">Huygens probe</A>) in xenobiology;
+
+five in mathematics (one solved by Lenat's <A HREF="http://www.ainewsletter.com/newsletters/aix_0501.htm#l">AM</A> program,
+
+four well-known in the history of the number system, one 
+
+<A HREF="http://www.iridis.com/tzsb/Classification_of_finite_simple_groups">finally resolved 22 years ago</A> by
+
+by group theorists); one for law and religion; one (translation of Carroll's Jabberwocky into
+
+<A HREF="http://www76.pair.com/keithlim/jabberwocky/translations/german1.html">Der Jammerwoch</A>) 
+
+in literary translation; and
+
+one for visual art (answered by Paul Klee's <I>Pedagogical Sketchbook</I>). 
+
+So we can certainly couch a lot of problems as analogies. Whether an extension
+
+of the mechanisms Hofstadter proposes is essential to solving them, and how much else
+
+is necessary, I don't know. But it's interesting and perhaps important, and that's why
+
+I'm introducing Copycat to you.
+
+</P>
+
+
+
+<P>
+
+Incidentally, Hofstadter also proposes, more prosaically, that perceiving the right analogy is essential
+
+for survival. Consider someone who argues that killing a person is the same as
+
+breaking a window because both are nasty and can be done with a brick: such reasoning
+
+is somehow missing the essence of the situation. Minds 
+
+so faulty will be weeded out by natural selection, leaving
+
+behind those with a deeper perception.
+
+</P>
+
+
+
+
+
+<H3><A NAME="copycat_how_it_works">How Copycat works</A></H3> 
+
+
+
+<P>
+
+Paint the letters of which the problem is made onto little
+
+Velcro balls and put these into a jar. Shake hard. From time to
+
+time, two related letter-balls will collide. They may be
+
+related because one follows the other in the alphabet, or because one
+
+stood next to the other in the problem, or even because they
+
+are the same letter. 
+
+</P>
+
+
+
+<P>
+
+Now, imagine that as the letter-balls collide, they
+
+sometimes stick and form bonds, the strength of the bond depending
+
+on how strongly the letters are 
+
+related. An <B>i-j</B> bond is stronger than an <B>i-k</B> bond.
+
+Both are much much stronger than an <B>i-u</B> bond, which, since
+
+the <B>i</B> and the <B>u</B> are just too distant in
+
+alphabetic order to be related, is almost nonexistent. 
+
+The shaking will break bonds as well as make them. But
+
+the stronger bonds will persist for longer, forming
+
+relatively more stable combinations.
+
+</P>
+
+
+
+<P>
+
+Occasionally also, these pairs will themselves bond together.
+
+An <B>a-b</B> may bond with another <B>a-b</B> through the
+
+force of identity. But - and this is the crux of
+
+conceptual slippage - it may also bond with a <B>z-y</B>. This
+
+happens
+
+because the <B>a-b</B> bond is an "alphabetic successor"
+
+bond, and the <B>z-y</B> bond is an "alphabetic predecessor"
+
+bond, and an "alphabetic successor"
+
+bond is related to an "alphabetic predecessor"
+
+bond by the force of oppositeness. 
+
+</P>
+
+
+
+<P>
+
+Now, we just watch the
+
+jar. As molecules form, we shake less vigorously, and then
+
+even less vigorously. The rate at which we
+
+cease to shake must be carefully chosen. Big
+
+molecules are almost complete solutions to the
+
+problem and we don't want to
+
+destroy them by shaking too violently. On the other hand,
+
+we don't want to stop too
+
+soon; if we do, the mixture will freeze before enough
+
+combinations have been tested.
+
+</P>
+
+
+
+<P>
+
+My description above was inspired by 
+
+<A HREF="#mathematics_and_coffee">Poincar&eacute;'s quote on mathematical
+
+creativity</A>. Hofstadter cites it in his essay, and
+
+it probably inspired some aspects of Copycat's implementation. In more
+
+technical terms, Copycat does a
+
+simulated annealing over structures formed by linking letters
+
+by their possible relationships.
+
+This cools at a rate dependent on the size
+
+and number of structures formed, and implements a parallel breadth-first
+
+search over the possible combinations of relationships between
+
+elements of the analogy problem. Hofstadter calls this
+
+a "parallel terraced scan".
+
+</P>
+
+
+
+<P>
+
+Incidentally, my point about the difference between an
+
+<B>i-j</B> bond versus an <B>i-u</B> bond reflects
+
+a distinction Hofstadter draws between "roles" and "literals".
+
+In the "What is to <B>ijk</B> as <B>abd</B> is to <B>abc</B>" problem, the <B>c</B> and <B>d</B>
+
+can be perceived as related. It therefore makes
+
+sense to imitate this relation - "do the same thing" -
+
+to the <B>k</B>. But if the problem had been  
+
+"What is to <B>ijk</B> as <B>abx</B> is to <B>abc</B>", then
+
+the <B>c</B> and <B>x</B> would be just too far apart.
+
+A sensible answer would regard the <B>x</B> as fixed -
+
+a literal - rather than filling a role, that of alphabetic successor.
+
+So we would make the answer <B>ijx</B>. Shallow minds that
+
+miss the essence of a problem may do so because they see literals
+
+when they ought to see roles.
+
+</P>
+
+
+
+<P>
+
+I highly recommend reading <I>Analogies and Roles in Human and Machine Thinking</I>,
+
+another essay from <I>Metamagical Themas</I>, 
+
+to see theses ideas, including the
+
+distinction between roles and literals, developed further. Copycat is 
+
+a highly subtle attempt to model how
+
+we balance aesthetic forces such as
+
+symmetry, uniformity, good substructure, and boundary strength.
+
+Try designing a typeface, drawing a comic strip, or whatever
+
+your favourite artistry is; feel them; and compare with
+
+the little letter problems.
+
+</P>
+
+
+
+
+
+<H3><A NAME="copycat_getting_started">Running Copycat</A></H3>
+
+
+
+<P>
+
+Bolland's Copycat is an applet, so needs no
+
+messy installation, just a Java-enabled Web browser.
+
+Point your browser at the applet,
+
+<A HREF="http://www.psy.uq.edu.au/CogPsych/Copycat">www.psy.uq.edu.au/CogPsych/Copycat</A>.
+
+You should see a page starting "Copycat" and
+
+"Please wait while the Copycat applet loads". 
+
+A grey applet rectangle will shortly appear above them, followed
+
+by a separate pop-up containing the applet's user interface. This
+
+is initially blank, before changing to display 
+
+its controls.
+
+On a fast University line, this took my system less than a minute: very good 
+
+for a download from Queensland to Oxford, half-way round 
+
+the world.
+
+</P>
+
+
+
+<P>
+
+Once the applet is running, you may want to expand the window, which
+
+will also expand the contents, making it easier to read.
+
+Be warned that when I changed my browser to another page, the
+
+applet window went blank. Returning to the applet URL didn't
+
+restore it, and I had to close my browser, then open a new one and start 
+
+right from the beginning.
+
+</P>
+
+
+
+
+
+<H3><A NAME="copycat_d1">Demonstration 1: a simple analogy problem</A></H3>
+
+
+
+<P>
+
+I'm always sceptical when running new software; so many things
+
+can go wrong. So let's see straight away
+
+whether this one will work on an analogy problem. Click on the menu
+
+bar to display the "File" menu, and select "New". This will pop up
+
+a little "New problem" window, with three text fields, for "Initial
+
+string", "Modified string", and "Target string". The fields should
+
+contain the strings <B>abc</B>, <B>abd</B>, and <B>ijk</B>. Click the "OK" button
+
+to enter this as the current problem.
+
+</P>
+
+
+
+<P>
+
+The window will disappear, and your strings will reappear in the
+
+main window, under the heading "Workspace". This holds the problem
+
+that Copycat is going to think about next, and is roughly equivalent
+
+to human long-term memory. We now tell Copycat to
+
+begin. The grey bar to the right of the workspace contains
+
+four control symbols, of which the second is a right-pointing triangle.
+
+This stands for "Play". Click it, and Copycat will start its problem solving.
+
+Within a few moments, the solution will appear in the bottom-right
+
+box in the Workspace. Copycat is non-determininistic, which means that
+
+it can come up with different answers from run to run. However, in
+
+this case, the answer is very likely to be <B>ijl</B>. So Copycat has decided
+
+that it is <B>ijl</B> which is to as <B>ijk</B> as 
+
+<B>abc</B> is to <B>abd</B>.
+
+</P>
+
+
+
+<P>
+
+Once Copycat has displayed a solution, doing another run is easy. Click the
+
+leftmost of the four buttons, the square, to reset. A question mark should
+
+replace the previous answer. Then press the "Play" triangle again, and wait
+
+as before. 
+
+</P>
+
+
+
+<P>
+
+Instead of pressing "Play", you can single-step through a problem by repeatedly
+
+clicking the right-hand button, a triangle with a bar. Finally, pressing
+
+the third button, "||", interrupts Copycat's thoughts. Press Play or
+
+Single-Step to continue.
+
+</P>
+
+
+
+<P>
+
+As Copycat runs, you will see the reading on the big red thermometer
+
+gradually decrease. This 
+
+corresponds to the amount of shaking in
+
+my <A NAME="copycat_how_it_works">how Copycat works</A> analogy, i.e
+
+the temperature in the simulated
+
+annealing. In the main window, you see the letter strings, with links forming
+
+and re-forming between them. These links are the "bonds" or relationships
+
+which Copycat currently perceives. You will also
+
+see a counter for "codelets". These are pattern recognisers
+
+which look for the relationships - the equivalent
+
+of bumping letter-balls together in the jar.
+
+</P>
+
+
+
+
+
+<H3><A NAME="copycat_d2">Demonstration 2: group runs and non-determinism</A></H3>
+
+
+
+<P>
+
+I said above that Copycat may think up different answers to the
+
+same problem in different runs. We can investigate this non-determinism
+
+by using group runs. Click "Run" on the menu bar, and select
+
+"Group Run". This will pop up a "New group run" window, which will
+
+invite you to type the name of the run. Any name will do - it's
+
+just an arbitrary identifier. My window had to be expanded vertically 
+
+before I could see the field that holds the name.
+
+</P>
+
+
+
+<P>
+
+Having typed a name, click OK, and select New from the File menu as
+
+we did above. Enter a problem. A good thing to try is to leave the initial
+
+string at <B>abc</B> and the modified string at <B>abd</B>, 
+
+but to make the target string be <B>xyz</B>, as in my section on
+
+<A HREF="#copycat_conceptual_slippage">conceptual slippage</A>.
+
+
+
+<P>
+
+After entering the problem, click OK in the problem window.
+
+This time, the main "Workspace" window will remain blank, except for four
+
+control buttons at its top right, to the left of the original
+
+four buttons we have already used. Press the second, which is
+
+another "Play" button. You have initiated a whole group of runs, and what 
+
+appears this time is a bar chart whose
+
+bars grow to depict the frequency of each answer Copycat has found. 
+
+How well does it manage conceptual slippage in the
+
+"What is to <B>xyz</B> as <B>abd</B> is to <B>abc</B>" problem?
+
+</P>
+
+
+
+<P>
+
+If you got this far, you've managed to run Copycat, and I hope you're
+
+intrigued by these ideas. I am therefore going, abruptly, to stop. As well
+
+as his applet, Bolland has written an excellent
+
+<A HREF="http://www2.psy.uq.edu.au/CogPsych/Copycat/Tutorial/">tutorial</A>
+
+on Copycat, which it would be silly for me to duplicate. For other 
+
+reading, see the links below, and the essays in
+
+<I>Metamagical Themas</I>. And don't underestimate the subject's
+
+importance. As Hofstadter says at the end
+
+of <I>Analogies and Roles in Human and Machine Thinking</I>:
+
+<BLOCKQUOTE>
+
+I feel confident that this tiny alphabetic world allows all of the key
+
+features of analogy to make their appearences. In fact I would go further
+
+and claim: Not only does the Copycat domain allow all the central
+
+features of analogy to emerge, but they emerge in a more crystal-clear
+
+way than in any other domain I've yet come across, precisely <I>because</I>
+
+of its stripped-down-ness. Paradoxically, Copycat's conceptual
+
+richness and beauty emanate directly from its apparent impoverishedness,
+
+just as the richness of the "ideal gas" metaphor emanates from
+
+its absolute simplicity. Time will tell if this
+
+limb I am out on is solid.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="copycat_code_corner_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://www.psy.uq.edu.au/CogPsych/Copycat">www.psy.uq.edu.au/CogPsych/Copycat</A> -
+
+Scott Bolland's Copycat applet. His tutorial, which
+
+assumes no previous knowledge, is at
+
+<A HREF="http://www2.psy.uq.edu.au/CogPsych/Copycat/Tutorial/">www2.psy.uq.edu.au/CogPsych/Copycat/Tutorial/</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.itee.uq.edu.au/~cogs2010/Schedule2003.html">www.itee.uq.edu.au/~cogs2010/Schedule2003.html</A> -
+
+Bolland's timetable for a Queensland University 
+
+course on models in cognitive science. The entry for Week 10 links to
+
+practical notes on Copycat, including exercises. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.itee.uq.edu.au/events/seminars/archive/sem-0015.html">www.itee.uq.edu.au/events/seminars/archive/sem-0015.html</A> -
+
+<I>Using Copycat for context-dependent visual object recognition</I>. Abstract
+
+of Bolland's Ph.D confirmation seminar on his object-recognition program VICOR,
+
+which uses analogical matching to recognise the same object in apparently
+
+unrelated visual data.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cigital.com/~gem/lspirit.html">www.cigital.com/~gem/lspirit.html</A> -
+
+The Letter Spirit project. See also the
+
+entry on <I>Science, Simplification, and Special Somersaults</I> at
+
+<A HREF="http://www.ainewsletter.com/newsletters/aix_0501.htm#s">www.ainewsletter.com/newsletters/aix_0501.htm#s</A>
+
+in the January Newsletter. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cs.pomona.edu/~marshall/metacat/">www.cs.pomona.edu/~marshall/metacat/</A> -
+
+James Marshall's Metacat Home Page, with links to his
+
+thesis and source code, and instructions on running the code. Metacat extends
+
+Copycat by being able to introspect, recognising patterns in its
+
+problem-solving processes as well as in its perceptions. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.ulg.ac.be/cogsci/rfrench/elephants.pdf">www.ulg.ac.be/cogsci/rfrench/elephants.pdf</A> -
+
+<I>When coffee cups are like old elephants or Why representation modules don't make sense</I>. 
+
+Preprint of Robert French's paper from
+
+<I>Proceedings of the 1997 International Conference on New 
+
+Trends in Cognitive Science</I>, edited by A Riegler and M Peschl, Austrian Society for Cognitive Science. French
+
+argues that we can't separate the creation of perceptual representations from their use, and hence
+
+for programs and cognitive models that intertwine them as Copycat does.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.ulg.ac.be/cogsci/rfrench/analogy.tics.pdf">www.ulg.ac.be/cogsci/rfrench/analogy.tics.pdf</A> -
+
+<I>The Computational Modeling of Analogy-Making</I>. Preprint of French's paper from
+
+<I>Trends in Cognitive Sciences</I>, Volume 6, Number 5, 2002. A survey of previous programs and
+
+models of analogical reasoning.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.aaai.org/AITopics/html/analogy.html">www.aaai.org/AITopics/html/analogy.html</A> -
+
+AAAI analogical reasoning page.
+
+</P>
+
+
+
+
+
+<H2><A NAME="mathematics_and_alchemy">Mathematics and alchemy</A></H2>
+
+
+
+<P>
+
+<BLOCKQUOTE>
+
+<P>
+
+Mathematicians often cultivate a certain smug attitude of superiority
+
+over the experimental sciences. There is, after all, a higher form
+
+of truth in mathematics which is impervious to the whims of
+
+time. A theorem proved 500 years ago is still true today, and while
+
+such theorems may be elementary, we often find them useful (and
+
+sometimes we even find them interesting). We still teach Newton to
+
+our undergraduates; a chemist who reached that far back would
+
+be teaching alchemy.
+
+</P>
+
+
+
+<P>
+
+Yet mathematicians are rather miserable scientists; they have no sense
+
+of empirical classification or experimental control. In technique,
+
+mathematics and alchemy are virtually indistinguishable. Consider
+
+the two. The alchemists mixed together whatever was on hand and
+
+then observed the results which were, by the way, often quite ordinary.
+
+Of course they could repeat the process with the new products
+
+(again and again), but the further such experiments proceeded the
+
+more confused and uninteresting was the product. Their experiments
+
+were largely uncontrolled meanderings which only  rarely
+
+proveded a glimmer of revelation. And modern mathematics? The
+
+alchemists would feel right at home.
+
+</P>
+
+<DIV ALIGN=RIGHT>From <I>Mathematics and Alchemy</I>, editorial by John Ewing in
+
+<I>The Mathematical Intelligencer</I> Volume 3, Number 4, 1981.</DIV>
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+
+
+<H2><A NAME="ilp_code_corner">Computational Creativity II - machine learning with Inductive Logic
+
+Programming and Aleph</A></H2>
+
+
+
+<P>
+
+Pervez Musharraf could one day be taking advice 
+
+from an Induced Logic Program.  Inductive Logic
+
+Programming is a form of symbolic machine learning which
+
+learns, from examples expressed in Prolog or similar
+
+logic-based notation, logical rules stating what
+
+the examples have in common.
+
+Oxford University Computing Lab is one of many centres researching into
+
+ILP, and its Web site lists an abundance of 
+
+applications. 
+
+Amongst these - which include learning rules to identify
+
+<A HREF="ftp://ftp.comlab.ox.ac.uk/pub/Packages/ILP/Theses/kung.ps.gz">over-performing stocks</A>, 
+
+<A HREF="ftp://ftp.comlab.ox.ac.uk/pub/Packages/ILP/Theses/kothari.pdf.gz">diabetics at risk from kidney damage</A>, 
+
+<A HREF="http://web.comlab.ox.ac.uk/oucl/research/areas/machlearn/embryos.html">the best embryos for transfer in <I>in vitro</I> fertilisation</A>,
+
+and
+
+<A HREF="http://web.comlab.ox.ac.uk/oucl/research/areas/machlearn/mesh.html">the best mesh-resolution for finite-element mesh designs</A> -
+
+is Jamal Abdul-Nasir's work on
+
+<A HREF="ftp://ftp.comlab.ox.ac.uk/pub/Packages/ILP/Theses/jamal.ps.gz">classifying questions
+
+posed to the Speaker of the National Assembly of Pakistan</A>.
+
+</P>
+
+
+
+<P>
+
+Every day, about 100 parliamentary questions are submitted to 
+
+the Questions Branch of the National Assembly,
+
+in the hope they will be put to ministers during
+
+Question Hour. Some questions are not permitted -
+
+such as those asking for publicly-available
+
+information that members could find out elsewhere - so
+
+the clerks of the Questions Branch have to sort the permissible from
+
+the impermissible. This takes about 5 minutes per question.
+
+That's not a lot, but because of the number of questions, any
+
+computational assistance would be welcome. Abdul-Nasir's research used ILP
+
+to learn permissible-vs-impermissible rules from a database of
+
+previously-classified questions, and concluded that this
+
+could save a substantial amount of time.
+
+</P>
+
+
+
+<P>
+
+I can't imagine Tony Blair accepting advice from a computer program; but
+
+this example, and the others listed above, show how versatile ILP can be.
+
+Because of this versatility, the human-readability of its
+
+output, and its ability to handle complicated structures such
+
+as molecules and documents, ILP deserves to be better known. Several free implementations
+
+now exist, and I'm going to use one of these to work
+
+through some examples that you can try for yourself.
+
+</P>
+
+
+
+
+
+<H3><A NAME="ilp_readable_rules">ILP, readable rules, and drug discovery</A></H3>
+
+
+
+<P>
+
+Before I launch into the downloads and demonstrations, I want to
+
+show you one great advantage of ILP, the readability of its rules.
+
+I'm going to illustrate this with an example from drug design.
+
+First, a bit about the subject. 
+
+</P>
+
+
+
+<P>
+
+Pharmacology - the study of drugs and their effects -
+
+is difficult. We may know that some compound lowers blood pressure, induces
+
+anaesthesia, or lifts depression, but have little idea why. Perhaps
+
+its effect was first discovered by accident, as 
+
+<A HREF="http://capra.iespana.es/capra/ingles/cafe/cafe.htm">legend
+
+has it</A> happened with coffee when, one day, Kaldi the shepherd noticed his goats
+
+jumping around in the field. After eating the red berries from the shiny dark-leaved shrub the goats 
+
+had been nibbling, Kaldi was jumping around too, and the rest is 
+
+history: 
+
+London coffee houses; Sartre and Hemingway scribbling away
+
+in Les Deux Magots; take-away cappuccino ventis on
+
+every street corner; and me bashing away at this feature 
+
+in the <A HREF="http://www.j-paine.org/excelsior.html">Excelsior</A>,
+
+Oxford.
+
+</P>
+
+
+
+<P>
+
+To explain such effects, pharmacologists invented the "pharmacophore". An often-used analogy
+
+is that of 
+
+<A HREF="http://www.newdrugdesign.com/Rachel_Theory_02.html">lock and key</A>.
+
+Designed drugs, and other active molecules such as caffeine, affect enzymes by slotting into regions
+
+of a particular size and shape, like a key fitting into a keyhole.
+
+It's only the key's teeth whose shape is important;
+
+it doesn't matter whether the head is oval or hexagonal, or
+
+threaded onto a keyring. Similarly, only a small
+
+part of the "ligand" - the drug or other molecule - interacts with the
+
+enzyme. The rest is scaffolding. The part that does interact
+
+needs to be a particular shape (though shape is a fuzzy
+
+concept when you're as small as an atom), as well as a particular distribution
+
+of electrons and charge. These properties are the
+
+pharmacophore. The pharmacophore for an enzyme determine the ligands that
+
+bind to it, as the tumblers in my bedroom lock determine the keys that 
+
+open it.
+
+</P>
+
+
+
+<P>
+
+One class of drugs very important for treating high blood pressure 
+
+is the ACE-inhibitors.
+
+These block the action of Angiotensin-Converting Enzyme or ACE, which 
+
+generates a protein that constricts blood vessels and raises blood pressure.
+
+It's not surprising that, in their quest for better 
+
+treatments, pharmacologists have tried to determine the pharmacophore of the ACE-inhibitors.
+
+</P>
+
+
+
+<P>
+
+And so has ILP. There is a paper, 
+
+<A HREF="http://www.cs.wisc.edu/~dpage/cs731/mlj_page.ps"><I>Pharmacophore Discovery 
+
+using the Inductive Logic Programming System PROGOL</I></A>, 
+
+which describe a blindfold trial where ILP was applied to ACE-inhibitors
+
+for which earlier experimenters (not using machine learning)
+
+had already worked out a pharmacophore. 
+
+The paper is, incidentally, a good introduction to both ILP and
+
+drug discovery, requiring little knowledge of either.
+
+As the authors say, this
+
+trial was nearly as straightforward
+
+as "(1) run Progol over the earlier experimenters' data and assumptions;
+
+(2) compare the output with their results". It was a success. Progol
+
+did rediscover the pharmacophore.
+
+</P>
+
+
+
+<P>
+
+Moreover, its rediscovery was easy to read. Progol represented its
+
+rule internally as a Prolog clause. But it can translate these into
+
+a stylised English. Doing so here gave this output:
+
+<PRE>
+
+  Molecule A is an ACE inhibitor if: 
+
+    molecule A can bind to zinc at a site B, and 
+
+    molecule A contains a hydrogen acceptor C, and 
+
+    the distance between B and C is 7.9 +/­ 1.0 Angstroms, and 
+
+    molecule A contains a hydrogen acceptor D, and 
+
+    the distance between B and D is 8.5 +/­ 1.0 Angstroms, and 
+
+    the distance between C and D is 2.1 +/­ 1.0 Angstroms, and 
+
+    molecule A contains a hydrogen acceptor E, and 
+
+    the distance between B and E is 4.9 +/­ 1.0 Angstroms, and 
+
+    the distance between C and E is 3.1 +/­ 1.0 Angstroms, and 
+
+    the distance between D and E is 3.8 +/­ 1.0 Angstroms. 
+
+</PRE>
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="ilp_other_applications">Other applications</A></H3>
+
+
+
+<P>
+
+I have a fondness for ILP in pharmacology,
+
+through working on this myself with one of the 
+
+authors of the paper above. However, that's not the
+
+only reason I chose it to illustrate ILP.
+
+Molecules are messy, complex, structured. They branch, fold and tangle
+
+in three dimensions. They are built from atoms which we must specify geometrically
+
+(size), chemically (is it a hydrogen acceptor?), and in relation to one
+
+another (bonding). Even without the rest, the geometry can be
+
+daunting: those who work on protein folding know that you have to think
+
+about the sequence in which the amino-acid building blocks are connected (primary structure), 
+
+and the way these sequences curve to form helices and strands (secondary
+
+structure), and the way these helices and strands then coil and loop
+
+to make the entire protein (tertiary structure). If ILP can
+
+cope with all this, surely little else can frighten it.
+
+</P>
+
+
+
+<P>
+
+As the Oxford 
+
+University
+
+<A HREF="http://web.comlab.ox.ac.uk/oucl/research/areas/machlearn/applications.html">applications page</A> 
+
+with which I introduced ILP shows, ILP is indeed
+
+not limited to pharmacology: its applications range from medical screening
+
+to learning about stocks and shares. Others will be found via my links below.
+
+</P>
+
+
+
+<P>
+
+I should give two warnings. First, ILP still has shortcomings. Some of these
+
+are discussed in the recent paper
+
+<A HREF="http://jmlr.csail.mit.edu/papers/volume4/page03a/page03a.pdf"><I>ILP: A Short 
+
+Look Back and a Longer Look Forward</I></A>.
+
+</P>
+
+
+
+<P>
+
+Second, you must know some theory to use ILP correctly; otherwise,
+
+its results may be subtly wrong without you realising. 
+
+Drug designers prefer large pharmacophores to small, because they
+
+indicate that the molecules being tested have more in common,
+
+a result which is less likely to occur by chance. In ILP terms, this means
+
+the designers would prefer a large rule to a small one. ILP programs,
+
+however, prefer short rules to large. This is because they're simpler and thus
+
+more interesting as theories of what distinguishes examples of a concept
+
+from non-examples. (Einstein would not have been so popular had
+
+e equalled 0.0000000513 + mc<SUP>2.000056</SUP>). The authors of our
+
+ACE paper had to correct for this mismatch; and had to know how ILP
+
+worked in order to do so.
+
+</P>
+
+
+
+
+
+<H3><A NAME="ilp_getting_started_with_prolog">Installing and running Prolog</A></H3>
+
+
+
+<P> I'm now going to start the demonstrations. The first step is to obtain a suitable 
+  Prolog. Aleph will run under SWI and YAP Prologs; I am using SWI, because that's 
+  my Prolog of choice anyway. Prolog experts may wish to try porting [contact 
+  <a href="http://www.ainewsletter.com/contact.htm">Dennis</a> for an Amzi! version 
+  of Aleph]; otherwise, follow my instructions, and you should be able to run 
+  the demos even if you don't know Prolog. So go to Jan Wielemaker's SWI Prolog 
+  site at <A HREF="http://www.swi-prolog.org/">www.swi-prolog.org/</A>, and then 
+  to the "Download" link in the left-hand column. This brings you to the "SWI-Prolog 
+  downloads" page; go to the "Development release" link and choose one of the 
+  top three downloads, depending on your operating system. On mine, Windows XP, 
+  the self-installing executable installs with no trouble: just press "Accept", 
+  "Next" or "Finish" at the appropriate questions, as you would when installing 
+  any other program. </P>
+
+
+
+<P>
+
+If you've not used Prolog before, a bit of practice will
+
+help. I shall give instructions in
+
+Windowese; adapt them to your system as appropriate.
+
+Installing SWI should have left a Prolog icon on your
+
+desktop. Double-click it. This will bring up a white Prolog
+
+window displaying something like:
+
+<PRE>
+
+  Welcome to SWI-Prolog (Multi-threaded, Version 5.5.3)
+
+  Copyright (c) 1990-2005 University of Amsterdam.
+
+  <I>[etc]</I>
+
+  For help, use ?- help(Topic). or ?- apropos(Word).
+
+
+
+  1 ?- 
+
+</PRE>
+
+<p></P>
+
+
+
+<P>
+
+Click in the window to get the cursor into it, and type
+
+the query
+
+<PRE>
+
+  1&lt;2.
+
+</PRE>
+
+after the <CODE>?-</CODE> prompt. Don't omit the dot at
+
+the end, otherwise Prolog won't know the query is complete. 
+
+Hit RETURN. Prolog should reply
+
+<PRE>
+
+  Yes
+
+  2 ?-
+
+</PRE>
+
+Prolog has interpreted your input as a query about the truth of
+
+the statement "1&lt;2". Since the statement is true,
+
+it replied with a Yes.
+
+<p></P>
+
+
+
+<P>
+
+Now type the query
+
+<PRE>
+
+  1&gt;2.
+
+</PRE>
+
+You should see output similar to the above, but with a No
+
+instead of a Yes, indicating that the statement
+
+is false.
+
+<p></P>
+
+
+
+<P>
+
+If you got this far, your Prolog is working. 
+
+Should you wish to exit, you can close the window, but
+
+you may as well leave it awaiting the first demonstration.
+
+Before returning to the demo, I shall explain how to 
+
+download the Aleph ILP program
+
+and the data to be learnt about, and then
+
+show what the data means.
+
+</P>
+
+
+
+
+
+<H3><A NAME="ilp_getting_started_with_aleph">Installing Aleph</A></H3>
+
+
+
+<P>
+
+Now you need Aleph.
+
+Aim your browser at Ashwin Srinivasan's Aleph site,
+
+<A HREF="http://web.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/">web.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/</A>.
+
+This will get you the Aleph manual.
+
+</P>
+
+
+
+<P>
+
+Aleph itself lives at 
+
+<A HREF="http://www.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/aleph.pl">www.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/aleph.pl</A>,
+
+which is linked from the "How to obtain Aleph" section of the manual. 
+
+Download and save it, which
+
+should give you an <CODE>aleph.pl</CODE> file. 
+
+Don't accept if your browser offers to execute the file:
+
+it's probably been set up to think the <CODE>.pl</CODE>
+
+extension denotes Perl. 
+
+</P>
+
+
+
+<P>
+
+<A NAME="ilp_the_examples"></A>
+
+The example datasets live at
+
+<A HREF="http://www.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/misc/examples.zip">www.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/misc/examples.zip</A>. 
+
+This zip file contains a top level <CODE>examples</CODE> directory, with under it
+
+a number of subdirectories
+
+and a README with a one-line description of each. Each subdirectory
+
+contains <CODE>.b</CODE>, <CODE>.f</CODE> and
+
+<CODE>.n</CODE> files, the inputs to Aleph. There is usually also
+
+a "typescript" file showing a run, and possibly
+
+other files containing more information.
+
+In the paths I specify to Prolog, I shall assume you've
+
+unzipped the file so that its <CODE>examples</CODE>
+
+directory lives in the same directory in which you've put Aleph.
+
+</P>
+
+
+
+
+
+<H3><A NAME="ilp_trains">Ryszard Michalski's train challenge to machine learning</A></H3>
+
+
+
+<P>
+
+The first demonstration is a Prolog version of Ryszard 
+
+Michalski's notorious trains challenge, posed to machine learning in 1974.
+
+You are given data describing ten trains, and told that five are eastbound 
+
+and five are westbound. The challenge is to induce, from descriptions of
+
+the trains, a rule that distinguishes those in the "westbound" set
+
+from those in the "eastbound".
+
+These labels are arbitrary, by the way - there are no destination
+
+indicators on the trains, or anything else connected with directions,
+
+and the challenge would work as well if you were told that
+
+five trains were squamous and five were rugose.
+
+The point is just to find a rule
+
+that passes one set of trains and fails the others.
+
+</P>
+
+
+
+<P>
+
+The reason this was such a challenge is that the trains
+
+are fairly complex structured objects. They consist of
+
+carriages  - different trains have different numbers of carriages -
+
+which can be short or long, have open or
+
+closed roofs and differing numbers of wheels, 
+
+and carry stylised loads which may be rectangles, triangles, or
+
+other shapes. The learning program must, therefore, be able to
+
+represent this structure and work with it when constructing its generalisations.
+
+At the time, such "relational" learning was a young subject,
+
+research in which had not progressed further than Patrick Winston's
+
+<A HREF="http://www.rci.rutgers.edu/~cfs/472_html/Learn/LearningToc.html">arch-learning
+
+program</A>, which learnt from examples of simple geometric structures
+
+consisting of only three or four components each.
+
+</P>
+
+
+
+
+
+<H3><A NAME="ilp_trainspotting">Describing trains in Prolog</A></H3>
+
+
+
+<P>
+
+Let's now see how the trains look in Prolog.
+
+Examine the <CODE>train.f</CODE> file in the <CODE>trains</CODE>
+
+subdirectory of the example
+
+<A HREF="#ilp_the_examples">datasets</A>. The task which these
+
+datasets pose is to find a rule which is true of
+
+all the eastbound trains and false of all the westbound. That is,
+
+we want Aleph to find a concept of which all the
+
+eastbound trains are positive examples and all the westbound
+
+are negative examples. The positive examples are in
+
+<CODE>train.f</CODE>.
+
+</P>
+
+
+
+<P>
+
+The first line of the file says that the
+
+predicate <CODE>eastbound</CODE> is true of a train called <CODE>east1</CODE>. Said
+
+more simply, train <CODE>east1</CODE> is eastbound. Similarly, the
+
+second line tells us that train <CODE>east2</CODE> is eastbound. And so on:
+
+<PRE>
+
+  eastbound(east1).
+
+  eastbound(east2).
+
+  eastbound(east3).
+
+  eastbound(east4).
+
+  eastbound(east5). 
+
+</PRE>
+
+<p></P>
+
+
+
+<P>
+
+This is all very well, but so far, we only know these trains' names,
+
+but nothing of their make-up.This is described in the <CODE>train.b</CODE> file.
+
+Starting at line 58, we see:
+
+<PRE>
+
+  short(car_12).	
+
+  closed(car_12).	
+
+  long(car_11).	
+
+  long(car_13).
+
+  short(car_14).
+
+  open_car(car_11).
+
+  open_car(car_13).
+
+  open_car(car_14).
+
+  shape(car_11,rectangle).
+
+  shape(car_12,rectangle).
+
+  shape(car_13,rectangle).
+
+  shape(car_14,rectangle).
+
+  load(car_11,rectangle,3). 
+
+  load(car_12,triangle,1).
+
+  load(car_13,hexagon,1).
+
+  load(car_14,circle,1).
+
+  wheels(car_11,2).	  
+
+  wheels(car_12,2).
+
+  wheels(car_13,3).
+
+  wheels(car_14,2).
+
+  has_car(east1,car_11).
+
+  has_car(east1,car_12).
+
+  has_car(east1,car_13).
+
+  has_car(east1,car_14).
+
+</PRE>
+
+These are facts about parts of trains. For example, the first line shown above
+
+says that the predicate <CODE>short</CODE> is true of <CODE>car_12</CODE> - that is,
+
+carriage 12 is short. Similarly, carriage 12 is closed. Carriage 11 is long. And so on.
+
+<p></P>
+
+
+
+<P>
+
+The predicates with two or more arguments, such as <CODE>shape</CODE> and <CODE>load</CODE>, work
+
+the same way. Carriage 11 has a rectangular shape. Carriage 12 carries 1
+
+hexagon. Carriage 14 has 2 wheels. 
+
+</P>
+
+
+
+<P>
+
+The final four lines above associate a train with its carriages. Although
+
+we've told Prolog lots of stuff about the carriages' properties, we
+
+haven't told it which train these belong to. So the final four lines do this, saying that the
+
+train <CODE>east1</CODE> has carriages <CODE>car_11</CODE> to <CODE>car_14</CODE>; and
+
+similarly for the other trains.
+
+</P>
+
+
+
+<P>
+
+I haven't yet mentioned the <CODE>trains.n</CODE> file. This contains 
+
+"negative examples", i.e. descriptions of trains which are not eastbound.
+
+It's always easier to learn the boundaries of a concept if you have examples
+
+that lie outside them - as when little Johnny opens his copy of the Three Little Pigs
+
+and says "Look Mummy! <I>Nice</I> doggie!", pointing at a toothily grinning wolf. ILP has
+
+developed methods for doing without negative examples, but my two
+
+demonstrations will use them.
+
+</P>
+
+
+
+
+
+
+<H3><A NAME="ilp_running_the_trains">Demonstration 1: learning about the structure of trains</A></H3>
+
+
+
+<P>
+
+Let's now return to Prolog, which we left at the end of
+
+the section on <A HREF="#ilp_getting_started_with_prolog">Installing
+
+and running Prolog</A>. The example datasets 
+
+are nicely set up, and running them is easy.
+
+</P>
+
+
+
+<P>
+
+Start Prolog again if you exited it. Then change its 
+
+current directory to wherever you put Aleph. Do so by
+
+typing
+
+<PRE>
+
+  cd('d:/aleph').
+
+</PRE>
+
+but with the appropriate path for your files.
+
+The quotes round the path are single quotes,
+
+and the directory separators are forward slashes, even in Windows.
+
+Remember the final dot.
+
+<p></P>
+
+
+
+<P>
+
+Then give the command
+
+<PRE>
+
+  [aleph].
+
+</PRE>
+
+(The square brackets round the filename are an idiosyncratic
+
+abbreviation for the file-loading command.) Your
+
+Prolog should reply something along these lines:
+
+<PRE>
+
+  3 ?- cd('d:/aleph').
+
+
+
+  Yes
+
+  4 ?- [aleph].
+
+  %   library(pce) loaded into pce 0.05 sec, 170,024 bytes
+
+  %  library(broadcast) compiled into broadcast 0.06 sec, 197,144 bytes
+
+  %  library(time) compiled into time 0.00 sec, 2,956 bytes
+
+
+
+  A L E P H
+
+  Version 5
+
+  Last modified: Sun Oct 10 06:59:50 BST 2004
+
+
+
+  Manual: http://www.comlab.ox.ac.uk/oucl/groups/machlearn/Aleph/index.html
+
+
+
+  % aleph compiled 0.26 sec, 690,528 bytes
+
+
+
+  Yes
+
+  5 ?-
+
+</PRE> 
+
+<p></P>
+
+
+
+<P>
+
+Now you can run Aleph. Assuming that your examples are under the Aleph
+
+directory, change to their <CODE>trains</CODE>subdirectory; then tell Aleph
+
+to read the files and learn!
+
+<PRE>
+
+  cd('examples/trains').
+
+  read_all(train).
+
+  induce.
+
+</PRE>
+
+The calls to <CODE>read_all</CODE> and <CODE>induce</CODE> 
+
+generate
+
+a <I>lot</I> of output, ending with a list of the trial rules
+
+Aleph generated, the  best rule (i.e. the smallest that describes all the
+
+positive examples but none of the negative), 
+
+and a summary of the number of examples that passed or failed. 
+
+<p></P>
+
+
+
+<P>
+
+This is what you should see:
+
+<A NAME="trains_rule"></A>
+
+<PRE>
+
+  eastbound(A) :-
+
+    has_car(A, B), short(B), closed(B).
+
+</PRE>
+
+This translates into English as:
+
+<PRE>
+
+  For any train A, A is eastbound if
+
+    A has a carriage B, and
+
+    B is short, and
+
+    B is closed.
+
+</PRE>
+
+In Prolog, names starting with capital letters are logical variables,
+
+which can stand for anything, as long as it's the same thing
+
+each time the variable occurs in a single rule. The ":-" means "if",
+
+and the comma means "and". My translation demonstrates how this works,
+
+but if you're going to use ILP seriously, you'll probably
+
+need to learn some Prolog.
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="ilp_describing_molecules">Describing molecules in Prolog</A></H3>
+
+
+
+<P>
+
+To see how we could describe molecules to ILP, it's only
+
+necessary to think of them as trains. Instead of
+
+describing the properties of carriages, the
+
+facts could equally well be about the properties of atoms. Add
+
+new facts to describe the couplings - i.e. whether the atoms are
+
+singly, doubly or triply bonded - and allow the train
+
+to loop back on itself, and you have molecules. 
+
+The classification into eastbound versus westbound can, in the
+
+simplest cases, be replaced by biologically-active versus
+
+biologically-inactive, where we know from experimental data
+
+which class each molecule goes in. The links at the end
+
+point to more information on this and other applications.
+
+</P>
+
+
+
+
+
+<H3><A NAME="ilp_learning_recursive_programs">Demonstration 2: learning recursive programs</A></H3>
+
+
+
+<P>
+
+The name behind the acronym ILP is "Inductive Logic Programming". 
+
+Not "Learning", not "Derivation", but "Programming".
+
+That's because the rules ILP learns are, in fact, programs. 
+
+Aleph's <A HREF="#trains_rule">eastbound trains rule</A>
+
+is a train-recognising program. What I am shall now do is 
+
+make Aleph learn a list-handling program. Even better, it will
+
+be a recursive list-handling program.
+
+</P>
+
+
+
+<P>
+
+Go to the <CODE>recursion</CODE> subdirectory of the Aleph
+
+datasets, and examine <CODE>mem.f</CODE>. From its
+
+extension, it contains the positive examples. Some of these are:
+
+<PRE>
+
+  mem(1,[1]).
+
+  mem(0,[0,0]).
+
+  mem(0,[0,1]).
+
+  mem(2,[2,3]).
+
+  mem(3,[2,3]).
+
+  mem(3,[4,2,3]).
+
+</PRE>
+
+Like many other languages, Prolog has lists - structures for representing
+
+sequences - built in. It writes them inside square brackets. Thus <CODE>[1]</CODE> 
+
+is a list with the single element 1, and <CODE>[4,2,3]</CODE> is a 
+
+list of three elements. Given this notation, we can interpret the facts as examples
+
+of list membership: in each, the first argument is a member of the list given as second
+
+argument.
+
+<p></P>
+
+
+
+<P>
+
+Now compare <CODE>mem.n</CODE>, the negative examples:
+
+<PRE>
+
+  mem(0,[1,2]).
+
+  mem(0,[1]).
+
+  mem(3,[]).
+
+  mem(2,[3]).
+
+</PRE>
+
+If we continue to interpret the predicate <CODE>mem</CODE> as list membership,
+
+then all these facts are clearly false, since the first argument does not occur in
+
+the second.
+
+<p></P>
+
+
+
+<P>
+
+To run ILP over these, change Prolog's directory to the same
+
+<CODE>recursion</CODE> subdirectory. The following should work, if you 
+
+left Prolog running after the trains demo:
+
+<PRE>
+
+  cd('../recursion').
+
+</PRE>
+
+Then type:
+
+<PRE>
+
+  read_all(mem).
+
+  induce.
+
+</PRE>
+
+<p></P> 
+
+
+
+<P>
+
+The output will be similar to that for the trains: a short "I've read the files" 
+
+message from <CODE>read_all</CODE>, and then a long sequence of trial rules
+
+from <CODE>induce</CODE>, followed by the one it considers best: 
+
+<PRE>
+
+  [theory]
+
+
+
+  [Rule 1] [Pos cover = 12 Neg cover = 0]
+
+  mem(A, B) :-
+
+     B=[A|C].
+
+
+
+  [Rule 2] [Pos cover = 10 Neg cover = 0]
+
+  mem(A, B) :-
+
+     B=[C|D], mem(A, D).
+
+</PRE>
+
+In this, the notation <CODE>[ | ]</CODE> is Prolog's
+
+way of splitting a list into its first
+
+element and the rest (its tail).
+
+<p></P>
+
+
+
+<P>
+
+This time, Aleph needed two rules to describe the examples. Together, these
+
+form a recursive definition of list membership, the first being the
+
+base case and the second the recursive step:
+
+<PRE>
+
+  For any item A and list B, A is a member of B if 
+
+    B is equal to A followed by something else, C.
+
+
+
+  For any item A and list B, A is a member of B if
+
+    B is equal to something followed by some list which we'll call D, and
+
+    A is a member of D.
+
+</PRE>
+
+So here, Aleph has learnt a recursive program.
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="ilp_foreign_data">Getting non-Prolog data into Aleph</A></H3>
+
+
+
+<P>
+
+Both the trains and the recursive-programs datasets
+
+were written in Prolog. However, although what goes into Aleph 
+
+has to be Prolog, our raw data does not, as long as we can translate it.
+
+Since I hope you'll try Aleph on some real-world applications, I'll
+
+show how we might translate data from Web forms and from Excel
+
+into Prolog.
+
+</P>
+
+
+
+<P>
+
+Suppose we want to train on data typed into
+
+Web input forms. Each field in a form has its own name - the HTML "NAME" attribute.
+
+When the form is submitted, the browser sends its contents
+
+to the server as a sequence of name-value pairs, which, using
+
+the utilities provided with Perl, Python and other scripting
+
+languages, can be extracted and dumped into a database or
+
+converted immediately to Prolog. Thus, data
+
+on a user's finances might be converted to
+
+<PRE>
+
+  age(u_173,50).
+
+  sex(u_173,f).
+
+  children(u_173,4).
+
+  owns_credit_card(u_173,visa).
+
+  owns_credit_card(u_173,amex).
+
+  annual_income(u_173,55000).
+
+</PRE>
+
+where the age, sex, etc. come from corresponding input fields, and
+
+<CODE>u_173</CODE> is a unique ID generated for that particular
+
+submission. Compare the <A HREF="#ilp_trains">trains</A>, where <CODE>east1</CODE>
+
+could be regarded as an ID for a train.
+
+<p></P>
+
+
+
+<P>
+
+Now suppose instead that we want to train on data entered into Excel -
+
+a plausible choice for data entry because of its handy tabular layout and
+
+ease of use. Recent Excels can save spreadsheets as XML,
+
+which is easier to unscramble than a .xls file, and for which
+
+there exists a range of parsers. Thus the spreadsheet
+
+<BLOCKQUOTE>
+
+<TABLE>
+
+<TR><TH>age</TH><TH>sex</TH><TH>children</TH><TH>credit cards</TH><TH>annual income</TH></TR>
+
+<TR><TD>50</TD><TD>f</TD><TD>4</TD><TD>visa,amex</TD><TD>55000</TD></TR>
+
+<TR><TD>34</TD><TD>m</TD><TD>0</TD><TD>mastercard</TD><TD>32500</TD></TR>
+
+</TABLE>
+
+</BLOCKQUOTE>
+
+could also be translated into the facts shown just above. I've experimented
+
+with this using my spreadsheet compilation and analysis
+
+tool <A HREF="http://www.j-paine.org/csp.html">Model Master</A> to pull data from
+
+Excel XML, and it works pretty well. Sometimes, Excel's
+
+simpler comma-separated value format suffices, but XML means you needn't
+
+avoid commas (or other separators) in strings, and it gives more information
+
+about data types. 
+
+<p></P> 
+
+
+
+
+
+<H3><A NAME="ilp_where_next">Where next?</A></H3>
+
+
+
+<P>
+
+I hope these demonstrations showed how easy it now is to
+
+use ILP. There are several other examples
+
+provided with Aleph, and I do recommend
+
+running them all and working right through
+
+the Aleph manual.
+
+This will give you a good feel for the kinds of
+
+data ILP can learn from and the kinds of rule it can learn,
+
+as well as showing how many variations exist on the
+
+ILP algorithms. Information on how ILP works and
+
+on its applications can be found via the links.
+
+</P>
+
+
+
+<P>
+
+If you want to use ILP on a real-world problem,
+
+read "On the appropriateness of Aleph" in the manual. There are many
+
+ILP programs; Aleph is easy to install and run, and flexible enough
+
+to implement a number of learning methods, but this flexibility makes 
+
+it slower than more specialised programs. Consider also whether
+
+ILP itself is best for you. Srinivasan recommends 
+
+asking whether other techniques such as statistical programs, genetic algorithms, 
+
+neural networks, Bayesian nets, or tree-learners would do instead.
+
+Each has its own pros and cons - speed, storage, number
+
+and kind of training data, intelligibility of learnt knowledge, difficulty
+
+of understanding the technique - and ILP isn't always the
+
+best trade-off. But sometimes it is; and its successes on
+
+biological molecules, with all their structural complexity, are a compelling
+
+demonstration of its power.
+
+</P>
+
+
+
+
+
+<H3><A NAME="ilp_code_corner_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://www.swi-prolog.org/">www.swi-prolog.org/</A> - SWI Prolog.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.ncc.up.pt/~vsc/Yap/">www.ncc.up.pt/~vsc/Yap/</A> - Yap Prolog.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://web.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/">web.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/</A> -
+
+Ashwin Srinivasan's Aleph manual at Oxford University
+
+Computing Lab. This is the contents page, and links to the rest of the manual.
+
+The Aleph download is at <A HREF="http://www.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/aleph.pl">www.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/aleph.pl</A>,
+
+and the examples are at
+
+<A HREF="http://www.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/misc/examples.zip">www.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/misc/examples.zip</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cs.wisc.edu/~dpage/cs731/mlj_page.ps">www.cs.wisc.edu/~dpage/cs731/mlj_page.ps</A> -
+
+<I>Pharmacophore Discovery using the Inductive Logic Programming System PROGOL</I>. Paper by
+
+P Finn, S Muggleton, D Page, and A Srinivasan, from <I>Special issue of Machine Learning on Applications and the 
+
+Knowledge Discovery Process</I>, Kohavi and Provost (Guest Editors), Volume 30, Numbers 1 and 2, 1998.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.doc.ic.ac.uk/~shm/progol.html">www.doc.ic.ac.uk/~shm/progol.html</A> -
+
+The site for Progol, including downloads. As with Aleph, contact the author if
+
+you want to use it commercially.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://capra.iespana.es/capra/ingles/cafe/cafe.htm">capra.iespana.es/capra/ingles/cafe/cafe.htm</A> -
+
+A Spanish goat site's story of <I>The coffee and the goats</I>. According to an
+
+article by Canadian chemistry professor and 
+
+writer Joe Schwarcz, spent coffee grounds are excellent for removing
+
+the smell of elephant urine. That article is no longer on the Web,
+
+but - returning to pharmacology - Joe's archives at
+
+<A HREF="http://www.tvo.org/yourhealth/joeschwarcz.html">www.tvo.org/yourhealth/joeschwarcz.html</A>
+
+describe the effects of an assortment of plants, from cabbage and 
+
+cranberries to chamomile and kava kava. Drug design sometimes begins from
+
+observations of such effects.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.newdrugdesign.com/Rachel_Theory_02.html">www.newdrugdesign.com/Rachel_Theory_02.html</A> -
+
+<I>The biochemistry of drugs</I>, from the RACHEL Software Innovations site.
+
+Introduction to pharmacophores and the way drugs bind to biological molecules.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.itakura.toyo.ac.jp/~chiekon/papers/wflp01.pdf">www.itakura.toyo.ac.jp/~chiekon/papers/wflp01.pdf</A> -
+
+<I>Inducing Differences among Documents using Aleph with Construction of 
+
+Background Knowledge</I>. Paper by Chieko Nakabasami describing 
+
+preliminary research on Aleph and case-based reasoning 
+
+for learning to extract information about the content of scientific papers. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cs.wisc.edu/~dpage/">www.cs.wisc.edu/~dpage/</A> - David Page. 
+
+Contains links to his work on data mining and machine learning (especially ILP
+
+and other techniques for learning about complicated structures) applied to bioinformatics, 
+
+chemoinformatics, and health sciences.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.doc.ic.ac.uk/~shm/cbl.html">www.doc.ic.ac.uk/~shm/cbl.html</A> - 
+
+Imperial College Computational Bioinformatics Laboratory. Has an overview for non-experts of ILP-based 
+
+knowledge discovery for pharmaceutical research, 
+
+including diagrams and a sample hypothesis for protein folding. Also describes Progol's impressive
+
+performance in the National Toxicology Program's carcinogenicity prediction competition.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://jmlr.csail.mit.edu/papers/volume4/page03a/page03a.pdf">jmlr.csail.mit.edu/papers/volume4/page03a/page03a.pdf</A> -
+
+<I>ILP: A Short Look Back and a Longer Look Forward</I>. Paper by Page and Srinivasan from
+
+<I>Journal of Machine Learning Research</I>, Volume 4, 2003. Looks at the most
+
+challenging applications of ILP - bioinformatics and natural language - and how
+
+its remaining shortcomings might be overcome.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://web.comlab.ox.ac.uk/oucl/research/areas/machlearn/applications.html">web.comlab.ox.ac.uk/oucl/research/areas/machlearn/applications.html</A> -
+
+Oxford University Computing Lab pages on applications of ILP. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www-users.cs.york.ac.uk/~jc/teaching/GSLT/ilp-goth.html">www-users.cs.york.ac.uk/~jc/teaching/GSLT/ilp-goth.html</A> -
+
+James Cussens's Day Course on inductive logic programming and natural-language processing
+
+for the Graduate School in Language Technology, G&ouml;teborg, 
+
+with practicals on various examples with Aleph. 
+
+Solutions to exercises can be found at <A HREF="http://www.sics.se/~fredriko/courses/ml03/">www.sics.se/~fredriko/courses/ml03/</A>.
+
+Other ILP links are available from James's home page at 
+
+<A HREF="http://www-users.cs.york.ac.uk/~jc/">www-users.cs.york.ac.uk/~jc/</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://web.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/misc/basic.html">web.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/misc/basic.html</A> -
+
+<I>Basic Ideas Relevant to ILP</I> by Ashwin Srinivasan.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.sciencemag.org/feature/data/compsci/machine_learning.shtml">www.sciencemag.org/feature/data/compsci/machine_learning.shtml</A> -
+
+David Aha's very comprehensive Machine Learning Resources page. Includes
+
+ILP resource sites, datasets for experimenting with machine learning, and 
+
+links for genetic algorithms and neural nets.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://robotics.stanford.edu/people/nilsson/mlbook.html">robotics.stanford.edu/people/nilsson/mlbook.html</A> -
+
+Online draft of Nils Nilsson's book on Machine Learning. Written in 1996, the notes are becoming outdated - there have
+
+been many advances - but are still a good introduction to the important ideas.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.aaai.org/AITopics/html/machine.html">www.aaai.org/AITopics/html/machine.html</A> -
+
+AAAI machine learning page.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.aaai.org/Library/Magazine/Vol04/04-03/Papers/AIMag04-03-007.pdf">www.aaai.org/Library/Magazine/Vol04/04-03/Papers/AIMag04-03-007.pdf</A> -
+
+<I>Machine Learning: A Historical and Methodological Analysis</I> by Jaime Carbonell, Ryszard Michalski and Tom Mitchell.
+
+For historical perspective, this shows where machine learning was 20 years ago.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.rci.rutgers.edu/~cfs/472_html/Learn/LearningToc.html">www.rci.rutgers.edu/~cfs/472_html/Learn/LearningToc.html</A> -
+
+<I>An Early Machine Learning approach to Concept Learning</I>. Charles Schmidt's explanation
+
+of WInston's arch-learning program.
+
+</P>
+
+
+
+<P></P>
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome. Feel free to contact either myself (below) or Jocelyn &lt;popx@j-paine.org&gt; 
+              with comments, thoughts and suggestions.</P>
+            <P>Until next month, </P>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p>Copyright &copy;2004 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved </p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>C++ Pets Sample</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1><font color="#0000FF">C++ Pets Callback Sample</font></h1>
+<p>This is a slightly more complex version of Pets in which the Prolog program 
+  has a prompt/2 predicate used to get information from the user. In the example, 
+  it is used to ask the user for the sound the pet makes. </p>
+<p>prompt/2 is implemented as an extended predicate in the C++ class derived from 
+  CLogicServer, illustrating the technique of having extended predicates associated 
+  with instances of classes derived from the Logic Server. 
+<p>This is a trivial console example, where there is no real point in having multiple 
+  instances of the prompt/2 predicate, but the technique is important for GUI 
+  applications where, for example, different instances of the Logic Server might 
+  be associated with different windows on the screen. 
+<h2>Building the Sample</h2>
+<ol>
+  <li>Compile and link pets.pro into pets.xpl.</li>
+  <li>Under Windows, open the Microsoft Visual C++ Project pets_callback.dsw and 
+    build pets_callback.exe.</li>
+  <li>Under Unix, run the appropriate makefile under Linux (makefile.lnx) or Solaris 
+    (makefile.sol) to build pets</li>
+</ol>
+<h2>Running the Sample</h2>
+<ol>
+  <li>Run pets_callback(.exe).</li>
+  <li>Enter a sound like 'woof', 'quack' or 'meow'.</li>
+</ol>
+<p>
+<!-- #BeginLibraryItem "/docs/Library/Copyright.lbi" -->
+<p><i><font size=-1>Copyright &copy;1987-2004 Amzi! inc. All Rights Reserved. 
+  Amzi! is a registered trademark and Logic Server and e-Prolog are trademarks 
+  of Amzi! inc.</font></i></p>
+
+<!-- #EndLibraryItem --><p>&nbsp; </p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

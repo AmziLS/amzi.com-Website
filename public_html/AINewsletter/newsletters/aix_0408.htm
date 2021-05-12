@@ -1,0 +1,201 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->August 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+<h1>AI Expert Newsletter</h1>
+<h3>August 2004</h3>
+<h4>Dennis Merritt</h4>
+<h2></h2>
+<p><i>AI - The art and science of making computers do interesting things that 
+  are not in their nature.</i></p>
+<ul>
+  <li><a href="#book_networks">Applying Network Analysis to Amazon Book References</a></li>
+  <li><a href="#visirule">VisiRule 1.0 - A Graphical Development Environment for Rules</a></li>
+  <li><a href="#uncertainty">Analysis of Uncertainty Techniques</a></li>
+  <li><a href="#links">Links</a></li>
+</ul>
+
+<p>The code from last month's newsletter is finally available in the download 
+  area of <a href="http://www.ainewsletter.com">www.ainewsletter.com</a>. As always, 
+  any and all feedback is welcome.</p>
+<p>Also, anyone interested in contributing to the newsletter: book reviews, product 
+  reviews, overviews of areas of research, collections of good links in a topic 
+  area, editorial commentary, introductions, code examples, etc.; should send 
+  them to me as well.</p>
+<p><a href="http://www.ainewsletter.com/contact.htm">Dennis</a></p>
+<h2><a name="book_networks"></a>Applying Network Analysis to Amazon Book References</h2>
+<p><a href="http://www.pcai.com">PCAI</a> issue 17.6 has an article by Valdis 
+  Krebs' on the possibility of using network analysis on Amazon reader data. You've 
+  undoubtedly noticed that when you purchase a book on Amazon (or more generally 
+  something from anywhere online) you get a list of other books that readers of 
+  the book in question have purchased.</p>
+<p>Valdis Krebs took this a step further, and still using Amazon, went to each 
+  of those books and then looked at the connections from them&#151;and then did 
+  it again, and again. He was looking for the web of connections between the books, 
+  starting from the one he was first considering.</p>
+<p>The results showed his particular book, branched out to four distinct areas 
+  of interest, and the books in each of those areas linked to each other.</p>
+<p>This sort of analysis provides a much richer understanding of where a particular 
+  book fits in the universe of books connected to it by reader preference. Is 
+  it a core book in a subject area? Or one that bridges many areas?</p>
+<p>In addition to helping a reader understand a given book's place in the world 
+  of books, it can also be a powerful marketing tool for both book vendors and 
+  publishers as well. The evolving network analysis can reveal missing information 
+  and good prospects for new books.</p>
+<p>For more on Valdis Krebs' work see the <a href="http://www.ainewsletter.com/newsletters/aix_0405.htm#inflow">May 
+  2004 issue</a> of this newsletter and <a href="http://www.orgnet.com/">http://www.orgnet.com/</a>.</p>
+<h2><a name="visirule"></a>VisiRule 1.0 - A Graphical Development Environment 
+  for Rules</h2>
+<p>LPA has a new product called VisiRule. It provides a graphical front-end for 
+  developing and testing knowledge bases. The user is provided with design tools 
+  for creating boxes and connections that is then used to generate working rule 
+  sets. The result is a tool that can be used directly by non-programmers to create 
+  rule-based application components.</p>
+<p>Here, for example, are graphics used to code business rules about paid leave 
+  for an employee:</p>
+<p><img src="2004_08_vsr1.gif" width="550" height="704"></p>
+<p>The graphics are automatically translated into internal rules, so that naming 
+  between different components, such as rules and questions, is handled correctly, 
+  eliminating the sorts of common problems even experienced programmers run into 
+  when coding by hand.</p>
+<p>The internal engine for VisiRule is LPA's powerful expert system tool, <a href="http://www.lpa.co.uk/ind_pro.htm">FLEX</a>, 
+  which supports a wide variety of knowledge representation tools. VisiRule automatically 
+  generates FLEX code, which can then be run whereever FLEX can be run.</p>
+<p>The development environment provides the graphical tools needed and supports 
+  modular development, making it easy to construct applications that have separate 
+  components of expertise.</p>
+<p><img src="2004_08_vsr2.gif" width="684" height="521"></p>
+<p>Like the Inform tool, used in the book network study, VisiRule was developed 
+  taking advantage of LPA Prolog's rich graphic capabilities.</p>
+<p>To learn more see: <a href="http://www.lpa.co.uk/vsr.htm">http://www.lpa.co.uk/vsr.htm</a></p>
+<h2><a name="uncertainty"></a>Analysis of Uncertainty Techniques</h2>
+<p>Clive Spenser and Charles Langley have written three insightful articles on 
+  uncertainty in rule based systems for Generation5.</p>
+<p>The first is a short, insightful article that dramatically demonstrates the 
+  behaviorial differences between crisp rules, fuzzy logic, Bayesian probability, 
+  and certainty factors. A very simple two rule system is used to graphically 
+  show the shape of outputs given varying inputs. Crisp rules can only provide 
+  step function like output, whereas the other techniques all provide for a smooth 
+  output curve, but the shape of the curve varies with technique. <a href="http://www.generation5.org/content/2003/lpainference.asp">http://www.generation5.org/content/2003/lpainference.asp</a></p>
+<p>The second article and third articles go into more detail on the shape of Bayesian 
+  and fuzzy systems. The graphics illustrate the difference in the non-linear 
+  behaviors of the two techniques and analyze when each might be more appropriate. 
+  The Bayesian article is at <a href="http://www.generation5.org/content/2003/probmodulation.asp">http://www.generation5.org/content/2003/probmodulation.asp</a>, 
+  and the fuzzy one at <a href="http://www.generation5.org/content/2004/defuzz.asp">http://www.generation5.org/content/2004/defuzz.asp</a>.</p>
+<h2><a name="links"></a>Links</h2>
+<p><a href="http://www.generation5.org/">www.generation5.org</a> - The home page 
+  for Generation5, an excellent AI site with a variety of articles and features 
+  on AI. It appears to be especially strong in the use of AI for game creation.</p>
+  <hr>
+<p>As always, feedback ideas and interesting links and other contributions are 
+  welcome. Past issues are available at either <a href="www.ddj.com">www.ddj.com</a> 
+  or <a href="www.ainewsletter.com">www.ainewsletter.com</a>.</p>
+<p>Until next month,</p>
+<p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+</p>
+<p></p>
+
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

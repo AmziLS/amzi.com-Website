@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench version="2.0">
+<workbenchAdvisor/>
+<window height="896" width="1201" x="1310" y="18">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="com.amzi.prolog.ui.action.prolog" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.amzi.prolog.ui.editor.PrologEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1292204166785" focus="true" label="Workspace - Prolog">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor activePart="true" focus="true" id="com.amzi.prolog.ui.editor.PrologEditor" name="xyz.pro" partName="xyz.pro" path="C:/sandbox/xyz/xyz.pro" title="xyz.pro" tooltip="xyz/xyz.pro" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xyz/xyz.pro"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="com.amzi.prolog.ui.views.XrefView" partName="Cross Reference"/>
+<view id="com.amzi.prolog.debug.ui.DebugListenerView" partName="Debug Listener">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator">
+<viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
+<filters>
+<filter element=".*" isEnabled="false"/>
+</filters>
+<expanded>
+<element path="/decision_trees"/>
+<element path="/xyz"/>
+</expanded>
+<selection>
+<element path="/xyz/xyz.pro"/>
+</selection>
+</viewState>
+</view>
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>&#x0A;<category IMemento.internal.id="Errors (1 item)"/>
+<category IMemento.internal.id="Errors"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints"/>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="com.amzi.prolog.ui.launch.ListenerView" partName="Listener">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="com.amzi.prolog.ui.editor.PrologEditor" activePerspective="com.amzi.prolog.ui.prologPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.amzi.prolog.ui.PrologPerspective" id="com.amzi.prolog.ui.prologPerspective" label="Prolog"/>
+<alwaysOnActionSet id="com.amzi.prolog.ui.action.prolog"/>
+<alwaysOnActionSet id="com.amzi.prolog.ui.HelpAboutActionSet"/>
+<alwaysOnActionSet id="com.amzi.prolog.ui.FileLicenseActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
+<view id="com.amzi.prolog.ui.launch.ListenerView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="com.amzi.prolog.ui.views.XrefView"/>
+<fastViewBars/>
+<viewLayoutRec closeable="false" id="com.amzi.prolog.debug.ui.DebugListenerView"/>
+<viewLayoutRec closeable="false" id="com.amzi.prolog.ui.launch.ListenerView"/>
+<layout>
+<mainWindow>
+<info folder="true" part="navigation">
+<folder activePageID="org.eclipse.ui.views.ResourceNavigator" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="navigation">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.19917013" ratioLeft="192" ratioRight="772" relationship="2" relative="navigation"/>
+<info folder="true" part="status" ratio="0.6672026" ratioLeft="415" ratioRight="207" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="com.amzi.prolog.ui.launch.ListenerView" appearance="2" expanded="2">
+<page content="com.amzi.prolog.ui.launch.ListenerView" label="Listener"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="com.amzi.prolog.debug.ui.DebugListenerView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="outline" ratio="0.74941176" ratioLeft="637" ratioRight="213" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="com.amzi.prolog.ui.views.XrefView" label="Cross Reference"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="Debug"/>
+<alwaysOnActionSet id="com.amzi.prolog.ui.action.prolog"/>
+<alwaysOnActionSet id="com.amzi.prolog.ui.HelpAboutActionSet"/>
+<alwaysOnActionSet id="com.amzi.prolog.ui.FileLicenseActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<show_view_action id="org.eclipse.debug.ui.DebugView"/>
+<show_view_action id="org.eclipse.debug.ui.VariableView"/>
+<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
+<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="com.amzi.prolog.debug.ui.DebugListenerView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.debug.ui.VariableView"/>
+<view id="org.eclipse.debug.ui.BreakpointView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<viewLayoutRec closeable="false" id="com.amzi.prolog.debug.ui.DebugListenerView"/>
+<viewLayoutRec closeable="false" id="com.amzi.prolog.ui.launch.ListenerView"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7246753" ratioLeft="558" ratioRight="212" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="com.amzi.prolog.debug.ui.DebugListenerView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="com.amzi.prolog.debug.ui.DebugListenerView" label="Debug Listener"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="com.amzi.prolog.ui.launch.ListenerView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.44954127" ratioLeft="294" ratioRight="360" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.7544098" ratioLeft="556" ratioRight="181" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5943012" ratioLeft="438" ratioRight="299" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
+<page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" path="/decision_trees/reasoner.pro"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" path="/decision_trees/bank_trees.pro"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" path="/decision_trees/main.pro"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" path="/decision_trees/bank_trees.pro"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" path="/decision_trees/api.pro"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" path="/xyz/xyz.pro"/>
+</editors>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="825" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="832" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="911" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="923" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="952" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1055" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1077" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1096" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1077" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1118" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1137" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1118" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1259" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1278" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="109" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="129" y="0"/>
+</item>
+<item historyLabel="bank_trees.pro" index="1">
+<position info="not_deleted" x="587" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="129" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="109" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="208" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="228" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="208" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="371" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="391" y="0"/>
+</item>
+<item historyLabel="bank_trees.pro" index="1">
+<position info="not_deleted" x="2611" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="391" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="430" y="0"/>
+</item>
+<item historyLabel="main.pro" index="2">
+<position info="not_deleted" x="130" y="0"/>
+</item>
+<item historyLabel="main.pro" index="2">
+<position info="not_deleted" x="147" y="0"/>
+</item>
+<item historyLabel="main.pro" index="2">
+<position info="not_deleted" x="169" y="0"/>
+</item>
+<item historyLabel="main.pro" index="2">
+<position info="not_deleted" x="189" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="430" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="448" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="475" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="482" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1278" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1293" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="952" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="972" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1055" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1070" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="972" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="992" y="0"/>
+</item>
+<item historyLabel="reasoner.pro" index="0">
+<position info="not_deleted" x="1021" y="0"/>
+</item>
+<item historyLabel="bank_trees.pro" index="3">
+<position info="not_deleted" x="2611" y="0"/>
+</item>
+<item historyLabel="api.pro" index="4">
+<position info="not_deleted" x="333" y="0"/>
+</item>
+<item active="true" historyLabel="xyz.pro" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" name="xyz.pro" tooltip="xyz/xyz.pro">
+<persistable path="/xyz/xyz.pro"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="listener_ouput.txt" tooltip="decision_trees/listener_ouput.txt">
+<persistable path="/decision_trees/listener_ouput.txt"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="Adobe Photoshop Elements Image" name="dtree_bonds_1.jpg" tooltip="decision_trees/dtree_bonds_1.jpg">
+<persistable path="/decision_trees/dtree_bonds_1.jpg"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" name="opdefs.pro" tooltip="decision_trees/opdefs.pro">
+<persistable path="/decision_trees/opdefs.pro"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" name="main.pro" tooltip="decision_trees/main.pro">
+<persistable path="/decision_trees/main.pro"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" name="api.pro" tooltip="decision_trees/api.pro">
+<persistable path="/decision_trees/api.pro"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" name="reasoner.pro" tooltip="decision_trees/reasoner.pro">
+<persistable path="/decision_trees/reasoner.pro"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.amzi.prolog.ui.editor.PrologEditor" name="bank_trees.pro" tooltip="decision_trees/bank_trees.pro">
+<persistable path="/decision_trees/bank_trees.pro"/>
+</file>
+</mruList>
+</workbench>

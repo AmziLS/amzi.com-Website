@@ -1,0 +1,45 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Unification Tricks</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Unification Tricks<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Unification with the head can be used to pass variable bindings between argument 
+  variables.</p>
+<pre>equate(X, X).
+insert(X, a(X)).
+extract(a(X), X).
+get_city(address(CITY, ST), CITY).
+
+get_passenger_city(ID, CITY) :-
+  passenger(_,_,ID,ADDRESS),
+  get_city(ADDRESS, CITY).
+</pre>
+<p>Exercise - write <var>create_address/3</var> where first two arguments are 
+  city and state and the third argument is an <var>address(CITY,STATE)</var> structure. 
+  It might be used like this:</p>
+<pre>
+add_passenger(FIRST, LAST, ID, CITY, STATE) :-
+   create_address(CITY,STATE,ADDRESS),
+   assert(passenger(LAST,FIRST,ID,ADDRESS))</pre>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_060_recursion_030.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_060_recursion_040.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

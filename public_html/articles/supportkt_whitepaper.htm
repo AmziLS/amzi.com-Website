@@ -1,0 +1,364 @@
+<html>
+<head>
+<title>SupportKT Product Description</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Mozilla/4.61 [en] (WinNT; I) [Netscape]">
+<meta name="robots" content="all">
+<meta name="description" content="">
+<meta name="keywords" content="">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#666600" vlink="#660000" alink="#CC0000">
+<h1 align="left"><b><font color="#666666"><br>
+  <font color="blue">SupportKT -- A Research Project to Add Self-Help Support 
+  to your Web Site and your Products</font></font></b></h1>
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  Introduction</font></b></h2>
+Many aspects of business involve rules, and automating business processes requires 
+the encoding of those rules in some form of machine executable format. Conventional 
+programming languages can be used up to a point, but this approach requires programmers 
+to enter and maintain the rules. For business areas where the rules are either 
+plentiful or dynamic, a better solution provides a means for those in the business 
+area to update the rules themselves. 
+<p>The problem with business rules is they don't all look alike. The rules for 
+  one segment of a business refer to different types of things than another, and 
+  express different types of relationships. They thus require different points 
+  of integration with other business software. Further, the way the rules are 
+  applied, or reasoned over, varies based on business area, so the reasoning engines 
+  that use the rules are different. Finally, if it is desired to make the entering 
+  and maintaining of the rules accessible to the business people who know the 
+  rules, then the development environment for the rules must reflect the business 
+  practices of those people. 
+<p>Many relatively simple business areas can use standard database tables for 
+  representing the rules, and the reasoning engine can be a simple table look-up 
+  program. More complex and interrelated rules require a more sophisticated approach. 
+<p>This white paper describes an approach to an application-specific rule language, 
+  reasoning engine and development environment. The application is customer support, 
+  but more specifically, customer support where the rules have access to technical 
+  details derived directly from the customer's machine and/or databases with relevant 
+  information. 
+<p>As such, the data and rules need the expressiveness required to encode relationships 
+  between complex entities such as directories, system information, and contents 
+  of various system or application specific files. Further, the authoring environment 
+  must be able to develop and maintain the large dynamic knowledge bases that 
+  will evolve in a customer support application. 
+<p>The application we developed for this environment is called the Amzi! Support 
+  Knowledge Tool (SupportKT(TM)). Its design and implementation are the subject 
+  of the rest of this article. 
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  Customer Support Automation Issues</font></b></h2>
+There are many approaches to automating customer support, including searchable 
+documentation, case-based reasoning, and various forms of rule-based reasoning. 
+For the automated reasoning systems, typically the customer is asked for information 
+about his/her concern and the answers to those questions are used to zero in on 
+a solution. 
+<p>These approaches work for certain classes of problem, but they do not work 
+  well for situations where the user is required to uncover technical details 
+  about his/her machine. A better approach for these situations is a software 
+  agent running on the user's machine that can gather information about the machine's 
+  configuration and report that information directly to the reasoning engine. 
+<p>This type of approach is less error-prone than getting information from the 
+  user, and allows the automated support system to reason over more complete and 
+  accurate data. Further, it is quicker and less irritating for the user. The 
+  approach has a side benefit that, if the system can't find an answer, it can 
+  escalate the incident to human technical support accompanied by accurate data 
+  from the user's machine. 
+<p>But the agent data from the machine can be richer and more complex than the 
+  simple 'fact = value' pairs returned from multiple choice or fill-in-the-blank 
+  user questions. And the rules need to be able to work with that richer data 
+  representation. 
+<p>SupportKT uses an object property list data model for information captured 
+  from external agents. This is well-suited to gathering file and device information, 
+  system properties, and, in a Windows environment, registry entries. The rules 
+  include an SQL-like syntax for expressing conditions based on that agent data. 
+<p>Besides the primary need for a rich data model and rule syntax, an automated 
+  support system that uses detailed technical information must address other design 
+  issues. These are: 
+<ul>
+  <li> The need to be able to run stand-alone or in an Internet environment.</li>
+  <li> The ability to have multiple authors update the knowledge base with new 
+    rules as new situations are encountered.</li>
+  <li> The ability to support a very dynamic knowledge base.</li>
+  <li> The ability to develop and maintain precise, technical rules.</li>
+  <li> The ability to represent configuration-checking solutions.</li>
+  <li> The ability to import from and export to other knowledge bases, supporting 
+    knowledge reuse.</li>
+  <li> The ability to internationalize information displayed to the user.</li>
+</ul>
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  Potential Uses of Automated Support</font></b></h2>
+There are a number of ways an automated support tool could be used, such as: 
+<ul>
+  <li> An ISP might want to include SupportKT and appropriate knowledge bases 
+    on its distribution CDs for new users that have trouble connecting or setting 
+    up various parts of their system.</li>
+  <li> A software vendor might want to include SupportKT with their product, so 
+    that it can provide first line technical support directly on the user's machine.</li>
+  <li> A computer vendor might want to provide Internet support for their customers, 
+    integrating SupportKT with their Web server, using plug-ins for agents.</li>
+  <li> An automobile manufacturer might want to use SupportKT in their service 
+    centers, with agents connecting to the onboard computers in today's automobiles.</li>
+  <li> A game vendor might want to use SupportKT in a pre-sales situation, checking 
+    if a potential customer's machine is properly equipt to run a certain game, 
+    and if not either recommending updgrades to that person's machine or recommending 
+    other games that will run on their machine.</li>
+  <li> An organization might want to provide generic technical support on a Web 
+    site to attract traffic to that Web site.</li>
+</ul>
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  SupportKT Architecture</font></b></h2>
+Figure 1 shows the architecture of the SupportKT stand-alone runtime. The reasoning 
+engine loads a particular knowledge base and uses it to work towards finding a 
+solution to the user's problem. It connects to the user interface for questions 
+and answers for the user, and to the agent dispatcher for getting information 
+from various agents as needed. 
+<center>
+  <p><img src="supportkt_runtime_architecture.gif" height=220 width=400> <br>
+    <i>Figure 1</i> 
+</center>
+<h3> <b><i>SupportKT External Agents</i></b></h3>
+SupportKT has a standard interface used to connect to software agents that gather 
+external information. That interface presents data in the form of object property 
+lists. For example, an agent that returns information on files on a user's machine 
+might return 'file' objects with properties such as 'name', 'path', 'size', and 
+'create_date'. Another agent might return 'registry' objects with properties such 
+as 'key', 'value', and 'data'. 
+<p>An agent might return a singleton object, such as a 'system' object that has 
+  properties for 'processor', 'operating_system', and the like. 
+<p>The agents respond to queries presented in the same form. For example, a 'file' 
+  agent might be queried to find files in a particular directory, or a given file, 
+  or a file of a given name greater than a certain size. 
+<p>Because the agents all implement a standard object interface for SupportKT, 
+  it is easy to add additional agents to a system. There is no limit to the type 
+  of information they can gather, either from the user's machine or other sources, 
+  such as a customer database. 
+<h3> <b><i>SupportKT Knowledge Base</i></b></h3>
+One of the problems with rule-based systems is maintenance. As the number of rules 
+grows, it becomes harder to maintain the knowledge base. 
+<p>SupportKT addresses this problem by using frame structures to capture information, 
+  where many of the slots in the frame provide documentation on the particular 
+  rule. The primary frame of SupportKT is called a 'solution'. There are slots 
+  such as 'title', 'description', 'owner' and 'version' that are used for documentation 
+  and cataloging. 
+<p>The slots used to solve problems are called 'environment', 'problem' and 'resolution'. 
+<h4> Environment</h4>
+The 'environment' slot is used as the first filter on a 'solution'. For example, 
+it might indicate a particular solution only applies for 'Windows 98' and a particular 
+version of a product. 
+<p>Environments are defined in other SupportKT frames and contain boolean condition 
+  statements that determine when the environment exists or not. They are really 
+  just like other rules, but are intended to be used to define large areas of 
+  commonality between solutions, such as Windows 98 solutions, Sun Solaris solutions, 
+  connection problems, printer problems, or whatever makes sense for a particular 
+  knowledge base. 
+<h4> Problem</h4>
+The 'problem' slot contains a boolean expression that indicates whether the particular 
+solution applies or not. This is where you find the conditions typically found 
+on the 'if' side of rules, but the syntax is richer than normal in that it can 
+also include SQL-like queries that interrogate the property-lists of objects gathered 
+from the user's machine. 
+<p>For example, a 'solution' that determines a user is running an old version 
+  of an application might have a rule like this: 
+<blockquote> 
+  <pre><font color="#000080">problem: exists file where [name = "amzi4.dll",&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path = amzi_bin_directory, <br>                create_date &lt; date(9/9/1998)]</font></pre>
+</blockquote>
+When this solution was being evaluated, the agent that knows how to find 'file' 
+objects would be called with this query, and either return the requested file 
+object and evaluate to true, or evaluate to false if it didn't exist. 
+<p>There are a number of other frame structures in a SupportKT knowledge base 
+  that support the primary 'solution' frame. These other frames define entities 
+  like 'question's which might be asked of the user, 'object_source' which associate 
+  agents with objects, and 'derived_fact's which are facts whose values are derived 
+  from other facts. 
+<p>In the example above, the path is compared to 'amzi_bin_directory' which could 
+  refer to either a 'question' asked of the user, or a 'derived_fact' that used 
+  an agent to get the directory from the registry. 
+<h4> Resolution</h4>
+The 'resolution' slot of a 'solution' constructs a report for the user from 'text' 
+frames, which are another type of supporting frame used to define textual information. 
+A particular 'solution' might use multiple 'text' objects, where one might describe 
+the cause of a problem, another the fix, and a third a how-to that tells how to 
+implement the fix. Or if the solution was part of a pre-sales support system, 
+it might assemble chunks that describe products that will run on the customer's 
+machine. 
+<p>The 'text' objects themselves have multiple slots for translations of the text 
+  in various languages. SupportKT will always look for the requested language 
+  first, but if a particular 'text' object hasn't been translated, then the first 
+  language available is used. 
+<p>This approach to internationalization is another example of customization for 
+  the problem domain. Rather than the normal approach of having translators work 
+  on relatively stable files of text, each text object contains its own translations. 
+  This allows new solutions to be quickly added to a dynamic knowledge base, and 
+  translations to be added when possible. 
+<h4> Variables</h4>
+All of the frames of SupportKT can contain variables that allow for generalization. 
+'Text' objects can have embedded variables, so that one chunk of text can serve 
+many purposes. For example, in a pre-sales game support application that checks 
+if there is enough memory for a given game, this text object might be included: 
+<blockquote> 
+  <pre><font color="#000080">text
+&nbsp;id: insufficient_memory(_GAME)
+&nbsp;english: "There isn't enough memory for game" + _GAME</font></pre>
+</blockquote>
+Where _GAME is a variable. 
+<p>The 'solution' that put out this text might have these slots: 
+<blockquote> 
+  <pre><font color="#000080">solution
+&nbsp;...
+&nbsp;problem:
+&nbsp;&nbsp;&nbsp; _GAME = requested_game and
+&nbsp;&nbsp;&nbsp; find [_MINMEM = minimum_memory] in game_table <br>    where [name = _GAME] and
+&nbsp;&nbsp;&nbsp; exists system where [memory > MINMEM]
+&nbsp;resolution:
+&nbsp;&nbsp;&nbsp; output = insufficient_memory(_GAME)</font></pre>
+</blockquote>
+This rule refers to two other SupportKT frames not shown, being a 'table' called 
+'game_table' which contains games and minimum requirements for running them, and 
+a 'question' called 'requested_game' which asks the user which game he/she is 
+interested in. 
+<p>Variables provide the means to write very powerful 'derived_facts' that work 
+  like subroutines in other languages. For example, one can check if a COM object 
+  is configured right by walking the registry and looking for files. A parameterized 
+  'derived_fact' that checks the configuration of any COM object can then be used 
+  as a building block for configuration checking solutions that need to check 
+  various COM objects as part of the configuration check. 
+<h3> <b><i>Customer Support Consortium</i></b></h3>
+The Customer Support Consortium (CSC) is a group that is defining standards for 
+the import and export of support 'solutions'. The SupportKT solution structure 
+is designed to map closely to the solution structure proposed by CSC. This will 
+allow for the easy import and export of solutions to and from SupportKT. 
+<p>The CSC standard does not, at this point, have the ability to express solutions 
+  that reason over objects, as SupportKT does, but it does have the ability to 
+  define custom extensions. SupportKT could use these for its objects, but the 
+  exported solutions would not be of use to other system unless they could use 
+  the richer object rules as well. 
+<p>On the other hand, the CSC solutions are a subset of what SupportKT can handle, 
+  so SupportKT could import solutions developed in other environments and use 
+  them directly. 
+<p>The standards for import/export of customer support solutions is new and evolving, 
+  but will eventually provide a way to better preserve investments in knowledge 
+  engineering for customer support. 
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  SupportKT Problem Resolution Strategy</font></b></h2>
+SupportKT uses a goal-driven problem resolution strategy, where the top-level 
+goal is to find one or more solutions that fit. As a first step, the system first 
+finds all of the possible solutions by checking the current environment and finding 
+all solutions that apply in that environment. 
+<p>It then prioritizes the solutions and starts to work through them, checking 
+  the conditions in the 'problem' slot. The conditions might refer to a question 
+  of the user, in which case SupportKT pauses to ask the user, and then continues. 
+  The conditions might refer to an object that could be derived from an agent, 
+  in which case SupportKT queries the agent and continues. The conditions might 
+  refer to a derived fact, in which case the conditions for that derived fact 
+  are then considered, which might lead to other questions, etc. etc. 
+<p>When a solution is found the outputs are assembled and presented to the user. 
+  Note that all of the text in SupportKT could be written in HTML and then presented 
+  in a broswer to the user. 
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  Development Environment</font></b></h2>
+Figure 2 shows the architecture of the SupportKT development environment. It includes 
+a debugging version of the runtime that provides trace information and simulated 
+agents that work against simulated machine environments. It also contains the 
+tools for developing knowledge bases. 
+<center>
+  <p><img src="supportkt_ide_architecture.gif" height=260 width=400> <br>
+    <i>Figure 2</i> 
+</center>
+<p>The development environment takes advantage of the frame-based nature of SupportKT 
+  knowledge representation. Each of the elements in a knowledge base have their 
+  own editor, and tree controls are used to provide a view of the forest through 
+  the trees, as shown in Screen Shot 1. 
+<center>
+  <p> <br>
+    <i><a href="supportkt_edit.htm">Screen Shot 1</a></i> 
+</center>
+<p>The editor checks the syntax of new solutions, and provides cross-reference 
+  information, so that all connections are correctly made. 
+<p>The development environment debugging runtime tool lets the developer experiment 
+  with a knowledge base, as shown in Screen Shot 2. Separate windows come up that 
+  contain a full trace of the reasoning, as well as the complete state of knowledge 
+  held by the system at any one time. A 'step' button lets the developer step 
+  through a knowledge base. 
+<p>These tools are key for the developer to get a good understanding of exactly 
+  how a knowledge base will perform. 
+<p align="center"><i><a href="supportkt_run.htm">Screen Shot 2</a></i> 
+<p>Because SupportKT is designed to reason over information gathered from a user's 
+  machine, as well as with direct questions to the user, it is necessary to provide 
+  data files that simulate the states of various machines. These 'simulation' 
+  data files can be used instead of the real agents to test the knowledge base 
+  on various machine scenarios. 
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  Integration</font></b></h2>
+The stand-alone version has the agents and reasoning agent all implemented as 
+a single application. But there is a full application program interface (API) 
+that's let SupportKT be integrated with other software components, as shown in 
+Figure 3. 
+<center>
+  <p><img src="supportkt_xml_api.gif" height=110 width=460> <br>
+    <i>Figure 3</i> 
+</center>
+<p>The API uses XML to pass information to and from SupportKT. Some examples of 
+  the API functions supported are: 
+<ul>
+  <li> Let caller initiate a SupportKT session.</li>
+  <li> Let SupportKT ask the caller to ask the user a question.</li>
+  <li> Let SupportKT ask the caller to call an agent to gather data.</li>
+  <li> Let the caller pass back to SupportKT answers to either user questions 
+    or agent data.</li>
+</ul>
+One particular use of the API would be to provide technical support from the Internet. 
+A Web server could use the API to talk to SupportKT, and then talk to the user's 
+browser to ask the user question, and via plug-ins or Active X controls to gather 
+information from the user's machine. 
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  Implementation</font></b></h2>
+SupportKT is implemented using a combination of Java and Prolog. Both are very 
+portable languages and the two can be easily integrated. 
+<p>Java is used for the GUI development and runtime environment and Prolog is 
+  used for the underlying knowledge representation and reasoning. Prolog also 
+  provides the intelligence behind the editor, providing information to the GUI 
+  about the format of various frames and the relationships between them. 
+<p>The agents that gather information from external sources, such as the user 
+  machine, will by necessity be more platform specific. The only common piece 
+  is the agent dispatcher that sends agent queries to the appropriate agents. 
+  The dispatcher is a C/C++ program, and most agents will most likely be written 
+  in C/C++ as well. 
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  Cost Benefit Analysis</font></b></h2>
+The benefits of having an automated support system that can solve customer problems 
+by reasoning directly over the configuration of the customer's machine should 
+be fairly obvious. 
+<p>The cost, however, is less clear. Aside from normal software fees, the use 
+  of a system like SupportKT requires a committment to develop and maintain knowledge 
+  bases that solve a significant (useful) percentage of customer problems. The 
+  development tools and architecture of SupportKT are designed to make that task 
+  as easy as possible, but still it is required to commit human resources to the 
+  development and ongoing maintenance. 
+<p>Further, just as with database, a more talented individual will provide a better 
+  organized and more easily maintained knowledge base than a less talented one, 
+  so the cost should include all or part of the time of at least one relatively 
+  senior individual. 
+<p>Any organization seeking to automate its customer support needs to fully understand 
+  that cost and judge it to be worth the increase in customer satisfaction and 
+  savings in normal support costs. 
+<h2> <b><font color="#000080"><img src="../images/bullet.gif" width="36" height="36"> 
+  Conclusion</font></b></h2>
+Customer support is an example of a business rules application where there are 
+many rules, the rules are constantly changing, and the use of the rules is for 
+a specific goal. SupportKT is an example of a knowledge tool designed and implemented 
+for this particular type of business rule. 
+<p>In the final analysis, the value of any rule-based tool is directly related 
+  to how cost effective it is for developing and deploying business rules. An 
+  application-specific approach, as described here, has the potential for greater 
+  cost reduction than a more generic approach, thus making the benefits of automating 
+  the rules more widely accesible. 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

@@ -1,0 +1,213 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Turkish Dolls</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Turkish Dolls<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Turkish dolls are like Russian dolls, except they have two compartments. In 
+  the left-hand one there can be anything, like an apple, pear, plum, or cherry. 
+  The right is a special compartment that can only hold another turkish doll.</p>
+<p>There is a wooden Turkish doll for the right side when there is no more nesting.</p>
+<p>A Turkish doll is represent by the structure c/2. The wooden doll is represented 
+  by c. Here is a nested turkish doll with four fruits in it.</p>
+<p><code>c(apple, c(pear, c(plum, c(cherry, c))))</code></p>
+<p><em>c_test(-C)<br>
+  </em>C - a test doll from above.</p>
+<pre>?- c_test(C).
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+yes</pre>
+<p>Note that a simple query can be used to find the first item in the doll, and 
+  the nested doll of remaining items:</p>
+<pre>?- c_test( c(FIRST, REST) ).
+FIRST = apple
+REST = c(pear, c(plum, c(cherry, c)))
+yes</pre>
+<p><em>Take special note of the fact that the first argument of c/2 is ALWAYS 
+  an item, and the second argument is ALWAYS another doll, or the empty doll.</em></p>
+<p>In other words, the second argument can always be fed back into a recursive 
+  predicate. However, these first three predicates require nothing more than a 
+  simple fact.</p>
+<p><em>c_first_item(+C, -ITEM)</em><br>
+  C - the nested doll<br>
+  ITEM - the outermost, first item in the doll<br>
+  <span class="weak">hint: this can be done with a single fact.</span></p>
+<pre>?- c_test(C), c_first_item(C, X).
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+X = apple
+yes</pre>
+<p><em>c_add_first_item(+ITEM, +C1, -C2)</em><br>
+  ITEM - the item to add as new first/outermost doll<br>
+  C1 - the initial nested doll<br>
+  C2 - the output nested doll with new item<br>
+  <span class="weak">hint: this can be done with a single fact.</span></p>
+<pre>?- c_test(C), c_add_first_item(beer, C, C2).
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+C2 = c(beer,(c(apple,c(pear,c(plum,c(cherry,c)))))</pre>
+<p><em>c_delete_first_item(+C1, -ITEM, -C2)</em><br>
+  C1 - the initial nested doll<br>
+  ITEM - the item that was deleted<br>
+  C2 - the output nested doll with new item<br>
+  <span class="weak">hint: this can be done with a single fact.</span></p>
+<pre>?- c_test(C), c_delete_first_item(C, X, C2).
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+X = apple
+C2 = c(pear,c(plum,c(cherry,c)))))</pre>
+
+<p><em>c_length(+C, -L)<br>
+  </em>C - the input doll<br>
+  L - the number of items in the doll<br>
+  <span class="weak">hint: use an accumulator. the boundary condition is the wooden 
+  doll, c.</span></p>
+<pre>?- c_test(C), c_length(C,L).
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+L = 4
+yes</pre>
+<p><em>c_write(+C)</em> <br>
+  C - the input doll, whose things are to be written out. <br>
+  <span class="weak">hint: keep writing what you see and recursing with what's 
+  left.</span></p>
+<pre>?- c_test(C), c_write(C).
+apple pear plum cherry
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+yes</pre>
+
+<p><em>c_member(?ITEM, +C)</em> <br>
+  ITEM - an item to look for, or variable which will take the value of items found. 
+  <br>
+  C - the input doll.</p>
+<p>c_member can test if something is in a doll:</p>
+<pre>?- c_test(C), c_member(pear, C).
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+yes</pre>
+<p>or generate on backtracking all of the items in a doll:</p>
+<pre>?- c_test(C), c_member(X,C).
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+X = apple ;
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+X = pear ;
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+X = plum ;
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+X = cherry ; 
+no</pre>
+<p><em>c_reverse(+C, -CR)<br>
+  </em>C - an input doll <br>
+  CR - an output doll, with items in reverse order <br>
+  <span class="weak">hint: use an accumulator to build the output doll, it will 
+  be automatically reversed when it gets to the boundary condition.</span></p>
+<pre>?- c_test(C), c_reverse(C, CR).
+C = c(apple,c(pear,c(plum,c(cherry,c))))
+CR = c(cherry,c(plum,c(pear,c(apple,c))))
+yes</pre>
+<p><em>c_append(?C1, ?C2, ?C)</em><br>
+  C1 - a doll<br>
+  C2 - another doll<br>
+  C - a doll that is composed of C1's items followed by C2's items.<br>
+  <span class="weak">hint: work from the head (thing) of C1, leaving C2 pretty 
+  much alone. the boundary condition says if C1 is the wooden doll, then the answer, 
+  C, is just C2.</span></p>
+<p>here's c_append making a double length copy from two copies of the test case.</p>
+<pre>?- c_test(C1), C2 = C1, c_append(C1,C2,C).
+C1 = c(apple,c(pear,c(plum,c(cherry,c))))
+C2 = c(apple,c(pear,c(plum,c(cherry,c))))
+C = c(apple,c(pear,c(plum,c(cherry,c(apple,c(pear,c(plum,c(cherry,c))))))))
+yes</pre>
+<p>here's c_append splitting the test doll into all possible splittings.</p>
+<pre>?- c_test(C), c_append(C1, C2, C).
+C1 = c
+C2 = c(apple,c(pear,c(plum,c(cherry,c)))) ;
+
+C1 = c(apple,c)
+C2 = c(pear,c(plum,c(cherry,c))) ;
+
+C1 = c(apple,c(pear,c))
+C2 = c(plum,c(cherry,c)) ;
+
+C1 = c(apple,c(pear,c(plum,c)))
+C2 = c(cherry,c) ;
+
+C1 = c(apple,c(pear,c(plum,c(cherry,c))))
+C2 = c ;
+no</pre>
+<h2>ROMANIAN DOLLS</h2>
+<p>Romanian dolls are like Turkish dolls, except they have three compartments. 
+  The first is for whatever thing might be there. The second and third are both 
+  Romanian dolls. The second might have things less than the thing, and the third 
+  might have things more than the thing.</p>
+<p>In other words, a tree structure. If the nodes are left as variables, that 
+  is, open, then they can be filled in later.</p>
+<p>So for example this structure</p>
+<p> <code>d(apple,L1,d(pear,d(cherry,L2,R2),d(plum,L3,R3)))</code></p>
+<p>is the tree:</p>
+<pre>
+   apple
+   /   \
+  ?    pear
+       /  \
+   cherry plum
+    / \   / \
+   ?   ? ?   ?</pre>
+<p>The ? are open variables, that can be filled in (unified) with new branches 
+  of the tree.</p>
+<p><em>d_test(-D)<br>
+  </em>D - a test tree, the one above.</p>
+<pre>?- d_test(D).
+D = d(apple,H35,d(pear,d(cherry,H43,H44),d(plum,H47,H48)))
+yes</pre>
+<p><em>d_write(+D)<br>
+  </em>D - a tree to display left to right <br>
+  <span class="weak">hint: if the tree is a variable, then that's the end of a 
+  branch. to test if X is a variable, use the built-in predicate var(X). the recursive 
+  case writes out the left side first, then the thing, then the right side.</span></p>
+<pre>?- d_test(D), d_write(D).
+apple cherry pear plum
+D = d(apple,H43,d(pear,d(cherry,H51,H52),d(plum,H55,H56)))
+yes</pre>
+<p><em>d_store(+ITEM, ?D)<br>
+  </em>ITEM - a thing to put in the tree, in alphabetical sequence.<br>
+  D - a growing open tree<br>
+  <span class="weak">hint: the boundary condition simply creates a new tree node, 
+  with the item as the thing in the node. there are two recursive cases, depending 
+  on whether the item sorts higher or less than the thing in the node being examined. 
+  use @&lt; and @&gt; to compare an item with the thing in the current node. note: 
+  make sure you put a ! in the boundary case, to stop it from going wild unifying 
+  variables with variables ad infinitum on backtracking.</span></p>
+<p>use this predicate, d_loop/1 to test d_store/2.</p>
+<pre>d_loop(D) :-
+   write('item? '),
+   read(ITEM),
+   d_store(ITEM, D),
+   ITEM \= quit,
+   d_loop(D).
+d_loop(D).</pre>
+<pre>?- d_loop(D), d_write(D).
+item? apple.
+item? pear.
+item? plum.
+item? cherry.
+item? quit.
+apple cherry pear plum
+D = d(apple,H89,d(pear,d(cherry,H480,H481),d(plum,H336,H337)))
+yes</pre>
+<p>&nbsp;</p>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_080_lists_010.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_080_lists_030.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

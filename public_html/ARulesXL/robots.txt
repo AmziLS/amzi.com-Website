@@ -1,0 +1,15 @@
+# robots.txt for http://www.amzi.com
+User-agent: * # Match any robot name
+Disallow: /cgi-bin
+Disallow: /trace
+Disallow: /Templates
+Disallow: /Library
+Disallow: /horde
+Disallow: /isearch
+Disallow: /WEB-INF
+Disallow: /webalizer
+Disallow: /download/files
+Disallow: /download/licensing
+Disallow: /connect
+
+

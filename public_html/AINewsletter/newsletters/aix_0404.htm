@@ -1,0 +1,417 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->April 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+<h1>AI Expert Newsletter</h1>
+<h3>April 2004</h3>
+<h4>Dennis Merritt</h4>
+<h2></h2>
+<p><i>AI - The art and science of making computers do interesting things that 
+  are not in their nature.</i></p>
+<ul>
+  <li><a href="#web_experts">Interactive Web-Based Experts</a></li>
+  <li><a href="#vaccine">Case Study, Vaccination Schedules</a></li>
+  <li><a href="#chatbot_contest">ChatBot Contest</a></li>
+  <li><a href="#code_corner">Code Corner</a></li>
+  <li><a href="#links">Links</a></li>
+</ul>
+
+<h2><a name="web_experts"></a>Interactive Web-Based Experts</h2>
+<p>Like all computer programs, expert systems take input, process it, and provide 
+  output. For example, an expert system might input symptoms and output a diagnosis; 
+  input customer requirements and output a product configuration; or input a robot's 
+  situation and output an action.</p>
+<p>In many cases the required inputs can be gathered beforehand and sent to the 
+  expert system, which then processes the input and produces the output. This 
+  might be the case in a telephone pricing module, where the facts of a particular 
+  call are known and input to the system that then applies the correct rules to 
+  determine the price for that call.</p>
+<h3>Interactive Dialogs</h3>
+<p>However, one of the fascinating things about the behavior of rule-based expert 
+  systems is the way they can selectively and interactively gather only the data 
+  needed for a particular answer. This features gives them a more human-like quality 
+  justifying a bit the broad label of artificial intelligence.</p>
+<p>Consider, for example, these rules to help with video monitor problems that 
+  might be part of a computer technical support system:</p>
+<p><i>
+  if screen is blank and led light is on, then move the mouse.<br>
+  if screen is blank and led light is off, then plug it in.<br>
+  if screen is difficult to read, then adjust contrast.</i></p>
+<p>Such a system will probably have knowledge about the various bits of input 
+  data, such as:</p>
+<p><i>Attribute - screen; values = [blank, difficult_to_read]; prompt = `What 
+  is the problem with the screen?`<br>
+  Attribute - led_light; values = [on, off]; prompt = `Is the led light on or 
+  off?` <br>
+  </i> </p>
+<p>The calling program will start by looking for a solution; the expert system 
+  will try the first rule which needs to know if there is a problem with the screen. 
+  Seeing as it doesn't know what the problem is yet, it will ask the user.</p>
+<p>If the user responds that the screen is blank, then the system will ask if 
+  the led light is on or off. But if the user had responded that the screen is 
+  difficult to read, then the system wouldn't need to ask about the led light 
+  and would go directly to the third rule.</p>
+<p>This dialog is in contrast to a more conventional program interface that would 
+  require all of the input data up front. But for many expert systems that would 
+  mean the user would have to provide a lot of information that wasn't necessary, 
+  such as the state of the led light when the problem with the monitor was one 
+  of contrast.</p>
+<h3>Problem with Web Dialog</h3>
+<p>Typically this type of expert system has a function that asks the user a question 
+  when necessary. It is called, asks the question, records the response and lets 
+  the reasoning engine continue.</p>
+<p>But a Web server that is calling an expert system likes to be in control of 
+  the dialog with a client, and doesn't take kindly to a program that demands 
+  an immediate answer to a question. So the expert system needs to take a more 
+  passive approach to get data from the user.</p>
+<p>When the system needs to get a value from the user it simply returns to the 
+  calling program with the fact that it needs an answer to a question, and then 
+  it rests. Maybe the program will stay in memory, or maybe it will write out 
+  what the current state of the consultation is to a file.</p>
+<p>The Web server then poses the question to the user, and when an answer comes 
+  in the server can assert the new information to the expert system and start 
+  it again with the query. This cycle continues until the system comes up with 
+  an answer that the server then displays to the user.</p>
+<p>See the code corner for an example of a simple reasoning engine designed to 
+  work on the Web.</p>
+<h2><a name="vaccine"></a>Case Study, Vaccination Schedules</h2>
+<p>The researchers at Stanford, wondering about the use of AI in medicine, noted 
+  that one problem with deploying AI is the lack of data for expert systems to 
+  reason over. This observation probably applies to the deployment of AI in general.</p>
+<p>One can encode all of the rules of an expert system in a domain, but without 
+  underlying data or a means to gather input from the user, the rules are worthless. 
+  It's kind of like having cars but no roads to drive them on.</p>
+<p>The February issue of Dr. Dobb's Journal had an article on a custom rule engine 
+  that illustrates this point. The system encoded the rules for pediatric vaccination 
+  scheduling. These rules are moderately complex and an ideal candidate for a 
+  rule-based automated approach.</p>
+<p>The first work in this area was done by researchers at Yale a number of years 
+  ago. But there was a problem. The rules require as input the vaccination history 
+  of the child, which is needed to forcast the next vaccinations needed. But that 
+  data has traditionally been recorded by hand on paper medical records.</p>
+<p>So in order to use this system, a doctor would have to look at the paper records 
+  and type in the pertinent data and then ask the expert system to recommend the 
+  next vaccinations. It's easier to just study the rules and documents and figure 
+  the vaccinations by hand as well.</p>
+<p>In other words, until the data collection of medical records is machine readable, 
+  there is not much point in developing expert systems that provide advice based 
+  on an individual's medical record.</p>
+<h3>VacLogic(tm)</h3>
+<p>Visual Data LLC is the provider of <a href="http://visualdatallc.com/">Office 
+  Practicum</a>, a software package used to run a pediatric office. It provides 
+  all of the services you might expect from such a package: helping with billing, 
+  scheduling of visits, and the recording of medical information from each visit, 
+  including vaccinations given.</p>
+<p>Doctors, who previously might have been reluctant to use an expert system dispensing 
+  advice on vaccinations, were suddenly asking Visual Data to provide that service. 
+  They knew the data was in the system, and the software was automating other 
+  parts of an office visit, why not provide a list of the vaccinations a child 
+  should get on a given visit as well as the due dates for upcoming vaccinations?</p>
+<p>In other words, now that the data was available, it made tremendous sense to 
+  automate the process.</p>
+<p>The article in the February Dr. Dobb's describes the particular system in more 
+  detail.</p>
+<h3>History</h3>
+<p>It's interesting to note that historically, the availability of data was key 
+  to AI success stories. The first commercial successes of AI were in the insurance 
+  industry, helping with underwriting decisions. The insurance industry, of course, 
+  was one of the first to have a large amount of machine readable data.</p>
+<p>Other successes were in online systems where the users could provide information 
+  interactively to the system, such as Digital Equipment's configuration system. 
+  Note that Digital, being a computer company, had online order/data entry earlier 
+  than most companies.</p>
+<p>But without either an easy means to communicate with a user, or a database 
+  of information to use, expert systems were not of much use.</p>
+<p>The Internet now makes practical a whole host of expert systems in a variety 
+  of domains.</p>
+<h2><a name="chatbot_contest"></a>ChatBot Contest</h2>
+<p>The Loebner Prize is a big prize looking for a program that can carry on an 
+  intelligent conversation. The Chatbot Challenge is a much smaller prize, not 
+  looking for proof of artificial intelligence, but rather just the best chatbot. 
+  (See the July 2003 issue for a discussion of chatbots and the September 2003 
+  issue for code to implement one at either <a href="www.ddj.com">www.ddj.com</a> 
+  or <a href="www.ainewsletter.com">www.ainewsletter.com</a>.)</p>
+<p>The competition features dozens of chatbots that you can try, and then based 
+  on your experience you can vote for the ones you think are best in a number 
+  of categories. I recommend looking at the past winners first, because they are 
+  some of the best. Check it out at <a href="http://web.infoave.net/%7Ekbcowart/">http://web.infoave.net/~kbcowart/</a></p>
+<h2><a name="code_corner"></a>Code Corner</h2>
+<p>Here is a very simple program that illustrates the type of dialog a back-end 
+  expert system can have with a Web server. The rules are for a toy identification 
+  system using natural Prolog syntax.</p>
+<h3>Toy Logic Base</h3>
+<p>This is the toy logic base used in the sample dialogs:</p>
+<pre>pet(dog) :- lives_in(house), sound(woof).
+pet(duck) :- legs(2), sound(quack).
+pet(horse) :- eats(hay), lives_in(barn).
+pet(hamster) :- lives_in(cage).
+
+lives_in(barn) :- size(large).
+lives_in(house) :- house_broken(yes), size(medium).
+lives_in(cage) :- size(small).
+
+sound(X) :- ask('What sound? ', sound, X).
+legs(X) :- ask('How many legs? ', legs, X).
+eats(X) :- ask('What does it eat? ', eats, X).
+size(X) :- ask('What size is it? ', size, X).
+house_broken(X) :- ask('Is it house broken? ', house_broken, X).</pre>
+<h3>Asking the User</h3>
+<p>For a stand-alone system, the predicate <b>ask/3</b> would first check if the 
+  value of the attribute was already known, and if not simply prompt the user 
+  for an answer, and continue the reasoning process based on that answer. But 
+  that isn't practical in a Web server environment.</p>
+<p>So <b>ask/3</b> for this system also first checks if its already known, but 
+  if not it notes that the question needs to be asked, and then fails, triggering 
+  backtracking into other possible solutions.</p>
+<pre>ask(Prompt, Attr, Val) :-
+  known(Attr,X),
+  !,
+  X = Val.
+ask(Prompt, Attr, Val) :-
+  (need(Attr, Prompt) -&gt;
+  true
+  ;
+  assert( need(Attr, Prompt) ) ),
+  fail.</pre>
+<h3>API</h3>
+<p>Because this is intended to be a back-end system, it needs an application program 
+  interface (API) for the calling program, probably a Web server, to use. The 
+  API has four entry point predicates:</p>
+<ul>
+  <li><b>init</b> - Initialize the state of the system for a new consultation.</li>
+  <li><b>solve(Attribute, Value)</b> - Call the system to determine a value for 
+    an attribute. Using the toy knowledge base above, this would be a call like 
+    solve(pet, X).</li>
+  <li><b>get_needs(NeedsList)</b> - Get a list of the attributes and associated 
+    prompts that need values from the user.</li>
+  <li><b>add_known(Attribute, Value)</b> - Assert to the logicbase an attribute 
+    and it's value.</li>
+</ul>
+<p>Here is the implementation of the API predicates:</p>
+<pre>init :-
+   abolish(known/2).
+
+solve(Attr, Val) :-
+   Query =.. [Attr, Val],
+   call(Query),
+   !.
+
+get_needs(List) :-
+   findall( need(Attr, Prompt), retract(need(Attr,Prompt)), List).
+
+add_known(Attr, Val) :-
+   assert( known(Attr, Val) ).</pre>
+<h3>Calling the API</h3>
+<p>The API would be used by a Web server, or other program, something like this:</p>
+<pre>call_prolog(init)
+while not call_prolog(solve(pet, X))
+{
+   call_prolog(get_needs(NeedsList))
+   post queries to user and get answers back
+   for each needed attribute
+      call_prolog(add_known(Attr, Val)
+}
+show user value of X</pre>
+<p> This implementation of <b>ask/3</b> and <b>get_needs/1</b> will cause the 
+  system to generate a need for the first required attribute of each of rule and 
+  send them all together after the first call to <b>solve/2</b>. In other words, 
+  it will batch up a number of questions for the user to get things started. This 
+  might be a desirable way to start, allowing for more efficient communication 
+  between the Web server and the client.</p>
+<h3>The Toy Dialog</h3>
+<p>Using the toy logic base, a user would first experience a welcome screen and 
+  a start button, which would start the consultation. The first set of questions 
+  would come back:</p>
+<p><font color="#0000FF">Is it house broken?<br>
+  How many legs?<br>
+  What does it eat?<br>
+  What size is it?</font></p>
+<p>The user might then provide answers to these questions like: <font color="#0000FF">yes, 
+  4, dog_food, and medium</font>.</p>
+<p>The Web server loop would loop, asserting those answers and calling <b>solve/2</b> 
+  again. This time there would only be one question to ask:</p>
+<p><font color="#0000FF">What sound?</font></p>
+<p>The user might answer: <font color="#0000FF">woof</font>.</p>
+<p>And now the system can find an answer and will let the user know the <font color="#0000FF">pet 
+  is a dog</font>.</p>
+<p>This basic architecture can be expanded to allow inclusion of menus and/or 
+  edit checks. The loop can be changed so that only one question gets asked at 
+  a time. And, for finer control, the descriptions of the askable attributes can 
+  include a field that indicates related attributes that should be asked at the 
+  same time. In other words, relationships can be specified between askable attributes 
+  that will make the Web interaction with the user more reasonable.</p>
+<h3>Test Harness</h3>
+<p>It is often convenient to build a test harness in Prolog for a Prolog module 
+  that will be used as a service. In this way the Prolog code can be debugged 
+  entirely in a Prolog environment.</p>
+<p>Here is the code that simulates a Web server calling the API. It doesn't do 
+  anything fancy with the I/O, but does accurately capture the dialog between 
+  the Web server and the back-end logic base.</p>
+            <pre>main :-
+   init,
+   dialog.
+   
+dialog :-
+   solve(pet, X),   % if it fails, the next clause gets tried
+   write(pet = X),  % if it suceeded, then we're done
+   nl.
+dialog :-
+   get_needs(Needs),
+   Needs \= [],
+   web_prompt(Needs).
+   dialog :-
+   write('no answer'),
+   nl.
+
+web_prompt(Needs) :-
+   batch_questions(Needs, Prompts),
+   write(Prompts), nl,
+   write('Enter Prolog list with all corresponding answers'), nl,
+   write(' (ex. [no, 4, seeds,small]. or [woof].)'), nl,
+   read(Answers),
+   remember_answers(Needs, Answers),
+   dialog.
+   
+batch_questions([], []).
+   batch_questions([need(_,Prompt)|Needs], [Prompt|Prompts]) :-
+   batch_questions(Needs, Prompts).
+
+remember_answers([], []).
+remember_answers([need(Attr,_)|Needs], [Answer|Answers]) :-
+   add_known(Attr, Answer),
+   !,
+   remember_answers(Needs, Answers).</pre>
+<p>Trying it:</p>
+
+<pre>?- main.
+[Is it house broken? , How many legs? , What does it eat? , What size is it?]
+Enter Prolog list with all corresponding answers
+ (ex. [no, 4, seeds, small]. or [woof].)
+[yes, 4, dog_food, medium].
+[What sound? ]
+Enter Prolog list with all corresponding answers
+ (ex. [no, 4, seeds, small]. or [woof].)
+[woof].
+pet = dog
+yes</pre>
+<h2><a name="links"></a>Links</h2>
+<p><a href="http://www.thearchitectjournal.com/Journal/issue1/article5.html">http://www.thearchitectjournal.com/Journal/issue1/article5.html</a> 
+  - A Microsoft Architect Journal article done by your editor that is a bit long 
+  winded but has, near the end, more details on the vaccination system.</p>
+<p><a href="http://www.doctordeluca.com/Library/PublicHealth/Vaccine/ImmGuideKnowMain1-98.pdf">http://www.doctordeluca.com/Library/PublicHealth/Vaccine/ImmGuideKnowMain1-98.pdf</a> 
+  - The paper describing Perry Miller's work at Yale on a vaccination system. 
+  It has excellent coverage of the issues in building such a system and the problem 
+  domain.</p>
+<p><a href="http://web.infoave.net/%7Ekbcowart/">http://web.infoave.net/~kbcowart/</a> 
+  - ChatBot Challenge - try dozens of chatbots and vote for the best.</p>
+<hr>
+<p>As always, feedback ideas and especially interesting links are welcome. Past 
+  issues are available at either <a href="www.ddj.com">www.ddj.com</a> or <a href="www.ainewsletter.com">www.ainewsletter.com</a>.</p>
+<p>Until next month,</p>
+<p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+</p>
+<p></p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

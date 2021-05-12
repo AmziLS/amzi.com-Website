@@ -1,0 +1,483 @@
+<structure><name>:-</name><arg><structure><name>set_prolog_flag</name><arg><atom>utf8io</atom></arg><arg><atom>on</atom></arg></structure></arg></structure>
+<structure><name>:-</name><arg><structure><name>module</name><arg><atom>chinese</atom></arg></structure></arg></structure>
+<structure><name>text</name><arg><atom>big_pulse</atom></arg><arg><string>大脉</string></arg></structure>
+<structure><name>text</name><arg><atom>choppy_pulse</atom></arg><arg><string>涩脉</string></arg></structure>
+<structure><name>text</name><arg><atom>empty_pulse</atom></arg><arg><string>虚脉</string></arg></structure>
+<structure><name>text</name><arg><atom>fine_pulse</atom></arg><arg><string>细脉</string></arg></structure>
+<structure><name>text</name><arg><atom>firm_pulse</atom></arg><arg><string>牢脉</string></arg></structure>
+<structure><name>text</name><arg><atom>floating_pulse</atom></arg><arg><string>浮脉</string></arg></structure>
+<structure><name>text</name><arg><atom>full_pulse</atom></arg><arg><string>实脉</string></arg></structure>
+<structure><name>text</name><arg><atom>hidden_pulse</atom></arg><arg><string>伏脉</string></arg></structure>
+<structure><name>text</name><arg><atom>hollow_pulse</atom></arg><arg><string>芤脉</string></arg></structure>
+<structure><name>text</name><arg><atom>intermittent_pulse</atom></arg><arg><string>代脉</string></arg></structure>
+<structure><name>text</name><arg><atom>knotted_pulse</atom></arg><arg><string>结脉</string></arg></structure>
+<structure><name>text</name><arg><atom>leather_pulse</atom></arg><arg><string>革脉</string></arg></structure>
+<structure><name>text</name><arg><atom>long_pulse</atom></arg><arg><string>长脉</string></arg></structure>
+<structure><name>text</name><arg><atom>minute_pulse</atom></arg><arg><string>微脉</string></arg></structure>
+<structure><name>text</name><arg><atom>moderate_pulse</atom></arg><arg><string>缓脉</string></arg></structure>
+<structure><name>text</name><arg><atom>moving_pulse</atom></arg><arg><string>动脉</string></arg></structure>
+<structure><name>text</name><arg><atom>racing_pulse</atom></arg><arg><string>疾脉</string></arg></structure>
+<structure><name>text</name><arg><atom>rapid_pulse</atom></arg><arg><string>数脉</string></arg></structure>
+<structure><name>text</name><arg><atom>scattered_pulse</atom></arg><arg><string>散脉</string></arg></structure>
+<structure><name>text</name><arg><atom>short_pulse</atom></arg><arg><string>短脉</string></arg></structure>
+<structure><name>text</name><arg><atom>sinking_pulse</atom></arg><arg><string>沉脉</string></arg></structure>
+<structure><name>text</name><arg><atom>skipping_pulse</atom></arg><arg><string>促脉</string></arg></structure>
+<structure><name>text</name><arg><atom>slippery_pulse</atom></arg><arg><string>滑脉</string></arg></structure>
+<structure><name>text</name><arg><atom>slow_pulse</atom></arg><arg><string>迟脉</string></arg></structure>
+<structure><name>text</name><arg><atom>soggy_pulse</atom></arg><arg><string>濡脉</string></arg></structure>
+<structure><name>text</name><arg><atom>surging_pulse</atom></arg><arg><string>洪脉</string></arg></structure>
+<structure><name>text</name><arg><atom>tight_pulse</atom></arg><arg><string>紧脉</string></arg></structure>
+<structure><name>text</name><arg><atom>weak_pulse</atom></arg><arg><string>弱脉</string></arg></structure>
+<structure><name>text</name><arg><atom>wiry_pulse</atom></arg><arg><string>弦脉</string></arg></structure>
+<structure><name>text</name><arg><atom>pulse_contour</atom></arg><arg><string>脉形</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse_contour</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>脉形</string></arg></structure>
+<structure><name>text</name><arg><atom>pulse_depth</atom></arg><arg><string>脉深度 </string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse_depth</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>脉深度 </string></arg></structure>
+<structure><name>text</name><arg><atom>pulse_force</atom></arg><arg><string>脉力</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse_force</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>脉力</string></arg></structure>
+<structure><name>text</name><arg><atom>pulse_length</atom></arg><arg><string>脉长度)</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse_length</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>脉长度)</string></arg></structure>
+<structure><name>text</name><arg><atom>pulse_rate</atom></arg><arg><string>脉速度</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse_rate</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>脉速度</string></arg></structure>
+<structure><name>text</name><arg><atom>pulse_rhythm</atom></arg><arg><string>脉节奏</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse_rhythm</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>脉节奏</string></arg></structure>
+<structure><name>text</name><arg><atom>pulse_tension</atom></arg><arg><string>脉张力 </string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse_tension</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>脉张力 </string></arg></structure>
+<structure><name>text</name><arg><atom>pulse_width</atom></arg><arg><string>脉宽度</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse_width</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>脉宽度</string></arg></structure>
+<structure><name>text</name><arg><atom>blood_stagnation</atom></arg><arg><string>血瘀</string></arg></structure>
+<structure><name>text</name><arg><atom>cool_dryness</atom></arg><arg><string>凉风燥</string></arg></structure>
+<structure><name>text</name><arg><atom>damp_heat</atom></arg><arg><string>湿热</string></arg></structure>
+<structure><name>text</name><arg><atom>kidney_yang_deficiency</atom></arg><arg><string>肾阳虚</string></arg></structure>
+<structure><name>text</name><arg><atom>kidney_yin_deficiency</atom></arg><arg><string>肾阴虚</string></arg></structure>
+<structure><name>text</name><arg><atom>liver_fire_invading_lungs</atom></arg><arg><string>肝火犯肺</string></arg></structure>
+<structure><name>text</name><arg><atom>liver_qi_stagnation</atom></arg><arg><string>肝气滞</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_heat</atom></arg><arg><string>肺热</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_qi_deficiency</atom></arg><arg><string>肺气虚</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_yin_deficiency</atom></arg><arg><string>肺阴不足</string></arg></structure>
+<structure><name>text</name><arg><atom>phlegm_damp</atom></arg><arg><string>痰湿</string></arg></structure>
+<structure><name>text</name><arg><atom>phlegm_heat</atom></arg><arg><string>痰热</string></arg></structure>
+<structure><name>text</name><arg><atom>qi_blood_deficiency</atom></arg><arg><string>血气虚</string></arg></structure>
+<structure><name>text</name><arg><atom>spleen_kidney_yang_deficiency</atom></arg><arg><string>肾脾阳虚</string></arg></structure>
+<structure><name>text</name><arg><atom>warm_dryness</atom></arg><arg><string>温风燥</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_cold</atom></arg><arg><string>风寒</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_damp</atom></arg><arg><string>风湿</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_heat</atom></arg><arg><string>风热</string></arg></structure>
+<structure><name>text</name><arg><atom>ache</atom></arg><arg><string>疼痛</string></arg></structure>
+<structure><name>text</name><arg><atom>acrid</atom></arg><arg><string>辛</string></arg></structure>
+<structure><name>text</name><arg><atom>acute</atom></arg><arg><string>急性</string></arg></structure>
+<structure><name>text</name><arg><atom>after_meal</atom></arg><arg><string>饭后</string></arg></structure>
+<structure><name>text</name><arg><atom>afternoon</atom></arg><arg><string>中午</string></arg></structure>
+<structure><name>text</name><arg><atom>aggravate</atom></arg><arg><string>使恶化 </string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>aggravate</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>The problem is aggravated by:</string></arg></structure>
+<structure><name>text</name><arg><atom>ameliorate</atom></arg><arg><string>改善</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>ameliorate</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>The problem could be ameliorated by:</string></arg></structure>
+<structure><name>text</name><arg><atom>anger</atom></arg><arg><string>怒</string></arg></structure>
+<structure><name>text</name><arg><atom>angry</atom></arg><arg><string>怒</string></arg></structure>
+<structure><name>text</name><arg><atom>appetite</atom></arg><arg><string>口味</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>appetite</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的口味?</string></arg></structure>
+<structure><name>text</name><arg><atom>average</atom></arg><arg><string>平均</string></arg></structure>
+<structure><name>text</name><arg><atom>aversion</atom></arg><arg><string>反感</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>aversion</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Is patient aversion to:</string></arg></structure>
+<structure><name>text</name><arg><atom>axillae</atom></arg><arg><string>腋窝</string></arg></structure>
+<structure><name>text</name><arg><atom>back</atom></arg><arg><string>背后</string></arg></structure>
+<structure><name>text</name><arg><atom>barking</atom></arg><arg><string>barking</string></arg></structure>
+<structure><name>text</name><arg><atom>before_meal</atom></arg><arg><string>饭前</string></arg></structure>
+<structure><name>text</name><arg><atom>big</atom></arg><arg><string>大</string></arg></structure>
+<structure><name>text</name><arg><atom>bitter</atom></arg><arg><string>苦</string></arg></structure>
+<structure><name>text</name><arg><atom>black</atom></arg><arg><string>黑</string></arg></structure>
+<structure><name>text</name><arg><atom>bleak</atom></arg><arg><string>苍老</string></arg></structure>
+<structure><name>text</name><arg><atom>blend</atom></arg><arg><string>blend</string></arg></structure>
+<structure><name>text</name><arg><atom>bloody</atom></arg><arg><string>有血</string></arg></structure>
+<structure><name>text</name><arg><atom>blue</atom></arg><arg><string>青</string></arg></structure>
+<structure><name>text</name><arg><atom>body</atom></arg><arg><string>全身</string></arg></structure>
+<structure><name>text</name><arg><atom>bottom_body</atom></arg><arg><string>下半身</string></arg></structure>
+<structure><name>text</name><arg><atom>boring</atom></arg><arg><string>boring</string></arg></structure>
+<structure><name>text</name><arg><atom>bowel_movement</atom></arg><arg><string>通大便</string></arg></structure>
+<structure><name>text</name><arg><atom>breath</atom></arg><arg><string>呼吸</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>breath</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How is the patient breathing?</string></arg></structure>
+<structure><name>text</name><arg><atom>brown</atom></arg><arg><string>褐色</string></arg></structure>
+<structure><name>text</name><arg><atom>bruise</atom></arg><arg><string>碰伤</string></arg></structure>
+<structure><name>text</name><arg><atom>burning</atom></arg><arg><string>burning</string></arg></structure>
+<structure><name>text</name><arg><atom>center</atom></arg><arg><string>中心</string></arg></structure>
+<structure><name>text</name><arg><atom>chest</atom></arg><arg><string>胸</string></arg></structure>
+<structure><name>text</name><arg><atom>chills</atom></arg><arg><string>寒冷</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>chills</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Does the patient have chills?</string></arg></structure>
+<structure><name>text</name><arg><atom>chronic</atom></arg><arg><string>慢性</string></arg></structure>
+<structure><name>text</name><arg><atom>clear</atom></arg><arg><string>透明</string></arg></structure>
+<structure><name>text</name><arg><atom>cold</atom></arg><arg><string>寒</string></arg></structure>
+<structure><name>text</name><arg><atom>cold_drink</atom></arg><arg><string>冷水</string></arg></structure>
+<structure><name>text</name><arg><atom>colicky</atom></arg><arg><string>colicky</string></arg></structure>
+<structure><name>text</name><arg><atom>complaint</atom></arg><arg><string>疾病</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>complaint</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>有何疾病?</string></arg></structure>
+<structure><name>text</name><arg><atom>complexion</atom></arg><arg><string>脸色</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>complexion</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the color of the patient's face?</string></arg></structure>
+<structure><name>text</name><arg><atom>congested</atom></arg><arg><string>拥塞</string></arg></structure>
+<structure><name>text</name><arg><atom>constipation</atom></arg><arg><string>便秘</string></arg></structure>
+<structure><name>text</name><arg><atom>constitution</atom></arg><arg><string>体质</string></arg></structure>
+<structure><name>text</name><arg><atom>cough</atom></arg><arg><string>咳嗽</string></arg></structure>
+<structure><name>text</name><arg><atom>coughing_sound</atom></arg><arg><string>咳嗽声</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>coughing_sound</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How does the cough sound?</string></arg></structure>
+<structure><name>text</name><arg><atom>craving</atom></arg><arg><string>渴望</string></arg></structure>
+<structure><name>text</name><arg><atom>crimson</atom></arg><arg><string>绛</string></arg></structure>
+<structure><name>text</name><arg><atom>crying</atom></arg><arg><string>哭</string></arg></structure>
+<structure><name>text</name><arg><atom>curdy</atom></arg><arg><string>腐腻</string></arg></structure>
+<structure><name>text</name><arg><atom>cutting</atom></arg><arg><string>cutting</string></arg></structure>
+<structure><name>text</name><arg><atom>dark</atom></arg><arg><string>黑暗</string></arg></structure>
+<structure><name>text</name><arg><atom>dark_very</atom></arg><arg><string>很黑暗</string></arg></structure>
+<structure><name>text</name><arg><atom>dark_yellow</atom></arg><arg><string>黑黄</string></arg></structure>
+<structure><name>text</name><arg><atom>delirious</atom></arg><arg><string>谵</string></arg></structure>
+<structure><name>text</name><arg><atom>day</atom></arg><arg><string>白天</string></arg></structure>
+<structure><name>text</name><arg><atom>deep_pulse</atom></arg><arg><string>沉</string></arg></structure>
+<structure><name>text</name><arg><atom>defecate</atom></arg><arg><string>大便</string></arg></structure>
+<structure><name>text</name><arg><atom>depression</atom></arg><arg><string>抑郁症</string></arg></structure>
+<structure><name>text</name><arg><atom>deviated</atom></arg><arg><string>歪斜</string></arg></structure>
+<structure><name>text</name><arg><atom>diarrhoea</atom></arg><arg><string>腹泻</string></arg></structure>
+<structure><name>text</name><arg><atom>difficult</atom></arg><arg><string>困难</string></arg></structure>
+<structure><name>text</name><arg><atom>discharge</atom></arg><arg><string>泄（鼻涕、带下、等等）</string></arg></structure>
+<structure><name>text</name><arg><atom>discharge_color</atom></arg><arg><string>discharge color</string></arg></structure>
+<structure><name>text</name><arg><atom>discomfort</atom></arg><arg><string>不舒服</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>discomfort</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Areas of discomfort:</string></arg></structure>
+<structure><name>text</name><arg><atom>dislike</atom></arg><arg><string>不喜欢</string></arg></structure>
+<structure><name>text</name><arg><atom>distending</atom></arg><arg><string>膨胀</string></arg></structure>
+<structure><name>text</name><arg><atom>distressing</atom></arg><arg><string>忧伤</string></arg></structure>
+<structure><name>text</name><arg><atom>dizziness</atom></arg><arg><string>头晕</string></arg></structure>
+<structure><name>text</name><arg><atom>double_tongue</atom></arg><arg><string>重</string></arg></structure>
+<structure><name>text</name><arg><atom>dry</atom></arg><arg><string>燥</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>dry</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Parts of the body feel dry:</string></arg></structure>
+<structure><name>text</name><arg><atom>dyspnea</atom></arg><arg><string>呼吸困难</string></arg></structure>
+<structure><name>text</name><arg><atom>easy</atom></arg><arg><string>容易</string></arg></structure>
+<structure><name>text</name><arg><atom>eating</atom></arg><arg><string>饮食</string></arg></structure>
+<structure><name>text</name><arg><atom>emptiness</atom></arg><arg><string>空</string></arg></structure>
+<structure><name>text</name><arg><atom>emotion</atom></arg><arg><string>情感</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>emotion</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What are the patient's emotions?</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>energy</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the patient's level energy?</string></arg></structure>
+<structure><name>text</name><arg><atom>epigastrium</atom></arg><arg><string>上腹部</string></arg></structure>
+<structure><name>text</name><arg><atom>evening</atom></arg><arg><string>晚上</string></arg></structure>
+<structure><name>text</name><arg><atom>exertion</atom></arg><arg><string>尽力</string></arg></structure>
+<structure><name>text</name><arg><atom>exfoliative</atom></arg><arg><string>剥落</string></arg></structure>
+<structure><name>:-</name><arg><structure><name>text</name><arg><structure><name>error_missing_ask</name><arg><variable>H2013</variable></arg></structure></arg><arg><variable>H2018</variable></arg></structure></arg><arg><structure><name>,</name><arg><structure><name>get_text</name><arg><variable>H2013</variable></arg><arg><variable>H2024</variable></arg></structure></arg><arg><structure><name>stringlist_concat</name><arg><list><item><string>There is no way to find a value for:</string></item><item><variable>H2024</variable></item></list></arg><arg><string> </string></arg><arg><variable>H2018</variable></arg></structure></arg></structure></arg></structure>
+<structure><name>text</name><arg><atom>face</atom></arg><arg><string>脸</string></arg></structure>
+<structure><name>text</name><arg><atom>fat</atom></arg><arg><string>胖</string></arg></structure>
+<structure><name>text</name><arg><atom>fatigue</atom></arg><arg><string>疲劳</string></arg></structure>
+<structure><name>text</name><arg><atom>feeble</atom></arg><arg><string>虚弱</string></arg></structure>
+<structure><name>text</name><arg><atom>feelings</atom></arg><arg><string>感觉</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>feelings</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How does the patient feel?</string></arg></structure>
+<structure><name>text</name><arg><atom>feet</atom></arg><arg><string>足</string></arg></structure>
+<structure><name>text</name><arg><atom>fever</atom></arg><arg><string>发热</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>fever</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Does the patient have fever?</string></arg></structure>
+<structure><name>text</name><arg><atom>fissured</atom></arg><arg><string>裂纹</string></arg></structure>
+<structure><name>text</name><arg><atom>flaccid</atom></arg><arg><string>痿软</string></arg></structure>
+<structure><name>text</name><arg><atom>frequent</atom></arg><arg><string>经常</string></arg></structure>
+<structure><name>text</name><arg><atom>frontal</atom></arg><arg><string>迎头</string></arg></structure>
+<structure><name>text</name><arg><atom>full</atom></arg><arg><string>全</string></arg></structure>
+<structure><name>text</name><arg><atom>fullness</atom></arg><arg><string>fullness</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>fullness</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Areas of feeling fullness:</string></arg></structure>
+<structure><name>text</name><arg><atom>good</atom></arg><arg><string>好</string></arg></structure>
+<structure><name>text</name><arg><atom>green</atom></arg><arg><string>蓝色</string></arg></structure>
+<structure><name>text</name><arg><atom>greasy</atom></arg><arg><string>greasy</string></arg></structure>
+<structure><name>text</name><arg><atom>grey</atom></arg><arg><string>灰色</string></arg></structure>
+<structure><name>text</name><arg><atom>groaning</atom></arg><arg><string>呻吟 </string></arg></structure>
+<structure><name>text</name><arg><atom>hacking</atom></arg><arg><string>hacking</string></arg></structure>
+<structure><name>text</name><arg><atom>hands</atom></arg><arg><string>手</string></arg></structure>
+<structure><name>text</name><arg><atom>happy</atom></arg><arg><string>愉快</string></arg></structure>
+<structure><name>text</name><arg><atom>hasty</atom></arg><arg><string>促</string></arg></structure>
+<structure><name>text</name><arg><atom>head</atom></arg><arg><string>头</string></arg></structure>
+<structure><name>text</name><arg><atom>headache</atom></arg><arg><string>头疼</string></arg></structure>
+<structure><name>text</name><arg><atom>heat</atom></arg><arg><string>热度</string></arg></structure>
+<structure><name>text</name><arg><atom>heaviness</atom></arg><arg><string>重</string></arg></structure>
+<structure><name>text</name><arg><atom>heavy</atom></arg><arg><string>重</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>heavy</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Parts of the body feel heavy:</string></arg></structure>
+<structure><name>text</name><arg><atom>hesitation</atom></arg><arg><string>hesitation</string></arg></structure>
+<structure><name>text</name><arg><atom>heavy</atom></arg><arg><string>高</string></arg></structure>
+<structure><name>text</name><arg><atom>hemialgia</atom></arg><arg><string>偏侧痛</string></arg></structure>
+<structure><name>text</name><arg><atom>hoarse</atom></arg><arg><string>hoarse</string></arg></structure>
+<structure><name>text</name><arg><atom>hot_drink</atom></arg><arg><string>热水</string></arg></structure>
+<structure><name>text</name><arg><atom>hungery</atom></arg><arg><string>饥饿</string></arg></structure>
+<structure><name>text</name><arg><atom>hypochondria</atom></arg><arg><string>下骨片</string></arg></structure>
+<structure><name>text</name><arg><atom>incoherent</atom></arg><arg><string>颠三倒四</string></arg></structure>
+<structure><name>text</name><arg><atom>injury</atom></arg><arg><string>受伤</string></arg></structure>
+<structure><name>text</name><arg><atom>injury</atom></arg><arg><string>What type of injury did the patient experience?</string></arg></structure>
+<structure><name>text</name><arg><atom>insomnia</atom></arg><arg><string>失眠</string></arg></structure>
+<structure><name>text</name><arg><atom>irritability</atom></arg><arg><string>暴躁</string></arg></structure>
+<structure><name>text</name><arg><atom>itchy</atom></arg><arg><string>痒</string></arg></structure>
+<structure><name>text</name><arg><atom>joint</atom></arg><arg><string>关节</string></arg></structure>
+<structure><name>text</name><arg><atom>laughing</atom></arg><arg><string>笑</string></arg></structure>
+<structure><name>text</name><arg><atom>leather</atom></arg><arg><string>革</string></arg></structure>
+<structure><name>text</name><arg><atom>legs</atom></arg><arg><string>腿</string></arg></structure>
+<structure><name>text</name><arg><atom>light</atom></arg><arg><string>淡</string></arg></structure>
+<structure><name>text</name><arg><atom>limb</atom></arg><arg><string>四肢</string></arg></structure>
+<structure><name>text</name><arg><atom>little</atom></arg><arg><string>一点</string></arg></structure>
+<structure><name>text</name><arg><atom>lips</atom></arg><arg><string>嘴唇</string></arg></structure>
+<structure><name>text</name><arg><atom>location</atom></arg><arg><string>location</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>location</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Where is the problem located?</string></arg></structure>
+<structure><name>text</name><arg><atom>long</atom></arg><arg><string>长</string></arg></structure>
+<structure><name>text</name><arg><atom>long_thin</atom></arg><arg><string>长细</string></arg></structure>
+<structure><name>text</name><arg><atom>loose</atom></arg><arg><string>loose</string></arg></structure>
+<structure><name>text</name><arg><atom>lots</atom></arg><arg><string>挺多</string></arg></structure>
+<structure><name>text</name><arg><atom>loud</atom></arg><arg><string>大声</string></arg></structure>
+<structure><name>text</name><arg><atom>lower_abdomen</atom></arg><arg><string>下腹</string></arg></structure>
+<structure><name>text</name><arg><atom>lower_back</atom></arg><arg><string>下背</string></arg></structure>
+<structure><name>text</name><arg><atom>lurking</atom></arg><arg><string>lurking</string></arg></structure>
+<structure><name>text</name><arg><atom>lustrous</atom></arg><arg><string>有神</string></arg></structure>
+<structure><name>text</name><arg><atom>menu_choice</atom></arg><arg><string>Enter a list in brackets, i.e. [2,7]: </string></arg></structure>
+<structure><name>text</name><arg><atom>mild</atom></arg><arg><string>轻微</string></arg></structure>
+<structure><name>text</name><arg><atom>moist</atom></arg><arg><string>润</string></arg></structure>
+<structure><name>text</name><arg><atom>morning</atom></arg><arg><string>凌晨</string></arg></structure>
+<structure><name>text</name><arg><atom>mouth</atom></arg><arg><string>口</string></arg></structure>
+<structure><name>text</name><arg><atom>moving</atom></arg><arg><string>移动</string></arg></structure>
+<structure><name>text</name><arg><atom>mouldy</atom></arg><arg><string>发霉</string></arg></structure>
+<structure><name>text</name><arg><atom>mucus</atom></arg><arg><string>鼻涕</string></arg></structure>
+<structure><name>text</name><arg><atom>muffled</atom></arg><arg><string>muffled</string></arg></structure>
+<structure><name>text</name><arg><atom>muscle</atom></arg><arg><string>肌肉</string></arg></structure>
+<structure><name>text</name><arg><atom>muttering</atom></arg><arg><string>muttering to oneself</string></arg></structure>
+<structure><name>text</name><arg><atom>nasal</atom></arg><arg><string>鼻</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>nasal</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Does the patient's nasal have:</string></arg></structure>
+<structure><name>text</name><arg><atom>nausea</atom></arg><arg><string>恶心</string></arg></structure>
+<structure><name>text</name><arg><atom>neck</atom></arg><arg><string>颈</string></arg></structure>
+<structure><name>text</name><arg><atom>night</atom></arg><arg><string>黑夜</string></arg></structure>
+<structure><name>text</name><arg><atom>no</atom></arg><arg><string>否</string></arg></structure>
+<structure><name>text</name><arg><atom>no_drink</atom></arg><arg><string>口渴不喝水</string></arg></structure>
+<structure><name>text</name><arg><atom>none</atom></arg><arg><string>没有</string></arg></structure>
+<structure><name>text</name><arg><atom>normal</atom></arg><arg><string>正常</string></arg></structure>
+<structure><name>text</name><arg><atom>nose</atom></arg><arg><string>鼻</string></arg></structure>
+<structure><name>text</name><arg><atom>nose_color</atom></arg><arg><string>鼻色</string></arg></structure>
+<structure><name>text</name><arg><atom>not_often</atom></arg><arg><string>不经常 </string></arg></structure>
+<structure><name>text</name><arg><atom>numbness</atom></arg><arg><string>麻痹</string></arg></structure>
+<structure><name>text</name><arg><atom>obstruction</atom></arg><arg><string>障碍（鼻塞）</string></arg></structure>
+<structure><name>text</name><arg><atom>occipital</atom></arg><arg><string>枕部</string></arg></structure>
+<structure><name>text</name><arg><atom>occurrence</atom></arg><arg><string>how frequent</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>occurrence</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How frequent?</string></arg></structure>
+<structure><name>text</name><arg><atom>oedema</atom></arg><arg><string>水肿</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>oedema</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Where is the oedema located?</string></arg></structure>
+<structure><name>text</name><arg><atom>pain</atom></arg><arg><string>疼痛</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pain</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Describe the kind of pain:</string></arg></structure>
+<structure><name>text</name><arg><atom>pain_location</atom></arg><arg><string>pain location</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pain_location</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Where is the pain?</string></arg></structure>
+<structure><name>text</name><arg><atom>pale</atom></arg><arg><string>苍白</string></arg></structure>
+<structure><name>text</name><arg><atom>palm</atom></arg><arg><string>手掌</string></arg></structure>
+<structure><name>text</name><arg><atom>partial</atom></arg><arg><string>偏</string></arg></structure>
+<structure><name>text</name><arg><atom>palpitation</atom></arg><arg><string>心悸 </string></arg></structure>
+<structure><name>text</name><arg><atom>pantalgia</atom></arg><arg><string>全身痛</string></arg></structure>
+<structure><name>text</name><arg><atom>peeled</atom></arg><arg><string>peeled (mirror tongue)</string></arg></structure>
+<structure><name>text</name><arg><atom>pellets</atom></arg><arg><string>pellets</string></arg></structure>
+<structure><name>text</name><arg><atom>persistent</atom></arg><arg><string>persistent</string></arg></structure>
+<structure><name>text</name><arg><atom>pink</atom></arg><arg><string>淡红</string></arg></structure>
+<structure><name>text</name><arg><atom>poor</atom></arg><arg><string>食欲不正</string></arg></structure>
+<structure><name>text</name><arg><atom>profuse</atom></arg><arg><string>过多</string></arg></structure>
+<structure><name>text</name><arg><atom>protruding</atom></arg><arg><string>吐弄</string></arg></structure>
+<structure><name>text</name><arg><atom>pressure</atom></arg><arg><string>压力</string></arg></structure>
+<structure><name>text</name><arg><atom>pulling</atom></arg><arg><string>pulling</string></arg></structure>
+<structure><name>text</name><arg><atom>pulse</atom></arg><arg><string>脉</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the qualities of the patient's pulses?</string></arg></structure>
+<structure><name>text</name><arg><atom>pungent</atom></arg><arg><string>pungent</string></arg></structure>
+<structure><name>text</name><arg><atom>purple</atom></arg><arg><string>紫</string></arg></structure>
+<structure><name>text</name><arg><atom>pushing</atom></arg><arg><string>pushing</string></arg></structure>
+<structure><name>text</name><arg><atom>putrid</atom></arg><arg><string>腐臭</string></arg></structure>
+<structure><name>text</name><arg><atom>quick_temper</atom></arg><arg><string>火性</string></arg></structure>
+<structure><name>text</name><arg><atom>quivering</atom></arg><arg><string>颤动</string></arg></structure>
+<structure><name>text</name><arg><atom>rattling</atom></arg><arg><string>rattling</string></arg></structure>
+<structure><name>text</name><arg><atom>rebellious</atom></arg><arg><string>rebellious qi</string></arg></structure>
+<structure><name>text</name><arg><atom>red</atom></arg><arg><string>红</string></arg></structure>
+<structure><name>text</name><arg><atom>red_tip</atom></arg><arg><string>red tip</string></arg></structure>
+<structure><name>text</name><arg><atom>respiratory</atom></arg><arg><string>respiratory</string></arg></structure>
+<structure><name>text</name><arg><atom>reluctance</atom></arg><arg><string>不情愿</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>respiratory</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How is the patient's respiratory?</string></arg></structure>
+<structure><name>text</name><arg><atom>rest</atom></arg><arg><string>休息 </string></arg></structure>
+<structure><name>text</name><arg><atom>restlessness</atom></arg><arg><string>烦躁不安</string></arg></structure>
+<structure><name>text</name><arg><atom>root</atom></arg><arg><string>有根</string></arg></structure>
+<structure><name>text</name><arg><atom>retracted</atom></arg><arg><string>短缩</string></arg></structure>
+<structure><name>text</name><arg><atom>rough</atom></arg><arg><string>糙</string></arg></structure>
+<structure><name>text</name><arg><atom>sad</atom></arg><arg><string>伤心</string></arg></structure>
+<structure><name>text</name><arg><atom>salty</atom></arg><arg><string>咸</string></arg></structure>
+<structure><name>text</name><arg><atom>scanty</atom></arg><arg><string>稀疏</string></arg></structure>
+<structure><name>text</name><arg><atom>scratchy</atom></arg><arg><string>scratchy</string></arg></structure>
+<structure><name>text</name><arg><atom>sensation</atom></arg><arg><string>sensation</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sensation</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What are the patient's sensations? </string></arg></structure>
+<structure><name>text</name><arg><atom>sharp</atom></arg><arg><string></string></arg></structure>
+<structure><name>text</name><arg><atom>short</atom></arg><arg><string>短</string></arg></structure>
+<structure><name>text</name><arg><atom>sides</atom></arg><arg><string>边</string></arg></structure>
+<structure><name>text</name><arg><atom>sigh</atom></arg><arg><string>叹气</string></arg></structure>
+<structure><name>text</name><arg><atom>site</atom></arg><arg><string>site where the problem occur</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>site</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>病症发生在那处?</string></arg></structure>
+<structure><name>text</name><arg><atom>sleep</atom></arg><arg><string>睡眠</string></arg></structure>
+<structure><name>text</name><arg><atom>slippery</atom></arg><arg><string>滑</string></arg></structure>
+<structure><name>text</name><arg><atom>slow</atom></arg><arg><string>慢</string></arg></structure>
+<structure><name>text</name><arg><atom>slurred</atom></arg><arg><string>slurred</string></arg></structure>
+<structure><name>text</name><arg><atom>small</atom></arg><arg><string>小</string></arg></structure>
+<structure><name>text</name><arg><atom>snow</atom></arg><arg><string>雪花</string></arg></structure>
+<structure><name>text</name><arg><atom>sob</atom></arg><arg><string>呼吸急促</string></arg></structure>
+<structure><name>text</name><arg><atom>soft</atom></arg><arg><string>軟</string></arg></structure>
+<structure><name>text</name><arg><atom>sole</atom></arg><arg><string>脚掌</string></arg></structure>
+<structure><name>text</name><arg><atom>sore</atom></arg><arg><string>酸疼</string></arg></structure>
+<structure><name>text</name><arg><atom>soreness</atom></arg><arg><string>酸疼</string></arg></structure>
+<structure><name>text</name><arg><atom>sour</atom></arg><arg><string>酸</string></arg></structure>
+<structure><name>text</name><arg><atom>spastic</atom></arg><arg><string>痉挛</string></arg></structure>
+<structure><name>text</name><arg><atom>speech</atom></arg><arg><string>发言</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>speech</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How does the patient's speech?</string></arg></structure>
+<structure><name>text</name><arg><atom>spontaneous</atom></arg><arg><string>自汗</string></arg></structure>
+<structure><name>text</name><arg><atom>spotted</atom></arg><arg><string>敕</string></arg></structure>
+<structure><name>text</name><arg><atom>sputum</atom></arg><arg><string>痰</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sputum</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the quality of the sputum:</string></arg></structure>
+<structure><name>text</name><arg><atom>sputum_color</atom></arg><arg><string>痰的颜色</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sputum_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the color of the sputum?</string></arg></structure>
+<structure><name>text</name><arg><atom>sputum_amount</atom></arg><arg><string>痰的数量</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sputum_amount</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the amount of the sputum?</string></arg></structure>
+<structure><name>text</name><arg><atom>sputum_expectorate</atom></arg><arg><string>expectorate sputum</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sputum_expectorate</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Is sputum easy or difficult to expectorate?</string></arg></structure>
+<structure><name>text</name><arg><atom>stabbing</atom></arg><arg><string>stabbing</string></arg></structure>
+<structure><name>text</name><arg><atom>stage</atom></arg><arg><string>stage</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stage</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the stage of the disease?</string></arg></structure>
+<structure><name>text</name><arg><atom>sticky</atom></arg><arg><string>黏</string></arg></structure>
+<structure><name>text</name><arg><atom>stiff</atom></arg><arg><string>强硬</string></arg></structure>
+<structure><name>text</name><arg><atom>stiffness</atom></arg><arg><string>强硬</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stiffness</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Areas of having stiffness:</string></arg></structure>
+<structure><name>text</name><arg><atom>stomach</atom></arg><arg><string>胃</string></arg></structure>
+<structure><name>text</name><arg><atom>stool</atom></arg><arg><string>屎</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stool</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the quality of the stools?</string></arg></structure>
+<structure><name>text</name><arg><atom>stool_color</atom></arg><arg><string>stool color</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stool_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the color of the stools?</string></arg></structure>
+<structure><name>text</name><arg><atom>stool_shape</atom></arg><arg><string>stool shape</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stool_shape</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the shape of the stools?</string></arg></structure>
+<structure><name>text</name><arg><atom>stress</atom></arg><arg><string>压力</string></arg></structure>
+<structure><name>text</name><arg><atom>stressful</atom></arg><arg><string>紧张</string></arg></structure>
+<structure><name>text</name><arg><atom>strong</atom></arg><arg><string>强壮</string></arg></structure>
+<structure><name>text</name><arg><atom>stuffiness</atom></arg><arg><string>沉闷</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stuffiness</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Areas of feeling stuffiness:</string></arg></structure>
+<structure><name>text</name><arg><atom>stuttering</atom></arg><arg><string>謇</string></arg></structure>
+<structure><name>text</name><arg><atom>sweat</atom></arg><arg><string>出汗</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sweat</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How much does the patient sweat?</string></arg></structure>
+<structure><name>text</name><arg><atom>sweat_area</atom></arg><arg><string>areas of sweating</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sweat_area</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Where are areas of sweating?</string></arg></structure>
+<structure><name>text</name><arg><atom>sweet</atom></arg><arg><string>甜</string></arg></structure>
+<structure><name>text</name><arg><atom>swelling</atom></arg><arg><string>肿胀</string></arg></structure>
+<structure><name>text</name><arg><atom>swollen</atom></arg><arg><string>肿胀</string></arg></structure>
+<structure><name>text</name><arg><atom>symptom</atom></arg><arg><string>症状</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>symptom</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者有何症状?</string></arg></structure>
+<structure><name>text</name><arg><atom>talk_sleep</atom></arg><arg><string>talk in the sleep</string></arg></structure>
+<structure><name>text</name><arg><atom>talkative</atom></arg><arg><string>talkative</string></arg></structure>
+<structure><name>text</name><arg><atom>taste</atom></arg><arg><string>味道 </string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>taste</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>有任何口味?</string></arg></structure>
+<structure><name>text</name><arg><atom>tender</atom></arg><arg><string>娇嫩</string></arg></structure>
+<structure><name>text</name><arg><atom>thick</atom></arg><arg><string>厚</string></arg></structure>
+<structure><name>text</name><arg><atom>thin</atom></arg><arg><string>薄</string></arg></structure>
+<structure><name>text</name><arg><atom>thirst</atom></arg><arg><string>口渴</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>thirst</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>有否口渴?</string></arg></structure>
+<structure><name>text</name><arg><atom>throat</atom></arg><arg><string>咽喉</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>throat</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>咽喉如何?</string></arg></structure>
+<structure><name>text</name><arg><atom>throbbing</atom></arg><arg><string>振动</string></arg></structure>
+<structure><name>text</name><arg><atom>ticklish</atom></arg><arg><string>痒</string></arg></structure>
+<structure><name>text</name><arg><atom>tight</atom></arg><arg><string>紧</string></arg></structure>
+<structure><name>text</name><arg><atom>tightness</atom></arg><arg><string>紧</string></arg></structure>
+<structure><name>text</name><arg><atom>time_occur</atom></arg><arg><string>何时</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>time_occur</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>何时发生?</string></arg></structure>
+<structure><name>text</name><arg><atom>tingling</atom></arg><arg><string>麻刺感</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_body</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的舌体?</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的舌苔?</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_color</atom></arg><arg><string>舌苔的颜色</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>舌苔的颜色?</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_distribution</atom></arg><arg><string>tongue coat distribution</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_distribution</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>how is the patient's tongue coat being distributed?</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_texture</atom></arg><arg><string>tongue coat texture</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_texture</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>what is the texture of the patient's tongue coat</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_color</atom></arg><arg><string>舌色</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的舌色?</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_shape</atom></arg><arg><string>舌形</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_shape</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的舌形?</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_move_state</atom></arg><arg><string>tongue move state</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_move_state</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>what is the moving state of the patient's tongue?</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_spirit</atom></arg><arg><string>舌神</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_spirit</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的舌神?</string></arg></structure>
+<structure><name>text</name><arg><atom>tough</atom></arg><arg><string>苍老</string></arg></structure>
+<structure><name>text</name><arg><atom>blood_stagnation_cough</atom></arg><arg><string>Treatment principle for BLOOD STAGNATION cough: resolve stagnant Blood in the Lungs, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>cool_dryness_cough</atom></arg><arg><string>Treatment principle for COOL DRYNESS cough: clear the Lungs, moisten Dryness; redirect Lung qi downward, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>liver_fire_invading_lungs_cough</atom></arg><arg><string>Treatment principle for LIVER FIRE INVADING THE LUNGS cough: clear Liver Fire, Moisten the Lungs and transform Phlegm.</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_heat_cough</atom></arg><arg><string>Treatment principle for LUNG HEAT cough: clear Heat from the Lungs; redirect Lung qi downward, stop cough; transform Phlegm.</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_qi_deficiency_cough</atom></arg><arg><string>Treatment principle for LUNG QI DEFICIENCY cough: tonify Lung qi, calm cough; transform thin mucus.</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_yin_deficiency_cough</atom></arg><arg><string>Treatment principle for LUNG YIN DEFICIENCY cough: nourish Lung yin to stop cough; Moisten the Lungs, transform Phlegm.</string></arg></structure>
+<structure><name>text</name><arg><atom>phlegm_damp_cough</atom></arg><arg><string>Treatment principle for PHLEGM DAMP cough: strengthen the Spleen dry Damp; transform Phlegm, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>phlegm_heat_cough</atom></arg><arg><string>Treatment principle for PHLEGM HEAT cough: Expel Phlegm and clear Heat; redirect Lung qi downward, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>spleen_kidney_yang_deficiency_cough</atom></arg><arg><string>Treatment principle for SPLEEN AND KIDNEY YANG DEFICIENCY cough: warm yang, disperse Cold; transform qi to move fluids.</string></arg></structure>
+<structure><name>text</name><arg><atom>warm_dryness_cough</atom></arg><arg><string>Treatment principle for WARM DRYNESS cough: clear Heat from the Lungs, moisten Dryness; redirect Lung qi downward, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_cold_cough</atom></arg><arg><string>Treatment principle for WIND COLD cough: expel Wind and Cold; redirect Lung qi downward, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_heat_cough</atom></arg><arg><string>Treatment principle for WIND HEAT cough: expel Wind and clear Heat; redirect Lung qi downward, stop cough; transform Phlegm.</string></arg></structure>
+<structure><name>text</name><arg><atom>invasion_wind_cold_pain</atom></arg><arg><string>Treatment principle for INVASION OF WIND-COLD pain: dispel external cold, promote sweating and relieve pain.</string></arg></structure>
+<structure><name>text</name><arg><atom>invasion_wind_damp_pain</atom></arg><arg><string>Treatment principle for INVASION OF WIND-DAMP pain: dispel wind, eliminate damp and relieve the pain.</string></arg></structure>
+<structure><name>text</name><arg><atom>invasion_damp_heat_pain</atom></arg><arg><string>Treatment principle for INVASION OF DAMP-HEAT pain: clear heat and eliminate damp</string></arg></structure>
+<structure><name>text</name><arg><atom>stagnation_liver_qi_pain</atom></arg><arg><string>Treatment principle for STAGNATION OF LIVER-QI pain: regulate liver-qi, remove qi stagnation and relieve the pain.</string></arg></structure>
+<structure><name>text</name><arg><atom>stagnation_blood_pain</atom></arg><arg><string>Treatment principle for STAGNATION OF BLOOD pain: promote blood circulation, remove blood stagnation and sedate the pain.</string></arg></structure>
+<structure><name>text</name><arg><atom>deficiency_qi_blood_pain</atom></arg><arg><string>Treatment principle for DEFICIENCY OF QI AND BLOOD pain: tonify qi and blood and relieve the pain.</string></arg></structure>
+<structure><name>text</name><arg><atom>deficiency_kidney_yin_pain</atom></arg><arg><string>Treatment principle for DEFICIENCY OF KIDNEY-YIN pain: nourish kidney-yin and relieve the pain.</string></arg></structure>
+<structure><name>text</name><arg><atom>deficiency_kidney_yang_pain</atom></arg><arg><string>Treatment principle for DEFICIENCY OF KIDNEY-YANG pain: tonify kidney, warm the channels and relieve the pain.</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue</atom></arg><arg><string>舌</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>挑选患者的舌神:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_body</atom></arg><arg><string>舌体</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_body</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的舌体如何？</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat</atom></arg><arg><string>舌苔</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的舌苔如何？</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_color</atom></arg><arg><string>舌苔的颜色</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>挑选患者的苔色:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_texture</atom></arg><arg><string>苔质</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_texture</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>挑选患者的苔质:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_distribution</atom></arg><arg><string>tongue coat distribution</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_distribution</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the distribution of the patient's tongue coat:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_root</atom></arg><arg><string>tongue coat rooted</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_root</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Is the patient's tongue coat rooted:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_color</atom></arg><arg><string>舌头的颜色</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>挑选患者的舌色:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_move_state</atom></arg><arg><string>tongue move state</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_move_state</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>what is the moving state of the patient's tongue?</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_shape</atom></arg><arg><string>舌形</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_shape</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>挑选患者的舌形:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_spirit</atom></arg><arg><string>舌神</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_spirit</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>挑选患者的舌神:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue</atom></arg><arg><string>舌</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的舌头症状:</string></arg></structure>
+<structure><name>text</name><arg><atom>toothmarked</atom></arg><arg><string>齿痕</string></arg></structure>
+<structure><name>text</name><arg><atom>top_body</atom></arg><arg><string>上半身</string></arg></structure>
+<structure><name>text</name><arg><atom>trauma</atom></arg><arg><string>损伤</string></arg></structure>
+<structure><name>text</name><arg><atom>trembling</atom></arg><arg><string>颤动</string></arg></structure>
+<structure><name>text</name><arg><atom>turbid</atom></arg><arg><string>浊</string></arg></structure>
+<structure><name>text</name><arg><atom>turmoil</atom></arg><arg><string>emotional turmoil</string></arg></structure>
+<structure><name>text</name><arg><atom>upset</atom></arg><arg><string>心烦意乱</string></arg></structure>
+<structure><name>text</name><arg><atom>urgent</atom></arg><arg><string>紧急</string></arg></structure>
+<structure><name>text</name><arg><atom>very</atom></arg><arg><string>很</string></arg></structure>
+<structure><name>text</name><arg><atom>voice</atom></arg><arg><string>声音</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>voice</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者的声音?</string></arg></structure>
+<structure><name>text</name><arg><atom>vomit</atom></arg><arg><string>呕吐</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>vomit</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>患者有没有呕吐?</string></arg></structure>
+<structure><name>text</name><arg><atom>undigested_food</atom></arg><arg><string>不消化</string></arg></structure>
+<structure><name>text</name><arg><atom>urine_color</atom></arg><arg><string>尿的颜色</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>urine_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>尿的颜色?</string></arg></structure>
+<structure><name>text</name><arg><atom>unroot</atom></arg><arg><string>无根</string></arg></structure>
+<structure><name>text</name><arg><atom>wandering</atom></arg><arg><string>wandering</string></arg></structure>
+<structure><name>text</name><arg><atom>warmth</atom></arg><arg><string>温暖</string></arg></structure>
+<structure><name>text</name><arg><atom>watery</atom></arg><arg><string>滑</string></arg></structure>
+<structure><name>text</name><arg><atom>weak</atom></arg><arg><string>虚弱</string></arg></structure>
+<structure><name>text</name><arg><atom>wet</atom></arg><arg><string>潮湿</string></arg></structure>
+<structure><name>text</name><arg><atom>wheezing</atom></arg><arg><string>哮喘</string></arg></structure>
+<structure><name>text</name><arg><atom>white</atom></arg><arg><string>白</string></arg></structure>
+<structure><name>text</name><arg><atom>whooping</atom></arg><arg><string>百日咳</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_cold</atom></arg><arg><string>风寒</string></arg></structure>
+<structure><name>text</name><arg><atom>withered</atom></arg><arg><string>无神</string></arg></structure>
+<structure><name>text</name><arg><atom>worry</atom></arg><arg><string>忧虑</string></arg></structure>
+<structure><name>text</name><arg><atom>worse</atom></arg><arg><string>加剧</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>worse</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>加剧:</string></arg></structure>
+<structure><name>text</name><arg><atom>yellow</atom></arg><arg><string>黄</string></arg></structure>
+<structure><name>text</name><arg><atom>yes</atom></arg><arg><string>是</string></arg></structure>
+<structure><name>text</name><arg><atom>score</atom></arg><arg><string>Score</string></arg></structure>
+<structure><name>text</name><arg><atom>confirming_signs</atom></arg><arg><string>These signs confirm the diagnosis</string></arg></structure>
+<structure><name>text</name><arg><atom>negating_signs</atom></arg><arg><string>These confirming signs were not found</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_cold</atom></arg><arg><string>风冷</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_heat</atom></arg><arg><string>风热</string></arg></structure>
+<structure><name>text</name><arg><atom>warm_dryness</atom></arg><arg><string>温暖干燥</string></arg></structure>
+<structure><name>text</name><arg><atom>cool_dryness</atom></arg><arg><string>凉爽干燥</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_heat</atom></arg><arg><string>肺热</string></arg></structure>
+<structure><name>text</name><arg><atom>phlegm_damp</atom></arg><arg><string>痰湿</string></arg></structure>
+<structure><name>text</name><arg><atom>phlegm_heat</atom></arg><arg><string>痰热</string></arg></structure>
+<structure><name>text</name><arg><atom>liver_fire_invading_lungs</atom></arg><arg><string>肝火入侵肺部</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_yin_deficiency</atom></arg><arg><string>肺阴虚</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_qi_deficiency</atom></arg><arg><string>肺气虚</string></arg></structure>
+<structure><name>text</name><arg><atom>spleen_kidney_yang_deficiency</atom></arg><arg><string>脾肾阳虚</string></arg></structure>
+<structure><name>text</name><arg><atom>blood_stagnation</atom></arg><arg><string>血瘀</string></arg></structure>
+<structure><name>:-</name><arg><structure><name>end_module</name><arg><atom>chinese</atom></arg></structure></arg></structure>

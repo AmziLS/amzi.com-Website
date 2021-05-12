@@ -1,0 +1,52 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Procedural Approach</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Procedural Approach<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>The rules can be coded as a decision tree using procedural if-then-else statements:</p>
+<pre>if day = weekend
+   then price = 5
+else
+   if time = night
+      then price = 7
+      else price = 10</pre>
+            
+<p>Or should it be:</p>
+            <pre>if time = night
+   if day = weekend
+      then price = 5
+      else price = 7
+else
+   if day = weekend
+      then price = 7
+	  else price = 10</pre>
+<h2>Limitations</h2>
+<ul>
+  <li>If-then-else has control flow branching semantics, not pattern-matching</li>
+  <li>Require arbitrary decisions on nesting attributes to be tested</li>
+  <li>Original rules difficult to &quot;see&quot; in the code</li>
+  <li>Hard to get right (find the bug above)</li>
+  <li>Hard to maintain</li>
+</ul>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_010_intro_040.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_010_intro_060.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

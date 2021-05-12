@@ -1,0 +1,305 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->August 
+                      2003 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" -->
+		  <h1>AI Expert Newsletter</h1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p><h3>August 2003</h3>
+            <h2></h2>
+            
+            <ul>
+              <li><a href="#semantic_web">Semantic Web</a></li>
+              <li><a href="#conferences">Conferences</a></li>
+              <li><a href="#links">Links</a></li>
+            </ul>
+            
+            <h2><a name="semantic_web"></a>Semantic Web</h2>
+            <p>Clearly an interesting thing to do with the Internet is to create 
+              robots that can search out answers to questions. Suppose you wanted 
+              to find out who was the editor the Dr. Dobb's AI Expert Newsletter. 
+              Any human could answer that question in a minute or less by finding 
+              the DDJ Web site, clicking on newsletters and scanning down for 
+              the AI Expert description.</p>
+            <p>How would we write a program that could answer the same question? 
+              Well it wouldn't be easy. It would require using natural language 
+              understanding software to scan the document looking for words that 
+              might imply it found the editor, assuming it was able to figure 
+              out which page to look at in the first place.</p>
+            <p>It is a difficult program to write because the Web is designed 
+              for human use, not machine use.</p>
+            <p>Like with many programming tasks, the problem can be made much 
+              simpler with a better choice of data structures. If, in addition 
+              to free form text, a Web site had formal specifications of the content, 
+              then writing a program to answer the question becomes almost trivial.</p>
+            <p>For example, if there was some XML like this at the DDJ Web site:</p>
+            <pre>
+&lt;site name=ddj&gt;
+  ...
+  &lt;publication type=newsletter&gt;
+    &lt;name&gt;AI Expert&lt;/name&gt;
+	&lt;description&gt;blah blah blah&lt;/description&gt;
+    &lt;editor&gt;Dennis Merritt&lt;/editor&gt;
+  &lt;/publication&gt;
+  ...
+&lt;/site&gt;
+</pre>
+            <p>then it would be easy to write a program to answer the question. 
+              Of course, it would help if all Web sites used similar XML so our 
+              program could search more than just the DDJ site.</p>
+            <p>This is exactly what the Semantic Web initiative of the W3C is 
+              working on.</p>
+            <h3>Knowledge Representation and Reasoning Engines</h3>
+            <p>An AI application typically has two components: knowledge representation 
+              and reasoning engine. The knowledge representation is the semantics 
+              used to describe the knowledge in the particular application domain. 
+              The reasoning engine then uses that knowledge for the desired result.</p>
+            <p>The more expressive the knowledge representation, the simpler the 
+              reasoning engine can be.</p>
+            <p>The Semantic Web is an attempt to standardize a flexible, extensible, 
+              knowledge representation for the Web. Once this is started, a whole 
+              new world of applications for the Web will be possible.</p>
+            <p>The Semantic Web is built on layered technologies.</p>
+            <h3>XML - eXtensible Markup Language</h3>
+            <p>XML is the base technology. XML is a more general purpose HTML 
+              where tags can be defined that define the structure and components 
+              of various types of documents. The example used to start this discussion 
+              is some made-up XML with tags of my own creation that might describe 
+              the content on a Web site.</p>
+            <h3>RDF - Resource Description Framework</h3>
+            <p>The earliest AI researchers found that object-attribute-value triples 
+              were a very versatile way to represent knowledge. For example:</p>
+            <pre>
+car:color:blue
+car:doors:4
+</pre>
+            <p>This, in a nutshell, is what RDF is. Except they don't call them 
+              object-attribute-value triples, but rather subject-predicate-object 
+              triples. So in the example, car is the subject, color is the predicate 
+              and blue is the object.</p>
+            <p>RDF is very powerful, which means it's not quite as easy to read 
+              as the simple example that started this section. The newsletter 
+              description in RDF might look like:</p>
+            <pre>
+&lt;rdf:Description rdf:ID="AIX Newsletter"&quot;&gt;
+   &lt;example:title&gt;AI Expert&lt;/example:title&gt;
+   &lt;example:description&gt;blah blah blah&lt;/example:description&gt;
+   &lt;example:editor&gt;Dennis Merritt&lt;/example:editor&gt;
+&lt;/rdf:Description&gt;
+</pre>
+            <p>The rdf:ID refers to the subject. In this case it would be an anchor 
+              on the DDJ Web site named &quot;AIX Newsletter&quot;. There are 
+              three subject-predicate-object triples associated with that subject. 
+              The predicates are title, description, and editor, with the object 
+              value being enclosed in each of their tags.</p>
+            <p>What does the &quot;example:&quot; part of the syntax refer to? 
+              Common definitions of predicates that add universality to RDF.</p>
+            <h3>RDF Schemas</h3>
+            <p>While the predicates in RDF can be whimsical creations of your 
+              own design, that renders them relatively useless to anyone but yourself.</p>
+            <p>RDF provides a means for organizations to create libraries of predicate 
+              definitions that can then be used by anyone with information to 
+              catalog that could make good use of those definitions. These are 
+              often called &quot;metadata&quot;.</p>
+            <p>The Dublin Core is one such set of definitions that is similar 
+              to the properties (predicates) used in library card catalogs. We 
+              might have used them for the newsletter RDF, in which case we would 
+              use &quot;dc:&quot; instead of &quot;example:&quot;. We would also 
+              have provided some additional RDF syntax that indicated we were 
+              using the Dublin Core schema and a link to it.</p>
+            <p>But schemas and RDF only go so far.</p>
+            <h3>Web Ontology Language (OWL)</h3>
+            <p>It is often necessary to describe the relationships between different 
+              predicates, as well as the behavior of a given predicate. (See the 
+              June issue for more on ontologies.) Documenting these relationships 
+              further extends the power of reasoning software that will use the 
+              Semantic Web.</p>
+            <p>For example, a manufacturing RDF Schema might include the predicate 
+              isPartOf. We couldn't make full use of that predicate unless we 
+              knew that if X isPartOf Y and Y isPartOf Z then X isPartOf Z. In 
+              other words, isPartOf is transitive.</p>
+            <p>OWL provides the means for adding these higher level semantic descriptions 
+              of relationships. Armed with this knowledge, an application could 
+              then answer bill of material type questions for our manufacturing 
+              site.</p>
+            <h3>RDF Tools</h3>
+            <p>Typing RDF/OWL is tedious business, so a number of tools are being 
+              developed to make the creation and editing of RDF/OWL documents 
+              easier. See the links for details.</p>
+            <h3>Foundations in Logic</h3>
+            <p>The concepts of RDF and OWL come directly from logic. One can see 
+              in the relations/predicates the same roots that led to relational 
+              database and to logic programming langauges.</p>
+            <p>The mappings serve it well, as RDF has the potential to be the 
+              glue between data on Web sites and in relational databases stored 
+              at those sites and logic programming languages used to create intelligent 
+              Web robots.</p>
+            <h3>RDF in Action</h3>
+            <p>These examples come from the RDF primer on the W3C site.</p>
+            <p><b>Dublin Core Initiative</b> - Definitions of terms about documents, 
+              such as author, publisher, etc. This is a replication of the categories 
+              used in a library card catalog for deployment on the Web. Documents 
+              using the Dublin Core metadata can be searched automatically just 
+              as a human would use a card catalog in a library.</p>
+            <p><b>PRISM: Publishing Requirements for Industry Standard Metadata</b> 
+              - Metadata that builds on the Dublin Core and is defined by the 
+              publishing industry to serve their needs. For example it has terms 
+              to define the rights associated with a publication that can then 
+              be used to automatically search for the rights associated with a 
+              given published item. Magazines are using PRISM to document an article 
+              as soon as it is published.</p>
+            <p><b>RSS: RDF Site Summary</b> - Metadata used to describe news for 
+              a news feed. It allows the definition of a site as a &quot;channel&quot; 
+              and the latest news items from that channel. Each item has properties 
+              like title, description, link and date. A news service can then 
+              to go various channels, pick up the latest news items and then redisplay 
+              them or use them to answer search queries from their users. This 
+              is probably the most widely used RDF application on the Web.</p>
+            <p><b>CIM/XML</b> - The Common Information Model (CIM) specifies semantics 
+              for power system resources. CIM/XML uses RDF Schema and RDF to describe 
+              those semantics and has been adopted as the standard for communication 
+              of technical information betwen power transmission system operators.</p>
+            <p><b>Gene Ontology Consortium</b> - Created metadata for describing 
+              gene products to aid in the distribution and exchange of medical 
+              information.</p>
+            <p><b>Composite Capabilities/Preferences Profile (CC/PP)</b> - Metadata 
+              for the description of components and attributes that can be used 
+              dynamically to allow the restructuring of HTML data for a particular 
+              device or browser.</p>
+            <h2><a name="conferences"></a>Conferences</h2>
+            <p>The 5th IFAC/CIGR Workshop on Artificial Intelligence in Agriculture<br>
+              will be held in Cairo on March 8-10 2004. Deadline for submitting<br>
+              extended abstract is Sept. 30,2003. More Information can be found 
+              at<br>
+              <a href="http://www.claes.sci.eg/aia04">www.claes.sci.eg/aia04</a></p>
+            <h2><a name="links"></a>Links</h2>
+            <p><a href="http://www.w3c.org/2001/sw/">http://www.w3c.org/2001/sw/</a> 
+              - The W3C page describing work on the Semantic Web.</p>
+            <p><a href="http://www.scientificamerican.com/article.cfm?articleID=00048144-10D2-1C70-84A9809EC588EF21&catID=2">http://www.scientificamerican.com/article.cfm?articleID=00048144-10D2-1C70-84A9809EC588EF21&amp;catID=2</a> 
+              - An excellent Scientific American article by Tim Berners-Lee, James 
+              Hendler and Ora Lassila, describing the Semantic Web</p>
+            <p><a href="http://www.xml.com/pub/a/2001/01/24/rdf.html">http://www.xml.com/pub/a/2001/01/24/rdf.html</a> 
+              - Tim Bray's overview of RDF.</p>
+            <p><a href="http://www.w3.org/TR/rdf-primer/">http://www.w3.org/TR/rdf-primer/</a> 
+              - A more technical primer for RDF that provides a good introduction 
+              to the syntax and meaning of RDF statements and their expression 
+              in XML.</p>
+            <p><a href="http://owl.mindswap.org/">http://owl.mindswap.org/</a> 
+              - The first Semantic Web site?</p>
+            <p><a href="http://www.cs.umd.edu/projects/plus/SHOE/index.html">http://www.cs.umd.edu/projects/plus/SHOE/index.html</a> 
+              - Simple HTML Ontology Extensions (SHOE) is a precursor to RDF and 
+              OWL, and is easier to understand. The examples in the SHOE tutorial 
+              on this Web site make it clear how the Semantic Web will work.</p>
+            <p><a href="http://www.w3.org/TR/owl-features/">http://www.w3.org/TR/owl-features/</a> 
+              - An overview of OWL, an ontology built on top of RDF.</p>
+            <p><a href="http://www.w3c.org/RDF/#developers">http://www.w3c.org/RDF/#developers</a> 
+              - Resources for developers, listing a number of tools for working 
+              with RDF.</p>
+            <p><a href="http://www.swi-prolog.org/packages/semweb.html">http://www.swi-prolog.org/packages/semweb.html 
+              </a>- Prolog is a natural language for working with RDF and OWL 
+              and the developers of SWI-Prolog have created a tool kit for using 
+              RDF and OWL as well as tools for creating and editing RDF and OWL. 
+              These are part of SWI's Semantic Web Library.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

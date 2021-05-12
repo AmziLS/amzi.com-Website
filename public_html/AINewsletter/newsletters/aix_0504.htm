@@ -1,0 +1,2930 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->April 
+                      2005 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <H1>AI Expert Newsletter</H1>
+            <P><I>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</I></P>
+            <H3>April 2005</H3>
+
+
+
+
+<UL>
+
+
+
+<LI><A HREF="#introduction">Introduction</a></LI><LI>
+
+
+
+<A HREF="#introduction"></a><A HREF="#aware">Stottler Henke's teachable search program, Aware</A>
+
+    <UL>
+
+    <LI><A HREF="#aware_links">Links</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#visual_rules">Logic Programming Associates article on
+
+    <I>The Visual Development of Rule-Based Systems</I></A>
+
+    <UL>
+
+    <LI><A HREF="#visual_rules_links">Links</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#on_intelligence"><I>On Intelligence</I> - Palm Pilot 
+
+creator tackles the neocortex</A>
+
+    <UL>
+
+    <LI><A HREF="#on_intelligence_is_prediction">Intelligence is prediction, not behaviour</A></LI>
+
+    <LI><A HREF="#on_intelligence_unsupervised_learning">The neocortex as an unsupervised learner</A></LI>
+
+    <LI><A HREF="#on_intelligence_criticisms">Criticisms of Hawkins's model</A></LI>
+
+    <LI><A HREF="#on_intelligence_links">Links and other references</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#lod">Level-of-Detail Artificial Intelligence</A>
+
+    <UL>
+
+    <LI><A HREF="#lod_links">Links and other references</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#tennyson">Tennyson and Popular
+
+Misapprehensions of Technology</A>
+
+</LI>
+
+
+
+<LI><A HREF="#style">A Handful of Style Guides</A>
+
+    <UL>
+
+    <LI><A HREF="#style_prolog">Prolog</A></LI>
+
+    <LI><A HREF="#style_lisp">Lisp</A></LI>
+
+    <LI><A HREF="#style_good_naming">How to name things</A></LI>
+
+    <LI><A HREF="#style_whitehead">How to advance by not thinking</A></LI> 
+
+    <LI><A HREF="#style_bad_naming">How not to name things</A></LI>
+
+    <LI><A HREF="#style_hci">Human-computer interaction</A></LI>
+
+    <LI><A HREF="#style_writing">Writing well, and the Gettysburg Power Point Presentation</A></LI>
+
+    <LI><A HREF="#style_links">Links</A></LI>
+
+    </UL>
+
+</LI>
+
+
+
+</UL>
+
+
+
+
+
+
+
+<H2><A NAME="introduction">Introduction</A></H2>
+
+
+
+<P>
+
+One of the joys of living in the 21st Century is that I keep
+
+coming across entire areas of research whose existence I
+
+never suspected. This month, I write about one of these,
+
+Level-of-Detail AI, a technique used to simulate large numbers of
+
+background characters in virtual worlds and computer games.
+
+There's an article on good style in AI programming, and, following
+
+up an email from one of our readers,
+
+a look at the new book <I>On Intelligence</I>. First, two
+
+announcements. 
+
+<DIV ALIGN=right>
+
+<A HREF="http://www.j-paine.org/">Jocelyn Paine</A></DIV>
+
+<p></P>
+
+
+
+
+
+<H2><A NAME="aware">Stottler Henke's teachable search program, Aware</A></H2>
+
+
+
+<P>
+
+Keith Weinberger from 
+
+<A HREF="http://www.StottlerHenke.com">Stottler Henke</A> mailed to tell us about
+
+a new product released this year, 
+
+<A HREF="http://www.AwareSearch.com/prodinfo.htm">Aware</A>.
+
+Stottler Henke uses AI techniques to solve problems that defy 
+
+traditional solutions. 
+
+Aware is a technology that learns the user's 
+
+context while they search the Internet, using that context to increase the 
+
+relevancy of the results.
+
+You can learn more about Aware at
+
+<A HREF="http://www.AwareSearch.com/prodinfo.htm">www.AwareSearch.com/prodinfo.htm</A>.
+
+Future plans for Aware are to 
+
+make it an intelligent research assistant that will perform tasks 
+
+independently and in parallel with its user's online research. For
+
+more information, please contact Keith at keithw@StottlerHenke.com.
+
+</P>
+
+
+
+<H3><A NAME="aware_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://www.AwareSearch.com/prodinfo.htm">www.AwareSearch.com/prodinfo.htm</A> -
+
+Product information for Aware.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.StottlerHenke.com">www.StottlerHenke.com</A> -
+
+Stottler Henke's main site. Its news features some impressive awards and contracts.
+
+</P>
+
+
+
+
+
+<H2><A NAME="visual_rules">Logic Programming Associates article on
+
+<I>The Visual Development of Rule-Based Systems</I></A></H2>
+
+
+
+<P>
+
+Clive Spenser of <A HREF="http://www.lpa.co.uk">Logic Programming
+
+Associates</A> (LPA) sent me a link to his feature on
+
+<A HREF="http://www.pcai.com/web/45654/4.5.6.7/Visual_Rules.htm"><I>The Visual Development of Rule-Based Systems: Part II</I></A>.
+
+The feature, written for PC AI,
+
+presents a method of depicting rules using graphically-oriented decision charts,
+
+comparing them to knowledge representation
+
+using decision tables and decision rules.
+
+It illustrates this using LPA's <A HREF="http://www.lpa.co.uk/vsr.htm">VisiRule</A>
+
+graphical business rules and decision support system; however, the 
+
+feature is more general, and
+
+applies to rules developed with any system.
+
+</P>
+
+
+
+<H3><A NAME="visual_rules_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://www.pcai.com/web/45654/4.5.6.7/Visual_Rules.htm">www.pcai.com/web/45654/4.5.6.7/Visual_Rules.htm</A> -
+
+<I>The Visual Development of Rule-Based Systems: Part II</I>, by 
+
+Clive Spenser.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.pcai.com/web/V2ER8N/TH.02.52/Visual_Rules.htm">www.pcai.com/web/V2ER8N/TH.02.52/Visual_Rules.htm</A> -
+
+<I>The Visual Development of 
+
+Rule-Based Systems</I>, also for PC AI, by 
+
+Charles Langley and Clive Spenser. The later article follows
+
+on from this.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.lpa.co.uk">www.lpa.co.uk</A> -
+
+Logic Programming Associates. There are links to the PC AI
+
+article, as well as other work done using LPA products, at
+
+<A HREF="http://www.lpa.co.uk/new_lin.htm">www.lpa.co.uk/new_lin.htm</A>.
+
+The VisiRule page is <A HREF="http://www.lpa.co.uk/vsr.htm">www.lpa.co.uk/vsr.htm</A>.
+
+</P>
+
+
+
+
+
+<H2><A NAME="on_intelligence"><I>On Intelligence</I> - Palm Pilot 
+
+creator tackles the neocortex</A></H2>
+
+
+
+<P>
+
+Torbj&ouml;rn Wikstr&ouml;m mailed me about 
+
+<A HREF="http://www.onintelligence.org/">www.onintelligence.org/</A>,
+
+companion site 
+
+for the
+
+new book <I>On Intelligence</I>. The book
+
+has attracted much attention, and looking at an
+
+<A HREF="http://www.onintelligence.org/excerpt.php">excerpt</A>
+
+from its prologue,
+
+I can see why:
+
+<BLOCKQUOTE>
+
+<P>
+
+I am crazy about brains. I want to understand 
+
+how the brain works, not just from a philosophical perspective, 
+
+not just in a general way, but in a detailed nuts and bolts 
+
+engineering way. My desire is not only to understand what 
+
+intelligence is and how the brain works, but how to build 
+
+machines that work the same way. 
+
+I want to build truly intelligent machines. ...
+
+</P>
+
+
+
+<P>
+
+Our generation has access to a mountain of data about the 
+
+brain, collected over hundreds of years, and the rate we 
+
+are gathering more data is accelerating. The United States 
+
+alone has thousands of neuroscientists. Yet we have no productive 
+
+theories about what intelligence is or how the brain works as a 
+
+whole. Most neurobiologists don't think much about overall theories 
+
+of the brain because they're engrossed in doing experiments to 
+
+collect more data about the brain's many subsystems. And although 
+
+legions of computer programmers have tried to make computers 
+
+intelligent, they have failed. I believe they will continue 
+
+to fail as long as they keep ignoring the differences between 
+
+computers and brains.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+<I>On Intelligence</I> is written
+
+by 
+
+<A HREF="#on_intelligence_hawkins">Jeff Hawkins</A>, the founder of Palm Computing, and 
+
+<A HREF="#on_intelligence_blakeslee">Sandra Blakeslee</A>,
+
+a <I>New York Times</I> science writer. Hawkins
+
+has impressive achievements:
+
+<BLOCKQUOTE>
+
+For twenty-five years I have been passionate about mobile 
+
+computing. In the high-tech world of Silicon Valley, I am 
+
+known for starting two companies, Palm Computing and Handspring, 
+
+and as the architect of many handheld computers and cell 
+
+phones such as the PalmPilot and the Treo.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+What's relevant to this article, however, is that other
+
+interest with which I started: Hawkins is 
+
+crazy about brains. For much of his life,
+
+he has tried to understand the nature of intelligence.
+
+He explains his ideas in
+
+<I>On Intelligence</I>.
+
+<P>
+
+
+
+
+
+<H3><A NAME="on_intelligence_is_prediction"></a>Intelligence is prediction, not behaviour</H3>
+
+
+
+<P>
+
+He states his theory in the prologue, in very general terms:
+
+AI researchers have tried programming computers to act like humans without first 
+
+answering what intelligence is. Only when we understand
+
+this, and we also understand how the brain thinks, 
+
+can we build intelligent machines. We have failed 
+
+because our assumptions have been wrong. The most wrong
+
+was that
+
+intelligence is defined by behavior:
+
+<BLOCKQUOTE>
+
+What is intelligence if it isn't defined by behavior?
+
+The brain uses vast amounts of memory to create a model of 
+
+the world. Everything you know and have learned is stored 
+
+in this model. The brain uses this memory-based model to 
+
+make continuous predictions of future events. It is the 
+
+ability to make predictions about the future that is the 
+
+crux of intelligence. I will describe the brain's 
+
+predictive ability in depth; it is the core idea in the book.
+
+</BLOCKQUOTE>
+
+This predictive intelligence is seated in the 
+
+<A HREF="http://www.le.ac.uk/bs/resources/bs3033/cortexlecture.pdf">neocortex</A>, that
+
+walnut-convoluted "rind" which one sees from above and which is the
+
+most evolutionarily recent part of the brain.
+
+It's the part that Michael
+
+Miller, editor of <I>PC Magazine</I>, describes in his
+
+<A HREF="http://www.pcmag.com/article2/0,1759,1646196,00.asp">review</A>
+
+of <I>On Intelligence</I> as
+
+"a napkin six business cards 
+
+thick with 30 trillion synapses". One of
+
+its functions is
+
+perception - this may help locate it, since as well as the
+
+visual and auditory cortices, it includes the
+
+<A HREF="http://www.macalester.edu/~psych/whathap/UBNRP/Phantom/homunculus.html">
+
+somatosensory homunculus</A>. This is the
+
+distorted mannequin with huge
+
+lips and hands that one sees in
+
+pictures showing which areas of the brain
+
+respond to sensations in which parts of the body.
+
+<p></P>
+
+
+
+<P>
+
+According to Hawkins,
+
+all parts of the neocortex work on the same 
+
+principles. The
+
+key to understanding the neocortex is understanding these 
+
+common principles and, in particular, 
+
+its hierarchical structure. 
+
+</P>
+
+
+
+<P>
+
+All the above is very unexplicit. Perhaps
+
+I missed some links, but I could find nothing more detailed
+
+on the site. How do
+
+these grand claims
+
+fare when we try to embody them in weights, nodes and update-dynamics,
+
+in a clunky, irritating, bug-ridden, real-world neural net?
+
+Has Hawkins embodied
+
+his theory in a computational model? If so,
+
+how does it work, how well does it predict 
+
+psychological phenomena, and how does it
+
+improve on previous researchers' models? The
+
+nearest the site comes to answering these questions is its
+
+<A HREF="http://www.onintelligence.org/resources.php">additional 
+
+resources page</A>, which links to Hawkins's 1986 PhD proposal 
+
+<A HREF="http://www.onintelligence.org/resources/Hawkins1986.pdf"><I>An 
+
+Investigation of Adaptive Behavior Towards a Theory of 
+
+Neocortical Function</I></A>, and to coworker
+
+Dileep George's
+
+<A HREF="http://www.stanford.edu/~dil/invariance/">reports and
+
+simulations</A> on 
+
+visual invariance - how our visual system is able to recognize 
+
+the same object from different points of view.
+
+</P>
+
+
+
+
+
+<H3><A NAME="on_intelligence_unsupervised_learning">The neocortex as an unsupervised learner</A></H3>
+
+<A NAME="on_intelligence_keller"></A>
+
+
+
+<P>
+
+Such questions are not answered either by
+
+the reviews linked from the site. However, I found
+
+others that told me more. Matt Keller's Weblog gives a  
+
+<A HREF="http://www.littleredbat.net/mk/blog/archive/2005/3/11/">concise summary</A>:
+
+<BLOCKQUOTE>
+
+Hawkins's theory is really a theory of how the neocortex works; 
+
+the author largely dismisses the contributions 
+
+of the 'primitive' brain to intelligence. The gist of the 
+
+theory is that the neocortex implements a 
+
+hierarchical memory-prediction machine; it tries to 
+
+predict the future based on the patterns it has stored (memory). 
+
+As sensory input flows up into the various layers of 
+
+the neocortex, the neocortex tries to match the input to previously 
+
+seen patterns. Matched patterns at lower levels create 
+
+abstractions to be used by higher levels. The flow of 
+
+information proceeds not just up, but down the hierarchy: 
+
+when a pattern matches, lower levels are biased about what 
+
+to expect next. Hawkins makes heavy use of the anatomical 
+
+fact that there are more 'down' pathways than 'up' pathways 
+
+to support this argument. Information is processed into 
+
+higher and higher abstractions as the signals propagate 
+
+upward, predictive information trickles downward as a result. 
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+Going further, I found a 
+
+<A HREF="http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=526780">review</A> by
+
+Peter Dayan of the Gatsby 
+
+Computational Neuroscience Unit at University College London.
+
+He starts with this titillating paragraph:
+
+<BLOCKQUOTE> 
+
+Is Michael Moore liberal America's Rush Limbaugh? If so, is 
+
+he filling a much needed, or a much lamented, gap in turning 
+
+issues that are really cast in pastel shades into Day-Glo relief? 
+
+In this hale monograph, Jeff Hawkins (rendered by Sandra Blakeslee) 
+
+plays exactly this role for theoretical neuroscience. As a pastel 
+
+practitioner myself, but furtively sharing many of Hawkins' 
+
+prejudices and hunches about computational modelling in 
+
+neuroscience, I am caught between commendation and consternation.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+To summarise Dayan's review - which has useful
+
+links to past work, and looks to a non-neuroscientist like me to be an excellent
+
+starting point if you're interested in cortical
+
+modelling -
+
+Hawkins models the neocortex as
+
+unsupervised learning; that is,
+
+it learns without being told what
+
+structure and patterns exist in
+
+its inputs, extracting them by using
+
+general statistical properties. From these, to quote from
+
+<I>On Intelligence</I>:
+
+<BLOCKQUOTE>
+
+To make predictions of future events, your 
+
+neocortex has to store sequences of patterns. To recall appropriate 
+
+memories, it has to retrieve patterns by their similarity to past 
+
+patterns (auto-associative recall). And finally, memories have to be 
+
+stored in an invariant form so that the knowledge of past events can be 
+
+applied to new situations that 
+
+are similar but not identical to the past.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+    
+
+<H3><A NAME="on_intelligence_criticisms">Criticisms of Hawkins's model</A></H3>
+
+
+
+<P>
+
+Noting that Hawkins is
+
+not the first researcher to model the cortex, Dayan compares his
+
+model 
+
+with previous work. One of his criticisms is that
+
+Hawkins neglects probability theory and statistics.
+
+As researchers developed unsupervised 
+
+learning, they increasingly realised that
+
+rather than devising their own ad-hoc methods for recognising
+
+structure in inputs, it was better to use the methods and mathematics of
+
+probability theory and statistics. Compared with these, Hawkins's auto-associative recall
+
+is theoretically and practically restricted.
+
+(Regardless of how it applies to Hawkins, this
+
+has been a common theme in AI.
+
+Probability theorists and statisticians have often
+
+complained that neural-network researchers 
+
+ignore their subject. One sign their
+
+research was maturing was when books started appearing
+
+that brought the two together, enabling
+
+the long-developed mathematics of statistics to be applied to neural nets.) 
+
+</P>
+
+
+
+<P>
+
+A different kind of problem with a model that
+
+ignores everything but the neocortex is that 
+
+emotion is likely to be important to reasoning, for example in evaluating desirable
+
+versus undesirable outcomes.
+
+Since brain structures outside the neocortex - the amygdala, for
+
+example -
+
+contribute to our emotions, no model of intelligence
+
+should neglect them. 
+
+</P>
+
+
+
+<P>
+
+Yet another difficulty is the "carpet problem". For almost all tasks other than
+
+haggling in a tourist-trap souk, the complicated visual
+
+texture of carpets is likely to be irrelevant. It would
+
+be a waste of resources for our brains to try representing it;
+
+and evolution is good at ensuring that brains don't
+
+waste resources on computations that don't matter. (It has been
+
+suggested that this is why we lose the childhood ability to
+
+easily learn languages; it was unnecessary once we'd
+
+learnt our parents' language, and the neural circuitry involved could be better 
+
+redeployed for something else.) Carpets are just one example; in
+
+general, it's likely that our brains will have elaborate methods
+
+for identifying and throwing away patterns that are not relevant to a particular
+
+task. <I>On Intelligence</I> ignores this.
+
+</P>
+
+
+
+<P>
+
+Dayan's review is not all critical: he describes 
+
+with favour Hawkins's solution to a point mentioned
+
+<A HREF="#on_intelligence_keller">earlier</A>: how the neocortex uses patterns already encountered
+
+to tell areas nearer the sensory inputs what
+
+kinds of information they should expect next:
+
+<BLOCKQUOTE>
+
+This part has interesting suggestions, such as a neat solution 
+
+for a persistent dilemma for proponents of hierarchical models. 
+
+The battle comes between cases in which information in a higher 
+
+cortical area, acting as prior information, boosts activities in a lower 
+
+cortical area, and cases of predictive coding, in which the higher cortical 
+
+area informs the lower cortical area about what it already knows and therefore 
+
+suppresses the information that the lower area would otherwise just repeat up the 
+
+hierarchy. The proposed solution involves the invention (or rather prediction) 
+
+of two different sorts of neurons in a particular layer of cortex.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+Quite apart from brain modelling, <I>On Intelligence</I> 
+
+contains some autobiography. 
+
+As Dayan says,
+
+<BLOCKQUOTE>
+
+The history of modern computing is very brief and (at least 
+
+judging by the sales) very glorious, and this story is 
+
+most entertaining. Don't miss the wonderfully faux naive 
+
+letter from Hawkins to Gordon Moore asking, 
+
+in 1980, to set up a research group within Intel devoted to the brain.
+
+</BLOCKQUOTE>
+
+Web pages and postings demonstrate that <I>On Intelligence</I>
+
+has inspired lots of people. The best
+
+advice seems to be: read it; enjoy the biographical parts; 
+
+treat Hawkins's theory with caution and check it against
+
+expert criticism; be inspired
+
+about computing and AI. Always be inspired.
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="on_intelligence_links">Links and other references</A></H3>
+
+
+
+<P>
+
+<I>On Intelligence</I>, by Jeff Hawkins and Sandra Blakeslee. 
+
+Available as an e-book as well as on paper.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.onintelligence.org/">www.onintelligence.org/</A> -
+
+The <I>On Intelligence</I> site. This feature's
+
+opening quote comes from the excerpt
+
+at 
+
+<A HREF="http://www.onintelligence.org/excerpt.php">www.onintelligence.org/excerpt.php</A>.
+
+The "Additional Resources" page is at
+
+<A HREF="http://www.onintelligence.org/resources.php">www.onintelligence.org/resources.php</A>,
+
+and links to Hawkins's 1986 paper <I>An 
+
+Investigation of Adaptive Behavior Towards a Theory of 
+
+Neocortical Function</I>.
+
+</P>
+
+
+
+<P>
+
+<A NAME="on_intelligence_hawkins"></A>
+
+<A HREF="http://www.pencomputing.com/palm/Pen33/hawkins1.html">www.pencomputing.com/palm/Pen33/hawkins1.html</A> -
+
+<I>Jeff Hawkins:
+
+The man who almost single-handedly revived 
+
+the handheld computer industry</I>, by 
+
+Shawn Barnett, Pen Computing. Three-page account of Hawkins's
+
+life and work, from the crazy air-cushion
+
+craft he helped build on the family boatyard
+
+in the mid-1960s, through the GRiDPAD handheld
+
+computer and his programming language GRiDTask, to
+
+his work at Handspring.
+
+
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.technologyreview.com/articles/99/07/qa0799.asp">www.technologyreview.com/articles/99/07/qa0799.asp</A> -
+
+<I>That's Not How My Brain Works...</I>.
+
+Interview with Hawkins for <I>MIT Technology Review</I>, by Charles Mann.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.stanford.edu/~dil/invariance/">www.stanford.edu/~dil/invariance/</A> -
+
+Dileep George's page on his visual-invariance research.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.rni.org/">www.rni.org/</A> -
+
+The Redwood Neuroscience Institute, founded by Hawkins.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.pcmag.com/article2/0,1759,1646196,00.asp">www.pcmag.com/article2/0,1759,1646196,00.asp</A> -
+
+<I>Video: Taking It with You</I>.
+
+Michael Miller, editor of <I>PC Magazine</I>,
+
+reviews <I>On Intelligence</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.littleredbat.net/mk/blog/archive/2005/3/11/">www.littleredbat.net/mk/blog/archive/2005/3/11/</A> -
+
+Matt Keller's concise account of <I>On Intelligence</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=526780">www.pubmedcentral.nih.gov/articlerender.fcgi?artid=526780</A> -
+
+<I>Palmistry</I>. Peter Dayan,
+
+Gatsby Computational Neuroscience Unit, University College London,
+
+reviews <I>On Intelligence</I>. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://nba.uth.tmc.edu/homepage/eagleman/10Q/book/Ch6_Intelligence_EaglemanChurchland_10Questions.pdf">nba.uth.tmc.edu/homepage/eagleman/10Q/book/Ch6_Intelligence_EaglemanChurchland_10Questions.pdf</A> -
+
+Draft Chapter 6 of the forthcoming book <I>Ten Unsolved Questions of Neuroscience</I> by David Eagleman and 
+
+Patricia Churchland. The section on <I>Pro Prediction</I> discusses Hawkins's model.
+
+An interesting point is made earlier, under <I>Stronger association</I>, that
+
+too-strong associative learning is not a good thing - it leans
+
+towards schizophrenia.
+
+</P>
+
+
+
+<!-- Brain anatomy and the neocortex -->
+
+
+
+<P>
+
+<A HREF="http://www.le.ac.uk/bs/resources/bs3033/cortexlecture.pdf">www.le.ac.uk/bs/resources/bs3033/cortexlecture.pdf</A> -
+
+<I>Functional Organization of the Neocortex</I>, from
+
+Leicester University School of Biological Sciences. Twenty-four
+
+slides showing pictures and diagrams of the neocortex, its
+
+divisions and functions, and its neurological makeup, including
+
+the cortical columns. The first slide points out the cortical
+
+areas which respond to beer, football, TV, curry, and email.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.macalester.edu/~psych/whathap/UBNRP/Phantom/homunculus.html">www.macalester.edu/~psych/whathap/UBNRP/Phantom/homunculus.html</A> -
+
+<I>He Ain't No Marvel Comic</I>. Diagram and description of the somatosensory 
+
+homunculus, from Macalester College Minnesota. The page also
+
+links to theories on the phantom limb phenomenon mentioned below.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://peace.saumag.edu/faculty/Kardas/Courses/GPWeiten/C3BioBases/Cerebrum.html">peace.saumag.edu/faculty/Kardas/Courses/GPWeiten/C3BioBases/Cerebrum.html</A> -
+
+Short page on the neocortex, which I like for the sentences:
+
+<BLOCKQUOTE>
+
+The analysis and interpretation of vision is extremely complex and accounts 
+
+for the largest percentage of the brains's activity. If you were to receive 
+
+a monthly bill from your brain, the largest portion of that bill would be 
+
+for vision.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<!-- Other: Blakeslee and Ramachandran -->
+
+
+
+<P>
+
+<A NAME="on_intelligence_blakeslee"></A>
+
+<A NAME="on_intelligence_ramachandran"></A>
+
+<A HREF="http://www.edge.org/3rd_culture/bios/blakeslee.html">www.edge.org/3rd_culture/bios/blakeslee.html</A> -
+
+<I>Edge</I> page on Sandra Blakeslee and her other books.
+
+One of these, coauthored with neuroscientist Vilayanur Ramachandran, is
+
+<I>Phantoms in the Brain</I>. I recommend this book. It 
+
+probes the brain by examining cases
+
+where consciousness goes wrong: the
+
+phantom limb experienced by amputees; people who
+
+are convinced that their parents have been replaced by
+
+identical-looking impostors; the man who
+
+hallucinated cartoons and - if I remember 
+
+correctly - could see a circus in the palm of his hand.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.bbc.co.uk/radio4/reith2003/">www.bbc.co.uk/radio4/reith2003/</A> -
+
+Ramachandran's <I>The Emerging Mind</I>, the BBC
+
+Reith Lectures for 2003. Links to transcripts
+
+and audio versions of the lectures.
+
+</P>
+
+
+
+
+
+<H2><A NAME="lod">Level-of-Detail Artificial Intelligence</A></H2>
+
+
+
+<P>
+
+In one of my books - probably a Gary Larson <I>Farside</I> 
+
+collection - there's a cartoon
+
+entitled <I>The Fake McCoys</I>. It shows Mom, Pop 
+
+and two kids. A fake Mom, Pop and two kids: wooden cutouts,
+
+with nothing behind but dust and tumbleweeds, like the plywood
+
+street frontages in an old-fashioned Western. When making a film,
+
+you need build no more than the viewer will see; and
+
+if your script is sufficiently wooden, you can save a lot of
+
+expense by also letting your actors be wooden.
+
+</P>
+
+
+
+<P>
+
+This idea doesn't only apply to films. Books on cartooning
+
+teach that you should render the background in less detail than the
+
+middleground, and the middleground in less detail than the foreground. Similarly,
+
+in a computer game, to render a dragon that's
+
+far away and occupies only a few pixels, you need less detail than if
+
+the player is staring down the dragon's flameducts, its mouth
+
+gaping over the entire screen. This - adapting an image's resolution
+
+to the detail needed - is "Level-of-Detail graphics".
+
+What I discovered by accident when browsing through Brian
+
+Schwab's <I>AI Game Engine Programming</I>
+
+is that there is a related field, "Level-of-Detail AI", or LOD AI. This tries
+
+to economise on the resources needed to implement 
+
+artificially-intelligent characters in computer games, 
+
+using a lot of AI where its effects are most needed and
+
+less where they're less important.
+
+It must be particularly useful
+
+for a game like Elixir Studio's 
+
+<A HREF="http://www.elixir-studios.co.uk/nonflash/republic/republic.htm">Republic</A>,
+
+which aims to simulate an entire city and
+
+could have hundreds of non-player characters interacting with the player
+
+during a game.
+
+</P>
+
+
+
+<P>
+
+Although details can be complicated, LOD graphics is
+
+conceptually simple (and I suspect was
+
+around under such names
+
+as "multiple resolution meshes" before the phrase 
+
+"Level-of-Detail graphics" was coined). 
+
+Resolution is a well-understood concept, and 
+
+easy to handle mathematically, being a numeric,
+
+continuously variable, quantity.
+
+It's clear what it means for resolution to depend on the detail
+
+needed in an image, varying continuously with, say,
+
+its distance from the viewer. It's not so clear
+
+what it means to vary the intelligence of a non-player character with
+
+their importance to the player. 
+
+</P>
+
+
+
+<P>
+
+So far, there seems not to be very much about LOD AI on the
+
+Web. The best reference I
+
+found (apart from one which required a paid subscription) is the paper
+
+<A HREF="http://www.cs.tcd.ie/publications/tech-reports/reports.02/TCD-CS-2002-12.pdf"><I>Men 
+
+Behaving Appropriately: Integrating the Role Passing Technique into the ALOHA System</I></A>.
+
+ALOHA stands for Adaptive
+
+Level of Detail of Human Animation; its aim is to animate and render
+
+virtual humans in real-time. It uses LOD to reduce the
+
+accuracy of the simulated characters when the viewer is unlikely
+
+to notice. 
+
+As the authors say,
+
+"if a user views a crowd from a distance, there is no need to have
+
+computationally expensive models and sophisticated animations, as the user will not perceive the
+
+difference. However if the user zooms up closer, the realism of the virtual human’s model and its
+
+motion should be improved".
+
+</P>
+
+
+
+<P>
+
+The paper starts with three types of LOD: geometric,
+
+animation, and gesture and conversational. Geometric LOD is LOD
+
+graphics, applied to a character's skin. Animation LOD allows the
+
+game engine to request different levels of detail for animation:
+
+to decide how to resolve joint angles with
+
+inverse kinematics, to decide how many frames a movement should receive, and whether to simulate some motion
+
+using a
+
+simple kinematic interpolation or a dynamic technique. The most important characters 
+
+get the smoothest and most realistic animation.
+
+</P>
+
+
+
+<P>
+
+The third item, gesture and conversational LOD,
+
+is conceptually similar to animation LOD, although its implementation
+
+is probably very different, in that it uses the Behaviour Expression Animation Toolkit
+
+developed by the Gesture and Narrative Language group at the MIT Media Lab.
+
+This takes text to be spoken by a character,
+
+and computes nonverbal behaviours -  gestures and facial expressions - together with
+
+synthesised speech, including intonation and pauses. The authors suggest
+
+incorporating an LOD version of the toolkit into ALOHA. This would mean that 
+
+the LOD resolver - that part of the system which decides on
+
+the detail necessary for a particular object -
+
+could render realistic social interaction between important characters,
+
+using a lower level of detail for characters
+
+socialising in the background.
+
+</P>
+
+
+
+<P>
+
+Impressive though these techniques are, they're not what many people would call AI.
+
+However, after introducing them, the authors 
+
+go on to something more conventionally AI-ish. 
+
+Imagine a game
+
+where the player is spending a lot of time moving in and out
+
+of a bar. To add realism,
+
+the game's designers might populate it with background characters: the darts players; the
+
+young couple having a bit of nookie in a corner; the maudlin drunks. To make
+
+them act realistically, each character could be made to obey a preset script
+
+whenever the player enters the bar. A script can be implemented
+
+in various ways: as rules, a finite-state machine, or whatever. As
+
+it runs, it will call for the character it controls to perform various
+
+actions: throwing a dart, chalking up a score, getting another beer.
+
+The symbols representing these actions can be fed to the animation and gesture-and-conversation
+
+systems, which can then display the appropriate movements, appropriately synchronised.
+
+</P>
+
+
+
+<P>
+
+Although this may look realistic the first time the player enters the
+
+bar, it will look completely unrealistic on future entrances, because
+
+the background characters will act exactly the same way each time. 
+
+To overcome this, say the authors of 
+
+<I>Men 
+
+Behaving Appropriately</I>, such background characters
+
+need to be made persistent: modelled all the time <I>at least to some extent</I>, 
+
+regardless of their location relative to
+
+that of the player. But - to save on computation - they should
+
+be modelled in less detail when not visible to
+
+the player. This is done by splitting the characters' AI into
+
+separate abilities, one ability for each kind of situation
+
+the character will encounter. Thus we might have a bartending
+
+ability, a darts-playing ability, a caf&eacute;-visiting ability,
+
+a shopping-at-newsagents ability, and so on. 
+
+</P>
+
+
+
+<P>
+
+The authors call these abilities 
+
+"roles". The game engine only activates a role when
+
+the character to which it belongs gets placed in the appropriate situation -
+
+thus each character's bartending role is inactive except when
+
+the character finds themselves bartending. The authors call this "role-passing".
+
+Roles have memory, so that information persists from one invocation of a 
+
+role to
+
+the next, otherwise the technique would be no use. But there's no need to
+
+pass information between different roles, so resources will only ever
+
+be needed for a small
+
+fraction of any background character's total intelligence.
+
+As the authors say,
+
+<BLOCKQUOTE>
+
+The main advantage of role-passing is the simplicity it lends to populating a virtual world with
+
+agents. Placing agents within a novel situation involves simply defining a new role. This eases some
+
+of the complications involved in attempting to design very general agents capable of behaving
+
+realistically in many situations and avoids having to write completely separate agents for different
+
+roles within a single scene.
+
+</BLOCKQUOTE>
+
+For this kind of LOD AI to work, one probably needs to craft the virtual world
+
+carefully, so that the abilities needed to cope with different situations
+
+can be made distinct from one another.
+
+<p></P>
+
+
+
+<P>
+
+In <I>Men 
+
+Behaving Appropriately</I>, roles are implemented as motivation networks.
+
+The idea will be familar to students of animal behaviour: animal psychology
+
+is often modelled in terms of motivations like "seek food", "seek shelter", "eat",
+
+"sleep", whose levels increase over time (usually as a function
+
+of phsyiology and sensory input) until one motivation exceeds a threshold and
+
+triggers appropriate behaviour. <I>Men 
+
+Behaving Appropriately</I> give a motivation network for a drinker visiting a bar; the
+
+motivations are "get drink", "sit down" and "chat". 
+
+</P>
+
+
+
+<P>
+
+Roles and motivation networks are only one way to implement LOD AI. There are many
+
+other possible implementations; with them, games can be
+
+populated with many more actors than otherwise possible, and so enhance the
+
+illusion of reality.
+
+</P>
+
+
+
+
+
+<H3><A NAME="lod_links">Links and other references</A></H3>
+
+
+
+<!-- Schwab's book -->
+
+
+
+<P>
+
+<I>AI Game Engine Programming</I> by Brian Schwab, published by Charles River Media.
+
+The publisher's description of the book is at
+
+<A HREF="http://www.charlesriver.com/Books/BookDetail.aspx?productID=86952">www.charlesriver.com/Books/BookDetail.aspx?productID=86952</A>.
+
+</P>
+
+
+
+<!-- LOD -->
+
+
+
+<P>
+
+<A HREF="http://www.stefan-krause.com/">www.stefan-krause.com/</A> -
+
+<I>OpenGL LOD Demo</I>, by Stefan Krause. Shows LOD graphics in
+
+action, with pictures of a fighter and pilot rendered with
+
+various triangle counts.
+
+</P>
+
+
+
+<A HREF="http://www.devmaster.net/articles/graphics_alg/">www.devmaster.net/articles/graphics_alg/</A> -
+
+<I>Advanced Graphics Algorithms</I>. Henri Hakl's
+
+page, with information about some LOD graphics techniques.
+
+
+
+<P>
+
+<A HREF="http://www.cs.tcd.ie/publications/tech-reports/reports.02/TCD-CS-2002-12.pdf">www.cs.tcd.ie/publications/tech-reports/reports.02/TCD-CS-2002-12.pdf</A> -
+
+<I>Men Behaving Appropriately: Integrating the Role Passing Technique into the ALOHA System</I>,
+
+by Brian MacNamee, Simon Dobbyn, Padraig Cunningham, and Carol O’Sullivan,
+
+Trinity College Dublin.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.naccq.ac.nz/conference04/proceedings_03/pdf/291.pdf">www.naccq.ac.nz/conference04/proceedings_03/pdf/291.pdf</A> -
+
+<I>Modelling layers of artificial intelligence within a virtual world</I>, by
+
+John Jamieson, Eastern Institute of Technology, New Zealand.
+
+</P>
+
+
+
+<!-- General game AI, not limited to LOD -->
+
+
+
+<P>
+
+<A HREF="http://www.bcs-sgai.org/ai2004/appstream_abstract.htm">www.bcs-sgai.org/ai2004/appstream_abstract.htm</A> -
+
+<I>Artificial Intelligence for Computer Games</I>, by
+
+Peter Astheimer,
+
+University of Abertay Dundee. One-page abstract for a keynote lecture,
+
+listing some areas - LOD included - where AI can improve games.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.aiwisdom.com/bygenre_rpg.html">www.aiwisdom.com/bygenre_rpg.html</A> -
+
+AIWisdom.com's page on adventure and role-playing games. Links to
+
+various books on game AI, including a chapter
+
+by Mark Brockington of BioWare in <I>AI Game Programming Wisdom</I>:
+
+<BLOCKQUOTE>
+
+With thousands of objects demanding AI time slices in Neverwinter Nights, 
+
+it would be difficult to satisfy all creatures and maintain a playable 
+
+frame rate. The level-of-detail AI schemes used allowed the game 
+
+to achieve the perception of thousands of actors thinking simultaneously. 
+
+The article discusses how to subdivide your game objects into categories, 
+
+and how certain time-intensive actions (such as pathfinding and combat) 
+
+can be reduced to make more efficient use of the time available to AI.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+<A HREF="http://ai.eecs.umich.edu/people/laird/gamesresearch.html">ai.eecs.umich.edu/people/laird/gamesresearch.html</A> -
+
+Links to papers on AI and computer games research, by John Laird, 
+
+University of Michigan AI Laboratory. Looks like a 
+
+useful resource on games AI in general, and includes
+
+Laird's own work on
+
+Haunt 2, an adventure-style game where human-level AI characters really make a difference.
+
+I don't know whether any
+
+of the papers mention LOD.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cse.lehigh.edu/~munoz/CSE497/classes/Patrick1.ppt">www.cse.lehigh.edu/~munoz/CSE497/classes/Patrick1.ppt</A> -
+
+Slide presentation on <I>Multi-tiered AI</I>, by 
+
+Patrick Schmid. Describes an RTS (Real-Time Strategy)
+
+game, which implements differing levels of
+
+AI corresponding to units of an army's organisational
+
+structure:
+
+soldier AI, squad AI, platoon AI, and so on up to
+
+army AI. It's a different use of levels of
+
+detail from those I've discussed, 
+
+but an interesting presentation, with good
+
+screen shots, and nice examples of 
+
+why the game needs different levels of
+
+terrain mapping.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.robotwisdom.com/ai/stories.html">www.robotwisdom.com/ai/stories.html</A> -
+
+A page on Jorn Barger's "fractal thickets", his idiosyncratic version
+
+of Schank-style scripts for interactive fiction. Fractal data-structures
+
+ought to have some uses in modelling events at different levels of detail - this
+
+is the only attempt I've found. There's more on it at
+
+<A HREF="http://www.robotwisdom.com/ai/thicketfaq.html">www.robotwisdom.com/ai/thicketfaq.html</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.acmqueue.org/modules.php?name=Content&pa=showpage&pid=117">www.acmqueue.org/modules.php?name=Content&pa=showpage&pid=117</A> -
+
+An "ACM Queue" short feature on
+
+game AI by Alexander Nareyek of Carnegie Mellon, looking at techniques such as
+
+A* search and finite-state machines. Links
+
+to other
+
+features such as
+
+<A HREF="http://www.acmqueue.org/modules.php?name=Content&pa=showpage&pid=121"><I>Being a jerk may not be against game rules, but 
+
+developers should do more to stop it</I></A>.
+
+ACM Queue have some tempting content, but the
+
+design is distracting: page-navigation
+
+links are buried amongst the undergrowth, and animated images flicker
+
+away in one's peripheral vision. The Association 
+
+For Computing Machinery, of all
+
+people, should be able to design a more
+
+ergonomic site. A PDF version of what looks like the
+
+same feature is at
+
+<A HREF="http://www.ai-center.com/publications/nareyek-acmqueue04.pdf">www.ai-center.com/publications/nareyek-acmqueue04.pdf</A>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.elixir-studios.co.uk/nonflash/republic/republic.htm">www.elixir-studios.co.uk/nonflash/republic/republic.htm</A> -
+
+Elixir Studio's <I>Republic</I> page
+
+</P>
+
+
+
+
+
+<H2><A NAME="tennyson">Tennyson and Popular
+
+Misapprehensions of Technology</A></H2>
+
+
+
+<P>
+
+In his poem <I>Locksley Hall</I>, Tennyson
+
+wrote 
+
+<BLOCKQUOTE>
+
+Let the great world spin for ever 
+
+down the ringing grooves of change. 
+
+</BLOCKQUOTE>
+
+Using the railways as a metaphor for the
+
+driving force of technological change,
+
+he had failed to realise that trains run
+
+on rails, not in grooves. Can you think
+
+of similarly succinct misunderstandings of
+
+AI and computing? Send them to
+
+<A HREF="http://www.j-paine.org/">popx@j-paine.org</A> and I'll publish them
+
+in the next issue.
+
+<p></P>
+
+
+
+
+
+<H2><A NAME="style"></a>A Handful of Style Guides</H2>
+
+
+
+<P>
+
+Googling for Prolog utilities the other
+
+day, I came across a Prolog style guide by Michael Covington,
+
+author of <I>Prolog Programming in Depth</I> and 
+
+<I>Natural Language Processing for Prolog Programmers</I>. 
+
+I thought it would be interesting to see what style guides I could find for the
+
+other AI languages. Not just mainstream languages like
+
+Lisp, but relatively obscure ones such as OPS5, SOAR, and 
+
+Poplog. What's the best way to structure an OPS5 knowledge base,
+
+which can contain hundreds or thousands of forward-chaining
+
+rules but has no module system? How can you best decompose 
+
+a problem into SOAR's multiple
+
+problem spaces? How should you write for Poplog, which
+
+allows you to mix
+
+Pop-11, Lisp, Prolog, ML and the 
+
+SimAgent production-rule language in a single source file,
+
+gives you access to the call-stack, and provides
+
+closures as first-class values?
+
+</P> 
+
+
+
+<P>
+
+As it turned out, I found almost nothing outside Prolog and
+
+Lisp - it surprised me not to find guides by expert-systems implementors
+
+on good practice for their knowledge-representation
+
+languages - although the Cyc
+
+<A HREF="http://www.cyc.com/cycdoc/ref/style-guide.html"><I>Style Guide for #$comments</I></A>
+
+gives good advice on describing complicated predicates
+
+in English, as well as offering an
+
+intriguing view of what can be written in the Cyc ontology language:
+
+<BLOCKQUOTE>
+
+(#$likesObject AGT OBJ) means that when the sentient agent AGT is interacting 
+
+in some way with OBJ, that agent feels some measure of #$Enjoyment --- 
+
+that is, (#$feelsEmotion AGT #$Enjoyment). The kinds of interactions that 
+
+produce #$Enjoyment depend largely on what kind of thing OBJ is. Thus, 
+
+`Joe likes the Mona Lisa' implies that Joe feels #$Enjoyment when viewing 
+
+the Mona Lisa. But `Joe likes pizza' implies that Joe feels #$Enjoyment 
+
+when eating that kind of food. Note: There are some specialized predicates 
+
+of #$likesObject that give more information about the kind of interaction 
+
+between AGT and OBJ that results in #$Enjoyment; see, e.g., #$likesSensorially 
+
+and #$likesAsFriend.
+
+</BLOCKQUOTE>
+
+and
+
+<BLOCKQUOTE>
+
+Note that an application of #$GroupFn denotes a _collection_ that has 
+
+groups as instances, rather than an individual group. For example, 
+
+(#$GroupFn #$BallisticMissile) denotes the collection of all groups 
+
+of ballistic missiles, which includes Russia's ballistic missiles, 
+
+China's ballistic missiles, the US's ballistic missiles, etc.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+However, I did find some good advice, not only on
+
+Prolog and Lisp, but also on human-computer interaction and writing.
+
+Let's start with Prolog.
+
+</P>
+
+
+
+
+
+<H3><A NAME="style_prolog">Prolog</A></H3>
+
+
+
+<P>
+
+The only guide I found for Prolog was Michael Covington's
+
+<A HREF="http://www.ai.uga.edu/mc/plcoding.pdf"><I>Some Coding Guidelines for Prolog</I></A>.
+
+This is a draft guide (dated 2002), and Covington invites
+
+comments. Some of his advice applies to any 
+
+programming language - for example, avoid embedding magic numbers in code, and 
+
+give informative error messages:
+
+<PRE>
+
+  mysort/3: 'x(y,z,w)' cannot be sorted because it is not a list.
+
+</PRE>
+
+rather than
+
+<PRE>
+
+  error: illegal data, wrong type
+
+</PRE>
+
+<p></P>
+
+
+
+<P>
+
+Other, Prolog-specific, advice includes good use of the cut, layout of
+
+predicate definitions, and when to use the if-then-else structure
+
+<CODE>(a -&gt; b ; c)</CODE> (answer: avoid it, because it's an un-Prolog-like
+
+way of thinking).
+
+</P>
+
+
+
+
+
+<H3><A NAME="style_lisp">Lisp</A></H3>
+
+
+
+<P>
+
+John Foderaro of Franz Lisp has written a short style guide,
+
+<A HREF="http://www.franz.com/~jkf/coding_standards.html"><I>Lisp Coding Standards v1.0</I></A>.
+
+A big difference between Lisp and Prolog is that Lisp has far fewer
+
+visual cues. Control structures don't stand out from the
+
+rest of the code because they share the same bracketed prefix
+
+structure as everything else. Hence, says Foderaro,
+
+<BLOCKQUOTE>
+
+I've found that the key to readability in Lisp functions is an obvious 
+
+structure or framework to the code.  With a glance you should be able 
+
+to see where objects are bound, iteration is done and most importantly 
+
+where conditional branching is done. The conditionals are the most important since 
+
+this is where the program is deciding what to do next.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+To help with conditionals, Foderaro defines an <CODE>if*</CODE> macro,
+
+<CODE>(if* a then b else c)</CODE>. The keywords make it more immediately
+
+noticeable as a conditional. Moreover, 
+
+<CODE>if*</CODE> can be used with any number of conditions and consequents, 
+
+making it unnecessary to change from <CODE>when</CODE> to <CODE>if</CODE> to <CODE>cond</CODE>
+
+as you make your conditional more complicated.
+
+</P>
+
+
+
+<P>
+
+More comprehensive than Foderaro's short guide is the
+
+<A HREF="http://www.norvig.com/luv-slides.ps"><I>Tutorial on Good Lisp Programming Style</I></A> by
+
+Peter Norvig and Kent Pitman. Norvig has written 
+
+<I>AI: A Modern Approach</I>
+
+and
+
+<I>Paradigms of AI Programming</I>, 
+
+which a quote on his <A HREF="http://www.norvig.com/">site</A>
+
+describes as "possibly the best hardcore programming book ever". It's therefore
+
+not surprising that the tutorial is packed with good advice. Much, obviously, is language-dependent -
+
+good use of <CODE>unwind-protect</CODE>, <CODE>defsystem</CODE>, and <CODE>handler-case</CODE>, to 
+
+pick a few at random. However, this doesn't mean only Lisp programmers should
+
+read the tutorial. Many sections - error messages, data abstraction,
+
+algorithm design (describe the algorithm in English, write the code,
+
+translate this back into English, compare with the original) - apply to any language.
+
+</P>
+
+
+
+<P>
+
+There are some nice quotes, this warning to managers by
+
+Butler Lampson amongst them:
+
+<BLOCKQUOTE>
+
+Some people are good programmers because they can 
+
+handle many more details than most people. But there 
+
+are a lot of disadvantages in selecting programmers for 
+
+that reason - it can result in programs no one else can 
+
+maintain.  
+
+</BLOCKQUOTE>
+
+There is also a recommendation to "Worry less about what to believe and more about why. 
+
+Know where your "Style Rules" come from": 
+
+<UL>
+
+<LI> Religion, Good vs. Evil "This way is better."</LI> 
+
+<LI> Philosophy "This is consistent with other things." </LI> 
+
+<LI> Robustness, Liability, Safety, Ethics "I'll put in 
+
+redundant checks to avoid something horrible." </LI> 
+
+<LI> Legality "Our lawyers say do it this way." </LI> 
+
+<LI> Personality, Opinion "I like it this way." </LI> 
+
+<LI> Compatibility "Another tool expects this way." </LI> 
+
+<LI> Portability "Other compilers prefer this way." </LI> 
+
+<LI> Cooperation, Convention "It has to be done 
+
+some uniform way, so we agreed on this one." </LI> 
+
+<LI> Habit, Tradition "We've always done it this way." </LI> 
+
+<LI> Ability "My programmers aren't sophisticated enough." </LI> 
+
+<LI> Memory "Knowing how I would do it means I 
+
+don't have to remember how I did do it." </LI> 
+
+<LI> Superstition "I'm scared to do it differently." </LI> 
+
+<LI> Practicality "This makes other things easier." </LI> 
+
+</UL>
+
+<p></P>
+
+
+
+<P>
+
+And finally, if this Newsletter arrived in your email an hour later
+
+then normal, it's because I've just been for a walk in the woods
+
+above where I'm staying. In doing so,
+
+I was merely obeying another piece of advice in the guide, this
+
+time from John Page:
+
+<BLOCKQUOTE>
+
+Also, while you're working hard on a complicated program, 
+
+it's important to exercise. The lack of physical 
+
+exercise does most programmers in. It causes a loss of 
+
+mental acuity. 
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="style_good_naming">How to name things</A></H3>
+
+
+
+<P>
+
+Both Covington and Norvig devote a lot of space to good naming.
+
+For example, Covington prescribes which
+
+parts of speech - verb phrase, noun phrase, adjective - to
+
+make predicate names, and how to construct names which make the
+
+order of the predicate's arguments obvious. He also recommends
+
+making names pronounceable, and remembering that we remember
+
+pronunciations, not spellings. Do not, as one regrettable program did,
+
+have <CODE>menutwo</CODE>, <CODE>menutoo</CODE>,
+
+<CODE>menu2</CODE>, and <CODE>mneu2</CODE> (this last was probably accidental). 
+
+And:
+
+<BLOCKQUOTE>
+
+Do not mix up <CODE>to</CODE>, <CODE>two</CODE>, and <CODE>too</CODE>.
+
+At one time it was fashionable to abbreviate <CODE>to</CODE> as <CODE>2,</CODE> 
+
+thereby saving one character. That’s how computer
+
+programs got names such as <CODE>afm2tfm</CODE> (for "AFM-to-TFM," a TEX utility) and DOS’s 
+
+<CODE>exe2bin</CODE>.
+
+However, this practice creates too much confusion. Remembering how to spell words correctly is hard enough;
+
+now you ask me to remember your creative misspellings too? 
+
+Spellings like <CODE>l8tr</CODE> (or <CODE>l8r</CODE>?) and <CODE>w1r3d</CODE> 
+
+do not facilitate communication; they just make the reader suspect that you are 
+
+still in high school.
+
+</BLOCKQUOTE>
+
+An interesting study in the sociology of programming would be
+
+to investigate whether text-messaging has made such misspellings more common.
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="style_whitehead">How to advance by not thinking</A></H3> 
+
+
+
+<P>
+
+Good naming makes programs easier to read, but I believe there's another
+
+reason to have comprehensive naming rules, one I first came across
+
+in a quote from
+
+philosopher
+
+Alfred North Whitehead:
+
+<BLOCKQUOTE>
+
+By relieving the brain of all unnecessary work, a good notation sets it free to 
+
+concentrate on more advanced problems, and, in effect, increases the mental power of the 
+
+race. Before the introduction of the Arabic notation, multiplication was difficult, and 
+
+the division even of integers called into play the highest mathematical faculties. 
+
+Probably nothing in the modern world would have more astonished a Greek mathematician 
+
+than to learn that ... a large proportion of the population of Western Europe could 
+
+perform the operation of division for the largest numbers. This fact would have seemed 
+
+to him a sheer impossibility ... Our modern power of easy reckoning with decimal fractions 
+
+is the almost miraculous result of the gradual discovery of a perfect notation. [...] By 
+
+the aid of symbolism, we can make transitions in reasoning almost mechanically, by the 
+
+eye, which otherwise would call into play the higher faculties of the brain. [...] 
+
+It is a profoundly erroneous truism, repeated by all copy-books and by eminent people 
+
+when they are making speeches, that we should cultivate the habit of thinking of what 
+
+we are doing. The precise opposite is the case. 
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+What brought the quote to mind was Covington's advice to name
+
+auxiliary predicates by appending <CODE>_aux</CODE> or <CODE>_x</CODE>
+
+to the name of the predicate calling them. (He says that although
+
+his books contain many examples of <CODE>_aux</CODE>, <CODE>_x</CODE>
+
+is more concise and lends itself to making sequences of names as in
+
+<CODE>_xx</CODE>, <CODE>_xxx</CODE> and so on.) The point is that
+
+by obeying such advice, you save your mental energy for more important
+
+decisions.
+
+As Whitehead continues:
+
+<BLOCKQUOTE>
+
+Civilisation advances by extending 
+
+the number of important operations which we can perform without thinking about them. 
+
+Operations of thought are like cavalry charges in a battle - they are strictly 
+
+limited in number, they require fresh horses, 
+
+and must only be made at decisive moments. 
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="style_bad_naming">How not to name things</A></H3>
+
+
+
+<P>
+
+One naming style I shall not be using is
+
+<A HREF="#style_hungarian">Hungarian notation</A>,
+
+so-called partly because its inventor, Charles Simonyi,
+
+was Hungarian, and partly as an allusion to Polish notation.
+
+It's important to strike a balance between names that say too
+
+little, and names that try to say far too much.
+
+Hungarian-style names have to contain a tag indicating their
+
+base type, a prefix saying whether the name is a pointer, array,
+
+or other derived type, and a qualifier giving other
+
+information, such as whether the item named is temporary or
+
+permanent. Although these components avoid the need to search for
+
+comments and type-declarations, I find they
+
+obscure the rest of the name. As Bill Davis
+
+says in
+
+<A HREF="http://ootips.org/hungarian-notation.html"><I>Hungarian Notation - 
+
+The Good, The Bad and The Ugly</I></A>
+
+they also work against data abstraction, since the type tag has
+
+to be changed whenever the variable's type is. These are personal
+
+views of course; you may like Hungarian notation.
+
+</P>
+
+
+
+<P>
+
+Here is some more advice on naming. Read it carefully:
+
+<BLOCKQUOTE>
+
+<P>
+
+Use abbreviations wherever possible, particularly where there would be space 
+
+enough for the complete term. Why? Because abbreviations make an application 
+
+look more professional, 
+
+particularly if you create abbreviations that are new or replace commonly used ones.
+
+</P>
+
+<P>
+
+Example: Use abbreviations for field labels, column headings, button texts even if 
+
+space restrictions do not require this.
+
+</P>
+
+<P>
+
+Examples: Use "dat." instead of "date," "TolKy" instead of "Tolerance Key," "NxOb" 
+
+instead of 
+
+"Next Object," and many more...
+
+</BLOCKQUOTE>
+
+This comes from a 
+
+<I>spoof</I>
+
+guide to user-interface design,
+
+Gerd Waloszek's
+
+<A HREF="http://www.sapdesignguild.org/community/design/golden_rules.asp"><I>Golden Rules 
+
+for Bad User Interfaces</I></A>.
+
+However, it appears on
+
+a serious Web site, <A HREF="http://www.sapdesignguild.org/index.asp">the SAP Design Guild</A>.
+
+As an example of bad practice, it applies as much to 
+
+the choice of names in programs as to
+
+names in user-interface components.
+
+<p></P> 
+
+
+
+
+
+<H3><A NAME="style_hci">Human-computer interaction</A></H3>
+
+
+
+<P>
+
+The <I>Golden Rules</I> bring me to human-computer interaction.
+
+This doesn't just apply to AI programming, but it's as important there
+
+as elsewhere. One HCI-design guide
+
+that I've found useful is Sun's
+
+<A HREF="http://java.sun.com/products/jlf/ed2/book/"><I>Java Look and Feel Guidelines</I></A>.
+
+Although written for Java programmers, most of the advice
+
+applies to any graphical user interface. Some, such
+
+as when to capitalise words in window titles
+
+and other components, may seem pernickety, but it's
+
+surprising how messy applications can look
+
+when they're inconsistent about these matters.
+
+</P>
+
+
+
+<P>
+
+Another,
+
+found completely by accident, is
+
+the
+
+<A HREF="http://www.deepsloweasy.com/HFE%20resources/Army%20WS-HCI%20Style%20Guide%201999.pdf"><I>U.S. Army 
+
+Weapon Systems
+
+Human-Computer Interface Style Guide</I></A>.
+
+Although the average AI Expert reader
+
+is unlikely to be designing head-up displays
+
+or worrying about how to minimise the risk
+
+of mid-air collisions and unintercepted
+
+missiles, the guide contains a wealth of advice
+
+which would apply as much - say - to 
+
+electronic bus-arrival indicators and
+
+touch-screen jukeboxes as it does to laptops and
+
+desktops. General advice includes minimising the use
+
+of colour except when it enhances performance (something
+
+many Web designers have never learnt), 
+
+minimising the need for users to switch visual
+
+focus between windows, and minimising their
+
+need to adjust window positions and sizes. More
+
+specific advice includes the calculation of appropriate
+
+character sizes from a user's viewing distance, 
+
+and the best size of touch zone to place around
+
+touch-screen controls.
+
+</P>
+
+
+
+
+
+<H3><A NAME="style_writing">Writing well, and the Gettysburg Power Point Presentation</A></H3>
+
+
+
+<P>
+
+Programmers need to write. Not just internal
+
+comments, but also 
+
+external documentation such as
+
+user manuals and on-line help, as well as
+
+promotional copy: 
+
+product press releases, funding applications, and
+
+articles for AI Expert... Good writing is hard, but
+
+becomes easier if you modularise it. Peter Norvig explains how in his
+
+<A HREF="#style_writing"><I>How to Write More Clearly, Think More Clearly,
+
+and Learn Difficult Material More Easily</I></A>.
+
+</P>
+
+
+
+<P>
+
+Finally, we often need not just to write about our programs,
+
+but also to get up in front of an audience and speak about them.
+
+Once more from Norvig, 
+
+and reinforced by graphic design professor Edward Tufte's feature
+
+<A HREF="http://www.wired.com/wired/archive/11.09/ppt2.html"><I>PowerPoint Is Evil</I></A>,
+
+here's an example of how 
+
+<I>not</I> to do so,
+
+<A HREF="http://www.norvig.com/Gettysburg/"><I>The Gettysburg Powerpoint Presentation</I></A>:
+
+<BLOCKQUOTE>
+
+Good morning. Just a second while I get this connection to 
+
+work. Do I press this button here? Function-F7? No, that's not 
+
+right. Hmmm. Maybe I'll have to reboot. Hold on a minute. Um, 
+
+my name is Abe Lincoln and I'm your president. While we're 
+
+waiting, I want to thank Judge David Wills, chairman of the 
+
+committee supervising the dedication of the Gettysburg 
+
+cemetery. It's great to be here, Dave, and you and the 
+
+committee are doing a great job. Gee, sometimes this new 
+
+technology does have glitches, but we couldn't live without 
+
+it, could we? Oh - is it ready? OK, here we go: 
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="style_links"></a>Links</H3>
+
+
+
+<!-- The usual AI programming languages -->
+
+
+
+<P>
+
+<A HREF="http://www.ai.uga.edu/mc/plcoding.pdf">www.ai.uga.edu/mc/plcoding.pdf</A> -
+
+<I>Some Coding Guidelines for Prolog</I> by
+
+Michael Covington, Artificial Intelligence Center, University of Georgia.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.franz.com/~jkf/coding_standards.html">www.franz.com/~jkf/coding_standards.html</A> -
+
+<I>Lisp Coding Standards v1.0</I>, by John Foderaro. The page has links
+
+to the <A HREF="http://www.franz.com/~jkf/ifstar.txt">source</A> and 
+
+<A HREF="http://www.franz.com/support/documentation/6.0/doc/pages/operators/excl/if_s.htm">documentation</A> for his <CODE>if*</CODE> macro.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.norvig.com/luv-slides.ps">www.norvig.com/luv-slides.ps</A> -
+
+<I>Tutorial on Good Lisp Programming Style</I>, by Peter Norvig and
+
+Kent Pitman.
+
+</P>
+
+
+
+<P>
+
+<A NAME="style_hungarian"></A>
+
+<A HREF="http://www.worldwidewords.org/articles/hungary.htm">www.worldwidewords.org/articles/hungary.htm</A> -
+
+A page about  Hungarian notation
+
+for Michael Quinion's World Wide Words site.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://ootips.org/hungarian-notation.html">ootips.org/hungarian-notation.html</A> -
+
+<I>Hungarian Notation - The Good, The Bad and The Ugly</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.darkweb.com/~beng/exchange/book/codestd.htm">www.darkweb.com/~beng/exchange/book/codestd.htm</A> -
+
+An example guide to Hungarian coding, for the book
+
+<I>Developing Applications for Microsoft® Exchange with C++</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www-users.cs.york.ac.uk/~susan/cyc/q/quotes.htm">www-users.cs.york.ac.uk/~susan/cyc/q/quotes.htm</A> -
+
+This page of quotations, by Susan Stepney, University of York, contains
+
+the Alfred North Whitehead quote on notation.
+
+</P>
+
+
+
+<!-- Knowledge bases and ontologies -->
+
+
+
+<P>
+
+<A HREF="http://www.cyc.com/cycdoc/ref/style-guide.html">www.cyc.com/cycdoc/ref/style-guide.html</A> -
+
+<I>Style guide for #$comments in Cyc</I>.
+
+</P>
+
+
+
+<!-- HCI -->
+
+
+
+<P>
+
+<A HREF="http://java.sun.com/products/jlf/ed2/book/">java.sun.com/products/jlf/ed2/book/</A> -
+
+<I>Java Look and Feel Guidelines</I>, 2nd edition. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.deepsloweasy.com/HFE%20resources/Army%20WS-HCI%20Style%20Guide%201999.pdf">www.deepsloweasy.com/HFE%20resources/Army%20WS-HCI%20Style%20Guide%201999.pdf</A> -
+
+<I>U.S. Army Weapon Systems
+
+Human-Computer Interface Style Guide</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.sapdesignguild.org/community/design/golden_rules.asp">www.sapdesignguild.org/community/design/golden_rules.asp</A> -
+
+<I>Golden Rules for Bad User Interfaces</I>, 
+
+by Gerd Waloszek.
+
+</P>
+
+
+
+<!-- Writing -->
+
+
+
+<P>
+
+<A NAME="style_writing"></A>
+
+<A HREF="http://www.ai.uga.edu/mc/WriteThinkLearn_files/frame.htm">www.ai.uga.edu/mc/WriteThinkLearn_files/frame.htm</A>
+
+and <A HREF="http://www.ai.uga.edu/mc/WriteThinkLearn.pdf">www.ai.uga.edu/mc/WriteThinkLearn.pdf</A>  -
+
+<I>How to Write More Clearly, Think More Clearly,
+
+and Learn Difficult Material More Easily</I>, by Peter Norvig.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.wired.com/wired/archive/11.09/ppt2.html">www.wired.com/wired/archive/11.09/ppt2.html</A> -
+
+<I>PowerPoint Is Evil.
+
+Power Corrupts.
+
+PowerPoint Corrupts Absolutely</I>. <I>Wired</I> feature
+
+by Edward Tufte,
+
+professor emeritus of political science, computer science and statistics, 
+
+and graphic design at Yale. Just about anything
+
+Tufte writes on visual presentation of data is worth reading.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.norvig.com/Gettysburg/">www.norvig.com/Gettysburg/</A> -
+
+<I>The Gettysburg Powerpoint Presentation</I> by Peter Norvig.
+
+</P>
+
+
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome. Feel free to contact either myself (below) or Jocelyn &lt;popx@j-paine.org&gt; 
+              with comments, thoughts and suggestions.</P>
+            <P>Until next month, </P>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p>Copyright &copy;2004 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved </p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

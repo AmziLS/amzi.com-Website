@@ -1,0 +1,621 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->June 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <h3>June 2004</h3>
+            <h4>Dennis Merritt</h4>
+            <h2></h2>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <ul>
+              <li><a href="#fantasy_games">Fantasy Games - AI Fun</a></li>
+              <li><a href="#code_corner">Adventure in FORTRAN, Inform, Prolog</a></li>
+              <li><a href="#user_interface">IF User Interface Issues</a></li>
+              <li><a href="#links">Links</a></li>
+            </ul>
+            <h2>Software Downloads</h2>
+            <p>Some of the software described in these newsletters is now available 
+              for download at <a href="www.ainewsletter.com/downloads">www.ainewsletter.com/downloads</a>.</p>
+            <h2><a name="fantasy_games"></a>Fantasy Games</h2>
+            <p><i>Adventure</i> was the first computer fantasy game. It had all 
+              of the elements we see today in Nintendo and Play Station fantasy 
+              games, where the computer has a model of an environment and the 
+              player manipulates a character in the game, travelling from place 
+              to place, encountering various challenges and puzzles along the 
+              way, collecting points for challenges met, and in general being 
+              entertained by unfolding story line and discovered scenarios.</p>
+            <p>The only difference was that instead of graphics, <i>Adventure</i> 
+              had textual descriptions of the places and situations, and instead 
+              of a mouse or controller, the game was driven with simple English.</p>
+            <p><i>Adventure</i> captivated the computing community of the time. 
+              Despite being hand distributed on a bulky magnetic tape requiring 
+              system programmer installation, it spread like a modern virus and 
+              programmers around the World were soon trying to figure out how 
+              to slay the dragon and get the plover's egg, instead of whatever 
+              programmer's were supposed to be doing.</p>
+            <p><i>Adventure</i> inspired others to start to write other fantasy 
+              games, with Zork probably being the most famous successor. The creators 
+              of Zork eventually started InfoCom, a company whose business was 
+              the creation of these games in a genre they named interactive fiction 
+              (IF).</p>
+            <p>As graphics became more accessible, the text-based interactive 
+              fiction gave way to the more modern fantasy games, but the ideas 
+              were still basically the same, adventurers travelling about, solving 
+              puzzles, etc.</p>
+            <p>In researching this newsletter, I was pleased to discover that 
+              the IF community is still alive and well. The tools for creating 
+              IF are easily accessible to all and are being applied in the creation 
+              of a growing library of clever, well-written, and entertaining games. 
+              The <a href="#links">links</a> provide a number of sites describing 
+              the past, present, and future of IF, as well as a wealth of great 
+              games to play.</p>
+            <h3>Game Development Tools</h3>
+            <p><i>Adventure</i> was, in many ways, an early AI program, in that 
+              it interacted with the player in an intelligent manner, understood 
+              simple English, changed the game enviroment based on those commands, 
+              and remembered the state of the game. So once a player moved to 
+              a room, or moved items in a room, or broke something, those changes 
+              would be reflected in the dialog and descriptions the game used 
+              to communicate with the player.</p>
+            <p>The game fit this newsletter's definition of AI, in that it was 
+              an interesting application that was difficult to write because it 
+              did not fit cleanly into a computer's nature. The development of 
+              IF provides a classic insight into the way AI tools in general are 
+              created.</p>
+            <p>The first game was written in FORTRAN (see the <a href="#code_corner">code 
+              corner</a> for details). But pure FORTRAN code, like most procedural 
+              programming languages, didn't have the expressive capability necessary 
+              to describe the environment. So the developers had to create something 
+              like a virtual machine from a combination of data structures and 
+              FORTRAN code.</p>
+            <p>The data structures were used as a declarative programming language 
+              for the game. They made it easy to add new rooms, objects, and conditions 
+              on which travel between them could be made. They also made it easy 
+              to create all of the text describing the places, things and situations.</p>
+            <p>But they couldn't handle everything, so if-then-else statements 
+              were still used to handle the most out-of-the-ordinary situations 
+              in the game.</p>
+            <p>So the original code really had three components:</p>
+            <ul>
+              <li>declarative data structures which were a primitive language 
+                for coding most of the game;</li>
+              <li>an interpreter that used those data structures for driving the 
+                game;</li>
+              <li>interspersed rules in the form of if-then-elses that added variety 
+                and interest.</li>
+            </ul>
+            <p>When InfoCom got into the serious business of creating IF, the 
+              first thing they did was design better tools. They created a language 
+              purely for writing IF. And, of course, it required an interpreter 
+              to run the game.</p>
+            <p>In other words, like for many AI disciplines, they created a virtual 
+              machine with its own programming language for the purpose of building 
+              a certain type of intelligent application. The machine is called 
+              a Z-machine, and is available from a number of sites and can be 
+              used to run the numerous games built for it.</p>
+            <p>As the market for interactive fiction shrunk, the technology moved 
+              to the hobbyists, and a number of tools have since evolved for the 
+              creation of IF games. Inform, Hugo, and TADS are probably the big 
+              three and you can find information about them in the <a href="#links">links</a>.</p>
+            <p>There also appear to be numerous tools available for the creation 
+              of graphic fantasy games, but I didn't look very closely at them 
+              for this issue. This is in part because of a fascination with the 
+              media of interactive fiction. Just as a book presents a story in 
+              a very different way from a movie, so does a text-based fantasy 
+              game present an adventure in a very different way from a graphic 
+              one.</p>
+            <p>While the graphics in a game like<i> Myst</i> are fantastic, they 
+              don't create the bond between author and player that IF does. In 
+              IF the game itself talks to you, and has a personality. You wind 
+              up with a sense of trying to match wits with the game writer that 
+              you simply don't get from graphics, much as a movie can't reveal 
+              a character's personality as well as a book can.</p>
+            <p> And the writers of IF today are working with better tools and 
+              bringing excellent writing and puzzle creation skills to the genre. 
+              Here's a sample of some of the writing from <i>Max Blaster and Doris 
+              de Lightning Against the Parrot Creatures of Venus,</i> by Dan Shiovitz 
+              and Emily Short:</p>
+            <pre>Secret Meeting Chamber (sitting on your chair)
+
+Deep beneath the streets of Astro-City, there lies a maze of deadly traps and
+deadlier guards, inside of which is a secret, hidden fortress, inside of which
+is a dark and mysterious forest (albeit a rather small one which needs to be
+lit by artificial lights and tended by a gardening crew once a week) that conceals
+a tiny cottage, inside of which are a dozen angry leopards[2]. It is because
+of this careful attention to detail, no doubt, that nobody has ever discovered
+the trapdoor beneath the cottage that leads to this meeting-room. But it is
+here that you and your fellow scientists sit around the great oak table in the
+center of the room and plot your schemes and scheme your plots.</pre>
+            <p>And later as Max meets Doris:</p>
+            <pre>You beam down at Doris, then transfer your gaze to the Director. &#147;So who's
+the little lady?&#148;
+
+There's a pensive silence while Doris grinds her teeth and the Director taps
+his cigar. The vacuumbot whirrs sadly and drifts towards the floor to collect
+the ashes. &#147;Max,&#148; says the Director heartily, &#147;meet Doris de
+Lightning. Your new partner.&#148;</pre>
+            <p>This game is particularly noteworthy, and won awards, for its NPCs 
+              or non-player-characters. The player can either choose to work the 
+              game as Max or Doris, and either way, the other character becomes 
+              very much a part of the game.</p>
+            <p>Emily Short's Web site (see <a href="#links">links</a>) contains 
+              a number of insightful articles on the various technology challenges 
+              in creating IF, including one analyzing NPCs, the various approaches 
+              authors can use, and the tools available for creating believable 
+              NPCs. NPCs were a big part in the first <i>Adventure</i> as well, 
+              in the form of dwarves and the pirate.</p>
+            <h2><a name="code_corner"></a>Code Corner</h2>
+            <h2>Adventure in FORTRAN</h2>
+            <p>This newsletter defines AI as being the art and science of making 
+              computers do interesting things that are not in their nature. As 
+              described in the first newsletter, this usually involves the creation 
+              of a virtual machine with a nature better suited to the application.</p>
+            <p>AI programming, then, would involve the creation of a virtual machine 
+              and then programming that machine to build the application. So the 
+              question of what tool is best for AI really refers to the tools 
+              for building the virtual machine.</p>
+            <p>For building the virtual machine, it really doesn't matter what 
+              tools are used. Any programming langauge will do. In the case of 
+              the original <i>Adventure</i>, the language of choice was FORTRAN. 
+              The FORTRAN code was higher level code, that dealt with most of 
+              the generalities of moving about the environment.</p>
+            <p>Here are the coded messages for various scenarios:</p>
+            <pre>32 YOU CAN'T GET BY THE SNAKE.
+33 YOU ARE IN A LARGE ROOM, WITH A PASSAGE TO THE SOUTH, A PASSAGE TO THE
+33 WEST, AND A WALL OF BROKEN ROCK TO THE EAST. THERE IS A LARGE &quot;Y2&quot;    ON
+33 A ROCK IN THE ROOM'S CENTER.
+34 YOU ARE IN A JUMBLE OF ROCK, WITH CRACKS EVERYWHERE.
+35 YOU'RE AT A LOW WINDOW OVERLOOKING A HUGE PIT, WHICH EXTENDS UP OUT OF
+35 SIGHT. A FLOOR IS INDISTINCTLY VISIBLE OVER 50 FEET BELOW. TRACES OF
+35 WHITE MIST COVER THE FLOOR OF THE PIT, BECOMING THICKER TO THE RIGHT.
+35 MARKS IN THE DUST AROUND THE WINDOW WOULD SEEM TO INDICATE THAT
+35 SOMEONE HAS BEEN HERE RECENTLY. DIRECTLY ACROSS THE PIT FROM YOU AND
+35 25 FEET AWAY THERE IS A SIMILAR WINDOW LOOKING INTO A LIGHTED ROOM. A
+35 SHADOWY FIGURE CAN BE SEEN THERE PEERING BACK AT YOU.
+36 YOU ARE IN A DIRTY BROKEN PASSAGE. TO THE EAST IS A CRAWL. TO THE
+36 WEST IS A LARGE PASSAGE. ABOVE YOU IS A HOLE TO ANOTHER PASSAGE.
+37 YOU ARE ON THE BRINK OF A SMALL CLEAN CLIMBABLE PIT. A CRAWL LEADS
+37 WEST.
+38 YOU ARE IN THE BOTTOM OF A SMALL PIT WITH A LITTLE STREAM, WHICH
+38 ENTERS AND EXITS THROUGH TINY SLITS.
+39 YOU ARE IN A LARGE ROOM FULL OF DUSTY ROCKS. THERE IS A BIG HOLE IN
+39 THE FLOOR. THERE ARE CRACKS EVERYWHERE, AND A PASSAGE LEADING EAST.
+40 YOU HAVE CRAWLED THROUGH A VERY LOW WIDE PASSAGE PARALLEL TO AND NORTH
+40 OF THE HALL OF MISTS.
+41 YOU ARE AT THE WEST END OF HALL OF MISTS. A LOW WIDE CRAWL CONTINUES
+41 WEST AND ANOTHER GOES NORTH. TO THE SOUTH IS A LITTLE PASSAGE 6 FEET
+41 OFF THE FLOOR.
+42 YOU ARE IN A MAZE OF TWISTY LITTLE PASSAGES, ALL ALIKE.
+43 YOU ARE IN A MAZE OF TWISTY LITTLE PASSAGES, ALL ALIKE.
+44 YOU ARE IN A MAZE OF TWISTY LITTLE PASSAGES, ALL ALIKE.
+45 YOU ARE IN A MAZE OF TWISTY LITTLE PASSAGES, ALL ALIKE.
+46 DEAD END
+47 DEAD END
+48 DEAD END
+ </pre>
+            <p>Here's the messages for various objects that depend on the state 
+              of the game:</p>
+            <pre>8 LITTLE BIRD IN CAGE
+000 A CHEERFUL LITTLE BIRD IS SITTING HERE SINGING.
+100 THERE IS A LITTLE BIRD IN THE CAGE.
+9 *RUSTY DOOR
+000 THE WAY NORTH IS BARRED BY A MASSIVE, RUSTY, IRON DOOR.
+100 THE WAY NORTH LEADS THROUGH A MASSIVE, RUSTY, IRON DOOR.
+10 VELVET PILLOW
+000 A SMALL VELVET PILLOW LIES ON THE FLOOR.
+11 *SNAKE
+000 A HUGE GREEN FIERCE SNAKE BARS THE WAY!
+100 &gt;$&lt; (CHASED AWAY)
+12 *FISSURE
+000 &gt;$&lt;
+100 A CRYSTAL BRIDGE NOW SPANS THE FISSURE.
+200 THE CRYSTAL BRIDGE HAS VANISHED!
+ </pre>
+            <p>Here's some code that defines the rooms, connections, and conditions 
+              under which some of the connectins can be used:</p>
+            <pre>3
+1 2 2 44 29
+1 3 3 12 19 43
+1 4 5 13 14 46 30
+1 5 6 45 43
+1 8 63
+2 1 2 12 7 43 45 30
+2 5 6 45 46
+3 1 3 11 32 44
+3 11 62
+3 33 65
+3 79 5 14
+ </pre>
+            <p>Here's various responses to various commands based on situation:</p>
+            <pre>163 THE BEAR LUMBERS TOWARD THE TROLL, WHO LETS OUT A STARTLED SHRIEK AND
+163 SCURRIES AWAY. THE BEAR SOON GIVES UP THE PURSUIT AND WANDERS BACK.
+164 THE AXE MISSES AND LANDS NEAR THE BEAR WHERE YOU CAN'T GET AT IT.
+165 WITH WHAT? YOUR BARE HANDS? AGAINST *HIS* BEAR HANDS??
+166 THE BEAR IS CONFUSED; HE ONLY WANTS TO BE YOUR FRIEND.
+167 FOR CRYING OUT LOUD, THE POOR THING IS ALREADY DEAD!
+168 THE BEAR EAGERLY WOLFS DOWN YOUR FOOD, AFTER WHICH HE SEEMS TO CALM
+168 DOWN CONSIDERABLY AND EVEN BECOMES RATHER FRIENDLY.
+ </pre>
+            <p>And here's some FORTRAN code to deal with the special situation 
+              of dwarves, pirates and the troll bridge:</p>
+            <pre>C TRAVEL 303. TROLL BRIDGE. MUST BE DONE ONLY AS SPECIAL MOTION SO THAT
+C DWARVES WON'T WANDER ACROSS AND ENCOUNTER THE BEAR. (THEY WON'T FOLLOW THE
+C PLAYER THERE BECAUSE THAT REGION IS FORBIDDEN TO THE PIRATE.) IF
+C PROP(TROLL)=1, HE'S CROSSED SINCE PAYING, SO STEP OUT AND BLOCK HIM.
+C (STANDARD TRAVEL ENTRIES CHECK FOR PROP(TROLL)=0.) SPECIAL STUFF FOR BEAR.
+
+30300 IF(PROP(TROLL).NE.1)GOTO 30310
+   CALL PSPEAK(TROLL,1)
+   PROP(TROLL)=0
+   CALL MOVE(TROLL2,0)
+   CALL MOVE(TROLL2+100,0)
+   CALL MOVE(TROLL,PLAC(TROLL))
+   CALL MOVE(TROLL+100,FIXD(TROLL))
+   CALL JUGGLE(CHASM)
+   NEWLOC=LOC
+   GOTO 2
+ </pre>
+            <h2>Adventure in Inform</h2>
+            <p>Inform is one of the languages used to create today's IF. It is 
+              an object-oriented language that lets an author use a C-like syntax 
+              for creating all of the objects in a game, and the messages associated 
+              with them and the actions that can be applied to them.</p>
+            <p>The language contains ready-made support of many of the concepts 
+              useful in IF, such as whether a room is lit or not, and the kinds 
+              of things that are visible in containers of things.</p>
+            <p>Here's a bite-sized sample from <i>&quot;The Last Sonnet of Marie 
+              Antoinette&quot;</i> by Emily Short.</p>
+            <pre>Mobile nutsack "small sack" woodbox,
+    with name "sack" "small" "cloth" "bag",
+    mater CLOTH,
+    size 1,
+    shape LINEAR,
+    description [;
+        "A small cloth bag drawn shut with a drawstring."; ],
+    has container openable ~open;
+
+Mobile nut "nut" nutsack,
+    with name "nut",
+    mater FOOD,
+    size 1,
+    shape ROUND,
+    description [;
+        "A single round nut."; 	],
+    after [;
+        eat:"Hmm.  It's still hard to say exactly what kind of nut that was.";]; </pre>
+            <p>The full source is available from Emily Short's Web site, and illustrates 
+              a lot of the expressive power of Inform. In this particular game 
+              a class called 'Cheese' is created with all sorts of behaviors associated 
+              with cheese, and then a number of subclasses of different types 
+              of cheese, such as brie and parmesan are created as well. I haven't 
+              played the game, but there is all sorts of wonderful text describing 
+              the various cheeses, plus what look like complex behaviors resulting 
+              from eating the various types.</p>
+            <h2>Adventure in Prolog</h2>
+            <p>It was my early experience with <i>Adventure</i> that led to my 
+              current involvement with AI. I was in the process of designing my 
+              own Inform like tools using C that I happened on a lecture on Prolog. 
+              Given that a large portion of a game involves keeping the state 
+              of the game and pattern-matching and search algorithms, it seemed 
+              as if Prolog would be a tremendous productivity aid in writing IF.</p>
+            <p>I learned Prolog explicitly to create IF, and quickly discovered 
+              two things:</p>
+            <ul>
+              <li>Prolog was an excellent tool for the job; and</li>
+              <li>I lacked the imagination necessary for creating fiction.</li>
+            </ul>
+            <p>So instead I created a game that modelled a simple subset of my 
+              real life, and wrote a book on Prolog using it as an example, which 
+              lead to other Prolog applications and a career in AI in general.</p>
+            <p>As in so many aspects of life, the media shapes the message. Today's 
+              IF writers have excellent tools like Inform, but they shape the 
+              resulting games by the features and manner of expression they provide.</p>
+            <p>Likewise, creating a game in Prolog provides a different set of 
+              tools for the writer. As a base language, Prolog doesn't have all 
+              the built-in support for standard IF features, as Inform does. On 
+              the other hand, native Prolog syntax adapts much more readily to 
+              coding IF than say FORTRAN or C++.</p>
+            <p>Here is one way to represent the rooms and objects in a simple 
+              game in Prolog:</p>
+            <pre>% Initial facts describing the world. Rooms and doors do not change,
+% so they are compiled.</pre>
+            <pre>room(office).
+room(kitchen).
+room('dining room').
+room(hall).
+room(cellar).</pre>
+            <pre>door(office,hall).
+door(hall,'dining room').
+door('dining room',kitchen).
+door(kitchen,cellar).
+door(kitchen,office).</pre>
+            <pre>connect(X,Y):-
+   door(X,Y).
+   connect(X,Y):-
+   door(Y,X).</pre>
+            <pre>% These facts are all subject to change during the game, so rather
+% than being compiled, they are &quot;asserted&quot; to the interpreter at
+% run time. This predicate is called when &quot;nanisrch&quot; starts up.</pre>
+            <pre>init_dynamic_facts:-
+   assertz( location(desk,office) ),
+   assertz( location(apple,kitchen) ),
+   assertz( location(flashlight,desk) ),
+...
+   assertz( location(crackers,desk) ),
+   assertz( location(broccoli,kitchen) ),
+   assertz( here(kitchen) ),
+   assertz( turned_off(flashlight) ).</pre>
+            <pre>furniture(desk).
+furniture('washing machine').
+furniture(table).</pre>
+            <pre>edible(apple).
+edible(crackers).</pre>
+            <pre>tastes_yuchy(broccoli).
+ </pre>
+            <p>And here is the rule that implements the verb 'eat'. First, you 
+              have to 'have' the thing you want to eat, and then there are three 
+              cases for things that are edible, taste yuchy or are something else. 
+              This leads to attempts at humor when the three-year old protagonist 
+              tries to eat broccoli.</p>
+            <pre>% eat, because every adventure game lets you eat stuff.</pre>
+            <pre>eat(Thing):-
+   have(Thing),
+   eat2(Thing).
+eat(Thing):-
+   respond(['You don''t have the ',Thing]).
+   
+eat2(Thing):-
+   edible(Thing),
+   retract(have(Thing)),
+   respond(['That ',Thing,' was good']).
+eat2(Thing):-
+   tastes_yuchy(Thing),
+   respond(['Three year olds don''t eat ',Thing]).
+eat2(Thing):-
+   respond(['You can''t eat a ',Thing]).
+ </pre>
+            <p>Because Prolog is a general purpose language, it can be used to 
+              model any sort of environment and interaction the author desires. 
+              For example, one of the articles reachable from the links describes 
+              a feature not available in current IF authoring tools, which is 
+              a sense of physical space. In other words, the connections between 
+              places are defined, but not absolute x-y-z coordinates.</p>
+            <p>If the places had x-y-z coordinates, then a game could utilize 
+              tunneling as a general feature. Now tunneling could be simulated 
+              in current tools by simply having a closed connection which is opened 
+              using a 'tunnel' verb, but if one were writing in a more general 
+              purpose language, one could create a model of places that included 
+              coordinates as well as connections, and let the player discover 
+              that maybe tunneling up from the cellar will lead to the vault with 
+              the safe.</p>
+            <p>Other types of AI technology could be used to model various aspects 
+              of the game as well. Maybe fuzzy logic controllers could play a 
+              role? Or Bayesian probability? How about neural nets in a non-playing-character 
+              that can be trained during the course of the game? So a player could 
+              have a dog that learned?</p>
+            <p>The other area where it appears, and I say appears because I really 
+              haven't examined Inform and the others in much depth, general AI 
+              techniques might help is in the game-player interaction.</p>
+            <p>It seems like some of the chatbot technology discussed in other 
+              newsletters might provide good interfaces for IF, especially in 
+              conjunction with an ontology that described the objects in the game. 
+              Another option is DCG (definite clause grammar) to provide better 
+              natural language parsing, as used in the <i>Adventure in Prolog</i> 
+              (see <a href="#links">links</a>) tutorial. The point being that 
+              these different sorts of language technologies could easily be experimented 
+              with in the context of a particular game.</p>
+            <p>Here's an example of some DCG used to parse the player's commands 
+              that uses the current context of the game to interpret the commands. 
+              In particular the ambiguous use of the word 'light' can be interpreted 
+              to mean a room light or the flashlight, depending on whether the 
+              player has the flashlight or not.</p>
+            <pre>% Nouns are defined as rooms, or things located somewhere. We define
+% special cases for those things represented in Nani Search by two
+% words. We can't expect the user to type the name in quotes.</pre>
+            <pre>noun(go_place,R) --&gt; [R], {room(R)}.
+noun(go_place,'dining room') --&gt; [dining,room].</pre>
+            <pre>noun(thing,T) --&gt; [T], {location(T,_)}.
+noun(thing,T) --&gt; [T], {have(T)}.
+noun(thing,flashlight) --&gt; [flash,light].
+noun(thing,'washing machine') --&gt; [washing,machine].
+noun(thing,'dirty clothes') --&gt; [dirty,clothes].</pre>
+            <pre>% If the player has just typed light, it can be interpreted three ways.
+% If a room name is before it, it must be a room light. If the
+% player has the flash light, assume it means the flash light. Otherwise
+% assume it is the room light.</pre>
+            <pre>noun(thing,light) --&gt; [X,light], {room(X)}.
+noun(thing,flashlight) --&gt; [light], {have(flashlight)}.
+noun(thing,light) --&gt; [light].
+ </pre>
+            <p>The Prolog approach described here is not unlike the FORTRAN approach 
+              described above. The game is implemented using a combination of:</p>
+            <ul>
+              <li>Prolog data structures,</li>
+              <li>An interpreter for those structures, and</li>
+              <li>Rules encoded directly using Prolog's native rule syntax.</li>
+            </ul>
+            <p>If one were serious about using Prolog as a tool, one would quickly 
+              evolve towards using frame-like structures, as done for other AI 
+              tools described in previous newsletters, to model a complete language 
+              of game specification.</p>
+            <h2><a name="user_interface"></a>User Interface in IF</h2>
+            <p>The biggest criticism of IF is probably the frustration caused 
+              by using what appears to be natural language. This is a problem 
+              in general with natural language.</p>
+            <p>Any person-computer interaction requires a cultural adjustment 
+              on either the computer's or the person's side. In other words, either 
+              the computer has to learn to understand 'person' or the person needs 
+              to understand 'computer'.</p>
+            <p>A natural language interface to a program is an attempt to program 
+              a computer to understand 'person'. Once having parsed and understood 
+              a human sentence, the computer then maps that sentence into one 
+              of a finite set of commands the particular application is prepared 
+              to carry out.</p>
+            <p>Menus are the exact opposite. The computer displays exactly all 
+              the things it can do, and the person then picks one from the menu. 
+              It is the person's responsibility to understand what the computer 
+              can do and the right menu items to choose.</p>
+            <p>Given that people can learn to understand computers easier than 
+              computers can learn to understand people, menus are by far the most 
+              popular human-computer interfaces.</p>
+            <p>I think IF would benefit from adapting this sort of approach, where 
+              the possible actions and objects are presented in menus. The possible 
+              actions would only be available once the player had discovered the 
+              right aspects of the game. So, for example, in Doris' adventures 
+              on Venus the fact that she can fly over the canyon using her rocket 
+              pants would only appear on the menu after the player had noticed 
+              she was wearing rocket pants.</p>
+            <p>Another useful feature would be the automatic drawing of a map 
+              as the player explored more of the game. And maybe using HTML links 
+              in the text to let the player more easily examine the items presented 
+              in the text describing a place. Apparently there are many many extensions 
+              to Inform, and probably Hugo and TADS as well, that provide these 
+              types of additional features for the gaming author.</p>
+            <h2><a name="links"></a>Links</h2>
+            <p><a href="http://www.rickadams.org/adventure/">http://www.rickadams.org/adventure/</a> 
+              - Rick Adams wonderful site full of information about the origins 
+              of the first computer fantasy game. It includes downloads of various 
+              versions of the game.</p>
+            <p><a href="http://www.ifiction.org/">http://www.ifiction.org/</a> 
+              - Dave Walton's site for interactive fiction. It has a version of 
+              Infocom's Z-machine designed for the Web, with nice features such 
+              as keeping the state of the game on the Web page so you can simply 
+              save the page when you want to stop and restart later. It has hundreds 
+              of interactive fiction games including the early Zork classics and 
+              Scott Adam's, of the <i>Hitchhiker's Guide to the Universe</i> fame, 
+              work.</p>
+            <p><a href="http://www.csd.uwo.ca/Infocom/">http://www.csd.uwo.ca/Infocom/</a> 
+              - Peter Scheyen's site dedicated to the interactive fiction games 
+              of Infocom.</p>
+            <p><a href="http://www.inform-fiction.org/">http://www.inform-fiction.org/</a> 
+              - Inform is a design system for creating interactive fiction. The 
+              Web site is full of resources, including tutorials on using Inform 
+              and other similar tools; references to other tools; and places to 
+              get Z-Machine interpreters for running games.</p>
+            <p><a href="http://emshort.home.mindspring.com/">http://emshort.home.mindspring.com/</a> 
+              - Emily Short's, one of the best modern creators of interactive 
+              fiction, Web site.</p>
+            <p><a href="http://teladesign.com/tads/">http://teladesign.com/tads/</a> 
+              - The home page for the Text Adventure Development System (TADS) 
+              a sophisticated C-like tool for developing interactive fiction.</p>
+            <p><a href="http://www.tads.org/">http://www.tads.org/</a> - The original 
+              home page for TADS.</p>
+            <p><a href="http://www.amzi.com/AdventureInProlog/index.htm">http://www.amzi.com/AdventureInProlog/index.htm</a> 
+              - The Prolog tutorial I wrote based on my experiences playing with 
+              IF using Prolog. The preface has some background on my early experiences 
+              with <i>Adventure</i>.</p>
+            <p></p>
+            <hr>
+            <p>As always, feedback ideas and especially interesting links are 
+              welcome. Past issues are available at either <a href="www.ddj.com">www.ddj.com</a> 
+              or <a href="www.ainewsletter.com">www.ainewsletter.com</a>.</p>
+            <p>Until next month,</p>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a></p>
+            <h1><br>
+            </h1>
+            <p></p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

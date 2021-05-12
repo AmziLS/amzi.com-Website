@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>ship.pro</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1><font color="blue">Shipping Advisor Prolog Logicbase</font></h1>
+This is the Prolog logicbase for the Shipping Advisor Demo. The Java Bean asserts 
+the facts gathered from JSP (e.g. weight, type, cod), then it queries Prolog by 
+calling option to get the list a possible shipping option. It repeats the query 
+until all the options are found. 
+<pre><font color="#000066">% The main options are stored as shipper/4 rules.  Each shipper
+% rule applies constraints for the particular service, and, if
+% the service is available for this situation, computes the
+% cost and delivery time.
+
+option(Shipper, Service, Cost, Delivery) :-
+  shipper(Shipper, Service, Cost, Delivery).</font></pre>
+<p>The rules are coded in Prolog and are declarative in style. The first one says 
+  if the weight is less than 11 ounces, and the destination is the USA then calculate 
+  and return the cost for first class mail.</p>
+<pre><font color="#000066">shipper('USMail', 'First Class Mail', Cost, 'Approximately two days') :-
+  weight(W),
+  W @=< 0:11,
+  destination('USA'),
+  once(first_class_mail(W, Cost)).
+shipper('USMail', 'Priority Mail', Cost, 'Approximately two days') :-
+  weight(W),
+  W @=< 5:0,
+  destination('USA'),
+  once(priority_mail(W, Cost)).
+shipper('USMail', 'Express Mail', Cost, 'Next day') :-
+  weight(W),
+  W @=< 7:0,
+  destination('USA'),
+  once(express_mail(W, Cost)).
+shipper('UPS', 'Ground Service', Cost, Delivery) :-
+  weight(Lb:Oz),
+  (Oz > 0, Wlb is Lb + 1; Oz = 0, Wlb = Lb),
+  destination('USA'),
+  once(ups_ground(Wlb, C, Delivery)),
+  ups_add_ons(A),
+  Cost is C + A.
+shipper('UPS', '2nd Day Air', Cost, 'Two days guaranteed') :-
+  weight(Lb:Oz),
+  (Oz > 0, Wlb is Lb + 1; Oz = 0, Wlb = Lb),
+  destination('USA'),
+  once(ups_blue(Wlb, C)),
+  ups_add_ons(A),
+  Cost is C + A.
+shipper('UPS', 'Next Day Air', Cost, 'Next day guaranteed') :-
+  weight(Lb:Oz),
+  (Oz > 0, Wlb is Lb + 1; Oz = 0, Wlb = Lb),
+  destination('USA'),
+  once(ups_red(Wlb, C)),
+  ups_add_ons(A),
+  Cost is C + A.
+  
+% Supporting rules and tables for computing costs and delivery
+% time.  This section is a mixture of tables, rules, and
+% formulas for computing costs and delivery times.
+
+first_class_mail(0:Oz, X) :-
+  X is 32 + 23 * integer(Oz-1).
+
+priority_mail(Lb:Oz, X) :-
+  (Oz > 0, W is Lb + 1; W = Lb),
+  X is 300 + 100 * (W - 2).
+
+express_mail(W, X) :-
+  express_mail_table(Wlim, X),
+  W @=< Wlim.</font></pre>
+<p>The following tables are coded directly in Prolog. This is very efficient and 
+  easy to maintain. However, the data could just as easily reside in external 
+  databases and be queried by Prolog.</p>
+<pre><font color="#000066">express_mail_table(0:8, 1075).
+express_mail_table(2:0, 1500).
+express_mail_table(3:0, 1725).
+express_mail_table(4:0, 1940).
+express_mail_table(5:0, 2155).
+express_mail_table(6:0, 2540).
+express_mail_table(7:0, 2645).
+
+ups_ground(Wlb, Cost, Delivery) :-
+  zone(Z),
+  ups_ground_table(Wlb, Z2, Z3, Z4, Z5, Z6, Z7, Z8),
+  arg(Z, ups_ground_table(Wlb, Z2, Z3, Z4, Z5, Z6, Z7, Z8), Cost),
+  ups_ground_delivery(Z, Delivery).
+
+ups_ground_table(1, 228, 243, 266, 274, 283, 291, 297).
+ups_ground_table(2, 230, 246, 293, 303, 324, 334, 358).
+ups_ground_table(3, 240, 263, 312, 327, 353, 363, 395).
+ups_ground_table(4, 250, 278, 324, 343, 366, 385, 423).
+ups_ground_table(5, 261, 290, 331, 351, 383, 403, 444).
+
+ups_ground_delivery(2, 'Two days').
+ups_ground_delivery(3, 'Three days').
+ups_ground_delivery(4, 'Three days').
+ups_ground_delivery(5, 'Four days').
+ups_ground_delivery(6, 'Five days').
+ups_ground_delivery(7, 'Five days').
+ups_ground_delivery(8, 'Six days').
+
+ups_blue(_, 550) :-
+  type(letter).
+ups_blue(Wlb, Cost) :-
+  not type(letter),
+  ups_air_table(Wlim, Cost, _),
+  Wlb < Wlim.
+
+ups_red(_, 1050) :-
+  type(letter).
+ups_red(Wlb, Cost) :-
+  not type(letter),
+  ups_air_table(Wlim, _, Cost),
+  Wlb < Wlim.
+
+ups_air_table(1, 575, 1475).
+ups_air_table(2, 650, 1525).
+ups_air_table(3, 725, 1725).
+ups_air_table(4, 775, 1850).
+ups_air_table(5, 850, 2000).
+
+ups_add_ons(X) :-
+  findall(A, ups_add_on(A), L),
+  sumlist(L, X).
+
+ups_add_on(450) :-
+  cod(yes).
+ups_add_on(X) :-
+  declared_value(V),
+  V > 100,
+  X is 30 * ((V-1) // 100).</font></pre>
+<p>The following code lets the user enter the weight in any of three forms, for 
+  example: </p>
+<ul>
+  <li>2 lb for 2 pounds </li>
+  <li>3 oz for 3 ounces </li>
+  <li>2:3 for 2 pounds and 3 ounces </li>
+</ul>
+<pre><font color="#000066">% Weight might be in a number of formats, so these rules convert
+% those formats to the Lb:Oz format that is used internally.
+
+fix_weight(Lb:Oz, Lb:Oz).
+fix_weight(Lb lb, Lb:0).
+fix_weight(Z oz, Lb:Oz) :-
+  Oz is Z mod 16,
+  Lb is Z // 16.
+fix_weight(N, W) :-
+  integer(N),
+  fix_weight(N oz, W).
+fix_weight(N, W) :-
+  float(N),
+  Ni is integer(N),
+  (N > Ni, Nr is Ni + 1; Nr = Ni), 
+  fix_weight(Nr oz, W).</font>
+</pre>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

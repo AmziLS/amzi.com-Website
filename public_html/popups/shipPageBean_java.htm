@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>shipPageBean.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1><font color="blue">Shipping Advisor Java Bean</font></h1>
+<p>This bean encapsulates the Amzi! Logic Server functions for use by the Shipping 
+  Advisor Demo. Instead of calling the Logic Server directly from JSP, using a 
+  bean provides code that is easier to read and maintain, and the user interface 
+  can be maintained separate from the logicbase queries.
+<p>To use the LogicServer class, the bean imports the amzi.ls package. From there 
+  it instantiates a new LogicServer object and invokes its method to query the 
+  shipping logicbase for the calling Java Server Page.. 
+<P>The Prolog portion of the shipping advisor takes the type of package, its weight, 
+  UPS zone and a couple of shipping options as input. It then runs through a rule 
+  base that determines the various options their cost and delivery times. This 
+  application is one of the Amzi! samples.</p>
+<pre><font color="#000066">package ship;
+
+import amzi.ls.*;<br>import java.text.DecimalFormat;<br>
+/**
+ * Title: JSP Ship
+ * Description: An implementation of the shipping advisor for JSP
+ * Copyright: Copyright (c) 2004 Amzi! inc. All Rights Reserved.
+ * Company: Amzi! inc.
+ */
+
+public class shipPageBean {
+   private String upsZone;
+   private String type;
+   private String weight;
+   private String cod;
+   private String declaredValue;
+
+   // Set all our inputs
+   public String getUpsZone() {
+      return upsZone;
+   }
+   public void setUpsZone(String newValue) {
+      if (newValue!=null) {
+         upsZone = newValue;
+      }
+   }
+   public String getType() {
+      return type;
+   }
+   public void setType(String newValue) {
+      if (newValue!=null) {
+         type = newValue;
+      }
+   }
+   public String getWeight() {
+      return weight;
+   }
+   public void setWeight(String newValue) {
+      if (newValue!=null) {
+         weight = newValue;
+      }
+   }
+   public String getCod() {
+      return cod;
+   }
+   public void setCod(String newValue) {
+      if (newValue!=null) {
+         cod = newValue;
+      }
+   }
+   public String getDeclaredValue() {
+      return declaredValue;
+   }
+   public void setDeclaredValue(String newValue) {
+      if (newValue!=null) {
+         declaredValue = newValue;
+      }
+   }
+
+   // Determine the shipping options
+   // Synchronize this method so only one thread at a time runs it
+   public synchronized String getOptions() {
+      long term;
+      int amt;
+      float famt;
+      double damt;
+      String options;</font>
+</pre>
+<p>First, a new instance of the Amzi! LogicServer is created and initialized
+and the compiled Prolog code file (ship.xpl) is loaded:</p>
+<pre><font color="#000066">      amzi.ls.LogicServer ls = new amzi.ls.LogicServer();
+
+      try
+      {
+         ls.Init("");
+         ls.Load("/amzi/ship.xpl");</font></pre>
+<p>Next, all the user inputs are asserted into Prolog's dynamic database as facts 
+  of the form 'known(Attribute, Value)'. Java's excellent string handling makes 
+  building the Prolog terms easy. In this case the strings are built using Java 
+  functions that retrieve text values from the user input form.</p> 
+<pre><font color="#000066">         /* Assert all the data collected from Java */
+         ls.AssertaStr("known(weight, "+weight+")");
+         ls.AssertaStr("known(cod, "+cod+")");
+         ls.AssertaStr("known(declared_value, "+declaredValue+")");
+         ls.AssertaStr("known(ups_zone, "+upsZone+")");
+         ls.AssertaStr("known(type, "+type+")");
+         ls.AssertaStr("known(destination, 'USA')");</font></pre>
+<p>Next the Prolog expert is consulted to provide a list of options. This
+is accomplished first by calling the option/4 predicate in the shipping
+advisor. It fires Prolog rules that result in a recommendation being returned
+in its four arguments, which represent the shipper, service, cost and delivery
+time. On backtracking, it returns other possible recommendations.
+
+<P>The query term is entered in the LSAPI function CallStr() just as it
+would be from a Prolog listener. As mentioned above, CallStr() returns
+the unified term, from which the arguments are extracted using the LSAPI
+GetStrArg() methods. The arguments are all extracted as text, which are
+added to the Java text area, named 'advice' in this application.
+</p>
+<pre><font color="#000066">         /* Query for the list of shipping options */
+         term = ls.CallStr("option(Shipper, Service, Cost, Delivery)");
+         if (term == 0) {
+            options = "No shipping options found";
+            ls.Close();
+            return options;
+         }
+         options = &quot;&lt;table width=\&quot;100%\&quot; border=\&quot;1\&quot; cellpadding=\&quot;2\&quot; cellspacing=\&quot;3\&quot;&gt;&lt;tr&gt;&quot;+<br>            &quot;&lt;td&gt;&lt;font color=\&quot;blue\&quot; size=\&quot;+2\&quot;&gt;Shipper&lt;/font&gt;&lt;/td&gt;&quot;+<br>            &quot;&lt;td&gt;&lt;font color=\&quot;blue\&quot; size=\&quot;+2\&quot;&gt;Service&lt;/font&gt;&lt;/td&gt;&quot;+<br>            &quot;&lt;td&gt;&lt;font color=\&quot;blue\&quot; size=\&quot;+2\&quot;&gt;Cost&lt;/font&gt;&lt;/td&gt;&quot;+<br>            &quot;&lt;td&gt;&lt;font color=\&quot;blue\&quot; size=\&quot;+2\&quot;&gt;Delivery&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;<br>         do {<br>            options += &quot;&lt;tr&gt;&quot;;<br>            options += &quot;&lt;td&gt;&quot;+ls.GetStrArg(term, 1)+&quot;&lt;/td&gt;&quot;;<br>            options += &quot;&lt;td&gt;&quot;+ls.GetStrArg(term, 2)+&quot;&lt;/td&gt;&quot;;<br>            amt = ls.GetIntArg(term, 3);<br>	        damt = famt/100;<br>	        DecimalFormat dform = new DecimalFormat(&quot;###,##0.00&quot;);<br>	        options += &quot;&lt;td&gt;$&quot;+dform.format(damt)+&quot;&lt;/td&gt;&quot;;<br>            options += &quot;&lt;td&gt;&quot;+NumberFormat.getCurrencyInstance().format(damt)+&quot;&lt;/td&gt;&quot;;<br>            options += &quot;&lt;td&gt;&quot;+ls.GetStrArg(term, 4)+&quot;&lt;/td&gt;&quot;;<br>            options += &quot;&lt;/tr&gt;&quot;;<br>         } while (ls.Redo());<br>         options += &quot;&lt;/table&gt;&quot;;</font></pre>
+<p>The call to Redo() is used to cause the Prolog engine to backtrack and
+reunify the query term with another recommendation. This continues until
+there are no more recommendations, and Redo() returns FALSE. At this point
+the text box is filled with all the available recommendations.
+
+<P>Finally the Prolog engine is closed:
+</p>
+<pre><font color="#000066">         ls.Close();
+      }
+      catch (LSException ex) {
+         try { ls.Close(); } catch (LSException ex2) {};
+         options = "ERROR: " + ex.getMessage();
+      }
+
+      return options;
+   }</font>
+</pre>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

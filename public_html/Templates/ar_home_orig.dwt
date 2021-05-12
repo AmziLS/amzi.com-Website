@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>ARulesXL</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link href="/ARulesXL/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="800" border="0" cellspacing="0">
+  <tr>
+    <td width="150"><img src="/ARulesXL/images/logo_shiprock2.jpg" width="150" height="115" /></td>
+    <td width="450" bgcolor="#D1EFFF">
+	<table width="450" height="115" border="0" cellspacing="5">
+      <tr>
+        <td align="center" valign="center" bgcolor="#D1EFFF"><h1><!-- TemplateBeginEditable name="Title" -->
+          Title
+          <!-- TemplateEndEditable --></h1></td>
+      </tr>
+    </table>	</td>
+    <td width="200" background="/images/right04.gif" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#6EB2F1"><table width="150" border="0" id="active">
+      <tr>
+        <td height="35"><a href="/ARulesXL/index.html">Home</a></td>
+      </tr>
+    </table>
+      <table width="150" border="0" id="nav">
+        <tr>
+          <td height="35"><a href="/ARulesXL/overview/index.htm">Overview &amp; Whitepapers</a> </td>
+        </tr>
+      </table>
+      <table width="150" border="0" id="nav">
+        <tr>
+          <td height="35"><a href="/ARulesXL/docs/index.htm">Documentation</a></td>
+        </tr>
+      </table>
+      <table width="150" border="0" id="nav">
+        <tr>
+          <td height="35"><a href="/ARulesXL/download/index.htm">Download &amp; Buy </a></td>
+        </tr>
+      </table>
+      <table width="150" border="0" id="nav">
+        <tr>
+          <td height="35"><a href="/ARulesXL/news/index.htm">Product News</a> </td>
+        </tr>
+      </table>
+      <table width="150" border="0" id="nav">
+        <tr>
+          <td height="35"><a href="http://forum.arulesxl.com">Support Forum</a> </td>
+        </tr>
+      </table>
+      <table width="150" border="0" id="nav">
+        <tr>
+          <td height="35"><a href="/ARulesXL/company/contact.htm">Contact Us</a> </td>
+        </tr>
+      </table>
+      <table width="150" border="0" id="nav">
+        <tr>
+          <td height="35"><a href="/ARulesXL/mail/mailinglist.htm">Mailing List</a> </td>
+        </tr>
+      </table>    
+      <table width="150" border="0" id="nav">
+        <tr>
+          <td height="35"><a href="/ARulesXL/resources/index.htm">Other Resources</a> </td>
+        </tr>
+      </table>    
+	</td>
+    <td valign="top"><table width="450" border="0" cellspacing="5">
+  <tr>
+    <td><!-- TemplateBeginEditable name="Contents" --><p>Contents</p><!-- TemplateEndEditable --></td>
+  </tr>
+</table> </td>
+    <td width="200" valign="top" background="/images/right04.gif" bgcolor="#FFFFFF"><!-- TemplateBeginEditable name="Right" -->
+    <p>Right</p><!-- TemplateEndEditable --></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td><img src="/ARulesXL/images/empty1x1.gif" height="1" width="200"/> </td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="#6EB2F1"><div align="center"><span class="footer">Copyright &copy; 2005-6 Amzi! inc. 
+      Amzi! is a registered trademark and ARulesXL is a trademark of Amzi! 
+      inc. <br />
+    Microsoft, Excel and the Office logo are trademarks or registered trademarks of Microsoft Corporation in the United States and/or other countries. </span></div></td>
+  </tr>
+</table>
+</body>
+</html>

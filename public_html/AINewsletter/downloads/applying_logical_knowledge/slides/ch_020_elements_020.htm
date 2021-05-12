@@ -1,0 +1,58 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Terms</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Terms<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<ul>
+  <li><b>Atom</b> - (internally coded as integers) starts with lower case letter, 
+    alphanumeric chars &amp; embedded underbars OK, no spaces, otherwise in single 
+    quotes, special case []<br>
+    <code>anatom</code>&nbsp;&nbsp;&nbsp;<code>an_atom</code>&nbsp;&nbsp;&nbsp;<code>florida</code>&nbsp;&nbsp;&nbsp; 
+    <code>'an atom'</code>&nbsp;&nbsp;&nbsp;<code>'Florida'</code>&nbsp;&nbsp;&nbsp;<code>'37'</code>&nbsp;&nbsp;&nbsp;<code>[]</code></li>
+  <li><b>Decimal Number</b> - an integer or float<br>
+    <code>14</code>&nbsp;&nbsp;&nbsp;<code>23.7</code>&nbsp;&nbsp;&nbsp;<code>-14</code>&nbsp;&nbsp;&nbsp;<code>16.7e-5</code></li>
+  <li><b>Other Numbers</b> - preceded by 0x for hex, 0' for character code, others 
+    available<br>
+    <code>0xff</code>&nbsp;&nbsp;&nbsp;<code>0'r</code>&nbsp;&nbsp;&nbsp;<code>0'y</code></li>
+  <li><b>Logical Variable</b> - starts with upper case or _<br>
+    <code>AVariable</code>&nbsp;&nbsp;&nbsp;<code>X</code>&nbsp;&nbsp;&nbsp;<code>_xyz</code></li>
+  <li><b>Structure</b> - a functor (atom syntax) with 1 or more comma separated 
+    arguments, each of which can be any term. functor(arg1, arg2, arg3, ...)<br>
+    <code>age(sam, 47)</code>&nbsp;&nbsp;&nbsp;<code>address(city('Asheville'), 
+    state('NC')))</code></li>
+  <li><b>Operator</b> - syntactic sugar structure of 1 or 2 arguments, represented 
+    with functor between, before or after the arguments. Functor can be made of 
+    all special characters (*+?^&gt;&lt;=-/...) (so can atoms)<br>
+    <code>7 + 3</code>&nbsp;&nbsp;&nbsp;<code>this ->&gt; that</code>&nbsp;&nbsp;&nbsp;<code>X 
+    = Y</code>&nbsp;&nbsp;&nbsp;<code>'Mary' lives_in 'Asheville'</code></li>
+  <li><b>List</b> - comma separated terms in square brackets, or pure characters 
+    in double quotes <br>
+    <code>[a,b,c]</code>&nbsp;&nbsp;&nbsp;<code>[sam, 14, state('NC'), X, [1,2,3]]</code>&nbsp;&nbsp;&nbsp;<code>"abc"</code>&nbsp;&nbsp;&nbsp;<code>[0'a, 
+    0'b, 0'c]</code></li>
+  <li><b>Strings</b> - (internally coded as strings) not ISO, in Amzi! delimited 
+    by backquotes `<br>
+    <code>`This is a string of text`</code></li>
+</ul>
+<p>SEE DOCUMENTATION FOR DETAILS!</p>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_020_elements_010.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <a href="ch_020_elements_030.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

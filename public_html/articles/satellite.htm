@@ -1,0 +1,820 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.61 [en] (WinNT; I) [Netscape]">
+   <title>An Information Management Architecture for On-demand Satellite Broadcasting (courtesy DigitalXpress)</title>
+<!--This file created 4:13 PM  8/28/98 by Claris Home Page version 1.0-->
+<X-SAS-WINDOW TOP=0 BOTTOM=631 LEFT=0 RIGHT=1020>
+</head>
+<body bgcolor="#FFFFFF">
+&nbsp; 
+<center>
+<h2>
+An Information Management Architecture for On-demand Satellite Broadcasting</h2></center>
+
+<center>
+<h4>
+Walter Beck, Christoph Bussler, Pamela Drew, and Art Murphy</h4></center>
+
+<center>Boeing Information and Support Services | P.O. Box 3707, MS 7L-49
+| Seattle, WA. 98124
+</center><p><center>{walter.r.beck, christoph.bussler, pamela.a.drew}@boeing.com</center>
+
+<center>
+<address>
+Presented at the Proceedings of 2nd International Workshop on Satellite-based
+Information Systems, Budapest, October, 1997.</address></center>
+
+<center>
+  <address> Presented here with the kind permission of <a href="http://www.digxpr.com/">DigitalXpress</a>.</address>
+</center>
+
+<table BORDER=0 CELLSPACING=15 CELLPADDING=15 WIDTH="100%" >
+<tr>
+<td VALIGN=TOP>
+<h3>
+1. Introduction</h3>
+The Boeing Company is developing an architecture to provide on-demand communications
+satellite broadcast services. One use of this architecture is a commercial
+venture designed to provide occasional-use access to communications satellites
+without the need to purchase and manage a dedicated, full-time satellite
+transponder channel. Another use is a governmental project that provides
+on-demand services with agile satellites - those that can be repositioned.
+In this paper, we focus on one of the commercial experiences with this
+technology, describing the system operational components. We then discuss
+some of the issues in the design of a broadcast management infrastructure,
+and suggest research issues to be investigated to support future commercial
+enhancements.&nbsp;</td>
+
+<td VALIGN=TOP>
+<center><img SRC="satellite_desk028.gif" ALT="On-Demand, Shared Bandwidth for Desktop Services" height=184 width=256>
+<p>Figure 1: On-Demand, Shared Bandwidth for Desktop Services</center>
+
+<p><br>
+<br>
+<p>Boeing has joined with other partners to form a company that addresses
+the growing demand for satellite usage. Its charter is to explore the possibility
+of offering cost effective communications satellite broadcast delivery
+services, especially to smaller companies that would not normally be able
+to afford the use of a dedicated satellite transponder. This is accomplished
+by providing "desktop" on-demand scheduling of satellite usage and low-cost
+receive sites. The system consists of a central transmission site (Uplink
+Center) to provide information content for transmission and a modified
+commercial-off-the-shelf digital satellite receiver. Customers purchase
+transmission time-slices customized to accommodate their schedule and resource
+requirements; in other words, this service allows the customer to specify
+when and to whom the transmission is to be made in a flexible manner. This
+on-demand service is provided by partitioning "channels" of various fixed
+bandwidths across a transponder's bandwidth. The servicing of multiple
+customers is accomplished by associating security access with transmissions,
+thus allowing several customers to share the same channel without concern
+of information being received by sites not authorized for the broadcast.
+<p>This information dissemination model is different from that provided
+by DirecPC [Hug97]. One difference is that the Boeing model is "push" -
+content providers decide what to send to receivers and push it to them
+at a designated time. DirecPC, on the other hand, provides a "pull" model
+- receivers request information they desire and it is sent immediately.
+DirecPC requires a two-way connection - a low-speed link to request information
+and a high-speed link (via satellite) to provide the requested information.
+The product described in this paper uses one-way high-speed satellites
+links to provide service. Plans for "pull" capabilities are under consideration
+for a future release.&nbsp;
+<p>The channels are defined to provide Store-and-forward (digital data)
+or Real-time Stream (video/audio/data) services in a broadcast environment.
+Return loops (data from the receive sites) are out-of-band and will be
+handled by landline in the near future. Channel definitions consist of
+mapping multiplex interface hardware to service require-ments. A Store-and-forward
+channel is made up of a Digital Interface Unit while Real-time Stream channels
+consist of a video compressor and an audio compressor paired to provide
+simultaneous audio and video.
+<p>The type of service contracted by a customer results in the assignment
+of channels matching the service requirements. To initiate a transmission,
+customers request a schedule time for a transmission on a specific channel
+with options consistent with the desired service. For Store-and-forward,
+customers send the data file to the transmission site via dial-up, leased
+lines or Internet where the file is stored for transmission at the scheduled
+time. Real-time stream customers have several methods (backhaul) of providing
+a video source for transmission. They can submit video tapes, use dedicated
+T1 lines, fiber, dial-up Primary Rate ISDN or contract for special video
+connection serv-ices, such as a remote video truck. At the scheduled time,
+Uplink Center operators either initiate a connection to the video source,
+or load and start a tape playback which is fed in real-time over the associated
+channel.
+<p>The receive sites consist of a satellite receiver that reads and decodes
+digital data for storage on a PC local to the receiver on site or standard
+NTSC video signals fed to TV monitors. The receiver has an associated "smart-card"
+that allows for the decrypting of the signal, if authorized to receive.
+The smart-card receives a continuous digital data stream from the satellite,
+which provides authorization commands to allow that individual receiver
+to access particular channels.&nbsp;</td>
+</tr>
+</table>
+
+<table BORDER=0 CELLSPACING=15 CELLPADDING=15 WIDTH="100%" >
+<tr>
+<td VALIGN=TOP>
+<h3>
+
+<hr></h3>
+
+<h3>
+2. Operational Architecture</h3>
+The operation of the scheduling and transmission is currently managed by
+two main subcomponents, as shown in Figure 2. One is an object model of
+system resources, customer transmission requests, schedule histories, constraints
+which represent rules of how resources can be combined, and other data
+required to describe a scheduled transmission. Some information is maintained
+by system operators as part of the operational infrastructure, and some
+is provided by an end-user when a time-slice is purchased. The objects
+are provided via distributed object servers that are between the applications
+and the database. Applications developed to interact with users have no
+knowledge of the schema or existence of an underlying database since they
+are provided with functional interfaces for needed objects. The other main
+component is a scheduling engine which interprets the transmission specifications
+stored in the object model, and produces a schedule of work for the Uplink
+center and receiver sites. In the remainder of this section, we describe
+each of these subsystems in more detail.
+<p>&nbsp;</td>
+
+<td VALIGN=BOTTOM>
+<center><img SRC="satellite_obj.gif" height=234 width=346>
+<p>Figure 2: Operational Architecture</center>
+
+<p><br>
+<br>
+<br>
+<h3>
+2.1 Scheduling</h3>
+Store-and-forward scheduling requirements are based on a "hands-off" approach
+that does not require Uplink Center operator intervention. The scheduling
+model closely follows the conceptual view of an express delivery service
+with scheduling options of Immediate, Overnight and specific time delivery.
+The duration of a Store-and-forward schedule transmission is generally
+measured in minutes. The process for scheduling allows a customer to request
+a transmission by specifying the file to be transmitted, schedule options
+and a reliability factor (send once-send twice). The schedule engine determines
+the availability of schedule time and resources and requests confirmation
+from the customer that they desire to commit the schedule item.
+<p>Real-time Stream scheduling is more complex in that multiple configurations
+of system resources are possible to satisfy a request. Durations for Real-time
+Streams are based on a minimum of 15 minutes with 15 minute increments.
+A setup time may also be needed since Uplink Center operators are required
+to complete manual operations such as loading a video tape player or checking
+signal quality prior to transmission time. The process for scheduling allows
+a customer to identify a transmission date, the desired configuration and
+estimated duration. The schedule engine responds with a view of available
+start times for the date desired using the configuration and channel. The
+customer then selects a desired start time and the schedule item is committed.
+<p>A schedule item transitions through several states during its existence.
+When initially requested, it has a state of <i>Reserved</i>. At commitment
+time, its state changes to <i>Booked</i>. At setup time prior to transmission,
+it changes to <i>In-process</i>. When setup is complete, it switches to
+<i>Transmitting</i>. When done, it becomes <i>Complete</i>. Additional
+states are <i>Error</i> indicating that for some reason the transmission
+failed and <i>Reschedule</i> indicating that the schedule item requires
+rescheduling. Reschedule applies only to Store-and-forward services.&nbsp;</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP>The Scheduling engine supports a variety of scheduling strategies
+for Store-and-forward services. The strategies are based on ordering preference
+to assist in schedule load leveling and the level of preemption that is
+desired when adding an item to the schedule. Ordering preference is selected
+by specifying the "direction" in time that the item is to be added to the
+schedule. A forward strategy fills the schedule from the time of request
+to the future; a backward strategy fills the schedule from a future point
+in time to the time of request. Levels of preemption define how much effort
+is taken to fit a schedule item into a schedule slot. A normal preemptive
+strategy requires the scheduling engine to deny a schedule request if any
+item already in the schedule interferes with the request. A non-disruptive
+strategy requires the scheduling engine to adjust the schedule times of
+existing items as long as the existing items can be moved within their
+time windows. A disruptive preemptive strategy requires the scheduling
+engine to place the requested schedule item where specified and return
+a list of disrupted schedule items. These items are then set to the Reschedule
+state and require operator intervention to iden-tify a new schedule time.
+<p>&nbsp;</td>
+
+<td VALIGN=BOTTOM>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p>Since maintenance on the equipment involved in transmission is required,
+it can be scheduled as a Maintenance item. The scheduling of a Maintenance
+item on a device required to support Store-and-forward will cause the schedule
+engine to move schedule items within the constraints associated with scheduling
+options for each schedule item affected by the Maintenance item. Items
+that can not be moved are marked for rescheduling. If no items are affected
+by the Maintenance item, use of the device associated with the Maintenance
+item is blocked.
+<p>Maintenance items are the only schedule item that can be scheduled with
+a start time prior to the time of scheduling. This is required to support
+the condition where a failure is detected but its time of origin is prior
+to the time of detection. By allowing a Maintenance item to be scheduled
+starting prior to time of detection, Store-and-forward items in the schedule
+that were marked as In-process, Transmitting or Complete can be immediately
+rescheduled by the schedule engine or, if they cannot be automatically
+rescheduled, marked for manual rescheduling. An Uplink Center operator
+is then required to manually determine the new schedule time for the transmission.&nbsp;</td>
+</tr>
+</table>
+
+<table BORDER=3 CELLSPACING=15 CELLPADDING=15 WIDTH="100%" >
+<tr>
+<td VALIGN=TOP>
+<h4>
+Store-and-Forward</h4>
+The scheduling options available for Store-and-forward and the one minute
+resolution associated with them require the inclusion of temporal information
+which defines the time durability of the data to be broadcast. This is,
+in effect, a time window in which the data can be sent according to a mobility
+factor (how well it can be moved in the time window). This was included
+to both support the defined scheduling options of Immediate, Overnight
+and Specific Time and to support the future ability for customer specification
+of broadcast time ranges, e.g. transmit between 9 am and 1 pm.
+<h4>
+Real-Time Stream</h4>
+Real-time streams require a set of resources to satisfy a broadcast where
+Store-and-forward items only require the use of a specific channel. These
+resources are defined and managed in pools that contain a set of like devices.
+An offered service is a unique combination of pool resources. When a schedule
+request is made, the schedule engine resolves the pool resources into a
+set of physical devices along with a channel that are committed to the
+schedule item at broadcast time.
+<p>&nbsp;</td>
+
+<td VALIGN=TOP>
+<h4>
+Business Systems</h4>
+Business Systems - billing, customer service, account-ing, etc. - are decoupled
+from the operational aspects of the architecture as much as possible to
+support changes in business process (models) independently of changes in
+the operational systems. The major intersection is temporal in nature in
+that before any schedule request is committed, the characteristics of the
+request are given to the Business System and a token is requested that
+grants permission to schedule. Permission is based on contractual dates
+intersected with schedule request time and service characteristics.
+<h4>
+Scheduler Extensions</h4>
+Extensions to the scheduling and configuration control mechanisms are required
+to allow for more sophisticated schedule specifications, and for more flexibility
+in creating a configuration that will satisfy a request. For example, use
+of agile satellites with mobile receive site(s) creates the need to determine
+the intersection of beam patterns with the location of the intended receive
+site. This will be accomplished by running simulations to predict the path
+of the satellite against the intended receive site and taking into the
+account the time durability of the data to be broadcast. Further, the definition
+of the time durability of data will be extended and used to add constraints
+to the scheduling engine in determining broadcast order for Store-and-forward
+schedule items.
+<p>Extensions to hybrid transmission media will also place new requirements
+on the transmission scheduling engine. At this point in development, the
+architecture is based on a broadcast only model. To receive any confirmation
+or status from the receive sites an out-of-band feedback path, return loop,
+is required. Several types are under consideration - dial-up or dedicated
+land-line, radio link, and satellite link. When broadcasting to a set of
+receive sites that represent a diversity of feedback paths, issues to be
+investigated will include coordination of feedback time windows and the
+determination of a rebroadcast schedule given the variation in feedback
+times.&nbsp;</td>
+</tr>
+</table>
+
+<table BORDER=0 CELLSPACING=15 CELLPADDING=15 WIDTH="100%" >
+<tr>
+<td>
+<h3>
+2.2 Object Model</h3>
+Objects common to both the needs of Store-and-forward and Real-time stream
+broadcasts are Channel, Configuration, Schedule, Transmission and Business
+Rule objects. Channel objects define the characteristics of channels within
+the transponder bandwidth. Configuration objects define the required number
+and device types (pools) to satisfy a service offering. Contractual agreements
+bind Channel objects to Configuration objects in a many-to-many relationship
+allowing for schedule optimization of resources and schedule robustness.&nbsp;</td>
+
+<td VALIGN=TOP>
+<center>
+<p>&nbsp;</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=BOTTOM>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p>A Schedule object reflects a commitment to provide service at a specified
+time or within service time definition. Schedule objects are, in essence,
+an abstract class that has specific sub-classes depending on service requirements.
+The currently defined sub-classes are Store-and-forward, Real-time Stream
+and Maintenance. Maintenance is a special case described below.
+<p>Transmission objects provide for the management of Schedule objects
+as they transition to actual transmission events. This occurs when the
+schedule time for the object nears. For Store-and-forward Schedule objects,
+this occurs automatically since operator intervention is not required while
+with Real-time Stream Schedule objects, an Uplink Center operator initiates
+the transition at schedule time.&nbsp;
+<p>A Business Rule object allows the specification of attributes that define
+operational constraints on the system such as hours of operation and maximum
+and minimum schedule durations by service. For the most part, they are
+used to optimize the scheduling engine. This was chosen to provide loose
+coupling between the system applications and the requirement for operators
+to be able to simply define new or changes to operational constraints.
+<p>Additional objects to support specific requirements for Store-and-forward
+services and for the maintenance of Uplink Center equipment are also managed.
+For Store-and-forward service, a Data object is provided for the management
+of the customer's data files. This object defines the metadata associated
+with the data file and is associated with a specific Schedule object for
+transmission. Similarly, Maintenance objects are a type of Schedule object
+that do not reflect a transmission but effectively block the use of devices
+for schedules by taking them out-of-service for a specified time. This
+is done to maintain a consistent view of the system and allow for the uniform
+management of Schedule objects. Store-and-forward items affected by the
+Maintenance object are automatically rescheduled if possible.&nbsp;</td>
+
+<td VALIGN=TOP>
+<hr>There are three types of Configuration objects:
+<ul>
+<li>
+Product, which define the general service offerings through the combination
+of resource pools,&nbsp;</li>
+
+<li>
+User, which allow for the specialization of Product configurations to a
+customer's needs and;&nbsp;</li>
+
+<li>
+Scheduled, which bind specific devices from pools, along with assigned
+channel, to a scheduled trans-mission.&nbsp;</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=BOTTOM>&nbsp;
+<center>
+<p>&nbsp;</center>
+</td>
+
+<td>
+<h3>
+
+<hr>3. Workflow Technology in a Broadcast Management System</h3>
+As the system exists today, the interaction of the object model specification
+and the scheduling engine can be thought of, roughly, as a workflow application
+being executed by a workflow engine, if we expand the concepts frequently
+promoted as part of workflow technology [GHS95, JBu96]. For example, the
+notions of time durability in our satellite transmission scheduling problem
+requires that real-time and temporal concepts be integrated into workflow
+systems. It also suggests that more flexible scheduling of workflow tasks
+to produce execution patterns which parallelize and optimize task execution
+and utilize existing resources to their fullest capacity, while still operating
+within system and business con-straints (currently captured in the object
+model) is required.
+<p>Furthermore, because there are a number of products and services that
+can be configured from this basic satellite transmission infrastructure,
+it is important to create, and automate where appropriate, business processes
+to efficiently manage multiple transmission events, each with different
+time, information, and transmission constraints. Workflow technology provides
+a useful execution framework for such processes, and we are exploring it
+as a mechanism to implement some components of a monitoring function required
+for broadcast management. This capability is particularly important in
+event-driven applications such as information dissemination for integrated
+battle management.&nbsp;
+<p>In the discussion that follows, we first summarize a high-level view
+of the business process used in this particular on-demand broadcast service.
+This provides the context for a discussion of how a subprocess can be automated
+using a workflow engine, and what extensions are required to integrate
+the workflow management sys-tem (WFMS) with our existing transmission scheduling
+engine. This illustrates specifically one way in which temporal information
+can be used as a guide for the scheduling of a workflow execution, and
+motivates design changes to a WFMS that will allow workflow tasks to be
+scheduled more flexibly. Lastly, we conclude the section with a discussion
+of other information dissemination techniques can be integrated as well.&nbsp;</td>
+</tr>
+</table>
+
+<table BORDER=0 CELLSPACING=15 CELLPADDING=15 WIDTH="100%" >
+<tr>
+<td VALIGN=TOP>
+<h3>
+3.1 System Business Process</h3>
+The system business processes, shown in Figure 3, illustrate the major
+process components (denoted by different colors) and information flow (shown
+as labels on the arcs between nodes) through the system. Customer Management
+consists of Product Management, Contract Management and Billing. Provisioning
+consists of Resource Management, Channel Management, Product Configuration
+and Customer Configuration. Scheduling is a stand-alone process as is Schedule
+Execution.
+<p>The Product Management process defines the product offerings according
+to service characteristics and pricing. Service offerings can be negotiated
+with customers to respond to specific needs outside of the normal offerings.
+This is part of the Contract Management process. Contract Management is
+the process of setting up customer information and profiles after sales
+are completed. Billing is the process of converting service activities
+into invoices.
+<p>Resource Management defines the physical components and their characteristics
+in the uplink center. Channel Management identifies the types and characteristics
+of service channels in the uplink center. Product Configuration is the
+process of taking product definitions and allocating resource types to
+the definition. Upon the definition of a contract, the Customer Configuration
+process creates customer specific instances of product configurations and
+assigns allowable channels to the configuration. Resource types can also
+be converted to specific devices within the resource pools for that customer
+instance. At this point, the system has sufficient information to allow
+customers to schedule transmissions.
+<p>&nbsp;</td>
+
+<td VALIGN=BOTTOM>
+<h3>
+<img SRC="satellite_ops465.gif" X-SAS-UseImageWidth X-SAS-UseImageHeight height=246 width=375></h3>
+&nbsp;
+<p><br>
+<center>
+<p>Figure 3: System Business Process Model</center>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>Scheduling is the process of customers identifying the contract information
+relative to billing assignments, identifying the specific customer configuration
+desired to be scheduled, and specifying the desired time for the transmission.
+<p>Schedule Execution does the necessary Uplink center physical configuration
+at the requested transmission time and monitors the state of the transmission.
+For Store-and-forward services, operator intervention is not required while
+Real-time Stream services require the intervention of operators to connect
+patch cables, handle tape machines and provide other related services.
+At the completion of transmission, a charge record is generated for use
+by the billing process.
+<br>&nbsp;
+<br>&nbsp;
+<h3>
+3.2 Customer Order Processing Workflow</h3>
+Workflow management systems are specifically designed to provide the capability
+of managing work, especially if there is some specific order in the tasks
+people have to perform to reach a result. In this product offering, a successful
+result means that the transmission of data or a video took place as scheduled
+according to the customer's specification.. As an example, we describe
+here the execution of a customer order workflow type called customer order
+processing, shown graphically in Figure 4; it is a refined subset of the
+high-level processes just described. For each customer request, this workflow
+type is instantiated and executed by a workflow engine.&nbsp;</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP>
+<center><img SRC="satellite_ord.gif" height=270 width=396>
+<p>Figure 4: An Example Workflow Type&nbsp;</center>
+</td>
+
+<td>The figure does not show the complete workflow specification but is
+restricted to the most important as-pects of it. When a customer calls
+and wants to place an order for transmitting data, a customer representative
+ini-tiates a customer order processing workflow instance. The customer
+representative is then assigned the first step of the workflow instance:
+input customer order. This step brings up an application program with a
+graphical user interface. The customer representative asks the customer
+the details of the order, such as what information should be transmitted
+and when the transmissions should take place (year, month, day and time
+of transmissions as well as the duration of the transmission)<sup>2</sup>.
+In addition billing information is captured.
+<p>Before an order can be placed, the order has to be scheduled. This is
+necessary since a transmission uses resources which are of limited availability
+(e.g. a tape drive). Depending on the resource demands of the order and
+the resource availability at the requested transmission time, the order
+will be placed or denied by the customer representative. The scheduling
+of the required resources is done by a dedicated resource scheduling system,
+such as the scheduling engine just described for the current prod-uct offering.
+If the resources are available, the order is placed and the step input
+customer order is done. The order data (order) are also transferred to
+the next step in the workflow (transmit data). If required resources are
+not available, the customer might decide to ask for an-other time of transmission
+or to not place an order at all. In the latter case the customer representative
+discards the order ("order discarded by customer") and the workflow instance
+is finished as a whole.
+<p>The functionality of a workflow system is especially useful for prompting
+users to perform manual tasks in a complex process. The most obvious example
+in the on-demand broadcast application is the manual set-up re-quired for
+some transmissions. The workflow system can provide a list of jobs for
+an Uplink center operator to carry out. After the set-up, the operator
+initiates the transmission using an application program. If the trans-missions
+fails, no billing record is written and the workflow instance finishes
+("failure during transmis-sion"). At this point the workflow type is simplified.
+Usually the customer has to be notified of the failure and some compensation,
+such as retransmission, is negotiated.
+<p>If the transmission succeeds, the order information, together with the
+actual transmission data, are transferred to the step write billing record.
+This step then takes the data and writes a billing record into a billing
+database. This step is executed by another application program. Since computing
+the amount to be charged and storing the information can be fully automated,
+this step is done automatically. This step is the last step in the workflow
+instance, after which the instance is deleted from the system.
+<p>
+<hr><sup>2 </sup>Note that this process of getting customer input could
+be automated via electronic user profiles for information services that
+require recurring or refresh broadcasts.&nbsp;</td>
+</tr>
+
+<tr>
+<td>.
+<h3>
+3.3 Transmission-Driven Workflow Schedules</h3>
+Current workflow management systems assign workflow instances to a role
+(and subsequently to people or automated agents) according to the control
+flow and data flow specified in the workflow type. For example, the step
+transmit data is assigned to an operator as soon as the step input customer
+order is finished. This results in all outstanding orders being listed
+in the worklists of the operators.
+<p>Since orders can be placed in advance, the list of out-standing transmissions
+could be long. Certainly, if the orders are generated via automatic profile
+analysis in a smart push architecture [DPe96], the queue of scheduled transmissions
+could be extremely large. However, an op-erator who is working shifts does
+not want to see transmission orders that do not take place during a particular
+shift at all. Instead, they should be provided a view of only those outstanding
+orders to be executed in that shift. There are basically two ways to achieve
+this:
+<p>1. Extend the functionality of a worklist such that the worklist can
+query all transmission orders between two given points in time, i. e. the
+start and finish time of a shift. An operator would type in the shift starting
+time and the worklist would only display the appropriate assignments. This
+would require that the transmission start and end time is available to
+the corresponding workflow instance, and could be implemented by storing
+these values in addition to the order identifier in the workflow instance.
+<p>2. The workflow management system does not instantiate the second step
+transmit data right after the first step input customer order has finished,
+and therefore does not assign the work to an operator worklist. Since it
+is known when a transmission has to take place, the workflow management
+system could postpone the instantiation of the second step until some time
+just before the scheduled transmission, e.g. two hours, at which time the
+transmission would appear in the worklist. In this case, the workflow management
+system has to be able to schedule parts of the execution of the workflow
+instance itself based on the output of the transmission scheduling engine
+(i.e. the transmis-sion schedule)<sup>3</sup>.
+<p>At first glance, the first solution is appealing since little additional
+functionality is required. The worklist has to be extended to search for
+workflow instances with certain attribute values: in this case, the start
+and end time of transmission. The definition of the attribute values in
+the workflow type and the assignment of their values is specified by the
+workflow designer. However, due to the potentially large set of transmission
+requests in the system, this approach has the drawback of inefficiency
+by maintaining many workflow instances for pending transmissions. It would
+also lead to more complicated recovery mechanisms for instantiated workflows
+in the event of a system failure.
+<p>The second case does have the drawback of creating additional functionality
+within the WFMS. However, it may be more advantageous since workflow instances
+do not exist until shortly before their use, and hence, WFMS resources
+are used more efficiently. At the same time, failure recovery can be easier
+and faster since the number of workflow instances to be restored is much
+lower.
+<hr><sup>3</sup> Note that this scheduling process is different from the
+transmission schedule itself. Here, we are focused on the scheduling events
+required to manage the transmission sched-ule, not determine the transmission
+schedule itself.&nbsp;</td>
+
+<td VALIGN=BOTTOM>
+<center>
+<h3>
+<img SRC="satellite_wfms.gif" height=246 width=375></h3></center>
+
+<center>Figure 5: Interoperable WFMS and Transmission Scheduler&nbsp;</center>
+</td>
+</tr>
+
+<tr>
+<td></td>
+
+<td>
+<h3>
+3.4 Interoperability Architecture for Transmission and Workflow Engines</h3>
+We propose an architecture, shown in Figure 5, to enable the creation of
+workflow instances depending on schedule of transmission orders that can
+be used to implement the second solution proposed above. The important
+observation is that workflow instances are not scheduled according to the
+static steps in the workflow specification (i.e. Figure 4), but instead
+according to the transmission order schedule.
+<p>To do this, the WFMS must communicate with the transmission scheduling
+system. As soon as the step input customer order is successfully finished,
+the WFMS determines the time window of the scheduled transmission using
+the function "get_transmission_schedule(transmission_id)" of the transmission
+scheduler. The WFMS then creates a scheduled workflow instance. This is
+not a workflow instance itself but an entry within its database indicating
+when a workflow instance of the step transmit data has to be created. The
+WFMS polls periodically (or based on a time interrupt service) the scheduled
+workflow instances and creates them accordingly. For those instances which
+require manual set-up, the workflow instance can be created so that it
+will appear in the worklist of the operator at some default period of time
+(e.g. two hours) before the actual transmission time.
+<p>While there are existing WFMS that can start workflow instances at a
+given time [COS94], the infor-mation has to be supplied by a user. However,
+in our proposed architecture, the WFMS is tightly integrated with a dedicated
+transmission scheduler on an application programming interface (API) level.
+In this approach, the system can determine when to schedule a workflow
+instance and not rely on manual work.
+<p>One of the advantages of this approach is apparent for applications
+that require frequent re-scheduling, auto-matic refresh broadcasts based
+on user profiles, or other event-driven transmissions. The dedicated scheduler
+can actively notify the WFMS about a schedule change. Subsequently the
+WFMS can adjust its scheduled workflow instances.
+<p>Several cases of rescheduling have to be considered.
+<ul>
+<li>
+The new schedule is after the current time. In this case no problem arises
+and the workflow can be in-stantiated according to the new schedule.&nbsp;</li>
+
+<li>
+The new schedule starts at the current time. In this case the instantiation
+occurs immediately. The WFMS does not have to change its entry for the
+scheduled entry, but has to delete it when done.&nbsp;</li>
+
+<li>
+The new schedule is before the current time. In this case the schedule
+change is too late: this scenario might arise in the case of equipment
+failure, for ex-ample. There are a number of ways to handle this case.
+One way is the workflow instance is created even though it is too late.
+In the current product offering, this is not allowed since a customer asked
+for a specific fixed schedule. Another possibility is to delete the scheduled
+workflow since it will never be executed. However, this is not a feasible
+approach since the customer still needs to be notified. Even though the
+step transmit data will not be executed, the overall workflow customer
+order processing must continue with notification and renegotiation with
+the customer. In this case, a step contact customer could be instantiated.&nbsp;</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td>
+<h3>
+3.5 Information Dissemination Techniques as Scheduling Events</h3>
+The triggering event for the execution of the transmit data workflow step
+in the current on-demand transmission service is an a-priori content provider
+request, however, others need to be incorporated. In applications such
+as a weather service, receivers require updated information at some (a)periodic
+rate of delivery [FZd96, SRB97]. Other parameters that could determine
+transmission events in-clude frequency of update, the size of the changed
+information, the number of receive sites interested in the updates, and
+new requests for information. For highly dynamic application domains, such
+as integrated battle management, the frequency of updates to source data
+can vary widely: from the nanosecond range for sensor infor-mation, for
+example, to hourly updates to intelligence databases. Furthermore, information,
+such as battle plans, may only be valid for a certain, and relatively short,
+period of time. In the case of smart push [DPe96], one or more intermediary
+servers are used to aggregate receive site profiles to determine how best
+to package source in-formation for broadcast. This profile information
+itself is also subject to update, and brings another layer of data consistency
+to be maintained. A transmission scheduler must optimize to these parameters
+and the resulting schedules must be flexibly accommodated by a broadcast
+management system, possibly implemented with an extended workflow management
+infrastructure.
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p>&nbsp;</td>
+
+<td VALIGN=BOTTOM>
+<h3>
+
+<hr>Summary</h3>
+We have described a commercial on-demand satellite broadcast system, including
+its operational model and system components, and the business process used
+for the service configuration. The current system is implemented by a database
+driven scheduling engine that will provide the core functionality of future
+services. We have discussed some of the issues in the design of a broadcast
+management system by integrating a transmission scheduling system with
+a workflow management infrastructure. Future work will focus a more detailed
+study of how in-formation dissemination techniques can be incorporated
+and on their effect on the integrated design of a broadcast management
+system for different satellite-based information systems.&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<h3>
+
+<hr>Acknowledgments</h3>
+The authors gratefully acknowledge the contributions of the rest of the
+DigitalXpress team, especially Tom Haug, Doug Julien and Joel Wright, for
+their significant contributions to the design and implementation of the
+system, and insightful comments on this paper. We would also like to note
+that the recent passing of our colleague Art Murphy, whose work on the
+scheduling engine reported here, is a significant personal and professional
+loss; we plan to continue his research agenda to the best of our ability.&nbsp;
+<p>&nbsp;</td>
+
+<td VALIGN=BOTTOM>
+<p>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<div ALIGN=right>
+<h3>
+
+<hr>References</h3></div>
+</td>
+
+<td>
+<p>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<div align=right>[COS94]&nbsp;</div>
+</td>
+
+<td>COSA programming manual, Software-Ley GmbH, Pulheim, Germany, 1994.&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<div align=right>[DPe96]&nbsp;</div>
+</td>
+
+<td>Dao, S., Perry, B., "Information Dissemination in Hybrid Satellite/Terrestrial
+Networks", IEEE Data Engineering Bulletin, Vol. 19, No. 3, pp.12-18, Sept.
+1996.&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<div align=right>[FZd96]&nbsp;</div>
+</td>
+
+<td>Franklin, M., Zdonik, S., "Dissemination-Based Information Systems",
+IEEE Data En-gineering Bulletin, Vol. 19, No. 3, pp.20-30, Sept. 1996.&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<div align=right>[GHS95]&nbsp;</div>
+</td>
+
+<td>Georgakopoulos, D., Hornik, M., Sheth, A., "An Overview of Workflow
+Management: From Process Modeling to Workflow Automa-tion Infrastructure",
+Distributed and Parallel Databases, No. 3, 1995.&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<div align=right>[Hug97]&nbsp;</div>
+</td>
+
+<td>Hughes Network Systems. DirecPC Home-page. http://www.direcpc.com.&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<div align=right>[JBu96]&nbsp;</div>
+</td>
+
+<td>Jablonski, S., Bussler, C., "Workflow Management. Modeling Concepts,
+Architecture and Implementation", International Thomson Computer Press,
+1996.&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<div align=right>[SRB97]&nbsp;</div>
+</td>
+
+<td>Stathatos, K., Roussopoulos, N., Baras, J., "Adaptive Data Broadcast
+in Hybrid Net-works", Proceedings of the 23rd International Conf. On Very
+Large Data Bases, pp.326-335, Athens Greece, Aug. 1997.&nbsp;</td>
+</tr>
+</table>
+
+<br>&nbsp;
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

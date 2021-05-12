@@ -1,0 +1,41 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Backtracking</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Backtracking<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Searching a predicate composed of facts, Prolog looks for the 
+  first fact that unifies with the goal.</p>
+<pre>seats(727,100).
+seats(767,300).</pre>
+<pre>?- seats(767,300).</pre>
+<ol>
+  <li>functor, <var>seats</var>, matches with clause #1</li>
+  <li>arity, 2, matches clause #1</li>
+  <li>first arguments, 727 &amp; 767, FAIL to unify in clause #1</li>
+  <li>backtrack to clause #2</li>
+  <li>functor/arity, <var>seats/2</var>, matches</li>
+  <li>both arguments unify</li>
+</ol>
+<pre>yes</pre>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_030_queries_020.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_030_queries_040.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

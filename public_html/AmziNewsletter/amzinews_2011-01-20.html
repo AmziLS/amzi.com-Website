@@ -1,0 +1,227 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#ffffff">
+    <tr> 
+      <td valign="top" align="left" colspan="3" width="740"><img src="http://www.amzi.com/AmziNewsletter/images/amzi_newsletter.jpg" width="700" height="125"></td>
+    </tr>
+</table>
+
+<table width="700" border="0" bordercolor="#000000" cellspacing="5" cellpadding="5"  bgcolor="#FFFFCC">
+  <tr>
+    <td width="350" valign="top">
+    <h3 align="left"><a href="http://www.amzi.com">www.amzi.com</a></h3>
+    </td>
+    <td width="350" valign="top">
+    <h3 align="right"> 2011-01-20 </h3>
+    </td>
+</tr>
+</table>
+
+<table width="700" border="1" bordercolor="#000000" cellspacing="5" cellpadding="5"  bgcolor="#FFFFCC">
+  <tr>
+    <td width="700" valign="top">
+
+    <h2 align = "center">Contents</h2>
+    <ul>
+    <li> Welcome</li>
+    <li>Domain Specific Languages - reasoning engine</li>
+    <li>Training, Consulting, Legacy Code support, Source Code Licensing</li>
+    </ul>
+    
+    <hr>
+    <h2 align = "center">Welcome</h2>
+    <p>To read this newsletter on the Web: <a href="http://www.amzi.com/AmziNewsletter/index.php">Read on the Web</a><br/>
+      To unsubscribe: 
+      <unsubscribe>Unsubscribe</unsubscribe><br/>
+      To subscribe: <a href="http://www.amzi.com">Subscribe</a>    </p>
+    <p>In this issue we wrap up the Prolog portion of the decision tree Domain Specific Language (DSL). You can download the project here: <a href="http://www.amzi.com/distribution/challenge.php?file=decision_trees.zip">download</a></p>
+    <p>In the <a href="amzinews_2010-12-12.html">last issue</a> we covered the use of Prolog structures and lists for representing the decision tree knowledge. The structures were used to encode the information at each of the nodes of the trees, as well as information about the basic facts whose values would be gathered by asking the user, if and when appropriate.</p>
+    <p>This issue includes the code for the reasoning engine. It illustrates how powerful Prolog's built-in pattern-matching (unification) and search (back-tracking) mechanism are for expressing the algorithms for reasoning over custom knowledge structures.</p>
+    <p>As always, we encourage institutes of learning to purchase our <a href="http://www.amzi.com/AmziPrologLogicServer/store.php">education site licenses</a> to provide access to the full Amzi! Prolog + Logic Server for all students and faculty.</p>
+    <hr>
+
+    <h2 align="center"> Domain-Specific Languages<br/>Reasoning Engine</h2>
+    <p>In the last issue we described a way to represent the nodes of a decision tree using Prolog structures and lists. A decision node for the bank example looks like:</p>
+    <pre>dtree_node(fixed_income_relevance:1, [
+   criteria =
+     ( fixed_income_percentage >= 90 ),
+   yes = fixed_income_relevance:2,
+   no = fixed_income_relevance:4 ]).
+</pre>
+    <p>The 'yes' and 'no' slots refer to the nodes to follow based on whether the criteria is true or false.</p>
+    <p>A terminal node, defining the 'fact' that the decision tree is meant to determine, looks like:</p>
+    <pre>dtree_node(fixed_income_relevance:3, [
+   terminal,
+   fact = fixed_income,
+   value = true ]).
+</pre>
+    <p>A 'fact' whose value needs to be obtained from the user is expressed like this:</p>
+    <pre>fact(fixed_income_percentage, [
+   prompt = english : `What percentage is fixed income?` ]).
+</pre>
+    <p>Using these structures, it is not difficult to write a reasoning engine that we can then ask to find the values of specific 'fact's. It will be called by asking for a fact's value.</p>
+    <p>The reasoning engine is implemented using just four predicates. In top down order they are:</p>
+    <ul>
+      <li>ask(FACT, VALUE) - how a user asks for a value.</li>
+      <li>climb(TREE:NODE, X) - climb a tree</li>
+      <li>test(CRITERIA) - test the criteria at a node</li>
+      <li>evaluate(EXPRESSION, X) - evaluate an expression in the criteria</li>
+    </ul>
+    <h3>ask(FACT, VALUE)</h3>
+    <p>First, unlike Prolog's native reasoning engine, this one will remember the values of facts that have already been determined. They'll be stored in known/2 clauses. Given that, the algorithm the reasoning engine will use to find an answer to a question a user 'ask's is:</p>
+    <ol><i>
+      <li>See if the answer is known already, if so use that.</li>
+      <li>See if there's a decision tree that can be used to determine the value, if so use that.</li>
+      <li>Find the definition of the fact, ask the user and remember the answer.</li>
+      </i></ol>
+    <p>One of the strengths of Prolog is that the code often is very close to the logical specification of the program. This is why Prolog programs are typically 1/10 the size of the corresponding logic written in a procedural language. The predicate for the above three rules has three clauses.</p>
+    <pre><font color="#990000">% it's already known</font>
+ask(Fact,Value) :-
+   known(Fact,X),
+   !,
+   Value = X.
+<font color="#990000">% figure it out from a decision tree</font>
+ask(Fact,Value) :-
+   dtree_node( DTree:_, [terminal, fact = Fact, _]),
+   climb(DTree:1, X),
+   assert(known(Fact,X)),
+   !,
+   Value = X.
+<font color="#990000">% ask the user</font>
+ask(Fact,Value) :-
+   fact( Fact, [prompt = english:P]),
+   prompt(P, X),
+   assert(known(Fact,X)),
+   !,
+   Value = X.</pre>
+    <p>Note in the first clause we see if it's known, and if so cut, meaning no need to look else where, and then we see if it's the value we wanted. This is because the user might be asking for a specific value, and the 'fact' is already known, but not with that value.</p>
+    <p>The second clause uses unification to look for a dtree_node that matches the pattern of being a terminal for the desired 'fact'. It there is one, then it starts the tree climbing algorithm with the first node of that tree.</p>
+    <p>The third clause looks for 'fact' definition and simply asks the user, saves the answer and again tests it.</p>
+    <h3>climb(TreeName : Node, X)</h3>
+    <p>The climb algorithm is a simple recursion:</p>
+    <ul><i>
+      <li>See if the node is a terminal, in which case we have the answer and cut because we're done.</li>
+      <li>If the node is non-terminal, get the criteria, test it and continue climbing with either the 'yes' or 'no' node next.</li>
+      </i></ul>
+    <p>The code is:</p>
+    <pre>climb(DTree:N, X) :-
+   dtree_node( DTree:N, [terminal, fact = Fact, value = X]),
+   !.
+climb(DTree:N, X) :-
+   dtree_node( DTree:N, [criteria = C, yes = YES, no = NO]),
+   ( test(C)-> climb(YES, X); climb(NO, X) ).</pre>
+    <p>It is Prolog's pattern matching unification algorithm that let's us so elegantly pick up the full criteria for a node and simply bind it to the variable 'C' which is then fed to the test/1 predicate. Recursion lets the predicate elegantly keep calling itself as it moves up the tree.</p>
+    
+    <h3>test(Criteria)</h3>
+    <p>If we had decided to code the criteria in pure Prolog, we could simply 'call' it and be done. But it's not difficult to implement our own language for logic that might be a bit more friendly for the end users. It supports:</p>
+    <ul>
+      <li>logical ands and ors;</li>
+      <li>comparison operators;</li>
+      <li>mathematical operators and;</li>
+      <li>the use of fact names directly as variables.</li>
+      </ul>
+    <p>For example, it can handle the criteria in this node:</p>
+    <pre>dtree_node(fixed_income_relevance:2, [
+   criteria =
+     ( convertibles_percentage =< 70 and
+       asset_backed_percentage + mortgage_backed_percentage =< 90 and
+       equity_percentage == 0 and
+       cash_percentage + other_percentage =< 10 ),
+   yes = fixed_income_relevance:3,
+   no = fixed_income_relevance:4 ]).
+</pre>
+    <p>To get the Prolog reader to accept criteria written like this, we have to define 'and' and 'or' as Prolog operators at the beginning of each file that uses them. We make them the same as the existing comma and semi-colon Prolog operators:</p>
+    <pre>:- op(1000, xfy, and).
+:- op(1100, xfy, or).</pre>
+    <p>The logic for test/1 is:</p>
+    <ul><i>
+      <li>If it's A and B, test each side. (Note that B might be a complex term with more 'and's and 'or's.)</li>
+      <li>If it's A or B, test each side.</li>
+      <li>If it's a comparison operator, evaluate each side and compare.</li>
+      </i></ul>
+    <p>The code is:</p>
+    <pre>test((A and B)) :-
+   !,
+   test(A),
+   test(B).
+test((A or B)) :-
+   !,
+   ( test(A) ; test(B) ).
+test(C) :-
+   C =.. [CompareOp, A, B],
+   evaluate(A, X),
+   evaluate(B, Y),
+   Z =.. [CompareOp, X, Y],
+   call(Z).</pre>
+   <p>Recursion, again, is what makes the code so elegant. A complex expression, such as A and B and C and D keeps getting reduced, first unifying as A and (B and C and D). Then B and (C and D). Finally C and D.</p>
+    <h3>evaluate(Expression, Value)</h3>
+    <p>Finally, the last predicate in the reasoning engine is evaluate. It's logic is:</p>
+    <ul><i>
+      <li>If it's a number or string the value is what the value is.</li>
+      <li>If it's a mathematical expression, then evaluate each side and perform the operation.</li>
+      <li>If it's a 'fact' name, then use ask/2 to get the value.</li>
+      <li>If it's none of those, it's an error.</li>
+    </i></ul>
+    <p> Here's the code:</p>
+    <pre>evaluate(N, N) :-
+   number(N),
+   !.
+evaluate(S, S) :-
+   string(S),
+   !.
+evaluate(C, Z) :-
+   C =.. [MathOp, A, B],
+   !,
+   evaluate(A, X),
+   evaluate(B, Y),
+   Exp =.. [MathOp, X, Y],
+   Z is Exp,
+   !.
+evaluate(A, X) :-
+   ask(A, X),
+   !.
+evaluate(A, error(no_value, A)).</pre>
+    <p>And that's it.</p>
+    <p>Click here to download the full Amzi! project: <a href="http://www.amzi.com/distribution/challenge.php?file=decision_trees.zip">download</a> You can then import it into the Amzi! IDE and start to experiment with it. Here's what it looks like under the debugger:</p>
+    <p><img src="http://www.amzi.com/AmziNewsletter/images/decision_trees_debug.jpg" width="650" height="684"></p>
+    <p>Note that the query, ask(fixed_income, X) is at the bottom. In the other panes are the:</p>
+    <ul>
+      <li>call stack with variable bindings, </li>
+      <li>the full variable bindings for the predicate being evaluated, </li>
+      <li>the source code where we are with color coded port, in this case 'call', and</li>
+      <li>outline of the predicates in this file.</li>
+      </ul>
+    <p>Stepping through the code with the debugger clearly shows the way the recursion, unification and backtracking search all work together to make Prolog an extremely powerful tool for creating custom knowledge-base applications.</p>
+    <p>You can take this code and create your own decision trees for it, or modify the code for different types of decision trees.</p>
+    <p>The same basic architecture used here can be used for pretty much any kind of knowledge. First figure out how to represent it, and then use unification and back-tracking search to reason as you like.</p>
+    <p>Happy Logic Programming,<br>
+    Dennis</p>
+    <p>&nbsp;</p>
+    <hr>
+    <h2 align="center">Training<br/>Consulting<br/>Legacy Code<br/>Source Code</h2>
+    <p>Amzi! offers a number of services other than just the software.</p>
+    <h3>Training</h3>
+    <p>We have week long beginning and advanced onsite classes that can be used to bring your staff up to speed on Prolog programming. The courses can be customized to your specific application needs.</p>
+    <h3>Consulting / Contract Programming</h3>
+    <p>We provide both consulting and contract programming for knowledge-based applications. While we like working with Amzi! Prolog, we're just as happy to work with any of the other excellent Prolog implementations, and we've also built knowledge-based systems in other languages as well.</p>
+    <h3>Legacy Applications</h3>
+    <p>For organizations with legacy Prolog code, we can provide the ongoing maintenance and support of those systems.</p>
+    <h3>Source Code Licenses</h3>
+    <p>For organizations desiring to have complete control over their Prolog engine, we provide full source code licensing.</p>
+    <h3>Contact Us</h3>
+    <p><a href="http://www.amzi.com/company/contact_form.php">Contact us</a> if you have an interest in these, or any other services Amzi! might provide.</p></td>
+  </tr>
+</table>
+<p>The Amzi! Newsletter is sent periodically to Amzi! inc. customers and subscribers.<br />
+    Click here if you do not want to receive future Amzi! Newsletters: <unsubscribe>Unsubscribe</unsubscribe><br />
+    If you wish to contact us click here: <a href="http://www.amzi.com/company/contact_form.php">Contact Us</a></p>
+
+ 
+</body>
+</html>
+

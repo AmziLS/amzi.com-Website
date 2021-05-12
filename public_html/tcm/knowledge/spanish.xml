@@ -1,0 +1,334 @@
+<structure><name>:-</name><arg><structure><name>set_prolog_flag</name><arg><atom>utf8io</atom></arg><arg><atom>on</atom></arg></structure></arg></structure>
+<structure><name>:-</name><arg><structure><name>module</name><arg><atom>spanish</atom></arg></structure></arg></structure>
+<structure><name>text</name><arg><atom>acrid</atom></arg><arg><string>acrid</string></arg></structure>
+<structure><name>text</name><arg><atom>acute</atom></arg><arg><string>acute</string></arg></structure>
+<structure><name>text</name><arg><atom>a_meal</atom></arg><arg><string>after a meal</string></arg></structure>
+<structure><name>text</name><arg><atom>afternoon</atom></arg><arg><string>in the afternoon</string></arg></structure>
+<structure><name>text</name><arg><atom>aggravate</atom></arg><arg><string>aggravate</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>aggravate</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>The problem is aggravated by:</string></arg></structure>
+<structure><name>text</name><arg><atom>ameliorate</atom></arg><arg><string>ameliorate</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>ameliorate</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>The problem could be ameliorated by:</string></arg></structure>
+<structure><name>text</name><arg><atom>anger</atom></arg><arg><string>anger</string></arg></structure>
+<structure><name>text</name><arg><atom>angry</atom></arg><arg><string>angry</string></arg></structure>
+<structure><name>text</name><arg><atom>appetite</atom></arg><arg><string>appetite</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>appetite</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How is the patient's appetite?</string></arg></structure>
+<structure><name>text</name><arg><atom>aversion</atom></arg><arg><string>aversion</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>aversion</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Is patient aversion to:</string></arg></structure>
+<structure><name>text</name><arg><atom>axillae</atom></arg><arg><string>axillae</string></arg></structure>
+<structure><name>text</name><arg><atom>b_meal</atom></arg><arg><string>before a meal</string></arg></structure>
+<structure><name>text</name><arg><atom>barking</atom></arg><arg><string>barking</string></arg></structure>
+<structure><name>text</name><arg><atom>big</atom></arg><arg><string>big</string></arg></structure>
+<structure><name>text</name><arg><atom>bitter</atom></arg><arg><string>bitter</string></arg></structure>
+<structure><name>text</name><arg><atom>black</atom></arg><arg><string>black</string></arg></structure>
+<structure><name>text</name><arg><atom>blend</atom></arg><arg><string>blend</string></arg></structure>
+<structure><name>text</name><arg><atom>bloody</atom></arg><arg><string>bloody</string></arg></structure>
+<structure><name>text</name><arg><atom>b_body</atom></arg><arg><string>bottom half of the body</string></arg></structure>
+<structure><name>text</name><arg><atom>body</atom></arg><arg><string>on the body</string></arg></structure>
+<structure><name>text</name><arg><atom>boring</atom></arg><arg><string>boring</string></arg></structure>
+<structure><name>text</name><arg><atom>bowel_movement</atom></arg><arg><string>bowel movement</string></arg></structure>
+<structure><name>text</name><arg><atom>breath</atom></arg><arg><string>breathing</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>breath</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How is the patient breathing?</string></arg></structure>
+<structure><name>text</name><arg><atom>bruise</atom></arg><arg><string>bruise</string></arg></structure>
+<structure><name>text</name><arg><atom>burning</atom></arg><arg><string>burning</string></arg></structure>
+<structure><name>text</name><arg><atom>chest</atom></arg><arg><string>chest</string></arg></structure>
+<structure><name>text</name><arg><atom>chills</atom></arg><arg><string>chills</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>chills</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Does the patient have chills?</string></arg></structure>
+<structure><name>text</name><arg><atom>choppy</atom></arg><arg><string>choppy</string></arg></structure>
+<structure><name>text</name><arg><atom>chronic</atom></arg><arg><string>chronic</string></arg></structure>
+<structure><name>text</name><arg><atom>clear</atom></arg><arg><string>clear</string></arg></structure>
+<structure><name>text</name><arg><atom>cold</atom></arg><arg><string>cold</string></arg></structure>
+<structure><name>text</name><arg><atom>cold_drink</atom></arg><arg><string>cold drink</string></arg></structure>
+<structure><name>text</name><arg><atom>colicky</atom></arg><arg><string>colicky</string></arg></structure>
+<structure><name>text</name><arg><atom>complaint</atom></arg><arg><string>queja</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>complaint</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>¿Que es la mejor queja?</string></arg></structure>
+<structure><name>text</name><arg><atom>congested</atom></arg><arg><string>congested</string></arg></structure>
+<structure><name>text</name><arg><atom>constipation</atom></arg><arg><string>constipation</string></arg></structure>
+<structure><name>text</name><arg><atom>cough</atom></arg><arg><string>tos</string></arg></structure>
+<structure><name>text</name><arg><atom>coughing_sound</atom></arg><arg><string>coughing sound</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>coughing_sound</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How does the cough sound?</string></arg></structure>
+<structure><name>text</name><arg><atom>craving</atom></arg><arg><string>craving</string></arg></structure>
+<structure><name>text</name><arg><atom>crying</atom></arg><arg><string>crying</string></arg></structure>
+<structure><name>text</name><arg><atom>cutting</atom></arg><arg><string>cutting</string></arg></structure>
+<structure><name>text</name><arg><atom>dark</atom></arg><arg><string>dark</string></arg></structure>
+<structure><name>text</name><arg><atom>dark_very</atom></arg><arg><string>very dark</string></arg></structure>
+<structure><name>text</name><arg><atom>dark_yellow</atom></arg><arg><string>dark yellow</string></arg></structure>
+<structure><name>text</name><arg><atom>delirious</atom></arg><arg><string>delirious</string></arg></structure>
+<structure><name>text</name><arg><atom>day</atom></arg><arg><string>during the day</string></arg></structure>
+<structure><name>text</name><arg><atom>deep</atom></arg><arg><string>deep</string></arg></structure>
+<structure><name>text</name><arg><atom>defecate</atom></arg><arg><string>defecate</string></arg></structure>
+<structure><name>text</name><arg><atom>depression</atom></arg><arg><string>depression</string></arg></structure>
+<structure><name>text</name><arg><atom>diarrhoea</atom></arg><arg><string>diarrhoea</string></arg></structure>
+<structure><name>text</name><arg><atom>difficult</atom></arg><arg><string>difficult</string></arg></structure>
+<structure><name>text</name><arg><atom>discharge</atom></arg><arg><string>discharge</string></arg></structure>
+<structure><name>text</name><arg><atom>discharge_color</atom></arg><arg><string>discharge color</string></arg></structure>
+<structure><name>text</name><arg><atom>discomfort</atom></arg><arg><string>discomfort</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>discomfort</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Areas of discomfort:</string></arg></structure>
+<structure><name>text</name><arg><atom>dislike</atom></arg><arg><string>dislike</string></arg></structure>
+<structure><name>text</name><arg><atom>distending</atom></arg><arg><string>distending</string></arg></structure>
+<structure><name>text</name><arg><atom>distressing</atom></arg><arg><string>distressing</string></arg></structure>
+<structure><name>text</name><arg><atom>dizziness</atom></arg><arg><string>dizziness</string></arg></structure>
+<structure><name>text</name><arg><atom>dry</atom></arg><arg><string>seco</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>dry</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Parts of the body feel dry:</string></arg></structure>
+<structure><name>text</name><arg><atom>dyspnea</atom></arg><arg><string>dyspnea</string></arg></structure>
+<structure><name>text</name><arg><atom>easy</atom></arg><arg><string>easy</string></arg></structure>
+<structure><name>text</name><arg><atom>eating</atom></arg><arg><string>eating</string></arg></structure>
+<structure><name>text</name><arg><atom>emptiness</atom></arg><arg><string>emptiness</string></arg></structure>
+<structure><name>text</name><arg><atom>empty</atom></arg><arg><string>empty</string></arg></structure>
+<structure><name>text</name><arg><atom>emotion</atom></arg><arg><string>emotion</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>emotion</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What are the patient's emotions.</string></arg></structure>
+<structure><name>text</name><arg><atom>epigastrium</atom></arg><arg><string>epigastrium</string></arg></structure>
+<structure><name>text</name><arg><atom>evening</atom></arg><arg><string>in the evening</string></arg></structure>
+<structure><name>text</name><arg><atom>exertion</atom></arg><arg><string>on exertion</string></arg></structure>
+<structure><name>:-</name><arg><structure><name>text</name><arg><structure><name>error_missing_ask</name><arg><variable>H2211</variable></arg></structure></arg><arg><variable>H2216</variable></arg></structure></arg><arg><structure><name>,</name><arg><structure><name>get_text</name><arg><variable>H2211</variable></arg><arg><variable>H2222</variable></arg></structure></arg><arg><structure><name>stringlist_concat</name><arg><list><item><string>There is no way to find a value for:</string></item><item><variable>H2222</variable></item></list></arg><arg><string> </string></arg><arg><variable>H2216</variable></arg></structure></arg></structure></arg></structure>
+<structure><name>text</name><arg><atom>face</atom></arg><arg><string>in the face</string></arg></structure>
+<structure><name>text</name><arg><atom>complexion</atom></arg><arg><string>face color</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>complexion</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the color of the patient's face?</string></arg></structure>
+<structure><name>text</name><arg><atom>feeble</atom></arg><arg><string>feeble</string></arg></structure>
+<structure><name>text</name><arg><atom>feelings</atom></arg><arg><string>feel</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>feelings</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How does the patient feel?</string></arg></structure>
+<structure><name>text</name><arg><atom>feet</atom></arg><arg><string>feet</string></arg></structure>
+<structure><name>text</name><arg><atom>fever</atom></arg><arg><string>fever</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>fever</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Does the patient have fever?</string></arg></structure>
+<structure><name>text</name><arg><atom>fine</atom></arg><arg><string>fine</string></arg></structure>
+<structure><name>text</name><arg><atom>firm</atom></arg><arg><string>firm</string></arg></structure>
+<structure><name>text</name><arg><atom>floating</atom></arg><arg><string>floating</string></arg></structure>
+<structure><name>text</name><arg><atom>flooding</atom></arg><arg><string>flooding</string></arg></structure>
+<structure><name>text</name><arg><atom>frequent</atom></arg><arg><string>frequent</string></arg></structure>
+<structure><name>text</name><arg><atom>frontal</atom></arg><arg><string>frontal</string></arg></structure>
+<structure><name>text</name><arg><atom>full</atom></arg><arg><string>full</string></arg></structure>
+<structure><name>text</name><arg><atom>fullness</atom></arg><arg><string>fullness</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>fullness</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Areas of feeling fullness:</string></arg></structure>
+<structure><name>text</name><arg><atom>good</atom></arg><arg><string>good</string></arg></structure>
+<structure><name>text</name><arg><atom>green</atom></arg><arg><string>green</string></arg></structure>
+<structure><name>text</name><arg><atom>groaning</atom></arg><arg><string>groaning</string></arg></structure>
+<structure><name>text</name><arg><atom>hacking</atom></arg><arg><string>hacking</string></arg></structure>
+<structure><name>text</name><arg><atom>hands</atom></arg><arg><string>hands</string></arg></structure>
+<structure><name>text</name><arg><atom>happy</atom></arg><arg><string>happy</string></arg></structure>
+<structure><name>text</name><arg><atom>hasty</atom></arg><arg><string>hasty</string></arg></structure>
+<structure><name>text</name><arg><atom>head</atom></arg><arg><string>head</string></arg></structure>
+<structure><name>text</name><arg><atom>headache</atom></arg><arg><string>headache</string></arg></structure>
+<structure><name>text</name><arg><atom>heaviness</atom></arg><arg><string>heaviness</string></arg></structure>
+<structure><name>text</name><arg><atom>heavy</atom></arg><arg><string>heavy</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>heavy</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Parts of the body feel heavy:</string></arg></structure>
+<structure><name>text</name><arg><atom>hesitation</atom></arg><arg><string>hesitation</string></arg></structure>
+<structure><name>text</name><arg><atom>hidden</atom></arg><arg><string>hidden</string></arg></structure>
+<structure><name>text</name><arg><atom>hoarse</atom></arg><arg><string>hoarse</string></arg></structure>
+<structure><name>text</name><arg><atom>hollow</atom></arg><arg><string>hollow</string></arg></structure>
+<structure><name>text</name><arg><atom>hot_drink</atom></arg><arg><string>hot drink</string></arg></structure>
+<structure><name>text</name><arg><atom>hungery</atom></arg><arg><string>hungery</string></arg></structure>
+<structure><name>text</name><arg><atom>hurried</atom></arg><arg><string>hurried</string></arg></structure>
+<structure><name>text</name><arg><atom>hypochondria</atom></arg><arg><string>hypochondria</string></arg></structure>
+<structure><name>text</name><arg><atom>incoherent</atom></arg><arg><string>incoherent</string></arg></structure>
+<structure><name>text</name><arg><atom>injury</atom></arg><arg><string>injury</string></arg></structure>
+<structure><name>text</name><arg><atom>injury</atom></arg><arg><string>What type of injury did the patient experience?</string></arg></structure>
+<structure><name>text</name><arg><atom>intermittent</atom></arg><arg><string>intermittent</string></arg></structure>
+<structure><name>text</name><arg><atom>irritability</atom></arg><arg><string>irritability</string></arg></structure>
+<structure><name>text</name><arg><atom>itchy</atom></arg><arg><string>itchy</string></arg></structure>
+<structure><name>text</name><arg><atom>knotted</atom></arg><arg><string>knotted</string></arg></structure>
+<structure><name>text</name><arg><atom>laughing</atom></arg><arg><string>laughing</string></arg></structure>
+<structure><name>text</name><arg><atom>leather</atom></arg><arg><string>leather</string></arg></structure>
+<structure><name>text</name><arg><atom>legs</atom></arg><arg><string>in the legs</string></arg></structure>
+<structure><name>text</name><arg><atom>light_brown</atom></arg><arg><string>light brown</string></arg></structure>
+<structure><name>text</name><arg><atom>limbs</atom></arg><arg><string>limbs</string></arg></structure>
+<structure><name>text</name><arg><atom>little</atom></arg><arg><string>a little of</string></arg></structure>
+<structure><name>text</name><arg><atom>lips</atom></arg><arg><string>lips</string></arg></structure>
+<structure><name>text</name><arg><atom>location</atom></arg><arg><string>location</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>location</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Where is the problem located?</string></arg></structure>
+<structure><name>text</name><arg><atom>long</atom></arg><arg><string>long</string></arg></structure>
+<structure><name>text</name><arg><atom>long_thin</atom></arg><arg><string>long and thin</string></arg></structure>
+<structure><name>text</name><arg><atom>loose</atom></arg><arg><string>loose</string></arg></structure>
+<structure><name>text</name><arg><atom>lots</atom></arg><arg><string>a lot of</string></arg></structure>
+<structure><name>text</name><arg><atom>loud</atom></arg><arg><string>loud</string></arg></structure>
+<structure><name>text</name><arg><atom>lower_abdomen</atom></arg><arg><string>lower abdomen</string></arg></structure>
+<structure><name>text</name><arg><atom>lurking</atom></arg><arg><string>lurking</string></arg></structure>
+<structure><name>text</name><arg><atom>menu_choice</atom></arg><arg><string>Enter the number(s) of choice(s) separated by commas: </string></arg></structure>
+<structure><name>text</name><arg><atom>mild</atom></arg><arg><string>mild</string></arg></structure>
+<structure><name>text</name><arg><atom>minute</atom></arg><arg><string>minute</string></arg></structure>
+<structure><name>text</name><arg><atom>moderate</atom></arg><arg><string>moderate</string></arg></structure>
+<structure><name>text</name><arg><atom>moist</atom></arg><arg><string>húmedo</string></arg></structure>
+<structure><name>text</name><arg><atom>morning</atom></arg><arg><string>in the morning</string></arg></structure>
+<structure><name>text</name><arg><atom>mouth</atom></arg><arg><string>mouth</string></arg></structure>
+<structure><name>text</name><arg><atom>moving</atom></arg><arg><string>moving</string></arg></structure>
+<structure><name>text</name><arg><atom>mucus</atom></arg><arg><string>mucus</string></arg></structure>
+<structure><name>text</name><arg><atom>muffled</atom></arg><arg><string>muffled</string></arg></structure>
+<structure><name>text</name><arg><atom>muscle</atom></arg><arg><string>muscle</string></arg></structure>
+<structure><name>text</name><arg><atom>muttering</atom></arg><arg><string>muttering to oneself</string></arg></structure>
+<structure><name>text</name><arg><atom>nasal</atom></arg><arg><string>nasal</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>nasal</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Does the patient's nasal have:</string></arg></structure>
+<structure><name>text</name><arg><atom>nausea</atom></arg><arg><string>nausea</string></arg></structure>
+<structure><name>text</name><arg><atom>neck</atom></arg><arg><string>neck</string></arg></structure>
+<structure><name>text</name><arg><atom>night</atom></arg><arg><string>at night</string></arg></structure>
+<structure><name>text</name><arg><atom>no</atom></arg><arg><string>no</string></arg></structure>
+<structure><name>text</name><arg><atom>none</atom></arg><arg><string>none</string></arg></structure>
+<structure><name>text</name><arg><atom>normal</atom></arg><arg><string>normal</string></arg></structure>
+<structure><name>text</name><arg><atom>nose</atom></arg><arg><string>nose</string></arg></structure>
+<structure><name>text</name><arg><atom>nose_color</atom></arg><arg><string>color of the nose</string></arg></structure>
+<structure><name>text</name><arg><atom>not</atom></arg><arg><string>not much</string></arg></structure>
+<structure><name>text</name><arg><atom>not_often</atom></arg><arg><string>not so often</string></arg></structure>
+<structure><name>text</name><arg><atom>obstruction</atom></arg><arg><string>obstruction</string></arg></structure>
+<structure><name>text</name><arg><atom>occipital</atom></arg><arg><string>occipital</string></arg></structure>
+<structure><name>text</name><arg><atom>occurrence</atom></arg><arg><string>how frequent</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>occurrence</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How frequent?</string></arg></structure>
+<structure><name>text</name><arg><atom>oedema</atom></arg><arg><string>oedema</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>oedema</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Where is the oedema located?</string></arg></structure>
+<structure><name>text</name><arg><atom>overflowing</atom></arg><arg><string>overflowing</string></arg></structure>
+<structure><name>text</name><arg><atom>pain</atom></arg><arg><string>dolor</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pain</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Describe the kind of pain:</string></arg></structure>
+<structure><name>text</name><arg><atom>pain_location</atom></arg><arg><string>pain location</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pain_location</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Where is the pain?</string></arg></structure>
+<structure><name>text</name><arg><atom>pale</atom></arg><arg><string>pale</string></arg></structure>
+<structure><name>text</name><arg><atom>pale_yellow</atom></arg><arg><string>pale yellow</string></arg></structure>
+<structure><name>text</name><arg><atom>palms</atom></arg><arg><string>palms</string></arg></structure>
+<structure><name>text</name><arg><atom>palpitation</atom></arg><arg><string>heart palpitation</string></arg></structure>
+<structure><name>text</name><arg><atom>peeled</atom></arg><arg><string>peeled (mirror tongue)</string></arg></structure>
+<structure><name>text</name><arg><atom>pellets</atom></arg><arg><string>pellets</string></arg></structure>
+<structure><name>text</name><arg><atom>persistent</atom></arg><arg><string>persistent</string></arg></structure>
+<structure><name>text</name><arg><atom>poor</atom></arg><arg><string>poor</string></arg></structure>
+<structure><name>text</name><arg><atom>profuse</atom></arg><arg><string>profuse</string></arg></structure>
+<structure><name>text</name><arg><atom>pressure</atom></arg><arg><string>pressure</string></arg></structure>
+<structure><name>text</name><arg><atom>pulling</atom></arg><arg><string>pulling</string></arg></structure>
+<structure><name>text</name><arg><atom>pulse</atom></arg><arg><string>pulso</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>pulse</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the qualities of the patient's pulses?</string></arg></structure>
+<structure><name>text</name><arg><atom>pungent</atom></arg><arg><string>pungent</string></arg></structure>
+<structure><name>text</name><arg><atom>purple</atom></arg><arg><string>purple</string></arg></structure>
+<structure><name>text</name><arg><atom>pushing</atom></arg><arg><string>pushing</string></arg></structure>
+<structure><name>text</name><arg><atom>quick_temper</atom></arg><arg><string>quick temper</string></arg></structure>
+<structure><name>text</name><arg><atom>qing</atom></arg><arg><string>greenish bluish</string></arg></structure>
+<structure><name>text</name><arg><atom>rattling</atom></arg><arg><string>rattling</string></arg></structure>
+<structure><name>text</name><arg><atom>rapid</atom></arg><arg><string>rapid</string></arg></structure>
+<structure><name>text</name><arg><atom>rebellious</atom></arg><arg><string>rebellious qi</string></arg></structure>
+<structure><name>text</name><arg><atom>red</atom></arg><arg><string>red</string></arg></structure>
+<structure><name>text</name><arg><atom>red_tip</atom></arg><arg><string>red tip</string></arg></structure>
+<structure><name>text</name><arg><atom>respiratory</atom></arg><arg><string>respiratory</string></arg></structure>
+<structure><name>text</name><arg><atom>reluctance</atom></arg><arg><string>reluctance</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>respiratory</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How is the patient's respiratory?</string></arg></structure>
+<structure><name>text</name><arg><atom>rest</atom></arg><arg><string>rest</string></arg></structure>
+<structure><name>text</name><arg><atom>restlessness</atom></arg><arg><string>restlessness</string></arg></structure>
+<structure><name>text</name><arg><atom>sad</atom></arg><arg><string>sad</string></arg></structure>
+<structure><name>text</name><arg><atom>salty</atom></arg><arg><string>salty</string></arg></structure>
+<structure><name>text</name><arg><atom>scanty</atom></arg><arg><string>scanty</string></arg></structure>
+<structure><name>text</name><arg><atom>scattered</atom></arg><arg><string>scattered</string></arg></structure>
+<structure><name>text</name><arg><atom>scratchy</atom></arg><arg><string>scratchy</string></arg></structure>
+<structure><name>text</name><arg><atom>sensation</atom></arg><arg><string>sensation</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sensation</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What are the patient's sensations? </string></arg></structure>
+<structure><name>text</name><arg><atom>slippery</atom></arg><arg><string>slippery</string></arg></structure>
+<structure><name>text</name><arg><atom>slurred</atom></arg><arg><string>slurred</string></arg></structure>
+<structure><name>text</name><arg><atom>short</atom></arg><arg><string>short</string></arg></structure>
+<structure><name>text</name><arg><atom>sigh</atom></arg><arg><string>sighing</string></arg></structure>
+<structure><name>text</name><arg><atom>slow</atom></arg><arg><string>slow</string></arg></structure>
+<structure><name>text</name><arg><atom>slowed_down</atom></arg><arg><string>slowed down</string></arg></structure>
+<structure><name>text</name><arg><atom>sob</atom></arg><arg><string>shortness of breath</string></arg></structure>
+<structure><name>text</name><arg><atom>soggy</atom></arg><arg><string>soggy</string></arg></structure>
+<structure><name>text</name><arg><atom>soft</atom></arg><arg><string>soft</string></arg></structure>
+<structure><name>text</name><arg><atom>sore</atom></arg><arg><string>sore</string></arg></structure>
+<structure><name>text</name><arg><atom>soreness</atom></arg><arg><string>soreness</string></arg></structure>
+<structure><name>text</name><arg><atom>sour</atom></arg><arg><string>sour</string></arg></structure>
+<structure><name>text</name><arg><atom>spastic</atom></arg><arg><string>spastic</string></arg></structure>
+<structure><name>text</name><arg><atom>speech</atom></arg><arg><string>speech</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>speech</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How does the patient's speech?</string></arg></structure>
+<structure><name>text</name><arg><atom>spontaneous</atom></arg><arg><string>spontaneous</string></arg></structure>
+<structure><name>text</name><arg><atom>sputum</atom></arg><arg><string>sputum</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sputum</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the quality of the sputum:</string></arg></structure>
+<structure><name>text</name><arg><atom>sputum_color</atom></arg><arg><string>color of sputum</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sputum_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the color of the sputum?</string></arg></structure>
+<structure><name>text</name><arg><atom>sputum_amount</atom></arg><arg><string>amount of sputum</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sputum_amount</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the amount of the sputum?</string></arg></structure>
+<structure><name>text</name><arg><atom>sputum_expectorate</atom></arg><arg><string>expectorate sputum</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sputum_expectorate</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Is sputum easy or difficult to expectorate?</string></arg></structure>
+<structure><name>text</name><arg><atom>symptom</atom></arg><arg><string>symptom</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>symptom</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Does patient have the following symptoms?</string></arg></structure>
+<structure><name>text</name><arg><atom>stage</atom></arg><arg><string>stage</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stage</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the stage of the disease?</string></arg></structure>
+<structure><name>text</name><arg><atom>sticky</atom></arg><arg><string>sticky</string></arg></structure>
+<structure><name>text</name><arg><atom>stiffness</atom></arg><arg><string>stiffness</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stiffness</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Areas of having stiffness:</string></arg></structure>
+<structure><name>text</name><arg><atom>stomach</atom></arg><arg><string>in the stomach</string></arg></structure>
+<structure><name>text</name><arg><atom>stool</atom></arg><arg><string>stool</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stool</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the quality of the stools?</string></arg></structure>
+<structure><name>text</name><arg><atom>stool_color</atom></arg><arg><string>stool color</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stool_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the color of the stools?</string></arg></structure>
+<structure><name>text</name><arg><atom>stool_shape</atom></arg><arg><string>stool shape</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stool_shape</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the shape of the stools?</string></arg></structure>
+<structure><name>text</name><arg><atom>stress</atom></arg><arg><string>stress</string></arg></structure>
+<structure><name>text</name><arg><atom>stressful</atom></arg><arg><string>stressful</string></arg></structure>
+<structure><name>text</name><arg><atom>strong</atom></arg><arg><string>strong</string></arg></structure>
+<structure><name>text</name><arg><atom>stuffiness</atom></arg><arg><string>stuffiness</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>stuffiness</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Areas of feeling stuffiness:</string></arg></structure>
+<structure><name>text</name><arg><atom>stuttering</atom></arg><arg><string>stuttering</string></arg></structure>
+<structure><name>text</name><arg><atom>sweat</atom></arg><arg><string>sweat</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sweat</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How much does the patient sweat?</string></arg></structure>
+<structure><name>text</name><arg><atom>sweat_area</atom></arg><arg><string>areas of sweating</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>sweat_area</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Where are areas of sweating?</string></arg></structure>
+<structure><name>text</name><arg><atom>sweet</atom></arg><arg><string>sweet</string></arg></structure>
+<structure><name>text</name><arg><atom>t_body</atom></arg><arg><string>top half of the body</string></arg></structure>
+<structure><name>text</name><arg><atom>talk_sleep</atom></arg><arg><string>talk in the sleep</string></arg></structure>
+<structure><name>text</name><arg><atom>talkative</atom></arg><arg><string>talkative</string></arg></structure>
+<structure><name>text</name><arg><atom>taste</atom></arg><arg><string>taste</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>taste</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the tastes of the mouth?</string></arg></structure>
+<structure><name>text</name><arg><atom>thick</atom></arg><arg><string>thick</string></arg></structure>
+<structure><name>text</name><arg><atom>thin</atom></arg><arg><string>thin</string></arg></structure>
+<structure><name>text</name><arg><atom>thirst</atom></arg><arg><string>thirst</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>thirst</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How thirsty does the patient feel?</string></arg></structure>
+<structure><name>text</name><arg><atom>thready</atom></arg><arg><string>thready</string></arg></structure>
+<structure><name>text</name><arg><atom>blood_stagnation_cough</atom></arg><arg><string>Treatment principal for BLOOD STAGNATION cough: resolve stagnant Blood in the Lungs, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>cool_dryness_cough</atom></arg><arg><string>Treatment principal for COOL DRYNESS cough: clear the Lungs, moisten Dryness; redirect Lung qi downward, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>liver_fire_invading_lungs_cough</atom></arg><arg><string>Treatment principal for LIVER FIRE INVADING THE LUNGS cough: clear Liver Fire, Moisten the Lungs and transform Phlegm.</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_heat_cough</atom></arg><arg><string>Treatment principal for LUNG HEAT cough: clear Heat from the Lungs; redirect Lung qi downward, stop cough; transform Phlegm.</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_qi_deficiency_cough</atom></arg><arg><string>Treatment principal for LUNG QI DEFICIENCY cough: tonify Lung qi, calm cough; transform thin mucus.</string></arg></structure>
+<structure><name>text</name><arg><atom>lung_yin_deficiency_cough</atom></arg><arg><string>Treatment principal for LUNG YIN DEFICIENCY cough: nourish Lung yin to stop cough; Moisten the Lungs, transform Phlegm.</string></arg></structure>
+<structure><name>text</name><arg><atom>phlegm_damp_cough</atom></arg><arg><string>Treatment principal for PHLEGM DAMP cough: strengthen the Spleen dry Damp; transform Phlegm, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>phlegm_heat_cough</atom></arg><arg><string>Treatment principal for PHLEGM HEAT cough: Expel Phlegm and clear Heat; redirect Lung qi downward, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>spleen_kidney_yang_deficiency_cough</atom></arg><arg><string>Treatment principal for SPLEEN AND KIDNEY YANG DEFICIENCY cough: warm yang, disperse Cold; transform qi to move fluids.</string></arg></structure>
+<structure><name>text</name><arg><atom>warm_dryness_cough</atom></arg><arg><string>Treatment principal for WARM DRYNESS cough: clear Heat from the Lungs, moisten Dryness; redirect Lung qi downward, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_cold_cough</atom></arg><arg><string>Treatment principal for WIND COLD cough: expel Wind and Cold; redirect Lung qi downward, stop cough.</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_heat_cough</atom></arg><arg><string>Treatment principal for WIND HEAT cough: expel Wind and clear Heat; redirect Lung qi downward, stop cough; transform Phlegm.</string></arg></structure>
+<structure><name>text</name><arg><atom>throat</atom></arg><arg><string>throat</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>throat</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the symptoms for the patient's throat:</string></arg></structure>
+<structure><name>text</name><arg><atom>throbbing</atom></arg><arg><string>throbbing</string></arg></structure>
+<structure><name>text</name><arg><atom>ticklish</atom></arg><arg><string>ticklish</string></arg></structure>
+<structure><name>text</name><arg><atom>time_occur</atom></arg><arg><string>time of occurrence</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>time_occur</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Which time of the day does it occur the most?</string></arg></structure>
+<structure><name>text</name><arg><atom>tight</atom></arg><arg><string>tight</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue</atom></arg><arg><string>lengua</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the conditions of the patient's tongue:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_color</atom></arg><arg><string>tongue color</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the colors of the patient's tongue:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat</atom></arg><arg><string>tongue coat</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the thickness of the patient's tongue coat:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_color</atom></arg><arg><string>tongue coat color</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the color of the patient's tongue coat:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_texture</atom></arg><arg><string>tongue coat texture</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_texture</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the texture of the patient's tongue coat:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_distribution</atom></arg><arg><string>tongue coat distribution</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_distribution</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the distribution of the patient's tongue coat:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_coat_root</atom></arg><arg><string>tongue coat rooted</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_coat_root</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Is the patient's tongue coat rooted:</string></arg></structure>
+<structure><name>text</name><arg><atom>tongue_shape</atom></arg><arg><string>tongue shape</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>tongue_shape</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Select the shapes of the patient's tongue:</string></arg></structure>
+<structure><name>text</name><arg><atom>trauma</atom></arg><arg><string>trauma</string></arg></structure>
+<structure><name>text</name><arg><atom>turbid</atom></arg><arg><string>turbid</string></arg></structure>
+<structure><name>text</name><arg><atom>turmoil</atom></arg><arg><string>emotional turmoil</string></arg></structure>
+<structure><name>text</name><arg><atom>upset</atom></arg><arg><string>upset</string></arg></structure>
+<structure><name>text</name><arg><atom>urgent</atom></arg><arg><string>urgent</string></arg></structure>
+<structure><name>text</name><arg><atom>very</atom></arg><arg><string>very</string></arg></structure>
+<structure><name>text</name><arg><atom>voice</atom></arg><arg><string>voice</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>voice</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>How is the patient's voice?</string></arg></structure>
+<structure><name>text</name><arg><atom>vomit</atom></arg><arg><string>vomit</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>vomit</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>Does patient vomit?</string></arg></structure>
+<structure><name>text</name><arg><atom>undigested_food</atom></arg><arg><string>undigested food</string></arg></structure>
+<structure><name>text</name><arg><atom>urine_color</atom></arg><arg><string>urine color</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>urine_color</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>What is the color of the urine?</string></arg></structure>
+<structure><name>text</name><arg><atom>warmth</atom></arg><arg><string>warmth</string></arg></structure>
+<structure><name>text</name><arg><atom>watery</atom></arg><arg><string>watery</string></arg></structure>
+<structure><name>text</name><arg><atom>weak</atom></arg><arg><string>weak</string></arg></structure>
+<structure><name>text</name><arg><atom>wheezing</atom></arg><arg><string>wheezing</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_cold</atom></arg><arg><string>wind cold</string></arg></structure>
+<structure><name>text</name><arg><atom>wind_cold_points</atom></arg><arg><list><item><string>Treat wind cold by redirecting </string></item><item><string>lung qi downwards</string></item></list></arg></structure>
+<structure><name>text</name><arg><atom>wiry</atom></arg><arg><string>wiry</string></arg></structure>
+<structure><name>text</name><arg><atom>whooping</atom></arg><arg><string>whooping</string></arg></structure>
+<structure><name>text</name><arg><atom>worry</atom></arg><arg><string>worry</string></arg></structure>
+<structure><name>text</name><arg><atom>worse</atom></arg><arg><string>worse</string></arg></structure>
+<structure><name>text</name><arg><structure><name>-</name><arg><atom>worse</atom></arg><arg><atom>prompt</atom></arg></structure></arg><arg><string>It becomes worsen:</string></arg></structure>
+<structure><name>text</name><arg><atom>yellow</atom></arg><arg><string>yellow</string></arg></structure>
+<structure><name>text</name><arg><atom>yes</atom></arg><arg><string>yes</string></arg></structure>
+<structure><name>:-</name><arg><structure><name>end_module</name><arg><atom>spanish</atom></arg></structure></arg></structure>

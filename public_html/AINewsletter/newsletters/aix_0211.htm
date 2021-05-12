@@ -1,0 +1,309 @@
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif',
+'/AINewsletter/images/menu_about_lite.gif','/AINewsletter/images/menu_newsletters.gif','/AINewsletter/images/menu_newsletters_lite.gif',
+'/AINewsletter/images/menu_contact.gif','/AINewsletter/images/menu_contact_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="index.html"><img src="/AINewsletter/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->November 
+                      2002 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/downloads/index.htm" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <h3>2002 November</h3>
+            <ul>
+              <li><a href=#from_the_editor>From the Editor</a></li>
+              <li><a href=#news>News</a></li>
+              <ul>
+                <li><a href=#chess>2002 Person vs. Program Chess Championship</a></li>
+                <li><a href=#duck>1738 Artificial Duck</a></li>
+              </ul>
+              <li><a href=#articles>Articles</a></li>
+              <ul>
+                <li><a href=#computer_chess>Computer Chess: the Drosophila of 
+                  AI</a></li>
+              </ul>
+              <li><a href=#links>Links</a></li>
+              <ul>
+                <li><a href=#general>General AI</a></li>
+                <li><a href=#chess_links>Computer Chess</a></li>
+              </ul>
+            </ul>
+            <h2><a name="from_the_editor"></a>Welcome to the Premier Issue</h2>
+            <p>Welcome to <i>Dr. Dobb's AI Expert Newsletter</i>. Before you begin 
+              to talk about Artificial Intelligence (AI), you have to deal with 
+              the name itself. It leads to impassioned philosophical debates, 
+              like those raging right now on the <a href=http://www.ddj.com/DDJForums/forum.jsp?forum=40>AI 
+              Forum</a>, and inspires some great science fiction. (The Hyperion 
+              Trilogy by Dan Simmons is my favorite, based on Tom Ray's fascinating 
+              <a href=http://www.isd.atr.co.jp/~ray/tierra/index.html>Tierra</a> 
+              project, but that's for a later newsletter.)</p>
+            <p>Debates on machine vs. human intelligence are fun, but this newsletter 
+              needs a working definition of AI that more realistically encompasses 
+              the wide variety of fascinating software and hardware usually classified 
+              as AI. So we'll define it in terms of computer nature rather than 
+              human nature:</p>
+            <p><i><b>Artificial Intelligence (AI) is the art and science of making 
+              computers do interesting things that are not in their nature.</b></i></p>
+            <p>What is a computer's nature? Well it has memory that's good for 
+              storing data and a CPU that processes sequences of instructions. 
+              If you have a problem that requires automating data storage, procedures 
+              or both i.e. data processing, then computers are perfect. Other 
+              types of problems are trickier.</p>
+            <p>Consider <a href=http://smi-web.stanford.edu/projects/history.html#MYCIN>Mycin</a>, 
+              one of the earliest AI programs. The developers were posed with 
+              the problem of trying to automate medical diagnostic knowledge that 
+              was best expressed as rules.</p>
+            <p>The rules were neither data or procedures. Trying to force them 
+              as either was untenable for any significant body of knowledge. So 
+              what could they do?</p>
+            <p>The answer lies in the words of some long forgotten hardware engineer:</p>
+            <p> <i><b>&quot;Software is a kludge for getting around design flaws 
+              in the hardware.&quot; </b> </i> </p>
+            <p>What the Mycin developers really needed was a new kind of computer: 
+              one that processed rules. So they created a virtual machine, they 
+              called it an inference engine, whose nature was ideal for processing 
+              knowledge expressed as diagnostic rules.</p>
+            <p>People in the AI field have been doing the same thing ever since, 
+              creating virtual machines that are programmed in non-conventional 
+              ways, and using those machines to perform previously untenable programming 
+              tasks.</p>
+            <p>Which leads to the problem with an AI newsletter. There isn't a 
+              common language, like Java or C++ that is used for AI applications, 
+              nor are there standards like SQL for database access, or HTML for 
+              Web browsers.</p>
+            <p>Nor are these virtual machines similar. The classic ones deal with 
+              a wide variety of rule languages and reasoning algorithms, while 
+              others deal with semantic networks, neural networks, ontological 
+              knowledgebases, genetic algorithms, artificial life, robot brains, 
+              cellular automata and, of course, games.</p>
+            <p>And then, given a specific area of AI one can write about how to 
+              build the tool, or write about applications of the tool. The former 
+              is solid programmer stuff; the latter requires some knowledge of 
+              the specific tool, which is often a commercial product.</p>
+            <p>So I'm asking for your input. There is a wealth of fascinating 
+              subject matter that this newsletter can cover, and I'd like to know 
+              what your interests and experiences are. Send me e-mail. Tell me 
+              what you're currently doing with AI and what you'd like to see covered 
+              in the AI Expert Newsletter. I want the newsletter to meet your 
+              interests.</p>
+            <p>dennis@ddj.com</p>
+            <h2><a name="news"></a>News</h2>
+            <h3><a name="chess"></a>It's a Tie!</h3>
+            <p><a href=http://www.brainsinbahrain.com/>Brains in Bahrain</a> was 
+              the latest man-machine chess showdown of champions, pitting Kramik 
+              (a human) against Deep Fritz (a software program). Kramik won the 
+              early matches in what was called a triumph of anti-computer strategy. 
+              Deep Fritz won the later matches in what was called a triumph of 
+              anti-human strategy.</p>
+            <p>Chess playing has often been considered an ultimate test of machine 
+              intelligence because it is too complex to be mastered using straight-forward 
+              search algorithms. That is, the search space of possible moves is 
+              too great to be explored by a machine.</p>
+            <p>Early researchers worked on encoding the essence of grandmaster 
+              reasoning to improve performance. They learned, for example, that 
+              grandmasters had greater &quot;pattern vocabularies&quot; than weaker 
+              players. They didn't reason faster than weaker players, but more 
+              efficiently because they were reasoning using larger chunks of knowledge.</p>
+            <p>With the speed of today's machines, the value of the brute-force 
+              search in chess had become more important. Its ironic that in this 
+              classic test of machine intelligence, computers are playing on a 
+              par with the best humans more by exploiting the natural strengths 
+              of computers, and less by the application of human-like intelligence. 
+              Intelligent or not, today's top chess programs are masterpieces 
+              of software engineering.</p>
+            <p>It is interesting to note that Deep Fritz is not <a href=http://www.research.ibm.com/deepblue/>Deep 
+              Blue</a>, which was dismantled after defeating Kasparov in the last 
+              man-machine chess championship. Deep Blue was an amazing mix of 
+              specialized parallel processing hardware and software capable of 
+              searching 200 million moves per second. Deep Fritz is a souped up 
+              commercial product from <a href=http://www.chessbase.com/>ChessBase</a> 
+              running on stock hardware capable of only 3 million moves per second. 
+              They claim it's smarter though.</p>
+            <p>As for humans, with their feeble CPUs, they still provide stiff 
+              competition for millions-of-moves-per-second machines. It all appears 
+              to revolve around superior recognition and processing of patterns. 
+              And when you take a heavily pattern-oriented game like <a href=http://www.hiroshima-pu.ac.jp/~sasaki/cgf/index.html>go</a>, 
+              well computers aren't even close, yet.</p>
+            <h3><a name="duck"></a>1738 Artificial Duck</h3>
+            <p>Dr. Jessica Risken of Standord University has done a <a href=http://www.stanford.edu/dept/news/report/news/october24/riskinprofile-1024.html>study 
+              of a mechanical duck</a> built in 1738 that created the same interest 
+              and excitement as current experiments in artificial life. The parallels 
+              between their desire to use mechanized models to understand real 
+              life, and ours, are fascinating.</p>
+            <p>Among other things, the duck was realistic in that it ate and pooped. 
+              But if you looked inside, it sort of cheated. Food went in, and 
+              time passed, and poop came out, but the input food was still there, 
+              and the poop had been pre-loaded. So the duck didn't really digest, 
+              it just looked like it did.</p>
+            <p>That is not dissimilar from the chess programs that look like they 
+              understand the patterns on the board, but instead are processing 
+              millions of individual moves.</p>
+            <p>But also like the chess programs, the duck was an amazing bit of 
+              engineering and probably a lot of fun to build.</p>
+            <h2><a name="articles"></a>Articles</h2>
+            <p>AI Expert Magazine, this newsletter's namesake and inspiration, 
+              was one of the premier magazines covering AI in the early 1990s. 
+              Considering the quality of the magazine, it probably comes as no 
+              surprise that we can still learn from many of the articles published 
+              a decade or more ago. To that end, every month we'll be publishing 
+              an article or two from AI Expert on Dr. Dobb's Journal's <a href="http://www.ddj.com/topics/ai/">AI 
+              Expert Web site</a>. If you recall a favorite AI Expert article 
+              you'd like to see, let us know. <br>
+            </p>
+            <p><a name="computer_chess"></a><a href="http://www.ddj.com/documents/s=7694/ddj0210ai001/">Computer 
+              Chess: the Drosophila of AI</a> by L. Stephen Coles. Chess has been 
+              called the fruit fly of AI research. This in depth article covers 
+              the history of chess playing machines from a 1770 mechanical automaton 
+              (like the <a href=#duck>duck</a>!) to Deep Blue.</p>
+            <h2><a name="links"></a>Links</h2>
+            <h3><a name="general"></a>General AI</h3>
+            <p>The <a href=http://www.aaai.org>American Association of Artificial 
+              Intelligence</a> (AAAI) is a non-profit scientific organization 
+              devoted to supporting AI research and development. They have conferences 
+              and journals and an excellent Web site that introduces <a href="http://www.aaai.org/AITopics/aitopics.html">AI 
+              research and topics</a>.</p>
+            <p>John McCarthy of Standord University has one of the great minds 
+              of AI and is one of AI's founders. See his views on what AI is at 
+              his <a href="http://www-formal.stanford.edu/jmc/whatisai/whatisai.html">What 
+              is AI</a> Web site. He's got some ideas in there on computer chess 
+              as well.</p>
+            <p><a href="http://www-2.cs.cmu.edu/Groups/AI/html/repository.html">Carnegie 
+              Mellon AI Repository</a> has a large collection of AI software, 
+              resources and links, although some are out of date. Included in 
+              the resources is a directory of <a href="http://www-2.cs.cmu.edu/afs/cs.cmu.edu/project/ai-repository/ai/html/other/repositories.html">major 
+              AI resources</a>.</p>
+            <p>The <a href="http://www.media.mit.edu/">MIT Media Lab</a>'s Web 
+              site list describes a large number of fascinating research projects. 
+            </p>
+            <p><a href="http://www.kurzweilai.net/">Kurzweil's AI</a> site has 
+              numerous papers, books and discussions of the deepest issues with 
+              intelligent machines.</p>
+            <p>Dr. Dobb's Journal's <a href="http://www.ddj.com/topics/ai/">AI 
+              Topics</a> Web site has a number of interesting links to sites, 
+              papers, books and FAQs, as well as a discussion forum.</p>
+            <p><a href=http://www.pcai.com>PCAI magazine</a> has a wealth of information 
+              about AI technologies and products on their Web site.</p>
+            <h3><a name="chess_links"></a>Chess</h3>
+            <p>The <a href="http://www.cs.mcgill.ca/~cs251/OldCourses/1997/topic11/">alpha-beta 
+              search algorithm</a> is the core technology for two player games. 
+              It finds the best move for each player by examining a tree of possible 
+              future moves. The link is to some excellent course materials at 
+              McGill University.</p>
+            <p>The <a href=http://www.cs.unimaas.nl/ICGA/>International Computer 
+              Games Association</a> (ICGA) Web site has a tremendous amount of 
+              information on computer chess and other games. In particular, check 
+              out the excellent article <a href="http://www.cs.unimaas.nl/ICGA/games/chess/anatomy.htm">anatomy 
+              of a chess program</a> with its in depth description of the design 
+              of chess programs.</p>
+            <p>The <a href=http://www.enpassant.dk/chess/softeng.htm>Enpassant 
+              Chess Club</a> has a long list of free chess programs and related 
+              tools, with short descriptions of each. Some are available with 
+              source code.</p>
+            <p><a href=http://www.chessopolis.com/cchess.htm> Chessopolis</a> 
+              has a longer list of free chess programs as well as a directory 
+              and reviews of <a href=http://www.chessopolis.com/software.htm>commercial 
+              chess programs</a>.</p>
+            <p><a href=http://www.ast.cam.ac.uk/~cmf/chess/beowulf.html>Beowulf</a> 
+              is a full open source chess program with the admirable goals of 
+              1) being a competitive program, and 2) having clearly commented 
+              and written code ideal for learning about and tinkering with a chess 
+              program.</p>
+            <p>&nbsp;</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>

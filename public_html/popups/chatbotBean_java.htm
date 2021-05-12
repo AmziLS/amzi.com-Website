@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Chatbot Java Bean</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1><font color="#0000FF">Chatbot Java Bean</font></h1>
+<p>Read all about 
+  this sample in the <a href="http://www.ainewsletter.com/newsletters/aix_0309.htm">September issue</a> of the AI Expert/Dr. Dobb's Newsletter.</p>
+<pre><font color="#000066">package chatbot;
+
+import amzi.ls. *;
+
+/**
+ * Title: JSP Chatbot with Ontology
+ * Description: A simple chatbot run by an ontology
+ * Copyright: Copyright (c) 2004 Amzi! inc. All Rights Reserved.
+ * Company: Amzi! inc.
+ */
+
+public class chatbotBean {
+   private String input = null;
+   private LogicServer ls = null;
+
+   public void setInput(String newValue) {
+      if (newValue != null) {
+         input = newValue;
+      }
+   }
+
+   public synchronized String getOutput() {
+      long term;
+
+      if (input == null) return "";
+      try {
+         if (ls == null) openLS();
+         term = ls.ExecStr("respond(`"+input+"`, ResponseString)");
+         return ls.GetStrArg(term, 2);
+      }
+      catch (LSException ex) {
+         return "ERROR: " + ex.getMessage();
+      }
+   }
+
+   public synchronized void openLS() throws LSException {
+      ls = new LogicServer();
+      try {
+         ls.Init("");
+         ls.Load("/amzi/webapps/servlet/pro/chat_ont.xpl");
+      }
+      catch (LSException ex) {
+         try { ls.Close(); } catch (LSException ex2) {};
+         ls = null;
+         throw(ex);
+      }
+   }
+
+   public synchronized void closeLS() throws LSException {
+      ls.Close();
+      ls = null;
+   }
+
+   protected void finalize() throws java.lang.Throwable {
+      closeLS();
+      super.finalize();
+   }
+}</font>
+</pre>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>

@@ -1,0 +1,174 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Russian Dolls</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Russian Dolls<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Russian dolls are the ones that nest within each other. At the center is a 
+  wooden doll.</p>
+<p>For these exercises, a Russian doll is represented as a(_). So it is a structure 
+  with something in it. The wooden doll is represented by the atom 'a'. For example, 
+  a triple nested doll looks like:</p>
+<p><code>a(a(a(a)))</code></p>
+<p>Write the following predicates:</p>
+<p><em>a_test(-A)</em><br>
+  A - a test doll with three dolls and the wooden doll in the last.<br>
+  <span class="weak">hint: this is a simple fact.</span></p>
+<pre>?- a_test(A).
+A = a(a(a(a)))
+yes</pre>
+<p>Note that a simple query can find the inside of the test doll, which is ALWAYS another
+doll or the wooden doll.  This means it can be used to feed a recursive predicate.</p>
+<pre>
+?- a_test( a(X) ).
+X = a(a(a))
+yes
+</pre>
+<p><em>a_count(+A,-N)</em><br>
+  A - the input doll <br>
+  N - the output count<br>
+  <span class="weak">hint: use an accumulator and a second predicate a_count/3. 
+  the boundary condition will be the wooden doll</span></p>
+<pre>?- a_count(a, N).
+N = 1
+yes</pre>
+<pre>?- a_test(A), a_count(A,N).
+A = a(a(a(a)))
+N = 4
+yes</pre>
+<p><em>a_nest(?A1, ?A2)</em><br>
+  A1 - the outer nested dolls<br>
+  A2 - the inner nested dolls <br>
+  <span class="weak">hint: this is done with a simple fact that does it work through 
+  unification.</span></p>
+<pre>?- a_test(A), a_nest(A, A2).
+A = a(a(a(a)))
+A2 = a(a(a))
+yes</pre>
+<pre>?- a_test(A), a_nest(A2, A).
+A = a(a(a(a)))
+A2 = a(a(a(a(a))))
+yes</pre>
+<p><em>a_build(+N, -A)<br>
+  </em>N - the number of levels of nesting. <br>
+  A - the output doll, nested N deep. <br>
+  <span class="weak">hint: do not use an accumulator. boundary condition is when 
+  count is 1, and the answer then is the wooden doll. recursive calls recurse 
+  to fill in building structure.</span></p>
+<pre>?- a_build(1,A).
+A = a
+yes</pre>
+<pre>?- a_build(5,A).
+A = a(a(a(a(a))))
+yes</pre>
+<p>A Greek doll is just like a Russian doll, but is represented by the letter 
+  b. This predicate makes a Greek copy to the same level of nesting as an input 
+  Russian doll.</p>
+<p><em>ab_copy(?A, ?B)</em> <br>
+  A - a Russian doll, either input or out. <br>
+  B - a Greek doll, either output or in. <br>
+  <span class="weak">hint: simple recursion, no tricks.</span></p>
+<pre>?- a_test(A), ab_copy(A,B).
+A = a(a(a(a)))
+B = b(b(b(b)))
+yes</pre>
+<p>We don't have to put the wooden doll in as the last thing. How about if we 
+  can hide anything we want in the inner-most doll?</p>
+<p><em>a_hide(+N, +PRIZE, -A)<br>
+  </em>N - the number of nested dolls<br>
+  PRIZE - the thing in the middle<br>
+  A - the output doll<br>
+  <span class="weak">hint: this might look like a_build, but isn't. you need an 
+  accumulator that starts with the prize and wraps layers as it goes down. but 
+  note that the second argument is that accumulator, seeded with the prize.</span></p>
+<pre>?- a_hide(3, plum, A).
+A = a(a(a(plum)))
+yes</pre>
+<p>note: when called with nesting of 0, there are no dolls, just the prize.</p>
+<pre>?- a_hide(0, plum, A).
+A = plum
+yes</pre>
+<p>Is it covered against run-away behavior on backtracking?</p>
+<pre>?- a_hide(3, plum, A).
+A = a(a(a(plum))) ;
+no</pre>
+<p><em>a_prize(+A, -PRIZE)</em> <br>
+  A - some input doll <br>
+  PRIZE- the thing hidden in the middle <br>
+  <span class="weak">hint: keep peeling off layers and let the next call down 
+  find the prize. the boundary condition is when A is not a doll, or when A \= 
+  a(_).</span></p>
+<pre>?- a_hide(3, plum, A), a_prize(A, PRIZE). A = a(a(a(plum))) PRIZE = plum yes</pre>
+<h2>OPEN DOLLS</h2>
+<p>Open is a technical term, meaning a structure with a variable in it that can 
+  be filled at a later time by unification. Open dolls are dolls using this idea.</p>
+<p>With the dolls so far, we need to dig to find the prize. What if we were to 
+  keep open a shortcut to the inside? We could then access the inside directly.</p>
+<p>We do this by using a slightly more complex data structure to represent the 
+  doll. It has two related terms, one being the full doll, and the other being 
+  the inside of the doll. They can be joined by the - operator for convenience. 
+  It looks like:</p>
+<p><code>a(a(a(plum)))-plum</code></p>
+<p>With this structure representing the doll, we can write predicates that get 
+  the plum directly, or peel the layers, as we please.</p>
+<p>If we build an open doll with a variable inside, then we can fill the doll 
+  later just by unifying that variable with the contents. So if we had</p>
+<p><code>a(a(a(X)))-X</code></p>
+<p>by setting X = plum, we also put plum in the middle of the doll.</p>
+<pre>?- DOLL = a(a(a(X)))-X, X = plum.
+DOLL = a(a(a(plum)))-plum
+yes</pre>
+<p>Here's some predicates that illustrate this point, using 'open structures', 
+  or structures with a variable in them to begin with.</p>
+<p><em>a_open_build(+N, -OA)<br>
+  </em>N - the input level of nesting <br>
+  OA - the open Russian doll <br>
+  <span class="weak">hint: similar to a_build, but the boundary condition is when 
+  N = 1, and the doll is a(X)-X. note: this is the hardest of the open doll predicates 
+  to figure out.</span></p>
+<pre>?- a_open_build(3, A).
+A = a(a(a(H53))) - H53
+yes</pre>
+<p><em>a_open_hide(?OA, +PRIZE)</em> <br>
+  OA - an input open doll, prefaced with? because, although input, it is changed 
+  when its inner variable is unified. <br>
+  PRIZE - the thing to put inside. <br>
+  <span class="weak">hint: a simple fact that does the work with unification.</span></p>
+<pre>?- a_open_build(3,A), a_open_hide(A,plum).
+A = a(a(a(plum))) - plum
+yes</pre>
+<p>note: once you've put something in the open doll you can't put a different 
+  thing in unless you backtrack over a_open_hide thus unbinding the variable:</p>
+<pre>?- a_open_build(3,A), a_open_hide(A,plum), a_open_hide(A,peach).
+no</pre>
+<p><em>a_open_prize(+OA, -PRIZE)</em> <br>
+  OA - an input open doll, probably with its inner prize unified. <br>
+  PRIZE - the thing found inside. <br>
+  <span class="weak">hint: the same predicate as a_open_hide.</span></p>
+<pre>?- a_open_build(3,A), a_open_hide(A,plum), a_open_prize(A,P).
+A = a(a(a(plum))) - plum
+P = plum
+yes</pre>
+
+<p>&nbsp;</p>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_070_structures_900.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_080_lists_020.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

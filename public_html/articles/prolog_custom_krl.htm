@@ -1,0 +1,227 @@
+ 
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html">
+<title>An Architecture for Embedded Intelligent Components</title>
+</head>
+<body lang=EN-US bgcolor="#ffffff">
+<h1><font color="blue">An Architecture for Embedded Intelligent Components</font></h1>
+<p><i>[This article was originally published in PC AI magazine, Jan/Feb 2001. 
+  The magazine can be reached at PC AI, 3310 West Bell Rd., Suite 119, Phoenix 
+  AZ, USA 85023 Tel: (602) 971-1869, FAX: (602) 971-2321, E-Mail: info@pcai.com, 
+  Web: http://www.pcai.com] </i></p>
+<p>With the spread of computers and the Internet, the opportunities for capitalizing 
+  on intelligent systems has expanded tremendously.  All sorts of different applications 
+  beg for the embedded expertise that sets them apart from the competition.</p>
+<p>The problem is, it&#146;s just not that easy to build intelligent components. Why? 
+  because the intelligence from one domain is invariably different from the intelligence 
+  in another. And the people with the intelligence to encode are not, in general, 
+  programmers.</p>
+<p>Ideally, for any given domain you would want:</p>
+<ol>
+  <ol>
+    <li>A way to encode the knowledge that maps intuitively and directly to the 
+      way the domain experts think of the knowledge,</li>
+    <li>A reasoning engine that uses the knowledge as the domain expert expects 
+      it to be used, and</li>
+    <li>An interface that lets the entire system be embedded in its host application.</li>
+  </ol>
+</ol>
+<p>The encoding lets the expert work with the knowledge in a comfortable, familiar 
+  format; the reasoning engine ensures there are no surprises when the knowledge 
+  is applied; and the interface lets the programming staff integrate the component 
+  where it needs to be.</p>
+<p>Now it might not seem practical to implement this type of domain-specific expert 
+  system tool, but it is. Prolog is an extremely powerful tool for implementing 
+  exactly such systems, especially if the common parts of the system are factored 
+  out into reusable libraries of code.</p>
+<h2><font color="navy">Examples</font></h2>
+<p>Consider a couple of examples.</p>
+<p>Cole Davis (<a href="mailto:coledavis@hotmail.com">coledavis@hotmail.com</a>) 
+  is an organizational psychologist building a jobs advisor based on a combination 
+  of psychological personality trait profiling and conventional constraints. He 
+  has a way of representing jobs and their attributes that is the base knowledge 
+  of his system. There is a specific way he would like to see that knowledge applied 
+  and wants this as a component of a larger VB application.</p>
+<p>Ken Burres is a Doctor and top endurance athlete. His company, FitCentric (<a href="http://www.fitcentric.com/">www.fitcentric.com</a>), 
+  offers, as well as some really neat virtual reality products, a coaching tool 
+  for serious athletes. They want to add to the system an expert advisor that 
+  makes workout recommendations based on a large number of physiological factors. 
+  The purpose is to help an athlete get to his or hers optimal performance. The 
+  knowledge for each factor is stored in tables, and draws on a database of athlete 
+  information. The tables are combined to make a composite recommendation. The 
+  advisor initially will be part of a VB application and might make it to the 
+  Web in the future.</p>
+<p>Amzi! is working on a technical support system. Conventional rule-based tools 
+  have been used in this context before, but they are often difficult for technical 
+  support people to program because they do not map directly to the problem. A 
+  &#145;solution&#146; object that encapsulates the environments, conditions and actions 
+  is easier to maintain and fits better to the domain. And a reasoning engine 
+  that searches for solutions is what&#146;s expected. A Web interface would be nice 
+  on this one.</p>
+<h2><font color="navy">Prolog</font></h2>
+<p>Prolog is unique among programming languages in that it has, built into the 
+  language:</p>
+<ol>
+  <ol>
+    <li>A powerful pattern-matching algorithm, called unification,</li>
+    <li>A powerful backtracking search mechanism, and</li>
+    <li>Recursion.</li>
+  </ol>
+</ol>
+<p>These features are ideally suited for the type of domain-specific tool we are 
+  talking about.</p>
+<p>Prolog patterns, called terms, are built from simple components, but can be 
+  arbitrarily complex.  It is these that can be used to model the knowledge representation 
+  of the domain.</p>
+<p>Now you probably know that Prolog stands for programming in logic. It is a 
+  logic programming language, which is made possible by the features mentioned 
+  above. The result is that Prolog code is very close to a logical specification 
+  of a program.</p>
+<p>And thus the reasoning engine falls as a straight forward implementation in 
+  Prolog. The knowledge is stored in Prolog terms, and the logical specification 
+  of how the knowledge is to be used maps directly into Prolog code.</p>
+<p>Put a callable interface on it, and we&#146;re done from the top level view. Let&#146;s 
+  expand some of these ideas, and see what sorts of tools we can implement to 
+  make the task as easy as possible.</p>
+<h2><font color="navy">Frames of Knowledge</font></h2>
+<p>Frames are object-like structures that can be used to hold any sort of information. 
+  A frame has a type (class) and slots or properties with values, which can be 
+  any sort of thing we would like. They are a perfect generalization for implementing 
+  the domain specific knowledge we are talking about.</p>
+<p>The jobs advisor would need frames something like:</p>
+<pre><font color="navy">job architect<br></font><font color="navy">  personality = artistic, investigative, practical<br></font><font color="navy">  constraints = masters degree, age &gt; 21</font></pre>
+<pre><font color="navy">job  social worker<br></font><font color="navy">  personality = social, enterprising, artistic<br></font><font color="navy">  constraints = college degree, age &gt; 21, no criminal record</font></pre>
+<p>A technical support solution frame might look like:</p>
+<pre><font color="navy">solution service_pack_4<br></font><font color="navy">  environment = windows NT, version 4<br></font><font color="navy">  conditions = system hangs and new software recently installed<br></font><font color="navy">  explanation = software installations can cause instabilities<br>                in Windows NT 4<br></font><font color="navy">  action = reinstall service pack 4</font></pre>
+<p>Notice that the solution frame recognizes that, for tech support, it is important 
+  to segregate solutions by environment. This lets solutions be upgraded as necessary 
+  for different operating system releases, product releases and the like. The 
+  conditions then can refer to the particular problem at hand.</p>
+<h2><font color="navy">Frames in Prolog</font></h2>
+<p>Prolog terms are made up of atomic words and numbers, structures with arguments 
+  in parentheses, lists in square brackets, and operators. These can be combined 
+  in arbitrarily complex ways and lend themselves perfectly to implementing frames.</p>
+<p>So here is the architect frame represented as a pure Prolog term:</p>
+<pre class=HTMLBody><font color="navy">job(architect, [<br></font><font color="navy">  personality = [art,investigative,practical],<br></font><font color="navy">  constraints = [ degree = masters, age    &gt; 21 ]<br></font><font color="navy">  ]).</font></pre>
+<p>And here&#146;s the tech support solution frame:</p>
+<pre><font color="navy">solution(service_pack_4, [<br></font><font color="navy">  environment = [operating_system = &#145;Windows NT&#146;, version = 4],<br></font><font color="navy">  conditions = [ symptom = &#145;system hangs&#146; and    
+                 recent_software_install = yes],
+</font><font color="navy">  explanation = &#145;Software installations can cause
+                 instabilities in Windows NT 4&#146;, 
+</font><font color="navy">  action = &#145;Reinstall service pack 4&#146;<br></font><font color="navy">  ]).</font></pre>
+<p>As you can see these are pretty close to how the experts might want to work 
+  with the knowledge. Now these could be entered in a text file, and that works, 
+  but one does have to be careful of the punctuation. Using a generic frame editor 
+  as a front-end on the Prolog terms makes maintenance of the knowledge a lot 
+  easier.</p>
+<p><img src="prolog_custom_krl_fitcentric.png" width="822" height="770"></p>
+<p><i>Figure 1</i></p>
+<p>Figure 1 &#150; A frame editor showing two types of frames from the FitCentric prototype 
+  application. (The example is illustrative for a prototype, not accurate.)</p>
+<p>Note that the &#145;factor&#146; frame in the FitCentric application encapsulates all 
+  of the knowledge about a particular factor. This includes the conditions under 
+  which the factor applies, and rules for determining the weight to be given this 
+  factor when combined with others. The table shows the relationship between the 
+  factor&#146;s values and the workout recommendations, which can also have weighting 
+  factors applied to them.</p>
+<p>The key point here is that all of this knowledge might have been encoded using 
+  conventional expert system rules, but the &#145;knowledge&#146; of a factor would be dispersed 
+  among several smaller chunks of rule knowledge, thus making for more difficult 
+  maintenance. The single frame brings it all together for the knowledge base 
+  developer.</p>
+<h2><font color="navy">Reasoning Engine</font></h2>
+<p>The specifications for the reasoning engine are really the expectations of 
+  how the domain expert expects the knowledge to be used.</p>
+<p>The job advisor expert expects to find all the jobs suited for a person, where 
+  suited means that first the job matches their personality profile, and second 
+  it meets the constraints.</p>
+<p>The tech support person wants the system to look for a solution, first filtering 
+  by the environment, and then by the particular conditions. The support seeker 
+  would then be given an explanation of the problem and the actions to take.</p>
+<p>The FitCentric expert expects all of the factor tables to be combined according 
+  to the weights and conditions into an aggregate recommendation. It is also expected 
+  that the system will go out and automatically gather the bits of information 
+  it needs, such as current data from the athlete and past data from the database.</p>
+<p>We can use the job advisor to get a sense for how easily Prolog can take the 
+  knowledge structures and use them in implementing the reasoning specification.</p>
+<p class=HTMLBody>Rephrasing 
+  slightly the spec: find all of the jobs where the user&#146;s personality attributes 
+  are a subset of the attributes for the job, and the constraints are all met.</p>
+<p class=HTMLBody>And 
+  writing the Prolog code:</p>
+<pre class=HTMLBody><font color="navy">findjobs(JLIST) :-</font><font color="navy"> <br>  findall(J,<br></font><font color="navy">     ( job(J,PARMS),<br></font><font color="navy">       personality_match(PARMS),<br></font><font color="navy">       constraints_match(PARMS) ),<br></font><font color="navy">     JLIST).</font></pre>
+<p class=HTMLBody>This code is compact and close to the logical specification 
+  because it uses unification to find jobs, and backtracking to get all of the 
+  jobs that match the constraints. It will behave as the domain experts expects 
+  because it will only call the constraints_match if the personality_match succeeds.  
+  This all happens automatically in Prolog, which is why the language is so powerful 
+  and productive for this type of application.</p>
+<p class=HTMLBody>The two matching functions (predicates in Prolog jargon) are 
+  similarly compact and straight forward. They use recursive list processing techniques 
+  to walk the lists checking for conditions under which they apply.  In the case 
+  of personality, the function looks for a subset relationship; in the case of 
+  constraints, the function checks each constraint against information gathered 
+  from the user.</p>
+<p class=HTMLBody>As 
+  to the expressions in the constraints, it is trivial to add to the application 
+  any sorts of operations desired, in addition to the &#145;=&#146; and &#145;&gt;&#146; operators 
+  shown.</p>
+<h2 class=HTMLBody><font color="navy">Reusable Code</font></h2>
+<p class=HTMLBody>Each 
+  of the examples require asking questions of the user, to get information such 
+  as &#145;degree&#146; or &#145;operating system&#146; or &#145;current_weight&#146;. The prompts and menu 
+  choices for these interactions are really part of the knowledge, and can be 
+  stored in frames as well.</p>
+<p class=HTMLBody>For 
+  example:</p>
+<pre class=HTMLBody><font color="navy">question(degree, [<br></font><font color="navy"> prompt = 'What is your highest degree?',<br></font><font color="navy"> type = single_value,<br></font><font color="navy"> menu = [ high_school, college, masters, phd ]<br></font><font color="navy"> ]).</font></pre>
+<p>Clearly the code to use these question frames can be applied to many different 
+  expert systems.</p>
+<p>Similarly, code to process if-then rules and goal-seeking logic can also be 
+  reused for many types of problems, as can other frames and code to define database 
+  queries or e-mail actions to be sent.</p>
+<p>The FitCentric has its customized factors, but they draw heavily on existing 
+  code for processing rules, conditions, date arithmetic, and database queries.</p>
+<h2><font color="navy">Application Program Interface (API)</font></h2>
+<p>Most intelligent components will need to carry on some type of dialog with 
+  the calling program. In general, this dialog will be of the form:</p>
+<ol>
+  <ol>
+    <li>Calling programs asks component to find a recommendation.</li>
+    <li> Component asks calling program to gather some information.</li>
+    <li>Calling program gathers information and sends results to component, and 
+      asks for recommendation again.</li>
+    <li>2 &amp; 3 repeat until a recommendation is found, in which case</li>
+    <li> Component sends calling program the recommendation.</li>
+  </ol>
+</ol>
+<p>This pattern would certainly work for the job advisor and tech support systems 
+  described here. Standardizing on an API that follows this convention allows 
+  calling programs to interact with intelligent components in the same way, whether 
+  they are highly customized for a problem domain or not.</p>
+<p>We mentioned the possibility of a frame-based graphical editor. Well that same 
+  tool could make use of a standard API, and thus be able to provide both editing 
+  and test capabilities for any customized tool that used frames for knowledge 
+  and the API for communicating with its caller.</p>
+<p>This was done with the FitCentric prototype, which allows the knowledge base 
+  to tested from the editing tool, but run in production from VB.</p>
+<p>We&#146;ve seen variations on these ideas, where conventional databases were used 
+  to store the knowledge frames, so knowledge creators could work using standard 
+  database tools. Another customer implemented a Web-based front-end that walked 
+  knowledge creators through the construction of the knowledge frames for that 
+  domain.</p>
+<p>With Prolog handling the tricky bits, and a clean interface to other user interface 
+  tools, it is possible and practical to deploy expert systems that can be directly 
+  maintained by the experts themselves.</p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</html>
+

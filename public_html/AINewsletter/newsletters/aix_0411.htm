@@ -1,0 +1,993 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->November 
+                      2004 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <h1>AI Expert Newsletter</h1>
+            <h3>November 2004</h3>
+            <h2></h2>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+            <UL>
+              <LI><A HREF="#charlie_stross">A Computational Ring Around My Brain</A> 
+                - The science fiction of Charles Stross</LI>
+              <UL>
+                <LI><A HREF="#stross_links">Links</A></LI>
+              </UL>
+              <LI><A HREF="#the_toy_robots_initiative">Robots Amongst the Roaches</A> 
+                - Insect telepresence and the Toy Robots Initiative</LI>
+              <UL>
+                <LI><A HREF="#tri_links">Links</A></LI>
+              </UL>
+              <LI><A HREF="#karl_sims">Aesthetic Evolution and Genetic Graphs</A> 
+                - The virtual beauties of Karl Sims</LI>
+              <UL>
+                <LI><A HREF="#genetic_graphs">Genetic graphs for virtual creatures</A></LI>
+                <LI><A HREF="#other_genetic_graphs">Genetic graphs for drug design 
+                  and wireless-access-point placement</A></LI>
+                <LI><A HREF="#aesthetic_evolution">Panspermia, aesthetic evolution 
+                  and Sims's computer art</A></LI>
+                <LI><A HREF="#i_have_no_need_of_that_hypothesis">Yes, evolution 
+                  <I>did</I> create life</A></LI>
+                <LI><A HREF="#sims_links">Links</A></LI>
+              </UL>
+              <LI><A HREF="#functional_prolog">Prolog Code Corner</A> - A preprocessor 
+                for functional Prolog</LI>
+              <UL>
+                <LI><A HREF="#the_problem">The problem</A></LI>
+                <LI><A HREF="#the_solution">The solution</A></LI>
+                <LI><A HREF="#translating_function_calls">Translating function 
+                  calls</A></LI>
+                <LI><A HREF="#conjoining_goals">Conjoining goals</A></LI>
+                <LI><A HREF="#using_goal_expansion">Using <CODE>goal_expansion</CODE></A></LI>
+                <LI><A HREF="#translating_function_definitions">Translating function 
+                  definitions</A></LI>
+                <LI><A HREF="#using_term_expansion">Using <CODE>term_expansion</CODE></A></LI>
+                <LI><A HREF="#semantics_and_extensions">Extensions and semantic 
+                  questions</A></LI>
+                <LI><A HREF="#grips">The GRIPS functional-Prolog preprocessor</A></LI>
+                <LI><A HREF="#grips_applications">Applications</A></LI>
+                <LI><A HREF="#prolog_code_corner_links">Links</A></LI>
+              </UL>
+            </UL>
+            <p>I'm happy to welcome Jocelyn Paine as a guest editor for this month's 
+              newsletter.</p>
+            <p>Welcome to the November 2004 Newsletter. Dennis has asked me to 
+              take over a few issues, so I'd like to introduce myself. Like Dennis, 
+              I like Prolog, and have used it as my language of choice for various 
+              applications, including expert systems, analysing financial data, 
+              and teaching AI at Oxford University. My most recent project is 
+              an algebraic manipulation system for safe spreadsheet construction, 
+              to try and reduce some of the billions of pounds lost to spreadsheet 
+              errors every year. Having declared a bias to Prolog and logic-based 
+              AI, I must add that this is not the only way to go. I've worked, 
+              and in some cases fought, with a variety of other languages, and 
+              with AI topics ranging from machine learning and artificial life 
+              to interactive fiction and drug design. As Dennis said in his welcome 
+              to the Premier Issue of the Newsletter, AI encompasses a wide variety 
+              of fascinating software and hardware. There's tons of interesting 
+              stuff out there, and I hope I'll keep you informed and entertained. 
+              If there's anything you'd like to see, do please send me your suggestions, 
+              to popx@j-paine.org.</p>
+            <p>You can learn more about Jocelyn and his interests at his Web site: 
+              <a href="http://www.j-paine.org/">www.j-paine.org/</a> </p>
+            <H2><A name="charlie_stross">A Computational Ring Around My Brain 
+              - The science fiction of Charles Stross</A></H2>
+            <P> I could not resist beginning an AI Newsletter with this quote: 
+            <BLOCKQUOTE> Despite all our propaganda attempts to convince you otherwise, 
+              AI is alarmingly easy to produce; the human brain isn't unique, 
+              it isn't well-tuned, and you don't need eighty billion neurons joined 
+              in an asynchronous network to generate consciousness. And although 
+              it looks like a good idea to a naive observer, in practice it's 
+              absolutely deadly. </BLOCKQUOTE>
+            <p></P>
+            <P> Anyone who has wasted a day in fruitless search for a typo or 
+              absent-mindedly loaded their morning biscuit into the floppy drive 
+              knows the human brain is not well-tuned. And we all hope AI is easy 
+              to produce. But deadly? I thought I'd begin this issue with some 
+              fiction, to stimulate the sense of wonder and restore the vigour 
+              on those days when we feel that never mind solving strong AI, it'll 
+              be a miracle if we can even get <CODE>append</CODE> to work correctly. 
+              The quote is from the short story <I>Antibodies</I> by science fiction 
+              writer <A HREF="http://www.antipope.org/charlie/">Charles Stross</A>, 
+              in which AI is so feared that the protagonists take some <I>very</I> 
+              extreme measures to avert its development: 
+            <BLOCKQUOTE> "Damn it, Bob, I really had high hopes for this world-line. 
+              They seemed to be doing so well for a revelatory Christian-Islamic 
+              line, despite the post-Enlightenment mind-set. Especially Microsoft 
+              - "<BR>
+              "Was that one of ours?". She nodded.<BR>
+              "Then it was a master-stroke. Getting everybody used to exchanging 
+              macro-infested documents without any kind of security policy. Operating 
+              systems that crash whenever a microsecond timer overflows. And all 
+              those viruses!" </BLOCKQUOTE>
+            <p></P>
+            <P> The story begins when a computer programmer is notified that all 
+              NP-complete problems lie in P, the travelling salesman problem can 
+              be solved in O(n<SUP>2</SUP>), and thus computer security is forever 
+              compromised. Via a sleeper trip to Edinburgh - in this timeline, 
+              neither the capital of the Viking Empire, an active volcano, nor 
+              a cloud of feral nanobots - and interrogation by police officers 
+              playing cheesy psychedelic videos in an attempt to perform a buffer-overflow 
+              attack on their limbic systems, the protagonists realise their attempts 
+              to cripple computing technology have failed. Even now, artificial 
+              intelligence programs are exploiting the NP-complete-is-P discovery 
+              to optimise themselves. And these AIs are not nice AIs. They want 
+              to take over the Internet and then all the humans, before they eat 
+              the entire Universe, converting it into a kind of ubiquitous computational 
+              dust in their exponential lust for processing power. Will they succeed? 
+              Read the story, and enjoy the amusing little asides, to find out. 
+            </P>
+            <P> Unless you imagine yourself as the nascent AI, <I>Antibodies</I> 
+              is not an optimistic story. <I>The Atrocity Archive</I>, which originally 
+              appeared in Spectrum SF and is now published in book form, is. It's 
+              also an excellent, and funny, combination of secret service novella 
+              and computer geekery with the <A HREF="http://en.wikipedia.org/wiki/H._P._Lovecraft">Cthulhu 
+              mythos</A> of H P Lovecraft. The main character, when not busy maintaining 
+              his department's Beowulf clusters, frankenstein servers and tarot 
+              permutators, perusing Knuth's blacklisted 4th volume to the <I>Art 
+              of Computer Programming</I>, or attending departmental training 
+              courses - 
+            <BLOCKQUOTE> "We're going to try a lesser summoning, a type three 
+              invocation using these coordinates I've sketched out on the blackboard. 
+              This should raise a primary manifestation of nameless horror, but 
+              it'll be a fairly <I>tractable</I> nameless horror as long as we 
+              observe sensible precautions. There will be unpleasant visual distortions 
+              and some protosapient wittering, but it's no more intelligent than 
+              a <I>News of the World</I> reporter - not really smart enough to 
+              be dangerous. Manesh, if you could switch on the ABSOLUTELY NO ENTRY 
+              sign..." </BLOCKQUOTE>
+            - manages to avert a Nazi invasion which, if not prevented, would 
+            rage a wind of desolation and pain through the heart of Europe before 
+            plunging the Earth into an eternal fimbulwinter. He also, and this 
+            is the really important bit, saves himself from the clutches of his 
+            departmental administrator. (I once had an administrator like that, 
+            and it wasn't nice. Stross has clearly suffered too. It is clear that 
+            he has also lived amongst computer geeks.) 
+            <p></P>
+            <P> And finally, another chunk of optimism. All the stories mentioned 
+              are fun in the way they play with computing and AI, but this is 
+              the most relevant to us. As Stross says at <A HREF="http://www.accelerando.org/">www.accelerando.org/</A>, 
+              his <I>Accelerando</I> novellas (due out in book form in July 2005) 
+              explore the human consequences of the technological revolution, 
+              by following three generations of a family through the technological 
+              singularity. The quote below is from one novella in the series, 
+              <A HREF="http://www.asimovs.com/Hugos/Halo.shtml"><I>Halo</I></A>, 
+              which first appeared in Asimov's Science Fiction and was nominated 
+              for the Hugo award: 
+            <BLOCKQUOTE> Welcome to the third decade. The thinking mass of the 
+              solar system now exceeds one MIP per gram; it's still pretty dumb, 
+              but it's not dumb all over. The human population is near maximum 
+              overshoot, pushing nine billion, but its growth rate is tipping 
+              towards negative numbers, and bits of what used to be the first 
+              world are now facing a middle-aged average. Human cogitation provides 
+              about 10<SUP>28</SUP> MIPS of the solar system's brainpower. The 
+              real thinking is mostly done by the halo of a thousand trillion 
+              processors that surround the meat machines with a haze of computation 
+              - individually a tenth as powerful as a human brain, collectively, 
+              they're ten thousand times more powerful, and their numbers are 
+              doubling every twenty million seconds. They're up to 10<SUP>33</SUP> 
+              MIPS and rising, although there's a long way to go before the solar 
+              system is fully awake. </BLOCKQUOTE>
+            Now that's what I want to see. Leave the AI's to do the <I>real</I> 
+            thinking, and let the organic bits do what they do best - wibble on 
+            about food, sex and football. 
+            <p></P>
+            <H3><A NAME="stross_links">Links</A></H3>
+            <P> <A HREF="http://www.antipope.org/charlie/">www.antipope.org/charlie/</A> 
+              - Stross's main site, including information on his fiction and where 
+              to buy it. He has a few short stories on-line. There are also links 
+              to his computer journalism - articles from <I>Computer Shopper</I>, 
+              writings on Linux and Perl - and his weblog. </P>
+            <P> <A HREF="http://www.accelerando.org/">www.accelerando.org/</A> 
+              - Another Stross site, devoted to <I>Accelerando</I>. Headed by 
+              a US Commission on National Security quote about the accelerating 
+              pace of technological change, it explains the motivation behind 
+              the stories, and ends with links to nanotechnology, mind-to-computer 
+              uploading, and other hi-tech topics. </P>
+            <P> <A HREF="http://www.eternalwarriors.com/REVstross1.html">www.eternalwarriors.com/REVstross1.html</A> 
+              - Review of <I>Antibodies</I> and other stories in <I>Toast</I>. 
+            </P>
+            <P> <A HREF="http://www.nesfa.org/reviews/Olson/AtrocityArchives.html">www.nesfa.org/reviews/Olson/AtrocityArchives.html</A> 
+              - Review of <I>The Atrocity Archives</I>. </P>
+            <P> <A HREF="http://www.asimovs.com/Hugos/Halo.shtml">www.asimovs.com/Hugos/Halo.shtml</A> 
+              - Online text of <I>Halo</I>, at Asimov's SF. </P>
+            <P> <A HREF="http://en.wikipedia.org/wiki/Complexity_classes_P_and_NP">http://en.wikipedia.org/wiki/Complexity_classes_P_and_NP</A> 
+              - What does the discovery that starts <I>Antibodies</I>, all NP-complete 
+              problems lie in P, mean? Here, from Wikipedia, is an explanation 
+              of P, NP, and why they are so important; and hence, of why some 
+              tasks have no efficient algorithm. </P>
+            <H2><A NAME="the_toy_robots_initiative"></a>Robots Amongst the Roaches 
+              - Insect telepresence and the Toy Robots Initiative</H2>
+            <P> In a recent weblog entry, Stross writes that he's treating himself 
+              to a new PDA for his birthday. It will have twice the memory of 
+              his old server, be 50% faster, and be upgradeable to 10Gb of flash 
+              memory. And this little sardine-tin sized thingy holds as much power 
+              as a budget server did in 2000, or a fast mid-range Sun box in 1994, 
+              or a supercomputer that would have left Seymour Cray drooling a 
+              decade earlier. As Stross says, "Yesterday's supercomputer is truly 
+              today's toy". </P>
+            <P> With this in mind, I thought I'd see what's new in robot toys. 
+              They've long seemed an ideal setting to develop robotics: competitive, 
+              fun, and not too demanding. You might have specced your company's 
+              robot cat to recognise its owners' faces from 2 meters after only 
+              3 exposures, but you won't be sued if it fails to, and anyway, some 
+              hobbyist will eventually work out how, then publish their code on 
+              a toy-hacker's site. Nor is the average toy big enough to run amok 
+              and eat the baby, so safety need not be a big concern. However, 
+              my first search landed me not at home, but amongst a herd of Madagascan 
+              hissing cockroaches at the Carnegie Museum of Natural History. </P>
+            <P> Within its many exhibits, the museum has live exhibitions of exotic 
+              insects. These are as fascinating as any product of evolution, but 
+              many visitors fail to appreciate them, as frequent "Ew Gross" comments 
+              in the museum visitors' book testify. Providing staff to guide visitors 
+              around the exhibitions can help, but this is expensive. Anyway, 
+              even with a guide, you can't get close enough to the insects to 
+              see the complexity of their anatomy and behaviour. </P>
+            <P> To solve this, the <A HREF="http://www-2.cs.cmu.edu/~illah/EDUTOY/">Toy 
+              Robots Initiative</A> at Carnegie Mellon University has worked with 
+              the museum to develop a tele-embodiment robot that visitors can 
+              drive amongst the insects, in effect shrinking down to insect size 
+              and meeting them eyeball to compound eye. Tele-embodiment is the 
+              use of robotics to involve a human in a new environment in a way 
+              that makes them feel they're actually there. Because of the size 
+              difference betwen insect and human, the TRI call this project, "tele-embodiment 
+              in scale". </P>
+            <P> It's interesting that in this project, less was more. The TRI 
+              site's <A HREF="http://www-2.cs.cmu.edu/~illah/PAPERS/insect.pdf"><I>Insect 
+              Telepresence</I></A> paper describes as well as the robot's construction, 
+              the "Contextual Inquiry and Design" used to determine how the robot 
+              should interact with its users (and, in this case, also with the 
+              insects). This, eliciting the human-computer interaction requirements, 
+              is an essential first stage in design. One requirement that came 
+              out of this analysis is that the robot must not be able to harm 
+              the insects - some visitors would inevitably try to drive over and 
+              squash them, were this possible. Consequently, the designers opted 
+              not for a standalone mobile robot but for a camera running on tracks 
+              above the insects, capable of being moved around the enclosure and 
+              rotated. Certainly, were the robot fully mobile, it would seem difficult 
+              to program it to ignore user commands to damage the insects. </P>
+            <P> Three short videos from the robot can be downloaded from the links 
+              below. In the paper - written probably 1999 - the authors state 
+              that, after user-testing a prototype in the CMU Mobot Programming 
+              Lab, a version was installed as a permanent exhibit near the museum's 
+              entrace. It's a nice idea, worth considering for similar exhibits 
+              elsewhere. One amusing point to emerge from the user testing was 
+              that about 1/5 of the users liked just driving the robot round and 
+              round without paying much attention to the insects. As the designers 
+              say: 
+            <BLOCKQUOTE> Our theory for this action is that the users are engaged 
+              by the motion. The color monitor is extremely large, and so continuous 
+              motion is visually stunning to the point that motion sickness is 
+              possible. Those behaving this way seem to spend little time actually 
+              looking at the bugs, and more time driving like a video game. </BLOCKQUOTE>
+            <p></P>
+            <H3><A NAME="tri_links">Links</A></H3>
+            <P> <A HREF="http://www-2.cs.cmu.edu/~illah/EDUTOY/">www-2.cs.cmu.edu/~illah/EDUTOY/</A> 
+              - Toy Robots Initiative home page. This links to the Insect Telepresence 
+              Project, as well as the TRI's other work. </P>
+            <P> <A HREF="http://www-2.cs.cmu.edu/~illah/PAPERS/insect.pdf">www-2.cs.cmu.edu/~illah/PAPERS/insect.pdf</A> 
+              - the <I>Insect Telepresence</I> paper, as PDF. </P>
+            <P> <A HREF="http://www-2.cs.cmu.edu/~illah/EDUTOY/movies/bug_back.mov">www-2.cs.cmu.edu/~illah/EDUTOY/movies/bug_back.mov</A>, 
+              <A HREF="http://www-2.cs.cmu.edu/~illah/EDUTOY/movies/bug_ram.mov">www-2.cs.cmu.edu/~illah/EDUTOY/movies/bug_ram.mov</A>, 
+              and <A HREF="http://www-2.cs.cmu.edu/~illah/EDUTOY/movies/bug_pear.mov">www-2.cs.cmu.edu/~illah/EDUTOY/movies/bug_pear.mov</A> 
+              - Three short videos of cockroaches taken by the insect telepresence 
+              robot, as Quick Time. </P>
+            <H2><A NAME="karl_sims">Aesthetic Evolution and Genetic Graphs - The 
+              virtual beauties of Karl Sims</A></H2>
+            <P> Artificial evolution is itself evolving to a point where its products 
+              can be as fascinating as those of biological evolution. If the Insect 
+              Telepresence project can immerse us in the natural, Karl Sims's 
+              work can, with its emphasis on art as well as technology, involve 
+              us in the beauty of the artificial. </P>
+            <P> I came across Sims ten years ago, at an artificial life conference 
+              in Brighton. His presentation showed videos of a simulated beachside 
+              world - complete with a physics engine which implemented both gravity 
+              and friction - in which he had placed an initial population of several 
+              hundred simple blocklike creatures with randomly-generated bodies 
+              and nervous systems. Each creature was tested for its ability to 
+              perform a pre-specified task. Those that were most successful survived, 
+              and their genes were copied, combined, and mutated to make offspring 
+              for a new population. The new creatures were once again tested, 
+              and so evolution continued. </P>
+            <P> One of the tasks set for the creatures was to move as far as possible 
+              in a certain direction. Members of the first generation might only 
+              twitch feebly or stand like sticks, but as simulated generations 
+              were born and died, some impressive results emerged. I remember 
+              a helical snake which had evolved to gain purchase on the ground 
+              by friction, whilst moving forward by spiralling along its axis. 
+            </P>
+            <P> In another task, the creatures had to evolve to gain and keep 
+              possession of a large virtual cube at the water's edge. One creature 
+              evolved huge flippers for this purpose, one of which it wrapped 
+              around the cube to protect it, whilst bashing competitors to pieces 
+              with the other. There are some pictures of these creatures at Sims's 
+              <A HREF="http://www.genarts.com/karl/evolved-virtual-creatures.html">Evolved 
+              Virtual Creatures</A> page. No videos unfortunately - it seems the 
+              volume of downloads overwhelmed the server. </P>
+            <H3><A NAME="genetic_graphs">Genetic graphs for virtual creatures</A></H3>
+            <P> How do these creatures work? <A HREF="http://sodarace.net/index.jsp">Sodarace</A> 
+              is a joint venture between the Soda arts company and Queen Mary 
+              College, which enables users to build virtual creatures from simulated 
+              springs, muscles and other body parts and then race them against 
+              competitors in the Sodarace application. There's lots of documentation, 
+              and it's well worth exploring. I mention it here in order to cite 
+              an <A HREF="http://sodarace.net/sims/index.jsp">interview</A> with 
+              Sims: 
+            <BLOCKQUOTE> Ed: Your Evolved Virtual Creatures are highly successful 
+              not only at excelling in their virtual domains, but also as beautiful 
+              creations inspiring many to contemplate and explore artificial evolution. 
+              Do you have three golden rules for our users that are going to be 
+              writing computer programs to generate and optimise racing Sodaconstructor 
+              models? <BR>
+              <BR>
+              Karl: The main secret I think is designing a good genetic language. 
+              You want to be able to describe all possible creatures with some 
+              language that you can then use as your virtual DNA. You want it 
+              high level enough so you could "design" with it - you should be 
+              able to make some successful creatures by hand. You also want random 
+              and mutated codes to have a reasonable chance of being viable. I 
+              think the language should be able to somehow re-use "ideas" by instancing 
+              parts of the creature such as a "leg". Reusable growth rules such 
+              as in L-systems or directed graphs can allow this. But at the same 
+              time you want it to be flexible enough to describe any possible 
+              creature, not just a subset that you've designed into the language. 
+              Finally of course you need to mutate and combine the genetic codes 
+              from different individuals so you get a good balance of viable offspring 
+              and significant changes. I guess that is more than 3 rules, but 
+              there you go. </BLOCKQUOTE>
+            <p></P>
+            <P> So what are genetic graphs? Most genetic algorithms represent 
+              genes as linear strings, mimicking chromosomes. However, Sims's 
+              creatures have - as his <A HREF="http://www.genarts.com/karl/papers/alife94.pdf">paper</A> 
+              on <I>Evolving 3D Morphology and Behavior by Competition</I> describes 
+              - graphs or networks for genes. The idea is that the graphs describe 
+              the creatures' shape (the number and connectivity of their body 
+              parts) and at the same time, their neurology. Each body part has 
+              its own neural control circuitry, and the graph node that determines 
+              the part's shape also determines the circuitry. This leads to modularity. 
+              If a mutation causes a body part to be duplicated, say, then the 
+              control circuitry will be duplicated along with it, increasing the 
+              chance that the mutatated individual continues to function in its 
+              environment. Details, and diagrams of graphs and the creatures derived 
+              from them, can be seen in the paper. </P>
+            <H3><A NAME="other_genetic_graphs">Genetic graphs for drug design 
+              and wireless-access-point placement</A></H3>
+            <P> There are one or two other papers on genetic graphs available 
+              on the Web. In common with other representations of genes, genetic 
+              graphs can be "direct" or "indirect". Direct genetic graphs not 
+              only act as genes, but also as the creature (the "phenotype") derived 
+              from it. In contrast, indirect genetic graphs have to be transformed 
+              into the phenotype by a "developmental" process - something analogous 
+              to embryonic development. Sims's genetic graphs are indirect - the 
+              creatures are not themselves graphs, but assemblages of blocks. 
+            </P>
+            <P> Another indirect genetic graph system is Jianjun Hu's <A HREF="http://www.egr.msu.edu/~hujianju/evograph/">EvoGraph</A>, 
+              developed at Michigan State University. The site demonstrates its 
+              use for optimum placement of wireless access points, and has some 
+              downloadable C++ libraries. Direct genetic graphs have been used 
+              for <A HREF="http://www.nas.nasa.gov/~globus/papers/Nanotechnology98/paper.html">molecular 
+              design</A>. Here, the object being evolved - the molecule - <I>is</I> 
+              the gene. The links below include a paper on this work, and also 
+              a <A HREF="http://pubs.acs.org/subscribe/journals/mdd/v03/i09/html/felton.html">simplified 
+              account</A> written for drugs designers. </P>
+            <H3><A NAME="aesthetic_evolution">Panspermia, aesthetic evolution 
+              and Sims's computer art</A></H3>
+            <P> As Sims explains in his Sodarace interview, the motivation for 
+              the evolved virtual creatures came from his computer art. In <A HREF="http://www.genarts.com/karl/panspermia.html">Panspermia</A> 
+              - named for the theory that life is distributed throughout the universe 
+              in the form of germs or spores - Sims created a short and rather 
+              lovely animation in which spores land on a barren planet, germinate, 
+              and slowly unfurl into graceful and elaborate fernlike plants, which 
+              then seed and, cannon-like, blast their own spores back into outer 
+              space to continue the cycle. Sims needed a practical way to create 
+              these artificial plants, began experimenting with artificial evolution, 
+              and then went on to evolve creatures not for their shapes but for 
+              their behaviour. </P>
+            <P> After the virtual creatures work, Sims turned back to art, so-called 
+              aesthetic evolution. Here, it's the human rather than the computer 
+              that provides the selection pressure. We start with a population 
+              of randomly generated art works - images, music, or whatever - and 
+              at each generation, the user selects those most desired to pass 
+              on for further evolution. The <A HREF="http://www.genarts.com/galapagos/index.html">Gal&aacute;pagos</A> 
+              page shows this at work in an interactive media installation exhibited 
+              at the ICC in Tokyo between 1997 to 2000. As Tom Ray, the inventor 
+              of the <A HREF="http://www.his.atr.jp/~ray/tierra/index.html">Tierra</A> 
+              artificial life system, writes in an essay on <A HREF="http://www.his.atr.jp/~ray/pubs/art/">evolution 
+              as artist</A>, 
+            <BLOCKQUOTE> Evolution is a creative process, which acting independently, 
+              has produced living forms of great beauty and complexity. Today, 
+              artists and engineers are beginning to work together with evolution. 
+              In the future, it may be possible for artists to work in collaboration 
+              with evolution to produce works of art whose beauty and complexity 
+              approach that of organic life. </BLOCKQUOTE>
+            <H3><A NAME="i_have_no_need_of_that_hypothesis">Yes, evolution <I>did</I> 
+              create life</A></H3>
+            <P> Many, many people do not believe anything as complex as a living 
+              creature can arise by evolution. The first example I turned up on 
+              the Web was an <A HREF="http://www.byfaith.co.uk/pauldesign.htm#f">"intelligent 
+              design" site</A> - "Intelligent Design, (I.D.) shows the incredible 
+              complexity of the world's creatures and it provides compelling evidence 
+              that they have been created rather than randomly evolved". Sims's 
+              virtual evolved creatures, which modern PCs are surely powerful 
+              enough to run, demonstrate that evolution is sufficient, and would 
+              make a wonderful educational tool. I commend them to any game designer 
+              looking for a new product. </P>
+            <P> Let's end with another quote, from an interview Sims gave <I>Wired</I>: 
+            <BLOCKQUOTE> Did transferring evolution into a computer diminish Sims's 
+              appreciation for the wonders of biological life? Sims says that 
+              the projects have actually increased his respect for living things: 
+              "Exposing more details about life and how it might have occurred 
+              makes it even more amazing. You can't help but appreciate the extreme 
+              unlikeliness that any given organism or species ever evolved at 
+              all." </BLOCKQUOTE>
+            <p></P>
+            <H3><A NAME="sims_links">Links</A></H3>
+            <P> <A HREF="http://www.genarts.com/karl/">www.genarts.com/karl/</A> 
+              - Karl Sims's home page at Genarts. This links to other pages on 
+              his work, with copious pictures, including the Evolved Virtual Creatures 
+              photos, Panspermia and Gal&aacute;pagos. </P>
+            <P> <A HREF="http://sodarace.net/index.jsp">http://sodarace.net/index.jsp</A> 
+              - Sodarace home page. The interview is at <A HREF="http://sodarace.net/sims/index.jsp">http://sodarace.net/sims/index.jsp</A>. 
+            </P>
+            <P> <A HREF="http://www.genarts.com/karl/papers/alife94.pdf">www.genarts.com/karl/papers/alife94.pdf</A> 
+              - <I>Evolving 3D Morphology and Behavior by Competition</I>, as 
+              PDF. </P>
+            <P> <A HREF="http://www.egr.msu.edu/~hujianju/evograph/">www.egr.msu.edu/~hujianju/evograph/</A> 
+              - Jianjun Hu's EvoGraph genetic graph system. </P>
+            <P> <A HREF="http://www.nas.nasa.gov/~globus/papers/Nanotechnology98/paper.html">www.nas.nasa.gov/~globus/papers/Nanotechnology98/paper.html</A> 
+              - <I>Automatic molecular design using evolutionary techniques</I>. 
+            </P>
+            <P> <A HREF="http://pubs.acs.org/subscribe/journals/mdd/v03/i09/html/felton.html">http://pubs.acs.org/subscribe/journals/mdd/v03/i09/html/felton.html</A> 
+              - <I>Survival of the Fittest in Drug Design</I>. This article is 
+              on the <I>Modern Drug Discovery</I> site, and gives an easy-to-read 
+              summary of the above paper, from the point of view of a drug designer. 
+            </P>
+            <P> <A HREF="http://www.wired.com/wired/archive/6.10/sims_pr.html">www.wired.com/wired/archive/6.10/sims_pr.html</A> 
+              - <I>Do-It-Yourself Darwin - Karl Sims invites you to play God among 
+              the machines</I>. This is the text of the <I>Wired</I> interview. 
+              As it says, "In Sims's virtual biosphere, boredom equals death. 
+              It's survival of the aesthetically fittest". </P>
+            <P> <A HREF="http://www.his.atr.jp/~ray/pubs/art/">www.his.atr.jp/~ray/pubs/art/</A> 
+              - A paper by Tom Ray, the inventor of the Tierra artificial life 
+              system, on evolution as artist. Tom's Tierra home page is at <A HREF="http://www.his.atr.jp/~ray/tierra/index.html">http://www.his.atr.jp/~ray/tierra/index.html</A>. 
+            </P>
+            <P> <A HREF="http://www.byfaith.co.uk/pauldesign.htm#f">www.byfaith.co.uk/pauldesign.htm#f</A> 
+              - One example from many of a site whose author does not believe 
+              evolution created life. </P>
+            <H2><A name="#functional_prolog">Prolog Code Corner - A preprocessor 
+              for functional Prolog</A></H2>
+            <P> Although Prolog makes some programs remarkably concise, it's less 
+              than ideal when we want to write expressions containing nested function 
+              calls. The programmer has to unwrap these into sequences of goals, 
+              giving code which is verbose and hard to read. In this Prolog Code 
+              Corner, I show how to overcome this by writing a preprocessor for 
+              a functional dialect of Prolog. Note that here, "functional" has 
+              its usual computer science meaning of "programmed in terms of function 
+              calls" rather than "working". All my programs work. </P>
+            <H3><A NAME="the_problem">The problem</A></H3>
+            <P> Let us suppose that Prolog's designers had never thought of <CODE>is</CODE> 
+              for doing arithmetic, but instead had provided predicates such as 
+              <CODE>plus</CODE>, <CODE>mult</CODE> and <CODE>div</CODE>, each 
+              of which carries out an arithmetic operation on its first two arguments 
+              and returns the result in the third. Then instead of being able 
+              to write 
+            <PRE>
+  X is A*B + A*C + A*D.
+</PRE>
+            we would have to code the expression as calls to <CODE>plus</CODE> 
+            and <CODE>mult</CODE>. This would force us to manually unwind the 
+            expression and invent new variables to hold intermediate results: 
+            <PRE>
+  mult( A, B, V1 ),
+  mult( A, C, V2 ),
+  mult( A, D, V3 ),
+  plus( V1, V2, V4 ),
+  plus( V4, V3, X ).
+</PRE>
+            <p></P>
+            <P> Fortunately, we do have <CODE>is</CODE>, and so we are spared 
+              this inconvenience when doing arithmetic. It still faces us, however, 
+              whenever we want to write expressions for manipulating sets, vectors, 
+              complex numbers; indeed, any time we just want to nest function 
+              calls. In effect, Prolog forces us to become our own compilers. 
+              Even an ancient language like Fortran does better. </P>
+            <H3><A NAME="the_solution">The solution</A></H3>
+            <P> My answer to this problem was to write a <A HREF="http://www.j-paine.org/grips.html">preprocessor</A>. 
+              This did two main things. It allowed expressions to occur as the 
+              arguments to goals, and generated code that evaluated them and replaced 
+              them by their results. <A NAME="eval"></A> They were signalled by 
+              the operator <CODE>eval</CODE>: thus I can say, for example, in 
+              my Prolog source files or to the top-level interpreter: 
+            <PRE>
+  write( eval(1+2) )
+</PRE>
+            or 
+            <PRE>
+  write( eval( length( [1,2,3] ) ) )
+</PRE>
+            and have it mean the same as 
+            <PRE>
+  write( 3 )
+</PRE>
+            This has marvellous benefits for the brevity of my code. 
+            <p></P>
+            <P> The preprocessor also understands functional definitions. These 
+              are indicated by the connective <CODE>&lt;-</CODE>, analogous to 
+              <CODE>:-</CODE>. Using this, I can write code such as 
+            <PRE>
+  factorial( 0 ) <- 1.
+  factorial( N ) <- N * factorial( N-1 ).
+</PRE>
+            In the rest of this feature, I explain how I did this. Some of the 
+            techniques can be used to extend Prolog in other ways, which may be 
+            useful if you want to implement your own favourite notation for a 
+            problem. 
+            <p></P>
+            <H3><A NAME="translating_function_calls">Translating function calls</A></H3>
+            <P> The idea is to translate each expression into a pair consisting 
+              of a goal and a "result". The result will be the original expression 
+              if it needs no evaluation, otherwise a variable which the goal will 
+              bind to the result of evaluation. For example: 
+            <TABLE>
+              <TR> 
+                <TD WIDTH=33%>Expression</TD>
+                <TD WIDTH=33%>Goal</TD>
+                <TD WIDTH=33%>Result</TD>
+              </TR>
+              <TR> 
+                <TD><CODE>1</CODE></TD>
+                <TD>none</TD>
+                <TD><CODE>1</CODE></TD>
+              </TR>
+              <TR> 
+                <TD><CODE>f(1)</CODE></TD>
+                <TD><CODE>f(1,R)</CODE></TD>
+                <TD><CODE>R</CODE></TD>
+              </TR>
+              <TR> 
+                <TD><CODE>f(g(1),h(2))</CODE></TD>
+                <TD><CODE>g(1,V1),h(2,V2),f(V1,V2,R)</CODE></TD>
+                <TD><CODE>R</CODE></TD>
+              </TR>
+            </TABLE>
+            <p></P>
+            <P> We can do this very simply. If the expression is a number, we 
+              return it as the result. The goal doesn't need to do anything, so 
+              we make it <CODE>true</CODE>. Otherwise, we assume the expression 
+              is a function call. We split this into the function, F, and its 
+              arguments. We translate the arguments into a goal AG which evaluates 
+              them, together with variable to hold the result of evaluation. We 
+              then conjoin to AG another goal FG, formed by calling F on a list 
+              of the evaluated arguments with a result variable appended. </P>
+            <P> Some examples may help. To translate <CODE>plus(1,2)</CODE>, no 
+              code is required to evaluate the arguments, so the goal AG becomes 
+              <CODE>true</CODE>. The goal FG is the function F - <CODE>plus</CODE> 
+              - called on the evaluated arguments with a result variable appended. 
+              In this case, the evaluated arguments are the same as the originals, 
+              so FG becomes <CODE>plus(1,2,R)</CODE>, where <CODE>R</CODE> is 
+              the result variable. </P>
+            <P> For the more complicated expression <CODE>plus( mult(1,2), 3 )</CODE>, 
+              the goal AG would become - via a recursive call - <CODE>mult(1,2,R1)</CODE>. 
+              The evaluated arguments would becone <CODE>[ R1, 3 ]</CODE>, where 
+              the first one is replaced by the variable holding the result of 
+              evaluating it. The goal FG becomes <CODE>plus( R1, 3 )</CODE>. And 
+              finally, the goal for evaluating the entire goal becomes AG conjoined 
+              with FG, or 
+            <PRE>
+  mult( 1, 2, R1 ), plus( R1, 3, R )  
+</PRE>
+            <p></P>
+            <P> Here is the translation code. The predicate <CODE>trans_expr</CODE> 
+              translates the expression in its first argument into a result in 
+              its second and a goal in its third. It calls <CODE>trans_arglist</CODE> 
+              to translate function arguments: 
+            <PRE>
+  trans_expr( Expr, Expr, true ) :-
+    number( Expr ), !.
+
+
+  trans_expr( Expr, Expr, true ) :-
+    var( Expr ), !.
+
+
+  trans_expr( Expr, ResultVar, Goal ) :-
+    Expr =.. [ F | Args ],
+    trans_arglist( Args, ArgResults, ArgGoals ),
+    append( ArgResults, [ResultVar], ArgsAndResultVar ),
+    ExprGoal =.. [ F | ArgsAndResultVar ],
+    Goal = ( ArgGoals , ExprGoal ).
+
+
+  trans_arglist( [ Arg1 | Args ], [ Result1 | Results ], Goal ) :-
+    trans_arglist( Args, Results, Goals ),
+    trans_expr( Arg1, Result1, Goal1 ),
+    Goal = ( Goal1 , Goals ).
+
+
+  trans_arglist( [], [], true ).
+</PRE>
+            Note that we have added a clause which checks for expressions that 
+            are variables. These are unlikely to occur as the argument to <CODE>eval</CODE>, 
+            but will turn up once we start translating definitions, which are 
+            likely to contain variables (possibly from their head) in the tail 
+            expression, in the way that the second clause for <CODE>factorial</CODE> 
+            above did: 
+            <PRE>
+  factorial( N ) <- N * factorial( N-1 ).
+</PRE>
+            <p></P>
+            <H3><A NAME="conjoining_goals">Conjoining goals</A></H3>
+            <P> If you try this code, you will find the generated goals contain 
+              a lot of unnecessary <CODE>true</CODE>s. We can remove these by 
+              writing a special goal-conjoining predicate: 
+            <PRE>
+  conjoin( true, G, G ) :- !.
+  conjoin( G, true, G ) :- !.
+  conjoin( G1, G2, (G1,G2) ).
+</PRE>
+            This is a good utility to have whenever we write programs that code-generate 
+            Prolog. 
+            <p></P>
+            <H3><A NAME="using_goal_expansion">Using <CODE>goal_expansion</CODE></A></H3>
+            <P> The Prolog I normally use, <A HREF="http://www.swi-prolog.org/">SWI</A>, 
+              contains a number of "preprocessor hooks": predicates that you can 
+              define to add your own preprocessing code. These are not in the 
+              ISO Prolog standard, but several other implementations, such as 
+              <A HREF="http://www.sics.se/isl/sicstuswww/site/index.html">SICStus</A>, 
+              also provide them. If your Prolog doesn't, you will have to find 
+              another way to hook your preprocessor into it. The easiest is to 
+              write your own version of <CODE>consult</CODE>. </P>
+            <P> I use the <CODE>goal_expansion</CODE> hook to add the <CODE>eval</CODE> 
+              macro mentioned <A HREF="#eval">earlier</A>. As it reads a file, 
+              SWI-Prolog hands each goal G appearing in the body of a clause to 
+              <CODE>goal_expansion</CODE>, passing it as the first argument. If 
+              the call succeeds, G gets replaced by <CODE>goal_expansion</CODE>'s 
+              second argument, assumed to be its translation. </P>
+            <P> First, we write a predicate to translate goals whose arguments 
+              may include an <CODE>eval</CODE>: 
+            <PRE>
+  trans_goal( G, GTranslated ) :-
+    G =.. [ F | Args ],
+    trans_goal_args( Args, ArgResults, ArgGoals ),
+    FGoal =.. [ F | ArgResults ], 
+    GTranslated = ( ArgGoals , FGoal ).
+
+
+  trans_goal_args( [], [], true ) :- !.
+
+
+  trans_goal_args( [Arg1|Args], [Result1|Results], Goal ) :-
+    trans_goal_arg( Arg1, Result1, Goal1 ),
+    trans_goal_args( Args, Results, Goals ),
+    Goal = ( Goal1 , Goals ).
+
+
+  trans_goal_arg( Arg, Result, Goal ) :- 
+    nonvar( Arg ), Arg =.. [ eval , E ], !,
+    trans_expr( E, Result, Goal ).
+
+
+  trans_goal_arg( Arg, Arg, true ).
+</PRE>
+            This predicate, <CODE>trans_goal</CODE> runs over the arguments of 
+            a goal G. If any argument is a term <CODE>eval(E)</CODE>, <CODE>trans_goal</CODE> 
+            calls <CODE>trans_expr</CODE> on the expression E. It collects the 
+            goals for evaluating the arguments and prepends them to G. Thus, the 
+            goal 
+            <PRE>
+  write( eval( plus(1,2) ) )
+</PRE>
+            gets transformed into 
+            <PRE>
+  plus( 1, 2, R ), write( R ).
+</PRE>
+            <p></P>
+            <P> Notice that the first clause to <CODE>trans_goal_arg</CODE> needs 
+              to test whether it is dealing with an <CODE>eval(E)</CODE>. <A NAME="trans_goal"></A> 
+              We take care not to write the <CODE>eval(E)</CODE> explicitly, instead 
+              calling <CODE>=..</CODE> to test for it. Were we not to do this, 
+              then if we already had the preprocessor installed (which we might 
+              if repeatedly editing, cnsulting, and testing it), it would try 
+              expanding this particular <CODE>eval(E)</CODE>, with amusing, but 
+              probably unhelpful, effects. </P>
+            <P> Having written the translator, we install it. This involves adding 
+              a clause for <CODE>goal_expansion</CODE> which calls <CODE>trans_goal</CODE>. 
+              We also make this clause test whether the goal actually needs translating 
+              - whether it does contain an <CODE>eval</CODE> - and fail if not. 
+              This is good practice, because some Prologs might call <CODE>goal_expansion</CODE> 
+              over and over again on the same goal if we make it return the original 
+              without any change. Here is the code: 
+            <PRE>
+  needs_translating( G ) :-
+    nonvar( G ),
+     G =.. [ _ | Args ],
+     member( Arg, Args ), nonvar( Arg ), functor( Arg, eval, 1 ), !.  
+
+
+  :- multifile user:goal_expansion/2.
+
+
+  :- dynamic user:goal_expansion/2.
+
+
+  user:goal_expansion( G, GTranslated ) :-
+    needs_translating( G ), !,
+     trans_goal( G, GTranslated ).
+</PRE>
+            As with <CODE>trans_goal</CODE>, we take care to avoid an explicit 
+            <CODE>eval(E)</CODE> in the code. 
+            <p></P>
+            <P> Note that there could be could be several different clauses for 
+              <CODE>goal_expansion</CODE> in force at the same time if you or 
+              someone else have installed other preprocessors. Care will be needed 
+              to ensure these work correctly together, especially if a single 
+              goal contains constructs from different preprocessors, or gets translated 
+              by one preprocessor into a construct handled by another. </P>
+            <H3><A NAME="translating_function_definitions">Translating function 
+              definitions</A></H3>
+            <P> Translating function definitions is now straightforward. To translate 
+            <PRE>
+  double(N) <- plus(N,N).
+</PRE>
+            we translate <CODE>plus(N,N)</CODE>, giving the goal <CODE>plus(N,N,R)</CODE>. 
+            We use this as the tail of the new predicate. We then insert <CODE>R</CODE> 
+            as the final argument of <CODE>double(N)</CODE>: 
+            <PRE>
+  double( N, R ) :- plus( N, N, R ).
+</PRE>
+            <p></P>
+            <P> Here is the code: 
+            <PRE>
+  :- op( 1200, xfx, user:(<-) ).
+
+
+  trans_def( (Head <- Expr) , (PrologHead:-Tail) ) :-
+    !,
+    trans_expr( Expr, ResultVar, Tail ),
+    trans_head( Head, ResultVar, PrologHead ).
+
+
+  trans_head( Head, ResultVar, PrologHead ) :-
+    Head =.. [ F | Args ],
+    append( Args, [ResultVar], ArgsAndResultVar ),
+    PrologHead =.. [ F | ArgsAndResultVar ].
+</PRE>
+            <p></P>
+            <H3><A NAME="using_term_expansion">Using <CODE>term_expansion</CODE></A></H3>
+            <P> Finally, we install <CODE>trans_def</CODE> using the <CODE>term_expansion</CODE> 
+              preprocessor hook. This resembles <CODE>goal_expansion</CODE>, but 
+              translates complete terms in the source file. For us, it is simpler 
+              to use: we can test whether a definition needs translating just 
+              by whether it contains a <CODE>&lt;-</CODE> connective; we don't 
+              need to decompose definitions in the same way we did with goals; 
+              and we don't need to worry about avoiding explicit calls to <CODE>&lt;-</CODE> 
+              in the translator. Here is the code: 
+            <PRE>
+  :- multifile user:term_expansion/2.
+
+
+  :- dynamic user:term_expansion/2.
+
+
+  user:term_expansion( Def, DefTranslated ) :-
+    trans_def( Def, DefTranslated ).
+</PRE>
+            <p></P>
+            <H3><A NAME="semantics_and_extensions">Extensions and semantic questions</A></H3>
+            <P> The translator above is pretty basic, and would need extending 
+              to be useful. For example, the atom <CODE>[]</CODE> (empty list) 
+              probably wants to be treated as a constant that stands for itself 
+              in the same way as the numbers; non-empty lists almost certainly 
+              should be evaluated element by element. </P>
+            <P> Other constructs that could be added include an expression-disjunction 
+              operator. If we call this <CODE>;</CODE>, then <CODE>E1;E2</CODE> 
+              would evaluate <CODE>E1</CODE>, return its result if it succeeds, 
+              and otherwise return that of <CODE>E2</CODE>. <A HREF="http://clip.dia.fi.upm.es/Software/Ciao/">Ciao 
+              Prolog</A> has such a thing. Along different lines, it's probably 
+              worth translating <CODE>+</CODE>, <CODE>*</CODE> and other arithmetic 
+              operators into calls to <CODE>is</CODE>. My preprocessor does this, 
+              enabling me to use them in the definition of <CODE>factorial</CODE> 
+              shown above. </P>
+            <P> We need to take care with the semantics. One question is how to 
+              distinguish between atom constants and functions of no arguments. 
+              For example, how should we invoke <CODE>read/1</CODE> as a function? 
+              We can't write <CODE>read()</CODE>, because it's not valid syntax. 
+              If the translator takes the atom <CODE>read</CODE> to denote a call 
+              to the predicate, how should we write the atom constant <CODE>read</CODE>? 
+              On the other hand, if <CODE>read</CODE> denotes the atom, then we 
+              need a special notation for the function call. In my work, I eventually 
+              decided that an atom on its own should be a call, and that to make 
+              it a literal, we precede by <CODE>`</CODE> (backquote), declared 
+              as a prefix operator. In fact, I use <CODE>`</CODE> to quote any 
+              term, not just atoms. </P>
+            <P> Another semantic question concerns <CODE>eval</CODE>. Should the 
+              translator recognise it if it occurs at any level inside a goal, 
+              or only at the top level? That is, should the goal 
+            <PRE>
+  write( pair( eval( plus(1,2) ), 3 ) )
+</PRE>
+            stay as it is, or evaluate to <CODE>write( pair( 3, 3 ) )</CODE>? 
+            Tempting as it can be just to hack, hack, and hack again, such questions 
+            must be considered. And of course, if you are using any preprocessor 
+            for serious development, it is essential to avoid changes that break 
+            source code already written for it! 
+            <p></P>
+            <H3><A NAME="grips">The GRIPS functional-Prolog preprocessor</A></H3>
+            <P> My own preprocessor is named GRIPS; a version for SWI-Prolog can 
+              be found at <A HREF="http://www.j-paine.org/grips.html">www.j-paine.org/grips.html</A>. 
+              It has a number of enhancements beyond the basic code given here, 
+              including conditionals, options for specifying evaluation modes 
+              for special functions, and a <CODE>where</CODE> operator for embedding 
+              subsidiary definitions. </P>
+            <H3><A NAME="grips_applications">Applications</A></H3>
+            <P> I use functional notation as frequently in my Prolog projects 
+              as I do DCGs, indeed probably much more. Firstly, it just is convenient 
+              when writing complicated expressions. It also saves thinking up 
+              names for result variables, and hence helps mitigate the psychological 
+              condition known as "naming fatigue" - a steadily increasing inability, 
+              as the day wears on, to invent meaningful identifiers. (This is 
+              not meant to be facetious. I once read a book on programming which 
+              asserted that many programmers suffer from naming fatigue.) </P>
+            <P> Functional notation is also useful because it makes data flow 
+              explicit. When reading a goal such as 
+            <PRE>
+  bar( C, D, A ), foo( A, B ), fred( B, D )
+</PRE>
+            one has to examine the predicate definitions and accompanying comments 
+            or mode declarations before being sure of the data flow. The same 
+            call in functional notation makes the flow immediately clear: 
+            <PRE>
+  fred( foo( bar(C,D) ), D )
+</PRE>
+            For this reason, I have experimented with functional notation in teaching 
+            Prolog, to make it easier for novices to read Prolog code. 
+            <p></P>
+            <P> I am also using GRIPS as the basis of a <A HREF="http://www.j-paine.org/csp.html">computer-algebra-style 
+              interface for manipulating spreadsheets</A>. This works in the same 
+              way as Mathematica, Maple, and other algebra programs, except that 
+              the objects handed on from function to function are spreadsheets 
+              and parts of spreadsheets rather than numbers and algebraic expressions. 
+              Functional notation is useful for both: typically in an interaction, 
+              the user puts one or more things in, carries out a transformation, 
+              and gets one thing out which is then either stored for future use 
+              or displayed. </P>
+            <P> Finally, I have experimented with the idea that <A HREF="http://www.j-paine.org/wsm.html">dynamic 
+              Web pages can be regarded as functions generating HTML</A>, and 
+              should be written this way, so that all variables referenced on 
+              the pages are explicitly passed as function arguments. This aids 
+              readability, and also makes it simple to include parts of a page 
+              inside one another, since the includes just become function calls. 
+              This is something that Java Server Pages and other popular Web-page 
+              generators do very inelegantly. </P>
+            <H3><A NAME="prolog_code_corner_links">Links</A></H3>
+            <P> <A HREF="http://www.j-paine.org/grips.html">www.j-paine.org/grips.html</A> 
+              - Source and documentation for the GRIPS preprocessor. </P>
+            <P> <A HREF="http://babel.ls.fi.upm.es/html/ciao1.9/ciao_html/ciao_100.html">http://babel.ls.fi.upm.es/html/ciao1.9/ciao_html/ciao_100.html</A> 
+              - Functional notation in Ciao Prolog, an open-source next-generation 
+              Prolog developed at the Computational Logic laboratory at the Universidad 
+              Polit&eeacute;cnica de Madrid. See <A HREF="http://clip.dia.fi.upm.es/Software/Ciao/">http://clip.dia.fi.upm.es/Software/Ciao/</A> 
+              for the Ciao home page. </P>
+            <P> <A HREF="http://www.j-paine.org/csp.html">www.j-paine.org/csp.html</A> 
+              - <I>The Watchmaker And The Spreadsheet Factory</I>, a demonstration 
+              of spreadsheet manipulation in Prolog. Some of the examples demonstrate 
+              the use of functional notation. </P>
+            <P> <A HREF="http://www.j-paine.org/wsm.html">www.j-paine.org/wsm.html</A> 
+              - <I>Dynamic Web pages in Kawa</I>. This implements the idea of 
+              Web pages as functions, using the Kawa dialect of Scheme. A Prolog 
+              version is still under development. </P>
+            <P></P>
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome. Feel free to contact either myself (below) or Jocelyn &lt;popx@j-paine.org&gt; 
+              with comments, thoughts and suggestions.</P>
+            <P>Until next month, </P>
+            <p><a href="http://www.ainewsletter.com/contact.htm">Dennis Merritt</a><br>
+            </p>
+            <p>Copyright &copy;2004 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved.</p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>It’s in the Mailbot</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (Win95; I) [Netscape]">
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<H1><FONT COLOR="#0000FF">It’s in the Mailbot</FONT></H1>
+
+<P><I>[This article was originally published in PC AI magazine, Volume
+12, Number 1 Jan/Feb 98. The magazine can be reached at PC AI, 3310 West
+Bell Rd., Suite 119, Phoenix AZ, USA 85023 Tel: (602) 971-1869, FAX: (602)
+971-2321, E-Mail: info@pcai.com, Web: http://www.pcai.com] </I></P>
+
+<H2><FONT COLOR="#000080">Introduction</FONT></H2>
+
+<P>The idea of having a conversation with your computer is not new. The
+simple and amusing program ELIZA has fascinated computer users for over
+thirty years. The purpose of ELIZA is to entertain you with the illusion
+of human conversation. You type in questions and responses and ELIZA will
+often appear to comprehend and respond appropriately.</P>
+
+<P>ELIZA belongs to a class of programs called bots (visit ELIZA at <I><A HREF="http://www.botspot.com">www.botspot.com</A></I>).
+Bots, or software agents, are designed to perform tasks autonomously. Bots
+are typically categorized by the functions they perform. For example, ELIZA
+was built to chat so it’s called a &quot;Chatter Bot.&quot; Other categories
+of bots include Commerce Bots, Mail Bots, News Bots, Search Bots, and Shopping
+Bots -- to name just a few. </P>
+
+<P>Bots use a variety of interfaces, ranging from simple text to sophisticated
+voice and animation to interact with users. They also vary widely in their
+level of intelligent behavior. For instance, ELIZA uses a simple text interface
+to chat with you. And it actually lacks the ability to understand what
+you type but, instead, uses a clever program to provide seemingly insightful
+responses. </P>
+
+<P>Newer bots, like Mailbot from WordSurf (<I><A HREF="http://www.wordsurf.com">www.wordsurf.com</A></I>),
+go well beyond illusions of conversation to perform useful functions. Mailbot
+attempts to find and provide information about your email via a conversational
+interface. In other words, Mailbot tries to interpret your requests and
+respond with meaningful information.</P>
+
+<H2><FONT COLOR="#000080">Some Background</FONT></H2>
+
+<P>The idea of Mailbot as a product actually arose from computer voice
+recognition experience gained in the early 1990s. &quot;Dragon Dictate,&quot;
+a PC voice recognition product, enabled lawyers to dictate directly into
+WordPerfect 5.1 and execute simple word-processing command sequences using
+&quot;voice-macros.&quot; Dragon Dictate was then priced at around US$10k
+and required training to be used effectively. Even though Dictate was expensive,
+so were the legal secretaries who could do better things with their time
+than dicta typing. In addition, lawyers suffered from having to keep track
+of blizzards of paper so the direct spoken words to computer file translation
+had appeal. </P>
+
+<P>WordDancer Systems, the company that played a major role in introducing
+Dictate and voice recognition to the North American legal community, learned
+a key lesson about voice macros. Voice macros were very limited in that
+a typical user could only remember and use about a dozen of these commands.
+Lawyers didn't have the time or inclination to commit to memory more commands
+-- even though the voice recognition approach eliminated the need to manually
+enter word processing instructions. </P>
+
+<P>In 1994 principals from WordDancer founded WordSurf Inc. to address
+application design issues highlighted by the earlier foray into the speech
+recognition market. To use voice intelligently, applications needed at
+least a rudimentary understanding of language that a user would likely
+employ in a particular situation. The belief was that it was not necessary,
+or even possible, for a program to understand unrestricted natural language.
+Rather, in many cases, it would be sufficient for a program to understand
+a user's language and intent in a restricted context.</P>
+
+<P>One context that is relatively limited, simple, and well understood
+is the natural language (NL) queries for database systems. The researchers
+at WordSurf choose this context and have developed three Windows 95/NT
+applications that all use NL to query databases. The most recent one is
+Mailbot, which specializes in using NL to find and manage your email. </P>
+
+<H2><FONT COLOR="#000080">Using Mailbot</FONT></H2>
+
+<P>The best way to illustrate how to work with Mailbot is with an example.
+Suppose you have email communication with &quot;Fred&quot; several times
+a month. You want to find messages you sent Fred about the topic &quot;XYZ.&quot;
+So you launch Mailbot and it appears as shown in Figure 1.</P>
+
+<P><IMG SRC="/articles/mailbot1.gif" HEIGHT=234 WIDTH=624></P>
+
+<P>Figure 1: Mailbot’s Interface</P>
+
+<P>Notice that there are two simple text boxes. The program designers chose
+this text-based user interface because of its uncomplicated nature and
+minimal memory requirements. The smaller text box at the bottom lets you
+enter a query, while the list box above displays the response. This list
+box can be scrolled to show the results from previous queries. (It is possible
+to create a audio interface for Mailbot with a speech recognition engine
+and the speech synthesis product called TextAssist from Creative Labs.)
+</P>
+
+<P>To use Mailbot, just click the query text box and type your question.
+You could enter a simple question like &quot;find the first message to
+Fred from last month about XYZ.&quot; Mailbot tries to provide some meaningful
+feedback even if it fails to locate the desired email. For example, it
+might reply that &quot;you didn’t send email to Fred last month about XYZ.&quot;</P>
+
+<P>Mailbot remembers previous inquiries and, unless otherwise advised,
+bases its responses upon the accumulation of prior interrogatives about
+the topic. This ability to &quot;continue on the same topic&quot; is called
+<I>anaphora</I> and it enables you to narrow or qualify your search with
+follow-up questions that take into account the queries already entered.
+For example, failing to locate a message sent to Fred about XYZ last month,
+you might next ask &quot;in the last 3 weeks?&quot; to check for email
+that was sent more recently. When Mailbot locates the information you are
+looking for, it immediately displays the relevant email, as shown in Figure
+2.</P>
+
+<P><IMG SRC="/articles/mailbot2.gif" HEIGHT=480 WIDTH=640></P>
+
+<P>Figure 2: Mailbot displays relevant email </P>
+
+<P>There are several ways to start inquiring about a new topic during a
+conversation with Mailbot. Each time you ask for email &quot;to&quot; or
+&quot;from&quot; a different person, you automatically start a new topic.
+In addition, when you use a generic term for electronic mail such as &quot;email,&quot;
+&quot;message,&quot; and the abbreviations &quot;msg,&quot; &quot;msgs&quot;
+in a query, you initiate a new topic. In all these cases, prior inquires
+are disregarded and a new line of inquiry is begun.</P>
+
+<P>At first glance, it may appear that Mailbot operates like a typical
+search engine on the Internet, using queries composed of Boolean operators
+(e.g., AND, OR, NOT, etc.) to locate information. However, although Mailbot
+does have a mechanism to perform Boolean string searches, what you enter
+is processed as natural language. </P>
+
+<P>In developing Mailbot, the goal was to build a program that could &quot;understand&quot;
+the types of questions you might ask to locate email. The capability to
+capture meaning from your conversation with Mailbot and produce useful
+responses is what gives the program its real power. The key to the use
+of natural language, in this restricted context, is a series of semantic
+grammars. </P>
+
+<H2><FONT COLOR="#000080">How Mailbot Works</FONT></H2>
+
+<P>According to James Allen, in his classic <I>Natural Language Understanding</I>
+(Benjamin/Cummings Publishing Company, Inc., 1995): </P>
+
+<P>&quot;A general grammar of English will contain many constructs that
+are necessary for a wide coverage of the language but may not be needed
+in the application at hand. A grammar that is cast in terms of the major
+semantic categories of the domain is called a semantic grammar. While semantic
+grammars are considerably larger than their syntactic counterparts it is
+generally simpler to define the rules because of the limited context.&quot;</P>
+
+<P>Internally, Mailbot makes several attempts to &quot;understand&quot;
+a query submitted to it. Each try or &quot;pass&quot; is associated with
+one or more semantic grammars. The meaningful information Mailbot tracks
+for each query are as follows:</P>
+
+<UL>
+<LI>Are you using &quot;from,&quot; &quot;to,&quot; &quot;subject,&quot;
+&quot;cc&quot; in an email header context? That is, from someone, to someone
+etc.</LI>
+
+<LI>Are you starting a new topic or is this query related to prior queries?</LI>
+
+<LI>Does this query use anaphora?</LI>
+
+<LI>What is the date and/or time context?</LI>
+
+<LI>Are meaningful words from messages or &quot;keywords&quot; in the query?</LI>
+
+<LI>Are you looking for message(s) with a literal string? </LI>
+
+<LI>Does this query refer to a user-defined type of email?</LI>
+
+<LI>Are you searching for a message by position among a group of related
+messages? For example, find the first or last or next or previous &quot;N&quot;
+messages where N is a positive integer. </LI>
+
+<LI>Are there any pseudonyms, nicknames, or partial email addresses included
+in the query?</LI>
+</UL>
+
+<P>The makers of Mailbot have paid particularly close attention to the
+date/time context. Often we remember things not so much by content as by
+when an event took place. Mailbot recognizes many different date/time abbreviations
+and vernacular ways of referring to dates and times.</P>
+
+<P>Mailbot also takes into account that people like to pack several different
+and usually related meanings into a single sentence. It, thus, tries to
+extract all of the possible meanings contained in a query. Of course, if
+the query is too complex or nonsensical, the program will be unable to
+correctly interpret the query. </P>
+
+<P>When Mailbot fails to comprehend a query, you can use the Last Query
+command, on the Help menu, to view information on why the program failed
+to properly interpret the question. This information can provide useful
+clues to assist you in rephrasing the query in a way that will be understandable
+to Mailbot. However, rephrasing queries in Mailbot is a very intuitive
+process, so you should seldom need to refer to this feature. </P>
+
+<P>Input sentences to a natural language system, like Mailbot, are &quot;parsed.&quot;
+Syntactic parsing is the process of separating an input sentence into its
+constituent parts, such as noun phrases, verb phrases, nouns, verbs, adjectives,
+determiners, etc. These components are broken out of the sentence using
+a set of phrase-structure rules. The end result of syntactic parsing is
+a representation known as a &quot;parse tree.&quot; </P>
+
+<P>Mailbot also uses the function or meaning of words to organize and classify
+the components of an input sentence. For example, suppose you enter the
+request &quot;get the last XYZ message to Fred from last month.&quot; In
+this sentence the adjective &quot;last&quot; is used twice but with two
+very different and distinct functions. </P>
+
+<P>In the first case, the program builds a parse tree for the word &quot;last&quot;
+in a &quot;last of a set of messages&quot; context. While in the second
+occurrence, Mailbot creates a parse tree for &quot;last&quot; in a date/time
+context. As Figure 3 shows, the two different parse trees based on the
+contextual meanings of the word &quot;last.&quot; Both derived from the
+same query, or sentence, but built from two different semantic grammars
+and contexts.</P>
+
+<P><IMG SRC="/articles/mailbot3.gif" HEIGHT=356 WIDTH=646></P>
+
+<P>Figure 3: Two different parse trees built from one query </P>
+
+<P>Prolog is the language used to implement semantic grammars. It contains
+a handy construct known as a Definite Clause Grammar or DCG for short.
+DCGs greatly simplify the process of building phrase structure rules. Once
+the rules are defined using DCGs, the parse tree is a by-product because
+of Prolog's automatic backtracking mechanism. </P>
+
+<P>Prolog is a wonderful computer language for natural language processing
+in that it so readily and concisely allows you to concentrate on natural
+language issues. You don't get sidetracked as much by the data structure,
+data type, and algorithm requirements of other high-level computer languages
+such as C. </P>
+
+<P>For performance reasons, Mailbot is written in Amzi! Prolog and C++.
+Amzi! allows easy implementation of critical predicates directly in C++.
+These &quot;extended&quot; predicates written in C++ enabled the creation
+of indexed structures that are directly accessed by the Prolog natural
+language code. Thus, the overall architecture of Mailbot involves a Borland
+C++ shell calling an embedded Prolog component, which in turn calls C++,
+as illustrated in Figure 4.</P>
+
+<P><IMG SRC="/articles/mailbot4.gif" HEIGHT=417 WIDTH=637></P>
+
+<P>Figure 4: Overall Architecture of Mailbot </P>
+
+<H2><FONT COLOR="#000080">Conclusion</FONT></H2>
+
+<P>Mailbot is unlike any other email product on the market. It is not an
+email client but, instead, a powerful program that lets you easily access
+your stored email using plain English queries in a simple command line
+interface. If the desired email is not located immediately, Mailbot converses
+with you to refine your inquiries to converge on what you are trying to
+locate quickly and easily. </P>
+
+<P>To help you refine your queries, Mailbot remembers information from
+prior questions, allowing you to perform nested searches on the same topic.
+It also recognizes multiple implied requests within a single sentence,
+enabling you to construct compact and flexible queries. In addition, since
+you are more likely to know the approximate date or time of a certain message
+than its contents, Mailbot comes with an extensive vernacular of date and
+time terms. </P>
+
+<P>So the next time someone tells you &quot;it’s in the mail,&quot; use
+Mailbot to find it.</P>
+
+<P><I>A. George Ritchie is Research Director at WordSurf Inc. Prior to
+working with WordDancer and WordSurf he worked for several years in the
+parallel computing industry. You may reach him at <A HREF="mailto:agr@wordsurf.com">agr@wordsurf.com</A>.</I></P>
+
+<P>&nbsp;</P>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+</HTML>

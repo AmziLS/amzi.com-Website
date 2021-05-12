@@ -1,0 +1,2664 @@
+<html><!-- #BeginTemplate "/Templates/main_ss.dwt" --><!-- DW6 -->
+<head>
+<title>AI Newsletter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+pre {  font-family: "Courier New", Courier, mono; background-color: #ccccff; margin-right: 20px; margin-left: 20px}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="MM_preloadImages('/AINewsletter/images/menu_about.gif','/AINewsletter/images/menu_about_lite.gif')">
+<table width="100%" border="0" cellpadding="15" bgcolor="#28B5F9">
+  <tr><td>
+      <table width="100%" border="0" cellpadding="10" bgcolor="white">
+        <tr> 
+          <td height="117"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="240"><a href="/index.html"><img src="/images/logo.gif" width="240" height="80" border="0"></a></td>
+                <td valign="bottom" > 
+                  <div align="right"> 
+                    <h2><font color="navy" face="Arial, Helvetica, sans-serif"><!-- #BeginEditable "Title" -->September 
+                      2005 <!-- #EndEditable --></font></h2>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr bgcolor="#000066"> 
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Newsletters','/AINewsletter/images/menu_newsletters.gif',1)" onMouseOver="MM_nbGroup('over','Newsletters','/AINewsletter/images/menu_newsletters_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Newsletters" src="/AINewsletter/images/menu_newsletters.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/toc.html" onClick="MM_nbGroup('down','group1','Downloads','/AINewsletter/images/menu_downloads.gif',1)" onMouseOver="MM_nbGroup('over','Downloads','/AINewsletter/images/menu_downloads_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Downloads" src="/AINewsletter/images/menu_downloads.gif" border="0" onLoad="" width="165" height="25"></a></td>
+                <td><a href="/AINewsletter/about.htm" onClick="MM_nbGroup('down','group1','About','/AINewsletter/images/menu_about.gif',1)" onMouseOver="MM_nbGroup('over','About','/AINewsletter/images/menu_about_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="About" src="/AINewsletter/images/menu_about.gif" border="0" onLoad="" width="100" height="25"></a></td>
+                <td><a href="/AINewsletter/contact.htm" onClick="MM_nbGroup('down','group1','Contact','/AINewsletter/images/menu_contact.gif',1)" onMouseOver="MM_nbGroup('over','Contact','/AINewsletter/images/menu_contact_lite.gif','',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact" src="/AINewsletter/images/menu_contact.gif" border="0" onLoad="" width="120" height="25"></a></td>
+                <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+              </tr>
+              <tr> 
+                <td><img height="1" width="90" src="/AINewsletter/images/menu_spacer.gif"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td><!-- #BeginEditable "Contents" --> 
+            <H1>AI Expert Newsletter</H1>
+            <p><i>AI - The art and science of making computers do interesting 
+              things that are not in their nature.</i></p>
+
+
+<H3>September 2005</H3>
+
+
+
+<UL>
+
+
+
+<LI><A HREF="#introduction">Introduction
+
+</a></LI><LI>
+
+
+
+<A HREF="#introduction"></a><A HREF="#quotes">An Arc Through AI Space</A>
+
+</LI>
+
+
+
+<LI><A HREF="#python_robotics">Python for Robotics</A>
+
+    <UL>
+
+    <LI><A HREF="#python_robotics_karel_out">Avoiding the Karel-the-robot paradox</A></LI>
+
+    <LI><A HREF="#python_robotics_pyro">Pyro</A></LI>
+
+    <LI><A HREF="#python_robotics_direct_control">Pyro for direct control</A></LI>
+
+    <LI><A HREF="#python_robotics_behaviour_based">Pyro for behaviour-based control</A></LI>
+
+    <LI><A HREF="#python_robotics_vision">Pyro for vision</A></LI>
+
+    <LI><A HREF="#python_robotics_aibo">Pyro and Aibo</A></LI>
+
+    <LI><A HREF="#python_robotics_tekkotsu">Pyro versus Tekkotsu</A></LI>
+
+    <LI><A HREF="#python_robotics_links">Links</A></LI> 
+
+    </UL>
+
+</LI>
+
+
+
+<LI><A HREF="#gigglebytes">Gigglebytes</A>
+
+    <UL>
+
+    <LI><A HREF="#gigglebytes_links">Links</A></LI> 
+
+    </UL>
+
+</LI>
+
+
+
+</UL>
+
+
+
+
+
+
+
+<H2><A NAME="introduction">Introduction</A></H2>
+
+
+
+<P>
+
+Welcome to our September issue. The main 
+
+feature this month continues August's AI-in-Python theme
+
+with a look at Python for robotics and the Pyro
+
+robot-control software. We also have a selection of
+
+quotes,
+
+and some computer-generated humour. As ever, comments and suggestions are welcome:
+
+please mail popx@j-paine.org. 
+
+<DIV ALIGN=right>
+
+<A HREF="http://www.j-paine.org/">Jocelyn Paine</A></DIV>
+
+<p></P>
+
+<P>&nbsp;</P>
+
+
+
+
+
+
+
+<H2><A NAME="quotes">An Arc Through AI Space</A></H2>
+
+
+
+<P>
+
+I came across a few of the quotes below while 
+
+looking up references for another article.
+
+It's an article that
+
+hasn't yet worked out, but I thought it
+
+would be fun to use them to trace a path
+
+through the past - and perhaps future - development of
+
+AI. So here goes:
+
+</P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"Many smart people have been thinking about the AI problem for a long
+
+time.  There have been many ideas that have been pursued by
+
+sophisticated research teams which turned out to be dead ends.  This
+
+includes all of the obvious ideas. Most grand solutions proposed
+
+have been seen before (about 70% seem to be recapitulations of
+
+Minsky proposals)."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.faqs.org/faqs/ai-faq/general/part1/">www.faqs.org/faqs/ai-faq/general/part1/</A>
+
+<BR>
+
+From an answer to the claim
+
+"I have the idea for an AI Project that will solve all
+
+of AI..." in
+
+part 1/6 of the 
+
+comp.ai FAQ by 
+
+<A HREF="http://www.kantrowitz.com/kantrowitz/mark.html">Mark Kantrowitz</A>,
+
+<A HREF="http://homepages.inf.ed.ac.uk/adubey/">Amit Dubey</A> and
+
+<A HREF="http://www.cs.usna.edu/~crabbe/">Ric Crabbe</A>, 1992-2004.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"There has been a long-standing opposition within AI between 'neats' and 'scruffies' (I think the
+
+terms were first invented in the late 70s by Roger Schank and/or Bob Abelson at Yale
+
+University).
+
+The neats regard it as a disgrace that many AI programs are complex, ill-structured, and so hard
+
+to understand that it is not possible to explain or predict their behaviour, let alone prove that they
+
+do what they are intended to do. John McCarthy in a televised debate in 1972 once complained
+
+about the 'Look Ma no hands!' approach."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.cs.bham.ac.uk/research/cogaff/sloman.scruffy.ai.pdf">www.cs.bham.ac.uk/research/cogaff/sloman.scruffy.ai.pdf</A>
+
+<BR>
+
+<I>Must Intelligent Systems Be Scruffy?</I>, by
+
+<A HREF="http://www.cs.bham.ac.uk/~axs/">Aaron Sloman</A>, 1990.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"Conrad Barski from Minneapolis sent me an action shot of the 
+
+John McCarthy Lisp t-shirt. He writes: '...
+
+and since the portrait of John McCarthy is so uncanny, there was no need to explain the shirt to anyone in the audience.'" 
+
+</DT>
+
+<DD> 
+
+<A HREF="http://lispmeister.com/blog/lisp-news/conrad-barski-jmc-t.html">lispmeister.com/blog/lisp-news/conrad-barski-jmc-t.html</A>
+
+<BR>
+
+<I>John McCarthy Lisp T-shirt</I> blog entry at Lispmeister.com, 2004.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"Lisp has jokingly been called 'the most intelligent 
+
+way to misuse a computer'. I think that description is a great 
+
+compliment because it transmits the full flavor of liberation: 
+
+it has assisted a number of our most gifted fellow humans 
+
+in thinking previously impossible thoughts."
+
+</DT>
+
+<DD>
+
+<A HREF="http://www.paulgraham.com/quotes.html">www.paulgraham.com/quotes.html</A>
+
+<BR>
+
+Edsger Dijkstra in his <I>Humble Programmer</I> essay for
+
+CACM, 1972. Quoted in 
+
+<A HREF="http://www.paulgraham.com/">Paul Graham</A>'s <I>Lisp Quotes</I>.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"Elegance is unnatural, only achieveable at great expense. If you just do something, 
+
+it won't be elegant, but if you do it and then 
+
+see what might be more elegant, and do it again, you might, after an unknown number of 
+
+iterations, get something that is very elegant."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://addaquote.com/index.php/Erik_Naggum">addaquote.com/index.php/Erik_Naggum</A>
+
+<BR>
+
+Lisp programmer Erik Naggum.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"The language God would have used to implement the Universe." 
+
+</DT>
+
+<DD> 
+
+<A HREF="http://wiki.alu.org/RtL%20Highlight%20Film">wiki.alu.org/RtL%20Highlight%20Film</A>
+
+<BR>
+
+Svein Ove Aas, quoted at
+
+<I>The Road to Lisp Survey Highlight Film</I>. This is a compilation of
+
+replies to
+
+<A HREF="http://wiki.alu.org/The_Road_to_Lisp_Survey"><I>The 
+
+Road to Lisp Survey</I></A>, a newbie-by-newbie survey of what led 
+
+folks to give Lisp a serious try and what they think of it.
+
+</DD>
+
+</DL>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"It feels like lightning between your fingertips." 
+
+</DT>
+
+<DD> 
+
+Glenn Ehrlich,
+
+<I>The Road to Lisp Survey Highlight Film</I>.
+
+</DD>
+
+</DL>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"((What ((is) with (all)) of (the) ()s?) Hmmm?)"
+
+</DT>
+
+<DD> 
+
+<A HREF="http://slashdot.org/article.pl?sid=01/11/03/1726251">slashdot.org/article.pl?sid=01/11/03/1726251</A>
+
+<BR>
+
+From a Slashdot interview with
+
+Lisp and Scheme implementor 
+
+<A HREF="http://www.hypermeta.com/index-pitman.html">Kent Pitman</A>. He replies that
+
+"Ironically it's non-Lisp languages that allow and 
+
+encourage you to put ()'s in any place you want, 
+
+as if there were no meaning to the introduction of 
+
+gratuitous paren groups."
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"As the release of AutoCAD 2.1 loomed closer, we were 
+
+somewhat diffident about unleashing Lisp as our application language. 
+
+This was at the very peak of the hype-train about expert systems, artificial 
+
+intelligence, and Lisp machines, 
+
+and while we didn't mind the free publicity we'd gain from the choice of 
+
+Lisp, we were afraid that what was, in fact, a very simple macro language 
+
+embedded within AutoCAD would be perceived as requiring arcane and 
+
+specialised knowledge and thus frighten off the very application 
+
+developers for whom we implemented it.
+
+In fact, when we first shipped AutoCAD 2.1, we didn't 
+
+use the word 'Lisp' at all - we called it the 
+
+'variables and expressions feature'. Only in 
+
+release 2.18, in which we provided the full 
+
+functional and iterative capabilities of Lisp, did we 
+
+introduce the term 'AutoLisp'."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.fourmilab.ch/autofile/www/chapter2_35.html">www.fourmilab.ch/autofile/www/chapter2_35.html</A>
+
+<BR>
+
+<I>AutoCAD Applications Interface:
+
+Lisp Language Interface
+
+Marketing Strategy Position Paper</I>,
+
+by John Walker, 1985.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"'AI winter' is the term first used in 1988 to describe the unfortunate commercial fate of AI.
+
+From the late 1970’s and until the mid-1980’s, artificial intelligence was an important part of the
+
+
+computer business - many companies were started with the then-abundant venture capital available
+
+for high-tech start-ups. By 1988 it became clear to business analysts that AI would not experience
+
+meteoric growth, and there was a backlash against AI and, with it, Lisp as a commercial concern.
+
+AI companies started to have substantial financial difficulties, and so did the Lisp companies."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.dreamsongs.com/NewFiles/Hopl2.pdf">www.dreamsongs.com/NewFiles/Hopl2.pdf</A>
+
+<BR>
+
+From <I>The Evolution of Lisp</I> by Guy Steele and Richard Gabriel.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"The scruffies regard messy complexity as inevitable in intelligent systems and point to the failure
+
+so far of all attempts to find workable clear and general mechanisms, or mathematical solutions
+
+to any important AI problems. There are nice ideas in the General Problem Solver, logical
+
+theorem provers, and suchlike but when confronted with non-toy problems they normally get
+
+bogged down in combinatorial explosions. Messy complexity, according to scruffies, lies in the
+
+nature of problem domains (e.g. our physical environment) and only by using large numbers of
+
+ad-hoc special-purpose rules or heuristics, and specially tailored representational devices can
+
+problems be solved in a reasonable time."
+
+</DT>
+
+<DD> 
+
+<I>Must Intelligent Systems Be Scruffy?</I>
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"In rule-based, or expert systems, the programmer enters a 
+
+large number of rules. The problem here is that you cannot 
+
+anticipate every possible input. It is extremely tricky to be sure you have 
+
+rules that will cover everything. Thus these systems often break 
+
+down when some problems are presented; they are very 'brittle'. Connectionists 
+
+use learning rules in big networks of simple components - loosely inspired by 
+
+nerves in a brain. Connectionists take 
+
+pride in not understanding how a network solves a problem."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.aaai.org/AITopics/html/reason.html">www.aaai.org/AITopics/html/reason.html</A>
+
+<BR>
+
+Marvin Minsky, from 
+
+<I>Scientist on the Set: An Interview with Marvin Minsky</I>, in <I>Hal's
+
+Legacy</I>, edited by David Stork, 1996. Quoted on the AAAI
+
+<I>Reasoning</I> page.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"Despite all the progress in neural networks the technology is still brittle and sometimes difficult to apply."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.phys.uni.torun.pl/publications/kmk/init-opt.html">www.phys.uni.torun.pl/publications/kmk/init-opt.html</A>
+
+<BR>
+
+<I>Statistical methods for construction of neural networks</I>, a review
+
+of methods for building robust neural nets by
+
+<A HREF="http://www.phys.uni.torun.pl/~duch/">Wlodzislaw Duch</A> and Rafal Adamczak, 1998.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"It would be best to start with ready software packages. I recommend our own ones, 
+
+because they are error-free and involve all our know-how; on the
+
+ contrary, many commercial packages are of no use."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.generation5.org/content/2000/tkohonen.asp">www.generation5.org/content/2000/tkohonen.asp</A>
+
+<BR>
+
+<A HREF="http://www.cis.hut.fi/research/som-research/teuvo.html">Teuvo Kohonen</A>, 
+
+replying to the question "What tips would you give to programmers wanting to create 
+
+self-organizing neural networks?" in an interview with <A HREF="http://www.generation5.org/">generation5</A>, 2000.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"All too soon, however, the hopes 
+
+kindled by AI's second age dimmed as well.
+
+Using chips and computer programs, scientists 
+
+built artificial neural nets that mimicked the 
+
+information-processing techniques of the brain. 
+
+Some of these networks could learn to recognise 
+
+patterns, like words and faces. But the goal of a 
+
+broader, more comprehensive intelligence remained 
+
+far out of reach. 
+
+And so dawned the third age of AI. 
+
+Its boosters abandoned hopes of 
+
+designing the information-processing 
+
+protocols of intelligence, and tried 
+
+to evolve them instead. No one wrote 
+
+the program which controls the walking of 
+
+Aibo, a $1,500 robotic dog made by Sony.
+
+Aibo's genetic algorithms 
+
+were grown - evolved through many generations of ancestral code in a Sony laboratory."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.economist.com/science/displayStory.cfm?Story_ID=883645">www.economist.com/science/displayStory.cfm?Story_ID=883645</A>
+
+<BR>
+
+<I>2001: a disappointment?</I>, an
+
+<I>Economist</I> feature on evolutionary AI, 2001.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"GAs are a terrific approach to searching large, 
+
+ill-defined spaces, in this case the space of 
+
+'nice' melodic ideas. There is also an analogy to the 
+
+'population' of licks that most jazz players have in their heads. 
+
+These licks come and go over time in a manner similar to evolution; 
+
+ideas that were cool in the 
+
+past become overused or cliched, so I stop playing them."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.generation5.org/content/1999/biles.asp">www.generation5.org/content/1999/biles.asp</A>
+
+<BR>
+
+<A HREF="http://www.it.rit.edu/~jab/">John Al Biles</A> in a 1998 interview with
+
+<A HREF="http://www.generation5.org/">generation5</A>
+
+about his work on the
+
+<A HREF="http://www.it.rit.edu/~jab/GenJam.html">GenJam</A> Genetic Jammer
+
+interactive jazz improviser, probably
+
+the only evolutionary computation system that is also a working musician. 
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"Dealing with ES is sometimes seen as 'strong tobacco', for
+
+it takes a decent amount of probability theory and applied STATISTICS
+
+to understand the inner workings of an ES, while it navigates through
+
+the  hyperspace  of  the  usually  n-dimensional  problem  space, by
+
+throwing hyperellipses into the deep..."
+
+</DT>
+
+<DD>
+
+<A HREF="http://www.faqs.org/faqs/ai-faq/genetic/part2/">www.faqs.org/faqs/ai-faq/genetic/part2/</A>
+
+<BR>
+
+From an account of the Technical University of Berlin's work on 
+
+Evolution Strategies, one of many detailed descriptions on evolutionary
+
+algorithms in
+
+part 2/6 of the comp.ai.genetic FAQ by
+
+Joerg Heitkoetter and David Beasley, 1993-2001.
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"It is raining instructions out there; 
+
+it's raining programs; it's raining 
+
+tree-growing, fluff-spreading, algorithms. 
+
+That is not a metaphor, it is the plain truth. 
+
+It couldn't be any plainer if it were raining floppy discs."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://salmonriver.com/Books/dawblind.html">salmonriver.com/Books/dawblind.html</A>
+
+<BR>
+
+Quoted by 
+
+Naomi Sherer in her review of 
+
+<I>The Blind Watchmaker: Why the Evidence of Evolution Reveals a Universe Without Design</I>, Richard Dawkins, 1986.
+
+</DD>
+
+</DL>
+
+<P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"My optimism about the future of intelligent machines is based
+
+partly on the evolutionary record.  Nature holds the patents on high
+
+intelligence.  It invented it not once, but several times, as if to
+
+demonstrate how easy it was. ...
+
+The vertebrate retina has been studied extensively.  Its 20
+
+million neurons take signals from a million light sensors and combine
+
+them in a series of simple operations to detect things like edges,
+
+curvature and motion. Then image thus processed goes on to the much
+
+bigger visual cortex in the brain.
+
+	Assuming the visual cortex does as much computing for its size
+
+as the retina, we can estimate the total capability of the system.
+
+The optic nerve has a million signal carrying fibers and the optical
+
+cortex is a thousand times deeper than the neurons which do a basic
+
+retinal operation.  The eye can process ten images a second, so the
+
+cortex handles the equivalent of 10,000 simple retinal operations a
+
+second, or 3 million an hour."
+
+</DT>
+
+<DD> 
+
+<A HREF="http://www.frc.ri.cmu.edu/~hpm/project.archive/general.articles/1981/endrob">www.frc.ri.cmu.edu/~hpm/project.archive/general.articles/1981/endrob</A>
+
+<BR>
+
+<I>The Endless Frontier
+
+and
+
+The Thinking Machine</I> by <A HREF="http://www.frc.ri.cmu.edu/~hpm/">Hans Moravec</A>, 1978.
+
+</DD>
+
+</DL>
+
+<P>
+
+
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+It sometimes seems to me that the brain is actually a 
+
+very shitty computer. So why would you want to build a 
+
+computer out of slimy, wet, broken, slow, hungry, tired 
+
+neurons? I chose computer science over medical school 
+
+because I don't have the stomach for 
+
+those icky, bloody body parts. I prefer my technology 
+
+clean and dry, thank you. ...
+
+The brain has to sleep, needs food, thinks about sex all the time. Useless!
+
+I always say, if I wanted to build a computer from scratch, the 
+
+very last material I would choose to work with is meat. I'll 
+
+take transistors over meat any day. Human intelligence may even be a 
+
+poor kludge of the intelligence algorithm on an organ that is 
+
+basically a glorified animal eyeball." 
+
+</DT>
+
+<DD> 
+
+<A HREF="http://interviews.slashdot.org/article.pl?sid=02/07/26/0332225&mode=thread&tid=99">interviews.slashdot.org/article.pl?sid=02/07/26/0332225&mode=thread&tid=99</A>
+
+<BR>
+
+<A HREF="http://www.alicebot.org/bios/richardwallace.html">Richard Wallace</A>,
+
+creator of the 
+
+<A HREF="http://www.alicebot.org/">Alicebot</A> chatbot, in
+
+a Slashdot interview, 2002.
+
+</DD>
+
+</DL>
+
+<P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"I claim that the soul, spirit, or consciousness may 
+
+exist, but for most people, most of the time, it is 
+
+almost infinitesimally small, compared with the robotic 
+
+machinery responsible for most of our thought and action. ...
+
+That's not to say that some people can't be more enlightened than 
+
+others. But for the vast herd out there, on average, consciousness is 
+
+simply not a significant factor. Not even a second- or third-order effect. 
+
+Consciousness is marginal.
+
+I say this with such confidence because of my experience 
+
+building robot brains over the past seven years. Almost 
+
+everything people ever say to our robot falls into one of 
+
+about 45,000 categories. Considering the astronomical number 
+
+of things people could say, if every sentence was an original 
+
+line of poetry, 45,000 is a very, very small number."
+
+</DT>
+
+<DD> 
+
+Richard Wallace.
+
+</DD>
+
+</DL>
+
+<P>
+
+
+
+<P>
+
+<DL>
+
+<DT>
+
+"Asp, a Swedish researcher who once majored in industrial design, volunteered for the 
+
+fMRI probe. The scanner revealed a personality quite at odds with her own sense of self.
+
+She searched the scanner's images for the excited neurons in her prefrontal cortex that 
+
+would reflect her enthusiasm for Prada and other high-fashion goods. Instead, the scanner 
+
+detected the agitation in brain areas associated with anxiety and pain, suggesting she found 
+
+it embarrassing to be seen in something insufficiently stylish.
+
+It was fear, not admiration, that motivated her fashion sense." 
+
+</DT>
+
+<DD> 
+
+<A HREF="http://math.ucr.edu/home/baez/economics/economics_2005.html#august20.05">math.ucr.edu/home/baez/economics/economics_2005.html#august20.05</A>
+
+<BR>
+
+Mathematical physicist John Baez writing about
+
+a Los Angeles Times feature on the neurobiology of consumerism,
+
+<A HREF="http://www.latimes.com/news/science/la-sci-brain27feb27,0,3899978.story?coll=la-home-headlines"><I>Searching 
+
+for the Why of Buy</I></A>. 
+
+</DD>
+
+</DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL><DT>
+
+"AI is much more likely to be a boon than a 
+
+threat to humans. In many ways one can best describe AI 
+
+technology as the development of what my colleague Ken 
+
+Ford calls 'cognitive prostheses': systems that people 
+
+can use to amplify their own intellectual capacities. Such tools 
+
+<I>empower</I> people and aid in removing social barriers. To 
+
+dramatize the point: about a hundred years 
+
+ago, rapid mental arithmetic was considered 
+
+an impressive intellectual talent, and people who could do it 
+
+received academic honors. Nowadays a high-school dropout at a 
+
+supermarket checkout can tell the customer the total charge in a 
+
+fraction of a second. A barcode scanner and a computer read-out 
+
+act as a mental amplifier enabling someone to perform a 
+
+task that, without it, would require greater mental capacity 
+
+than he could deploy unaided. True, we don't usually say that 
+
+the supermarket checkout clerk is using this machinery to think with; but ask yourself: 
+
+who is earning the wages, the human or the computer?"
+
+</DT><DD>
+
+<A HREF="http://www.aaai.org/AITopics/html/faq2.html#hayes">www.aaai.org/AITopics/html/faq2.html#hayes</A>
+
+<BR>
+
+<A HREF="http://www.cl.cam.ac.uk/users/afb21/publications/masters/node28.html">"Na&iuml;ve 
+
+Physics"</A>
+
+researcher 
+
+<A HREF="http://www.ihmc.us/users/user.php?UserID=42">Pat Hayes</A> replying 
+
+in the AAAI <I>FAQ Annex</I>
+
+to
+
+a student asking about the threat posed by AI.
+
+</DD></DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL><DT>
+
+"A creature that was built <I>de novo</I> might possibly be a much more 
+
+benign entity than one with a kernel based on fang and talon."
+
+</DT><DD>
+
+<A HREF="http://www.ugcs.caltech.edu/~phoenix/vinge/vinge-sing.html">www.ugcs.caltech.edu/~phoenix/vinge/vinge-sing.html</A>
+
+<BR>
+
+SF writer Vernor Vinge writing about the
+
+<A HREF="http://www.ugcs.caltech.edu/~phoenix/vinge/vinge-sing.html">Singularity</A>.
+
+</DD></DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL><DT>
+
+"Artificial intelligence is the study of how to make 
+
+real computers act like the ones in the movies." 
+
+</DT><DD>
+
+<A HREF="http://www.stottlerhenke.com/ai_general/quotations.htm">www.stottlerhenke.com/ai_general/quotations.htm</A>
+
+<BR>
+
+Anonymous quote in
+
+<I>Port 2000 Newsletter, The Information Technology Newsletter for Port Washington Educators</I>,
+
+cited at
+
+Stottler Henke's <I>Artificial Intelligence Quotations</I>. 
+
+</DD></DL>
+
+<p></P>
+
+
+
+<P>
+
+<DL><DT>
+
+"Yes, <I>now</I> there is a God."
+
+</DT><DD>
+
+<A HREF="http://en.wikipedia.org/wiki/List_of_fictional_computers">en.wikipedia.org/wiki/List_of_fictional_computers</A>
+
+<BR>
+
+The computer
+
+from Frederic Brown's short story <I>Answer</I>, 
+
+quoted in the Wikipedia <I>List of fictional computers</I>.
+
+</DD></DL>
+
+<p></P>
+
+
+
+<P>&nbsp;</P>
+
+
+
+
+
+
+
+<H2><A NAME="python_robotics">Python for Robotics</A></H2>
+
+
+
+
+
+<H3><A NAME="python_robotics_karel_out">Avoiding the Karel-the-robot paradox</A></H3>
+
+
+
+<P>
+
+In this feature, I continue last month's <I>Python for AI</I>
+
+by moving on to robotics and the <A HREF="http://pyrorobotics.org/">Pyro</A> robot-control software.
+
+Pyro's designers devised it to overcome the
+
+limitations
+
+of <A HREF="http://mindstorms.lego.com/eng/products/ris/index.asp">Lego Mindstorms</A> for teaching.
+
+In their paper 
+
+<A HREF="http://www.cs.hmc.edu/roboteducation/FinalPapers/Blank.pdf"><I>Avoiding the Karel-the-Robot 
+
+paradox: A framework for making
+
+sophisticated robotics accessible</I></A>, they
+
+explain who Karel the robot was and why he is to be avoided.
+
+</P>
+
+
+
+<P>
+
+Karel was introduced by <A HREF="http://www-2.cs.cmu.edu/~pattis/">Richard Pattis</A>
+
+in his book
+
+<I>Karel the Robot - A Gentle Introduction to the Art of Programming</I>.
+
+His book isn't on the Web, but I did find a Karel-based 
+
+<A HREF="http://www.mtsu.edu/~untch/karel/">course for C</A>, 
+
+by Roland Untch. This
+
+<A HREF="http://www.mtsu.edu/~untch/karel/fundamentals.html">introduces us to
+
+Karel</A>, who lives in a grid of streets and walls. 
+
+Scattered throughout this grid are beepers, which Karel can 
+
+sense, pick up, and put down.
+
+Students learn to program by instructing Karel to
+
+perform assorted tasks, using 
+
+<A HREF="http://www.mtsu.edu/~untch/karel/programs.html">commands</A>
+
+such as <CODE>TurnLeft()</CODE> and
+
+<CODE>PickBeeper()</CODE>. This highly imperative
+
+style of programming is - I imagine - one
+
+that students find easy to get started with.
+
+However, the authors of 
+
+<I>Avoiding the Karel-the-Robot 
+
+paradox</I> assert that it eventually leads students to 
+
+a programming dead-end.
+
+Similarly, they say, although inexpensive robots have made introductory
+
+AI accessible to a wide range of 
+
+school and university students, they have led to a 
+
+robotics dead-end.
+
+</P>
+
+
+
+<P>
+
+One problem is portability. There are many
+
+robots on sale, but each tends to have its own programming
+
+language and development tools, often very
+
+different from those of other robots. This
+
+make it difficult for students to transfer not
+
+just code, but also programming techniques.
+
+</P>
+
+
+
+<P>
+
+Also, many robot programming
+
+systems are restricted in the sensors they support.
+
+For example, many low-cost robots are often supplied
+
+with infrared range sensors only. You might be
+
+able to add something more
+
+sophisticated such as a sonar or laser range sensor; but
+
+even if your educational budget can afford this,
+
+you may not be able to access the sensor from the software.
+
+</P>
+
+
+
+<P>
+
+So, 
+
+widespread use of robots for teaching AI
+
+needs not just cheap hardware, but also 
+
+control software that
+
+can be ported to many different robots and make them
+
+all look identical to the student.
+
+That's Pyro's goal:
+
+<I>write-once/run-anywhere</I> 
+
+robot programs. Then students can concentrate 
+
+on building robot <I>brains</I>.
+
+Also, as they learn, they will be able to
+
+gradually move up to
+
+more and more sophisticated
+
+robots. And such robots, if the software is
+
+capable enough - and Pyro should be -
+
+will be usable in research as well as teaching.
+
+</P>
+
+
+
+
+
+<H3><A NAME="python_robotics_pyro">Pyro</A></H3>
+
+
+
+<P>
+
+Pyro is available at <A HREF="http://pyrorobotics.org/">pyrorobotics.org/</A>, and
+
+supports a wide range of robots:
+
+<A HREF="http://www.activrobots.com/ROBOTS/p2dx.html">Pioneer</A> and
+
+<A HREF="http://www.activrobots.com/ROBOTS/peoplebot.html">PeopleBot</A> family,
+
+<A HREF="http://www.k-team.com/robots/khepera/">Khepera</A> and
+
+<A HREF="http://www.hemisson.com/">Hemisson</A> family, and
+
+<A HREF="http://www.ainewsletter.com/newsletters/aix_0412.htm#aibo">Aibo</A>
+
+and simulators
+
+<A HREF="http://sserver.sourceforge.net/">RoboCup Soccer</A>
+
+<A HREF="http://playerstage.sourceforge.net/">Player/Stage</A>
+
+<A HREF="http://playerstage.sourceforge.net/gazebo/gazebo.html">Gazebo</A>
+
+and <A HREF="http://diwww.epfl.ch/lami/team/michel/khep-sim/">Khephera</A>.
+
+Pyro can be used with 
+
+<A HREF="http://www.orocos.org/related.html">Orocos</A>, the
+
+Open Robot
+
+Control Software that I mentioned last month.
+
+</P>
+
+
+
+<P>
+
+Pyro runs on Unix and Linux, but
+
+according to the <A HREF="http://pyrorobotics.org/?page=PyroFAQ">Pyro FAQ</A>, 
+
+may also work with other operating systems. A 
+
+<A HREF="http://pyrorobotics.org/pyro/?page=PyroLiveCD">LiveCD</A> is available; and
+
+Zach Dodds has made a Windows implementation,
+
+<A HREF="http://www.cs.hmc.edu/~dodds/PyroWin/">PyroWin</A>.
+
+</P>
+
+
+
+<P>
+
+The Pyro library includes modules for
+
+various
+
+robot control paradigms, robot learning,
+
+robot vision, localization and mapping, and multiagent
+
+robotics. The robot control paradigms include modules for
+
+direct control, finite state
+
+machines, subsumption architecture, fuzzy logic
+
+control, and neural network control: 
+
+feedforward, recurrent, self-organizing
+
+maps, other vector quantizing algorithms.
+
+There are also genetic
+
+algorithms and
+
+genetic programming. The vision modules provide a
+
+library of the most commonly used filters and vision algorithms
+
+enabling students to concentrate on the uses
+
+of vision in robot control. All this is open source:
+
+it can be modified, and students can learn by looking
+
+at the code. (The documentation is also open source,
+
+available under a 
+
+<A HREF="http://creativecommons.org/">Creative
+
+Commons</A> licence.) Modules planned for the future
+
+include logic-based
+
+reasoning and acting, classical planning, and path planning
+
+and navigation. 
+
+</P>
+
+
+
+
+
+<H3><A NAME="python_robotics_direct_control">Pyro for direct control</A></H3>
+
+
+
+<P>
+
+One <I>Farside</I> cartoon depicts
+
+two amoebae sitting in front of a television.
+
+The female amoeba, sporting typical Larson nagging-wife upswept glasses,
+
+is glaring
+
+at the male amoeba and shouting
+
+"Stimulus, response. Stimulus, response.
+
+Don't you ever <I>think</I>!". If stimulus-response
+
+control is low on the evolutionary ladder, it's
+
+also easy to teach: let's start there, with an example that's
+
+reprinted in several of the papers about Pyro, including
+
+<A HREF="http://dangermouse.brynmawr.edu/~dblank/papers/aimag05.pdf"><I>The Pyro 
+
+toolkit for AI and robotics</I></A>:
+
+<PRE>
+
+  from pyro.brain import Brain
+
+
+
+  class Avoid(Brain):
+
+
+
+     def wander(self, minSide):
+
+         robot = self.getRobot()
+
+         # if approaching an obstacle on the left side, turn right
+
+         if robot.get(’range’,’value’,’front-left’,’minval’) < minSide:
+
+            robot.move(0,-0.3)
+
+         # if approaching an obstacle on the right side, turn left
+
+         elif robot.get(’range’,’value’,’front-right’,’minval’) < minSide:
+
+            robot.move(0,0.3)
+
+         # else go forward
+
+         else:
+
+            robot.move(0.5, 0)
+
+     def step(self):
+
+         self.wander(1)
+
+  
+
+  def INIT(engine):
+
+     return Avoid(’Avoid’, engine)
+
+</PRE>
+
+Here, we're defining a robot "brain". These have to
+
+be subclasses of class <CODE>Brain</CODE>. This
+
+one is class <CODE>Avoid</CODE>: in Python, although
+
+it might look like some kind of procedure call, the
+
+code
+
+<PRE>
+
+  class X(Y)
+
+</PRE>
+
+defines new class <CODE>X</CODE> to be a subclass
+
+of <CODE>Y</CODE>.
+
+<p></P>
+
+
+
+<P>
+
+Every Pyro
+
+brain needs a <CODE>step</CODE> method,
+
+which Pyro executes on every
+
+control cycle. The one above
+
+makes the robot continually wander, turning 
+
+as a direct response to its range sensor
+
+if it has got too close to an obstacle on either side.
+
+</P>
+
+
+
+<P>
+
+The authors emphasise that this program
+
+does not depend on the robot or
+
+range sensor.
+
+it's also independent of the robot's length, since
+
+Pyro translates sensory and motor data to multiples of length,
+
+and
+
+will avoid obstacles when they are within one robot length
+
+of the front-left or front-right range sensors,
+
+whatever that happens to be.
+
+</P>
+
+
+
+
+
+<H3><A NAME="python_robotics_behaviour_based">Pyro for behaviour-based control</A></H3>
+
+
+
+<P>
+
+Let's move on to
+
+a robot controlled by a finite-state machine.
+
+The robot's job is a bit of simple recycling,
+
+picking up and storing cans. The authors use
+
+a simulated Pioneer robot
+
+with gripper and "blob" camera, discussed in
+
+the <A HREF="#python_robotics_vision">next section</A>, on vision.
+
+Cans are represented as randomly positioned red
+
+pucks in a circular environment without obstacles. The
+
+robot's goal is to collect all the red cans. Once 
+
+it has picked up a can, it stores it and looks for
+
+more cans.
+
+</P>
+
+
+
+<P>
+
+The finite-state controller has four states:
+
+<CODE>locateCan</CODE>, <CODE>approachCan</CODE>,
+
+<CODE>grabCan</CODE>, and <CODE>done</CODE>. 
+
+Each state corresponds to a particular 
+
+<I>behaviour</I>: it
+
+is triggered by some condition in the environment, tries
+
+to handle the condition, and may then move to
+
+another state.
+
+</P>
+
+
+
+<P>
+
+The controller starts in state
+
+<CODE>locateCan</CODE>. In this state the robot rotates, looking for a blob
+
+which
+
+would mean a red can is
+
+in sight. If it finds a can, the controller switches to
+
+state <CODE>approachCan</CODE> to move the robot toward the closest
+
+visible can. (If the robot loses sight of
+
+the can, the controller returns to state <CODE>locateCan</CODE>.)
+
+Once the robot has its gripper around a
+
+can, the controller switches to state <CODE>grabCan</CODE>, making the
+
+robot pick up and store the can. It then returns to
+
+state <CODE>locateCan</CODE> to search for another can. This state
+
+keeps track of how long it searches on each
+
+activation of the state. If the robot has done a complete
+
+rotation and not seen any cans, the controller switches to
+
+state <CODE>done</CODE> and stops.
+
+</P>
+
+
+
+<P>
+
+Here's the
+
+<CODE>locateCan</CODE> state in Python. 
+
+As with the direct-control brain, each state 
+
+must 
+
+implement the 
+
+<CODE>step</CODE> method, called on every
+
+control cycle. States use the 
+
+<CODE>goto</CODE> method to switch
+
+to other states:
+
+<PRE>
+
+  class locateCan(State):
+
+
+
+     def step(self):
+
+        # get a list of all blobs:
+
+        blobs=self.get("robot/camera/filterResults")[1]
+
+        # checks if there are any blobs
+
+        if len(blobs)!=0:
+
+           # stops robot when a blob is seen
+
+           self.robot.move(0, 0)
+
+           print "found a can!"
+
+           # transfers control to homing behavior:
+
+           self.goto('approachCan')
+
+        # checks if robot has done a complete rotation
+
+        elif self.searches > 275:
+
+           print "found all cans"
+
+           # transfers control to completion behavior:
+
+           self.goto('done')
+
+        #otherwise keep rotating and searching
+
+        else:
+
+           print "searching for a can"
+
+           # updates rotation counter:
+
+           self.searches+=1
+
+           # rotates robot and remains in locate behavior:
+
+           self.robot.move(0, 0.2)
+
+</PRE>
+
+<p></P>
+
+
+
+
+
+<H3><A NAME="python_robotics_vision">Pyro for vision</A></H3>
+
+
+
+<P>
+
+What about vision? As already mentioned,
+
+Pyro has camera-interface and image-processing modules. Students
+
+can write programs to implement vision algorithms,
+
+such as colour histograms, motion detection, object
+
+tracking, or edge detection. 
+
+</P>
+
+
+
+<P>
+
+For efficiency, the low-level vision library code
+
+is written in C++, 
+
+but students can interactively use it to build
+
+layers of filters in Pyro, calling the
+
+computationally expensive C++ code while still having the benefits of
+
+the high-level, interactive interface of Python. 
+
+</P>
+
+
+
+<P>
+
+The authors illustrate with
+
+Aibo
+
+looking at a ball and applying three filters to 
+
+the raw image:
+
+colour matching, supercolour,
+
+and blob segmentation. The colour matching
+
+filter marks all pixels in an image that are within a
+
+threshold of a given red/green/blue colour triplet. The
+
+supercolour filter magnifies the differences between a
+
+given colour and the others. For example, the supercolour
+
+red filter makes reddish pixels more red, and the
+
+others more black. Finally, the blob-segmentation filter
+
+connects adjacent pixels of similar colour into regions,
+
+computes a box completely surrounding the matching
+
+pixels, and returns a list of these bounding boxes. 
+
+Students can use these filters without needing to worry about
+
+the low-level image-processing details -
+
+for example, detecting Aibo's ball by 
+
+finding the largest region matching its colour, then
+
+drawing a bounding box around it. It's then easy
+
+to program Aibo to move towards this region.
+
+</P>
+
+
+
+
+
+<H3><A NAME="python_robotics_aibo">Pyro and Aibo</A></H3>
+
+
+
+<P>
+
+If you own an Aibo - surely the most popular of Pyro's robots -
+
+why not consider Pyro as an alternative to 
+
+Sony's <A HREF="http://openr.aibo.com/">Open-R</A> and other development tools?
+
+As the examples from
+
+Pyro's 
+
+<A HREF="http://pyrorobotics.org/?page=Using_20the_20Sony_20AIBO_20Robot"><I>Using the 
+
+Sony AIBO Robot</I></A> page, commands are not difficult to write:
+
+<PRE>
+
+  robot.setPose("mouth", 1.0)
+
+  robot.setPose("tail", 0.2, 1.0)
+
+  robot.setPose("left leg front knee", 0.5)
+
+  robot.getSensor("ir near")
+
+  robot.setWalk("TIGER.PRM")
+
+</PRE>
+
+The <CODE>getSensor</CODE> gets data from one of Aibo's infra-red sensors, and the
+
+<CODE>setWalk</CODE>
+
+loads a gait.
+
+<p></P>
+
+
+
+<P>
+
+<I>Using the 
+
+Sony AIBO Robot</I>
+
+also mentions that two Aibo "brains" are available:
+
+one for following a blob, and one which tries to kick a ball into
+
+a goal. This indicates that, as one would expect, Aibo can be used with
+
+Pyro's software for camera control and vision.
+
+</P>
+
+
+
+<P>
+
+I suspect the ball-kicking brain is that described in
+
+Ioana Butoi's dissertation
+
+<A HREF="http://cs.brynmawr.edu/Theses/Butoi.pdf"><I>Find Kick Play: An Innate Behavior for the Aibo Robot</I></A>.
+
+This explains how Pyro was used to build Aibo software for recognising a ball
+
+and a goal, and kicking one towards the other. Butoi
+
+describes object-recognition
+
+algorithms developed for the RoboCup competition, and also how to 
+
+stop Aibo falling over as it kicked the ball. Butoi had to devise
+
+a stance in which Aibo could balance on three legs while kicking
+
+with the fourth. A real dog might do that too (though in my experience,
+
+it's more likely either to eat the ball or bite the experimenter); but a real dog would be
+
+intelligent enough to constantly adjust its stance as its
+
+fourth leg swings and kicks. Aibo isn't that clever, so
+
+Butoi had to find a specially stable joint configuration for
+
+it to balance on.
+
+</P>
+
+
+
+
+
+<H3><A NAME="python_robotics_tekkotsu">Pyro versus Tekkotsu</A></H3>
+
+
+
+<P>
+
+<A HREF="http://www.cs.cmu.edu/~tekkotsu/">Tekkotsu</A>
+
+is an application development framework developed at CMU for 
+
+Aibo and other
+
+intelligent robots. Like Pyro, it is intended for educational
+
+use: how does it compare?
+
+</P>
+
+
+
+<P>
+
+Pyro developer Douglas Blank
+
+says in
+
+<I>Using the 
+
+Sony AIBO Robot</I> and in
+
+a posting
+
+about the
+
+<A HREF="http://emergent.brynmawr.edu/pipermail/pyro-users/2005-February/000087.html"><I>Pyro-Tekkotsu 
+
+relationship</I></A> that Aibo Pyro
+
+actually uses part of Tekkotsu,
+
+namely the Monitor - a set of servers 
+
+running on Aibo via which programs can transfer
+
+sensor data, images, and motion commands. 
+
+That doesn't mean students need to learn Tekkotsu, though.
+
+Blank goes on to say in his posting:
+
+<BLOCKQUOTE>
+
+<P>
+
+The main project of Tekkotsu offers a unique programming environment. If 
+
+I were going to land an Aibo on the moon, I'd probably use Tekkotsu to 
+
+control it. But for doing interactive teaching, and high-level scripting 
+
+and experiments in the lab, I'd use Pyro.
+
+To give you an idea of the environments: In Tekkotsu, if you want to 
+
+change a line of code, you must recompile everything that depends on the 
+
+code (it is C++ code) using the provided cross-compiler. Then the code 
+
+is copied to the dog over ftp, the dog shuts down, and starts back up. 
+
+The whole process (compile + transfer + reboot) lasts at least a minute 
+
+on our machines. In Pyro, you simply press the "reload brain" button and 
+
+nearly instantly you are running the new code.
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+I love the idea of Aibo on the Moon.
+
+</P>
+
+
+
+
+
+<H3><A NAME="python_robotics_links">Links</A></H3>
+
+
+
+<H3>Pyro in general
+
+
+
+<P>
+
+<A HREF="http://pyrorobotics.org/">pyrorobotics.org/</A> -
+
+Home page for Pyro Python Robotics. Don't confuse this with 
+
+<A HREF="http://pyro.sourceforge.net/">Python Remote Objects</A> at 
+
+pyro.sourceforge.net/, also named Pyro.
+
+</P>
+
+
+
+<!-- Pyro on Windows -->
+
+
+
+<P>
+
+<A HREF="http://www.cs.hmc.edu/~dodds/PyroWin/">www.cs.hmc.edu/~dodds/PyroWin/</A> -
+
+PyroWin, 
+
+Pyro modified to run under Windows, by Zach Dodds.
+
+"At some point, the official version of Pyro may run under 
+
+Windows out-of-the-box, and this page will disappear".
+
+</P>
+
+
+
+<!-- How it works -->
+
+
+
+<P>
+
+<A HREF="http://pyrorobotics.org/?page=PyroFAQ">http://pyrorobotics.org/?page=PyroFAQ</A> - 
+
+the Pyro FAQ, which 
+
+answers some questions about how the software works.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://emergent.brynmawr.edu/pipermail/pyro-users/2004-September/000050.html">emergent.brynmawr.edu/pipermail/pyro-users/2004-September/000050.html</A> -
+
+<I>[Pyro-users] Re: Pyro High-Level Conceptual Model</I>.
+
+</P>
+
+
+
+<H4>Pyro in teaching</H4>
+
+
+
+<!-- Karel-the-robot -->
+
+
+
+<P>
+
+<A HREF="http://www.cs.hmc.edu/roboteducation/FinalPapers/Blank.pdf">www.cs.hmc.edu/roboteducation/FinalPapers/Blank.pdf</A> -
+
+<I>Avoiding the Karel-the-Robot Paradox: A framework for making
+
+sophisticated robotics accessible</I>, by
+
+Douglas Blank, Holly Yanco, Deepak Kumar, and
+
+Lisa Meeden. Presented at <I>AAAI 2004 Spring Symposium</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.mtsu.edu/~untch/karel/">www.mtsu.edu/~untch/karel/</A> -
+
+Roland Untch's C course using Karel. Not Pyro-related, but
+
+shows who the original Karel was.
+
+</P>
+
+
+
+<!-- Other papers following on from this -->
+
+
+
+<P>
+
+<A HREF="http://dangermouse.brynmawr.edu/~dblank/papers/aimag05.pdf">dangermouse.brynmawr.edu/~dblank/papers/aimag05.pdf</A> -
+
+<I>The Pyro toolkit for AI and robotics</I>, by
+
+Douglas Blank, Deepak Kumar, Lisa Meeden, and Holly Yanco.
+
+Submitted to <I>AI Magazine</I>.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://pyrorobotics.org/?page=PyroCurriculum">pyrorobotics.org/?page=PyroCurriculum</A> -
+
+The main Pyro Curriculum page. Links to course
+
+notes on Pyro for behaviour-based control, neural nets, vision, and 
+
+other topics. Also links to two
+
+slide presentations: the 
+
+<A HREF="http://pyrorobotics.org/aaai05-pyro.pdf">AAAI 2005 overview</A> (10 slides), and the 
+
+<A HREF="http://pyrorobotics.org/aaai05-pyro-tutorial.pdf">AAAI 2005 tutorial</A> (118 slides).
+
+These, particularly the tutorial, contain: examples of Python code, course topics,
+
+and student projects; defects of Lego robotics; 
+
+diagrams of the Pyro architecture; pictures of the robots and simulators.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.cs.pomona.edu/~marshall/papers/bringing_up_robot.pdf">www.cs.pomona.edu/~marshall/papers/bringing_up_robot.pdf</A> -
+
+<I>Bringing up robot: Fundamental mechanisms for creating a
+
+self-motivated, self-organizing architecture</I>, by
+
+Douglas Blank, Deepak Kumar, Lisa Meeden, and James Marshall.
+
+Interesting paper on self-organising maps for a hierarchical
+
+control architecture, where each level "chunks"
+
+sequences for use by the more abstract level above it.
+
+</P>
+
+
+
+<H4>Pyro and Aibo</H4>
+
+
+
+<P>
+
+<A HREF="http://pyrorobotics.org/?page=Using_20the_20Sony_20AIBO_20Robot">pyrorobotics.org/?page=Using_20the_20Sony_20AIBO_20Robot</A> -
+
+<I> Using the Sony AIBO Robot</I>, on the Pyro site.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://cs.brynmawr.edu/Theses/Butoi.pdf">cs.brynmawr.edu/Theses/Butoi.pdf</A> -
+
+<I>Find Kick Play: An Innate Behavior for the Aibo Robot</I>, by
+
+Ioana Butoi, Bryn Mawr, 2005. 
+
+</P>
+
+
+
+<H4>Pyro versus Mindstorms and Tekkotsu</H4>
+
+
+
+<P>
+
+<A HREF="http://emergent.brynmawr.edu/pipermail/pyro-users/2005-February/000087.html">emergent.brynmawr.edu/pipermail/pyro-users/2005-February/000087.html</A> -
+
+<I>[Pyro-users] Pyro-Tekkotsu relationship ?</I>.
+
+</P>
+
+
+
+
+
+<P>&nbsp;</P>
+
+
+
+
+
+
+
+<H2><A NAME="gigglebytes">Gigglebytes</A></H2>
+
+
+
+<P>
+
+Quite by chance, I found the following in a book bought
+
+second-hand from Oxfam some weeks ago:
+
+<BLOCKQUOTE>
+
+A few years ago, Dr Graham Ritchie and Dr Kim Binsted
+
+created a computer programme that could produce jokes.
+
+We were keen to discover if computers were funnier than
+
+humans, so entered five of the computer's best jokes into
+
+LaughLab. Three of them received some of the lowest Joke
+
+Scores in the entire database. Here are those failed puns:
+
+<PRE>
+
+  What kind of contest can you drive on?
+
+  A duel carriageway.
+
+</PRE>
+
+<PRE>
+
+  What kind of line has sixteen balls?
+
+  A pool queue.
+
+</PRE>
+
+<PRE>
+
+  What kind of pig can you ignore at a party?
+
+  A wild bore.
+
+</PRE>
+
+However, two examples of computer comedy were surprisingly
+
+successful and beat about 250 human jokes:
+
+<PRE>
+
+  What do you call a ferocious nude?
+
+  A grizzly bare.
+
+</PRE>
+
+<PRE>
+
+  What kind of murderer has fibre?
+
+  A cereal killer.
+
+</PRE>
+
+So, jokes written by a computer are not particularly funny
+
+to humans, but perhaps they would be hilarious to
+
+other computers.
+
+<BR>
+
+</BLOCKQUOTE>
+
+<p></P>
+
+
+
+<P>
+
+It's from <A HREF="http://www.laughlab.co.uk/"><I>Laughlab: The Scientific Search for the World's 
+
+Funniest Joke</I></A>,
+
+by the British Association for the Advancement of Science, and
+
+refers to the work linked to below.
+
+</P>
+
+
+
+
+
+<H3><A NAME="gigglebytes_links">Links</A></H3>
+
+
+
+<P>
+
+<A HREF="http://www.laughlab.co.uk/">www.laughlab.co.uk/</A> -
+
+LaughLab,  created by Richard Wiseman, University of Hertfordshire,
+
+in collaboration with the British Association for the Advancement of Science.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.dcs.gla.ac.uk/~kimb/dai_version/dai_version.html">www.dcs.gla.ac.uk/~kimb/dai_version/dai_version.html</A> -
+
+<I>A symbolic description of punning riddles and its computer implementation</I>,
+
+by 
+
+Kim Binsted and
+
+Graeme Ritchie, 1994. Early paper, explaining the theory
+
+behind such riddles as 
+
+"What do you give an elephant that's exhausted? <I>Trunkquillizers</I>",
+
+and its embodiment  
+
+in the first
+
+version of JAPE. 
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.inf.ed.ac.uk/publications/online/0158.pdf">www.inf.ed.ac.uk/publications/online/0158.pdf</A> -
+
+<I>The JAPE riddle generator: technical specification</I>
+
+by
+
+Graeme Ritchie, 2003. The paper
+
+contains formal definitions of JAPE-3's data structures, rules and procedures:
+
+"the aim is to set out a formally precise, implementation-independent account of how
+
+JAPE generates punning riddles. The reason for doing this is that experimental AI programs
+
+are usually under-documented, making it difficult for other researchers to replicate
+
+the work, or to know what theoretical claims are actually embodied in the implementation."
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://doc.utwente.nl/fid/1183">doc.utwente.nl/fid/1183</A> -
+
+<I>Humour Research: State of the Art</I>, by
+
+Matthijs Mulder and Anton Nijholt, Twente. A recent survey of humour theory and of
+
+joke generators such as JAPE, the Light Bulb Joke Generator, and
+
+Elmo, the Natural Language Robot. Includes a section
+
+on resources such as WordNet.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://groups.inf.ed.ac.uk/standup/papers/thepsychologist_0203omara.pdf">groups.inf.ed.ac.uk/standup/papers/thepsychologist_0203omara.pdf</A> -
+
+<I>What do you get when you cross a communication
+
+aid with a riddle?</I>, by Dave O’Mara and Annalu Waller. 
+
+Also in <I>The Psychologist</I>, volume 16, 2003, 
+
+this paper is published by
+
+the STANDUP project (System To Augment Non-speakers Dialogue Using 
+
+Puns), which seeks to use humour to help
+
+language-impaired children communicate.
+
+</P>
+
+
+
+<P>
+
+<A HREF="http://www.aaai.org/AITopics/html/toons.html">www.aaai.org/AITopics/html/toons.html</A> -
+
+<I>IAMAI's AI-toons</I>. This AAAI cartoon page includes news on STANDUP
+
+and other humour research. It explains that
+
+"Kim Binsted had always had a love for making 
+
+people laugh and was part of the improvisational comedy team at school. 
+
+When her interest in physics and maths took her into artificial intelligence 
+
+she fell back on her comedy background to help her work on a few problems in computers. 
+
+Now, having created a programme where computers can generate their own puns, she works 
+
+on a system that uses comedy to help children learn a new language, 
+
+whilst still trying to fit a little improv in, in her spare time."
+
+</P>
+
+
+
+
+
+
+
+
+
+
+            <HR>
+            <P>Past newsletters are available at either <A HREF="http://www.ddj.com">www.ddj.com</A> 
+              or <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A>. 
+              As ever, interesting links and ideas for future issues are very 
+              welcome.</P>
+            <P>Until next month, <br>
+              Jocelyn &lt;popx@j-paine.org&gt;</P>
+            <P>For questions about the <A HREF="http://www.ainewsletter.com">www.ainewsletter.com</A> 
+              site, contact <a href="http://www.ainewsletter.com/contact.htm">Dennis 
+              Merritt</a><br>
+            </P>
+            <p>Copyright &copy;2005 Amzi! inc., CMP, and Jocelyn Paine. All Rights 
+              Reserved </p>
+            <!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center"><i><font face="Arial, Helvetica, sans-serif" size="-2">Copyright 
+              &copy;2002-04 <a href="http://www.amzi.com">Amzi! inc.</a> and <a href="http://www.ddj.com">CMP</a>. 
+              All Rights Reserved.</font></i></div>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+</body>
+<!-- #EndTemplate --></html>

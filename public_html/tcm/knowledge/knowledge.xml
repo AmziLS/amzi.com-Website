@@ -1,0 +1,10 @@
+<knowledge>
+	<name type='logic'>local</name>
+	<directory type='text'>c:/amzi/source/tcm/tcm/knowledge/</directory>
+	<files type='logic'>[test_cases, diagnosis, inspection, treatment, english, chinese, spanish]</files>
+</knowledge>
+<knowledge>
+	<name type='logic'>remote</name>
+	<directory type='text'>c:/amzi/source/tcm/tcm/knowledge/</directory>
+	<files type='logic'>[test_cases, diagnosis, inspection, treatment, english, chinese, spanish]</files>
+</knowledge>

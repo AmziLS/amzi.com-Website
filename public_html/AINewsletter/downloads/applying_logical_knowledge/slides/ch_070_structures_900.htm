@@ -1,0 +1,59 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Internals</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Internals<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<pre>passenger(duck, daffy, A)</pre>
+<p>Atom Table</p>
+<pre>8 - passenger
+12 - duck
+52- daffy</pre>
+<p>Heap</p>
+<pre>H01: H05 | structure
+...
+H05: 8 | 3 | atom (passenger/3)
+H06: 12 | atom (duck)
+H07: 52 | atom (daffy)
+H08: H08 | reference (unbound)</pre>
+<p>Unify A(H08) = address(toonsville, ca)</p>
+<pre>H11: H15 | structure
+...
+H15: address/2
+H16: toonsville
+H17: ca
+H08: H11 | reference (plugging in the hole)</pre>
+<p>so now</p>
+<pre>H01 = passenger(duck,daffy, address(toonsville,ca))</pre>
+<p>A, B unbound variables</p>
+<pre>H1: H1 | reference (unbound)
+H2: H2 | reference (unbound)</pre>
+<p>A = B</p>
+<pre>H2: H1 | reference</pre>
+<p>A = duck</p>
+<pre>H3: duck
+H1: H3 reference</pre>
+<p>so now</p>
+<pre>B = duck</pre>
+<p>&nbsp;</p>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_070_structures_060.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_080_lists_010.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>

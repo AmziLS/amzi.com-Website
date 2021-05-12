@@ -1,0 +1,115 @@
+<html><!-- #BeginTemplate "/Templates/customer_stories.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>Weather Shield Brings Configuration and Pricing Directly to Dealers and Customers Using Amzi! Prolog + Logic Server</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Mozilla/4.61 [en] (WinNT; I) [Netscape]">
+<meta name="robots" content="all">
+<!-- #BeginEditable "description" --> 
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- #EndEditable --></head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#000099" vlink="#000033" alink="#990099">
+<table border="0" cellpadding="0" width="100%">
+  <tr> 
+    <td width="100"><a href="/index.php"><img src="/images/logo_small.gif" border="0"></a></td>
+    <td> 
+      <h1 align="right"><font color="#999999"><i><!-- #BeginEditable "Title" --><font color="#666666">Customer 
+        Stories </font><!-- #EndEditable --></i></font></h1>
+    </td>
+  </tr>
+</table>
+<!-- #BeginLibraryItem "/Library/menu_bar.lbi" --> <table border="0" cellspacing="0" cellpadding="0" height=34 WIDTH="100%" BGCOLOR="#000000"> 
+<tr> <td height="1" WIDTH="100%"><img height="1" src="/images/spacer.gif"></td></tr> 
+<tr> 
+    <td height=34> <a href="http://www.amzi.com/products/index.htm" target="_top"><img src="/images/menu_productsservices.gif" width="93" height="34" border="0" alt="Products and Services"></a><a href="http://www.amzi.com/AmziNews/index.htm" target="_top"><img src="/images/menu_news.gif" width="98" height="34" border="0" alt="News and Mailing Lists" align="top"></a><a href="http://www.amzi.com/customers/index.htm" target="_top"><img src="/images/menu_customerstories.gif" width="82" height="34" border="0" alt="Customer Stories" align="top"></a><a href="http://www.amzi.com/articles/index.htm" target="_top"><img src="/images/menu_articleslinks.gif" width="88" height="34" border="0" alt="Articles and  Links" align="top"></a><a href="http://www.amzi.com/support/index.htm" target="_top"><img src="/images/menu_support.gif" width="83" height="34" border="0" alt="Support and Forums" align="top"></a><a href="http://www.amzi.com/search/index.htm" target="_top"><img src="/images/menu_searchsitemap.gif" width="88" height="34" border="0" alt="Search and Site Map" align="top"></a><a href="http://www.amzi.com/download/index.htm" target="_top"><img src="/images/menu_download.gif" width="79" height="34" border="0" align="top" alt="Download and Buy"></a><a href="http://www.amzi.com/company/index.php" target="_top"><img src="/images/menu_aboutamzi.gif" width="70" height="34" border="0" alt="Contact and About" align="top"></a></td>
+  </tr><TR><TD HEIGHT="1"></TD></TR> 
+</table>
+<!-- #EndLibraryItem --><table border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td width="108" bgcolor="#000000" align="left" valign="top"> 
+      <p><br>
+        <a href="index.htm"><img src="../images/commercial.gif" width="100" height="15" border="0" alt="Commercial"></a> 
+      </p>
+      <p><a href="education_government.htm"><img src="../images/educationgovernment.gif" width="100" height="30" alt="Education &amp; Government" border="0"></a></p>
+      <p><a href="research.htm"><img src="../images/research.gif" width="100" height="15" alt="Research" border="0"></a></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      </td>
+    <td valign="top" align="left"><!-- #BeginEditable "Contents" --> 
+      <p>&nbsp;</p>
+      <h2 align="center"><font color="#666666">Weather Shield Brings Configuration 
+        and Pricing <br>
+        Directly to Dealers and Customers <br>
+        Using Amzi! Prolog + Logic Server</font></h2>
+      <p><a href="http://www.weathershield.com">Weather Shield</a>, one of the 
+        nation's leading window and door manufacturers, offers a comprehensive 
+        line of wood windows, vinyl windows, hinged and sliding patio doors and 
+        steel insulated entrance systems for the new construction and remodeling 
+        markets.</p>
+      <p><img src="weathershield_logo.jpg" width="150" height="140" align="right">They 
+        wanted to make it easy for people to do business with Weather Shield by 
+        providing a tool for dealers, contractors and other customers to be able 
+        to configure the correct window/door product for a given job, to get pricing 
+        for that product, and to automatically generate an order.</p>
+      <p>They do this by providing a CDROM for their customers with an application 
+        written in Visual Basic (VB) that provides the user interface and connectivity 
+        to the Weather Shield online order entry system.</p>
+      <p>The tricky part was encoding and deploying configuration and pricing 
+        knowledge. These are best expressed as logical relationships and frequently 
+        change with new product offerings and pricing strategies. How best to 
+        get the knowledge from those who know the products and pricing into the 
+        software on the customer's computer?</p>
+      <p>Clearly an architecture that enabled those with the know-how to directly 
+        maintain the configuration and pricing knowledge would be a huge advantage 
+        over alternative solutions that required coding the knowledge directly 
+        in VB.</p>
+      <p>And if that knowledge was deployed in a logicbase external to VB, but 
+        queried from VB, then the application could easily be updated with new 
+        logicbases.</p>
+      <p>For this they chose Amzi! Prolog + Logic Server. The configuration and 
+        pricing knowledge is expressed directly in a Prolog logicbase, which is 
+        called from the VB code during the configuration and pricing process. 
+        Updates to the logicbase are performed automatically when the user connects 
+        to Weather Shield's Web site.</p>
+      <p>There was one problem. The configuration rules are complex and using 
+        Prolog syntax directly was not a good solution for those with the know-how. 
+        So the developers created a database format that the experts could use 
+        to express the complex logical relationships of product configuration 
+        and pricing.</p>
+      <p>That database is then translated into Prolog syntax for deployment.</p>
+      <p>The rules go further than just providing configuration and pricing information. 
+        They also drive the VB application user interface.</p>
+      <p><img src="weathershield_door.gif" width="108" height="136" border="0" align="left">The 
+        developers took advantage of the ability of Prolog to callback to VB to 
+        enable actions in rules that drive the VB interface. Controls representing 
+        different units are displayed or not, based on the rules in the logicbase. 
+        So the entire configuration process, including the evolving visual display 
+        as a user works through a configuration, is driven by the Prolog logicbase.</p>
+      <p>The result is the software developers concentrate on the software, the 
+        product knowledge and configuration process is maintained by those in 
+        the know, and the customers have up-to-date tools for generating and ordering 
+        accurate product configurations.</p>
+      <p>From a learning perspective, it took the developer's 2-3 weeks to get 
+        enough knowledge of Prolog to begin writing prototypes for the project.</p>
+      <p>From a performance perspective, they are constantly amazed by how fast 
+        Prolog applies the appropriate rules during configuration.</p>
+      <p>The keys to success were talented developers, management commitment, 
+        and good technical support.</p>
+      <p align="center"><img src="weathershield_windows.gif" width="509" height="78" border="0"></p>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8213130-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></BODY>
+<!-- #EndTemplate --></html>

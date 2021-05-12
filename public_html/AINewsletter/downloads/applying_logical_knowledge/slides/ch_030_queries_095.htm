@@ -1,0 +1,56 @@
+<html><!-- #BeginTemplate "/Templates/course.dwt" --><!-- DW6 -->
+<head>
+<link rel="stylesheet" type="text/css"
+href="../../../../slides/course.css" />
+<!-- #BeginEditable "doctitle" --> 
+<title>Built-In Predicates</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+<h2 align="center"><font size="2"><i>Applying Logical Knowledge</i></font></h2>
+
+<h1><img align="left" src="../../../../images/bullet.gif" width="36" height="36">&nbsp;
+
+<!-- #BeginEditable "head" -->Built-In Predicates<!-- #EndEditable --></h1>
+<hr>
+<!-- #BeginEditable "body" --> 
+<p>Built-in predicates are part of the Prolog environment. They can be queried 
+  like normal predicates and provide various services. Many are used to create 
+  "side effects", such as input/output, and do not affect logical inferencing.</p>
+<p>There is an ISO standard set of built-in predicates but most Prolog implementations 
+  have additional, non-standard, ones as well.</p>
+<p>Here's some common ones:</p>
+<ul>
+  <li><em>write(T)</em> writes a term to the console</li>
+  <li><em>nl</em> outputs a new line</li>
+  <li><em>tab(N)</em> tabs N spaces</li>
+  <li><em>X = Y</em> unifies X and Y</li>
+  <li><em>true</em> always succeeds</li>
+  <li><em>fail</em> always fails</li>
+  <li><em>not X</em> logical NOT, reverse true/fail</li>
+  <li><em>repeat</em> always succeeds when backtracked into</li>
+</ul>
+<p>Try these queries in the listener:</p>
+<ul>
+  <li><code>?- write('Hello World').</code></li>
+  <li><code>?- write('Hello'), nl, write('World').</code></li>
+  <li><code>?- write( astructure(Var1, Var2) ).</code></li>
+  <li><code>?- true.</code></li>
+  <li><code>?- fail.</code></li>
+  <li><code>?- not fail.</code></li>
+  <li><code>?- X = hello.</code></li>
+  <li><code>?- this(that) = Y.</code></li>
+  <li><code>?- this = that.</code></li>
+  <li><code>?- not this = that.</code></li>
+</ul>
+<!-- #EndEditable --> 
+<hr>
+<p> <img align="right" src="../../../../images/logo_very_small.gif" width="125" height="35"> 
+<a href="../../../../slides/index.htm"> <img src="../../../../images/home.gif" width="30" height="30" border="0"></a>
+<!-- #BeginEditable "links" --><a href="ch_030_queries_090.htm"><img src="../images/previous.gif" width="30" height="30" border="0"></a> 
+  <font size="3"><a href="ch_030_queries_100.htm"><img src="../images/next.gif" width="30" height="30" border="0"></a></font><!-- #EndEditable --> 
+</p>
+<h2 align="center"><font size="2"><i>Copyright &copy;2005 <a href="http://www.amzi.com/">Amzi! inc.</a></i></font></h2>
+</body>
+<!-- #EndTemplate --></html>
